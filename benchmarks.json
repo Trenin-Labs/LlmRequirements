@@ -1,0 +1,2730 @@
+{
+    "$schema":  "https://json-schema.org/draft-07/schema#",
+    "_description":  "Long-format benchmark rows extracted from builds.json plus citations. tps = tokens-per-second tg at Q4_K_M, short context, single stream. imageSec = seconds per image. videoSec = seconds per 5-second clip.",
+    "_lastUpdated":  "2026-05-14",
+    "_methodology":  "tps values are sourced from llama.cpp / vLLM single-stream Q4_K_M generation benchmarks. null means won\u0027t fit or no reliable measurement. See sources[] for citations.",
+    "_counts":  {
+                    "tps":  330,
+                    "image":  92,
+                    "video":  80,
+                    "sources":  50
+                },
+    "tps":  [
+                {
+                    "buildId":  "your-laptop-8gb",
+                    "modelSize":  "8b",
+                    "tps":  4
+                },
+                {
+                    "buildId":  "your-laptop-8gb",
+                    "modelSize":  "14b",
+                    "tps":  null
+                },
+                {
+                    "buildId":  "your-laptop-8gb",
+                    "modelSize":  "30b",
+                    "tps":  null
+                },
+                {
+                    "buildId":  "your-laptop-8gb",
+                    "modelSize":  "70b",
+                    "tps":  null
+                },
+                {
+                    "buildId":  "your-laptop-8gb",
+                    "modelSize":  "120b_moe",
+                    "tps":  null
+                },
+                {
+                    "buildId":  "your-laptop-8gb",
+                    "modelSize":  "235b_moe",
+                    "tps":  null
+                },
+                {
+                    "buildId":  "your-laptop-12gb",
+                    "modelSize":  "8b",
+                    "tps":  7
+                },
+                {
+                    "buildId":  "your-laptop-12gb",
+                    "modelSize":  "14b",
+                    "tps":  3
+                },
+                {
+                    "buildId":  "your-laptop-12gb",
+                    "modelSize":  "30b",
+                    "tps":  null
+                },
+                {
+                    "buildId":  "your-laptop-12gb",
+                    "modelSize":  "70b",
+                    "tps":  null
+                },
+                {
+                    "buildId":  "your-laptop-12gb",
+                    "modelSize":  "120b_moe",
+                    "tps":  null
+                },
+                {
+                    "buildId":  "your-laptop-12gb",
+                    "modelSize":  "235b_moe",
+                    "tps":  null
+                },
+                {
+                    "buildId":  "your-pc-16gb",
+                    "modelSize":  "8b",
+                    "tps":  10
+                },
+                {
+                    "buildId":  "your-pc-16gb",
+                    "modelSize":  "14b",
+                    "tps":  5
+                },
+                {
+                    "buildId":  "your-pc-16gb",
+                    "modelSize":  "30b",
+                    "tps":  null
+                },
+                {
+                    "buildId":  "your-pc-16gb",
+                    "modelSize":  "70b",
+                    "tps":  null
+                },
+                {
+                    "buildId":  "your-pc-16gb",
+                    "modelSize":  "120b_moe",
+                    "tps":  null
+                },
+                {
+                    "buildId":  "your-pc-16gb",
+                    "modelSize":  "235b_moe",
+                    "tps":  null
+                },
+                {
+                    "buildId":  "mac-mini-m4-16",
+                    "modelSize":  "8b",
+                    "tps":  22
+                },
+                {
+                    "buildId":  "mac-mini-m4-16",
+                    "modelSize":  "14b",
+                    "tps":  10
+                },
+                {
+                    "buildId":  "mac-mini-m4-16",
+                    "modelSize":  "30b",
+                    "tps":  null
+                },
+                {
+                    "buildId":  "mac-mini-m4-16",
+                    "modelSize":  "70b",
+                    "tps":  null
+                },
+                {
+                    "buildId":  "mac-mini-m4-16",
+                    "modelSize":  "120b_moe",
+                    "tps":  null
+                },
+                {
+                    "buildId":  "mac-mini-m4-16",
+                    "modelSize":  "235b_moe",
+                    "tps":  null
+                },
+                {
+                    "buildId":  "mba-m4-16",
+                    "modelSize":  "8b",
+                    "tps":  18
+                },
+                {
+                    "buildId":  "mba-m4-16",
+                    "modelSize":  "14b",
+                    "tps":  8
+                },
+                {
+                    "buildId":  "mba-m4-16",
+                    "modelSize":  "30b",
+                    "tps":  null
+                },
+                {
+                    "buildId":  "mba-m4-16",
+                    "modelSize":  "70b",
+                    "tps":  null
+                },
+                {
+                    "buildId":  "mba-m4-16",
+                    "modelSize":  "120b_moe",
+                    "tps":  null
+                },
+                {
+                    "buildId":  "mba-m4-16",
+                    "modelSize":  "235b_moe",
+                    "tps":  null
+                },
+                {
+                    "buildId":  "mac-mini-m4-24",
+                    "modelSize":  "8b",
+                    "tps":  22
+                },
+                {
+                    "buildId":  "mac-mini-m4-24",
+                    "modelSize":  "14b",
+                    "tps":  12
+                },
+                {
+                    "buildId":  "mac-mini-m4-24",
+                    "modelSize":  "30b",
+                    "tps":  null
+                },
+                {
+                    "buildId":  "mac-mini-m4-24",
+                    "modelSize":  "70b",
+                    "tps":  null
+                },
+                {
+                    "buildId":  "mac-mini-m4-24",
+                    "modelSize":  "120b_moe",
+                    "tps":  null
+                },
+                {
+                    "buildId":  "mac-mini-m4-24",
+                    "modelSize":  "235b_moe",
+                    "tps":  null
+                },
+                {
+                    "buildId":  "mbp-m4-pro-48",
+                    "modelSize":  "8b",
+                    "tps":  50
+                },
+                {
+                    "buildId":  "mbp-m4-pro-48",
+                    "modelSize":  "14b",
+                    "tps":  28
+                },
+                {
+                    "buildId":  "mbp-m4-pro-48",
+                    "modelSize":  "30b",
+                    "tps":  14
+                },
+                {
+                    "buildId":  "mbp-m4-pro-48",
+                    "modelSize":  "70b",
+                    "tps":  6
+                },
+                {
+                    "buildId":  "mbp-m4-pro-48",
+                    "modelSize":  "120b_moe",
+                    "tps":  null
+                },
+                {
+                    "buildId":  "mbp-m4-pro-48",
+                    "modelSize":  "235b_moe",
+                    "tps":  null
+                },
+                {
+                    "buildId":  "mbp-m4-max-64",
+                    "modelSize":  "8b",
+                    "tps":  70
+                },
+                {
+                    "buildId":  "mbp-m4-max-64",
+                    "modelSize":  "14b",
+                    "tps":  40
+                },
+                {
+                    "buildId":  "mbp-m4-max-64",
+                    "modelSize":  "30b",
+                    "tps":  22
+                },
+                {
+                    "buildId":  "mbp-m4-max-64",
+                    "modelSize":  "70b",
+                    "tps":  10
+                },
+                {
+                    "buildId":  "mbp-m4-max-64",
+                    "modelSize":  "120b_moe",
+                    "tps":  18
+                },
+                {
+                    "buildId":  "mbp-m4-max-64",
+                    "modelSize":  "235b_moe",
+                    "tps":  null
+                },
+                {
+                    "buildId":  "mac-studio-m4-max-128",
+                    "modelSize":  "8b",
+                    "tps":  95
+                },
+                {
+                    "buildId":  "mac-studio-m4-max-128",
+                    "modelSize":  "14b",
+                    "tps":  55
+                },
+                {
+                    "buildId":  "mac-studio-m4-max-128",
+                    "modelSize":  "30b",
+                    "tps":  30
+                },
+                {
+                    "buildId":  "mac-studio-m4-max-128",
+                    "modelSize":  "70b",
+                    "tps":  13
+                },
+                {
+                    "buildId":  "mac-studio-m4-max-128",
+                    "modelSize":  "120b_moe",
+                    "tps":  35
+                },
+                {
+                    "buildId":  "mac-studio-m4-max-128",
+                    "modelSize":  "235b_moe",
+                    "tps":  null
+                },
+                {
+                    "buildId":  "mac-studio-m3-ultra-256",
+                    "modelSize":  "8b",
+                    "tps":  110
+                },
+                {
+                    "buildId":  "mac-studio-m3-ultra-256",
+                    "modelSize":  "14b",
+                    "tps":  70
+                },
+                {
+                    "buildId":  "mac-studio-m3-ultra-256",
+                    "modelSize":  "30b",
+                    "tps":  38
+                },
+                {
+                    "buildId":  "mac-studio-m3-ultra-256",
+                    "modelSize":  "70b",
+                    "tps":  18
+                },
+                {
+                    "buildId":  "mac-studio-m3-ultra-256",
+                    "modelSize":  "120b_moe",
+                    "tps":  55
+                },
+                {
+                    "buildId":  "mac-studio-m3-ultra-256",
+                    "modelSize":  "235b_moe",
+                    "tps":  22
+                },
+                {
+                    "buildId":  "mac-studio-m3-ultra-512",
+                    "modelSize":  "8b",
+                    "tps":  110
+                },
+                {
+                    "buildId":  "mac-studio-m3-ultra-512",
+                    "modelSize":  "14b",
+                    "tps":  70
+                },
+                {
+                    "buildId":  "mac-studio-m3-ultra-512",
+                    "modelSize":  "30b",
+                    "tps":  38
+                },
+                {
+                    "buildId":  "mac-studio-m3-ultra-512",
+                    "modelSize":  "70b",
+                    "tps":  18
+                },
+                {
+                    "buildId":  "mac-studio-m3-ultra-512",
+                    "modelSize":  "120b_moe",
+                    "tps":  55
+                },
+                {
+                    "buildId":  "mac-studio-m3-ultra-512",
+                    "modelSize":  "235b_moe",
+                    "tps":  22
+                },
+                {
+                    "buildId":  "mac-studio-m3-ultra-512",
+                    "modelSize":  "1t_moe",
+                    "tps":  8
+                },
+                {
+                    "buildId":  "mac-studio-m3-ultra-512",
+                    "modelSize":  "671b_moe",
+                    "tps":  6
+                },
+                {
+                    "buildId":  "rtx-3060-12",
+                    "modelSize":  "8b",
+                    "tps":  38
+                },
+                {
+                    "buildId":  "rtx-3060-12",
+                    "modelSize":  "14b",
+                    "tps":  18
+                },
+                {
+                    "buildId":  "rtx-3060-12",
+                    "modelSize":  "30b",
+                    "tps":  null
+                },
+                {
+                    "buildId":  "rtx-3060-12",
+                    "modelSize":  "70b",
+                    "tps":  null
+                },
+                {
+                    "buildId":  "rtx-3060-12",
+                    "modelSize":  "120b_moe",
+                    "tps":  null
+                },
+                {
+                    "buildId":  "rtx-3060-12",
+                    "modelSize":  "235b_moe",
+                    "tps":  null
+                },
+                {
+                    "buildId":  "rtx-3090-24",
+                    "modelSize":  "8b",
+                    "tps":  90
+                },
+                {
+                    "buildId":  "rtx-3090-24",
+                    "modelSize":  "14b",
+                    "tps":  50
+                },
+                {
+                    "buildId":  "rtx-3090-24",
+                    "modelSize":  "30b",
+                    "tps":  28
+                },
+                {
+                    "buildId":  "rtx-3090-24",
+                    "modelSize":  "70b",
+                    "tps":  null
+                },
+                {
+                    "buildId":  "rtx-3090-24",
+                    "modelSize":  "120b_moe",
+                    "tps":  null
+                },
+                {
+                    "buildId":  "rtx-3090-24",
+                    "modelSize":  "235b_moe",
+                    "tps":  null
+                },
+                {
+                    "buildId":  "rtx-3090-x2",
+                    "modelSize":  "8b",
+                    "tps":  95
+                },
+                {
+                    "buildId":  "rtx-3090-x2",
+                    "modelSize":  "14b",
+                    "tps":  55
+                },
+                {
+                    "buildId":  "rtx-3090-x2",
+                    "modelSize":  "30b",
+                    "tps":  35
+                },
+                {
+                    "buildId":  "rtx-3090-x2",
+                    "modelSize":  "70b",
+                    "tps":  22
+                },
+                {
+                    "buildId":  "rtx-3090-x2",
+                    "modelSize":  "120b_moe",
+                    "tps":  null
+                },
+                {
+                    "buildId":  "rtx-3090-x2",
+                    "modelSize":  "235b_moe",
+                    "tps":  null
+                },
+                {
+                    "buildId":  "rtx-3090-x4",
+                    "modelSize":  "8b",
+                    "tps":  100
+                },
+                {
+                    "buildId":  "rtx-3090-x4",
+                    "modelSize":  "14b",
+                    "tps":  60
+                },
+                {
+                    "buildId":  "rtx-3090-x4",
+                    "modelSize":  "30b",
+                    "tps":  40
+                },
+                {
+                    "buildId":  "rtx-3090-x4",
+                    "modelSize":  "70b",
+                    "tps":  28
+                },
+                {
+                    "buildId":  "rtx-3090-x4",
+                    "modelSize":  "120b_moe",
+                    "tps":  35
+                },
+                {
+                    "buildId":  "rtx-3090-x4",
+                    "modelSize":  "235b_moe",
+                    "tps":  null
+                },
+                {
+                    "buildId":  "rtx-4090-24",
+                    "modelSize":  "8b",
+                    "tps":  130
+                },
+                {
+                    "buildId":  "rtx-4090-24",
+                    "modelSize":  "14b",
+                    "tps":  75
+                },
+                {
+                    "buildId":  "rtx-4090-24",
+                    "modelSize":  "30b",
+                    "tps":  42
+                },
+                {
+                    "buildId":  "rtx-4090-24",
+                    "modelSize":  "70b",
+                    "tps":  null
+                },
+                {
+                    "buildId":  "rtx-4090-24",
+                    "modelSize":  "120b_moe",
+                    "tps":  null
+                },
+                {
+                    "buildId":  "rtx-4090-24",
+                    "modelSize":  "235b_moe",
+                    "tps":  null
+                },
+                {
+                    "buildId":  "rtx-5090-32",
+                    "modelSize":  "8b",
+                    "tps":  186
+                },
+                {
+                    "buildId":  "rtx-5090-32",
+                    "modelSize":  "14b",
+                    "tps":  124
+                },
+                {
+                    "buildId":  "rtx-5090-32",
+                    "modelSize":  "30b",
+                    "tps":  70
+                },
+                {
+                    "buildId":  "rtx-5090-32",
+                    "modelSize":  "70b",
+                    "tps":  null
+                },
+                {
+                    "buildId":  "rtx-5090-32",
+                    "modelSize":  "120b_moe",
+                    "tps":  null
+                },
+                {
+                    "buildId":  "rtx-5090-32",
+                    "modelSize":  "235b_moe",
+                    "tps":  null
+                },
+                {
+                    "buildId":  "rtx-5090-x2",
+                    "modelSize":  "8b",
+                    "tps":  200
+                },
+                {
+                    "buildId":  "rtx-5090-x2",
+                    "modelSize":  "14b",
+                    "tps":  140
+                },
+                {
+                    "buildId":  "rtx-5090-x2",
+                    "modelSize":  "30b",
+                    "tps":  90
+                },
+                {
+                    "buildId":  "rtx-5090-x2",
+                    "modelSize":  "70b",
+                    "tps":  35
+                },
+                {
+                    "buildId":  "rtx-5090-x2",
+                    "modelSize":  "120b_moe",
+                    "tps":  96
+                },
+                {
+                    "buildId":  "rtx-5090-x2",
+                    "modelSize":  "235b_moe",
+                    "tps":  null
+                },
+                {
+                    "buildId":  "tesla-p40-24",
+                    "modelSize":  "8b",
+                    "tps":  45
+                },
+                {
+                    "buildId":  "tesla-p40-24",
+                    "modelSize":  "14b",
+                    "tps":  15
+                },
+                {
+                    "buildId":  "tesla-p40-24",
+                    "modelSize":  "30b",
+                    "tps":  12
+                },
+                {
+                    "buildId":  "tesla-p40-24",
+                    "modelSize":  "70b",
+                    "tps":  null
+                },
+                {
+                    "buildId":  "tesla-p40-24",
+                    "modelSize":  "120b_moe",
+                    "tps":  null
+                },
+                {
+                    "buildId":  "tesla-p40-24",
+                    "modelSize":  "235b_moe",
+                    "tps":  null
+                },
+                {
+                    "buildId":  "tesla-p40-x4",
+                    "modelSize":  "8b",
+                    "tps":  48
+                },
+                {
+                    "buildId":  "tesla-p40-x4",
+                    "modelSize":  "14b",
+                    "tps":  16
+                },
+                {
+                    "buildId":  "tesla-p40-x4",
+                    "modelSize":  "30b",
+                    "tps":  50
+                },
+                {
+                    "buildId":  "tesla-p40-x4",
+                    "modelSize":  "70b",
+                    "tps":  null
+                },
+                {
+                    "buildId":  "tesla-p40-x4",
+                    "modelSize":  "120b_moe",
+                    "tps":  28
+                },
+                {
+                    "buildId":  "tesla-p40-x4",
+                    "modelSize":  "235b_moe",
+                    "tps":  null
+                },
+                {
+                    "buildId":  "tesla-p100-16",
+                    "modelSize":  "8b",
+                    "tps":  33
+                },
+                {
+                    "buildId":  "tesla-p100-16",
+                    "modelSize":  "14b",
+                    "tps":  19
+                },
+                {
+                    "buildId":  "tesla-p100-16",
+                    "modelSize":  "30b",
+                    "tps":  null
+                },
+                {
+                    "buildId":  "tesla-p100-16",
+                    "modelSize":  "70b",
+                    "tps":  null
+                },
+                {
+                    "buildId":  "tesla-p100-16",
+                    "modelSize":  "120b_moe",
+                    "tps":  null
+                },
+                {
+                    "buildId":  "tesla-p100-16",
+                    "modelSize":  "235b_moe",
+                    "tps":  null
+                },
+                {
+                    "buildId":  "tesla-v100-sxm2-mod",
+                    "modelSize":  "8b",
+                    "tps":  85
+                },
+                {
+                    "buildId":  "tesla-v100-sxm2-mod",
+                    "modelSize":  "14b",
+                    "tps":  50
+                },
+                {
+                    "buildId":  "tesla-v100-sxm2-mod",
+                    "modelSize":  "30b",
+                    "tps":  11
+                },
+                {
+                    "buildId":  "tesla-v100-sxm2-mod",
+                    "modelSize":  "70b",
+                    "tps":  null
+                },
+                {
+                    "buildId":  "tesla-v100-sxm2-mod",
+                    "modelSize":  "120b_moe",
+                    "tps":  null
+                },
+                {
+                    "buildId":  "tesla-v100-sxm2-mod",
+                    "modelSize":  "235b_moe",
+                    "tps":  null
+                },
+                {
+                    "buildId":  "intel-arc-pro-b70-32",
+                    "modelSize":  "8b",
+                    "tps":  70
+                },
+                {
+                    "buildId":  "intel-arc-pro-b70-32",
+                    "modelSize":  "14b",
+                    "tps":  40
+                },
+                {
+                    "buildId":  "intel-arc-pro-b70-32",
+                    "modelSize":  "30b",
+                    "tps":  25
+                },
+                {
+                    "buildId":  "intel-arc-pro-b70-32",
+                    "modelSize":  "70b",
+                    "tps":  null
+                },
+                {
+                    "buildId":  "intel-arc-pro-b70-32",
+                    "modelSize":  "120b_moe",
+                    "tps":  null
+                },
+                {
+                    "buildId":  "intel-arc-pro-b70-32",
+                    "modelSize":  "235b_moe",
+                    "tps":  null
+                },
+                {
+                    "buildId":  "intel-arc-pro-b70-x2",
+                    "modelSize":  "8b",
+                    "tps":  90
+                },
+                {
+                    "buildId":  "intel-arc-pro-b70-x2",
+                    "modelSize":  "14b",
+                    "tps":  55
+                },
+                {
+                    "buildId":  "intel-arc-pro-b70-x2",
+                    "modelSize":  "30b",
+                    "tps":  35
+                },
+                {
+                    "buildId":  "intel-arc-pro-b70-x2",
+                    "modelSize":  "70b",
+                    "tps":  14
+                },
+                {
+                    "buildId":  "intel-arc-pro-b70-x2",
+                    "modelSize":  "120b_moe",
+                    "tps":  43
+                },
+                {
+                    "buildId":  "intel-arc-pro-b70-x2",
+                    "modelSize":  "235b_moe",
+                    "tps":  null
+                },
+                {
+                    "buildId":  "intel-arc-pro-b70-x4",
+                    "modelSize":  "8b",
+                    "tps":  100
+                },
+                {
+                    "buildId":  "intel-arc-pro-b70-x4",
+                    "modelSize":  "14b",
+                    "tps":  60
+                },
+                {
+                    "buildId":  "intel-arc-pro-b70-x4",
+                    "modelSize":  "30b",
+                    "tps":  38
+                },
+                {
+                    "buildId":  "intel-arc-pro-b70-x4",
+                    "modelSize":  "70b",
+                    "tps":  22
+                },
+                {
+                    "buildId":  "intel-arc-pro-b70-x4",
+                    "modelSize":  "120b_moe",
+                    "tps":  50
+                },
+                {
+                    "buildId":  "intel-arc-pro-b70-x4",
+                    "modelSize":  "235b_moe",
+                    "tps":  null
+                },
+                {
+                    "buildId":  "intel-arc-pro-b70-x8",
+                    "modelSize":  "8b",
+                    "tps":  110
+                },
+                {
+                    "buildId":  "intel-arc-pro-b70-x8",
+                    "modelSize":  "14b",
+                    "tps":  65
+                },
+                {
+                    "buildId":  "intel-arc-pro-b70-x8",
+                    "modelSize":  "30b",
+                    "tps":  42
+                },
+                {
+                    "buildId":  "intel-arc-pro-b70-x8",
+                    "modelSize":  "70b",
+                    "tps":  28
+                },
+                {
+                    "buildId":  "intel-arc-pro-b70-x8",
+                    "modelSize":  "120b_moe",
+                    "tps":  60
+                },
+                {
+                    "buildId":  "intel-arc-pro-b70-x8",
+                    "modelSize":  "235b_moe",
+                    "tps":  35
+                },
+                {
+                    "buildId":  "intel-arc-b580-12",
+                    "modelSize":  "8b",
+                    "tps":  50
+                },
+                {
+                    "buildId":  "intel-arc-b580-12",
+                    "modelSize":  "14b",
+                    "tps":  22
+                },
+                {
+                    "buildId":  "intel-arc-b580-12",
+                    "modelSize":  "30b",
+                    "tps":  null
+                },
+                {
+                    "buildId":  "intel-arc-b580-12",
+                    "modelSize":  "70b",
+                    "tps":  null
+                },
+                {
+                    "buildId":  "intel-arc-b580-12",
+                    "modelSize":  "120b_moe",
+                    "tps":  null
+                },
+                {
+                    "buildId":  "intel-arc-b580-12",
+                    "modelSize":  "235b_moe",
+                    "tps":  null
+                },
+                {
+                    "buildId":  "strix-halo-128",
+                    "modelSize":  "8b",
+                    "tps":  50
+                },
+                {
+                    "buildId":  "strix-halo-128",
+                    "modelSize":  "14b",
+                    "tps":  28
+                },
+                {
+                    "buildId":  "strix-halo-128",
+                    "modelSize":  "30b",
+                    "tps":  16
+                },
+                {
+                    "buildId":  "strix-halo-128",
+                    "modelSize":  "70b",
+                    "tps":  5
+                },
+                {
+                    "buildId":  "strix-halo-128",
+                    "modelSize":  "120b_moe",
+                    "tps":  47
+                },
+                {
+                    "buildId":  "strix-halo-128",
+                    "modelSize":  "235b_moe",
+                    "tps":  null
+                },
+                {
+                    "buildId":  "strix-halo-x2",
+                    "modelSize":  "8b",
+                    "tps":  70
+                },
+                {
+                    "buildId":  "strix-halo-x2",
+                    "modelSize":  "14b",
+                    "tps":  40
+                },
+                {
+                    "buildId":  "strix-halo-x2",
+                    "modelSize":  "30b",
+                    "tps":  24
+                },
+                {
+                    "buildId":  "strix-halo-x2",
+                    "modelSize":  "70b",
+                    "tps":  6
+                },
+                {
+                    "buildId":  "strix-halo-x2",
+                    "modelSize":  "120b_moe",
+                    "tps":  40
+                },
+                {
+                    "buildId":  "strix-halo-x2",
+                    "modelSize":  "235b_moe",
+                    "tps":  18
+                },
+                {
+                    "buildId":  "dgx-spark-128",
+                    "modelSize":  "8b",
+                    "tps":  90
+                },
+                {
+                    "buildId":  "dgx-spark-128",
+                    "modelSize":  "14b",
+                    "tps":  55
+                },
+                {
+                    "buildId":  "dgx-spark-128",
+                    "modelSize":  "30b",
+                    "tps":  30
+                },
+                {
+                    "buildId":  "dgx-spark-128",
+                    "modelSize":  "70b",
+                    "tps":  8
+                },
+                {
+                    "buildId":  "dgx-spark-128",
+                    "modelSize":  "120b_moe",
+                    "tps":  35
+                },
+                {
+                    "buildId":  "dgx-spark-128",
+                    "modelSize":  "235b_moe",
+                    "tps":  null
+                },
+                {
+                    "buildId":  "dgx-spark-x2",
+                    "modelSize":  "8b",
+                    "tps":  140
+                },
+                {
+                    "buildId":  "dgx-spark-x2",
+                    "modelSize":  "14b",
+                    "tps":  90
+                },
+                {
+                    "buildId":  "dgx-spark-x2",
+                    "modelSize":  "30b",
+                    "tps":  50
+                },
+                {
+                    "buildId":  "dgx-spark-x2",
+                    "modelSize":  "70b",
+                    "tps":  14
+                },
+                {
+                    "buildId":  "dgx-spark-x2",
+                    "modelSize":  "120b_moe",
+                    "tps":  55
+                },
+                {
+                    "buildId":  "dgx-spark-x2",
+                    "modelSize":  "235b_moe",
+                    "tps":  24
+                },
+                {
+                    "buildId":  "dgx-spark-x4",
+                    "modelSize":  "8b",
+                    "tps":  150
+                },
+                {
+                    "buildId":  "dgx-spark-x4",
+                    "modelSize":  "14b",
+                    "tps":  100
+                },
+                {
+                    "buildId":  "dgx-spark-x4",
+                    "modelSize":  "30b",
+                    "tps":  55
+                },
+                {
+                    "buildId":  "dgx-spark-x4",
+                    "modelSize":  "70b",
+                    "tps":  18
+                },
+                {
+                    "buildId":  "dgx-spark-x4",
+                    "modelSize":  "120b_moe",
+                    "tps":  70
+                },
+                {
+                    "buildId":  "dgx-spark-x4",
+                    "modelSize":  "235b_moe",
+                    "tps":  32
+                },
+                {
+                    "buildId":  "dgx-spark-x4",
+                    "modelSize":  "1t_moe",
+                    "tps":  9
+                },
+                {
+                    "buildId":  "dgx-spark-x4",
+                    "modelSize":  "671b_moe",
+                    "tps":  11
+                },
+                {
+                    "buildId":  "msi-edgexpert-gb10",
+                    "modelSize":  "8b",
+                    "tps":  90
+                },
+                {
+                    "buildId":  "msi-edgexpert-gb10",
+                    "modelSize":  "14b",
+                    "tps":  55
+                },
+                {
+                    "buildId":  "msi-edgexpert-gb10",
+                    "modelSize":  "30b",
+                    "tps":  30
+                },
+                {
+                    "buildId":  "msi-edgexpert-gb10",
+                    "modelSize":  "70b",
+                    "tps":  8
+                },
+                {
+                    "buildId":  "msi-edgexpert-gb10",
+                    "modelSize":  "120b_moe",
+                    "tps":  35
+                },
+                {
+                    "buildId":  "msi-edgexpert-gb10",
+                    "modelSize":  "235b_moe",
+                    "tps":  null
+                },
+                {
+                    "buildId":  "asus-ascent-gx10",
+                    "modelSize":  "8b",
+                    "tps":  85
+                },
+                {
+                    "buildId":  "asus-ascent-gx10",
+                    "modelSize":  "14b",
+                    "tps":  52
+                },
+                {
+                    "buildId":  "asus-ascent-gx10",
+                    "modelSize":  "30b",
+                    "tps":  28
+                },
+                {
+                    "buildId":  "asus-ascent-gx10",
+                    "modelSize":  "70b",
+                    "tps":  8
+                },
+                {
+                    "buildId":  "asus-ascent-gx10",
+                    "modelSize":  "120b_moe",
+                    "tps":  33
+                },
+                {
+                    "buildId":  "asus-ascent-gx10",
+                    "modelSize":  "235b_moe",
+                    "tps":  null
+                },
+                {
+                    "buildId":  "dell-pro-max-gb10",
+                    "modelSize":  "8b",
+                    "tps":  90
+                },
+                {
+                    "buildId":  "dell-pro-max-gb10",
+                    "modelSize":  "14b",
+                    "tps":  55
+                },
+                {
+                    "buildId":  "dell-pro-max-gb10",
+                    "modelSize":  "30b",
+                    "tps":  30
+                },
+                {
+                    "buildId":  "dell-pro-max-gb10",
+                    "modelSize":  "70b",
+                    "tps":  8
+                },
+                {
+                    "buildId":  "dell-pro-max-gb10",
+                    "modelSize":  "120b_moe",
+                    "tps":  35
+                },
+                {
+                    "buildId":  "dell-pro-max-gb10",
+                    "modelSize":  "235b_moe",
+                    "tps":  null
+                },
+                {
+                    "buildId":  "lenovo-thinkstation-pgx",
+                    "modelSize":  "8b",
+                    "tps":  90
+                },
+                {
+                    "buildId":  "lenovo-thinkstation-pgx",
+                    "modelSize":  "14b",
+                    "tps":  55
+                },
+                {
+                    "buildId":  "lenovo-thinkstation-pgx",
+                    "modelSize":  "30b",
+                    "tps":  30
+                },
+                {
+                    "buildId":  "lenovo-thinkstation-pgx",
+                    "modelSize":  "70b",
+                    "tps":  8
+                },
+                {
+                    "buildId":  "lenovo-thinkstation-pgx",
+                    "modelSize":  "120b_moe",
+                    "tps":  35
+                },
+                {
+                    "buildId":  "lenovo-thinkstation-pgx",
+                    "modelSize":  "235b_moe",
+                    "tps":  null
+                },
+                {
+                    "buildId":  "h100-80",
+                    "modelSize":  "8b",
+                    "tps":  240
+                },
+                {
+                    "buildId":  "h100-80",
+                    "modelSize":  "14b",
+                    "tps":  150
+                },
+                {
+                    "buildId":  "h100-80",
+                    "modelSize":  "30b",
+                    "tps":  90
+                },
+                {
+                    "buildId":  "h100-80",
+                    "modelSize":  "70b",
+                    "tps":  50
+                },
+                {
+                    "buildId":  "h100-80",
+                    "modelSize":  "120b_moe",
+                    "tps":  80
+                },
+                {
+                    "buildId":  "h100-80",
+                    "modelSize":  "235b_moe",
+                    "tps":  null
+                },
+                {
+                    "buildId":  "h100-x8",
+                    "modelSize":  "8b",
+                    "tps":  400
+                },
+                {
+                    "buildId":  "h100-x8",
+                    "modelSize":  "14b",
+                    "tps":  280
+                },
+                {
+                    "buildId":  "h100-x8",
+                    "modelSize":  "30b",
+                    "tps":  180
+                },
+                {
+                    "buildId":  "h100-x8",
+                    "modelSize":  "70b",
+                    "tps":  120
+                },
+                {
+                    "buildId":  "h100-x8",
+                    "modelSize":  "120b_moe",
+                    "tps":  220
+                },
+                {
+                    "buildId":  "h100-x8",
+                    "modelSize":  "235b_moe",
+                    "tps":  110
+                },
+                {
+                    "buildId":  "h100-x8",
+                    "modelSize":  "1t_moe",
+                    "tps":  60
+                },
+                {
+                    "buildId":  "h100-x8",
+                    "modelSize":  "671b_moe",
+                    "tps":  70
+                },
+                {
+                    "buildId":  "rtx-a6000-48",
+                    "modelSize":  "8b",
+                    "tps":  75
+                },
+                {
+                    "buildId":  "rtx-a6000-48",
+                    "modelSize":  "14b",
+                    "tps":  42
+                },
+                {
+                    "buildId":  "rtx-a6000-48",
+                    "modelSize":  "30b",
+                    "tps":  24
+                },
+                {
+                    "buildId":  "rtx-a6000-48",
+                    "modelSize":  "70b",
+                    "tps":  12
+                },
+                {
+                    "buildId":  "rtx-a6000-48",
+                    "modelSize":  "120b_moe",
+                    "tps":  null
+                },
+                {
+                    "buildId":  "rtx-a6000-48",
+                    "modelSize":  "235b_moe",
+                    "tps":  null
+                },
+                {
+                    "buildId":  "rtx-6000-ada-48",
+                    "modelSize":  "8b",
+                    "tps":  110
+                },
+                {
+                    "buildId":  "rtx-6000-ada-48",
+                    "modelSize":  "14b",
+                    "tps":  65
+                },
+                {
+                    "buildId":  "rtx-6000-ada-48",
+                    "modelSize":  "30b",
+                    "tps":  40
+                },
+                {
+                    "buildId":  "rtx-6000-ada-48",
+                    "modelSize":  "70b",
+                    "tps":  18
+                },
+                {
+                    "buildId":  "rtx-6000-ada-48",
+                    "modelSize":  "120b_moe",
+                    "tps":  null
+                },
+                {
+                    "buildId":  "rtx-6000-ada-48",
+                    "modelSize":  "235b_moe",
+                    "tps":  null
+                },
+                {
+                    "buildId":  "rtx-pro-6000-blackwell-96",
+                    "modelSize":  "8b",
+                    "tps":  200
+                },
+                {
+                    "buildId":  "rtx-pro-6000-blackwell-96",
+                    "modelSize":  "14b",
+                    "tps":  140
+                },
+                {
+                    "buildId":  "rtx-pro-6000-blackwell-96",
+                    "modelSize":  "30b",
+                    "tps":  85
+                },
+                {
+                    "buildId":  "rtx-pro-6000-blackwell-96",
+                    "modelSize":  "70b",
+                    "tps":  34
+                },
+                {
+                    "buildId":  "rtx-pro-6000-blackwell-96",
+                    "modelSize":  "120b_moe",
+                    "tps":  240
+                },
+                {
+                    "buildId":  "rtx-pro-6000-blackwell-96",
+                    "modelSize":  "235b_moe",
+                    "tps":  50
+                },
+                {
+                    "buildId":  "rtx-pro-6000-blackwell-x2",
+                    "modelSize":  "8b",
+                    "tps":  220
+                },
+                {
+                    "buildId":  "rtx-pro-6000-blackwell-x2",
+                    "modelSize":  "14b",
+                    "tps":  160
+                },
+                {
+                    "buildId":  "rtx-pro-6000-blackwell-x2",
+                    "modelSize":  "30b",
+                    "tps":  100
+                },
+                {
+                    "buildId":  "rtx-pro-6000-blackwell-x2",
+                    "modelSize":  "70b",
+                    "tps":  60
+                },
+                {
+                    "buildId":  "rtx-pro-6000-blackwell-x2",
+                    "modelSize":  "120b_moe",
+                    "tps":  280
+                },
+                {
+                    "buildId":  "rtx-pro-6000-blackwell-x2",
+                    "modelSize":  "235b_moe",
+                    "tps":  90
+                },
+                {
+                    "buildId":  "amd-w7900-48",
+                    "modelSize":  "8b",
+                    "tps":  70
+                },
+                {
+                    "buildId":  "amd-w7900-48",
+                    "modelSize":  "14b",
+                    "tps":  40
+                },
+                {
+                    "buildId":  "amd-w7900-48",
+                    "modelSize":  "30b",
+                    "tps":  22
+                },
+                {
+                    "buildId":  "amd-w7900-48",
+                    "modelSize":  "70b",
+                    "tps":  13
+                },
+                {
+                    "buildId":  "amd-w7900-48",
+                    "modelSize":  "120b_moe",
+                    "tps":  null
+                },
+                {
+                    "buildId":  "amd-w7900-48",
+                    "modelSize":  "235b_moe",
+                    "tps":  null
+                },
+                {
+                    "buildId":  "amd-w7900-x2",
+                    "modelSize":  "8b",
+                    "tps":  90
+                },
+                {
+                    "buildId":  "amd-w7900-x2",
+                    "modelSize":  "14b",
+                    "tps":  55
+                },
+                {
+                    "buildId":  "amd-w7900-x2",
+                    "modelSize":  "30b",
+                    "tps":  33
+                },
+                {
+                    "buildId":  "amd-w7900-x2",
+                    "modelSize":  "70b",
+                    "tps":  22
+                },
+                {
+                    "buildId":  "amd-w7900-x2",
+                    "modelSize":  "120b_moe",
+                    "tps":  28
+                },
+                {
+                    "buildId":  "amd-w7900-x2",
+                    "modelSize":  "235b_moe",
+                    "tps":  null
+                },
+                {
+                    "buildId":  "amd-w7800-32",
+                    "modelSize":  "8b",
+                    "tps":  58
+                },
+                {
+                    "buildId":  "amd-w7800-32",
+                    "modelSize":  "14b",
+                    "tps":  32
+                },
+                {
+                    "buildId":  "amd-w7800-32",
+                    "modelSize":  "30b",
+                    "tps":  18
+                },
+                {
+                    "buildId":  "amd-w7800-32",
+                    "modelSize":  "70b",
+                    "tps":  null
+                },
+                {
+                    "buildId":  "amd-w7800-32",
+                    "modelSize":  "120b_moe",
+                    "tps":  null
+                },
+                {
+                    "buildId":  "amd-w7800-32",
+                    "modelSize":  "235b_moe",
+                    "tps":  null
+                },
+                {
+                    "buildId":  "amd-r9700-32",
+                    "modelSize":  "8b",
+                    "tps":  77
+                },
+                {
+                    "buildId":  "amd-r9700-32",
+                    "modelSize":  "14b",
+                    "tps":  45
+                },
+                {
+                    "buildId":  "amd-r9700-32",
+                    "modelSize":  "30b",
+                    "tps":  75
+                },
+                {
+                    "buildId":  "amd-r9700-32",
+                    "modelSize":  "70b",
+                    "tps":  null
+                },
+                {
+                    "buildId":  "amd-r9700-32",
+                    "modelSize":  "120b_moe",
+                    "tps":  null
+                },
+                {
+                    "buildId":  "amd-r9700-32",
+                    "modelSize":  "235b_moe",
+                    "tps":  null
+                },
+                {
+                    "buildId":  "amd-r9700-x2",
+                    "modelSize":  "8b",
+                    "tps":  90
+                },
+                {
+                    "buildId":  "amd-r9700-x2",
+                    "modelSize":  "14b",
+                    "tps":  55
+                },
+                {
+                    "buildId":  "amd-r9700-x2",
+                    "modelSize":  "30b",
+                    "tps":  80
+                },
+                {
+                    "buildId":  "amd-r9700-x2",
+                    "modelSize":  "70b",
+                    "tps":  22
+                },
+                {
+                    "buildId":  "amd-r9700-x2",
+                    "modelSize":  "120b_moe",
+                    "tps":  40
+                },
+                {
+                    "buildId":  "amd-r9700-x2",
+                    "modelSize":  "235b_moe",
+                    "tps":  null
+                },
+                {
+                    "buildId":  "amd-mi300x-192",
+                    "modelSize":  "8b",
+                    "tps":  260
+                },
+                {
+                    "buildId":  "amd-mi300x-192",
+                    "modelSize":  "14b",
+                    "tps":  170
+                },
+                {
+                    "buildId":  "amd-mi300x-192",
+                    "modelSize":  "30b",
+                    "tps":  100
+                },
+                {
+                    "buildId":  "amd-mi300x-192",
+                    "modelSize":  "70b",
+                    "tps":  100
+                },
+                {
+                    "buildId":  "amd-mi300x-192",
+                    "modelSize":  "120b_moe",
+                    "tps":  200
+                },
+                {
+                    "buildId":  "amd-mi300x-192",
+                    "modelSize":  "235b_moe",
+                    "tps":  80
+                },
+                {
+                    "buildId":  "amd-mi50-32",
+                    "modelSize":  "8b",
+                    "tps":  71
+                },
+                {
+                    "buildId":  "amd-mi50-32",
+                    "modelSize":  "14b",
+                    "tps":  38
+                },
+                {
+                    "buildId":  "amd-mi50-32",
+                    "modelSize":  "30b",
+                    "tps":  66
+                },
+                {
+                    "buildId":  "amd-mi50-32",
+                    "modelSize":  "70b",
+                    "tps":  null
+                },
+                {
+                    "buildId":  "amd-mi50-32",
+                    "modelSize":  "120b_moe",
+                    "tps":  null
+                },
+                {
+                    "buildId":  "amd-mi50-32",
+                    "modelSize":  "235b_moe",
+                    "tps":  null
+                },
+                {
+                    "buildId":  "amd-mi50-x4",
+                    "modelSize":  "8b",
+                    "tps":  72
+                },
+                {
+                    "buildId":  "amd-mi50-x4",
+                    "modelSize":  "14b",
+                    "tps":  50
+                },
+                {
+                    "buildId":  "amd-mi50-x4",
+                    "modelSize":  "30b",
+                    "tps":  50
+                },
+                {
+                    "buildId":  "amd-mi50-x4",
+                    "modelSize":  "70b",
+                    "tps":  35
+                },
+                {
+                    "buildId":  "amd-mi50-x4",
+                    "modelSize":  "120b_moe",
+                    "tps":  45
+                },
+                {
+                    "buildId":  "amd-mi50-x4",
+                    "modelSize":  "235b_moe",
+                    "tps":  null
+                },
+                {
+                    "buildId":  "tinybox-red",
+                    "modelSize":  "8b",
+                    "tps":  160
+                },
+                {
+                    "buildId":  "tinybox-red",
+                    "modelSize":  "14b",
+                    "tps":  95
+                },
+                {
+                    "buildId":  "tinybox-red",
+                    "modelSize":  "30b",
+                    "tps":  55
+                },
+                {
+                    "buildId":  "tinybox-red",
+                    "modelSize":  "70b",
+                    "tps":  28
+                },
+                {
+                    "buildId":  "tinybox-red",
+                    "modelSize":  "120b_moe",
+                    "tps":  80
+                },
+                {
+                    "buildId":  "tinybox-red",
+                    "modelSize":  "235b_moe",
+                    "tps":  null
+                },
+                {
+                    "buildId":  "tinybox-green",
+                    "modelSize":  "8b",
+                    "tps":  220
+                },
+                {
+                    "buildId":  "tinybox-green",
+                    "modelSize":  "14b",
+                    "tps":  130
+                },
+                {
+                    "buildId":  "tinybox-green",
+                    "modelSize":  "30b",
+                    "tps":  75
+                },
+                {
+                    "buildId":  "tinybox-green",
+                    "modelSize":  "70b",
+                    "tps":  38
+                },
+                {
+                    "buildId":  "tinybox-green",
+                    "modelSize":  "120b_moe",
+                    "tps":  110
+                },
+                {
+                    "buildId":  "tinybox-green",
+                    "modelSize":  "235b_moe",
+                    "tps":  60
+                },
+                {
+                    "buildId":  "tinybox-green-v2",
+                    "modelSize":  "8b",
+                    "tps":  260
+                },
+                {
+                    "buildId":  "tinybox-green-v2",
+                    "modelSize":  "14b",
+                    "tps":  170
+                },
+                {
+                    "buildId":  "tinybox-green-v2",
+                    "modelSize":  "30b",
+                    "tps":  110
+                },
+                {
+                    "buildId":  "tinybox-green-v2",
+                    "modelSize":  "70b",
+                    "tps":  60
+                },
+                {
+                    "buildId":  "tinybox-green-v2",
+                    "modelSize":  "120b_moe",
+                    "tps":  160
+                },
+                {
+                    "buildId":  "tinybox-green-v2",
+                    "modelSize":  "235b_moe",
+                    "tps":  70
+                },
+                {
+                    "buildId":  "tinybox-pro",
+                    "modelSize":  "8b",
+                    "tps":  250
+                },
+                {
+                    "buildId":  "tinybox-pro",
+                    "modelSize":  "14b",
+                    "tps":  160
+                },
+                {
+                    "buildId":  "tinybox-pro",
+                    "modelSize":  "30b",
+                    "tps":  95
+                },
+                {
+                    "buildId":  "tinybox-pro",
+                    "modelSize":  "70b",
+                    "tps":  50
+                },
+                {
+                    "buildId":  "tinybox-pro",
+                    "modelSize":  "120b_moe",
+                    "tps":  140
+                },
+                {
+                    "buildId":  "tinybox-pro",
+                    "modelSize":  "235b_moe",
+                    "tps":  80
+                }
+            ],
+    "image":  [
+                  {
+                      "buildId":  "mac-mini-m4-16",
+                      "imageModel":  "sdxl",
+                      "secondsPerImage":  7
+                  },
+                  {
+                      "buildId":  "mba-m4-16",
+                      "imageModel":  "sdxl",
+                      "secondsPerImage":  10
+                  },
+                  {
+                      "buildId":  "mac-mini-m4-24",
+                      "imageModel":  "sdxl",
+                      "secondsPerImage":  6
+                  },
+                  {
+                      "buildId":  "mbp-m4-pro-48",
+                      "imageModel":  "sdxl",
+                      "secondsPerImage":  5
+                  },
+                  {
+                      "buildId":  "mbp-m4-pro-48",
+                      "imageModel":  "flux",
+                      "secondsPerImage":  25
+                  },
+                  {
+                      "buildId":  "mbp-m4-max-64",
+                      "imageModel":  "sdxl",
+                      "secondsPerImage":  4
+                  },
+                  {
+                      "buildId":  "mbp-m4-max-64",
+                      "imageModel":  "flux",
+                      "secondsPerImage":  22
+                  },
+                  {
+                      "buildId":  "mac-studio-m4-max-128",
+                      "imageModel":  "sdxl",
+                      "secondsPerImage":  3
+                  },
+                  {
+                      "buildId":  "mac-studio-m4-max-128",
+                      "imageModel":  "flux",
+                      "secondsPerImage":  18
+                  },
+                  {
+                      "buildId":  "mac-studio-m3-ultra-256",
+                      "imageModel":  "sdxl",
+                      "secondsPerImage":  3
+                  },
+                  {
+                      "buildId":  "mac-studio-m3-ultra-256",
+                      "imageModel":  "flux",
+                      "secondsPerImage":  16
+                  },
+                  {
+                      "buildId":  "mac-studio-m3-ultra-512",
+                      "imageModel":  "sdxl",
+                      "secondsPerImage":  3
+                  },
+                  {
+                      "buildId":  "mac-studio-m3-ultra-512",
+                      "imageModel":  "flux",
+                      "secondsPerImage":  16
+                  },
+                  {
+                      "buildId":  "rtx-3060-12",
+                      "imageModel":  "sdxl",
+                      "secondsPerImage":  10
+                  },
+                  {
+                      "buildId":  "rtx-3090-24",
+                      "imageModel":  "sdxl",
+                      "secondsPerImage":  5
+                  },
+                  {
+                      "buildId":  "rtx-3090-24",
+                      "imageModel":  "flux",
+                      "secondsPerImage":  30
+                  },
+                  {
+                      "buildId":  "rtx-3090-x2",
+                      "imageModel":  "sdxl",
+                      "secondsPerImage":  5
+                  },
+                  {
+                      "buildId":  "rtx-3090-x2",
+                      "imageModel":  "flux",
+                      "secondsPerImage":  30
+                  },
+                  {
+                      "buildId":  "rtx-3090-x4",
+                      "imageModel":  "sdxl",
+                      "secondsPerImage":  5
+                  },
+                  {
+                      "buildId":  "rtx-3090-x4",
+                      "imageModel":  "flux",
+                      "secondsPerImage":  30
+                  },
+                  {
+                      "buildId":  "rtx-4090-24",
+                      "imageModel":  "sdxl",
+                      "secondsPerImage":  3.2
+                  },
+                  {
+                      "buildId":  "rtx-4090-24",
+                      "imageModel":  "flux",
+                      "secondsPerImage":  18
+                  },
+                  {
+                      "buildId":  "rtx-5090-32",
+                      "imageModel":  "sdxl",
+                      "secondsPerImage":  2.2
+                  },
+                  {
+                      "buildId":  "rtx-5090-32",
+                      "imageModel":  "flux",
+                      "secondsPerImage":  9
+                  },
+                  {
+                      "buildId":  "rtx-5090-x2",
+                      "imageModel":  "sdxl",
+                      "secondsPerImage":  2.2
+                  },
+                  {
+                      "buildId":  "rtx-5090-x2",
+                      "imageModel":  "flux",
+                      "secondsPerImage":  9
+                  },
+                  {
+                      "buildId":  "tesla-p40-24",
+                      "imageModel":  "sdxl",
+                      "secondsPerImage":  42
+                  },
+                  {
+                      "buildId":  "tesla-p40-x4",
+                      "imageModel":  "sdxl",
+                      "secondsPerImage":  42
+                  },
+                  {
+                      "buildId":  "tesla-p100-16",
+                      "imageModel":  "sdxl",
+                      "secondsPerImage":  30
+                  },
+                  {
+                      "buildId":  "tesla-v100-sxm2-mod",
+                      "imageModel":  "sdxl",
+                      "secondsPerImage":  12
+                  },
+                  {
+                      "buildId":  "intel-arc-pro-b70-32",
+                      "imageModel":  "sdxl",
+                      "secondsPerImage":  8
+                  },
+                  {
+                      "buildId":  "intel-arc-pro-b70-32",
+                      "imageModel":  "flux",
+                      "secondsPerImage":  30
+                  },
+                  {
+                      "buildId":  "intel-arc-pro-b70-x2",
+                      "imageModel":  "sdxl",
+                      "secondsPerImage":  8
+                  },
+                  {
+                      "buildId":  "intel-arc-pro-b70-x2",
+                      "imageModel":  "flux",
+                      "secondsPerImage":  30
+                  },
+                  {
+                      "buildId":  "intel-arc-pro-b70-x4",
+                      "imageModel":  "sdxl",
+                      "secondsPerImage":  8
+                  },
+                  {
+                      "buildId":  "intel-arc-pro-b70-x4",
+                      "imageModel":  "flux",
+                      "secondsPerImage":  30
+                  },
+                  {
+                      "buildId":  "intel-arc-pro-b70-x8",
+                      "imageModel":  "sdxl",
+                      "secondsPerImage":  8
+                  },
+                  {
+                      "buildId":  "intel-arc-pro-b70-x8",
+                      "imageModel":  "flux",
+                      "secondsPerImage":  30
+                  },
+                  {
+                      "buildId":  "intel-arc-b580-12",
+                      "imageModel":  "sdxl",
+                      "secondsPerImage":  10
+                  },
+                  {
+                      "buildId":  "strix-halo-128",
+                      "imageModel":  "sdxl",
+                      "secondsPerImage":  12
+                  },
+                  {
+                      "buildId":  "strix-halo-128",
+                      "imageModel":  "flux",
+                      "secondsPerImage":  60
+                  },
+                  {
+                      "buildId":  "strix-halo-x2",
+                      "imageModel":  "sdxl",
+                      "secondsPerImage":  12
+                  },
+                  {
+                      "buildId":  "strix-halo-x2",
+                      "imageModel":  "flux",
+                      "secondsPerImage":  60
+                  },
+                  {
+                      "buildId":  "dgx-spark-128",
+                      "imageModel":  "sdxl",
+                      "secondsPerImage":  4
+                  },
+                  {
+                      "buildId":  "dgx-spark-128",
+                      "imageModel":  "flux",
+                      "secondsPerImage":  25
+                  },
+                  {
+                      "buildId":  "dgx-spark-x2",
+                      "imageModel":  "sdxl",
+                      "secondsPerImage":  4
+                  },
+                  {
+                      "buildId":  "dgx-spark-x2",
+                      "imageModel":  "flux",
+                      "secondsPerImage":  25
+                  },
+                  {
+                      "buildId":  "dgx-spark-x4",
+                      "imageModel":  "sdxl",
+                      "secondsPerImage":  4
+                  },
+                  {
+                      "buildId":  "dgx-spark-x4",
+                      "imageModel":  "flux",
+                      "secondsPerImage":  25
+                  },
+                  {
+                      "buildId":  "msi-edgexpert-gb10",
+                      "imageModel":  "sdxl",
+                      "secondsPerImage":  4
+                  },
+                  {
+                      "buildId":  "msi-edgexpert-gb10",
+                      "imageModel":  "flux",
+                      "secondsPerImage":  25
+                  },
+                  {
+                      "buildId":  "asus-ascent-gx10",
+                      "imageModel":  "sdxl",
+                      "secondsPerImage":  4
+                  },
+                  {
+                      "buildId":  "asus-ascent-gx10",
+                      "imageModel":  "flux",
+                      "secondsPerImage":  25
+                  },
+                  {
+                      "buildId":  "dell-pro-max-gb10",
+                      "imageModel":  "sdxl",
+                      "secondsPerImage":  4
+                  },
+                  {
+                      "buildId":  "dell-pro-max-gb10",
+                      "imageModel":  "flux",
+                      "secondsPerImage":  25
+                  },
+                  {
+                      "buildId":  "lenovo-thinkstation-pgx",
+                      "imageModel":  "sdxl",
+                      "secondsPerImage":  4
+                  },
+                  {
+                      "buildId":  "lenovo-thinkstation-pgx",
+                      "imageModel":  "flux",
+                      "secondsPerImage":  25
+                  },
+                  {
+                      "buildId":  "h100-80",
+                      "imageModel":  "sdxl",
+                      "secondsPerImage":  1.5
+                  },
+                  {
+                      "buildId":  "h100-80",
+                      "imageModel":  "flux",
+                      "secondsPerImage":  5
+                  },
+                  {
+                      "buildId":  "h100-x8",
+                      "imageModel":  "sdxl",
+                      "secondsPerImage":  1.5
+                  },
+                  {
+                      "buildId":  "h100-x8",
+                      "imageModel":  "flux",
+                      "secondsPerImage":  5
+                  },
+                  {
+                      "buildId":  "rtx-a6000-48",
+                      "imageModel":  "sdxl",
+                      "secondsPerImage":  4.5
+                  },
+                  {
+                      "buildId":  "rtx-a6000-48",
+                      "imageModel":  "flux",
+                      "secondsPerImage":  22
+                  },
+                  {
+                      "buildId":  "rtx-6000-ada-48",
+                      "imageModel":  "sdxl",
+                      "secondsPerImage":  3
+                  },
+                  {
+                      "buildId":  "rtx-6000-ada-48",
+                      "imageModel":  "flux",
+                      "secondsPerImage":  12
+                  },
+                  {
+                      "buildId":  "rtx-pro-6000-blackwell-96",
+                      "imageModel":  "sdxl",
+                      "secondsPerImage":  2
+                  },
+                  {
+                      "buildId":  "rtx-pro-6000-blackwell-96",
+                      "imageModel":  "flux",
+                      "secondsPerImage":  8
+                  },
+                  {
+                      "buildId":  "rtx-pro-6000-blackwell-x2",
+                      "imageModel":  "sdxl",
+                      "secondsPerImage":  1.8
+                  },
+                  {
+                      "buildId":  "rtx-pro-6000-blackwell-x2",
+                      "imageModel":  "flux",
+                      "secondsPerImage":  7
+                  },
+                  {
+                      "buildId":  "amd-w7900-48",
+                      "imageModel":  "sdxl",
+                      "secondsPerImage":  7
+                  },
+                  {
+                      "buildId":  "amd-w7900-48",
+                      "imageModel":  "flux",
+                      "secondsPerImage":  35
+                  },
+                  {
+                      "buildId":  "amd-w7900-x2",
+                      "imageModel":  "sdxl",
+                      "secondsPerImage":  7
+                  },
+                  {
+                      "buildId":  "amd-w7900-x2",
+                      "imageModel":  "flux",
+                      "secondsPerImage":  35
+                  },
+                  {
+                      "buildId":  "amd-w7800-32",
+                      "imageModel":  "sdxl",
+                      "secondsPerImage":  14
+                  },
+                  {
+                      "buildId":  "amd-w7800-32",
+                      "imageModel":  "flux",
+                      "secondsPerImage":  32
+                  },
+                  {
+                      "buildId":  "amd-r9700-32",
+                      "imageModel":  "sdxl",
+                      "secondsPerImage":  6
+                  },
+                  {
+                      "buildId":  "amd-r9700-32",
+                      "imageModel":  "flux",
+                      "secondsPerImage":  28
+                  },
+                  {
+                      "buildId":  "amd-r9700-x2",
+                      "imageModel":  "sdxl",
+                      "secondsPerImage":  6
+                  },
+                  {
+                      "buildId":  "amd-r9700-x2",
+                      "imageModel":  "flux",
+                      "secondsPerImage":  28
+                  },
+                  {
+                      "buildId":  "amd-mi300x-192",
+                      "imageModel":  "sdxl",
+                      "secondsPerImage":  1.8
+                  },
+                  {
+                      "buildId":  "amd-mi300x-192",
+                      "imageModel":  "flux",
+                      "secondsPerImage":  6
+                  },
+                  {
+                      "buildId":  "amd-mi50-32",
+                      "imageModel":  "sdxl",
+                      "secondsPerImage":  18
+                  },
+                  {
+                      "buildId":  "amd-mi50-x4",
+                      "imageModel":  "sdxl",
+                      "secondsPerImage":  18
+                  },
+                  {
+                      "buildId":  "amd-mi50-x4",
+                      "imageModel":  "flux",
+                      "secondsPerImage":  60
+                  },
+                  {
+                      "buildId":  "tinybox-red",
+                      "imageModel":  "sdxl",
+                      "secondsPerImage":  8
+                  },
+                  {
+                      "buildId":  "tinybox-red",
+                      "imageModel":  "flux",
+                      "secondsPerImage":  40
+                  },
+                  {
+                      "buildId":  "tinybox-green",
+                      "imageModel":  "sdxl",
+                      "secondsPerImage":  3.2
+                  },
+                  {
+                      "buildId":  "tinybox-green",
+                      "imageModel":  "flux",
+                      "secondsPerImage":  18
+                  },
+                  {
+                      "buildId":  "tinybox-green-v2",
+                      "imageModel":  "sdxl",
+                      "secondsPerImage":  2.2
+                  },
+                  {
+                      "buildId":  "tinybox-green-v2",
+                      "imageModel":  "flux",
+                      "secondsPerImage":  9
+                  },
+                  {
+                      "buildId":  "tinybox-pro",
+                      "imageModel":  "sdxl",
+                      "secondsPerImage":  3
+                  },
+                  {
+                      "buildId":  "tinybox-pro",
+                      "imageModel":  "flux",
+                      "secondsPerImage":  18
+                  }
+              ],
+    "video":  [
+                  {
+                      "buildId":  "mbp-m4-pro-48",
+                      "videoModel":  "ltx",
+                      "secondsPer5sClip":  900
+                  },
+                  {
+                      "buildId":  "mbp-m4-max-64",
+                      "videoModel":  "ltx",
+                      "secondsPer5sClip":  700
+                  },
+                  {
+                      "buildId":  "mac-studio-m4-max-128",
+                      "videoModel":  "ltx",
+                      "secondsPer5sClip":  600
+                  },
+                  {
+                      "buildId":  "mac-studio-m3-ultra-256",
+                      "videoModel":  "ltx",
+                      "secondsPer5sClip":  500
+                  },
+                  {
+                      "buildId":  "mac-studio-m3-ultra-512",
+                      "videoModel":  "ltx",
+                      "secondsPer5sClip":  500
+                  },
+                  {
+                      "buildId":  "rtx-3060-12",
+                      "videoModel":  "ltx",
+                      "secondsPer5sClip":  540
+                  },
+                  {
+                      "buildId":  "rtx-3090-24",
+                      "videoModel":  "ltx",
+                      "secondsPer5sClip":  180
+                  },
+                  {
+                      "buildId":  "rtx-3090-24",
+                      "videoModel":  "wan22",
+                      "secondsPer5sClip":  600
+                  },
+                  {
+                      "buildId":  "rtx-3090-x2",
+                      "videoModel":  "ltx",
+                      "secondsPer5sClip":  180
+                  },
+                  {
+                      "buildId":  "rtx-3090-x2",
+                      "videoModel":  "wan22",
+                      "secondsPer5sClip":  480
+                  },
+                  {
+                      "buildId":  "rtx-3090-x4",
+                      "videoModel":  "ltx",
+                      "secondsPer5sClip":  180
+                  },
+                  {
+                      "buildId":  "rtx-3090-x4",
+                      "videoModel":  "wan22",
+                      "secondsPer5sClip":  480
+                  },
+                  {
+                      "buildId":  "rtx-4090-24",
+                      "videoModel":  "ltx",
+                      "secondsPer5sClip":  90
+                  },
+                  {
+                      "buildId":  "rtx-4090-24",
+                      "videoModel":  "wan22",
+                      "secondsPer5sClip":  270
+                  },
+                  {
+                      "buildId":  "rtx-5090-32",
+                      "videoModel":  "ltx",
+                      "secondsPer5sClip":  60
+                  },
+                  {
+                      "buildId":  "rtx-5090-32",
+                      "videoModel":  "wan22",
+                      "secondsPer5sClip":  180
+                  },
+                  {
+                      "buildId":  "rtx-5090-x2",
+                      "videoModel":  "ltx",
+                      "secondsPer5sClip":  60
+                  },
+                  {
+                      "buildId":  "rtx-5090-x2",
+                      "videoModel":  "wan22",
+                      "secondsPer5sClip":  180
+                  },
+                  {
+                      "buildId":  "rtx-5090-x2",
+                      "videoModel":  "hyv",
+                      "secondsPer5sClip":  540
+                  },
+                  {
+                      "buildId":  "tesla-v100-sxm2-mod",
+                      "videoModel":  "ltx",
+                      "secondsPer5sClip":  200
+                  },
+                  {
+                      "buildId":  "intel-arc-pro-b70-x2",
+                      "videoModel":  "ltx",
+                      "secondsPer5sClip":  200
+                  },
+                  {
+                      "buildId":  "intel-arc-pro-b70-x4",
+                      "videoModel":  "ltx",
+                      "secondsPer5sClip":  200
+                  },
+                  {
+                      "buildId":  "intel-arc-pro-b70-x8",
+                      "videoModel":  "ltx",
+                      "secondsPer5sClip":  200
+                  },
+                  {
+                      "buildId":  "strix-halo-128",
+                      "videoModel":  "ltx",
+                      "secondsPer5sClip":  600
+                  },
+                  {
+                      "buildId":  "strix-halo-128",
+                      "videoModel":  "wan22",
+                      "secondsPer5sClip":  1800
+                  },
+                  {
+                      "buildId":  "strix-halo-x2",
+                      "videoModel":  "ltx",
+                      "secondsPer5sClip":  600
+                  },
+                  {
+                      "buildId":  "strix-halo-x2",
+                      "videoModel":  "wan22",
+                      "secondsPer5sClip":  1800
+                  },
+                  {
+                      "buildId":  "dgx-spark-128",
+                      "videoModel":  "ltx",
+                      "secondsPer5sClip":  180
+                  },
+                  {
+                      "buildId":  "dgx-spark-128",
+                      "videoModel":  "wan22",
+                      "secondsPer5sClip":  600
+                  },
+                  {
+                      "buildId":  "dgx-spark-x2",
+                      "videoModel":  "ltx",
+                      "secondsPer5sClip":  180
+                  },
+                  {
+                      "buildId":  "dgx-spark-x2",
+                      "videoModel":  "wan22",
+                      "secondsPer5sClip":  600
+                  },
+                  {
+                      "buildId":  "dgx-spark-x4",
+                      "videoModel":  "ltx",
+                      "secondsPer5sClip":  180
+                  },
+                  {
+                      "buildId":  "dgx-spark-x4",
+                      "videoModel":  "wan22",
+                      "secondsPer5sClip":  600
+                  },
+                  {
+                      "buildId":  "dgx-spark-x4",
+                      "videoModel":  "hyv",
+                      "secondsPer5sClip":  720
+                  },
+                  {
+                      "buildId":  "msi-edgexpert-gb10",
+                      "videoModel":  "ltx",
+                      "secondsPer5sClip":  180
+                  },
+                  {
+                      "buildId":  "msi-edgexpert-gb10",
+                      "videoModel":  "wan22",
+                      "secondsPer5sClip":  600
+                  },
+                  {
+                      "buildId":  "asus-ascent-gx10",
+                      "videoModel":  "ltx",
+                      "secondsPer5sClip":  180
+                  },
+                  {
+                      "buildId":  "asus-ascent-gx10",
+                      "videoModel":  "wan22",
+                      "secondsPer5sClip":  600
+                  },
+                  {
+                      "buildId":  "dell-pro-max-gb10",
+                      "videoModel":  "ltx",
+                      "secondsPer5sClip":  180
+                  },
+                  {
+                      "buildId":  "dell-pro-max-gb10",
+                      "videoModel":  "wan22",
+                      "secondsPer5sClip":  600
+                  },
+                  {
+                      "buildId":  "lenovo-thinkstation-pgx",
+                      "videoModel":  "ltx",
+                      "secondsPer5sClip":  180
+                  },
+                  {
+                      "buildId":  "lenovo-thinkstation-pgx",
+                      "videoModel":  "wan22",
+                      "secondsPer5sClip":  600
+                  },
+                  {
+                      "buildId":  "h100-80",
+                      "videoModel":  "ltx",
+                      "secondsPer5sClip":  30
+                  },
+                  {
+                      "buildId":  "h100-80",
+                      "videoModel":  "wan22",
+                      "secondsPer5sClip":  90
+                  },
+                  {
+                      "buildId":  "h100-80",
+                      "videoModel":  "hyv",
+                      "secondsPer5sClip":  600
+                  },
+                  {
+                      "buildId":  "h100-x8",
+                      "videoModel":  "ltx",
+                      "secondsPer5sClip":  30
+                  },
+                  {
+                      "buildId":  "h100-x8",
+                      "videoModel":  "wan22",
+                      "secondsPer5sClip":  90
+                  },
+                  {
+                      "buildId":  "h100-x8",
+                      "videoModel":  "hyv",
+                      "secondsPer5sClip":  360
+                  },
+                  {
+                      "buildId":  "rtx-a6000-48",
+                      "videoModel":  "ltx",
+                      "secondsPer5sClip":  110
+                  },
+                  {
+                      "buildId":  "rtx-a6000-48",
+                      "videoModel":  "wan22",
+                      "secondsPer5sClip":  360
+                  },
+                  {
+                      "buildId":  "rtx-6000-ada-48",
+                      "videoModel":  "ltx",
+                      "secondsPer5sClip":  80
+                  },
+                  {
+                      "buildId":  "rtx-6000-ada-48",
+                      "videoModel":  "wan22",
+                      "secondsPer5sClip":  240
+                  },
+                  {
+                      "buildId":  "rtx-pro-6000-blackwell-96",
+                      "videoModel":  "ltx",
+                      "secondsPer5sClip":  50
+                  },
+                  {
+                      "buildId":  "rtx-pro-6000-blackwell-96",
+                      "videoModel":  "wan22",
+                      "secondsPer5sClip":  150
+                  },
+                  {
+                      "buildId":  "rtx-pro-6000-blackwell-96",
+                      "videoModel":  "hyv",
+                      "secondsPer5sClip":  600
+                  },
+                  {
+                      "buildId":  "rtx-pro-6000-blackwell-x2",
+                      "videoModel":  "ltx",
+                      "secondsPer5sClip":  45
+                  },
+                  {
+                      "buildId":  "rtx-pro-6000-blackwell-x2",
+                      "videoModel":  "wan22",
+                      "secondsPer5sClip":  130
+                  },
+                  {
+                      "buildId":  "rtx-pro-6000-blackwell-x2",
+                      "videoModel":  "hyv",
+                      "secondsPer5sClip":  420
+                  },
+                  {
+                      "buildId":  "amd-w7900-48",
+                      "videoModel":  "ltx",
+                      "secondsPer5sClip":  200
+                  },
+                  {
+                      "buildId":  "amd-w7900-48",
+                      "videoModel":  "wan22",
+                      "secondsPer5sClip":  600
+                  },
+                  {
+                      "buildId":  "amd-w7900-x2",
+                      "videoModel":  "ltx",
+                      "secondsPer5sClip":  200
+                  },
+                  {
+                      "buildId":  "amd-w7900-x2",
+                      "videoModel":  "wan22",
+                      "secondsPer5sClip":  600
+                  },
+                  {
+                      "buildId":  "amd-w7800-32",
+                      "videoModel":  "ltx",
+                      "secondsPer5sClip":  280
+                  },
+                  {
+                      "buildId":  "amd-r9700-32",
+                      "videoModel":  "ltx",
+                      "secondsPer5sClip":  240
+                  },
+                  {
+                      "buildId":  "amd-r9700-x2",
+                      "videoModel":  "ltx",
+                      "secondsPer5sClip":  240
+                  },
+                  {
+                      "buildId":  "amd-mi300x-192",
+                      "videoModel":  "ltx",
+                      "secondsPer5sClip":  35
+                  },
+                  {
+                      "buildId":  "amd-mi300x-192",
+                      "videoModel":  "wan22",
+                      "secondsPer5sClip":  100
+                  },
+                  {
+                      "buildId":  "amd-mi300x-192",
+                      "videoModel":  "hyv",
+                      "secondsPer5sClip":  480
+                  },
+                  {
+                      "buildId":  "amd-mi50-x4",
+                      "videoModel":  "ltx",
+                      "secondsPer5sClip":  240
+                  },
+                  {
+                      "buildId":  "tinybox-red",
+                      "videoModel":  "ltx",
+                      "secondsPer5sClip":  240
+                  },
+                  {
+                      "buildId":  "tinybox-red",
+                      "videoModel":  "wan22",
+                      "secondsPer5sClip":  720
+                  },
+                  {
+                      "buildId":  "tinybox-green",
+                      "videoModel":  "ltx",
+                      "secondsPer5sClip":  90
+                  },
+                  {
+                      "buildId":  "tinybox-green",
+                      "videoModel":  "wan22",
+                      "secondsPer5sClip":  270
+                  },
+                  {
+                      "buildId":  "tinybox-green",
+                      "videoModel":  "hyv",
+                      "secondsPer5sClip":  600
+                  },
+                  {
+                      "buildId":  "tinybox-green-v2",
+                      "videoModel":  "ltx",
+                      "secondsPer5sClip":  60
+                  },
+                  {
+                      "buildId":  "tinybox-green-v2",
+                      "videoModel":  "wan22",
+                      "secondsPer5sClip":  180
+                  },
+                  {
+                      "buildId":  "tinybox-green-v2",
+                      "videoModel":  "hyv",
+                      "secondsPer5sClip":  480
+                  },
+                  {
+                      "buildId":  "tinybox-pro",
+                      "videoModel":  "ltx",
+                      "secondsPer5sClip":  90
+                  },
+                  {
+                      "buildId":  "tinybox-pro",
+                      "videoModel":  "wan22",
+                      "secondsPer5sClip":  270
+                  },
+                  {
+                      "buildId":  "tinybox-pro",
+                      "videoModel":  "hyv",
+                      "secondsPer5sClip":  360
+                  }
+              ],
+    "sources":  [
+                    {
+                        "label":  "RTX 5090 LLM benchmarks (Hardware Corner)",
+                        "url":  "https://www.hardware-corner.net/rtx-5090-llm-benchmarks/"
+                    },
+                    {
+                        "label":  "RTX 5090 vs DGX Spark vs AMD (InsiderLLM)",
+                        "url":  "https://insiderllm.com/guides/rtx-5090-local-ai-benchmarks/"
+                    },
+                    {
+                        "label":  "DGX Spark llama.cpp performance (GitHub)",
+                        "url":  "https://github.com/ggml-org/llama.cpp/discussions/16578"
+                    },
+                    {
+                        "label":  "DGX Spark review + benchmark (Reddit)",
+                        "url":  "https://www.reddit.com/r/LocalLLaMA/comments/1o6163l/dgx_spark_review_with_benchmark/"
+                    },
+                    {
+                        "label":  "Strix Halo / Ryzen AI Max+ 395 LLM bench (Reddit)",
+                        "url":  "https://www.reddit.com/r/LocalLLaMA/comments/1m6b151/updated_strix_halo_ryzen_ai_max_395_llm_benchmark/"
+                    },
+                    {
+                        "label":  "Strix Halo benchmark results (Level1Techs)",
+                        "url":  "https://forum.level1techs.com/t/strix-halo-ryzen-ai-max-395-llm-benchmark-results/233796"
+                    },
+                    {
+                        "label":  "What to buy for local LLMs, April 2026 (Julien Simon)",
+                        "url":  "https://julsimon.medium.com/what-to-buy-for-local-llms-april-2026-a4946a381a6a"
+                    },
+                    {
+                        "label":  "Apple Silicon llama.cpp performance",
+                        "url":  "https://github.com/ggml-org/llama.cpp/discussions/4167"
+                    },
+                    {
+                        "label":  "Intel Arc Pro B70 benchmarks (GitHub)",
+                        "url":  "https://github.com/PMZFX/intel-arc-pro-b70-benchmarks"
+                    },
+                    {
+                        "label":  "Arc Pro B70 review (CraftRigs)",
+                        "url":  "https://craftrigs.com/articles/intel-arc-pro-b70-specs-27b-models/"
+                    },
+                    {
+                        "label":  "GPU idle power (Level1Techs)",
+                        "url":  "https://forum.level1techs.com/t/some-gpu-5090-4090-3090-a600-idle-power-consumption-headless-on-linux-fedora-42-and-some-undervolt-overclock-info/237064"
+                    },
+                    {
+                        "label":  "Best open source LLMs 2026 (Techsy)",
+                        "url":  "https://techsy.io/en/blog/best-open-source-llms-2026"
+                    },
+                    {
+                        "label":  "Best open source LLMs (BenchLM)",
+                        "url":  "https://benchlm.ai/blog/posts/best-open-source-llm"
+                    },
+                    {
+                        "label":  "RTX Pro 6000 Blackwell review (StorageReview)",
+                        "url":  "https://www.storagereview.com/review/nvidia-rtx-pro-6000-workstation-gpu-review-blackwell-architecture-and-96-gb-for-pro-workflows"
+                    },
+                    {
+                        "label":  "RTX Pro 6000 96GB local AI review",
+                        "url":  "https://www.compute-market.com/blog/rtx-pro-6000-96gb-local-ai-review-2026"
+                    },
+                    {
+                        "label":  "AMD W7900 48GB beats RTX 4090 (Tom\u0027s Hardware)",
+                        "url":  "https://www.tomshardware.com/pc-components/gpus/amd-rdna-3-professional-gpus-with-48gb-can-beat-nvidia-24gb-cards-in-ai-putting-the-large-in-llm"
+                    },
+                    {
+                        "label":  "AMD MI300X testing (Chips and Cheese)",
+                        "url":  "https://chipsandcheese.com/p/testing-amds-giant-mi300x"
+                    },
+                    {
+                        "label":  "Local 405B on 3Ã— DGX Spark (Reddit)",
+                        "url":  "https://www.reddit.com/r/LocalLLaMA/comments/1lpi0mn/local_405b_model_on_3_dgx_spark_units/"
+                    },
+                    {
+                        "label":  "DGX Spark in-depth review (LMSYS)",
+                        "url":  "https://www.lmsys.org/blog/2025-10-13-nvidia-dgx-spark/"
+                    },
+                    {
+                        "label":  "GLM-5.1 model card (HuggingFace)",
+                        "url":  "https://huggingface.co/zai-org/GLM-5.1"
+                    },
+                    {
+                        "label":  "Unsloth Kimi K2 / DeepSeek V3 GGUF (Q2 sizes)",
+                        "url":  "https://unsloth.ai/docs/models/kimi-k2-thinking-how-to-run-locally"
+                    },
+                    {
+                        "label":  "tinygrad / Tinybox specs",
+                        "url":  "https://docs.tinygrad.org/tinybox/"
+                    },
+                    {
+                        "label":  "Tinybox 120B inference benchmarks",
+                        "url":  "https://dev.to/onsen/tinybox-the-offline-ai-device-running-120b-parameters-548"
+                    },
+                    {
+                        "label":  "SWE-rebench leaderboard (small-model agent reality check)",
+                        "url":  "https://swe-rebench.com/"
+                    },
+                    {
+                        "label":  "SWE-Bench Pro leaderboard (open vs frontier gap)",
+                        "url":  "https://llm-stats.com/benchmarks/swe-bench-pro"
+                    },
+                    {
+                        "label":  "Terminal-Bench 2.0 results (BenchLM)",
+                        "url":  "https://benchlm.ai/benchmarks/terminalBench2"
+                    },
+                    {
+                        "label":  "NVIDIA dual-Spark playbook (CUDA cluster benchmarks)",
+                        "url":  "https://github.com/NVIDIA/dgx-spark-playbooks/blob/main/nvidia/connect-two-sparks/assets/performance_benchmarking_guide.md"
+                    },
+                    {
+                        "label":  "Will It Run AI â€” Video generation VRAM 2026",
+                        "url":  "https://willitrunai.com/blog/video-generation-gpu-guide-2026"
+                    },
+                    {
+                        "label":  "Local AI Video Generation: Wan / LTX / Hunyuan",
+                        "url":  "https://localaimaster.com/blog/local-ai-video-generation"
+                    },
+                    {
+                        "label":  "ComfyUI Flux Dev FP8 5090/4090/3090 benchmarks",
+                        "url":  "https://github.com/Comfy-Org/ComfyUI/discussions/9002"
+                    },
+                    {
+                        "label":  "FormulaMod â€” RTX 5090 / 4090 / 3090 SDXL+Flux benchmarks",
+                        "url":  "https://www.formulamod.net/blogs/new/best-gpu-for-stable-diffusion-and-flux-in-2026-rtx-4060-ti-vs-3090-vs-4090-vs-5090-benchmarks"
+                    },
+                    {
+                        "label":  "Spheron â€” ComfyUI cloud GPU 2026 (RTX 5090 vs H100)",
+                        "url":  "https://www.spheron.network/blog/comfyui-gpu-cloud-2026/"
+                    },
+                    {
+                        "label":  "Qwen 3.6-35B-A3B announcement (Apr 2026)",
+                        "url":  "https://qwen.ai/blog?id=qwen3.6-35b-a3b"
+                    },
+                    {
+                        "label":  "Qwen 3.6-35B-A3B model card (Hugging Face)",
+                        "url":  "https://huggingface.co/Qwen/Qwen3.6-35B-A3B"
+                    },
+                    {
+                        "label":  "RTX 5090 price tracker May 2026",
+                        "url":  "https://bestvaluegpu.com/history/new-and-used-rtx-5090-price-history-and-specs/"
+                    },
+                    {
+                        "label":  "Strix Halo mini-PC price hike (Tom\u0027s Hardware, May 2026)",
+                        "url":  "https://www.tomshardware.com/desktops/mini-pcs/corsairs-strix-halo-ai-workstation-300-gets-even-more-expensive-amid-the-rampocalypse-ryzen-ai-max-395-flagship-now-sits-at-usd3-399"
+                    },
+                    {
+                        "label":  "RTX Pro 6000 Blackwell street pricing (Thunder Compute, May 2026)",
+                        "url":  "https://www.thundercompute.com/blog/nvidia-rtx-pro-6000-pricing"
+                    },
+                    {
+                        "label":  "MLX-Video â€” Mac LTX-Video on Apple Silicon",
+                        "url":  "https://github.com/Blaizzy/mlx-video"
+                    },
+                    {
+                        "label":  "Qwen 3.6-27B dense model card (Apr 2026)",
+                        "url":  "https://huggingface.co/Qwen/Qwen3.6-27B"
+                    },
+                    {
+                        "label":  "MiniMax M2.7 announcement (Apr 2026)",
+                        "url":  "https://www.minimax.io/news/minimax-m27-en"
+                    },
+                    {
+                        "label":  "MiniMax M2.7 on Hugging Face",
+                        "url":  "https://huggingface.co/MiniMaxAI/MiniMax-M2.7"
+                    },
+                    {
+                        "label":  "Tencent Hy3-preview model card (Apr 2026)",
+                        "url":  "https://huggingface.co/tencent/Hy3-preview"
+                    },
+                    {
+                        "label":  "Mistral Medium 3.5 128B model card (Apr 2026)",
+                        "url":  "https://huggingface.co/mistralai/Mistral-Medium-3.5-128B"
+                    },
+                    {
+                        "label":  "HiDream-O1-Image (May 2026, MIT, pixel-space transformer)",
+                        "url":  "https://huggingface.co/HiDream-ai/HiDream-O1-Image"
+                    },
+                    {
+                        "label":  "HunyuanVideo 1.5 native ComfyUI support",
+                        "url":  "https://blog.comfy.org/p/hunyuanvideo-15-native-support"
+                    },
+                    {
+                        "label":  "Wan2GP â€” 1080 p WAN 2.2 in 16 GB VRAM",
+                        "url":  "https://github.com/deepbeepmeep/Wan2GP"
+                    },
+                    {
+                        "label":  "Apple Mac Studio M3 Ultra 512 GB pulled (Tom\u0027s Hardware, Mar 2026)",
+                        "url":  "https://www.tomshardware.com/tech-industry/apple-pulls-512-mac-studio-upgrade-option"
+                    },
+                    {
+                        "label":  "Apple introduces M5 Pro and M5 Max MacBook Pro (Mar 2026)",
+                        "url":  "https://www.apple.com/newsroom/2026/03/apple-introduces-macbook-pro-with-all-new-m5-pro-and-m5-max/"
+                    },
+                    {
+                        "label":  "DGX Spark MSRP raised to $4,699 (NVIDIA Dev Forums, Feb 2026)",
+                        "url":  "https://forums.developer.nvidia.com/t/2-23-2026-price-change-announcement/361713"
+                    },
+                    {
+                        "label":  "Corsair AI Workstation 300 price hike (VideoCardz, Apr 2026)",
+                        "url":  "https://videocardz.com/newz/corsair-quietly-increases-amd-strix-halo-pc-price-by-1100-for-flagship-sku"
+                    }
+                ]
+}
