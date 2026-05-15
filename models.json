@@ -1,1221 +1,1221 @@
 {
-    "$schema":  "https://json-schema.org/draft-07/schema#",
-    "_description":  "LLM model catalog with ratings and VRAM requirements. See README.md for schema.",
-    "_lastUpdated":  "2026-05-14",
-    "_count":  44,
-    "models":  [
-                   {
-                       "id":  "qwen3-8b",
-                       "name":  "Qwen 3 8B",
-                       "family":  "Qwen",
-                       "params":  8,
-                       "type":  "dense",
-                       "modality":  "text",
-                       "sizeQ4":  5,
-                       "vramMinQ4":  8,
-                       "vramComfortQ4":  12,
-                       "ratings":  {
-                                       "chat":  4,
-                                       "coding":  2,
-                                       "agents":  1,
-                                       "reasoning":  2,
-                                       "longContext":  3,
-                                       "vision":  0
-                                   },
-                       "tags":  [
-                                    "small",
-                                    "fast",
-                                    "general"
-                                ],
-                       "blurb":  "Snappy 8B daily driver. Fine for chat; not an agent â€” fails multi-step tool loops in practice.",
-                       "license":  "Apache 2.0",
-                       "huggingface":  "https://huggingface.co/Qwen/Qwen3-8B"
-                   },
-                   {
-                       "id":  "llama31-8b",
-                       "name":  "Llama 3.1 8B",
-                       "family":  "Llama",
-                       "params":  8,
-                       "type":  "dense",
-                       "modality":  "text",
-                       "sizeQ4":  5,
-                       "vramMinQ4":  8,
-                       "vramComfortQ4":  12,
-                       "ratings":  {
-                                       "chat":  4,
-                                       "coding":  2,
-                                       "agents":  1,
-                                       "reasoning":  2,
-                                       "longContext":  3,
-                                       "vision":  0
-                                   },
-                       "tags":  [
-                                    "small",
-                                    "fast"
-                                ],
-                       "blurb":  "Meta\u0027s stalwart 8B with 128 K context. Reliable for chat; do not expect agent reliability.",
-                       "license":  "Llama 3.1 Community",
-                       "huggingface":  "https://huggingface.co/meta-llama/Llama-3.1-8B-Instruct"
-                   },
-                   {
-                       "id":  "phi4-14b",
-                       "name":  "Phi-4 14B",
-                       "family":  "Phi",
-                       "params":  14,
-                       "type":  "dense",
-                       "modality":  "text",
-                       "sizeQ4":  8,
-                       "vramMinQ4":  12,
-                       "vramComfortQ4":  16,
-                       "ratings":  {
-                                       "chat":  4,
-                                       "coding":  3,
-                                       "agents":  1,
-                                       "reasoning":  4,
-                                       "longContext":  2,
-                                       "vision":  0
-                                   },
-                       "tags":  [
-                                    "small-medium",
-                                    "reasoning"
-                                ],
-                       "blurb":  "Microsoft\u0027s 14 B is a math/reasoning specialist (~56 GPQA). Don\u0027t use it for agent loops.",
-                       "license":  "MIT",
-                       "huggingface":  "https://huggingface.co/microsoft/phi-4"
-                   },
-                   {
-                       "id":  "mistral-small3-24b",
-                       "name":  "Mistral Small 3 24B",
-                       "family":  "Mistral",
-                       "params":  24,
-                       "type":  "dense",
-                       "modality":  "text",
-                       "sizeQ4":  14,
-                       "vramMinQ4":  16,
-                       "vramComfortQ4":  20,
-                       "ratings":  {
-                                       "chat":  4,
-                                       "coding":  3,
-                                       "agents":  1,
-                                       "reasoning":  3,
-                                       "longContext":  3,
-                                       "vision":  0
-                                   },
-                       "tags":  [
-                                    "medium"
-                                ],
-                       "blurb":  "Apache-licensed all-rounder. Sweet spot on a single 24 GB card; not viable for agentic work.",
-                       "license":  "Apache 2.0",
-                       "huggingface":  "https://huggingface.co/mistralai/Mistral-Small-3.1-24B-Instruct-2503"
-                   },
-                   {
-                       "id":  "gemma3-27b",
-                       "name":  "Gemma 3 27B",
-                       "family":  "Gemma",
-                       "params":  27,
-                       "type":  "dense",
-                       "modality":  "text",
-                       "sizeQ4":  16,
-                       "vramMinQ4":  20,
-                       "vramComfortQ4":  24,
-                       "ratings":  {
-                                       "chat":  4,
-                                       "coding":  3,
-                                       "agents":  1,
-                                       "reasoning":  3,
-                                       "longContext":  3,
-                                       "vision":  4
-                                   },
-                       "tags":  [
-                                    "medium",
-                                    "vision"
-                                ],
-                       "blurb":  "Google\u0027s vision-capable 27 B. Strong at OCR + chat; not an agent driver.",
-                       "license":  "Gemma",
-                       "huggingface":  "https://huggingface.co/google/gemma-3-27b-it"
-                   },
-                   {
-                       "id":  "qwen3-32b",
-                       "name":  "Qwen 3 32B",
-                       "family":  "Qwen",
-                       "params":  32,
-                       "type":  "dense",
-                       "modality":  "text",
-                       "sizeQ4":  19,
-                       "vramMinQ4":  22,
-                       "vramComfortQ4":  28,
-                       "ratings":  {
-                                       "chat":  4,
-                                       "coding":  3,
-                                       "agents":  2,
-                                       "reasoning":  4,
-                                       "longContext":  3,
-                                       "vision":  0
-                                   },
-                       "tags":  [
-                                    "medium-large"
-                                ],
-                       "blurb":  "Strong general-purpose dense 32 B with thinking variant. Marginal agent â€” fails multi-step tool calls often.",
-                       "license":  "Apache 2.0",
-                       "huggingface":  "https://huggingface.co/Qwen/Qwen3-32B"
-                   },
-                   {
-                       "id":  "qwen3-coder-30b",
-                       "name":  "Qwen 3 Coder 30B",
-                       "family":  "Qwen",
-                       "params":  30,
-                       "type":  "dense",
-                       "modality":  "text",
-                       "sizeQ4":  18,
-                       "vramMinQ4":  22,
-                       "vramComfortQ4":  28,
-                       "ratings":  {
-                                       "chat":  3,
-                                       "coding":  3,
-                                       "agents":  2,
-                                       "reasoning":  3,
-                                       "longContext":  4,
-                                       "vision":  0
-                                   },
-                       "tags":  [
-                                    "coding",
-                                    "legacy"
-                                ],
-                       "blurb":  "Solid local coder for autocomplete + small-PR work. Now bracketed by Qwen 3.6-27B dense (better quality) and Qwen 3.6-35B-A3B MoE (better speed) â€” kept for users still on it.",
-                       "license":  "Apache 2.0",
-                       "huggingface":  "https://huggingface.co/Qwen/Qwen3-Coder-30B-A3B-Instruct"
-                   },
-                   {
-                       "id":  "qwen3-6-35b-a3b-moe",
-                       "name":  "Qwen 3.6 35B-A3B (MoE)",
-                       "family":  "Qwen",
-                       "params":  35,
-                       "activeParams":  3,
-                       "type":  "moe",
-                       "modality":  "text",
-                       "sizeQ4":  18,
-                       "vramMinQ4":  22,
-                       "vramComfortQ4":  28,
-                       "ratings":  {
-                                       "chat":  4,
-                                       "coding":  5,
-                                       "agents":  3,
-                                       "reasoning":  4,
-                                       "longContext":  5,
-                                       "vision":  0
-                                   },
-                       "tags":  [
-                                    "moe",
-                                    "coding",
-                                    "long-context",
-                                    "agents"
-                                ],
-                       "blurb":  "Apr 2026 release. 35B / 3B active MoE â€” beats Gemma 4-31B on agentic coding, matches Sonnet on most vision tasks. Native 262 K context (extensible to 1 M), ~18 GB at Q4. The new local-coding king under 200 B.",
-                       "license":  "Apache 2.0",
-                       "huggingface":  "https://huggingface.co/Qwen/Qwen3.6-35B-A3B"
-                   },
-                   {
-                       "id":  "qwen3-6-27b-dense",
-                       "name":  "Qwen 3.6 27B (dense)",
-                       "family":  "Qwen",
-                       "params":  27,
-                       "type":  "dense",
-                       "modality":  "text",
-                       "sizeQ4":  16,
-                       "vramMinQ4":  20,
-                       "vramComfortQ4":  24,
-                       "ratings":  {
-                                       "chat":  4,
-                                       "coding":  5,
-                                       "agents":  3,
-                                       "reasoning":  5,
-                                       "longContext":  5,
-                                       "vision":  4
-                                   },
-                       "tags":  [
-                                    "dense",
-                                    "coding",
-                                    "vision",
-                                    "long-context",
-                                    "reasoning"
-                                ],
-                       "blurb":  "Apr 22 2026. Dense 27B that hits 77.2% SWE-Bench Verified â€” beats much larger MoEs on coding. Vision-capable, 262 K native context. Best single-24 GB-card coder right now.",
-                       "license":  "Apache 2.0",
-                       "huggingface":  "https://huggingface.co/Qwen/Qwen3.6-27B"
-                   },
-                   {
-                       "id":  "gemma4-26b-moe",
-                       "name":  "Gemma 4 26B-A4B (MoE)",
-                       "family":  "Gemma",
-                       "params":  26,
-                       "activeParams":  4,
-                       "type":  "moe",
-                       "modality":  "text",
-                       "sizeQ4":  14,
-                       "vramMinQ4":  18,
-                       "vramComfortQ4":  22,
-                       "ratings":  {
-                                       "chat":  4,
-                                       "coding":  3,
-                                       "agents":  2,
-                                       "reasoning":  3,
-                                       "longContext":  4,
-                                       "vision":  4
-                                   },
-                       "tags":  [
-                                    "moe",
-                                    "fast",
-                                    "vision"
-                                ],
-                       "blurb":  "26 B total / 4 B active MoE â€” fast and useful, but only 4 B \u0027thinking\u0027 caps reasoning + agent ceiling.",
-                       "license":  "Gemma",
-                       "huggingface":  "https://huggingface.co/models?search=gemma-4-26b"
-                   },
-                   {
-                       "id":  "qwen3-next-80b-moe",
-                       "name":  "Qwen 3 Next 80B-A3B (MoE)",
-                       "family":  "Qwen",
-                       "params":  80,
-                       "activeParams":  3,
-                       "type":  "moe",
-                       "modality":  "text",
-                       "sizeQ4":  45,
-                       "vramMinQ4":  48,
-                       "vramComfortQ4":  64,
-                       "ratings":  {
-                                       "chat":  4,
-                                       "coding":  4,
-                                       "agents":  3,
-                                       "reasoning":  3,
-                                       "longContext":  4,
-                                       "vision":  0
-                                   },
-                       "tags":  [
-                                    "moe",
-                                    "coding"
-                                ],
-                       "blurb":  "80 B total, 3 B active per token. Faster than 30B-coder at similar quality. Decent agent in tight loops; struggles on long-horizon work.",
-                       "license":  "Apache 2.0",
-                       "huggingface":  "https://huggingface.co/Qwen/Qwen3-Next-80B-A3B-Instruct"
-                   },
-                   {
-                       "id":  "llama33-70b",
-                       "name":  "Llama 3.3 70B",
-                       "family":  "Llama",
-                       "params":  70,
-                       "type":  "dense",
-                       "modality":  "text",
-                       "sizeQ4":  40,
-                       "vramMinQ4":  48,
-                       "vramComfortQ4":  64,
-                       "sizeQ2":  22,
-                       "vramMinQ2":  26,
-                       "ratings":  {
-                                       "chat":  4,
-                                       "coding":  3,
-                                       "agents":  2,
-                                       "reasoning":  3,
-                                       "longContext":  4,
-                                       "vision":  0
-                                   },
-                       "tags":  [
-                                    "large",
-                                    "general"
-                                ],
-                       "blurb":  "Solid local 70 B baseline for chat. Coding / agent quality lags Qwen-Coder, frontier MoEs, and closed models by a wide margin.",
-                       "license":  "Llama 3.3 Community",
-                       "huggingface":  "https://huggingface.co/meta-llama/Llama-3.3-70B-Instruct"
-                   },
-                   {
-                       "id":  "llama31-405b",
-                       "name":  "Llama 3.1 405B",
-                       "family":  "Llama",
-                       "params":  405,
-                       "type":  "dense",
-                       "modality":  "text",
-                       "sizeQ4":  230,
-                       "vramMinQ4":  256,
-                       "vramComfortQ4":  320,
-                       "sizeQ2":  130,
-                       "vramMinQ2":  150,
-                       "ratings":  {
-                                       "chat":  4,
-                                       "coding":  3,
-                                       "agents":  2,
-                                       "reasoning":  4,
-                                       "longContext":  4,
-                                       "vision":  0
-                                   },
-                       "tags":  [
-                                    "huge",
-                                    "dense",
-                                    "legacy"
-                                ],
-                       "blurb":  "Dense 405 B â€” heavy bandwidth need. Now eclipsed by DeepSeek V4-Pro, Kimi K2.6 and GLM-5.1 on every coding/agent benchmark; kept for chat-only setups with 256+ GB. Q2 fits in 2Ã— DGX Spark cluster or M3 Ultra 256.",
-                       "license":  "Llama 3.1 Community",
-                       "huggingface":  "https://huggingface.co/meta-llama/Llama-3.1-405B-Instruct"
-                   },
-                   {
-                       "id":  "deepseek-r1-distill-70b",
-                       "name":  "DeepSeek R1 Distill 70B",
-                       "family":  "DeepSeek",
-                       "params":  70,
-                       "type":  "dense",
-                       "modality":  "text",
-                       "sizeQ4":  40,
-                       "vramMinQ4":  48,
-                       "vramComfortQ4":  64,
-                       "ratings":  {
-                                       "chat":  3,
-                                       "coding":  2,
-                                       "agents":  1,
-                                       "reasoning":  4,
-                                       "longContext":  3,
-                                       "vision":  0
-                                   },
-                       "tags":  [
-                                    "large",
-                                    "reasoning",
-                                    "legacy"
-                                ],
-                       "blurb":  "Reasoning-distilled Llama 70 B. Best local 70 B for math/logic in early 2025; now lapped by Qwen 3.6-27B dense (better coding) and DeepSeek V4-Flash (better everything else).",
-                       "license":  "MIT (distill)",
-                       "huggingface":  "https://huggingface.co/deepseek-ai/DeepSeek-R1-Distill-Llama-70B"
-                   },
-                   {
-                       "id":  "glm-air-106b-moe",
-                       "name":  "GLM-4.5-Air 106B (MoE)",
-                       "family":  "GLM",
-                       "params":  106,
-                       "activeParams":  12,
-                       "type":  "moe",
-                       "modality":  "text",
-                       "sizeQ4":  60,
-                       "vramMinQ4":  72,
-                       "vramComfortQ4":  96,
-                       "sizeQ2":  32,
-                       "vramMinQ2":  40,
-                       "ratings":  {
-                                       "chat":  4,
-                                       "coding":  4,
-                                       "agents":  3,
-                                       "reasoning":  4,
-                                       "longContext":  4,
-                                       "vision":  0
-                                   },
-                       "tags":  [
-                                    "moe",
-                                    "large",
-                                    "agents"
-                                ],
-                       "blurb":  "Zhipu\u0027s MoE \u0027Air\u0027 â€” ~38% on SWE-rebench, the strongest sub-200B agent model. Still 20+ pts behind frontier MoEs and closed models.",
-                       "license":  "MIT",
-                       "huggingface":  "https://huggingface.co/zai-org/GLM-4.5-Air"
-                   },
-                   {
-                       "id":  "glm-51-754b-moe",
-                       "name":  "GLM-5.1 754B (MoE)",
-                       "family":  "GLM",
-                       "params":  754,
-                       "activeParams":  40,
-                       "type":  "moe",
-                       "modality":  "text",
-                       "sizeQ4":  430,
-                       "vramMinQ4":  480,
-                       "vramComfortQ4":  560,
-                       "sizeQ2":  220,
-                       "vramMinQ2":  240,
-                       "ratings":  {
-                                       "chat":  5,
-                                       "coding":  5,
-                                       "agents":  5,
-                                       "reasoning":  5,
-                                       "longContext":  5,
-                                       "vision":  0
-                                   },
-                       "tags":  [
-                                    "moe",
-                                    "frontier",
-                                    "huge",
-                                    "agents"
-                                ],
-                       "blurb":  "First open-weights model to top SWE-Bench Pro (April 2026). 8-hour autonomous coding agent. MIT.",
-                       "license":  "MIT",
-                       "huggingface":  "https://huggingface.co/zai-org/GLM-5.1"
-                   },
-                   {
-                       "id":  "gpt-oss-120b",
-                       "name":  "GPT-OSS 120B",
-                       "family":  "OpenAI",
-                       "params":  120,
-                       "type":  "dense",
-                       "modality":  "text",
-                       "sizeQ4":  65,
-                       "vramMinQ4":  80,
-                       "vramComfortQ4":  96,
-                       "sizeQ2":  38,
-                       "vramMinQ2":  46,
-                       "ratings":  {
-                                       "chat":  4,
-                                       "coding":  4,
-                                       "agents":  3,
-                                       "reasoning":  4,
-                                       "longContext":  4,
-                                       "vision":  0
-                                   },
-                       "tags":  [
-                                    "large",
-                                    "general"
-                                ],
-                       "blurb":  "OpenAI\u0027s open-weights 120 B (MXFP4). ~33% SWE-rebench resolved. Strong all-rounder; agent ceiling is still frontier MoEs / closed models.",
-                       "license":  "Apache 2.0",
-                       "huggingface":  "https://huggingface.co/openai/gpt-oss-120b"
-                   },
-                   {
-                       "id":  "mistral-medium-3-5-128b",
-                       "name":  "Mistral Medium 3.5 128B",
-                       "family":  "Mistral",
-                       "params":  128,
-                       "type":  "dense",
-                       "modality":  "text",
-                       "sizeQ4":  72,
-                       "vramMinQ4":  80,
-                       "vramComfortQ4":  96,
-                       "sizeQ2":  38,
-                       "vramMinQ2":  46,
-                       "ratings":  {
-                                       "chat":  5,
-                                       "coding":  4,
-                                       "agents":  3,
-                                       "reasoning":  4,
-                                       "longContext":  5,
-                                       "vision":  4
-                                   },
-                       "tags":  [
-                                    "dense",
-                                    "vision",
-                                    "general",
-                                    "long-context"
-                                ],
-                       "blurb":  "Apr 30 2026. Western 128B dense with vision + 256 K context. 77.6% SWE-Bench Verified; first credible mid-tier open-weight from Mistral in months. Modified MIT.",
-                       "license":  "Modified MIT",
-                       "huggingface":  "https://huggingface.co/mistralai/Mistral-Medium-3.5-128B"
-                   },
-                   {
-                       "id":  "minimax-m2-7-230b-moe",
-                       "name":  "MiniMax M2.7 230B-A10B (MoE)",
-                       "family":  "MiniMax",
-                       "params":  230,
-                       "activeParams":  10,
-                       "type":  "moe",
-                       "modality":  "text",
-                       "sizeQ4":  130,
-                       "vramMinQ4":  150,
-                       "vramComfortQ4":  192,
-                       "sizeQ2":  70,
-                       "vramMinQ2":  85,
-                       "ratings":  {
-                                       "chat":  4,
-                                       "coding":  4,
-                                       "agents":  4,
-                                       "reasoning":  4,
-                                       "longContext":  5,
-                                       "vision":  0
-                                   },
-                       "tags":  [
-                                    "moe",
-                                    "agents",
-                                    "long-context"
-                                ],
-                       "blurb":  "Apr 12 2026. 230 B / 10 B active MoE â€” agent-tuned with native multi-agent (\"Agent Teams\"). 57% Terminal-Bench 2.0, 56% SWE-Bench Pro â€” strongest sub-300 B open-weights agent.",
-                       "license":  "MiniMax Model License",
-                       "huggingface":  "https://huggingface.co/MiniMaxAI/MiniMax-M2.7"
-                   },
-                   {
-                       "id":  "tencent-hy3-preview-295b-moe",
-                       "name":  "Tencent Hy3-preview 295B-A21B (MoE)",
-                       "family":  "Tencent",
-                       "params":  295,
-                       "activeParams":  21,
-                       "type":  "moe",
-                       "modality":  "text",
-                       "sizeQ4":  170,
-                       "vramMinQ4":  192,
-                       "vramComfortQ4":  224,
-                       "sizeQ2":  90,
-                       "vramMinQ2":  110,
-                       "ratings":  {
-                                       "chat":  4,
-                                       "coding":  4,
-                                       "agents":  4,
-                                       "reasoning":  5,
-                                       "longContext":  5,
-                                       "vision":  0
-                                   },
-                       "tags":  [
-                                    "moe",
-                                    "frontier",
-                                    "agents",
-                                    "reasoning"
-                                ],
-                       "blurb":  "Apr 23 2026. Tencent\u0027s first major open-weight in months â€” 295 B / 21 B active MoE, 256 K context, 192 experts. ~74% SWE-Bench Verified. Custom non-MIT Tencent Hy license.",
-                       "license":  "Tencent Hy Community License",
-                       "huggingface":  "https://huggingface.co/tencent/Hy3-preview"
-                   },
-                   {
-                       "id":  "qwen3-235b-moe",
-                       "name":  "Qwen 3 235B-A22B (MoE)",
-                       "family":  "Qwen",
-                       "params":  235,
-                       "activeParams":  22,
-                       "type":  "moe",
-                       "modality":  "text",
-                       "sizeQ4":  130,
-                       "vramMinQ4":  160,
-                       "vramComfortQ4":  192,
-                       "sizeQ2":  75,
-                       "vramMinQ2":  90,
-                       "ratings":  {
-                                       "chat":  5,
-                                       "coding":  4,
-                                       "agents":  4,
-                                       "reasoning":  5,
-                                       "longContext":  5,
-                                       "vision":  0
-                                   },
-                       "tags":  [
-                                    "moe",
-                                    "frontier"
-                                ],
-                       "blurb":  "Excellent reasoning + chat. Strong coding too â€” but coding SOTA is GLM-5.1 / DeepSeek V3 / Kimi K2.",
-                       "license":  "Apache 2.0",
-                       "huggingface":  "https://huggingface.co/Qwen/Qwen3-235B-A22B-Instruct-2507"
-                   },
-                   {
-                       "id":  "kimi-k2-1t-moe",
-                       "name":  "Kimi K2 1T (MoE)",
-                       "family":  "Moonshot",
-                       "params":  1000,
-                       "activeParams":  32,
-                       "type":  "moe",
-                       "modality":  "text",
-                       "sizeQ4":  540,
-                       "vramMinQ4":  600,
-                       "vramComfortQ4":  700,
-                       "sizeQ2":  250,
-                       "vramMinQ2":  280,
-                       "ratings":  {
-                                       "chat":  5,
-                                       "coding":  5,
-                                       "agents":  4,
-                                       "reasoning":  5,
-                                       "longContext":  5,
-                                       "vision":  0
-                                   },
-                       "tags":  [
-                                    "moe",
-                                    "frontier",
-                                    "huge"
-                                ],
-                       "blurb":  "Original 1 T MoE â€” superseded by K2.5 / K2.6 for agents. Q2_K_XL ~250 GB fits 4Ã— DGX Spark or M3 Ultra 512 GB.",
-                       "license":  "Modified MIT",
-                       "huggingface":  "https://huggingface.co/moonshotai/Kimi-K2-Instruct"
-                   },
-                   {
-                       "id":  "kimi-k2-5-1t-moe",
-                       "name":  "Kimi K2.5 1T (MoE)",
-                       "family":  "Moonshot",
-                       "params":  1000,
-                       "activeParams":  32,
-                       "type":  "moe",
-                       "modality":  "text",
-                       "sizeQ4":  540,
-                       "vramMinQ4":  600,
-                       "vramComfortQ4":  700,
-                       "sizeQ2":  250,
-                       "vramMinQ2":  280,
-                       "ratings":  {
-                                       "chat":  5,
-                                       "coding":  5,
-                                       "agents":  5,
-                                       "reasoning":  5,
-                                       "longContext":  5,
-                                       "vision":  4
-                                   },
-                       "tags":  [
-                                    "moe",
-                                    "frontier",
-                                    "huge",
-                                    "agents",
-                                    "vision"
-                                ],
-                       "blurb":  "Same architecture as K2; long-horizon agent training + native image input. Strong open-weights agent â€” close to closed frontier.",
-                       "license":  "Modified MIT",
-                       "huggingface":  "https://huggingface.co/moonshotai/Kimi-K2.5"
-                   },
-                   {
-                       "id":  "kimi-k2-6-1t-moe",
-                       "name":  "Kimi K2.6 1T (MoE)",
-                       "family":  "Moonshot",
-                       "params":  1000,
-                       "activeParams":  32,
-                       "type":  "moe",
-                       "modality":  "text",
-                       "sizeQ4":  540,
-                       "vramMinQ4":  600,
-                       "vramComfortQ4":  700,
-                       "sizeQ2":  250,
-                       "vramMinQ2":  280,
-                       "ratings":  {
-                                       "chat":  5,
-                                       "coding":  5,
-                                       "agents":  5,
-                                       "reasoning":  5,
-                                       "longContext":  5,
-                                       "vision":  5
-                                   },
-                       "tags":  [
-                                    "moe",
-                                    "frontier",
-                                    "huge",
-                                    "agents",
-                                    "vision"
-                                ],
-                       "blurb":  "Apr 2026 release. 66.7% Terminal-Bench 2.0 â€” top open-weights agent. Native INT4, 262 K context, native image + video input.",
-                       "license":  "Modified MIT",
-                       "huggingface":  "https://huggingface.co/moonshotai/Kimi-K2.6"
-                   },
-                   {
-                       "id":  "deepseek-v3-671b-moe",
-                       "name":  "DeepSeek V3 671B (MoE)",
-                       "family":  "DeepSeek",
-                       "params":  671,
-                       "activeParams":  37,
-                       "type":  "moe",
-                       "modality":  "text",
-                       "sizeQ4":  380,
-                       "vramMinQ4":  420,
-                       "vramComfortQ4":  512,
-                       "sizeQ2":  220,
-                       "vramMinQ2":  250,
-                       "ratings":  {
-                                       "chat":  5,
-                                       "coding":  5,
-                                       "agents":  4,
-                                       "reasoning":  5,
-                                       "longContext":  5,
-                                       "vision":  0
-                                   },
-                       "tags":  [
-                                    "moe",
-                                    "frontier",
-                                    "huge"
-                                ],
-                       "blurb":  "671 B MoE â€” superseded by V4 for agents. Q2 (~220 GB) fits 4Ã— DGX Spark; Q4 needs 512 GB / 8Ã—H100.",
-                       "license":  "DeepSeek License",
-                       "huggingface":  "https://huggingface.co/deepseek-ai/DeepSeek-V3"
-                   },
-                   {
-                       "id":  "deepseek-v4-flash-284b-moe",
-                       "name":  "DeepSeek V4-Flash 284B (MoE)",
-                       "family":  "DeepSeek",
-                       "params":  284,
-                       "activeParams":  13,
-                       "type":  "moe",
-                       "modality":  "text",
-                       "sizeQ4":  160,
-                       "vramMinQ4":  192,
-                       "vramComfortQ4":  240,
-                       "sizeQ2":  90,
-                       "vramMinQ2":  110,
-                       "ratings":  {
-                                       "chat":  5,
-                                       "coding":  5,
-                                       "agents":  4,
-                                       "reasoning":  5,
-                                       "longContext":  5,
-                                       "vision":  0
-                                   },
-                       "tags":  [
-                                    "moe",
-                                    "frontier",
-                                    "agents",
-                                    "long-context"
-                                ],
-                       "blurb":  "Apr 2026 release. 284 B / 13 B active, 1 M-token context. ~57% Terminal-Bench. The agent-grade DeepSeek that fits a single Pro 6000 build.",
-                       "license":  "MIT",
-                       "huggingface":  "https://huggingface.co/deepseek-ai/DeepSeek-V4-Flash"
-                   },
-                   {
-                       "id":  "deepseek-v4-pro-1t6-moe",
-                       "name":  "DeepSeek V4-Pro 1.6T (MoE)",
-                       "family":  "DeepSeek",
-                       "params":  1600,
-                       "activeParams":  49,
-                       "type":  "moe",
-                       "modality":  "text",
-                       "sizeQ4":  800,
-                       "vramMinQ4":  900,
-                       "vramComfortQ4":  1024,
-                       "sizeQ2":  430,
-                       "vramMinQ2":  480,
-                       "ratings":  {
-                                       "chat":  5,
-                                       "coding":  5,
-                                       "agents":  5,
-                                       "reasoning":  5,
-                                       "longContext":  5,
-                                       "vision":  0
-                                   },
-                       "tags":  [
-                                    "moe",
-                                    "frontier",
-                                    "huge",
-                                    "agents"
-                                ],
-                       "blurb":  "Apr 2026 release. 1.6 T / 49 B active, 1 M-token context. 67.9% Terminal-Bench â€” top open-weights agent, matches closed frontier on most agentic tasks. Q2 ~430 GB.",
-                       "license":  "MIT",
-                       "huggingface":  "https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro"
-                   },
-                   {
-                       "id":  "sdxl-1",
-                       "name":  "SDXL 1.0",
-                       "family":  "Stability AI",
-                       "modality":  "image",
-                       "params":  3.5,
-                       "type":  "diffusion",
-                       "sizeQ4":  7,
-                       "vramMinQ4":  8,
-                       "vramComfortQ4":  12,
-                       "ratings":  {
-                                       "photoreal":  3,
-                                       "prompt":  2,
-                                       "style":  5,
-                                       "speed":  5,
-                                       "license":  4
-                                   },
-                       "tags":  [
-                                    "image",
-                                    "fast",
-                                    "legacy"
-                                ],
-                       "blurb":  "Legacy 3.5 B SDXL â€” runs on 8 GB, huge LoRA ecosystem. Beat by FLUX on prompt + photorealism.",
-                       "license":  "OpenRAIL++",
-                       "huggingface":  "https://huggingface.co/stabilityai/stable-diffusion-xl-base-1.0"
-                   },
-                   {
-                       "id":  "z-image-turbo",
-                       "name":  "Z-Image-Turbo",
-                       "family":  "Z-Image",
-                       "modality":  "image",
-                       "params":  2,
-                       "type":  "diffusion",
-                       "sizeQ4":  6,
-                       "vramMinQ4":  8,
-                       "vramComfortQ4":  12,
-                       "ratings":  {
-                                       "photoreal":  3,
-                                       "prompt":  4,
-                                       "style":  4,
-                                       "speed":  5,
-                                       "license":  5
-                                   },
-                       "tags":  [
-                                    "image",
-                                    "fast",
-                                    "permissive"
-                                ],
-                       "blurb":  "Apache-2.0 turbo model â€” very fast, decent quality, fits 8 GB cards. Smaller community vs SD/FLUX.",
-                       "license":  "Apache 2.0",
-                       "huggingface":  "https://huggingface.co/models?search=z-image"
-                   },
-                   {
-                       "id":  "flux1-schnell",
-                       "name":  "FLUX.1 [schnell]",
-                       "family":  "Black Forest Labs",
-                       "modality":  "image",
-                       "params":  12,
-                       "type":  "diffusion",
-                       "sizeQ4":  12,
-                       "vramMinQ4":  16,
-                       "vramComfortQ4":  24,
-                       "ratings":  {
-                                       "photoreal":  4,
-                                       "prompt":  4,
-                                       "style":  4,
-                                       "speed":  5,
-                                       "license":  5
-                                   },
-                       "tags":  [
-                                    "image",
-                                    "fast",
-                                    "permissive"
-                                ],
-                       "blurb":  "Apache-2.0 distilled FLUX, 4-step generation. Best fast permissive option for commercial use.",
-                       "license":  "Apache 2.0",
-                       "huggingface":  "https://huggingface.co/black-forest-labs/FLUX.1-schnell"
-                   },
-                   {
-                       "id":  "flux1-dev",
-                       "name":  "FLUX.1 [dev]",
-                       "family":  "Black Forest Labs",
-                       "modality":  "image",
-                       "params":  12,
-                       "type":  "diffusion",
-                       "sizeQ4":  12,
-                       "vramMinQ4":  16,
-                       "vramComfortQ4":  24,
-                       "ratings":  {
-                                       "photoreal":  5,
-                                       "prompt":  5,
-                                       "style":  4,
-                                       "speed":  3,
-                                       "license":  2
-                                   },
-                       "tags":  [
-                                    "image",
-                                    "photoreal",
-                                    "sota"
-                                ],
-                       "blurb":  "The 2026 photorealism crown â€” best lighting, anatomy, text rendering. Non-commercial; commercial license $$.",
-                       "license":  "FLUX.1 [dev] Non-Commercial",
-                       "huggingface":  "https://huggingface.co/black-forest-labs/FLUX.1-dev"
-                   },
-                   {
-                       "id":  "flux2-klein",
-                       "name":  "FLUX.2 [klein]",
-                       "family":  "Black Forest Labs",
-                       "modality":  "image",
-                       "params":  4,
-                       "type":  "diffusion",
-                       "sizeQ4":  8,
-                       "vramMinQ4":  13,
-                       "vramComfortQ4":  16,
-                       "ratings":  {
-                                       "photoreal":  4,
-                                       "prompt":  5,
-                                       "style":  4,
-                                       "speed":  5,
-                                       "license":  3
-                                   },
-                       "tags":  [
-                                    "image",
-                                    "fast"
-                                ],
-                       "blurb":  "FLUX.2 small variant â€” strong prompt-following at SD-class VRAM. Commercial license required.",
-                       "license":  "FLUX.2 Community",
-                       "huggingface":  "https://huggingface.co/models?search=flux.2"
-                   },
-                   {
-                       "id":  "flux2-dev",
-                       "name":  "FLUX.2 [dev]",
-                       "family":  "Black Forest Labs",
-                       "modality":  "image",
-                       "params":  14,
-                       "type":  "diffusion",
-                       "sizeQ4":  16,
-                       "vramMinQ4":  24,
-                       "vramComfortQ4":  32,
-                       "ratings":  {
-                                       "photoreal":  5,
-                                       "prompt":  5,
-                                       "style":  5,
-                                       "speed":  3,
-                                       "license":  3
-                                   },
-                       "tags":  [
-                                    "image",
-                                    "sota",
-                                    "photoreal"
-                                ],
-                       "blurb":  "Black Forest Labs\u0027 2026 flagship. Better prompt + style than FLUX.1 [dev], same VRAM footprint.",
-                       "license":  "FLUX.2 Community",
-                       "huggingface":  "https://huggingface.co/models?search=flux.2"
-                   },
-                   {
-                       "id":  "sd35-large",
-                       "name":  "Stable Diffusion 3.5 Large",
-                       "family":  "Stability AI",
-                       "modality":  "image",
-                       "params":  8,
-                       "type":  "diffusion",
-                       "sizeQ4":  10,
-                       "vramMinQ4":  16,
-                       "vramComfortQ4":  24,
-                       "ratings":  {
-                                       "photoreal":  4,
-                                       "prompt":  4,
-                                       "style":  5,
-                                       "speed":  4,
-                                       "license":  4
-                                   },
-                       "tags":  [
-                                    "image",
-                                    "general"
-                                ],
-                       "blurb":  "Stability\u0027s 2024-2026 flagship. Strong style versatility, mature ecosystem (ControlNet, IP-Adapter).",
-                       "license":  "Stability AI Community",
-                       "huggingface":  "https://huggingface.co/stabilityai/stable-diffusion-3.5-large"
-                   },
-                   {
-                       "id":  "qwen-image",
-                       "name":  "Qwen-Image (Alibaba)",
-                       "family":  "Qwen",
-                       "modality":  "image",
-                       "params":  20,
-                       "type":  "diffusion",
-                       "sizeQ4":  14,
-                       "vramMinQ4":  20,
-                       "vramComfortQ4":  24,
-                       "ratings":  {
-                                       "photoreal":  4,
-                                       "prompt":  5,
-                                       "style":  5,
-                                       "speed":  3,
-                                       "license":  5
-                                   },
-                       "tags":  [
-                                    "image",
-                                    "permissive",
-                                    "text-rendering"
-                                ],
-                       "blurb":  "Apache-2.0 â€” best-in-class for in-image text rendering (English + Chinese), strong style range.",
-                       "license":  "Apache 2.0",
-                       "huggingface":  "https://huggingface.co/Qwen/Qwen-Image"
-                   },
-                   {
-                       "id":  "hidream-i1",
-                       "name":  "HiDream-I1 (Full)",
-                       "family":  "HiDream.ai",
-                       "modality":  "image",
-                       "params":  17,
-                       "type":  "diffusion",
-                       "sizeQ4":  18,
-                       "vramMinQ4":  24,
-                       "vramComfortQ4":  32,
-                       "ratings":  {
-                                       "photoreal":  5,
-                                       "prompt":  5,
-                                       "style":  4,
-                                       "speed":  3,
-                                       "license":  5
-                                   },
-                       "tags":  [
-                                    "image",
-                                    "permissive"
-                                ],
-                       "blurb":  "MIT-licensed 17 B â€” competes with FLUX.1 [dev] on quality without commercial restrictions. Superseded by HiDream-O1-Image (May 2026) on prompt alignment and arena rank.",
-                       "license":  "MIT",
-                       "huggingface":  "https://huggingface.co/HiDream-ai/HiDream-I1-Full"
-                   },
-                   {
-                       "id":  "hidream-o1-image",
-                       "name":  "HiDream-O1-Image",
-                       "family":  "HiDream.ai",
-                       "modality":  "image",
-                       "params":  8,
-                       "type":  "transformer",
-                       "sizeQ4":  10,
-                       "vramMinQ4":  16,
-                       "vramComfortQ4":  24,
-                       "ratings":  {
-                                       "photoreal":  5,
-                                       "prompt":  5,
-                                       "style":  5,
-                                       "speed":  4,
-                                       "license":  5
-                                   },
-                       "tags":  [
-                                    "image",
-                                    "sota",
-                                    "permissive",
-                                    "text-rendering"
-                                ],
-                       "blurb":  "May 8 2026. 8 B MIT-licensed pixel-space unified transformer (no VAE, no separate text encoder). GenEval 0.90 / DPG 89.83 â€” debuted at #8 on AA arena, highest-ranked open-weights image model. 2048Ã—2048 native.",
-                       "license":  "MIT",
-                       "huggingface":  "https://huggingface.co/HiDream-ai/HiDream-O1-Image"
-                   },
-                   {
-                       "id":  "ltx-video",
-                       "name":  "LTX-Video 2B",
-                       "family":  "Lightricks",
-                       "modality":  "video",
-                       "params":  2,
-                       "type":  "diffusion",
-                       "sizeQ4":  6,
-                       "vramMinQ4":  8,
-                       "vramComfortQ4":  12,
-                       "ratings":  {
-                                       "motion":  3,
-                                       "duration":  3,
-                                       "prompt":  3,
-                                       "quality":  3,
-                                       "speed":  5
-                                   },
-                       "tags":  [
-                                    "video",
-                                    "fast"
-                                ],
-                       "blurb":  "Real-time-ish on a 4090 â€” 5 s 720p clip in ~90 s. Fastest open video model; quality below WAN/Hunyuan.",
-                       "license":  "LTX-Video Open",
-                       "huggingface":  "https://huggingface.co/Lightricks/LTX-Video"
-                   },
-                   {
-                       "id":  "wan21-1b3",
-                       "name":  "WAN 2.1 1.3B",
-                       "family":  "Alibaba",
-                       "modality":  "video",
-                       "params":  1.3,
-                       "type":  "diffusion",
-                       "sizeQ4":  4,
-                       "vramMinQ4":  8,
-                       "vramComfortQ4":  12,
-                       "ratings":  {
-                                       "motion":  3,
-                                       "duration":  3,
-                                       "prompt":  3,
-                                       "quality":  3,
-                                       "speed":  4
-                                   },
-                       "tags":  [
-                                    "video",
-                                    "small",
-                                    "permissive"
-                                ],
-                       "blurb":  "Smallest open video model â€” 8 GB VRAM, 480p. The \u0027video on a laptop GPU\u0027 option.",
-                       "license":  "Apache 2.0",
-                       "huggingface":  "https://huggingface.co/Wan-AI/Wan2.1-T2V-1.3B"
-                   },
-                   {
-                       "id":  "wan22-14b",
-                       "name":  "WAN 2.2 14B (MoE)",
-                       "family":  "Alibaba",
-                       "modality":  "video",
-                       "params":  14,
-                       "activeParams":  7,
-                       "type":  "diffusion-moe",
-                       "sizeQ4":  18,
-                       "vramMinQ4":  24,
-                       "vramComfortQ4":  32,
-                       "sizeQ2":  8,
-                       "vramMinQ2":  12,
-                       "ratings":  {
-                                       "motion":  5,
-                                       "duration":  4,
-                                       "prompt":  4,
-                                       "quality":  5,
-                                       "speed":  3
-                                   },
-                       "tags":  [
-                                    "video",
-                                    "sota"
-                                ],
-                       "blurb":  "MoE: high-noise + low-noise experts. 5 s 720p in ~3-5 min on a 5090; GGUF quants run on 12 GB.",
-                       "license":  "Apache 2.0",
-                       "huggingface":  "https://huggingface.co/Wan-AI/Wan2.2-T2V-A14B"
-                   },
-                   {
-                       "id":  "wan25-14b",
-                       "name":  "WAN 2.5 14B",
-                       "family":  "Alibaba",
-                       "modality":  "video",
-                       "params":  14,
-                       "type":  "diffusion",
-                       "sizeQ4":  22,
-                       "vramMinQ4":  30,
-                       "vramComfortQ4":  40,
-                       "ratings":  {
-                                       "motion":  5,
-                                       "duration":  4,
-                                       "prompt":  5,
-                                       "quality":  5,
-                                       "speed":  2
-                                   },
-                       "tags":  [
-                                    "video",
-                                    "sota",
-                                    "1080p"
-                                ],
-                       "blurb":  "VRAM-hungry but produces 1080p. 16 GB tile-mode possible with WanGP optimizations.",
-                       "license":  "Apache 2.0",
-                       "huggingface":  "https://huggingface.co/models?search=wan2.5"
-                   },
-                   {
-                       "id":  "hunyuanvideo-15",
-                       "name":  "HunyuanVideo 1.5",
-                       "family":  "Tencent",
-                       "modality":  "video",
-                       "params":  8.3,
-                       "type":  "diffusion",
-                       "sizeQ4":  12,
-                       "vramMinQ4":  14,
-                       "vramComfortQ4":  24,
-                       "ratings":  {
-                                       "motion":  4,
-                                       "duration":  4,
-                                       "prompt":  4,
-                                       "quality":  5,
-                                       "speed":  3
-                                   },
-                       "tags":  [
-                                    "video",
-                                    "consumer-friendly"
-                                ],
-                       "blurb":  "Trimmed to 8.3 B and 14 GB w/ offload. Better instruction-following + structural stability than WAN 2.2.",
-                       "license":  "Tencent Hunyuan Community",
-                       "huggingface":  "https://huggingface.co/tencent/HunyuanVideo-1.5"
-                   },
-                   {
-                       "id":  "hunyuanvideo-13b",
-                       "name":  "HunyuanVideo 13B (original)",
-                       "family":  "Tencent",
-                       "modality":  "video",
-                       "params":  13,
-                       "type":  "diffusion",
-                       "sizeQ4":  28,
-                       "vramMinQ4":  60,
-                       "vramComfortQ4":  80,
-                       "sizeQ2":  12,
-                       "vramMinQ2":  16,
-                       "ratings":  {
-                                       "motion":  5,
-                                       "duration":  4,
-                                       "prompt":  4,
-                                       "quality":  5,
-                                       "speed":  2
-                                   },
-                       "tags":  [
-                                    "video",
-                                    "datacenter",
-                                    "sota"
-                                ],
-                       "blurb":  "Original 13 B â€” best motion realism among open weights. 60-80 GB VRAM at full quality (datacenter).",
-                       "license":  "Tencent Hunyuan Community",
-                       "huggingface":  "https://huggingface.co/tencent/HunyuanVideo"
-                   },
-                   {
-                       "id":  "mochi1",
-                       "name":  "Mochi 1",
-                       "family":  "Genmo",
-                       "modality":  "video",
-                       "params":  10,
-                       "type":  "diffusion",
-                       "sizeQ4":  18,
-                       "vramMinQ4":  24,
-                       "vramComfortQ4":  32,
-                       "ratings":  {
-                                       "motion":  4,
-                                       "duration":  3,
-                                       "prompt":  4,
-                                       "quality":  4,
-                                       "speed":  2
-                                   },
-                       "tags":  [
-                                    "video"
-                                ],
-                       "blurb":  "Permissive + capable, but slower than WAN 2.2. ~8 min for 5 s clip on a 4090.",
-                       "license":  "Apache 2.0",
-                       "huggingface":  "https://huggingface.co/genmo/mochi-1-preview"
-                   }
-               ]
+  "$schema": "https://json-schema.org/draft-07/schema#",
+  "_description": "LLM model catalog with ratings and VRAM requirements. See README.md for schema.",
+  "_lastUpdated": "2026-05-15",
+  "_count": 44,
+  "models": [
+    {
+      "id": "qwen3-8b",
+      "name": "Qwen 3 8B",
+      "family": "Qwen",
+      "params": 8,
+      "type": "dense",
+      "modality": "text",
+      "sizeQ4": 5,
+      "vramMinQ4": 8,
+      "vramComfortQ4": 12,
+      "ratings": {
+        "chat": 4,
+        "coding": 2,
+        "agents": 1,
+        "reasoning": 2,
+        "longContext": 3,
+        "vision": 0
+      },
+      "tags": [
+        "small",
+        "fast",
+        "general"
+      ],
+      "blurb": "Snappy 8B daily driver. Fine for chat; not an agent — fails multi-step tool loops in practice.",
+      "license": "Apache 2.0",
+      "huggingface": "https://huggingface.co/Qwen/Qwen3-8B"
+    },
+    {
+      "id": "llama31-8b",
+      "name": "Llama 3.1 8B",
+      "family": "Llama",
+      "params": 8,
+      "type": "dense",
+      "modality": "text",
+      "sizeQ4": 5,
+      "vramMinQ4": 8,
+      "vramComfortQ4": 12,
+      "ratings": {
+        "chat": 4,
+        "coding": 2,
+        "agents": 1,
+        "reasoning": 2,
+        "longContext": 3,
+        "vision": 0
+      },
+      "tags": [
+        "small",
+        "fast"
+      ],
+      "blurb": "Meta's stalwart 8B with 128 K context. Reliable for chat; do not expect agent reliability.",
+      "license": "Llama 3.1 Community",
+      "huggingface": "https://huggingface.co/meta-llama/Llama-3.1-8B-Instruct"
+    },
+    {
+      "id": "phi4-14b",
+      "name": "Phi-4 14B",
+      "family": "Phi",
+      "params": 14,
+      "type": "dense",
+      "modality": "text",
+      "sizeQ4": 8,
+      "vramMinQ4": 12,
+      "vramComfortQ4": 16,
+      "ratings": {
+        "chat": 4,
+        "coding": 3,
+        "agents": 1,
+        "reasoning": 4,
+        "longContext": 2,
+        "vision": 0
+      },
+      "tags": [
+        "small-medium",
+        "reasoning"
+      ],
+      "blurb": "Microsoft's 14 B is a math/reasoning specialist (~56 GPQA). Don't use it for agent loops.",
+      "license": "MIT",
+      "huggingface": "https://huggingface.co/microsoft/phi-4"
+    },
+    {
+      "id": "mistral-small3-24b",
+      "name": "Mistral Small 3 24B",
+      "family": "Mistral",
+      "params": 24,
+      "type": "dense",
+      "modality": "text",
+      "sizeQ4": 14,
+      "vramMinQ4": 16,
+      "vramComfortQ4": 20,
+      "ratings": {
+        "chat": 4,
+        "coding": 3,
+        "agents": 1,
+        "reasoning": 3,
+        "longContext": 3,
+        "vision": 0
+      },
+      "tags": [
+        "medium"
+      ],
+      "blurb": "Apache-licensed all-rounder. Sweet spot on a single 24 GB card; not viable for agentic work.",
+      "license": "Apache 2.0",
+      "huggingface": "https://huggingface.co/mistralai/Mistral-Small-3.1-24B-Instruct-2503"
+    },
+    {
+      "id": "gemma3-27b",
+      "name": "Gemma 3 27B",
+      "family": "Gemma",
+      "params": 27,
+      "type": "dense",
+      "modality": "text",
+      "sizeQ4": 16,
+      "vramMinQ4": 20,
+      "vramComfortQ4": 24,
+      "ratings": {
+        "chat": 4,
+        "coding": 3,
+        "agents": 1,
+        "reasoning": 3,
+        "longContext": 3,
+        "vision": 4
+      },
+      "tags": [
+        "medium",
+        "vision"
+      ],
+      "blurb": "Google's vision-capable 27 B. Strong at OCR + chat; not an agent driver.",
+      "license": "Gemma",
+      "huggingface": "https://huggingface.co/google/gemma-3-27b-it"
+    },
+    {
+      "id": "qwen3-32b",
+      "name": "Qwen 3 32B",
+      "family": "Qwen",
+      "params": 32,
+      "type": "dense",
+      "modality": "text",
+      "sizeQ4": 19,
+      "vramMinQ4": 22,
+      "vramComfortQ4": 28,
+      "ratings": {
+        "chat": 4,
+        "coding": 3,
+        "agents": 2,
+        "reasoning": 4,
+        "longContext": 3,
+        "vision": 0
+      },
+      "tags": [
+        "medium-large"
+      ],
+      "blurb": "Strong general-purpose dense 32 B with thinking variant. Marginal agent — fails multi-step tool calls often.",
+      "license": "Apache 2.0",
+      "huggingface": "https://huggingface.co/Qwen/Qwen3-32B"
+    },
+    {
+      "id": "qwen3-coder-30b",
+      "name": "Qwen 3 Coder 30B",
+      "family": "Qwen",
+      "params": 30,
+      "type": "dense",
+      "modality": "text",
+      "sizeQ4": 18,
+      "vramMinQ4": 22,
+      "vramComfortQ4": 28,
+      "ratings": {
+        "chat": 3,
+        "coding": 3,
+        "agents": 2,
+        "reasoning": 3,
+        "longContext": 4,
+        "vision": 0
+      },
+      "tags": [
+        "coding",
+        "legacy"
+      ],
+      "blurb": "Solid local coder for autocomplete + small-PR work. Now bracketed by Qwen 3.6-27B dense (better quality) and Qwen 3.6-35B-A3B MoE (better speed) — kept for users still on it.",
+      "license": "Apache 2.0",
+      "huggingface": "https://huggingface.co/Qwen/Qwen3-Coder-30B-A3B-Instruct"
+    },
+    {
+      "id": "qwen3-6-35b-a3b-moe",
+      "name": "Qwen 3.6 35B-A3B (MoE)",
+      "family": "Qwen",
+      "params": 35,
+      "activeParams": 3,
+      "type": "moe",
+      "modality": "text",
+      "sizeQ4": 18,
+      "vramMinQ4": 22,
+      "vramComfortQ4": 28,
+      "ratings": {
+        "chat": 4,
+        "coding": 5,
+        "agents": 3,
+        "reasoning": 4,
+        "longContext": 5,
+        "vision": 0
+      },
+      "tags": [
+        "moe",
+        "coding",
+        "long-context",
+        "agents"
+      ],
+      "blurb": "Apr 2026 release. 35B / 3B active MoE — beats Gemma 4-31B on agentic coding, matches Sonnet on most vision tasks. Native 262 K context (extensible to 1 M), ~18 GB at Q4. The new local-coding king under 200 B.",
+      "license": "Apache 2.0",
+      "huggingface": "https://huggingface.co/Qwen/Qwen3.6-35B-A3B"
+    },
+    {
+      "id": "qwen3-6-27b-dense",
+      "name": "Qwen 3.6 27B (dense)",
+      "family": "Qwen",
+      "params": 27,
+      "type": "dense",
+      "modality": "text",
+      "sizeQ4": 16,
+      "vramMinQ4": 20,
+      "vramComfortQ4": 24,
+      "ratings": {
+        "chat": 4,
+        "coding": 5,
+        "agents": 3,
+        "reasoning": 5,
+        "longContext": 5,
+        "vision": 4
+      },
+      "tags": [
+        "dense",
+        "coding",
+        "vision",
+        "long-context",
+        "reasoning"
+      ],
+      "blurb": "Apr 22 2026. Dense 27B that hits 77.2% SWE-Bench Verified — beats much larger MoEs on coding. Vision-capable, 262 K native context. Best single-24 GB-card coder right now.",
+      "license": "Apache 2.0",
+      "huggingface": "https://huggingface.co/Qwen/Qwen3.6-27B"
+    },
+    {
+      "id": "gemma4-26b-moe",
+      "name": "Gemma 4 26B-A4B (MoE)",
+      "family": "Gemma",
+      "params": 26,
+      "activeParams": 4,
+      "type": "moe",
+      "modality": "text",
+      "sizeQ4": 14,
+      "vramMinQ4": 18,
+      "vramComfortQ4": 22,
+      "ratings": {
+        "chat": 4,
+        "coding": 3,
+        "agents": 2,
+        "reasoning": 3,
+        "longContext": 4,
+        "vision": 4
+      },
+      "tags": [
+        "moe",
+        "fast",
+        "vision"
+      ],
+      "blurb": "26 B total / 4 B active MoE — fast and useful, but only 4 B 'thinking' caps reasoning + agent ceiling.",
+      "license": "Gemma",
+      "huggingface": "https://huggingface.co/models?search=gemma-4-26b"
+    },
+    {
+      "id": "qwen3-next-80b-moe",
+      "name": "Qwen 3 Next 80B-A3B (MoE)",
+      "family": "Qwen",
+      "params": 80,
+      "activeParams": 3,
+      "type": "moe",
+      "modality": "text",
+      "sizeQ4": 45,
+      "vramMinQ4": 48,
+      "vramComfortQ4": 64,
+      "ratings": {
+        "chat": 4,
+        "coding": 4,
+        "agents": 3,
+        "reasoning": 3,
+        "longContext": 4,
+        "vision": 0
+      },
+      "tags": [
+        "moe",
+        "coding"
+      ],
+      "blurb": "80 B total, 3 B active per token. Faster than 30B-coder at similar quality. Decent agent in tight loops; struggles on long-horizon work.",
+      "license": "Apache 2.0",
+      "huggingface": "https://huggingface.co/Qwen/Qwen3-Next-80B-A3B-Instruct"
+    },
+    {
+      "id": "llama33-70b",
+      "name": "Llama 3.3 70B",
+      "family": "Llama",
+      "params": 70,
+      "type": "dense",
+      "modality": "text",
+      "sizeQ4": 40,
+      "vramMinQ4": 48,
+      "vramComfortQ4": 64,
+      "sizeQ2": 22,
+      "vramMinQ2": 26,
+      "ratings": {
+        "chat": 4,
+        "coding": 3,
+        "agents": 2,
+        "reasoning": 3,
+        "longContext": 4,
+        "vision": 0
+      },
+      "tags": [
+        "large",
+        "general"
+      ],
+      "blurb": "Solid local 70 B baseline for chat. Coding / agent quality lags Qwen-Coder, frontier MoEs, and closed models by a wide margin.",
+      "license": "Llama 3.3 Community",
+      "huggingface": "https://huggingface.co/meta-llama/Llama-3.3-70B-Instruct"
+    },
+    {
+      "id": "llama31-405b",
+      "name": "Llama 3.1 405B",
+      "family": "Llama",
+      "params": 405,
+      "type": "dense",
+      "modality": "text",
+      "sizeQ4": 230,
+      "vramMinQ4": 256,
+      "vramComfortQ4": 320,
+      "sizeQ2": 130,
+      "vramMinQ2": 150,
+      "ratings": {
+        "chat": 4,
+        "coding": 3,
+        "agents": 2,
+        "reasoning": 4,
+        "longContext": 4,
+        "vision": 0
+      },
+      "tags": [
+        "huge",
+        "dense",
+        "legacy"
+      ],
+      "blurb": "Dense 405 B — heavy bandwidth need. Now eclipsed by DeepSeek V4-Pro, Kimi K2.6 and GLM-5.1 on every coding/agent benchmark; kept for chat-only setups with 256+ GB. Q2 fits in 2× DGX Spark cluster or M3 Ultra 256.",
+      "license": "Llama 3.1 Community",
+      "huggingface": "https://huggingface.co/meta-llama/Llama-3.1-405B-Instruct"
+    },
+    {
+      "id": "deepseek-r1-distill-70b",
+      "name": "DeepSeek R1 Distill 70B",
+      "family": "DeepSeek",
+      "params": 70,
+      "type": "dense",
+      "modality": "text",
+      "sizeQ4": 40,
+      "vramMinQ4": 48,
+      "vramComfortQ4": 64,
+      "ratings": {
+        "chat": 3,
+        "coding": 2,
+        "agents": 1,
+        "reasoning": 4,
+        "longContext": 3,
+        "vision": 0
+      },
+      "tags": [
+        "large",
+        "reasoning",
+        "legacy"
+      ],
+      "blurb": "Reasoning-distilled Llama 70 B. Best local 70 B for math/logic in early 2025; now lapped by Qwen 3.6-27B dense (better coding) and DeepSeek V4-Flash (better everything else).",
+      "license": "MIT (distill)",
+      "huggingface": "https://huggingface.co/deepseek-ai/DeepSeek-R1-Distill-Llama-70B"
+    },
+    {
+      "id": "glm-air-106b-moe",
+      "name": "GLM-4.5-Air 106B (MoE)",
+      "family": "GLM",
+      "params": 106,
+      "activeParams": 12,
+      "type": "moe",
+      "modality": "text",
+      "sizeQ4": 60,
+      "vramMinQ4": 72,
+      "vramComfortQ4": 96,
+      "sizeQ2": 32,
+      "vramMinQ2": 40,
+      "ratings": {
+        "chat": 4,
+        "coding": 4,
+        "agents": 3,
+        "reasoning": 4,
+        "longContext": 4,
+        "vision": 0
+      },
+      "tags": [
+        "moe",
+        "large",
+        "agents"
+      ],
+      "blurb": "Zhipu's MoE 'Air' — ~38% on SWE-rebench, the strongest sub-200B agent model. Still 20+ pts behind frontier MoEs and closed models.",
+      "license": "MIT",
+      "huggingface": "https://huggingface.co/zai-org/GLM-4.5-Air"
+    },
+    {
+      "id": "glm-51-754b-moe",
+      "name": "GLM-5.1 754B (MoE)",
+      "family": "GLM",
+      "params": 754,
+      "activeParams": 40,
+      "type": "moe",
+      "modality": "text",
+      "sizeQ4": 430,
+      "vramMinQ4": 480,
+      "vramComfortQ4": 560,
+      "sizeQ2": 220,
+      "vramMinQ2": 240,
+      "ratings": {
+        "chat": 5,
+        "coding": 5,
+        "agents": 5,
+        "reasoning": 5,
+        "longContext": 5,
+        "vision": 0
+      },
+      "tags": [
+        "moe",
+        "frontier",
+        "huge",
+        "agents"
+      ],
+      "blurb": "First open-weights model to top SWE-Bench Pro (April 2026). 8-hour autonomous coding agent. MIT.",
+      "license": "MIT",
+      "huggingface": "https://huggingface.co/zai-org/GLM-5.1"
+    },
+    {
+      "id": "gpt-oss-120b",
+      "name": "GPT-OSS 120B",
+      "family": "OpenAI",
+      "params": 120,
+      "type": "dense",
+      "modality": "text",
+      "sizeQ4": 65,
+      "vramMinQ4": 80,
+      "vramComfortQ4": 96,
+      "sizeQ2": 38,
+      "vramMinQ2": 46,
+      "ratings": {
+        "chat": 4,
+        "coding": 4,
+        "agents": 3,
+        "reasoning": 4,
+        "longContext": 4,
+        "vision": 0
+      },
+      "tags": [
+        "large",
+        "general"
+      ],
+      "blurb": "OpenAI's open-weights 120 B (MXFP4). ~33% SWE-rebench resolved. Strong all-rounder; agent ceiling is still frontier MoEs / closed models.",
+      "license": "Apache 2.0",
+      "huggingface": "https://huggingface.co/openai/gpt-oss-120b"
+    },
+    {
+      "id": "mistral-medium-3-5-128b",
+      "name": "Mistral Medium 3.5 128B",
+      "family": "Mistral",
+      "params": 128,
+      "type": "dense",
+      "modality": "text",
+      "sizeQ4": 72,
+      "vramMinQ4": 80,
+      "vramComfortQ4": 96,
+      "sizeQ2": 38,
+      "vramMinQ2": 46,
+      "ratings": {
+        "chat": 5,
+        "coding": 4,
+        "agents": 3,
+        "reasoning": 4,
+        "longContext": 5,
+        "vision": 4
+      },
+      "tags": [
+        "dense",
+        "vision",
+        "general",
+        "long-context"
+      ],
+      "blurb": "Apr 30 2026. Western 128B dense with vision + 256 K context. 77.6% SWE-Bench Verified; first credible mid-tier open-weight from Mistral in months. Modified MIT.",
+      "license": "Modified MIT",
+      "huggingface": "https://huggingface.co/mistralai/Mistral-Medium-3.5-128B"
+    },
+    {
+      "id": "minimax-m2-7-230b-moe",
+      "name": "MiniMax M2.7 230B-A10B (MoE)",
+      "family": "MiniMax",
+      "params": 230,
+      "activeParams": 10,
+      "type": "moe",
+      "modality": "text",
+      "sizeQ4": 130,
+      "vramMinQ4": 150,
+      "vramComfortQ4": 192,
+      "sizeQ2": 70,
+      "vramMinQ2": 85,
+      "ratings": {
+        "chat": 4,
+        "coding": 4,
+        "agents": 4,
+        "reasoning": 4,
+        "longContext": 5,
+        "vision": 0
+      },
+      "tags": [
+        "moe",
+        "agents",
+        "long-context"
+      ],
+      "blurb": "Apr 12 2026. 230 B / 10 B active MoE — agent-tuned with native multi-agent (\"Agent Teams\"). 57% Terminal-Bench 2.0, 56% SWE-Bench Pro — strongest sub-300 B open-weights agent.",
+      "license": "MiniMax Model License",
+      "huggingface": "https://huggingface.co/MiniMaxAI/MiniMax-M2.7"
+    },
+    {
+      "id": "tencent-hy3-preview-295b-moe",
+      "name": "Tencent Hy3-preview 295B-A21B (MoE)",
+      "family": "Tencent",
+      "params": 295,
+      "activeParams": 21,
+      "type": "moe",
+      "modality": "text",
+      "sizeQ4": 170,
+      "vramMinQ4": 192,
+      "vramComfortQ4": 224,
+      "sizeQ2": 90,
+      "vramMinQ2": 110,
+      "ratings": {
+        "chat": 4,
+        "coding": 4,
+        "agents": 4,
+        "reasoning": 5,
+        "longContext": 5,
+        "vision": 0
+      },
+      "tags": [
+        "moe",
+        "frontier",
+        "agents",
+        "reasoning"
+      ],
+      "blurb": "Apr 23 2026. Tencent's first major open-weight in months — 295 B / 21 B active MoE, 256 K context, 192 experts. ~74% SWE-Bench Verified. Custom non-MIT Tencent Hy license.",
+      "license": "Tencent Hy Community License",
+      "huggingface": "https://huggingface.co/tencent/Hy3-preview"
+    },
+    {
+      "id": "qwen3-235b-moe",
+      "name": "Qwen 3 235B-A22B (MoE)",
+      "family": "Qwen",
+      "params": 235,
+      "activeParams": 22,
+      "type": "moe",
+      "modality": "text",
+      "sizeQ4": 130,
+      "vramMinQ4": 160,
+      "vramComfortQ4": 192,
+      "sizeQ2": 75,
+      "vramMinQ2": 90,
+      "ratings": {
+        "chat": 5,
+        "coding": 4,
+        "agents": 4,
+        "reasoning": 5,
+        "longContext": 5,
+        "vision": 0
+      },
+      "tags": [
+        "moe",
+        "frontier"
+      ],
+      "blurb": "Excellent reasoning + chat. Strong coding too — but coding SOTA is GLM-5.1 / DeepSeek V3 / Kimi K2.",
+      "license": "Apache 2.0",
+      "huggingface": "https://huggingface.co/Qwen/Qwen3-235B-A22B-Instruct-2507"
+    },
+    {
+      "id": "kimi-k2-1t-moe",
+      "name": "Kimi K2 1T (MoE)",
+      "family": "Moonshot",
+      "params": 1000,
+      "activeParams": 32,
+      "type": "moe",
+      "modality": "text",
+      "sizeQ4": 540,
+      "vramMinQ4": 600,
+      "vramComfortQ4": 700,
+      "sizeQ2": 250,
+      "vramMinQ2": 280,
+      "ratings": {
+        "chat": 5,
+        "coding": 5,
+        "agents": 4,
+        "reasoning": 5,
+        "longContext": 5,
+        "vision": 0
+      },
+      "tags": [
+        "moe",
+        "frontier",
+        "huge"
+      ],
+      "blurb": "Original 1 T MoE — superseded by K2.5 / K2.6 for agents. Q2_K_XL ~250 GB fits 4× DGX Spark or M3 Ultra 512 GB.",
+      "license": "Modified MIT",
+      "huggingface": "https://huggingface.co/moonshotai/Kimi-K2-Instruct"
+    },
+    {
+      "id": "kimi-k2-5-1t-moe",
+      "name": "Kimi K2.5 1T (MoE)",
+      "family": "Moonshot",
+      "params": 1000,
+      "activeParams": 32,
+      "type": "moe",
+      "modality": "text",
+      "sizeQ4": 540,
+      "vramMinQ4": 600,
+      "vramComfortQ4": 700,
+      "sizeQ2": 250,
+      "vramMinQ2": 280,
+      "ratings": {
+        "chat": 5,
+        "coding": 5,
+        "agents": 5,
+        "reasoning": 5,
+        "longContext": 5,
+        "vision": 4
+      },
+      "tags": [
+        "moe",
+        "frontier",
+        "huge",
+        "agents",
+        "vision"
+      ],
+      "blurb": "Same architecture as K2; long-horizon agent training + native image input. Strong open-weights agent — close to closed frontier.",
+      "license": "Modified MIT",
+      "huggingface": "https://huggingface.co/moonshotai/Kimi-K2.5"
+    },
+    {
+      "id": "kimi-k2-6-1t-moe",
+      "name": "Kimi K2.6 1T (MoE)",
+      "family": "Moonshot",
+      "params": 1000,
+      "activeParams": 32,
+      "type": "moe",
+      "modality": "text",
+      "sizeQ4": 540,
+      "vramMinQ4": 600,
+      "vramComfortQ4": 700,
+      "sizeQ2": 250,
+      "vramMinQ2": 280,
+      "ratings": {
+        "chat": 5,
+        "coding": 5,
+        "agents": 5,
+        "reasoning": 5,
+        "longContext": 5,
+        "vision": 5
+      },
+      "tags": [
+        "moe",
+        "frontier",
+        "huge",
+        "agents",
+        "vision"
+      ],
+      "blurb": "Apr 2026 release. 66.7% Terminal-Bench 2.0 — top open-weights agent. Native INT4, 262 K context, native image + video input.",
+      "license": "Modified MIT",
+      "huggingface": "https://huggingface.co/moonshotai/Kimi-K2.6"
+    },
+    {
+      "id": "deepseek-v3-671b-moe",
+      "name": "DeepSeek V3 671B (MoE)",
+      "family": "DeepSeek",
+      "params": 671,
+      "activeParams": 37,
+      "type": "moe",
+      "modality": "text",
+      "sizeQ4": 380,
+      "vramMinQ4": 420,
+      "vramComfortQ4": 512,
+      "sizeQ2": 220,
+      "vramMinQ2": 250,
+      "ratings": {
+        "chat": 5,
+        "coding": 5,
+        "agents": 4,
+        "reasoning": 5,
+        "longContext": 5,
+        "vision": 0
+      },
+      "tags": [
+        "moe",
+        "frontier",
+        "huge"
+      ],
+      "blurb": "671 B MoE — superseded by V4 for agents. Q2 (~220 GB) fits 4× DGX Spark; Q4 needs 512 GB / 8×H100.",
+      "license": "DeepSeek License",
+      "huggingface": "https://huggingface.co/deepseek-ai/DeepSeek-V3"
+    },
+    {
+      "id": "deepseek-v4-flash-284b-moe",
+      "name": "DeepSeek V4-Flash 284B (MoE)",
+      "family": "DeepSeek",
+      "params": 284,
+      "activeParams": 13,
+      "type": "moe",
+      "modality": "text",
+      "sizeQ4": 160,
+      "vramMinQ4": 192,
+      "vramComfortQ4": 240,
+      "sizeQ2": 90,
+      "vramMinQ2": 110,
+      "ratings": {
+        "chat": 5,
+        "coding": 5,
+        "agents": 4,
+        "reasoning": 5,
+        "longContext": 5,
+        "vision": 0
+      },
+      "tags": [
+        "moe",
+        "frontier",
+        "agents",
+        "long-context"
+      ],
+      "blurb": "Apr 2026 release. 284 B / 13 B active, 1 M-token context. ~57% Terminal-Bench. The agent-grade DeepSeek that fits a single Pro 6000 build.",
+      "license": "MIT",
+      "huggingface": "https://huggingface.co/deepseek-ai/DeepSeek-V4-Flash"
+    },
+    {
+      "id": "deepseek-v4-pro-1t6-moe",
+      "name": "DeepSeek V4-Pro 1.6T (MoE)",
+      "family": "DeepSeek",
+      "params": 1600,
+      "activeParams": 49,
+      "type": "moe",
+      "modality": "text",
+      "sizeQ4": 800,
+      "vramMinQ4": 900,
+      "vramComfortQ4": 1024,
+      "sizeQ2": 430,
+      "vramMinQ2": 480,
+      "ratings": {
+        "chat": 5,
+        "coding": 5,
+        "agents": 5,
+        "reasoning": 5,
+        "longContext": 5,
+        "vision": 0
+      },
+      "tags": [
+        "moe",
+        "frontier",
+        "huge",
+        "agents"
+      ],
+      "blurb": "Apr 2026 release. 1.6 T / 49 B active, 1 M-token context. 67.9% Terminal-Bench — top open-weights agent, matches closed frontier on most agentic tasks. Q2 ~430 GB.",
+      "license": "MIT",
+      "huggingface": "https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro"
+    },
+    {
+      "id": "sdxl-1",
+      "name": "SDXL 1.0",
+      "family": "Stability AI",
+      "modality": "image",
+      "params": 3.5,
+      "type": "diffusion",
+      "sizeQ4": 7,
+      "vramMinQ4": 8,
+      "vramComfortQ4": 12,
+      "ratings": {
+        "photoreal": 3,
+        "prompt": 2,
+        "style": 5,
+        "speed": 5,
+        "license": 4
+      },
+      "tags": [
+        "image",
+        "fast",
+        "legacy"
+      ],
+      "blurb": "Legacy 3.5 B SDXL — runs on 8 GB, huge LoRA ecosystem. Beat by FLUX on prompt + photorealism.",
+      "license": "OpenRAIL++",
+      "huggingface": "https://huggingface.co/stabilityai/stable-diffusion-xl-base-1.0"
+    },
+    {
+      "id": "z-image-turbo",
+      "name": "Z-Image-Turbo",
+      "family": "Z-Image",
+      "modality": "image",
+      "params": 2,
+      "type": "diffusion",
+      "sizeQ4": 6,
+      "vramMinQ4": 8,
+      "vramComfortQ4": 12,
+      "ratings": {
+        "photoreal": 3,
+        "prompt": 4,
+        "style": 4,
+        "speed": 5,
+        "license": 5
+      },
+      "tags": [
+        "image",
+        "fast",
+        "permissive"
+      ],
+      "blurb": "Apache-2.0 turbo model — very fast, decent quality, fits 8 GB cards. Smaller community vs SD/FLUX.",
+      "license": "Apache 2.0",
+      "huggingface": "https://huggingface.co/models?search=z-image"
+    },
+    {
+      "id": "flux1-schnell",
+      "name": "FLUX.1 [schnell]",
+      "family": "Black Forest Labs",
+      "modality": "image",
+      "params": 12,
+      "type": "diffusion",
+      "sizeQ4": 12,
+      "vramMinQ4": 16,
+      "vramComfortQ4": 24,
+      "ratings": {
+        "photoreal": 4,
+        "prompt": 4,
+        "style": 4,
+        "speed": 5,
+        "license": 5
+      },
+      "tags": [
+        "image",
+        "fast",
+        "permissive"
+      ],
+      "blurb": "Apache-2.0 distilled FLUX, 4-step generation. Best fast permissive option for commercial use.",
+      "license": "Apache 2.0",
+      "huggingface": "https://huggingface.co/black-forest-labs/FLUX.1-schnell"
+    },
+    {
+      "id": "flux1-dev",
+      "name": "FLUX.1 [dev]",
+      "family": "Black Forest Labs",
+      "modality": "image",
+      "params": 12,
+      "type": "diffusion",
+      "sizeQ4": 12,
+      "vramMinQ4": 16,
+      "vramComfortQ4": 24,
+      "ratings": {
+        "photoreal": 5,
+        "prompt": 5,
+        "style": 4,
+        "speed": 3,
+        "license": 2
+      },
+      "tags": [
+        "image",
+        "photoreal",
+        "sota"
+      ],
+      "blurb": "The 2026 photorealism crown — best lighting, anatomy, text rendering. Non-commercial; commercial license $$.",
+      "license": "FLUX.1 [dev] Non-Commercial",
+      "huggingface": "https://huggingface.co/black-forest-labs/FLUX.1-dev"
+    },
+    {
+      "id": "flux2-klein",
+      "name": "FLUX.2 [klein]",
+      "family": "Black Forest Labs",
+      "modality": "image",
+      "params": 4,
+      "type": "diffusion",
+      "sizeQ4": 8,
+      "vramMinQ4": 13,
+      "vramComfortQ4": 16,
+      "ratings": {
+        "photoreal": 4,
+        "prompt": 5,
+        "style": 4,
+        "speed": 5,
+        "license": 3
+      },
+      "tags": [
+        "image",
+        "fast"
+      ],
+      "blurb": "FLUX.2 small variant — strong prompt-following at SD-class VRAM. Commercial license required.",
+      "license": "FLUX.2 Community",
+      "huggingface": "https://huggingface.co/models?search=flux.2"
+    },
+    {
+      "id": "flux2-dev",
+      "name": "FLUX.2 [dev]",
+      "family": "Black Forest Labs",
+      "modality": "image",
+      "params": 14,
+      "type": "diffusion",
+      "sizeQ4": 16,
+      "vramMinQ4": 24,
+      "vramComfortQ4": 32,
+      "ratings": {
+        "photoreal": 5,
+        "prompt": 5,
+        "style": 5,
+        "speed": 3,
+        "license": 3
+      },
+      "tags": [
+        "image",
+        "sota",
+        "photoreal"
+      ],
+      "blurb": "Black Forest Labs' 2026 flagship. Better prompt + style than FLUX.1 [dev], same VRAM footprint.",
+      "license": "FLUX.2 Community",
+      "huggingface": "https://huggingface.co/models?search=flux.2"
+    },
+    {
+      "id": "sd35-large",
+      "name": "Stable Diffusion 3.5 Large",
+      "family": "Stability AI",
+      "modality": "image",
+      "params": 8,
+      "type": "diffusion",
+      "sizeQ4": 10,
+      "vramMinQ4": 16,
+      "vramComfortQ4": 24,
+      "ratings": {
+        "photoreal": 4,
+        "prompt": 4,
+        "style": 5,
+        "speed": 4,
+        "license": 4
+      },
+      "tags": [
+        "image",
+        "general"
+      ],
+      "blurb": "Stability's 2024-2026 flagship. Strong style versatility, mature ecosystem (ControlNet, IP-Adapter).",
+      "license": "Stability AI Community",
+      "huggingface": "https://huggingface.co/stabilityai/stable-diffusion-3.5-large"
+    },
+    {
+      "id": "qwen-image",
+      "name": "Qwen-Image (Alibaba)",
+      "family": "Qwen",
+      "modality": "image",
+      "params": 20,
+      "type": "diffusion",
+      "sizeQ4": 14,
+      "vramMinQ4": 20,
+      "vramComfortQ4": 24,
+      "ratings": {
+        "photoreal": 4,
+        "prompt": 5,
+        "style": 5,
+        "speed": 3,
+        "license": 5
+      },
+      "tags": [
+        "image",
+        "permissive",
+        "text-rendering"
+      ],
+      "blurb": "Apache-2.0 — best-in-class for in-image text rendering (English + Chinese), strong style range.",
+      "license": "Apache 2.0",
+      "huggingface": "https://huggingface.co/Qwen/Qwen-Image"
+    },
+    {
+      "id": "hidream-i1",
+      "name": "HiDream-I1 (Full)",
+      "family": "HiDream.ai",
+      "modality": "image",
+      "params": 17,
+      "type": "diffusion",
+      "sizeQ4": 18,
+      "vramMinQ4": 24,
+      "vramComfortQ4": 32,
+      "ratings": {
+        "photoreal": 5,
+        "prompt": 5,
+        "style": 4,
+        "speed": 3,
+        "license": 5
+      },
+      "tags": [
+        "image",
+        "permissive"
+      ],
+      "blurb": "MIT-licensed 17 B — competes with FLUX.1 [dev] on quality without commercial restrictions. Superseded by HiDream-O1-Image (May 2026) on prompt alignment and arena rank.",
+      "license": "MIT",
+      "huggingface": "https://huggingface.co/HiDream-ai/HiDream-I1-Full"
+    },
+    {
+      "id": "hidream-o1-image",
+      "name": "HiDream-O1-Image",
+      "family": "HiDream.ai",
+      "modality": "image",
+      "params": 8,
+      "type": "transformer",
+      "sizeQ4": 10,
+      "vramMinQ4": 16,
+      "vramComfortQ4": 24,
+      "ratings": {
+        "photoreal": 5,
+        "prompt": 5,
+        "style": 5,
+        "speed": 4,
+        "license": 5
+      },
+      "tags": [
+        "image",
+        "sota",
+        "permissive",
+        "text-rendering"
+      ],
+      "blurb": "May 8 2026. 8 B MIT-licensed pixel-space unified transformer (no VAE, no separate text encoder). GenEval 0.90 / DPG 89.83 — debuted at #8 on AA arena, highest-ranked open-weights image model. 2048×2048 native.",
+      "license": "MIT",
+      "huggingface": "https://huggingface.co/HiDream-ai/HiDream-O1-Image"
+    },
+    {
+      "id": "ltx-video",
+      "name": "LTX-Video 2B",
+      "family": "Lightricks",
+      "modality": "video",
+      "params": 2,
+      "type": "diffusion",
+      "sizeQ4": 6,
+      "vramMinQ4": 8,
+      "vramComfortQ4": 12,
+      "ratings": {
+        "motion": 3,
+        "duration": 3,
+        "prompt": 3,
+        "quality": 3,
+        "speed": 5
+      },
+      "tags": [
+        "video",
+        "fast"
+      ],
+      "blurb": "Real-time-ish on a 4090 — 5 s 720p clip in ~90 s. Fastest open video model; quality below WAN/Hunyuan.",
+      "license": "LTX-Video Open",
+      "huggingface": "https://huggingface.co/Lightricks/LTX-Video"
+    },
+    {
+      "id": "wan21-1b3",
+      "name": "WAN 2.1 1.3B",
+      "family": "Alibaba",
+      "modality": "video",
+      "params": 1.3,
+      "type": "diffusion",
+      "sizeQ4": 4,
+      "vramMinQ4": 8,
+      "vramComfortQ4": 12,
+      "ratings": {
+        "motion": 3,
+        "duration": 3,
+        "prompt": 3,
+        "quality": 3,
+        "speed": 4
+      },
+      "tags": [
+        "video",
+        "small",
+        "permissive"
+      ],
+      "blurb": "Smallest open video model — 8 GB VRAM, 480p. The 'video on a laptop GPU' option.",
+      "license": "Apache 2.0",
+      "huggingface": "https://huggingface.co/Wan-AI/Wan2.1-T2V-1.3B"
+    },
+    {
+      "id": "wan22-14b",
+      "name": "WAN 2.2 14B (MoE)",
+      "family": "Alibaba",
+      "modality": "video",
+      "params": 14,
+      "activeParams": 7,
+      "type": "diffusion-moe",
+      "sizeQ4": 18,
+      "vramMinQ4": 24,
+      "vramComfortQ4": 32,
+      "sizeQ2": 8,
+      "vramMinQ2": 12,
+      "ratings": {
+        "motion": 5,
+        "duration": 4,
+        "prompt": 4,
+        "quality": 5,
+        "speed": 3
+      },
+      "tags": [
+        "video",
+        "sota"
+      ],
+      "blurb": "MoE: high-noise + low-noise experts. 5 s 720p in ~3-5 min on a 5090; GGUF quants run on 12 GB.",
+      "license": "Apache 2.0",
+      "huggingface": "https://huggingface.co/Wan-AI/Wan2.2-T2V-A14B"
+    },
+    {
+      "id": "wan25-14b",
+      "name": "WAN 2.5 14B",
+      "family": "Alibaba",
+      "modality": "video",
+      "params": 14,
+      "type": "diffusion",
+      "sizeQ4": 22,
+      "vramMinQ4": 30,
+      "vramComfortQ4": 40,
+      "ratings": {
+        "motion": 5,
+        "duration": 4,
+        "prompt": 5,
+        "quality": 5,
+        "speed": 2
+      },
+      "tags": [
+        "video",
+        "sota",
+        "1080p"
+      ],
+      "blurb": "VRAM-hungry but produces 1080p. 16 GB tile-mode possible with WanGP optimizations.",
+      "license": "Apache 2.0",
+      "huggingface": "https://huggingface.co/models?search=wan2.5"
+    },
+    {
+      "id": "hunyuanvideo-15",
+      "name": "HunyuanVideo 1.5",
+      "family": "Tencent",
+      "modality": "video",
+      "params": 8.3,
+      "type": "diffusion",
+      "sizeQ4": 12,
+      "vramMinQ4": 14,
+      "vramComfortQ4": 24,
+      "ratings": {
+        "motion": 4,
+        "duration": 4,
+        "prompt": 4,
+        "quality": 5,
+        "speed": 3
+      },
+      "tags": [
+        "video",
+        "consumer-friendly"
+      ],
+      "blurb": "Trimmed to 8.3 B and 14 GB w/ offload. Better instruction-following + structural stability than WAN 2.2.",
+      "license": "Tencent Hunyuan Community",
+      "huggingface": "https://huggingface.co/tencent/HunyuanVideo-1.5"
+    },
+    {
+      "id": "hunyuanvideo-13b",
+      "name": "HunyuanVideo 13B (original)",
+      "family": "Tencent",
+      "modality": "video",
+      "params": 13,
+      "type": "diffusion",
+      "sizeQ4": 28,
+      "vramMinQ4": 60,
+      "vramComfortQ4": 80,
+      "sizeQ2": 12,
+      "vramMinQ2": 16,
+      "ratings": {
+        "motion": 5,
+        "duration": 4,
+        "prompt": 4,
+        "quality": 5,
+        "speed": 2
+      },
+      "tags": [
+        "video",
+        "datacenter",
+        "sota"
+      ],
+      "blurb": "Original 13 B — best motion realism among open weights. 60-80 GB VRAM at full quality (datacenter).",
+      "license": "Tencent Hunyuan Community",
+      "huggingface": "https://huggingface.co/tencent/HunyuanVideo"
+    },
+    {
+      "id": "mochi1",
+      "name": "Mochi 1",
+      "family": "Genmo",
+      "modality": "video",
+      "params": 10,
+      "type": "diffusion",
+      "sizeQ4": 18,
+      "vramMinQ4": 24,
+      "vramComfortQ4": 32,
+      "ratings": {
+        "motion": 4,
+        "duration": 3,
+        "prompt": 4,
+        "quality": 4,
+        "speed": 2
+      },
+      "tags": [
+        "video"
+      ],
+      "blurb": "Permissive + capable, but slower than WAN 2.2. ~8 min for 5 s clip on a 4090.",
+      "license": "Apache 2.0",
+      "huggingface": "https://huggingface.co/genmo/mochi-1-preview"
+    }
+  ]
 }
