@@ -1,141 +1,141 @@
 {
-    "$schema":  "https://json-schema.org/draft-07/schema#",
-    "_description":  "Curated use cases pointing at recommended models and builds. Editorial, but every id resolves into models.json or builds.json.",
-    "_lastUpdated":  "2026-05-14",
-    "_count":  8,
-    "useCases":  [
-                     {
-                         "id":  "casual-chat",
-                         "label":  "Casual chat / writing",
-                         "icon":  "ðŸ’¬",
-                         "desc":  "General-purpose assistant. 8 Bâ€“14 B is plenty.",
-                         "requiredMemoryGB":  8,
-                         "comfortMemoryGB":  16,
-                         "modelClass":  "8b",
-                         "recommendedModels":  [
-                                                   "qwen3-8b",
-                                                   "llama31-8b",
-                                                   "phi4-14b"
-                                               ]
-                     },
-                     {
-                         "id":  "coding",
-                         "label":  "Coding assistant",
-                         "icon":  "ðŸ’»",
-                         "desc":  "Local copilot. Qwen 3.6-27B dense (May 2026) is the new single-24 GB-card king at 77 % SWE-Bench Verified; 35 B-A3B MoE if you want speed; 70-106 B for hard multi-file work.",
-                         "requiredMemoryGB":  20,
-                         "comfortMemoryGB":  48,
-                         "modelClass":  "30b",
-                         "recommendedModels":  [
-                                                   "qwen3-6-27b-dense",
-                                                   "qwen3-6-35b-a3b-moe",
-                                                   "qwen3-next-80b-moe",
-                                                   "glm-air-106b-moe",
-                                                   "qwen3-coder-30b"
-                                               ]
-                     },
-                     {
-                         "id":  "agents",
-                         "label":  "Agents / tool use",
-                         "icon":  "ðŸ¤–",
-                         "desc":  "Tool-calling, multi-step workflows. Honest answer: sub-200B local models still cap around 55-59 % Terminal-Bench 2.0. Need 200B+ MoE â€” MiniMax M2.7 and Hy3-preview are the new on-the-cusp options.",
-                         "requiredMemoryGB":  60,
-                         "comfortMemoryGB":  192,
-                         "modelClass":  "120b_moe",
-                         "recommendedModels":  [
-                                                   "deepseek-v4-flash-284b-moe",
-                                                   "minimax-m2-7-230b-moe",
-                                                   "qwen3-235b-moe",
-                                                   "tencent-hy3-preview-295b-moe",
-                                                   "kimi-k2-6-1t-moe",
-                                                   "deepseek-v4-pro-1t6-moe",
-                                                   "glm-51-754b-moe"
-                                               ]
-                     },
-                     {
-                         "id":  "long-context",
-                         "label":  "Long-context RAG",
-                         "icon":  "ðŸ“š",
-                         "desc":  "Big documents, 100 K+ context. Needs spare VRAM for KV cache. Qwen 3.6-27B / 35B-A3B / Mistral Medium 3.5 all natively 256-262 K.",
-                         "requiredMemoryGB":  48,
-                         "comfortMemoryGB":  96,
-                         "modelClass":  "120b_moe",
-                         "recommendedModels":  [
-                                                   "qwen3-6-27b-dense",
-                                                   "qwen3-6-35b-a3b-moe",
-                                                   "qwen3-next-80b-moe",
-                                                   "mistral-medium-3-5-128b",
-                                                   "glm-air-106b-moe",
-                                                   "deepseek-v4-flash-284b-moe"
-                                               ]
-                     },
-                     {
-                         "id":  "vision",
-                         "label":  "Vision / multimodal",
-                         "icon":  "ðŸ–¼ï¸",
-                         "desc":  "Image understanding, OCR, screen agents. Qwen 3.6-27B dense adds vision to the small-model tier; Mistral Medium 3.5 brings it to 128 B.",
-                         "requiredMemoryGB":  16,
-                         "comfortMemoryGB":  24,
-                         "modelClass":  "30b",
-                         "recommendedModels":  [
-                                                   "qwen3-6-27b-dense",
-                                                   "gemma3-27b",
-                                                   "gemma4-26b-moe",
-                                                   "mistral-medium-3-5-128b"
-                                               ]
-                     },
-                     {
-                         "id":  "frontier",
-                         "label":  "Frontier / power user",
-                         "icon":  "ðŸš€",
-                         "desc":  "Run 120 Bâ€“1.6 T open weights. Big rigs only.",
-                         "requiredMemoryGB":  80,
-                         "comfortMemoryGB":  256,
-                         "modelClass":  "235b_moe",
-                         "recommendedModels":  [
-                                                   "mistral-medium-3-5-128b",
-                                                   "gpt-oss-120b",
-                                                   "minimax-m2-7-230b-moe",
-                                                   "qwen3-235b-moe",
-                                                   "tencent-hy3-preview-295b-moe",
-                                                   "deepseek-v4-flash-284b-moe",
-                                                   "kimi-k2-6-1t-moe",
-                                                   "deepseek-v4-pro-1t6-moe"
-                                               ]
-                     },
-                     {
-                         "id":  "image-gen",
-                         "label":  "Image generation",
-                         "icon":  "ðŸŽ¨",
-                         "desc":  "Local Stable Diffusion / FLUX / Qwen-Image / HiDream-O1. Sec/image is the metric.",
-                         "requiredMemoryGB":  16,
-                         "comfortMemoryGB":  24,
-                         "modelClass":  "img_flux",
-                         "recommendedModels":  [
-                                                   "hidream-o1-image",
-                                                   "flux1-dev",
-                                                   "flux1-schnell",
-                                                   "sd35-large",
-                                                   "hidream-i1",
-                                                   "qwen-image",
-                                                   "flux2-dev"
-                                               ]
-                     },
-                     {
-                         "id":  "video-gen",
-                         "label":  "Video generation",
-                         "icon":  "ðŸŽ¬",
-                         "desc":  "Local WAN / Hunyuan / LTX text-to-video + img-to-video. HunyuanVideo 1.5 now runs in 14 GB with offload â€” new consumer sweet spot.",
-                         "requiredMemoryGB":  12,
-                         "comfortMemoryGB":  32,
-                         "modelClass":  "vid_wan22",
-                         "recommendedModels":  [
-                                                   "hunyuanvideo-15",
-                                                   "wan22-14b",
-                                                   "wan25-14b",
-                                                   "ltx-video",
-                                                   "mochi1"
-                                               ]
-                     }
-                 ]
+  "$schema": "https://json-schema.org/draft-07/schema#",
+  "_description": "Curated use cases pointing at recommended models and builds. Editorial, but every id resolves into models.json or builds.json.",
+  "_lastUpdated": "2026-05-15",
+  "_count": 8,
+  "useCases": [
+    {
+      "id": "casual-chat",
+      "label": "Casual chat / writing",
+      "icon": "💬",
+      "desc": "General-purpose assistant. 8 B–14 B is plenty.",
+      "requiredMemoryGB": 8,
+      "comfortMemoryGB": 16,
+      "modelClass": "8b",
+      "recommendedModels": [
+        "qwen3-8b",
+        "llama31-8b",
+        "phi4-14b"
+      ]
+    },
+    {
+      "id": "coding",
+      "label": "Coding assistant",
+      "icon": "💻",
+      "desc": "Local copilot. Qwen 3.6-27B dense (May 2026) is the new single-24 GB-card king at 77 % SWE-Bench Verified; 35 B-A3B MoE if you want speed; 70-106 B for hard multi-file work.",
+      "requiredMemoryGB": 20,
+      "comfortMemoryGB": 48,
+      "modelClass": "30b",
+      "recommendedModels": [
+        "qwen3-6-27b-dense",
+        "qwen3-6-35b-a3b-moe",
+        "qwen3-next-80b-moe",
+        "glm-air-106b-moe",
+        "qwen3-coder-30b"
+      ]
+    },
+    {
+      "id": "agents",
+      "label": "Agents / tool use",
+      "icon": "🤖",
+      "desc": "Tool-calling, multi-step workflows. Honest answer: sub-200B local models still cap around 55-59 % Terminal-Bench 2.0. Need 200B+ MoE — MiniMax M2.7 and Hy3-preview are the new on-the-cusp options.",
+      "requiredMemoryGB": 60,
+      "comfortMemoryGB": 192,
+      "modelClass": "120b_moe",
+      "recommendedModels": [
+        "deepseek-v4-flash-284b-moe",
+        "minimax-m2-7-230b-moe",
+        "qwen3-235b-moe",
+        "tencent-hy3-preview-295b-moe",
+        "kimi-k2-6-1t-moe",
+        "deepseek-v4-pro-1t6-moe",
+        "glm-51-754b-moe"
+      ]
+    },
+    {
+      "id": "long-context",
+      "label": "Long-context RAG",
+      "icon": "📚",
+      "desc": "Big documents, 100 K+ context. Needs spare VRAM for KV cache. Qwen 3.6-27B / 35B-A3B / Mistral Medium 3.5 all natively 256-262 K.",
+      "requiredMemoryGB": 48,
+      "comfortMemoryGB": 96,
+      "modelClass": "120b_moe",
+      "recommendedModels": [
+        "qwen3-6-27b-dense",
+        "qwen3-6-35b-a3b-moe",
+        "qwen3-next-80b-moe",
+        "mistral-medium-3-5-128b",
+        "glm-air-106b-moe",
+        "deepseek-v4-flash-284b-moe"
+      ]
+    },
+    {
+      "id": "vision",
+      "label": "Vision / multimodal",
+      "icon": "🖼️",
+      "desc": "Image understanding, OCR, screen agents. Qwen 3.6-27B dense adds vision to the small-model tier; Mistral Medium 3.5 brings it to 128 B.",
+      "requiredMemoryGB": 16,
+      "comfortMemoryGB": 24,
+      "modelClass": "30b",
+      "recommendedModels": [
+        "qwen3-6-27b-dense",
+        "gemma3-27b",
+        "gemma4-26b-moe",
+        "mistral-medium-3-5-128b"
+      ]
+    },
+    {
+      "id": "frontier",
+      "label": "Frontier / power user",
+      "icon": "🚀",
+      "desc": "Run 120 B–1.6 T open weights. Big rigs only.",
+      "requiredMemoryGB": 80,
+      "comfortMemoryGB": 256,
+      "modelClass": "235b_moe",
+      "recommendedModels": [
+        "mistral-medium-3-5-128b",
+        "gpt-oss-120b",
+        "minimax-m2-7-230b-moe",
+        "qwen3-235b-moe",
+        "tencent-hy3-preview-295b-moe",
+        "deepseek-v4-flash-284b-moe",
+        "kimi-k2-6-1t-moe",
+        "deepseek-v4-pro-1t6-moe"
+      ]
+    },
+    {
+      "id": "image-gen",
+      "label": "Image generation",
+      "icon": "🎨",
+      "desc": "Local Stable Diffusion / FLUX / Qwen-Image / HiDream-O1. Sec/image is the metric.",
+      "requiredMemoryGB": 16,
+      "comfortMemoryGB": 24,
+      "modelClass": "img_flux",
+      "recommendedModels": [
+        "hidream-o1-image",
+        "flux1-dev",
+        "flux1-schnell",
+        "sd35-large",
+        "hidream-i1",
+        "qwen-image",
+        "flux2-dev"
+      ]
+    },
+    {
+      "id": "video-gen",
+      "label": "Video generation",
+      "icon": "🎬",
+      "desc": "Local WAN / Hunyuan / LTX text-to-video + img-to-video. HunyuanVideo 1.5 now runs in 14 GB with offload — new consumer sweet spot.",
+      "requiredMemoryGB": 12,
+      "comfortMemoryGB": 32,
+      "modelClass": "vid_wan22",
+      "recommendedModels": [
+        "hunyuanvideo-15",
+        "wan22-14b",
+        "wan25-14b",
+        "ltx-video",
+        "mochi1"
+      ]
+    }
+  ]
 }
