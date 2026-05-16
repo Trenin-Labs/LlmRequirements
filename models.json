@@ -1,7 +1,7 @@
 {
   "$schema": "https://json-schema.org/draft-07/schema#",
   "_description": "LLM model catalog with ratings and VRAM requirements. See README.md for schema.",
-  "_lastUpdated": "2026-05-15",
+  "_lastUpdated": "2026-05-16",
   "_count": 44,
   "models": [
     {
