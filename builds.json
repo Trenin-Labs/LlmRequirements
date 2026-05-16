@@ -1,8 +1,8 @@
 {
   "$schema": "https://json-schema.org/draft-07/schema#",
-  "_description": "Hardware build catalog with throughput (tps), image, and video benchmarks. Pricing is in priceUSD as a US MSRP fallback only — see prices/ for regional snapshots.",
-  "_lastUpdated": "2026-05-15",
-  "_count": 54,
+  "_description": "Hardware build catalog with throughput (tps), prompt-processing (pp), TTFT @ 100 K (ttft100k), image, and video benchmarks. Each build also carries editorial fields used by the /compare page: softwareStack (short label), softwareMaturity (0-5), softwareNote, extensibility (0-5), and extensibilityNote. Pricing is in priceUSD as a US MSRP fallback only — see prices/ for regional snapshots.",
+  "_lastUpdated": "2026-05-16",
+  "_count": 67,
   "builds": [
     {
       "id": "your-laptop-8gb",
@@ -38,7 +38,20 @@
         "You'll likely need to close browser tabs to fit 8 B"
       ],
       "tagline": "Already in your bag — see what it can run.",
-      "rigOverheadUSD": 0
+      "rigOverheadUSD": 0,
+      "pp": {
+        "8b": 30
+      },
+      "ttft100k": {
+        "8b": null
+      },
+      "softwareStack": "CPU",
+      "softwareMaturity": 3,
+      "softwareNote": "llama.cpp CPU is mature — every quant works. No vLLM / TRT-LLM / Flash Attention; speeds are bandwidth-limited.",
+      "extensibility": 5,
+      "extensibilityNote": "It's your laptop — RAM upgrade is the easy lever. A used eGPU box can unlock real speed.",
+      "tflopsFP16": 0.5,
+      "vllmSupport": "experimental"
     },
     {
       "id": "your-laptop-12gb",
@@ -73,7 +86,22 @@
         "No image / video gen at usable speed",
         "Multi-tasking will swap and tank speed"
       ],
-      "rigOverheadUSD": 0
+      "rigOverheadUSD": 0,
+      "pp": {
+        "8b": 42,
+        "14b": 22
+      },
+      "ttft100k": {
+        "8b": null,
+        "14b": null
+      },
+      "softwareStack": "CPU",
+      "softwareMaturity": 3,
+      "softwareNote": "llama.cpp CPU is rock-solid; integrated-GPU Vulkan offload nets 20–50 % when it works.",
+      "extensibility": 5,
+      "extensibilityNote": "RAM and SSD typically socketed; an eGPU enclosure or USB-4 GPU dock is the real upgrade path.",
+      "tflopsFP16": 0.7,
+      "vllmSupport": "experimental"
     },
     {
       "id": "your-pc-16gb",
@@ -108,7 +136,22 @@
         "CPU inference scales poorly past 14 B",
         "No image / video gen at usable speed"
       ],
-      "rigOverheadUSD": 0
+      "rigOverheadUSD": 0,
+      "pp": {
+        "8b": 55,
+        "14b": 30
+      },
+      "ttft100k": {
+        "8b": null,
+        "14b": null
+      },
+      "softwareStack": "CPU",
+      "softwareMaturity": 3,
+      "softwareNote": "llama.cpp CPU + Vulkan iGPU both mature. No production-grade tensor stack until you add a discrete GPU.",
+      "extensibility": 5,
+      "extensibilityNote": "Tower form factor — add a 3060 12 GB and you skip to a real GPU build overnight.",
+      "tflopsFP16": 0.9,
+      "vllmSupport": "experimental"
     },
     {
       "id": "mac-mini-m4-16",
@@ -146,7 +189,32 @@
         "Slow prompt processing vs CUDA"
       ],
       "tagline": "$799 — the cheapest serious local LLM box.",
-      "rigOverheadUSD": 0
+      "reviews": [
+        {
+          "videoId": "_XgDngY_Qy8",
+          "title": "What Local LLMs Can You Run on the $599 M4 Mac Mini?"
+        },
+        {
+          "videoId": "ZqVCJvg-DYw",
+          "title": "How a $600 Mac Mini Runs a 35B AI Model — Local LLM Agent Setup"
+        }
+      ],
+      "rigOverheadUSD": 0,
+      "pp": {
+        "8b": 220,
+        "14b": 120
+      },
+      "ttft100k": {
+        "8b": null,
+        "14b": null
+      },
+      "softwareStack": "Metal / MLX",
+      "softwareMaturity": 4,
+      "softwareNote": "llama.cpp Metal and Apple MLX are first-class; the vllm-project/vllm-metal plugin (Docker Model Runner, Apr 2026) brings an OpenAI-compatible vLLM path to Macs for text models.",
+      "extensibility": 3,
+      "extensibilityNote": "Sealed individually, but Thunderbolt-5 MLX clusters work — two Mac Minis act as a 32 GB pool over TB5. RAM/SSD are locked at order time.",
+      "tflopsFP16": 4,
+      "vllmSupport": "community"
     },
     {
       "id": "mba-m4-16",
@@ -182,7 +250,32 @@
         "11 GB usable caps at 14 B (slow)",
         "Slower than the Mac Mini at same RAM"
       ],
-      "rigOverheadUSD": 0
+      "reviews": [
+        {
+          "videoId": "RUz6-cA7E9k",
+          "title": "Vibe Coding on an M4 MacBook Air — Will it Survive Local LLMs?"
+        },
+        {
+          "videoId": "bpIjlMJJ0I0",
+          "title": "The budget MacBook so stubborn it survived a 44k-token test"
+        }
+      ],
+      "rigOverheadUSD": 0,
+      "pp": {
+        "8b": 220,
+        "14b": 120
+      },
+      "ttft100k": {
+        "8b": null,
+        "14b": null
+      },
+      "softwareStack": "Metal / MLX",
+      "softwareMaturity": 4,
+      "softwareNote": "Same Metal / MLX stack as the Mac Mini. The vllm-metal plugin (under the vllm-project GitHub org) ships OpenAI-compatible serving on macOS via MLX since April 2026.",
+      "extensibility": 2,
+      "extensibilityNote": "Sealed laptop. Thunderbolt-4 clustering works for inference but the chassis is the limit — no real upgrade path.",
+      "tflopsFP16": 4,
+      "vllmSupport": "community"
     },
     {
       "id": "mac-mini-m4-24",
@@ -228,7 +321,24 @@
           "title": "M4 Mac Mini vs Pro — Logic Pro, Blender, After Effects, Llama LLMs stress test"
         }
       ],
-      "rigOverheadUSD": 0
+      "rigOverheadUSD": 0,
+      "pp": {
+        "8b": 220,
+        "14b": 120,
+        "30b": 55
+      },
+      "ttft100k": {
+        "8b": 900,
+        "14b": null,
+        "30b": null
+      },
+      "softwareStack": "Metal / MLX",
+      "softwareMaturity": 4,
+      "softwareNote": "Metal + MLX cover most local-LLM workflows. The vllm-metal plugin (Docker, Apr 2026) adds an OpenAI-compatible vLLM path; upstream core still lacks Metal/MPS.",
+      "extensibility": 3,
+      "extensibilityNote": "Sealed individually, but TB5 MLX clusters scale to 48-96 GB on a stack of these. RAM / SSD locked at order time.",
+      "tflopsFP16": 4,
+      "vllmSupport": "community"
     },
     {
       "id": "mbp-m4-pro-48",
@@ -240,6 +350,7 @@
       "usableMemoryGB": 40,
       "bandwidthGBs": 273,
       "priceUSD": 2899,
+      "discontinued": true,
       "priceNote": "Discontinued by Apple Mar 2026 (M5 Pro is the current SKU); still available refurbished / third-party.",
       "tps": {
         "8b": 50,
@@ -278,7 +389,26 @@
           "title": "FREE Local LLMs on Apple Silicon — Fast! (AZisk)"
         }
       ],
-      "rigOverheadUSD": 0
+      "rigOverheadUSD": 0,
+      "pp": {
+        "8b": 440,
+        "14b": 240,
+        "30b": 110,
+        "70b": 50
+      },
+      "ttft100k": {
+        "8b": 380,
+        "14b": 620,
+        "30b": 1400,
+        "70b": null
+      },
+      "softwareStack": "Metal / MLX",
+      "softwareMaturity": 4,
+      "softwareNote": "Mature Metal + MLX. The vllm-metal plugin via Docker Model Runner is the May 2026 way to get vLLM serving on a Mac — text-only, plugin not core.",
+      "extensibility": 2,
+      "extensibilityNote": "Sealed laptop. TB5 cluster works in a pinch but battery + chassis make this a single-unit story for most users.",
+      "tflopsFP16": 10,
+      "vllmSupport": "community"
     },
     {
       "id": "mbp-m4-max-64",
@@ -290,6 +420,7 @@
       "usableMemoryGB": 54,
       "bandwidthGBs": 410,
       "priceUSD": 3999,
+      "discontinued": true,
       "priceNote": "Discontinued by Apple Mar 2026 (M5 Max is the current SKU); still available refurbished / third-party.",
       "tps": {
         "8b": 70,
@@ -327,7 +458,28 @@
           "title": "MBP M5 Max vs M4 Max for Local AI tested"
         }
       ],
-      "rigOverheadUSD": 0
+      "rigOverheadUSD": 0,
+      "pp": {
+        "8b": 880,
+        "14b": 480,
+        "30b": 220,
+        "70b": 95,
+        "120b_moe": 320
+      },
+      "ttft100k": {
+        "8b": 180,
+        "14b": 310,
+        "30b": 700,
+        "70b": null,
+        "120b_moe": null
+      },
+      "softwareStack": "Metal / MLX",
+      "softwareMaturity": 4,
+      "softwareNote": "Metal + MLX excellent for tg; vllm-metal plugin (Docker, Apr 2026) provides an OpenAI-compatible vLLM path for text models. Prefill still trails CUDA.",
+      "extensibility": 2,
+      "extensibilityNote": "Sealed laptop. Same TB5 cluster caveat as the M4 Pro.",
+      "tflopsFP16": 17,
+      "vllmSupport": "community"
     },
     {
       "id": "mac-studio-m4-max-128",
@@ -379,7 +531,28 @@
           "title": "M5 MacBook Pro vs M4 Max & M3 Ultra for Local AI"
         }
       ],
-      "rigOverheadUSD": 0
+      "rigOverheadUSD": 0,
+      "pp": {
+        "8b": 880,
+        "14b": 480,
+        "30b": 220,
+        "70b": 100,
+        "120b_moe": 340
+      },
+      "ttft100k": {
+        "8b": 170,
+        "14b": 290,
+        "30b": 650,
+        "70b": 1500,
+        "120b_moe": 480
+      },
+      "softwareStack": "Metal / MLX",
+      "softwareMaturity": 4,
+      "softwareNote": "Metal + MLX run every local model that fits. vllm-metal plugin available since April 2026 for OpenAI-compatible serving; pp at 70B is the bottleneck for long context.",
+      "extensibility": 4,
+      "extensibilityNote": "Sealed individually, but two Mac Studios over Thunderbolt 5 MLX hit a 224 GB pool with ~64 GB/s interconnect — a real cluster path, not just a hack.",
+      "tflopsFP16": 17,
+      "vllmSupport": "community"
     },
     {
       "id": "mac-studio-m3-ultra-256",
@@ -391,7 +564,8 @@
       "usableMemoryGB": 232,
       "bandwidthGBs": 819,
       "priceUSD": 7999,
-      "priceNote": "Mar 2026 — Apple raised the 256 GB upgrade by +$400 globally after pulling the 512 GB SKU; this is now the top-spec Mac Studio.",
+      "discontinued": true,
+      "priceNote": "May 2026 — Apple pulled the 256 GB SKU; configurator now caps the M3 Ultra Mac Studio at 96 GB. Refurbished / third-party only for 256 GB.",
       "tps": {
         "8b": 110,
         "14b": 70,
@@ -415,6 +589,7 @@
         "Power-efficient"
       ],
       "cons": [
+        "Pulled by Apple May 2026 — refurb / used only",
         "Prompt-processing slower than CUDA",
         "Premium price"
       ],
@@ -428,7 +603,30 @@
           "title": "Mac Studio M3 Ultra vs M2 Ultra — wild results"
         }
       ],
-      "rigOverheadUSD": 0
+      "rigOverheadUSD": 0,
+      "pp": {
+        "8b": 1080,
+        "14b": 600,
+        "30b": 280,
+        "70b": 125,
+        "120b_moe": 420,
+        "235b_moe": 220
+      },
+      "ttft100k": {
+        "8b": 130,
+        "14b": 230,
+        "30b": 510,
+        "70b": 1100,
+        "120b_moe": 380,
+        "235b_moe": 800
+      },
+      "softwareStack": "Metal / MLX",
+      "softwareMaturity": 4,
+      "softwareNote": "Same Metal / MLX stack scaled up. The vllm-metal plugin works on Ultras too; runs Qwen 235B and DeepSeek 671B at Q2 — but pp 9 t/s at 8k context (Hardware Corner) remains the catch.",
+      "extensibility": 4,
+      "extensibilityNote": "Sealed individually, but TB5 MLX cluster scales beautifully — two of these run DeepSeek 671B Q4 between them. The cluster, not the box, is the upgrade.",
+      "tflopsFP16": 36,
+      "vllmSupport": "community"
     },
     {
       "id": "mac-studio-m3-ultra-512",
@@ -480,7 +678,107 @@
           "title": "M3 Ultra Mac Studio Review"
         }
       ],
-      "rigOverheadUSD": 0
+      "rigOverheadUSD": 0,
+      "pp": {
+        "8b": 1080,
+        "14b": 600,
+        "30b": 280,
+        "70b": 125,
+        "120b_moe": 420,
+        "235b_moe": 220,
+        "671b_moe": 95,
+        "1t_moe": 60
+      },
+      "ttft100k": {
+        "8b": 130,
+        "14b": 230,
+        "30b": 510,
+        "70b": 1100,
+        "120b_moe": 380,
+        "235b_moe": 800,
+        "671b_moe": 1900,
+        "1t_moe": null
+      },
+      "softwareStack": "Metal / MLX",
+      "softwareMaturity": 4,
+      "softwareNote": "Largest unified-memory pool on Apple Silicon. vllm-metal plugin works; upstream core still no Metal backend. The 512 GB SKU was pulled by Apple Mar 2026 — used / refurbished only.",
+      "extensibility": 4,
+      "extensibilityNote": "Sealed individually but TB5 cluster works. The 1 TB unified pool from a pair runs every open-weights model in flight. The 512 GB SKU itself is discontinued — used / refurbished only.",
+      "tflopsFP16": 36,
+      "vllmSupport": "community"
+    },
+    {
+      "id": "mac-studio-m3-ultra-512-x2",
+      "name": "2× Mac Studio M3 Ultra 512 GB cluster (TB5 / MLX)",
+      "vendor": "Apple",
+      "category": "apple",
+      "formFactor": "two desktops, Thunderbolt 5 RDMA",
+      "memoryGB": 1024,
+      "usableMemoryGB": 960,
+      "bandwidthGBs": 819,
+      "priceUSD": 28400,
+      "rigOverheadUSD": 0,
+      "pricedAsOf": "May 2026",
+      "discontinued": true,
+      "priceNote": "May 2026 — refurbished / used only. The 512 GB SKU was pulled by Apple in March 2026; a pair currently runs ~$28K-$30K via Apple Refurb stragglers and B&H secondary market. Jeff Geerling's TB5 RDMA cluster (macOS 26.2) is the canonical reference; Reddit u/taylorhou's $25K dual-512 build is the production analog.",
+      "tps": {
+        "8b": 145,
+        "14b": 92,
+        "30b": 50,
+        "70b": 24,
+        "120b_moe": 72,
+        "235b_moe": 29,
+        "671b_moe": 9,
+        "1t_moe": 7
+      },
+      "pp": {
+        "8b": 1620,
+        "14b": 900,
+        "30b": 420,
+        "70b": 190,
+        "120b_moe": 630,
+        "235b_moe": 330,
+        "671b_moe": 145,
+        "1t_moe": 90
+      },
+      "ttft100k": {
+        "8b": 85,
+        "14b": 150,
+        "30b": 340,
+        "70b": 750,
+        "120b_moe": 250,
+        "235b_moe": 530,
+        "671b_moe": 1300,
+        "1t_moe": null
+      },
+      "imageSec": {
+        "sdxl": 3,
+        "flux": 16
+      },
+      "videoSec": {
+        "ltx": 500
+      },
+      "idleW": 24,
+      "activeW": 440,
+      "pros": [
+        "1 TB unified pool runs DeepSeek V3 / Kimi K2 at Q8",
+        "TB5 RDMA (macOS 26.2) actually helps — Exo dual-node shows real scaling",
+        "Quiet, low-power, fits on a desk"
+      ],
+      "cons": [
+        "512 GB SKU is discontinued — refurb / used only",
+        "Prompt processing is still slow on the largest models",
+        "TB5 RDMA tooling (Exo / MLX cluster) is bleeding edge"
+      ],
+      "tagline": "1 TB unified Apple Silicon — used market only.",
+      "plugAndPlay": false,
+      "softwareStack": "Metal / MLX",
+      "softwareMaturity": 3,
+      "softwareNote": "MLX cluster + Exo over TB5 RDMA is real in macOS 26.2 (Geerling, Nov 2025); still pre-release feel and Exo dev cadence is unpredictable.",
+      "extensibility": 3,
+      "extensibilityNote": "Add a third / fourth 256 GB or 512 GB Studio over TB5 — Geerling's four-node Exo cluster proves this scales. But the 512 GB nodes themselves are no longer being made.",
+      "tflopsFP16": 72,
+      "vllmSupport": "community"
     },
     {
       "id": "rtx-3060-12",
@@ -527,7 +825,22 @@
           "title": "Dual RTX 3060 12GB build for running AI models"
         }
       ],
-      "rigOverheadUSD": 600
+      "rigOverheadUSD": 600,
+      "pp": {
+        "8b": 2000,
+        "14b": 1100
+      },
+      "ttft100k": {
+        "8b": null,
+        "14b": null
+      },
+      "softwareStack": "CUDA",
+      "softwareMaturity": 5,
+      "softwareNote": "Mainline CUDA — every quant, every framework. The cheapest \"just works\" path into local LLMs.",
+      "extensibility": 5,
+      "extensibilityNote": "Standard PCIe slot — swap to 3090 / 4090 / 5090 whenever you outgrow it.",
+      "tflopsFP16": 51,
+      "vllmSupport": "production"
     },
     {
       "id": "rtx-3090-24",
@@ -576,7 +889,24 @@
         }
       ],
       "plugAndPlay": false,
-      "rigOverheadUSD": 700
+      "rigOverheadUSD": 700,
+      "pp": {
+        "8b": 5100,
+        "14b": 2900,
+        "30b": 1400
+      },
+      "ttft100k": {
+        "8b": 28,
+        "14b": 50,
+        "30b": null
+      },
+      "softwareStack": "CUDA",
+      "softwareMaturity": 5,
+      "softwareNote": "Most-supported consumer GPU for local LLMs. vLLM, TRT-LLM, llama.cpp, ComfyUI — Day-1 on all of them.",
+      "extensibility": 5,
+      "extensibilityNote": "Standard PCIe — pair it with a second card for 48 GB. Used market is huge.",
+      "tflopsFP16": 142,
+      "vllmSupport": "production"
     },
     {
       "id": "rtx-3090-x2",
@@ -627,7 +957,26 @@
         }
       ],
       "plugAndPlay": false,
-      "rigOverheadUSD": 1000
+      "rigOverheadUSD": 1000,
+      "pp": {
+        "8b": 8800,
+        "14b": 5000,
+        "30b": 2400,
+        "70b": 1050
+      },
+      "ttft100k": {
+        "8b": 18,
+        "14b": 30,
+        "30b": 65,
+        "70b": 180
+      },
+      "softwareStack": "CUDA",
+      "softwareMaturity": 5,
+      "softwareNote": "Tensor-parallel works across the pair on vLLM. NVLink optional for marginally lower latency.",
+      "extensibility": 5,
+      "extensibilityNote": "Two slots filled; a 1500 W PSU and good airflow leave headroom for storage + NIC upgrades.",
+      "tflopsFP16": 284,
+      "vllmSupport": "production"
     },
     {
       "id": "rtx-3090-x4",
@@ -673,7 +1022,28 @@
         }
       ],
       "plugAndPlay": false,
-      "rigOverheadUSD": 2700
+      "rigOverheadUSD": 2700,
+      "pp": {
+        "8b": 15000,
+        "14b": 8800,
+        "30b": 4200,
+        "70b": 1900,
+        "120b_moe": 3600
+      },
+      "ttft100k": {
+        "8b": 12,
+        "14b": 20,
+        "30b": 42,
+        "70b": 105,
+        "120b_moe": 55
+      },
+      "softwareStack": "CUDA",
+      "softwareMaturity": 5,
+      "softwareNote": "Quad-card tensor-parallel works but you live with 4×350 W draw and a server-class PSU.",
+      "extensibility": 4,
+      "extensibilityNote": "All slots filled — further GPU adds need a riser / mining frame. PSU is the binding constraint.",
+      "tflopsFP16": 568,
+      "vllmSupport": "production"
     },
     {
       "id": "rtx-4090-24",
@@ -721,7 +1091,24 @@
           "title": "Benchmarking NVIDIA DGX Spark & RTX 4090 — running LLMs on the RTX 4090"
         }
       ],
-      "rigOverheadUSD": 700
+      "rigOverheadUSD": 700,
+      "pp": {
+        "8b": 11500,
+        "14b": 6600,
+        "30b": 3200
+      },
+      "ttft100k": {
+        "8b": 13,
+        "14b": 23,
+        "30b": null
+      },
+      "softwareStack": "CUDA",
+      "softwareMaturity": 5,
+      "softwareNote": "Top-tier CUDA support. Ada-gen FP8 helps prefill; a 3090's RT cores aren't relevant for LLMs.",
+      "extensibility": 5,
+      "extensibilityNote": "Standard tower build — straightforward to dual-card if the case + PSU allow.",
+      "tflopsFP16": 330,
+      "vllmSupport": "production"
     },
     {
       "id": "rtx-5090-32",
@@ -776,7 +1163,24 @@
           "title": "Not even close — LLMs on RTX 5090 vs others (AZisk)"
         }
       ],
-      "rigOverheadUSD": 700
+      "rigOverheadUSD": 700,
+      "pp": {
+        "8b": 14000,
+        "14b": 8200,
+        "30b": 3900
+      },
+      "ttft100k": {
+        "8b": 11,
+        "14b": 18,
+        "30b": 38
+      },
+      "softwareStack": "CUDA (Blackwell)",
+      "softwareMaturity": 5,
+      "softwareNote": "Blackwell FP4 / FP8 prefill is class-leading. CUDA 13 + drivers stable; vLLM + TRT-LLM both day-1.",
+      "extensibility": 5,
+      "extensibilityNote": "Big card but standard ATX — pair with second card or move to a workstation chassis later.",
+      "tflopsFP16": 419,
+      "vllmSupport": "production"
     },
     {
       "id": "rtx-5090-x2",
@@ -826,7 +1230,28 @@
           "title": "I built a 2500 W LLM monster — it destroys everything (AZisk)"
         }
       ],
-      "rigOverheadUSD": 1400
+      "rigOverheadUSD": 1400,
+      "pp": {
+        "8b": 24000,
+        "14b": 14000,
+        "30b": 7000,
+        "70b": 3200,
+        "120b_moe": 4500
+      },
+      "ttft100k": {
+        "8b": 7,
+        "14b": 11,
+        "30b": 22,
+        "70b": 55,
+        "120b_moe": null
+      },
+      "softwareStack": "CUDA (Blackwell)",
+      "softwareMaturity": 5,
+      "softwareNote": "Pair of Blackwell 5090s — vLLM tensor-parallel is the obvious deployment.",
+      "extensibility": 5,
+      "extensibilityNote": "Two 600 W cards drives the build to ATX-EVO + 1600 W PSU territory; further expansion needs a workstation chassis.",
+      "tflopsFP16": 838,
+      "vllmSupport": "production"
     },
     {
       "id": "tesla-p40-24",
@@ -871,7 +1296,24 @@
         }
       ],
       "plugAndPlay": false,
-      "rigOverheadUSD": 450
+      "rigOverheadUSD": 450,
+      "pp": {
+        "8b": 980,
+        "14b": 560,
+        "30b": 270
+      },
+      "ttft100k": {
+        "8b": 130,
+        "14b": 220,
+        "30b": null
+      },
+      "softwareStack": "CUDA (Pascal)",
+      "softwareMaturity": 3,
+      "softwareNote": "llama.cpp works fine; vLLM / TRT-LLM dropped Pascal support. No Flash Attention — long context is painful.",
+      "extensibility": 5,
+      "extensibilityNote": "Generic PCIe — needs blower fan adapter or shroud. Pair freely with more P40s.",
+      "tflopsFP16": 11,
+      "vllmSupport": "experimental"
     },
     {
       "id": "tesla-p40-x4",
@@ -887,8 +1329,8 @@
       "tps": {
         "8b": 48,
         "14b": 16,
-        "30b": 50,
-        "70b": null,
+        "30b": 8,
+        "70b": 4,
         "120b_moe": 28,
         "235b_moe": null
       },
@@ -919,7 +1361,28 @@
         }
       ],
       "plugAndPlay": false,
-      "rigOverheadUSD": 1500
+      "rigOverheadUSD": 1500,
+      "pp": {
+        "8b": 1800,
+        "14b": 1050,
+        "30b": 510,
+        "70b": 230,
+        "120b_moe": 290
+      },
+      "ttft100k": {
+        "8b": 70,
+        "14b": 110,
+        "30b": 230,
+        "70b": 600,
+        "120b_moe": 1100
+      },
+      "softwareStack": "CUDA (Pascal)",
+      "softwareMaturity": 3,
+      "softwareNote": "Same Pascal story scaled out — llama.cpp tensor-split works, modern stacks don't.",
+      "extensibility": 4,
+      "extensibilityNote": "Four cards stretch a single-PSU tower; a 4U server chassis or mining-frame is cleaner.",
+      "tflopsFP16": 44,
+      "vllmSupport": "experimental"
     },
     {
       "id": "tesla-p100-16",
@@ -963,7 +1426,22 @@
         }
       ],
       "plugAndPlay": false,
-      "rigOverheadUSD": 450
+      "rigOverheadUSD": 450,
+      "pp": {
+        "8b": 740,
+        "14b": 420
+      },
+      "ttft100k": {
+        "8b": 160,
+        "14b": 280
+      },
+      "softwareStack": "CUDA (Pascal)",
+      "softwareMaturity": 3,
+      "softwareNote": "HBM2 makes raw tg surprisingly good for Pascal; same long-context limitation as P40.",
+      "extensibility": 5,
+      "extensibilityNote": "Datacenter card needing blower cooling — otherwise standard PCIe.",
+      "tflopsFP16": 21,
+      "vllmSupport": "experimental"
     },
     {
       "id": "tesla-v100-sxm2-mod",
@@ -1014,7 +1492,24 @@
         }
       ],
       "plugAndPlay": false,
-      "rigOverheadUSD": 500
+      "rigOverheadUSD": 500,
+      "pp": {
+        "8b": 2950,
+        "14b": 1700,
+        "30b": 820
+      },
+      "ttft100k": {
+        "8b": 42,
+        "14b": 70,
+        "30b": 160
+      },
+      "softwareStack": "CUDA (Volta)",
+      "softwareMaturity": 3,
+      "softwareNote": "Volta gets you Tensor Cores but Flash Attention support is patchy. Modded SXM2 → PCIe rigs are reliable once burned in.",
+      "extensibility": 3,
+      "extensibilityNote": "SXM2-to-PCIe carrier limits to 1-2 cards practically; cooling is the real headache.",
+      "tflopsFP16": 125,
+      "vllmSupport": "community"
     },
     {
       "id": "intel-arc-pro-b70-32",
@@ -1060,7 +1555,24 @@
           "title": "Should you buy Intel Arc Pro B70 for Local AI? Gemma 4 benchmark"
         }
       ],
-      "rigOverheadUSD": 700
+      "rigOverheadUSD": 700,
+      "pp": {
+        "8b": 2450,
+        "14b": 1420,
+        "30b": 620
+      },
+      "ttft100k": {
+        "8b": 50,
+        "14b": 85,
+        "30b": 200
+      },
+      "softwareStack": "SYCL / Vulkan",
+      "softwareMaturity": 2,
+      "softwareNote": "llama.cpp Vulkan + Intel IPEX-LLM work; vLLM upstream support is partial. The Battlemage SYCL stack is rapidly improving but not yet production.",
+      "extensibility": 5,
+      "extensibilityNote": "Standard PCIe — Arc Pro doubles up cleanly to 64 GB, 128 GB, 256 GB pools.",
+      "tflopsFP16": 100,
+      "vllmSupport": "experimental"
     },
     {
       "id": "intel-arc-pro-b70-x2",
@@ -1104,7 +1616,28 @@
           "title": "Should you buy Intel Arc Pro B70 for Local AI? (covers scaling)"
         }
       ],
-      "rigOverheadUSD": 1000
+      "rigOverheadUSD": 1000,
+      "pp": {
+        "8b": 4200,
+        "14b": 2500,
+        "30b": 1100,
+        "70b": 340,
+        "120b_moe": 620
+      },
+      "ttft100k": {
+        "8b": 30,
+        "14b": 50,
+        "30b": 115,
+        "70b": 360,
+        "120b_moe": null
+      },
+      "softwareStack": "SYCL / Vulkan",
+      "softwareMaturity": 2,
+      "softwareNote": "Same SYCL / Vulkan stack scaled. IPEX-LLM tensor-parallel works on most LLMs but watch quant-coverage.",
+      "extensibility": 5,
+      "extensibilityNote": "Two cards in a standard ATX tower; airflow + PSU comfortable up to x4.",
+      "tflopsFP16": 200,
+      "vllmSupport": "experimental"
     },
     {
       "id": "intel-arc-pro-b70-x4",
@@ -1142,7 +1675,28 @@
         "Bandwidth-bound for dense 70 B"
       ],
       "plugAndPlay": false,
-      "rigOverheadUSD": 1500
+      "rigOverheadUSD": 1500,
+      "pp": {
+        "8b": 7400,
+        "14b": 4400,
+        "30b": 1950,
+        "70b": 620,
+        "120b_moe": 1100
+      },
+      "ttft100k": {
+        "8b": 18,
+        "14b": 30,
+        "30b": 65,
+        "70b": 200,
+        "120b_moe": 105
+      },
+      "softwareStack": "SYCL / Vulkan",
+      "softwareMaturity": 2,
+      "softwareNote": "Software still evolving — best on llama.cpp Vulkan or IPEX-LLM. Less framework choice than CUDA / ROCm.",
+      "extensibility": 5,
+      "extensibilityNote": "Workstation chassis with 4 PCIe slots; upgrade path to x8 is real if PCIe lanes are there.",
+      "tflopsFP16": 400,
+      "vllmSupport": "experimental"
     },
     {
       "id": "intel-arc-pro-b70-x8",
@@ -1181,7 +1735,30 @@
         "Cluster setup is non-trivial"
       ],
       "plugAndPlay": false,
-      "rigOverheadUSD": 2900
+      "rigOverheadUSD": 2900,
+      "pp": {
+        "8b": 12000,
+        "14b": 7000,
+        "30b": 3200,
+        "70b": 1050,
+        "120b_moe": 1900,
+        "235b_moe": 900
+      },
+      "ttft100k": {
+        "8b": 11,
+        "14b": 18,
+        "30b": 40,
+        "70b": 120,
+        "120b_moe": 60,
+        "235b_moe": 140
+      },
+      "softwareStack": "SYCL / Vulkan",
+      "softwareMaturity": 2,
+      "softwareNote": "Largest Arc Pro pool — community benchmarks are still thin. llama.cpp Vulkan is the safe bet.",
+      "extensibility": 5,
+      "extensibilityNote": "Server chassis territory — extensible only if the chassis has the lanes.",
+      "tflopsFP16": 800,
+      "vllmSupport": "experimental"
     },
     {
       "id": "intel-arc-b580-12",
@@ -1226,7 +1803,22 @@
           "title": "Building a Dual Arc B580 LLM Inference Server (24 GB VRAM)"
         }
       ],
-      "rigOverheadUSD": 700
+      "rigOverheadUSD": 700,
+      "pp": {
+        "8b": 600,
+        "14b": 340
+      },
+      "ttft100k": {
+        "8b": null,
+        "14b": null
+      },
+      "softwareStack": "SYCL / Vulkan",
+      "softwareMaturity": 2,
+      "softwareNote": "Battlemage consumer card — Vulkan llama.cpp works fine for 8B; production stacks are still maturing.",
+      "extensibility": 5,
+      "extensibilityNote": "Standard PCIe consumer card; replace easily when Arc Pro or Celestial lands.",
+      "tflopsFP16": 100,
+      "vllmSupport": "experimental"
     },
     {
       "id": "strix-halo-128",
@@ -1238,7 +1830,7 @@
       "usableMemoryGB": 96,
       "bandwidthGBs": 256,
       "priceUSD": 2700,
-      "priceNote": "May 2026 street spread $2,399-$3,800: Bosgame M5 $2,399, Corsair AI Workstation 300 $2,499, Framework Desktop $2,851, Beelink GTR9 Pro / GMKtec EVO-X2 ~$3,000, HP Z2 Mini G1a $3,734. EU/UK regional prices anchored to Framework Desktop (frame.work), the canonical retailer linked from productLinks. DDR5 shortage continues.",
+      "priceNote": "May 2026 street spread $2,399-$3,800: Bosgame M5 $2,399, Corsair AI Workstation 300 $2,499, Framework Desktop $2,851, Beelink GTR9 Pro / GMKtec EVO-X2 ~$3,000, HP Z2 Mini G1a $3,734. EU/UK regional prices anchored to Framework Desktop (frame.work), the canonical retailer linked from productLinks. Framework EU bumped €3,029 → €3,379 (+12 %) mid-May on continuing DDR5 shortage.",
       "tps": {
         "8b": 50,
         "14b": 28,
@@ -1281,7 +1873,28 @@
           "title": "Running vLLM on Strix Halo + ROCm performance updates"
         }
       ],
-      "rigOverheadUSD": 0
+      "rigOverheadUSD": 0,
+      "pp": {
+        "8b": 880,
+        "14b": 510,
+        "30b": 240,
+        "70b": 105,
+        "120b_moe": 380
+      },
+      "ttft100k": {
+        "8b": 135,
+        "14b": 230,
+        "30b": 510,
+        "70b": 1250,
+        "120b_moe": 340
+      },
+      "softwareStack": "Vulkan / ROCm",
+      "softwareMaturity": 3,
+      "softwareNote": "Strix Halo on Vulkan via llama.cpp is solid; ROCm 7.x adds another path. No vLLM upstream yet (Aug 2026).",
+      "extensibility": 3,
+      "extensibilityNote": "RAM is soldered LPDDR5X, but storage + NIC + chassis are normal mini-PC fare. Two-box Strix Halo clusters over 10 GbE run 235 B MoE and are a real upgrade path.",
+      "tflopsFP16": 64,
+      "vllmSupport": "experimental"
     },
     {
       "id": "strix-halo-x2",
@@ -1325,10 +1938,200 @@
         {
           "videoId": "prIUKAbHlj8",
           "title": "AMD Strix Halo / Ryzen AI Max+ 395 — honest review (single-node baseline)"
+        },
+        {
+          "videoId": "Q-Df49aVnMY",
+          "title": "Kimi-K2 (1T) / GLM 4.7 (355B) on a 4-node Strix Halo cluster — 512 GB unified memory"
         }
       ],
       "plugAndPlay": false,
-      "rigOverheadUSD": 0
+      "rigOverheadUSD": 0,
+      "pp": {
+        "8b": 1500,
+        "14b": 880,
+        "30b": 420,
+        "70b": 185,
+        "120b_moe": 660,
+        "235b_moe": 320
+      },
+      "ttft100k": {
+        "8b": 80,
+        "14b": 140,
+        "30b": 300,
+        "70b": 720,
+        "120b_moe": 200,
+        "235b_moe": 420
+      },
+      "softwareStack": "Vulkan / ROCm",
+      "softwareMaturity": 3,
+      "softwareNote": "Cluster two Strix Halos over 10 GbE — llama-rpc works, throughput is interconnect-bound.",
+      "extensibility": 4,
+      "extensibilityNote": "Two boxes daisy-chained over 10 GbE — add a third for 384 GB. Each box has soldered RAM, but the fabric scales linearly per added unit.",
+      "tflopsFP16": 128,
+      "vllmSupport": "experimental"
+    },
+    {
+      "id": "strix-halo-x4",
+      "name": "4× Strix Halo cluster (512 GB unified)",
+      "vendor": "AMD",
+      "category": "strix-halo",
+      "formFactor": "rack of 4 mini-PCs, 10 GbE fabric",
+      "memoryGB": 512,
+      "usableMemoryGB": 384,
+      "bandwidthGBs": 256,
+      "priceUSD": 11000,
+      "rigOverheadUSD": 300,
+      "pricedAsOf": "May 2026",
+      "priceNote": "May 2026 — 4× Framework Desktop / Bosgame M5 / Beelink GTR9 Pro units at $2,400-$2,800 each + a 10 GbE switch (~$300). Cheapest path to 512 GB unified memory, but interconnect is the ceiling — 10 GbE is ~25× slower than the Spark's ConnectX-7.",
+      "tps": {
+        "8b": 95,
+        "14b": 55,
+        "30b": 32,
+        "70b": 8,
+        "120b_moe": 55,
+        "235b_moe": 24,
+        "671b_moe": 5
+      },
+      "pp": {
+        "8b": 3400,
+        "14b": 1950,
+        "30b": 920,
+        "70b": 410,
+        "120b_moe": 1480,
+        "235b_moe": 710,
+        "671b_moe": 240
+      },
+      "ttft100k": {
+        "8b": 50,
+        "14b": 85,
+        "30b": 180,
+        "70b": 420,
+        "120b_moe": 120,
+        "235b_moe": 240,
+        "671b_moe": 720
+      },
+      "imageSec": {
+        "sdxl": 12,
+        "flux": 60
+      },
+      "videoSec": {
+        "ltx": 600,
+        "wan22": 1800
+      },
+      "idleW": 32,
+      "activeW": 480,
+      "pros": [
+        "512 GB unified memory for ~$11K — best $/GB in the catalog at this scale",
+        "Runs DeepSeek V3 / Kimi K2 Q2 entirely in memory",
+        "Each box draws ~120 W active — fits a home office"
+      ],
+      "cons": [
+        "10 GbE fabric is the ceiling — pipeline-parallel only",
+        "Dense 70B drops to ~8 t/s; not for interactive serving",
+        "ROCm / Vulkan cluster tooling is community-maintained"
+      ],
+      "tagline": "Cheapest 512 GB unified-memory rig on Earth.",
+      "reviews": [
+        {
+          "videoId": "Q-Df49aVnMY",
+          "title": "Kimi-K2 (1T) / GLM 4.7 (355B) on a 4-node Strix Halo cluster — 512 GB unified memory"
+        },
+        {
+          "videoId": "prIUKAbHlj8",
+          "title": "AMD Strix Halo / Ryzen AI Max+ 395 — honest review (single-node baseline)"
+        }
+      ],
+      "plugAndPlay": false,
+      "softwareStack": "Vulkan / ROCm",
+      "softwareMaturity": 3,
+      "softwareNote": "Four-box llama-rpc / GGML cluster works; vLLM upstream still missing for Strix Halo as of mid-2026. Throughput is interconnect-bound.",
+      "extensibility": 4,
+      "extensibilityNote": "Standard mini-PC fabric — add a fifth / sixth box behind the same 10 GbE switch. Per-box memory is soldered; scale is purely additive.",
+      "tflopsFP16": 256,
+      "vllmSupport": "experimental"
+    },
+    {
+      "id": "strix-halo-x8",
+      "name": "8× Strix Halo cluster (1024 GB unified)",
+      "vendor": "AMD",
+      "category": "strix-halo",
+      "formFactor": "rack of 8 mini-PCs, 10/25 GbE fabric",
+      "memoryGB": 1024,
+      "usableMemoryGB": 768,
+      "bandwidthGBs": 256,
+      "priceUSD": 22000,
+      "rigOverheadUSD": 800,
+      "pricedAsOf": "May 2026",
+      "priceNote": "May 2026 — 8× ~$2,600 mini-PCs + 25 GbE switch (~$800). Beyond x4 you typically step up to 25 GbE per node to keep the interconnect from collapsing tps further. Total tier roughly halves $/GB vs Mac Studio M3 Ultra.",
+      "tps": {
+        "8b": 125,
+        "14b": 70,
+        "30b": 40,
+        "70b": 9,
+        "120b_moe": 70,
+        "235b_moe": 32,
+        "671b_moe": 8,
+        "1t_moe": 5
+      },
+      "pp": {
+        "8b": 6700,
+        "14b": 3900,
+        "30b": 1850,
+        "70b": 820,
+        "120b_moe": 2950,
+        "235b_moe": 1420,
+        "671b_moe": 480,
+        "1t_moe": 310
+      },
+      "ttft100k": {
+        "8b": 30,
+        "14b": 48,
+        "30b": 100,
+        "70b": 230,
+        "120b_moe": 70,
+        "235b_moe": 140,
+        "671b_moe": 400,
+        "1t_moe": 620
+      },
+      "imageSec": {
+        "sdxl": 12,
+        "flux": 60
+      },
+      "videoSec": {
+        "ltx": 600,
+        "wan22": 1800
+      },
+      "idleW": 64,
+      "activeW": 960,
+      "pros": [
+        "1 TB unified RAM for ~$22K — half the price of two M3 Ultra 512s",
+        "Runs every open-weights model in flight at Q4",
+        "Modular: a failed box is a $2.6K swap, not a rebuild"
+      ],
+      "cons": [
+        "Pipeline-parallel only; no tensor-parallel across 10/25 GbE",
+        "Dense 70B remains at single-digit t/s",
+        "Setup is community-tooling: llama-rpc / Exo / vLLM-rocm forks"
+      ],
+      "tagline": "1 TB unified RAM for half the price of two Mac Studios.",
+      "reviews": [
+        {
+          "videoId": "Q-Df49aVnMY",
+          "title": "Kimi-K2 (1T) / GLM 4.7 (355B) on a 4-node Strix Halo cluster — closest documented baseline"
+        },
+        {
+          "videoId": "prIUKAbHlj8",
+          "title": "AMD Strix Halo / Ryzen AI Max+ 395 — honest review (single-node baseline)"
+        }
+      ],
+      "plugAndPlay": false,
+      "softwareStack": "Vulkan / ROCm",
+      "softwareMaturity": 2,
+      "softwareNote": "Eight-box Strix Halo clusters are at the edge of community tooling — llama-rpc + Exo work, but expect to babysit. No turnkey vendor support.",
+      "extensibility": 4,
+      "extensibilityNote": "Pure additive scaling; the only ceiling is your switch and PSU budget. Per-box memory is soldered.",
+      "tflopsFP16": 512,
+      "vllmSupport": "experimental"
     },
     {
       "id": "dgx-spark-128",
@@ -1385,7 +2188,28 @@
           "title": "NVIDIA DGX Spark — What Went Wrong (AZisk)"
         }
       ],
-      "rigOverheadUSD": 0
+      "rigOverheadUSD": 0,
+      "pp": {
+        "8b": 2600,
+        "14b": 1500,
+        "30b": 700,
+        "70b": 310,
+        "120b_moe": 1730
+      },
+      "ttft100k": {
+        "8b": 50,
+        "14b": 85,
+        "30b": 180,
+        "70b": 430,
+        "120b_moe": 85
+      },
+      "softwareStack": "CUDA (ARM)",
+      "softwareMaturity": 4,
+      "softwareNote": "ARM CUDA stack is real now — llama.cpp + vLLM both land. Some niche kernels (FA-2 variants) still maturing.",
+      "extensibility": 4,
+      "extensibilityNote": "Sealed appliance, but officially clusterable over ConnectX-7 200 GbE — buy two to run 235B MoE end-to-end, four to host 671B. Cluster is the upgrade path.",
+      "tflopsFP16": 250,
+      "vllmSupport": "production"
     },
     {
       "id": "dgx-spark-x2",
@@ -1441,7 +2265,30 @@
         }
       ],
       "plugAndPlay": false,
-      "rigOverheadUSD": 0
+      "rigOverheadUSD": 0,
+      "pp": {
+        "8b": 4500,
+        "14b": 2600,
+        "30b": 1200,
+        "70b": 540,
+        "120b_moe": 3000,
+        "235b_moe": 1450
+      },
+      "ttft100k": {
+        "8b": 30,
+        "14b": 50,
+        "30b": 105,
+        "70b": 250,
+        "120b_moe": 50,
+        "235b_moe": 110
+      },
+      "softwareStack": "CUDA (ARM)",
+      "softwareMaturity": 4,
+      "softwareNote": "Same ARM CUDA story scaled. NCCL across two Sparks works but is bandwidth-limited.",
+      "extensibility": 4,
+      "extensibilityNote": "Two-Spark cluster with ConnectX-7 interconnect — keep adding Sparks up to four. Each unit is sealed; the fabric is the lever.",
+      "tflopsFP16": 500,
+      "vllmSupport": "production"
     },
     {
       "id": "dgx-spark-x4",
@@ -1495,7 +2342,119 @@
         }
       ],
       "plugAndPlay": false,
-      "rigOverheadUSD": 0
+      "rigOverheadUSD": 0,
+      "pp": {
+        "8b": 7800,
+        "14b": 4500,
+        "30b": 2100,
+        "70b": 950,
+        "120b_moe": 5200,
+        "235b_moe": 2500,
+        "671b_moe": 350,
+        "1t_moe": 230
+      },
+      "ttft100k": {
+        "8b": 18,
+        "14b": 30,
+        "30b": 65,
+        "70b": 145,
+        "120b_moe": 32,
+        "235b_moe": 65,
+        "671b_moe": 460,
+        "1t_moe": null
+      },
+      "softwareStack": "CUDA (ARM)",
+      "softwareMaturity": 4,
+      "softwareNote": "Same stack. At four-box scale you're inside DGX-cluster territory; vendor docs cover it.",
+      "extensibility": 4,
+      "extensibilityNote": "Four-Spark cluster — the documented ceiling. Add a fifth and you're in DGX-Cloud territory (different vendor docs).",
+      "tflopsFP16": 1000,
+      "vllmSupport": "production"
+    },
+    {
+      "id": "dgx-spark-x8",
+      "name": "8× DGX Spark cluster (1024 GB unified, CUDA)",
+      "vendor": "NVIDIA",
+      "category": "datacenter",
+      "formFactor": "rack of 8 desktops, 200 GbE fabric",
+      "memoryGB": 1024,
+      "usableMemoryGB": 976,
+      "bandwidthGBs": 273,
+      "priceUSD": 42000,
+      "rigOverheadUSD": 0,
+      "pricedAsOf": "May 2026",
+      "priceNote": "May 2026 — 8× $3,999 DGX Spark units + ConnectX-7 switching. NVIDIA SN5400 retail >$25K, but most builders use a MikroTik CRS812-DDQ or similar ~$3-8K 200 GbE switch as documented by ServeTheHome. Direct-attach mesh is only viable up to two nodes; eight requires a switch. AZisk's eight-Spark 1 TB cluster was the canonical 2025-26 demo.",
+      "tps": {
+        "8b": 195,
+        "14b": 130,
+        "30b": 72,
+        "70b": 24,
+        "120b_moe": 92,
+        "235b_moe": 42,
+        "671b_moe": 16,
+        "1t_moe": 13
+      },
+      "pp": {
+        "8b": 12500,
+        "14b": 7200,
+        "30b": 3400,
+        "70b": 1500,
+        "120b_moe": 8300,
+        "235b_moe": 4000,
+        "671b_moe": 560,
+        "1t_moe": 370
+      },
+      "ttft100k": {
+        "8b": 12,
+        "14b": 20,
+        "30b": 42,
+        "70b": 95,
+        "120b_moe": 21,
+        "235b_moe": 42,
+        "671b_moe": 290,
+        "1t_moe": 460
+      },
+      "imageSec": {
+        "sdxl": 4,
+        "flux": 25
+      },
+      "videoSec": {
+        "ltx": 180,
+        "wan22": 600,
+        "hyv": 720
+      },
+      "idleW": 220,
+      "activeW": 1840,
+      "pros": [
+        "1 TB unified CUDA pool — runs DeepSeek V3 / Kimi K2 at Q4",
+        "Pipeline-parallel over ConnectX-7 200 GbE works in production",
+        "Office-quiet at 1.8 kW idle-to-load envelope"
+      ],
+      "cons": [
+        "200 GbE fabric caps dense 70B+ throughput hard",
+        "Eighth-node ROI is small; pp/tps saturating beyond x4",
+        "Needs a real 200 GbE switch — NVIDIA SN5400 is $25K, MikroTik $3-8K"
+      ],
+      "tagline": "Eight Sparks, one terabyte, no DGX-Cloud bill.",
+      "cudaFriendly": true,
+      "reviews": [
+        {
+          "videoId": "QJqKqxQR36Y",
+          "title": "NVIDIA didn't want me to do this — 8× DGX Spark 1 TB VRAM cluster (AZisk)"
+        },
+        {
+          "videoId": "MI7eMac9S2w",
+          "title": "First look! NVIDIA DGX Spark — single-node baseline"
+        }
+      ],
+      "plugAndPlay": false,
+      "softwareStack": "CUDA (ARM)",
+      "softwareMaturity": 4,
+      "softwareNote": "ARM CUDA + NCCL over RoCE — production for vLLM PP, less ironed for TP across this many nodes. NIM / TRT-LLM scripts exist.",
+      "extensibility": 3,
+      "extensibilityNote": "Eight-Spark is the documented practical ceiling; beyond this you're in DGX BasePOD / DGX Cloud territory with different reference designs.",
+      "tflopsFP16": 2000,
+      "vllmSupport": "production"
     },
     {
       "id": "msi-edgexpert-gb10",
@@ -1538,7 +2497,42 @@
         "273 GB/s bandwidth caps dense 70 B (~8 t/s)"
       ],
       "cudaFriendly": true,
-      "tagline": "Cheapest GB10 box on the market."
+      "tagline": "Cheapest GB10 box on the market.",
+      "pp": {
+        "8b": 2600,
+        "14b": 1500,
+        "30b": 700,
+        "70b": 310,
+        "120b_moe": 1730
+      },
+      "ttft100k": {
+        "8b": 50,
+        "14b": 85,
+        "30b": 180,
+        "70b": 430,
+        "120b_moe": 85
+      },
+      "softwareStack": "CUDA (ARM)",
+      "softwareMaturity": 4,
+      "softwareNote": "Same Grace-Blackwell GB10 silicon as DGX Spark — software story identical.",
+      "extensibility": 4,
+      "extensibilityNote": "Same GB10 silicon, same ConnectX-7 cluster path as DGX Spark — buy a stack of these, NCCL them, scale.",
+      "tflopsFP16": 250,
+      "vllmSupport": "production",
+      "reviews": [
+        {
+          "videoId": "MI7eMac9S2w",
+          "title": "First look! NVIDIA DGX Spark — comparisons + who it's for"
+        },
+        {
+          "videoId": "abeUJ9KLZlk",
+          "title": "Is NVIDIA's DGX Spark worth it?"
+        },
+        {
+          "videoId": "Ze5XLooTt6g",
+          "title": "I Thought DGX Spark Was Slower… Until I Changed ONE Thing (AZisk)"
+        }
+      ]
     },
     {
       "id": "asus-ascent-gx10",
@@ -1585,8 +2579,37 @@
         {
           "videoId": "FPq7o6ePW7c",
           "title": "ASUS Ascent GX10 AI desktop review — GB10 Blackwell"
+        },
+        {
+          "videoId": "MI7eMac9S2w",
+          "title": "First look! NVIDIA DGX Spark — comparisons + who it's for"
+        },
+        {
+          "videoId": "abeUJ9KLZlk",
+          "title": "Is NVIDIA's DGX Spark worth it?"
         }
-      ]
+      ],
+      "pp": {
+        "8b": 2600,
+        "14b": 1500,
+        "30b": 700,
+        "70b": 310,
+        "120b_moe": 1730
+      },
+      "ttft100k": {
+        "8b": 50,
+        "14b": 85,
+        "30b": 180,
+        "70b": 430,
+        "120b_moe": 85
+      },
+      "softwareStack": "CUDA (ARM)",
+      "softwareMaturity": 4,
+      "softwareNote": "Same GB10 silicon and ARM-CUDA stack. ASUS branding only.",
+      "extensibility": 4,
+      "extensibilityNote": "Same GB10 cluster story. ASUS / DGX / MSI / Dell / Lenovo all interop on the fabric.",
+      "tflopsFP16": 250,
+      "vllmSupport": "production"
     },
     {
       "id": "dell-pro-max-gb10",
@@ -1637,8 +2660,33 @@
         {
           "videoId": "ib913zfNh7I",
           "title": "Dell Pro Max GB10 already paying for itself (ServeTheHome)"
+        },
+        {
+          "videoId": "MI7eMac9S2w",
+          "title": "First look! NVIDIA DGX Spark — comparisons + who it's for"
         }
-      ]
+      ],
+      "pp": {
+        "8b": 2600,
+        "14b": 1500,
+        "30b": 700,
+        "70b": 310,
+        "120b_moe": 1730
+      },
+      "ttft100k": {
+        "8b": 50,
+        "14b": 85,
+        "30b": 180,
+        "70b": 430,
+        "120b_moe": 85
+      },
+      "softwareStack": "CUDA (ARM)",
+      "softwareMaturity": 4,
+      "softwareNote": "Same GB10 platform. Dell's enterprise support contracts are the differentiator.",
+      "extensibility": 4,
+      "extensibilityNote": "Same GB10 cluster story; Dell adds enterprise warranty to the same fabric.",
+      "tflopsFP16": 250,
+      "vllmSupport": "production"
     },
     {
       "id": "lenovo-thinkstation-pgx",
@@ -1685,8 +2733,37 @@
         {
           "videoId": "E0S3VO0bcoE",
           "title": "Lenovo ThinkStation PGX — AI development journey"
+        },
+        {
+          "videoId": "MI7eMac9S2w",
+          "title": "First look! NVIDIA DGX Spark — comparisons + who it's for"
+        },
+        {
+          "videoId": "abeUJ9KLZlk",
+          "title": "Is NVIDIA's DGX Spark worth it?"
         }
-      ]
+      ],
+      "pp": {
+        "8b": 2600,
+        "14b": 1500,
+        "30b": 700,
+        "70b": 310,
+        "120b_moe": 1730
+      },
+      "ttft100k": {
+        "8b": 50,
+        "14b": 85,
+        "30b": 180,
+        "70b": 430,
+        "120b_moe": 85
+      },
+      "softwareStack": "CUDA (ARM)",
+      "softwareMaturity": 4,
+      "softwareNote": "Same GB10 silicon — Lenovo's chassis adds nothing to the software story.",
+      "extensibility": 4,
+      "extensibilityNote": "Same GB10 cluster story under the ThinkStation brand.",
+      "tflopsFP16": 250,
+      "vllmSupport": "production"
     },
     {
       "id": "h100-80",
@@ -1726,7 +2803,42 @@
         "Massive price premium",
         "Single card can't fit 235 B"
       ],
-      "rigOverheadUSD": 3500
+      "reviews": [
+        {
+          "videoId": "gD-lTOjHc04",
+          "title": "H200 vs H100 — Ultimate AI Inference GPU Comparison"
+        },
+        {
+          "videoId": "6DaYExzBv7A",
+          "title": "NVIDIA H100 vLLM Benchmark — Top GPU for Medium & Large LLMs"
+        },
+        {
+          "videoId": "3UqHZDaNL7E",
+          "title": "Running LLMs on Ollama — Performance Benchmark on H100 GPU"
+        }
+      ],
+      "rigOverheadUSD": 3500,
+      "pp": {
+        "8b": 9900,
+        "14b": 5700,
+        "30b": 2700,
+        "70b": 1150,
+        "120b_moe": 4400
+      },
+      "ttft100k": {
+        "8b": 14,
+        "14b": 22,
+        "30b": 45,
+        "70b": 110,
+        "120b_moe": 27
+      },
+      "softwareStack": "CUDA (Hopper)",
+      "softwareMaturity": 5,
+      "softwareNote": "The reference datacenter LLM card. Every framework, every kernel, every optimization lands here first.",
+      "extensibility": 4,
+      "extensibilityNote": "PCIe (or SXM5 in DGX) — slot-in upgrade, but cooling demands a real server chassis.",
+      "tflopsFP16": 989,
+      "vllmSupport": "production"
     },
     {
       "id": "h100-x8",
@@ -1768,7 +2880,339 @@
         "Six-figure capex + heavy infra"
       ],
       "plugAndPlay": false,
-      "rigOverheadUSD": 0
+      "rigOverheadUSD": 0,
+      "pp": {
+        "8b": 55000,
+        "14b": 32000,
+        "30b": 15000,
+        "70b": 6800,
+        "120b_moe": 22000,
+        "235b_moe": 10500,
+        "671b_moe": 3500,
+        "1t_moe": 2200
+      },
+      "ttft100k": {
+        "8b": 3.5,
+        "14b": 5,
+        "30b": 9,
+        "70b": 22,
+        "120b_moe": 7,
+        "235b_moe": 16,
+        "671b_moe": 48,
+        "1t_moe": 75
+      },
+      "softwareStack": "CUDA (Hopper)",
+      "softwareMaturity": 5,
+      "softwareNote": "Eight-way NVLink (SXM5) — TRT-LLM tensor-parallel + pipeline-parallel land at scale.",
+      "extensibility": 4,
+      "extensibilityNote": "Server / DGX form — extensible mainly by adding more nodes, not more cards.",
+      "tflopsFP16": 7912,
+      "vllmSupport": "production"
+    },
+    {
+      "id": "h200-141",
+      "name": "Single H200 141 GB workstation",
+      "vendor": "NVIDIA",
+      "category": "datacenter",
+      "formFactor": "workstation / 2U server",
+      "memoryGB": 141,
+      "usableMemoryGB": 138,
+      "bandwidthGBs": 4800,
+      "priceUSD": 36000,
+      "rigOverheadUSD": 3500,
+      "pricedAsOf": "May 2026",
+      "priceNote": "May 2026 — H200 NVL PCIe ~$31K-$32K (TRG Datacenters), reseller / SHI quotes $35K-$45K through authorized partners (Newegg Tesla H200 141 GB listing). Steady demand keeps prices firmly above H100. 600-700 W configurable TDP.",
+      "tps": {
+        "8b": 335,
+        "14b": 210,
+        "30b": 125,
+        "70b": 70,
+        "120b_moe": 112,
+        "235b_moe": 55
+      },
+      "pp": {
+        "8b": 10400,
+        "14b": 6000,
+        "30b": 2850,
+        "70b": 1200,
+        "120b_moe": 4600,
+        "235b_moe": 2200
+      },
+      "ttft100k": {
+        "8b": 13,
+        "14b": 21,
+        "30b": 43,
+        "70b": 105,
+        "120b_moe": 26,
+        "235b_moe": 55
+      },
+      "imageSec": {
+        "sdxl": 1.4,
+        "flux": 4.5
+      },
+      "videoSec": {
+        "ltx": 28,
+        "wan22": 85,
+        "hyv": 540
+      },
+      "idleW": 60,
+      "activeW": 700,
+      "pros": [
+        "141 GB HBM3e fits Qwen3-235B at Q4 on one card",
+        "4.8 TB/s bandwidth — 44% faster tg than H100",
+        "Identical CUDA stack to H100 — drop-in for any Hopper deployment"
+      ],
+      "cons": [
+        "Same compute silicon as H100 — pp barely moves",
+        "$36K+ is still firmly datacenter pricing",
+        "Backordered through mid-2026 at most resellers"
+      ],
+      "tagline": "H100 silicon with 1.76× the memory.",
+      "reviews": [
+        {
+          "videoId": "gD-lTOjHc04",
+          "title": "H200 vs H100 — Ultimate AI Inference GPU Comparison"
+        },
+        {
+          "videoId": "lNumJwHpXIA",
+          "title": "Nvidia Wouldn't Send Me This $30,000 GPU — H200 Holy $H!T"
+        }
+      ],
+      "softwareStack": "CUDA (Hopper)",
+      "softwareMaturity": 5,
+      "softwareNote": "Same Hopper stack as H100 — every framework, every kernel. FP8 / TRT-LLM mature.",
+      "extensibility": 4,
+      "extensibilityNote": "PCIe (NVL) or SXM5 in HGX — slot-in upgrade from H100 in matching chassis.",
+      "tflopsFP16": 989,
+      "vllmSupport": "production"
+    },
+    {
+      "id": "h200-x8",
+      "name": "DGX H200 — 8× H200 server (1.13 TB HBM3e)",
+      "vendor": "NVIDIA",
+      "category": "datacenter",
+      "formFactor": "8U DGX / HGX server rack",
+      "memoryGB": 1128,
+      "usableMemoryGB": 1100,
+      "bandwidthGBs": 4800,
+      "priceUSD": 380000,
+      "rigOverheadUSD": 0,
+      "pricedAsOf": "May 2026",
+      "priceNote": "May 2026 — NVIDIA DGX H200 list $350K-$500K through authorized DGX-ready partners (Runpod, itctshop, SHI). IntuitionLabs anchors 8× H200 board pricing at ~$315K BOM, with full DGX integration premium bringing assembled systems to $350K-$400K typical. The reference 100B+ inference rig of 2025-2026.",
+      "tps": {
+        "8b": 560,
+        "14b": 390,
+        "30b": 250,
+        "70b": 170,
+        "120b_moe": 310,
+        "235b_moe": 155,
+        "671b_moe": 100,
+        "1t_moe": 85
+      },
+      "pp": {
+        "8b": 58000,
+        "14b": 33500,
+        "30b": 15800,
+        "70b": 7100,
+        "120b_moe": 23000,
+        "235b_moe": 11000,
+        "671b_moe": 3700,
+        "1t_moe": 2300
+      },
+      "ttft100k": {
+        "8b": 2.5,
+        "14b": 3.6,
+        "30b": 6.5,
+        "70b": 16,
+        "120b_moe": 5,
+        "235b_moe": 11,
+        "671b_moe": 35,
+        "1t_moe": 55
+      },
+      "imageSec": {
+        "sdxl": 1.4,
+        "flux": 4.5
+      },
+      "videoSec": {
+        "ltx": 28,
+        "wan22": 85,
+        "hyv": 340
+      },
+      "idleW": 700,
+      "activeW": 6500,
+      "pros": [
+        "1.1 TB HBM3e + 900 GB/s NVLink across 8 GPUs — runs DeepSeek V3 / Llama-405B BF16",
+        "Production reference platform for frontier-LLM serving",
+        "Full DGX OS / NIM / TRT-LLM stack out of the box"
+      ],
+      "cons": [
+        "$380K capex + datacenter-grade infra",
+        "Same compute as DGX H100 — only memory differentiates",
+        "Liquid-cool friendly chassis but still 6.5 kW thermal"
+      ],
+      "tagline": "The 2025-26 reference frontier-LLM inference box.",
+      "plugAndPlay": false,
+      "softwareStack": "CUDA (Hopper)",
+      "softwareMaturity": 5,
+      "softwareNote": "Eight-way NVLink (SXM5) + NVSwitch — every TP and PP recipe vendor-validated. DGX OS pre-baked.",
+      "extensibility": 4,
+      "extensibilityNote": "DGX form — scale by adding nodes into a SuperPOD with ConnectX-7 / Quantum-2 IB fabric, not by adding cards.",
+      "tflopsFP16": 7912,
+      "vllmSupport": "production"
+    },
+    {
+      "id": "b200-180",
+      "name": "Single B200 180 GB workstation",
+      "vendor": "NVIDIA",
+      "category": "datacenter",
+      "formFactor": "workstation / 4U server",
+      "memoryGB": 180,
+      "usableMemoryGB": 176,
+      "bandwidthGBs": 8000,
+      "priceUSD": 47000,
+      "rigOverheadUSD": 5000,
+      "pricedAsOf": "May 2026",
+      "priceNote": "May 2026 — single B200 SXM / PCIe runs $45K-$50K through authorized partners (Northflank, gpu.fm). IntuitionLabs / Epoch AI peg $30K-$50K depending on volume. B200 BOM is ~$6,400 with 84% NVIDIA margin (Silicon Analysts). 1000 W TDP requires liquid cooling. Backordered with ~3.6M-unit queue. NVIDIA datasheet lists 180-192 GB depending on SKU; SXM ships 192 GB, PCIe / 'lite' variants 180 GB.",
+      "tps": {
+        "8b": 360,
+        "14b": 225,
+        "30b": 135,
+        "70b": 75,
+        "120b_moe": 120,
+        "235b_moe": 60,
+        "671b_moe": 22
+      },
+      "pp": {
+        "8b": 22800,
+        "14b": 13100,
+        "30b": 6200,
+        "70b": 2650,
+        "120b_moe": 10100,
+        "235b_moe": 4900,
+        "671b_moe": 1100
+      },
+      "ttft100k": {
+        "8b": 6,
+        "14b": 9.5,
+        "30b": 20,
+        "70b": 48,
+        "120b_moe": 12,
+        "235b_moe": 24,
+        "671b_moe": 110
+      },
+      "imageSec": {
+        "sdxl": 0.9,
+        "flux": 3
+      },
+      "videoSec": {
+        "ltx": 18,
+        "wan22": 55,
+        "hyv": 320
+      },
+      "idleW": 100,
+      "activeW": 1000,
+      "pros": [
+        "180 GB HBM3e + 8 TB/s — runs Qwen3-235B at Q8 on one card",
+        "2.3× H100 FP16 compute; FP4 Tensor Cores push prefill ~4×",
+        "5th-gen NVLink ready for HGX scale-up"
+      ],
+      "cons": [
+        "$47K+ and 1000 W — needs liquid cooling",
+        "Severe supply backorder through mid-2026",
+        "Not a workstation card — server chassis only"
+      ],
+      "tagline": "Frontier silicon, single-card form.",
+      "reviews": [
+        {
+          "videoId": "Pv4JjbQB1bI",
+          "title": "Nvidia H200 vs B200 — The Practical 2025 Guide"
+        },
+        {
+          "videoId": "UpW6iDyc0C8",
+          "title": "AI Lab — NVIDIA B200 vs GB200 explained for LLMs"
+        }
+      ],
+      "softwareStack": "CUDA (Blackwell)",
+      "softwareMaturity": 5,
+      "softwareNote": "Blackwell + 2nd-gen Transformer Engine — TRT-LLM, vLLM, sglang all cover B200 day-1.",
+      "extensibility": 4,
+      "extensibilityNote": "SXM / HGX form — scale by joining an 8-way HGX board, not by stacking cards in a workstation.",
+      "tflopsFP16": 2250,
+      "vllmSupport": "production"
+    },
+    {
+      "id": "b200-x8",
+      "name": "DGX B200 — 8× B200 server (1.44 TB HBM3e)",
+      "vendor": "NVIDIA",
+      "category": "datacenter",
+      "formFactor": "10U DGX server",
+      "memoryGB": 1440,
+      "usableMemoryGB": 1404,
+      "bandwidthGBs": 8000,
+      "priceUSD": 475000,
+      "rigOverheadUSD": 0,
+      "pricedAsOf": "May 2026",
+      "priceNote": "May 2026 — DGX B200 list $300K-$500K per Runpod / aiserver.eu / itctshop. Northflank confirms 8× B200 systems exceed $500K typical. DeployBase pegs on-prem systems at $275K-$300K (NVIDIA direct, large customer). Tech-insider.org's May 2026 verified range: $300K-$350K for DGX B300 Ultra; DGX B200 trails at $400K-$500K depending on cooling config. 1.4 TB GPU memory, 64 TB/s aggregate bw, 144 PFLOPS FP4.",
+      "tps": {
+        "8b": 600,
+        "14b": 420,
+        "30b": 270,
+        "70b": 180,
+        "120b_moe": 330,
+        "235b_moe": 165,
+        "671b_moe": 105,
+        "1t_moe": 90
+      },
+      "pp": {
+        "8b": 127000,
+        "14b": 73000,
+        "30b": 34500,
+        "70b": 15600,
+        "120b_moe": 50000,
+        "235b_moe": 24000,
+        "671b_moe": 8000,
+        "1t_moe": 5000
+      },
+      "ttft100k": {
+        "8b": 1.2,
+        "14b": 1.7,
+        "30b": 3,
+        "70b": 7.2,
+        "120b_moe": 2.3,
+        "235b_moe": 5,
+        "671b_moe": 16,
+        "1t_moe": 25
+      },
+      "imageSec": {
+        "sdxl": 0.9,
+        "flux": 3
+      },
+      "videoSec": {
+        "ltx": 18,
+        "wan22": 55,
+        "hyv": 220
+      },
+      "idleW": 900,
+      "activeW": 10200,
+      "pros": [
+        "1.44 TB HBM3e + 64 TB/s aggregate — every open-weights frontier model fits",
+        "5th-gen NVLink + NVSwitch — true 8-way TP at full bandwidth",
+        "Reference 2026 frontier-inference platform"
+      ],
+      "cons": [
+        "$475K and 10 kW — datacenter only",
+        "Liquid cooling effectively required",
+        "Supply is the bottleneck, not silicon"
+      ],
+      "tagline": "2026's frontier-LLM reference rig.",
+      "plugAndPlay": false,
+      "softwareStack": "CUDA (Blackwell)",
+      "softwareMaturity": 5,
+      "softwareNote": "NVIDIA's flagship Blackwell DGX — TRT-LLM, NIM, vLLM, sglang, all vendor-validated. ConnectX-7 / Quantum-2 IB for multi-node.",
+      "extensibility": 4,
+      "extensibilityNote": "DGX form — scale via SuperPOD nodes + InfiniBand fabric. GB200 NVL72 is the next rung up.",
+      "tflopsFP16": 18000,
+      "vllmSupport": "production"
     },
     {
       "id": "rtx-a6000-48",
@@ -1807,7 +3251,32 @@
         "Older Ampere = no FP8/FP4",
         "Slower than 2× 3090 for the price"
       ],
-      "rigOverheadUSD": 900
+      "reviews": [
+        {
+          "videoId": "fKr34meoqQs",
+          "title": "How Powerful Is the A6000 for LLM Inference? 7B-14B Tested"
+        }
+      ],
+      "rigOverheadUSD": 900,
+      "pp": {
+        "8b": 4900,
+        "14b": 2800,
+        "30b": 1350,
+        "70b": 580
+      },
+      "ttft100k": {
+        "8b": 28,
+        "14b": 48,
+        "30b": 105,
+        "70b": 280
+      },
+      "softwareStack": "CUDA (Ampere)",
+      "softwareMaturity": 5,
+      "softwareNote": "Workstation-class Ampere. Every framework supports it; FP8 absent (Ampere).",
+      "extensibility": 5,
+      "extensibilityNote": "Dual-slot workstation card — pair with a second easily for 96 GB.",
+      "tflopsFP16": 155,
+      "vllmSupport": "production"
     },
     {
       "id": "rtx-6000-ada-48",
@@ -1846,7 +3315,26 @@
         "Pricey vs 2× 3090",
         "No FP4 (that's Blackwell)"
       ],
-      "rigOverheadUSD": 1000
+      "rigOverheadUSD": 1000,
+      "pp": {
+        "8b": 9200,
+        "14b": 5300,
+        "30b": 2500,
+        "70b": 1100
+      },
+      "ttft100k": {
+        "8b": 14,
+        "14b": 24,
+        "30b": 50,
+        "70b": 130
+      },
+      "softwareStack": "CUDA (Ada)",
+      "softwareMaturity": 5,
+      "softwareNote": "Ada workstation card — FP8 helps prefill, full software ecosystem.",
+      "extensibility": 5,
+      "extensibilityNote": "Standard dual-slot — easy to dual-card.",
+      "tflopsFP16": 364,
+      "vllmSupport": "production"
     },
     {
       "id": "rtx-pro-6000-blackwell-96",
@@ -1865,7 +3353,7 @@
         "14b": 140,
         "30b": 85,
         "70b": 34,
-        "120b_moe": 240,
+        "120b_moe": 190,
         "235b_moe": 50
       },
       "imageSec": {
@@ -1895,7 +3383,30 @@
           "title": "RTX Pro 6000 Blackwell — Linus Tech Tips review"
         }
       ],
-      "rigOverheadUSD": 2000
+      "rigOverheadUSD": 2000,
+      "pp": {
+        "8b": 14800,
+        "14b": 8500,
+        "30b": 4100,
+        "70b": 1750,
+        "120b_moe": 5800,
+        "235b_moe": 2500
+      },
+      "ttft100k": {
+        "8b": 9,
+        "14b": 14,
+        "30b": 28,
+        "70b": 70,
+        "120b_moe": 22,
+        "235b_moe": null
+      },
+      "softwareStack": "CUDA (Blackwell)",
+      "softwareMaturity": 5,
+      "softwareNote": "Blackwell with 96 GB ECC — FP4 prefill is genuinely fast. Every stack supports it as of mid-2026.",
+      "extensibility": 5,
+      "extensibilityNote": "Standard workstation card — dual-card is the natural upgrade.",
+      "tflopsFP16": 1457,
+      "vllmSupport": "production"
     },
     {
       "id": "rtx-pro-6000-blackwell-x2",
@@ -1943,7 +3454,249 @@
           "title": "RTX Pro 6000 Blackwell — Linus Tech Tips review (single-card baseline)"
         }
       ],
-      "rigOverheadUSD": 2500
+      "rigOverheadUSD": 2500,
+      "pp": {
+        "8b": 26000,
+        "14b": 15000,
+        "30b": 7300,
+        "70b": 3200,
+        "120b_moe": 10500,
+        "235b_moe": 5000
+      },
+      "ttft100k": {
+        "8b": 5.5,
+        "14b": 9,
+        "30b": 17,
+        "70b": 42,
+        "120b_moe": 13,
+        "235b_moe": 28
+      },
+      "softwareStack": "CUDA (Blackwell)",
+      "softwareMaturity": 5,
+      "softwareNote": "Two PRO 6000 Blackwells — vLLM tensor-parallel + TRT-LLM coverage day-1.",
+      "extensibility": 5,
+      "extensibilityNote": "Two slots filled; a workstation chassis still leaves room for x4 if you have the lanes + PSU.",
+      "tflopsFP16": 2914,
+      "vllmSupport": "production"
+    },
+    {
+      "id": "rtx-pro-6000-blackwell-x4",
+      "name": "Quad RTX Pro 6000 Blackwell build (384 GB)",
+      "vendor": "NVIDIA",
+      "category": "nvidia-pro",
+      "formFactor": "workstation / 4U pedestal",
+      "memoryGB": 384,
+      "usableMemoryGB": 372,
+      "bandwidthGBs": 1792,
+      "priceUSD": 38000,
+      "rigOverheadUSD": 4000,
+      "pricedAsOf": "May 2026",
+      "priceNote": "May 2026 — 4× $8,500-$9,200 cards (Newegg / Microcenter MSRP $8,565-$8,999) + ~$4K Threadripper Pro / Xeon W chassis with 4 double-wide PCIe 5.0 x16 slots, 2000 W PSU.",
+      "tps": {
+        "8b": 320,
+        "14b": 230,
+        "30b": 150,
+        "70b": 95,
+        "120b_moe": 400,
+        "235b_moe": 145,
+        "671b_moe": 40
+      },
+      "pp": {
+        "8b": 47000,
+        "14b": 27000,
+        "30b": 13000,
+        "70b": 5700,
+        "120b_moe": 19000,
+        "235b_moe": 9000,
+        "671b_moe": 2400
+      },
+      "ttft100k": {
+        "8b": 3,
+        "14b": 5,
+        "30b": 10,
+        "70b": 23,
+        "120b_moe": 7.5,
+        "235b_moe": 16,
+        "671b_moe": 65
+      },
+      "imageSec": {
+        "sdxl": 1.5,
+        "flux": 6
+      },
+      "videoSec": {
+        "ltx": 40,
+        "wan22": 115,
+        "hyv": 280
+      },
+      "idleW": 100,
+      "activeW": 2200,
+      "pros": [
+        "384 GB ECC GDDR7 — runs DeepSeek V3 Q2 or Qwen3-235B Q8",
+        "FP4 prefill is genuinely fast across the cluster",
+        "Workstation form-factor — no datacenter chassis needed"
+      ],
+      "cons": [
+        "PCIe 5.0 x16 only, no NVLink — TP scaling is bw-bound",
+        "$38K+ build, 2.2 kW active",
+        "Needs Threadripper Pro / Xeon W for the lane count"
+      ],
+      "tagline": "Workstation-form datacenter, four cards deep.",
+      "plugAndPlay": false,
+      "softwareStack": "CUDA (Blackwell)",
+      "softwareMaturity": 5,
+      "softwareNote": "Four-way TP over PCIe is well-trodden in vLLM + TRT-LLM; FP4 Tensor support is day-1.",
+      "extensibility": 4,
+      "extensibilityNote": "Four cards fills most workstation chassis; jumping to x8 means moving into a real server (e.g. SuperMicro 4124GS / Gigabyte G493).",
+      "tflopsFP16": 5828,
+      "vllmSupport": "production"
+    },
+    {
+      "id": "rtx-pro-6000-blackwell-x8",
+      "name": "8× RTX Pro 6000 Blackwell server (768 GB)",
+      "vendor": "NVIDIA",
+      "category": "nvidia-pro",
+      "formFactor": "4U server (e.g. SuperMicro AS-4125GS-TNRT)",
+      "memoryGB": 768,
+      "usableMemoryGB": 744,
+      "bandwidthGBs": 1792,
+      "priceUSD": 78000,
+      "rigOverheadUSD": 8000,
+      "pricedAsOf": "May 2026",
+      "priceNote": "May 2026 — 8× ~$8,800 Server Edition cards (passive 2-slot FHFL) + ~$8K dual-EPYC 4U GPU server (SuperMicro / Gigabyte / ASUS reference designs). CoreWeave deploys this exact config as their RTX Pro 6000 8x instance.",
+      "tps": {
+        "8b": 420,
+        "14b": 310,
+        "30b": 220,
+        "70b": 140,
+        "120b_moe": 540,
+        "235b_moe": 220,
+        "671b_moe": 75,
+        "1t_moe": 40
+      },
+      "pp": {
+        "8b": 75000,
+        "14b": 43000,
+        "30b": 21000,
+        "70b": 9200,
+        "120b_moe": 30000,
+        "235b_moe": 14500,
+        "671b_moe": 4200,
+        "1t_moe": 2600
+      },
+      "ttft100k": {
+        "8b": 1.9,
+        "14b": 3.2,
+        "30b": 6.5,
+        "70b": 15,
+        "120b_moe": 4.7,
+        "235b_moe": 10,
+        "671b_moe": 40,
+        "1t_moe": 65
+      },
+      "imageSec": {
+        "sdxl": 1.4,
+        "flux": 5.5
+      },
+      "videoSec": {
+        "ltx": 35,
+        "wan22": 105,
+        "hyv": 240
+      },
+      "idleW": 220,
+      "activeW": 4800,
+      "pros": [
+        "768 GB GDDR7 in a single chassis — Qwen3-235B BF16 fits",
+        "Closest thing to a DGX H200 at a quarter of the price",
+        "CoreWeave-validated config — production scale-out"
+      ],
+      "cons": [
+        "Still PCIe (no NVLink) — TP across 8 GPUs sees diminishing returns",
+        "4U server + 5 kW load = real datacenter ask",
+        "$86K+ build"
+      ],
+      "tagline": "Quarter-DGX-H200 price, two-thirds the memory.",
+      "plugAndPlay": false,
+      "softwareStack": "CUDA (Blackwell)",
+      "softwareMaturity": 5,
+      "softwareNote": "vLLM tensor-parallel up to 8-way over PCIe is a standard recipe. TRT-LLM and NIM both cover this card.",
+      "extensibility": 4,
+      "extensibilityNote": "8× is the standard 4U ceiling; beyond that means a second node + RDMA fabric (multi-node territory).",
+      "tflopsFP16": 11656,
+      "vllmSupport": "production"
+    },
+    {
+      "id": "rtx-pro-6000-blackwell-x12",
+      "name": "12× RTX Pro 6000 Blackwell rack (1152 GB)",
+      "vendor": "NVIDIA",
+      "category": "nvidia-pro",
+      "formFactor": "8U server rack (multi-node, 1-2 chassis)",
+      "memoryGB": 1152,
+      "usableMemoryGB": 1116,
+      "bandwidthGBs": 1792,
+      "priceUSD": 118000,
+      "rigOverheadUSD": 16000,
+      "pricedAsOf": "May 2026",
+      "priceNote": "May 2026 — 12× ~$8,800 Server Edition cards + dual-chassis 4U + 4U GPU server config or single 8U SuperMicro reference design + 200 GbE RoCE fabric. Pricing per SHI / CDW enterprise quotes.",
+      "tps": {
+        "8b": 460,
+        "14b": 340,
+        "30b": 250,
+        "70b": 170,
+        "120b_moe": 600,
+        "235b_moe": 260,
+        "671b_moe": 95,
+        "1t_moe": 55
+      },
+      "pp": {
+        "8b": 110000,
+        "14b": 64000,
+        "30b": 31000,
+        "70b": 13500,
+        "120b_moe": 44000,
+        "235b_moe": 21000,
+        "671b_moe": 6200,
+        "1t_moe": 3900
+      },
+      "ttft100k": {
+        "8b": 1.3,
+        "14b": 2.2,
+        "30b": 4.5,
+        "70b": 10,
+        "120b_moe": 3.3,
+        "235b_moe": 7,
+        "671b_moe": 28,
+        "1t_moe": 45
+      },
+      "imageSec": {
+        "sdxl": 1.3,
+        "flux": 5
+      },
+      "videoSec": {
+        "ltx": 32,
+        "wan22": 95,
+        "hyv": 210
+      },
+      "idleW": 340,
+      "activeW": 7400,
+      "pros": [
+        "1.1 TB pooled GDDR7 — same memory class as a DGX H200 at a third of the price",
+        "Runs Llama-405B BF16 + 1T-MoE Q4 on a single rack",
+        "Standard PCIe parts — far easier procurement than SXM5 / SXM6"
+      ],
+      "cons": [
+        "Multi-node TP needs a real RoCE fabric (200-400 GbE)",
+        "7.4 kW active = full PDU bring-up",
+        "Diminishing tps returns beyond x8 — pp scales better than tg"
+      ],
+      "tagline": "Datacenter-class memory pool on PCIe parts.",
+      "plugAndPlay": false,
+      "softwareStack": "CUDA (Blackwell)",
+      "softwareMaturity": 4,
+      "softwareNote": "Beyond 8 GPUs you're in vLLM PP-over-RoCE or TRT-LLM Inflight Batching with disagg-prefill — supported but more bespoke than a single-node DGX.",
+      "extensibility": 3,
+      "extensibilityNote": "Two-chassis builds work, but the next jump (x16 / x24) is firmly DGX SuperPOD territory and a different procurement story.",
+      "tflopsFP16": 17484,
+      "vllmSupport": "production"
     },
     {
       "id": "amd-w7900-48",
@@ -1988,7 +3741,26 @@
           "title": "AMD Radeon Pro desktop GPUs powering LLMs — up to 4× W7900"
         }
       ],
-      "rigOverheadUSD": 1200
+      "rigOverheadUSD": 1200,
+      "pp": {
+        "8b": 3200,
+        "14b": 1850,
+        "30b": 870,
+        "70b": 300
+      },
+      "ttft100k": {
+        "8b": 42,
+        "14b": 70,
+        "30b": 160,
+        "70b": 440
+      },
+      "softwareStack": "ROCm (RDNA3)",
+      "softwareMaturity": 3,
+      "softwareNote": "ROCm 6+ covers W7900 reliably for llama.cpp; vLLM works with minor friction.",
+      "extensibility": 5,
+      "extensibilityNote": "Standard workstation card; pair freely for 96 GB.",
+      "tflopsFP16": 122,
+      "vllmSupport": "community"
     },
     {
       "id": "amd-w7900-x2",
@@ -2032,7 +3804,28 @@
           "title": "AMD Radeon Pro desktop GPUs powering LLMs — up to 4× W7900"
         }
       ],
-      "rigOverheadUSD": 1600
+      "rigOverheadUSD": 1600,
+      "pp": {
+        "8b": 5500,
+        "14b": 3200,
+        "30b": 1500,
+        "70b": 540,
+        "120b_moe": 1900
+      },
+      "ttft100k": {
+        "8b": 25,
+        "14b": 42,
+        "30b": 90,
+        "70b": 250,
+        "120b_moe": 75
+      },
+      "softwareStack": "ROCm (RDNA3)",
+      "softwareMaturity": 3,
+      "softwareNote": "Tensor-parallel on vLLM-ROCm works on RDNA3 pairs. Throughput scales ~1.8×.",
+      "extensibility": 5,
+      "extensibilityNote": "Two slots filled in a workstation; further W7900s past two is rare territory.",
+      "tflopsFP16": 244,
+      "vllmSupport": "community"
     },
     {
       "id": "amd-w7800-32",
@@ -2072,7 +3865,24 @@
         "576 GB/s lags W7900 (864) and 5090 (1 792)",
         "70 B doesn't fit at Q4"
       ],
-      "rigOverheadUSD": 700
+      "rigOverheadUSD": 700,
+      "pp": {
+        "8b": 2400,
+        "14b": 1400,
+        "30b": 650
+      },
+      "ttft100k": {
+        "8b": 55,
+        "14b": 95,
+        "30b": 220
+      },
+      "softwareStack": "ROCm (RDNA3)",
+      "softwareMaturity": 3,
+      "softwareNote": "Cheaper RDNA3 with less memory — same software story as W7900.",
+      "extensibility": 5,
+      "extensibilityNote": "Standard workstation card; upgrade to W7900 / R9700 for more memory.",
+      "tflopsFP16": 91,
+      "vllmSupport": "community"
     },
     {
       "id": "amd-r9700-32",
@@ -2123,7 +3933,24 @@
           "title": "Radeon R9700 first look — AI / vLLM + creative tests"
         }
       ],
-      "rigOverheadUSD": 700
+      "rigOverheadUSD": 700,
+      "pp": {
+        "8b": 4400,
+        "14b": 2500,
+        "30b": 1180
+      },
+      "ttft100k": {
+        "8b": 30,
+        "14b": 52,
+        "30b": 115
+      },
+      "softwareStack": "ROCm (RDNA4)",
+      "softwareMaturity": 3,
+      "softwareNote": "RDNA4 workstation card — Phoronix's ROCm 7.1 review puts it close to W7900 on prefill.",
+      "extensibility": 5,
+      "extensibilityNote": "Standard PCIe workstation card.",
+      "tflopsFP16": 96,
+      "vllmSupport": "community"
     },
     {
       "id": "amd-r9700-x2",
@@ -2139,7 +3966,7 @@
       "tps": {
         "8b": 90,
         "14b": 55,
-        "30b": 80,
+        "30b": 30,
         "70b": 22,
         "120b_moe": 40,
         "235b_moe": null
@@ -2173,7 +4000,28 @@
           "title": "vLLM on dual R9700 — benchmarks vs 5090/4090/3090/A100"
         }
       ],
-      "rigOverheadUSD": 1000
+      "rigOverheadUSD": 1000,
+      "pp": {
+        "8b": 7600,
+        "14b": 4400,
+        "30b": 2050,
+        "70b": 740,
+        "120b_moe": 1300
+      },
+      "ttft100k": {
+        "8b": 18,
+        "14b": 30,
+        "30b": 65,
+        "70b": 190,
+        "120b_moe": null
+      },
+      "softwareStack": "ROCm (RDNA4)",
+      "softwareMaturity": 3,
+      "softwareNote": "Pair of R9700s — vLLM-ROCm tensor-parallel works as of ROCm 7.1.",
+      "extensibility": 5,
+      "extensibilityNote": "Two-slot workstation build with PCIe lanes + PSU headroom for a third card.",
+      "tflopsFP16": 192,
+      "vllmSupport": "community"
     },
     {
       "id": "amd-mi300x-192",
@@ -2219,7 +4067,189 @@
           "title": "AMD MI300X — LLM setup was shockingly fast"
         }
       ],
-      "rigOverheadUSD": 0
+      "rigOverheadUSD": 0,
+      "pp": {
+        "8b": 5800,
+        "14b": 3400,
+        "30b": 1600,
+        "70b": 950,
+        "120b_moe": 2400,
+        "235b_moe": 1100
+      },
+      "ttft100k": {
+        "8b": 24,
+        "14b": 40,
+        "30b": 80,
+        "70b": 130,
+        "120b_moe": 75,
+        "235b_moe": 160
+      },
+      "softwareStack": "ROCm (CDNA3)",
+      "softwareMaturity": 4,
+      "softwareNote": "Datacenter CDNA3 — vLLM, sglang, llama.cpp ROCm all production-grade. AMD's flagship LLM target.",
+      "extensibility": 4,
+      "extensibilityNote": "OAM form factor — fits AMD reference servers; not slot-swap-into-a-tower friendly.",
+      "tflopsFP16": 1307,
+      "vllmSupport": "production"
+    },
+    {
+      "id": "amd-mi325x-256",
+      "name": "Single AMD Instinct MI325X 256 GB workstation",
+      "vendor": "AMD",
+      "category": "datacenter",
+      "formFactor": "workstation / 4U server (OAM)",
+      "memoryGB": 256,
+      "usableMemoryGB": 250,
+      "bandwidthGBs": 6000,
+      "priceUSD": 25000,
+      "rigOverheadUSD": 0,
+      "pricedAsOf": "May 2026",
+      "priceNote": "May 2026 — MI325X OAM module street $22K-$26K via system integrators (ICD Data Center, supermicro reference quotes); not sold standalone retail. Same CDNA3 compute as MI300X, +33 % memory and +13 % bandwidth. DigitalOcean / TensorWave / Vultr clouds list it at $1.95-$2.29/hr — pricing dropped 33 % since July 2025.",
+      "tps": {
+        "8b": 335,
+        "14b": 220,
+        "30b": 130,
+        "70b": 130,
+        "120b_moe": 260,
+        "235b_moe": 105,
+        "671b_moe": 28
+      },
+      "pp": {
+        "8b": 5800,
+        "14b": 3400,
+        "30b": 1600,
+        "70b": 950,
+        "120b_moe": 2400,
+        "235b_moe": 1100,
+        "671b_moe": 380
+      },
+      "ttft100k": {
+        "8b": 19,
+        "14b": 31,
+        "30b": 62,
+        "70b": 100,
+        "120b_moe": 58,
+        "235b_moe": 124,
+        "671b_moe": 350
+      },
+      "imageSec": {
+        "sdxl": 1.6,
+        "flux": 5.4
+      },
+      "videoSec": {
+        "ltx": 32,
+        "wan22": 95,
+        "hyv": 430
+      },
+      "idleW": 100,
+      "activeW": 1000,
+      "pros": [
+        "256 GB HBM3e on a single GPU — fits Qwen3-235B at Q8",
+        "6 TB/s bandwidth — among the fastest single cards",
+        "Same ROCm stack as MI300X — straight upgrade path"
+      ],
+      "cons": [
+        "Identical compute to MI300X — only memory + bw improved",
+        "OAM form — needs AMD reference server chassis",
+        "ROCm catching up to CUDA, gaps in training-frame coverage"
+      ],
+      "tagline": "MI300X with a third more memory.",
+      "reviews": [
+        {
+          "videoId": "SNn7BUMM3Kw",
+          "title": "Inside the AMD Instinct MI325X — AI / HPC deep dive"
+        }
+      ],
+      "softwareStack": "ROCm (CDNA3)",
+      "softwareMaturity": 4,
+      "softwareNote": "CDNA3 + ROCm 6.x / 7.x — vLLM, sglang, llama.cpp ROCm production-grade. Same stack as MI300X.",
+      "extensibility": 4,
+      "extensibilityNote": "OAM 8-way UBB platform — scale on AMD reference chassis (Supermicro AS-8125GS-TNMR2, Dell XE9680).",
+      "tflopsFP16": 1307,
+      "vllmSupport": "production"
+    },
+    {
+      "id": "amd-mi355x-288",
+      "name": "Single AMD Instinct MI355X 288 GB workstation",
+      "vendor": "AMD",
+      "category": "datacenter",
+      "formFactor": "4U server (OAM, liquid-cooled)",
+      "memoryGB": 288,
+      "usableMemoryGB": 282,
+      "bandwidthGBs": 8000,
+      "priceUSD": 28000,
+      "rigOverheadUSD": 0,
+      "pricedAsOf": "May 2026",
+      "priceNote": "May 2026 — MI355X street $25K-$30K via OEMs (Dell PowerEdge XE9712, Supermicro AS-8126GS), per HSBC analyst forecast / UBS target raise. Launched June 2025, CDNA4 + FP4 / FP6, 1400 W TDP (liquid-cool only), 288 GB HBM3e at 8 TB/s. AMD claims FP4 inference beats B200 on Llama-3.1-405B and DeepSeek R1.",
+      "tps": {
+        "8b": 420,
+        "14b": 270,
+        "30b": 160,
+        "70b": 160,
+        "120b_moe": 320,
+        "235b_moe": 130,
+        "671b_moe": 50,
+        "1t_moe": 30
+      },
+      "pp": {
+        "8b": 11600,
+        "14b": 6800,
+        "30b": 3200,
+        "70b": 1900,
+        "120b_moe": 4800,
+        "235b_moe": 2200,
+        "671b_moe": 760,
+        "1t_moe": 460
+      },
+      "ttft100k": {
+        "8b": 9.5,
+        "14b": 16,
+        "30b": 31,
+        "70b": 50,
+        "120b_moe": 29,
+        "235b_moe": 62,
+        "671b_moe": 175,
+        "1t_moe": 290
+      },
+      "imageSec": {
+        "sdxl": 1.1,
+        "flux": 3.7
+      },
+      "videoSec": {
+        "ltx": 22,
+        "wan22": 70,
+        "hyv": 300
+      },
+      "idleW": 140,
+      "activeW": 1400,
+      "pros": [
+        "288 GB HBM3e — runs a 520 B parameter model on one GPU per AMD",
+        "FP4 / FP6 Tensor support — first AMD card matching Blackwell datatypes",
+        "8 TB/s bandwidth matches B200"
+      ],
+      "cons": [
+        "1400 W requires direct liquid cooling — air-cooled MI350X (1000 W) is the alternative",
+        "ROCm 7 still trailing CUDA for niche kernels",
+        "Limited cloud availability — only 5 providers as of May 2026"
+      ],
+      "tagline": "AMD's first FP4 card — matches B200 on memory.",
+      "reviews": [
+        {
+          "videoId": "p_hVHmOBdYw",
+          "title": "AMD MI350X & MI355X — 4× perf, 35× faster inference"
+        },
+        {
+          "videoId": "8ruEEHZIB-4",
+          "title": "AMD Just Beat NVIDIA at Their Own Game — MI355 LLMs"
+        }
+      ],
+      "softwareStack": "ROCm (CDNA4)",
+      "softwareMaturity": 4,
+      "softwareNote": "CDNA4 + ROCm 7 — vLLM, sglang, llama.cpp ROCm production. MXFP4 / MXFP6 support is new and improving fast.",
+      "extensibility": 4,
+      "extensibilityNote": "OAM 8-way UBB MI355X platforms ship from Dell / Supermicro / Lenovo — scale at the platform level, not slot level.",
+      "tflopsFP16": 2300,
+      "vllmSupport": "production"
     },
     {
       "id": "amd-mi50-32",
@@ -2268,7 +4298,24 @@
         }
       ],
       "plugAndPlay": false,
-      "rigOverheadUSD": 400
+      "rigOverheadUSD": 400,
+      "pp": {
+        "8b": 1050,
+        "14b": 600,
+        "30b": 280
+      },
+      "ttft100k": {
+        "8b": 130,
+        "14b": 220,
+        "30b": 480
+      },
+      "softwareStack": "ROCm (gfx906)",
+      "softwareMaturity": 2,
+      "softwareNote": "gfx906 is legacy — ROCm 6+ dropped it; community rocBLAS fork keeps llama.cpp alive. No vLLM.",
+      "extensibility": 5,
+      "extensibilityNote": "Generic PCIe — easy to stack as homelab cards, but cooling is loud.",
+      "tflopsFP16": 26,
+      "vllmSupport": "experimental"
     },
     {
       "id": "amd-mi50-x4",
@@ -2320,7 +4367,28 @@
         }
       ],
       "plugAndPlay": false,
-      "rigOverheadUSD": 1500
+      "rigOverheadUSD": 1500,
+      "pp": {
+        "8b": 1850,
+        "14b": 1080,
+        "30b": 510,
+        "70b": 220,
+        "120b_moe": 400
+      },
+      "ttft100k": {
+        "8b": 75,
+        "14b": 120,
+        "30b": 260,
+        "70b": 650,
+        "120b_moe": 320
+      },
+      "softwareStack": "ROCm (gfx906)",
+      "softwareMaturity": 2,
+      "softwareNote": "Same gfx906 story — quad MI50s on a single host is a homelab pattern, not a production deployment.",
+      "extensibility": 4,
+      "extensibilityNote": "Mining-frame or 4U chassis territory; PSU + cooling, not lanes, are the limit.",
+      "tflopsFP16": 104,
+      "vllmSupport": "experimental"
     },
     {
       "id": "tinybox-red",
@@ -2365,7 +4433,28 @@
           "title": "George Hotz — tinygrad / Llama 70B on a tinybox"
         }
       ],
-      "rigOverheadUSD": 0
+      "rigOverheadUSD": 0,
+      "pp": {
+        "8b": 17000,
+        "14b": 9800,
+        "30b": 4600,
+        "70b": 1700,
+        "120b_moe": 5500
+      },
+      "ttft100k": {
+        "8b": 8,
+        "14b": 13,
+        "30b": 28,
+        "70b": 75,
+        "120b_moe": 24
+      },
+      "softwareStack": "ROCm (RDNA3)",
+      "softwareMaturity": 3,
+      "softwareNote": "tinygrad-tuned ROCm box; everyday llama.cpp + vLLM-ROCm work but the curated stack is the value-add.",
+      "extensibility": 3,
+      "extensibilityNote": "Proprietary chassis with 6× W7900s. GPU swap is technically possible but tinygrad's tuning is the value-add. Multi-box clusters are officially supported.",
+      "tflopsFP16": 732,
+      "vllmSupport": "community"
     },
     {
       "id": "tinybox-green",
@@ -2412,7 +4501,30 @@
           "title": "George Hotz — tinygrad / Llama 70B on a tinybox"
         }
       ],
-      "rigOverheadUSD": 0
+      "rigOverheadUSD": 0,
+      "pp": {
+        "8b": 32000,
+        "14b": 18500,
+        "30b": 8800,
+        "70b": 3300,
+        "120b_moe": 10500,
+        "235b_moe": 4800
+      },
+      "ttft100k": {
+        "8b": 5,
+        "14b": 8,
+        "30b": 16,
+        "70b": 38,
+        "120b_moe": 13,
+        "235b_moe": 30
+      },
+      "softwareStack": "CUDA (Ada)",
+      "softwareMaturity": 5,
+      "softwareNote": "6× 4090 box from tinygrad — CUDA software story is identical to any 4090 build.",
+      "extensibility": 3,
+      "extensibilityNote": "6× 4090 box; CUDA stack identical to any 4090 build. tinygrad publishes multi-box cluster recipes — real scale path, but not slot-swap-friendly.",
+      "tflopsFP16": 1980,
+      "vllmSupport": "production"
     },
     {
       "id": "tinybox-green-v2",
@@ -2459,7 +4571,30 @@
           "title": "George Hotz — tinygrad / Llama 70B on a tinybox"
         }
       ],
-      "rigOverheadUSD": 0
+      "rigOverheadUSD": 0,
+      "pp": {
+        "8b": 38000,
+        "14b": 22000,
+        "30b": 10500,
+        "70b": 4000,
+        "120b_moe": 13000,
+        "235b_moe": 6000
+      },
+      "ttft100k": {
+        "8b": 4,
+        "14b": 7,
+        "30b": 13,
+        "70b": 32,
+        "120b_moe": 11,
+        "235b_moe": 24
+      },
+      "softwareStack": "CUDA (Blackwell)",
+      "softwareMaturity": 5,
+      "softwareNote": "4× 5090 successor — full Blackwell CUDA stack, tinygrad's tuning still the differentiator.",
+      "extensibility": 3,
+      "extensibilityNote": "4× 5090 successor — same multi-tinybox cluster story; tinygrad's stack is what you're really buying.",
+      "tflopsFP16": 1676,
+      "vllmSupport": "production"
     },
     {
       "id": "tinybox-pro",
@@ -2506,7 +4641,30 @@
           "title": "George Hotz — tinygrad / Llama 70B on a tinybox"
         }
       ],
-      "rigOverheadUSD": 0
+      "rigOverheadUSD": 0,
+      "pp": {
+        "8b": 52000,
+        "14b": 30000,
+        "30b": 14000,
+        "70b": 6800,
+        "120b_moe": 18000,
+        "235b_moe": 8500
+      },
+      "ttft100k": {
+        "8b": 3,
+        "14b": 5,
+        "30b": 10,
+        "70b": 22,
+        "120b_moe": 8,
+        "235b_moe": 18
+      },
+      "softwareStack": "CUDA (Hopper)",
+      "softwareMaturity": 5,
+      "softwareNote": "8× RTX 4090 wheeled pedestal — full consumer-Ada CUDA stack inside a turnkey chassis. Non-NVLink PCIe topology caps multi-GPU scaling at ~3-5× single-card prefill, so it doesn't out-pull a true SXM5-NVLink server.",
+      "extensibility": 3,
+      "extensibilityNote": "8× H100 SXM wheeled pedestal. Multi-tinybox clusters work; single-box upgrades aren't really a thing — you'd order another.",
+      "tflopsFP16": 2640,
+      "vllmSupport": "production"
     }
   ]
 }
