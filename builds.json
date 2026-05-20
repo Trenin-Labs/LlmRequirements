@@ -1,8 +1,8 @@
 {
   "$schema": "https://json-schema.org/draft-07/schema#",
   "_description": "Hardware build catalog with throughput (tps), prompt-processing (pp), TTFT @ 100 K (ttft100k), image, and video benchmarks. Each build also carries editorial fields used by the /compare page: softwareStack (short label), softwareMaturity (0-5), softwareNote, extensibility (0-5), and extensibilityNote. Pricing is in priceUSD as a US MSRP fallback only — see prices/ for regional snapshots.",
-  "_lastUpdated": "2026-05-16",
-  "_count": 67,
+  "_lastUpdated": "2026-05-20",
+  "_count": 68,
   "builds": [
     {
       "id": "your-laptop-8gb",
@@ -60,7 +60,7 @@
       "category": "owned",
       "formFactor": "laptop",
       "memoryGB": 12,
-      "usableMemoryGB": 9,
+      "usableMemoryGB": 7,
       "bandwidthGBs": 70,
       "priceUSD": 0,
       "priceNote": "Free — you already own it. Numbers assume modern x86 CPU inference via llama.cpp Q4_K_M with dual-channel DDR5; integrated-GPU offload via Vulkan can be 20–50 % faster.",
@@ -110,7 +110,7 @@
       "category": "owned",
       "formFactor": "desktop tower",
       "memoryGB": 16,
-      "usableMemoryGB": 13,
+      "usableMemoryGB": 11,
       "bandwidthGBs": 85,
       "priceUSD": 0,
       "priceNote": "Free — you already own it. Numbers assume modern x86 CPU inference via llama.cpp Q4_K_M with dual-channel DDR5. A discrete consumer GPU (RTX 3060 12 GB and up) changes the picture entirely — see the NVIDIA-consumer category for those builds.",
@@ -380,10 +380,6 @@
         "Expensive per-GB memory"
       ],
       "reviews": [
-        {
-          "videoId": "75PFpW9SOL0",
-          "title": "MacBook Pro Local AI Test — LLM Benchmarks & MLX Performance"
-        },
         {
           "videoId": "bp2eev21Qfo",
           "title": "FREE Local LLMs on Apple Silicon — Fast! (AZisk)"
@@ -778,7 +774,21 @@
       "extensibility": 3,
       "extensibilityNote": "Add a third / fourth 256 GB or 512 GB Studio over TB5 — Geerling's four-node Exo cluster proves this scales. But the 512 GB nodes themselves are no longer being made.",
       "tflopsFP16": 72,
-      "vllmSupport": "community"
+      "vllmSupport": "community",
+      "reviews": [
+        {
+          "videoId": "x4_RsUxRjKU",
+          "title": "Apple didn't have to go this hard… (4× M3 Ultra TB5 cluster)"
+        },
+        {
+          "videoId": "d8yS-2OyJhw",
+          "title": "Mac Studio CLUSTER vs M3 Ultra"
+        },
+        {
+          "videoId": "62_IpTIho_8",
+          "title": "Mac Studio M3 Ultra Cluster: AI supercomputer at home (EXO Labs)"
+        }
+      ]
     },
     {
       "id": "rtx-3060-12",
@@ -1830,7 +1840,7 @@
       "usableMemoryGB": 96,
       "bandwidthGBs": 256,
       "priceUSD": 2700,
-      "priceNote": "May 2026 street spread $2,399-$3,800: Bosgame M5 $2,399, Corsair AI Workstation 300 $2,499, Framework Desktop $2,851, Beelink GTR9 Pro / GMKtec EVO-X2 ~$3,000, HP Z2 Mini G1a $3,734. EU/UK regional prices anchored to Framework Desktop (frame.work), the canonical retailer linked from productLinks. Framework EU bumped €3,029 → €3,379 (+12 %) mid-May on continuing DDR5 shortage.",
+      "priceNote": "May 2026 street spread $2,399-$3,800: Bosgame M5 $2,399, Corsair AI Workstation 300 $2,499, Framework Desktop $2,851, Beelink GTR9 Pro / GMKtec EVO-X2 ~$3,000, HP Z2 Mini G1a $3,734. EU/UK regional prices anchored to Framework Desktop (frame.work), the canonical retailer linked from productLinks. Framework EU bumped €3,029 → €3,379 (+12 %) and UK £2,699 → £2,999 (+11 %) mid-May on continuing DDR5 shortage.",
       "tps": {
         "8b": 50,
         "14b": 28,
@@ -2907,7 +2917,21 @@
       "extensibility": 4,
       "extensibilityNote": "Server / DGX form — extensible mainly by adding more nodes, not more cards.",
       "tflopsFP16": 7912,
-      "vllmSupport": "production"
+      "vllmSupport": "production",
+      "reviews": [
+        {
+          "videoId": "Jf8EPSBZU7Y",
+          "title": "Inside the World's Largest AI Supercluster — xAI Colossus"
+        },
+        {
+          "videoId": "bCXtdXmzD8Q",
+          "title": "$200,000 NVIDIA H100 80GB 4-Way GPU Server"
+        },
+        {
+          "videoId": "Hc0a01LK8wA",
+          "title": "HGX H100 8-GPU AI Server and HPC data center solution"
+        }
+      ]
     },
     {
       "id": "h200-141",
@@ -3058,7 +3082,13 @@
       "extensibility": 4,
       "extensibilityNote": "DGX form — scale by adding nodes into a SuperPOD with ConnectX-7 / Quantum-2 IB fabric, not by adding cards.",
       "tflopsFP16": 7912,
-      "vllmSupport": "production"
+      "vllmSupport": "production",
+      "reviews": [
+        {
+          "videoId": "dmOCYFVLi2M",
+          "title": "Inside the SUPER NVIDIA H200 Server From Supermicro (8U HGX H200)"
+        }
+      ]
     },
     {
       "id": "b200-180",
@@ -3212,7 +3242,13 @@
       "extensibility": 4,
       "extensibilityNote": "DGX form — scale via SuperPOD nodes + InfiniBand fabric. GB200 NVL72 is the next rung up.",
       "tflopsFP16": 18000,
-      "vllmSupport": "production"
+      "vllmSupport": "production",
+      "reviews": [
+        {
+          "videoId": "LjU89rZa8HQ",
+          "title": "Inside a 1.44 TB HBM3e NVIDIA HGX B200 AI Server from ASRock Rack"
+        }
+      ]
     },
     {
       "id": "rtx-a6000-48",
@@ -4021,6 +4057,62 @@
       "extensibility": 5,
       "extensibilityNote": "Two-slot workstation build with PCIe lanes + PSU headroom for a third card.",
       "tflopsFP16": 192,
+      "vllmSupport": "community"
+    },
+    {
+      "id": "rx-9070-xt-16",
+      "name": "Single AMD Radeon RX 9070 XT 16 GB build",
+      "vendor": "AMD",
+      "category": "amd",
+      "formFactor": "desktop tower",
+      "memoryGB": 16,
+      "usableMemoryGB": 15,
+      "bandwidthGBs": 645,
+      "priceUSD": 1300,
+      "priceNote": "May 2026 — RX 9070 XT card $599 MSRP, board partners (ASRock / Sapphire / PowerColor / XFX) commonly $649-$799 street + ~$700 ATX host. Same Navi 48 silicon as the R9700 AI Pro but consumer-tier 16 GB GDDR6 (not 32 GB). Note: the non-XT RX 9070 ships with 56 CUs and a softer 220 W TBP — confirm the XT SKU before buying.",
+      "tps": {
+        "8b": 78,
+        "14b": 44,
+        "30b": null,
+        "70b": null,
+        "120b_moe": null,
+        "235b_moe": null
+      },
+      "imageSec": {
+        "sdxl": 6,
+        "flux": 30
+      },
+      "videoSec": {
+        "ltx": 260
+      },
+      "idleW": 17,
+      "activeW": 304,
+      "pros": [
+        "$599 MSRP — cheapest new RDNA4 desktop GPU",
+        "Same 2nd-gen AI matrix accelerators as the R9700 AI Pro",
+        "ROCm 7.x (Linux) + Vulkan llama.cpp (Windows) both work"
+      ],
+      "cons": [
+        "16 GB caps at 14 B Q4 (no 30 B dense, no 70 B at any quant)",
+        "Don't confuse with the non-XT — same name, 56 CUs and lower TBP",
+        "Prompt processing still trails 5090 on long context"
+      ],
+      "tagline": "$599 RDNA4 — the consumer R9700.",
+      "rigOverheadUSD": 700,
+      "pp": {
+        "8b": 4200,
+        "14b": 2300
+      },
+      "ttft100k": {
+        "8b": 32,
+        "14b": 58
+      },
+      "softwareStack": "ROCm (RDNA4)",
+      "softwareMaturity": 3,
+      "softwareNote": "RDNA4 consumer card — ROCm 7.x officially supports Navi 48 (gfx1201) on Linux; Windows users typically run Vulkan llama.cpp. Same software story as the R9700 minus the 32 GB headroom.",
+      "extensibility": 5,
+      "extensibilityNote": "Standard ATX consumer card — pair with a second 9070 XT for 32 GB combined if case + PSU allow. Cluster path is less mature than CUDA but ROCm tensor-parallel works.",
+      "tflopsFP16": 97,
       "vllmSupport": "community"
     },
     {
