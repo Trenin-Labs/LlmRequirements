@@ -1,7 +1,7 @@
 {
   "$schema": "https://json-schema.org/draft-07/schema#",
   "_description": "Curated use cases pointing at recommended models and builds. Editorial, but every id resolves into models.json or builds.json.",
-  "_lastUpdated": "2026-05-16",
+  "_lastUpdated": "2026-05-20",
   "_count": 8,
   "useCases": [
     {
@@ -29,9 +29,11 @@
       "recommendedModels": [
         "qwen3-6-27b-dense",
         "qwen3-6-35b-a3b-moe",
+        "devstral-2-123b",
         "qwen3-next-80b-moe",
         "glm-air-106b-moe",
-        "qwen3-coder-30b"
+        "qwen3-coder-30b",
+        "qwen3-5-397b-a17b-moe"
       ]
     },
     {
@@ -46,6 +48,7 @@
         "deepseek-v4-flash-284b-moe",
         "minimax-m2-7-230b-moe",
         "qwen3-235b-moe",
+        "qwen3-5-397b-a17b-moe",
         "tencent-hy3-preview-295b-moe",
         "kimi-k2-6-1t-moe",
         "deepseek-v4-pro-1t6-moe",
@@ -64,9 +67,11 @@
         "qwen3-6-27b-dense",
         "qwen3-6-35b-a3b-moe",
         "qwen3-next-80b-moe",
+        "nemotron-3-super-120b-a12b-moe",
         "mistral-medium-3-5-128b",
         "glm-air-106b-moe",
-        "deepseek-v4-flash-284b-moe"
+        "deepseek-v4-flash-284b-moe",
+        "llama-4-scout"
       ]
     },
     {
@@ -79,9 +84,12 @@
       "modelClass": "30b",
       "recommendedModels": [
         "qwen3-6-27b-dense",
+        "gemma-4-31b",
         "gemma3-27b",
         "gemma4-26b-moe",
-        "mistral-medium-3-5-128b"
+        "qwen3-5-122b-a10b-moe",
+        "mistral-medium-3-5-128b",
+        "qwen3-5-397b-a17b-moe"
       ]
     },
     {
@@ -97,9 +105,12 @@
         "gpt-oss-120b",
         "minimax-m2-7-230b-moe",
         "qwen3-235b-moe",
+        "qwen3-5-397b-a17b-moe",
+        "llama-4-maverick",
         "tencent-hy3-preview-295b-moe",
         "deepseek-v4-flash-284b-moe",
         "kimi-k2-6-1t-moe",
+        "mistral-large-3-675b-moe",
         "deepseek-v4-pro-1t6-moe"
       ]
     },

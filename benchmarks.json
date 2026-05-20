@@ -1,15 +1,15 @@
 {
   "$schema": "https://json-schema.org/draft-07/schema#",
   "_description": "Long-format benchmark rows extracted from builds.json plus citations. tps = decode tokens-per-second at Q4_K_M, short context, single stream. pp = prompt-processing tokens-per-second (llama-bench pp512 prefill, Q4_K_M). ttft100k = seconds to first token with a 100 000-token input prompt at Q4_K_M. imageSec = seconds per image. videoSec = seconds per 5-second clip.",
-  "_lastUpdated": "2026-05-16",
+  "_lastUpdated": "2026-05-20",
   "_methodology": "tps values are sourced from llama.cpp / vLLM single-stream Q4_K_M generation benchmarks. pp values are sourced from llama-bench pp512 runs and equivalent vLLM / sglang prefill benchmarks. ttft100k is measured (or estimated, see sources) with a 100 K-token prompt at Q4_K_M; null when the build cannot fit model weights plus a 100 K KV cache. See sources[] for citations.",
   "_counts": {
-    "tps": 428,
-    "pp": 337,
-    "ttft100k": 337,
-    "image": 118,
-    "video": 115,
-    "sources": 106
+    "tps": 434,
+    "pp": 339,
+    "ttft100k": 339,
+    "image": 120,
+    "video": 116,
+    "sources": 130
   },
   "tps": [
     {
@@ -1868,6 +1868,36 @@
       "tps": null
     },
     {
+      "buildId": "rx-9070-xt-16",
+      "modelSize": "8b",
+      "tps": 78
+    },
+    {
+      "buildId": "rx-9070-xt-16",
+      "modelSize": "14b",
+      "tps": 44
+    },
+    {
+      "buildId": "rx-9070-xt-16",
+      "modelSize": "30b",
+      "tps": null
+    },
+    {
+      "buildId": "rx-9070-xt-16",
+      "modelSize": "70b",
+      "tps": null
+    },
+    {
+      "buildId": "rx-9070-xt-16",
+      "modelSize": "120b_moe",
+      "tps": null
+    },
+    {
+      "buildId": "rx-9070-xt-16",
+      "modelSize": "235b_moe",
+      "tps": null
+    },
+    {
       "buildId": "amd-mi300x-192",
       "modelSize": "8b",
       "tps": 260
@@ -3580,6 +3610,16 @@
       "ppTokensPerSec": 1300
     },
     {
+      "buildId": "rx-9070-xt-16",
+      "modelSize": "8b",
+      "ppTokensPerSec": 4200
+    },
+    {
+      "buildId": "rx-9070-xt-16",
+      "modelSize": "14b",
+      "ppTokensPerSec": 2300
+    },
+    {
       "buildId": "amd-mi300x-192",
       "modelSize": "8b",
       "ppTokensPerSec": 5800
@@ -5267,6 +5307,16 @@
       "ttft100kSeconds": null
     },
     {
+      "buildId": "rx-9070-xt-16",
+      "modelSize": "8b",
+      "ttft100kSeconds": 32
+    },
+    {
+      "buildId": "rx-9070-xt-16",
+      "modelSize": "14b",
+      "ttft100kSeconds": 58
+    },
+    {
       "buildId": "amd-mi300x-192",
       "modelSize": "8b",
       "ttft100kSeconds": 24
@@ -6034,6 +6084,16 @@
       "secondsPerImage": 28
     },
     {
+      "buildId": "rx-9070-xt-16",
+      "imageModel": "sdxl",
+      "secondsPerImage": 6
+    },
+    {
+      "buildId": "rx-9070-xt-16",
+      "imageModel": "flux",
+      "secondsPerImage": 30
+    },
+    {
       "buildId": "amd-mi300x-192",
       "imageModel": "sdxl",
       "secondsPerImage": 1.8
@@ -6591,6 +6651,11 @@
       "secondsPer5sClip": 240
     },
     {
+      "buildId": "rx-9070-xt-16",
+      "videoModel": "ltx",
+      "secondsPer5sClip": 260
+    },
+    {
       "buildId": "amd-mi300x-192",
       "videoModel": "ltx",
       "secondsPer5sClip": 35
@@ -6697,6 +6762,38 @@
     }
   ],
   "sources": [
+    {
+      "label": "Terminal-Bench 2.0 official leaderboard",
+      "url": "https://www.tbench.ai/leaderboard/terminal-bench/2.0"
+    },
+    {
+      "label": "SWE-Bench Pro leaderboard (benchlm.ai)",
+      "url": "https://benchlm.ai/benchmarks/swePro"
+    },
+    {
+      "label": "SWE-Bench Verified snapshot (marc0.dev, May 2026)",
+      "url": "https://www.marc0.dev/en/leaderboard"
+    },
+    {
+      "label": "Humanity's Last Exam — leaderboard (benchlm.ai)",
+      "url": "https://benchlm.ai/benchmarks/hle"
+    },
+    {
+      "label": "Humanity's Last Exam — cross-check (pricepertoken)",
+      "url": "https://pricepertoken.com/leaderboards/benchmark/hle"
+    },
+    {
+      "label": "LiveCodeBench — leaderboard (pricepertoken)",
+      "url": "https://pricepertoken.com/leaderboards/benchmark/livecodebench"
+    },
+    {
+      "label": "AIME 2025 — leaderboard (llm-stats.com)",
+      "url": "https://llm-stats.com/benchmarks/aime-2025"
+    },
+    {
+      "label": "Artificial Analysis intelligence index + HLE",
+      "url": "https://artificialanalysis.ai/leaderboards/models"
+    },
     {
       "label": "RTX 5090 LLM benchmarks (Hardware Corner)",
       "url": "https://www.hardware-corner.net/rtx-5090-llm-benchmarks/"
@@ -7120,6 +7217,70 @@
     {
       "label": "Framework Desktop EU store — Max+ 395 128 GB at €3,379 (May 2026)",
       "url": "https://frame.work/de/en/products/desktop-diy-amd-aimax300"
+    },
+    {
+      "label": "Framework Desktop UK store — Max+ 395 128 GB at £2,999 (May 2026)",
+      "url": "https://frame.work/gb/en/products/desktop-diy-amd-aimax300/configuration/new"
+    },
+    {
+      "label": "Qwen3.5-122B-A10B model card (Feb 2026)",
+      "url": "https://huggingface.co/Qwen/Qwen3.5-122B-A10B"
+    },
+    {
+      "label": "Qwen3.5-397B-A17B model card (Feb 2026 flagship)",
+      "url": "https://huggingface.co/Qwen/Qwen3.5-397B-A17B"
+    },
+    {
+      "label": "Simon Willison — Qwen3.5: Towards Native Multimodal Agents",
+      "url": "https://simonwillison.net/2026/Feb/17/qwen35/"
+    },
+    {
+      "label": "Artificial Analysis — Qwen3.5 397B-A17B",
+      "url": "https://artificialanalysis.ai/models/qwen3-5-397b-a17b"
+    },
+    {
+      "label": "Google Gemma 4 31B (Apr 2026 dense flagship)",
+      "url": "https://huggingface.co/google/gemma-4-31B-it"
+    },
+    {
+      "label": "Google blog — Gemma 4 launch",
+      "url": "https://blog.google/innovation-and-ai/technology/developers-tools/gemma-4/"
+    },
+    {
+      "label": "Meta Llama 4 Scout 17B-16E (Apr 2025, 10 M ctx)",
+      "url": "https://huggingface.co/meta-llama/Llama-4-Scout-17B-16E"
+    },
+    {
+      "label": "Meta Llama 4 Maverick 17B-128E-Instruct",
+      "url": "https://huggingface.co/meta-llama/Llama-4-Maverick-17B-128E-Instruct"
+    },
+    {
+      "label": "Meta AI blog — Llama 4 multimodal intelligence",
+      "url": "https://ai.meta.com/blog/llama-4-multimodal-intelligence/"
+    },
+    {
+      "label": "Mistral Large 3 675B-A41B (Dec 2025, Apache 2.0 frontier MoE)",
+      "url": "https://huggingface.co/mistralai/Mistral-Large-3-675B-Instruct-2512"
+    },
+    {
+      "label": "Mistral Small 4 119B-A6B (Mar 2026)",
+      "url": "https://huggingface.co/mistralai/Mistral-Small-4-119B-2603"
+    },
+    {
+      "label": "Mistral news — 2025 / 2026 releases",
+      "url": "https://mistral.ai/news/mistral-3"
+    },
+    {
+      "label": "Devstral 2 123B (Dec 2025 SWE-agent specialist)",
+      "url": "https://huggingface.co/mistralai/Devstral-2-123B-Instruct-2512"
+    },
+    {
+      "label": "NVIDIA Nemotron 3 Super 120B-A12B (Mar 2026 Mamba-2 + MoE hybrid)",
+      "url": "https://huggingface.co/nvidia/NVIDIA-Nemotron-3-Super-120B-A12B-BF16"
+    },
+    {
+      "label": "NVIDIA — Nemotron 3 family launch",
+      "url": "https://nvidianews.nvidia.com/news/nvidia-debuts-nemotron-3-family-of-open-models"
     }
   ]
 }
