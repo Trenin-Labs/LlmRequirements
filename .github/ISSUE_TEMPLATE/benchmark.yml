@@ -1,0 +1,73 @@
+name: Benchmark submission
+description: Share a measured tg/s / s-per-image / s-per-clip number so we can add it (or correct one) in the dataset.
+title: "Benchmark for <build> / <model>"
+labels: ["benchmark-submission"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for helping keep the numbers honest. Anything you fill in here lands in the dataset after a quick review.
+        If you got here from a wiki page's "Submit a benchmark" link, the build/model fields should already be filled.
+  - type: input
+    id: build
+    attributes:
+      label: Build
+      description: Human name + id from the dataset (e.g. `RTX 3090 (id: rtx-3090-24)`).
+      placeholder: e.g. Mac Studio M3 Ultra 256 GB (id: mac-studio-m3-ultra-256)
+    validations:
+      required: true
+  - type: input
+    id: model
+    attributes:
+      label: Model
+      description: Human name + id from the dataset. For closed APIs name the provider (Gemini / GPT / Claude).
+      placeholder: e.g. Qwen 3 8B (id: qwen3-8b)
+    validations:
+      required: true
+  - type: dropdown
+    id: quant
+    attributes:
+      label: Quantization
+      options:
+        - Q4_K_M (default)
+        - Q2_K
+        - Q5_K_M
+        - Q8_0
+        - FP16
+        - other (note in body)
+      default: 0
+    validations:
+      required: true
+  - type: input
+    id: runtime
+    attributes:
+      label: Backend / runtime
+      description: llama.cpp build + commit, MLX version, vLLM tag, Ollama version, etc.
+      placeholder: e.g. llama.cpp b4321 (Metal, FA on)
+    validations:
+      required: true
+  - type: input
+    id: tgs
+    attributes:
+      label: Measured tg/s (single stream, empty context)
+      placeholder: e.g. 110 tg/s
+    validations:
+      required: true
+  - type: input
+    id: pp
+    attributes:
+      label: Prompt-processing tok/s (optional)
+      placeholder: e.g. 1080 pp (llama-bench pp512)
+  - type: input
+    id: source
+    attributes:
+      label: Source / how it was measured
+      description: A benchmark URL, exact llama-bench command, blog post, video, or "ran it myself".
+      placeholder: e.g. https://github.com/.../bench.txt or "llama-bench -m ... -p 0 -n 128"
+    validations:
+      required: true
+  - type: textarea
+    id: notes
+    attributes:
+      label: Notes
+      description: Anything else worth knowing — context size used, thermals, OC, GPU split, vibes.
