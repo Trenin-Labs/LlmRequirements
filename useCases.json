@@ -1,7 +1,7 @@
 {
   "$schema": "https://json-schema.org/draft-07/schema#",
   "_description": "Curated use cases pointing at recommended models and builds. Editorial, but every id resolves into models.json or builds.json.",
-  "_lastUpdated": "2026-05-20",
+  "_lastUpdated": "2026-05-23",
   "_count": 8,
   "useCases": [
     {
@@ -89,7 +89,8 @@
         "gemma4-26b-moe",
         "qwen3-5-122b-a10b-moe",
         "mistral-medium-3-5-128b",
-        "qwen3-5-397b-a17b-moe"
+        "qwen3-5-397b-a17b-moe",
+        "cohere-command-a-plus-218b-moe"
       ]
     },
     {
@@ -111,6 +112,7 @@
         "deepseek-v4-flash-284b-moe",
         "kimi-k2-6-1t-moe",
         "mistral-large-3-675b-moe",
+        "cohere-command-a-plus-218b-moe",
         "deepseek-v4-pro-1t6-moe"
       ]
     },
