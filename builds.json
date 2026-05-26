@@ -1,7 +1,7 @@
 {
   "$schema": "https://json-schema.org/draft-07/schema#",
   "_description": "Hardware build catalog with throughput (tps), prompt-processing (pp), TTFT @ 100 K (ttft100k), image, and video benchmarks. Each build also carries editorial fields used by the /compare page: softwareStack (short label), softwareMaturity (0-5), softwareNote, extensibility (0-5), and extensibilityNote. Pricing is in priceUSD as a US MSRP fallback only — see prices/ for regional snapshots.",
-  "_lastUpdated": "2026-05-20",
+  "_lastUpdated": "2026-05-23",
   "_count": 68,
   "builds": [
     {
@@ -1267,7 +1267,7 @@
       "id": "tesla-p40-24",
       "name": "Single Tesla P40 24 GB (used) build",
       "vendor": "NVIDIA",
-      "category": "datacenter",
+      "category": "nvidia-pro",
       "formFactor": "desktop tower",
       "memoryGB": 24,
       "usableMemoryGB": 23,
@@ -1329,7 +1329,7 @@
       "id": "tesla-p40-x4",
       "name": "Quad Tesla P40 (96 GB) homelab build",
       "vendor": "NVIDIA",
-      "category": "datacenter",
+      "category": "nvidia-pro",
       "formFactor": "rack/large tower",
       "memoryGB": 96,
       "usableMemoryGB": 92,
@@ -1398,7 +1398,7 @@
       "id": "tesla-p100-16",
       "name": "Single Tesla P100 16 GB (used) build",
       "vendor": "NVIDIA",
-      "category": "datacenter",
+      "category": "nvidia-pro",
       "formFactor": "desktop tower",
       "memoryGB": 16,
       "usableMemoryGB": 15,
@@ -1457,7 +1457,7 @@
       "id": "tesla-v100-sxm2-mod",
       "name": "Tesla V100 32 GB SXM2 mod build",
       "vendor": "NVIDIA",
-      "category": "datacenter",
+      "category": "nvidia-pro",
       "formFactor": "desktop tower",
       "memoryGB": 32,
       "usableMemoryGB": 31,
@@ -1683,6 +1683,12 @@
       "cons": [
         "Software stack still rough on Windows",
         "Bandwidth-bound for dense 70 B"
+      ],
+      "reviews": [
+        {
+          "videoId": "lcAz00A1IME",
+          "title": "Level1 Linux Weekly: How About that Intel Arc B70?"
+        }
       ],
       "plugAndPlay": false,
       "rigOverheadUSD": 1500,
@@ -2147,7 +2153,7 @@
       "id": "dgx-spark-128",
       "name": "NVIDIA DGX Spark (128 GB)",
       "vendor": "NVIDIA",
-      "category": "datacenter",
+      "category": "nvidia-pro",
       "formFactor": "small desktop",
       "memoryGB": 128,
       "usableMemoryGB": 119,
@@ -2158,7 +2164,7 @@
         "14b": 55,
         "30b": 30,
         "70b": 8,
-        "120b_moe": 35,
+        "120b_moe": 57,
         "235b_moe": null
       },
       "imageSec": {
@@ -2204,14 +2210,14 @@
         "14b": 1500,
         "30b": 700,
         "70b": 310,
-        "120b_moe": 1730
+        "120b_moe": 1150
       },
       "ttft100k": {
         "8b": 50,
         "14b": 85,
         "30b": 180,
         "70b": 430,
-        "120b_moe": 85
+        "120b_moe": 87
       },
       "softwareStack": "CUDA (ARM)",
       "softwareMaturity": 4,
@@ -2225,7 +2231,7 @@
       "id": "dgx-spark-x2",
       "name": "2× DGX Spark cluster (256 GB unified, CUDA)",
       "vendor": "NVIDIA",
-      "category": "datacenter",
+      "category": "nvidia-pro",
       "formFactor": "two desktops, 200 G interconnect",
       "memoryGB": 256,
       "usableMemoryGB": 240,
@@ -2236,7 +2242,7 @@
         "14b": 90,
         "30b": 50,
         "70b": 14,
-        "120b_moe": 55,
+        "120b_moe": 90,
         "235b_moe": 24
       },
       "imageSec": {
@@ -2281,7 +2287,7 @@
         "14b": 2600,
         "30b": 1200,
         "70b": 540,
-        "120b_moe": 3000,
+        "120b_moe": 1990,
         "235b_moe": 1450
       },
       "ttft100k": {
@@ -2304,7 +2310,7 @@
       "id": "dgx-spark-x4",
       "name": "4× DGX Spark cluster (512 GB unified, CUDA)",
       "vendor": "NVIDIA",
-      "category": "datacenter",
+      "category": "nvidia-pro",
       "formFactor": "rack of 4 desktops",
       "memoryGB": 512,
       "usableMemoryGB": 488,
@@ -2315,7 +2321,7 @@
         "14b": 100,
         "30b": 55,
         "70b": 18,
-        "120b_moe": 70,
+        "120b_moe": 114,
         "235b_moe": 32,
         "1t_moe": 9,
         "671b_moe": 11
@@ -2358,7 +2364,7 @@
         "14b": 4500,
         "30b": 2100,
         "70b": 950,
-        "120b_moe": 5200,
+        "120b_moe": 3460,
         "235b_moe": 2500,
         "671b_moe": 350,
         "1t_moe": 230
@@ -2368,7 +2374,7 @@
         "14b": 30,
         "30b": 65,
         "70b": 145,
-        "120b_moe": 32,
+        "120b_moe": 29,
         "235b_moe": 65,
         "671b_moe": 460,
         "1t_moe": null
@@ -2385,7 +2391,7 @@
       "id": "dgx-spark-x8",
       "name": "8× DGX Spark cluster (1024 GB unified, CUDA)",
       "vendor": "NVIDIA",
-      "category": "datacenter",
+      "category": "nvidia-pro",
       "formFactor": "rack of 8 desktops, 200 GbE fabric",
       "memoryGB": 1024,
       "usableMemoryGB": 976,
@@ -2399,7 +2405,7 @@
         "14b": 130,
         "30b": 72,
         "70b": 24,
-        "120b_moe": 92,
+        "120b_moe": 150,
         "235b_moe": 42,
         "671b_moe": 16,
         "1t_moe": 13
@@ -2409,7 +2415,7 @@
         "14b": 7200,
         "30b": 3400,
         "70b": 1500,
-        "120b_moe": 8300,
+        "120b_moe": 5520,
         "235b_moe": 4000,
         "671b_moe": 560,
         "1t_moe": 370
@@ -2419,7 +2425,7 @@
         "14b": 20,
         "30b": 42,
         "70b": 95,
-        "120b_moe": 21,
+        "120b_moe": 18,
         "235b_moe": 42,
         "671b_moe": 290,
         "1t_moe": 460
@@ -2470,20 +2476,20 @@
       "id": "msi-edgexpert-gb10",
       "name": "MSI EdgeXpert MS-C931 (128 GB)",
       "vendor": "MSI",
-      "category": "datacenter",
+      "category": "nvidia-pro",
       "formFactor": "small desktop",
       "memoryGB": 128,
       "usableMemoryGB": 119,
       "bandwidthGBs": 273,
       "priceUSD": 2999,
       "rigOverheadUSD": 0,
-      "priceNote": "May 2026 — $2,999 (1 TB) US MSRP, but the original MS-C931 SKU is currently unlisted on MSI US store; newer EdgeXpert variants (99SUS / 11SUS / 01SKUS) ship at the same starting price. EU markup is steep: LDLC lists the 4 TB variant at €4,699 incl. VAT, so a 1 TB box runs ~€3,900. Cheapest GB10 box on paper, but stock has been thin since launch.",
+      "priceNote": "May 2026 — $2,999 (1 TB) US MSRP, but the original MS-C931 SKU is currently unlisted on MSI US store; newer EdgeXpert variants (99SUS / 11SUS / 01SKUS) ship at the same starting price. EU markup is steep: LDLC lists the 4 TB variant at €4,699 incl. VAT, so a 1 TB box runs ~€3,900. UK 4 TB now £4,059 inc VAT at Scan (the prior £2,999 figure was a stale pre-order quote). Cheapest GB10 box on paper, but stock has been thin since launch.",
       "tps": {
         "8b": 90,
         "14b": 55,
         "30b": 30,
         "70b": 8,
-        "120b_moe": 35,
+        "120b_moe": 57,
         "235b_moe": null
       },
       "imageSec": {
@@ -2513,14 +2519,14 @@
         "14b": 1500,
         "30b": 700,
         "70b": 310,
-        "120b_moe": 1730
+        "120b_moe": 1150
       },
       "ttft100k": {
         "8b": 50,
         "14b": 85,
         "30b": 180,
         "70b": 430,
-        "120b_moe": 85
+        "120b_moe": 87
       },
       "softwareStack": "CUDA (ARM)",
       "softwareMaturity": 4,
@@ -2548,7 +2554,7 @@
       "id": "asus-ascent-gx10",
       "name": "ASUS Ascent GX10 (128 GB)",
       "vendor": "ASUS",
-      "category": "datacenter",
+      "category": "nvidia-pro",
       "formFactor": "small desktop",
       "memoryGB": 128,
       "usableMemoryGB": 119,
@@ -2561,7 +2567,7 @@
         "14b": 52,
         "30b": 28,
         "70b": 8,
-        "120b_moe": 33,
+        "120b_moe": 54,
         "235b_moe": null
       },
       "imageSec": {
@@ -2604,14 +2610,14 @@
         "14b": 1500,
         "30b": 700,
         "70b": 310,
-        "120b_moe": 1730
+        "120b_moe": 1090
       },
       "ttft100k": {
         "8b": 50,
         "14b": 85,
         "30b": 180,
         "70b": 430,
-        "120b_moe": 85
+        "120b_moe": 92
       },
       "softwareStack": "CUDA (ARM)",
       "softwareMaturity": 4,
@@ -2625,7 +2631,7 @@
       "id": "dell-pro-max-gb10",
       "name": "Dell Pro Max with GB10 (128 GB)",
       "vendor": "Dell",
-      "category": "datacenter",
+      "category": "nvidia-pro",
       "formFactor": "small desktop",
       "memoryGB": 128,
       "usableMemoryGB": 119,
@@ -2638,7 +2644,7 @@
         "14b": 55,
         "30b": 30,
         "70b": 8,
-        "120b_moe": 35,
+        "120b_moe": 57,
         "235b_moe": null
       },
       "imageSec": {
@@ -2681,14 +2687,14 @@
         "14b": 1500,
         "30b": 700,
         "70b": 310,
-        "120b_moe": 1730
+        "120b_moe": 1150
       },
       "ttft100k": {
         "8b": 50,
         "14b": 85,
         "30b": 180,
         "70b": 430,
-        "120b_moe": 85
+        "120b_moe": 87
       },
       "softwareStack": "CUDA (ARM)",
       "softwareMaturity": 4,
@@ -2702,7 +2708,7 @@
       "id": "lenovo-thinkstation-pgx",
       "name": "Lenovo ThinkStation PGX (128 GB)",
       "vendor": "Lenovo",
-      "category": "datacenter",
+      "category": "nvidia-pro",
       "formFactor": "small desktop",
       "memoryGB": 128,
       "usableMemoryGB": 119,
@@ -2715,7 +2721,7 @@
         "14b": 55,
         "30b": 30,
         "70b": 8,
-        "120b_moe": 35,
+        "120b_moe": 57,
         "235b_moe": null
       },
       "imageSec": {
@@ -2758,14 +2764,14 @@
         "14b": 1500,
         "30b": 700,
         "70b": 310,
-        "120b_moe": 1730
+        "120b_moe": 1150
       },
       "ttft100k": {
         "8b": 50,
         "14b": 85,
         "30b": 180,
         "70b": 430,
-        "120b_moe": 85
+        "120b_moe": 87
       },
       "softwareStack": "CUDA (ARM)",
       "softwareMaturity": 4,
@@ -4097,6 +4103,12 @@
         "Don't confuse with the non-XT — same name, 56 CUs and lower TBP",
         "Prompt processing still trails 5090 on long context"
       ],
+      "reviews": [
+        {
+          "videoId": "UKfJc04DX9o",
+          "title": "RX 9070 XT is cheaper AND better… mostly"
+        }
+      ],
       "tagline": "$599 RDNA4 — the consumer R9700.",
       "rigOverheadUSD": 700,
       "pp": {
@@ -4347,7 +4359,7 @@
       "id": "amd-mi50-32",
       "name": "Single AMD Instinct MI50 32 GB (used) build",
       "vendor": "AMD",
-      "category": "datacenter",
+      "category": "amd",
       "formFactor": "desktop tower",
       "memoryGB": 32,
       "usableMemoryGB": 31,
@@ -4413,7 +4425,7 @@
       "id": "amd-mi50-x4",
       "name": "Quad AMD MI50 32 GB (128 GB) homelab build",
       "vendor": "AMD",
-      "category": "datacenter",
+      "category": "amd",
       "formFactor": "rack/large tower",
       "memoryGB": 128,
       "usableMemoryGB": 122,

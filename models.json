@@ -1,8 +1,8 @@
 {
   "$schema": "https://json-schema.org/draft-07/schema#",
   "_description": "LLM model catalog with ratings and VRAM requirements. See README.md for schema.",
-  "_lastUpdated": "2026-05-20",
-  "_count": 53,
+  "_lastUpdated": "2026-05-23",
+  "_count": 54,
   "models": [
     {
       "id": "qwen3-8b",
@@ -1121,12 +1121,13 @@
         "aime": 96.1
       },
       "vibes": {
-        "coding": "Strong open-weights coder with native image input. r/LocalLLaMA uses it in Cline via OpenRouter when self-hosting isn't feasible (1T weights). Mostly superseded by K2.6.",
-        "agentDriver": "Long-horizon agent training paid off — Agent Swarm with up to 100 sub-agents. Reliable for 30-60 min Open-Claude tasks; K2.6 is the better pick if available."
+        "coding": "Strong open-weights coder with native image input. Powers Cursor Composer 2.5 (released May 18 2026) at $0.50/M input — Cursor kept the K2.5 backbone from Composer 2 rather than swapping to K2.6, betting RL fine-tuning closes the gap. r/LocalLLaMA uses it in Cline via OpenRouter when self-hosting isn't feasible (1T weights). On general benchmarks mostly superseded by K2.6.",
+        "agentDriver": "Long-horizon agent training paid off — Agent Swarm with up to 100 sub-agents. Reliable for 30-60 min Open-Claude tasks. The Cursor Composer 2.5 deal validates K2.5 as a production-grade agentic-coding base; K2.6 still has the higher ceiling on long-horizon work when available."
       },
       "benchmarkNotes": "Kimi K2.5 published numbers: AIME 2025 96.1, GPQA Diamond 87.6, MMLU-Pro 87.1, LCB 85.0, SWE-Bench Verified 76.8. TB2 43.2 from tbench official. SWE-Pro 50.7 from benchlm. HLE 30.1 from benchlm.",
       "sources": [
-        "https://huggingface.co/moonshotai/Kimi-K2.5"
+        "https://huggingface.co/moonshotai/Kimi-K2.5",
+        "https://cursor.com/blog/composer-2-5"
       ],
       "contextK": 256
     },
@@ -1173,14 +1174,13 @@
         "aime": 96.4
       },
       "vibes": {
-        "coding": "Top open-weights coder in May 2026. Cursor Composer 2.5 (released May 18) is confirmed K2.6-backed at $0.50/M input per https://forum.cursor.com/t/kimi-k2-6-released-request/158548. #1 on OpenRouter coding by weekly tokens (965B). r/LocalLLaMA daily-driver via OpenRouter when you can't run 1T locally — best agentic-coding open-weight per benchmark consensus.",
-        "agentDriver": "300-agent swarm, 4000 coordinated steps. Closest open-weights match to Claude Opus on long-horizon work. Reliable in 1-2 hour Open-Claude sessions; ceiling around 4-8 hours. The Cursor Composer 2.5 deal validates K2.6 as the production agentic-coding open model this week."
+        "coding": "Top open-weights coder in May 2026 by benchmark consensus. #1 on OpenRouter coding by weekly tokens (965B). r/LocalLLaMA daily-driver via OpenRouter when you can't run 1T locally — best agentic-coding open-weight per benchmark consensus. (Note: Cursor Composer 2.5 retained its K2.5 backbone rather than upgrading to K2.6 — see the K2.5 entry.)",
+        "agentDriver": "300-agent swarm, 4000 coordinated steps. Closest open-weights match to Claude Opus on long-horizon work. Reliable in 1-2 hour Open-Claude sessions; ceiling around 4-8 hours."
       },
       "benchmarkNotes": "All values confirmed via Moonshot's blog and benchlm.ai. SWE-Pro 58.6 (tied with GPT-5.5 — best open-weights on benchlm.ai). TB2 66.7 with Terminus-2 harness per https://www.kimi.com/blog/kimi-k2-6. Note Kimi reports HLE 54.0 *with tools* in their own blog vs benchmark-pure 35.9 — keeping 35.9 (no-tools, consistent with other roster entries).",
       "sources": [
         "https://www.kimi.com/blog/kimi-k2-6",
         "https://benchlm.ai/benchmarks/swePro",
-        "https://forum.cursor.com/t/kimi-k2-6-released-request/158548",
         "https://openrouter.ai/collections/programming"
       ],
       "contextK": 256
@@ -1265,7 +1265,7 @@
         "agents",
         "long-context"
       ],
-      "blurb": "Apr 2026 release. 284 B / 13 B active, 1 M-token context. ~57% Terminal-Bench. The agent-grade DeepSeek that fits a single Pro 6000 build.",
+      "blurb": "Apr 2026 release. 284 B / 13 B active, 1 M-token context. ~57% Terminal-Bench. The agent-grade DeepSeek that fits a quad Pro 6000 build (or Mac Studio M3 Ultra 256) at Q4.",
       "license": "MIT",
       "huggingface": "https://huggingface.co/deepseek-ai/DeepSeek-V4-Flash",
       "benchmarks": {
@@ -1804,6 +1804,57 @@
         "https://nvidianews.nvidia.com/news/nvidia-debuts-nemotron-3-family-of-open-models"
       ],
       "contextK": 1000
+    },
+    {
+      "id": "cohere-command-a-plus-218b-moe",
+      "name": "Cohere Command A+ 218B-A25B (MoE)",
+      "family": "Cohere",
+      "params": 218,
+      "activeParams": 25,
+      "type": "moe",
+      "modality": "text",
+      "sizeQ4": 122,
+      "vramMinQ4": 148,
+      "vramComfortQ4": 180,
+      "sizeQ2": 70,
+      "vramMinQ2": 84,
+      "ratings": {
+        "chat": 4,
+        "coding": 3,
+        "agents": 3,
+        "reasoning": 4,
+        "longContext": 4,
+        "vision": 3
+      },
+      "tags": [
+        "moe",
+        "vision",
+        "frontier"
+      ],
+      "blurb": "May 20 2026. Cohere's first fully Apache-2.0 frontier MoE — 218 B total / 25 B active, 128 experts (8 active + 1 shared), native image-text multimodal. 128 K input ctx, 64 K output. Cohere ships a lossless W4A4 quant designed to deploy on 2× H100.",
+      "license": "Apache 2.0",
+      "huggingface": "https://huggingface.co/CohereLabs/command-a-plus-05-2026-bf16",
+      "benchmarks": {
+        "hle": null,
+        "tb2": null,
+        "swebench_pro": null,
+        "swebench_ver": null,
+        "aider": null,
+        "livecodebench": null,
+        "gpqa": null,
+        "mmlu_pro": null,
+        "aime": null
+      },
+      "vibes": {
+        "coding": "Too fresh to assess — May 20 2026 release. Cohere's launch positions it as agentic + citation-native + multilingual rather than coding-first; no SWE-Bench / LiveCodeBench numbers published at launch. r/LocalLLaMA cautious until community Cline / Aider runs land.",
+        "agentDriver": "Cohere's headline claim is #1 on AA-Omniscience Non-Hallucination at 86 % and native citation generation tuned for retrieval workflows. Terminal-Bench Hard 25 % suggests usable in short agent loops; no TB Core / SWE-Verified yet so caps at agents:3."
+      },
+      "benchmarkNotes": "Cohere only published Terminal-Bench Hard (25 %), MMMU Pro (63 %), MMMU (75.1 %), MathVista (80.6 %), CharXiv (52.7 %) and an Artificial Analysis Intelligence Index of 37 at launch. The standard text-leaderboard cells (TB2 Core, SWE-Bench Pro/Verified, LiveCodeBench, HLE, Aider Polyglot, GPQA Diamond, MMLU-Pro, AIME 2025) are not yet published — all left null per the no-invent rule. Revisit when third-party runs or a Cohere benchmark table lands.",
+      "sources": [
+        "https://huggingface.co/CohereLabs/command-a-plus-05-2026-bf16",
+        "https://cohere.com/blog/command-a-plus"
+      ],
+      "contextK": 128
     },
     {
       "id": "sdxl-1",
