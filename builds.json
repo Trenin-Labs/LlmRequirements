@@ -1714,7 +1714,13 @@
       "vllmSupport": "experimental",
       "priceVerifiedOn": "2026-05-23",
       "tflopsFP8": null,
-      "topsINT8": 47
+      "topsINT8": 47,
+      "reviews": [
+        {
+          "videoId": "udo_HsmWqII",
+          "title": "Dell PowerEdge R730 Tesla Nvidia P40 vs P100 AI/LLM Bake Off"
+        }
+      ]
     },
     {
       "id": "tesla-p40-x4",
@@ -1838,7 +1844,13 @@
       "vllmSupport": "experimental",
       "priceVerifiedOn": "2026-05-23",
       "tflopsFP8": null,
-      "topsINT8": null
+      "topsINT8": null,
+      "reviews": [
+        {
+          "videoId": "HxTl3QXi5sA",
+          "title": "Can a 10-Year-Old $5,700 GPU Beat a New $430 GPU? | Tesla P100 Local AI Review"
+        }
+      ]
     },
     {
       "id": "tesla-v100-sxm2-mod",
@@ -3612,7 +3624,13 @@
       "vllmSupport": "production",
       "priceVerifiedOn": "2026-05-23",
       "tflopsFP8": 4500,
-      "topsINT8": null
+      "topsINT8": null,
+      "reviews": [
+        {
+          "videoId": "UpW6iDyc0C8",
+          "title": "AI Lab: NVIDIA B200 vs GB200 explained | GPU architecture for LLMs"
+        }
+      ]
     },
     {
       "id": "b200-x8",
@@ -3738,6 +3756,10 @@
         {
           "videoId": "fKr34meoqQs",
           "title": "How Powerful Is the A6000 for LLM Inference? 7B-14B Tested"
+        },
+        {
+          "videoId": "O7EG5MEAXU4",
+          "title": "Run LLMs on Nvidia Quadro RTX A6000 GPU Server with Ollama"
         }
       ],
       "rigOverheadUSD": 900,
@@ -4756,7 +4778,13 @@
       "vllmSupport": "production",
       "priceVerifiedOn": "2026-05-23",
       "tflopsFP8": 2615,
-      "topsINT8": null
+      "topsINT8": null,
+      "reviews": [
+        {
+          "videoId": "SKkwldd_LiM",
+          "title": "AMD MI300X server review 8x GPUs | Llama 405b model tested"
+        }
+      ]
     },
     {
       "id": "amd-mi325x-256",
