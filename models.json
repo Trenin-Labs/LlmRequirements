@@ -1,8 +1,8 @@
 {
   "$schema": "https://json-schema.org/draft-07/schema#",
   "_description": "LLM model catalog with ratings and VRAM requirements. See README.md for schema.",
-  "_lastUpdated": "2026-05-23",
-  "_count": 54,
+  "_lastUpdated": "2026-05-27",
+  "_count": 53,
   "models": [
     {
       "id": "qwen3-8b",
@@ -757,7 +757,7 @@
         "swebench_ver": 77.8,
         "aider": null,
         "livecodebench": 84.1,
-        "gpqa": 94,
+        "gpqa": 86.2,
         "mmlu_pro": 91.7,
         "aime": 98
       },
@@ -765,20 +765,29 @@
         "coding": "First open-weights model to top SWE-Bench Pro (tied with Kimi K2.6 at 58.6 this week, GLM-5.1 at 58.4). r/LocalLLaMA / r/ZaiGLM use it via Z.ai Coding Plan as a Claude-Code replacement — quoted as '94% of Opus 4.6 at 1/10 the cost.' Not in the top OpenRouter coding by token volume — adoption flows through Z.ai's own coding plan.",
         "agentDriver": "Built for 8-hour autonomous execution — hundreds of rounds, thousands of tool calls. Closest open-weights model to closed-frontier on long-horizon agent work (only K2.6 / V4-Pro compete)."
       },
-      "benchmarkNotes": "All values confirmed: TB2 63.5 (Terminus-2 harness) / 66.5 (Claude Code harness) per https://www.marktechpost.com/2026/04/08/z-ai-introduces-glm-5-1-an-open-weight-754b-agentic-model-that-achieves-sota-on-swe-bench-pro-and-sustains-8-hour-autonomous-execution/. SWE-Pro 58.4 (#1 open-weights, tied with K2.6 on benchlm.ai). HLE 52.3 confirmed via https://benchlm.ai/benchmarks/hle (Z.ai-reported). SWE-Ver 77.8 reported for GLM-5 base — GLM-5.1 specific SWE-Ver not separately published; using 77.8 as best available.",
+      "benchmarkNotes": "All values confirmed: TB2 63.5 (Terminus-2 harness) / 66.5 (Claude Code harness) per https://www.marktechpost.com/2026/04/08/z-ai-introduces-glm-5-1-an-open-weight-754b-agentic-model-that-achieves-sota-on-swe-bench-pro-and-sustains-8-hour-autonomous-execution/. SWE-Pro 58.4 (#1 open-weights, tied with K2.6 on benchlm.ai). HLE 52.3 confirmed via https://benchlm.ai/benchmarks/hle (Z.ai-reported). SWE-Ver 77.8 reported for GLM-5 base — GLM-5.1 specific SWE-Ver not separately published; using 77.8 as best available. GPQA re-verified 2026-05-27 against llm-stats.com leaderboard: 86.2 (was 94.0, stored value was an inflated vendor self-report).",
       "sources": [
         "https://www.marktechpost.com/2026/04/08/z-ai-introduces-glm-5-1-an-open-weight-754b-agentic-model-that-achieves-sota-on-swe-bench-pro-and-sustains-8-hour-autonomous-execution/",
         "https://benchlm.ai/benchmarks/swePro",
-        "https://benchlm.ai/benchmarks/hle"
+        "https://benchlm.ai/benchmarks/hle",
+        "https://llm-stats.com/benchmarks/gpqa"
       ],
-      "contextK": 128
+      "contextK": 128,
+      "benchmarkProvenance": {
+        "gpqa": {
+          "source": "leaderboard",
+          "url": "https://llm-stats.com/benchmarks/gpqa",
+          "fetchedOn": "2026-05-27"
+        }
+      }
     },
     {
       "id": "gpt-oss-120b",
       "name": "GPT-OSS 120B",
       "family": "OpenAI",
       "params": 120,
-      "type": "dense",
+      "activeParams": 5,
+      "type": "moe",
       "modality": "text",
       "sizeQ4": 65,
       "vramMinQ4": 80,
@@ -1804,57 +1813,6 @@
         "https://nvidianews.nvidia.com/news/nvidia-debuts-nemotron-3-family-of-open-models"
       ],
       "contextK": 1000
-    },
-    {
-      "id": "cohere-command-a-plus-218b-moe",
-      "name": "Cohere Command A+ 218B-A25B (MoE)",
-      "family": "Cohere",
-      "params": 218,
-      "activeParams": 25,
-      "type": "moe",
-      "modality": "text",
-      "sizeQ4": 122,
-      "vramMinQ4": 148,
-      "vramComfortQ4": 180,
-      "sizeQ2": 70,
-      "vramMinQ2": 84,
-      "ratings": {
-        "chat": 4,
-        "coding": 3,
-        "agents": 3,
-        "reasoning": 4,
-        "longContext": 4,
-        "vision": 3
-      },
-      "tags": [
-        "moe",
-        "vision",
-        "frontier"
-      ],
-      "blurb": "May 20 2026. Cohere's first fully Apache-2.0 frontier MoE — 218 B total / 25 B active, 128 experts (8 active + 1 shared), native image-text multimodal. 128 K input ctx, 64 K output. Cohere ships a lossless W4A4 quant designed to deploy on 2× H100.",
-      "license": "Apache 2.0",
-      "huggingface": "https://huggingface.co/CohereLabs/command-a-plus-05-2026-bf16",
-      "benchmarks": {
-        "hle": null,
-        "tb2": null,
-        "swebench_pro": null,
-        "swebench_ver": null,
-        "aider": null,
-        "livecodebench": null,
-        "gpqa": null,
-        "mmlu_pro": null,
-        "aime": null
-      },
-      "vibes": {
-        "coding": "Too fresh to assess — May 20 2026 release. Cohere's launch positions it as agentic + citation-native + multilingual rather than coding-first; no SWE-Bench / LiveCodeBench numbers published at launch. r/LocalLLaMA cautious until community Cline / Aider runs land.",
-        "agentDriver": "Cohere's headline claim is #1 on AA-Omniscience Non-Hallucination at 86 % and native citation generation tuned for retrieval workflows. Terminal-Bench Hard 25 % suggests usable in short agent loops; no TB Core / SWE-Verified yet so caps at agents:3."
-      },
-      "benchmarkNotes": "Cohere only published Terminal-Bench Hard (25 %), MMMU Pro (63 %), MMMU (75.1 %), MathVista (80.6 %), CharXiv (52.7 %) and an Artificial Analysis Intelligence Index of 37 at launch. The standard text-leaderboard cells (TB2 Core, SWE-Bench Pro/Verified, LiveCodeBench, HLE, Aider Polyglot, GPQA Diamond, MMLU-Pro, AIME 2025) are not yet published — all left null per the no-invent rule. Revisit when third-party runs or a Cohere benchmark table lands.",
-      "sources": [
-        "https://huggingface.co/CohereLabs/command-a-plus-05-2026-bf16",
-        "https://cohere.com/blog/command-a-plus"
-      ],
-      "contextK": 128
     },
     {
       "id": "sdxl-1",

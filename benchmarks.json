@@ -1,15 +1,15 @@
 {
   "$schema": "https://json-schema.org/draft-07/schema#",
   "_description": "Long-format benchmark rows extracted from builds.json plus citations. tps = decode tokens-per-second at Q4_K_M, short context, single stream. pp = prompt-processing tokens-per-second (llama-bench pp512 prefill, Q4_K_M). ttft100k = seconds to first token with a 100 000-token input prompt at Q4_K_M. imageSec = seconds per image. videoSec = seconds per 5-second clip.",
-  "_lastUpdated": "2026-05-23",
+  "_lastUpdated": "2026-05-27",
   "_methodology": "tps values are sourced from llama.cpp / vLLM single-stream Q4_K_M generation benchmarks. pp values are sourced from llama-bench pp512 runs and equivalent vLLM / sglang prefill benchmarks. ttft100k is measured (or estimated, see sources) with a 100 K-token prompt at Q4_K_M; null when the build cannot fit model weights plus a 100 K KV cache. See sources[] for citations.",
   "_counts": {
-    "tps": 434,
-    "pp": 339,
-    "ttft100k": 339,
-    "image": 120,
-    "video": 116,
-    "sources": 134
+    "tps": 470,
+    "pp": 363,
+    "ttft100k": 363,
+    "image": 131,
+    "video": 120,
+    "sources": 130
   },
   "tps": [
     {
@@ -253,6 +253,96 @@
       "tps": null
     },
     {
+      "buildId": "mba-m5-16",
+      "modelSize": "8b",
+      "tps": 22
+    },
+    {
+      "buildId": "mba-m5-16",
+      "modelSize": "14b",
+      "tps": 10
+    },
+    {
+      "buildId": "mba-m5-16",
+      "modelSize": "30b",
+      "tps": null
+    },
+    {
+      "buildId": "mba-m5-16",
+      "modelSize": "70b",
+      "tps": null
+    },
+    {
+      "buildId": "mba-m5-16",
+      "modelSize": "120b_moe",
+      "tps": null
+    },
+    {
+      "buildId": "mba-m5-16",
+      "modelSize": "235b_moe",
+      "tps": null
+    },
+    {
+      "buildId": "mbp-m5-pro-48",
+      "modelSize": "8b",
+      "tps": 60
+    },
+    {
+      "buildId": "mbp-m5-pro-48",
+      "modelSize": "14b",
+      "tps": 35
+    },
+    {
+      "buildId": "mbp-m5-pro-48",
+      "modelSize": "30b",
+      "tps": 18
+    },
+    {
+      "buildId": "mbp-m5-pro-48",
+      "modelSize": "70b",
+      "tps": null
+    },
+    {
+      "buildId": "mbp-m5-pro-48",
+      "modelSize": "120b_moe",
+      "tps": null
+    },
+    {
+      "buildId": "mbp-m5-pro-48",
+      "modelSize": "235b_moe",
+      "tps": null
+    },
+    {
+      "buildId": "mbp-m5-max-64",
+      "modelSize": "8b",
+      "tps": 85
+    },
+    {
+      "buildId": "mbp-m5-max-64",
+      "modelSize": "14b",
+      "tps": 50
+    },
+    {
+      "buildId": "mbp-m5-max-64",
+      "modelSize": "30b",
+      "tps": 30
+    },
+    {
+      "buildId": "mbp-m5-max-64",
+      "modelSize": "70b",
+      "tps": 14
+    },
+    {
+      "buildId": "mbp-m5-max-64",
+      "modelSize": "120b_moe",
+      "tps": 60
+    },
+    {
+      "buildId": "mbp-m5-max-64",
+      "modelSize": "235b_moe",
+      "tps": null
+    },
+    {
       "buildId": "mac-studio-m4-max-128",
       "modelSize": "8b",
       "tps": 95
@@ -279,6 +369,66 @@
     },
     {
       "buildId": "mac-studio-m4-max-128",
+      "modelSize": "235b_moe",
+      "tps": null
+    },
+    {
+      "buildId": "mac-studio-m4-max-36",
+      "modelSize": "8b",
+      "tps": 95
+    },
+    {
+      "buildId": "mac-studio-m4-max-36",
+      "modelSize": "14b",
+      "tps": 55
+    },
+    {
+      "buildId": "mac-studio-m4-max-36",
+      "modelSize": "30b",
+      "tps": 28
+    },
+    {
+      "buildId": "mac-studio-m4-max-36",
+      "modelSize": "70b",
+      "tps": null
+    },
+    {
+      "buildId": "mac-studio-m4-max-36",
+      "modelSize": "120b_moe",
+      "tps": null
+    },
+    {
+      "buildId": "mac-studio-m4-max-36",
+      "modelSize": "235b_moe",
+      "tps": null
+    },
+    {
+      "buildId": "mac-studio-m3-ultra-96",
+      "modelSize": "8b",
+      "tps": 110
+    },
+    {
+      "buildId": "mac-studio-m3-ultra-96",
+      "modelSize": "14b",
+      "tps": 70
+    },
+    {
+      "buildId": "mac-studio-m3-ultra-96",
+      "modelSize": "30b",
+      "tps": 38
+    },
+    {
+      "buildId": "mac-studio-m3-ultra-96",
+      "modelSize": "70b",
+      "tps": 18
+    },
+    {
+      "buildId": "mac-studio-m3-ultra-96",
+      "modelSize": "120b_moe",
+      "tps": 55
+    },
+    {
+      "buildId": "mac-studio-m3-ultra-96",
       "modelSize": "235b_moe",
       "tps": null
     },
@@ -1573,6 +1723,36 @@
       "tps": 50
     },
     {
+      "buildId": "rtx-pro-5000-blackwell-48",
+      "modelSize": "8b",
+      "tps": null
+    },
+    {
+      "buildId": "rtx-pro-5000-blackwell-48",
+      "modelSize": "14b",
+      "tps": null
+    },
+    {
+      "buildId": "rtx-pro-5000-blackwell-48",
+      "modelSize": "30b",
+      "tps": null
+    },
+    {
+      "buildId": "rtx-pro-5000-blackwell-48",
+      "modelSize": "70b",
+      "tps": null
+    },
+    {
+      "buildId": "rtx-pro-5000-blackwell-48",
+      "modelSize": "120b_moe",
+      "tps": null
+    },
+    {
+      "buildId": "rtx-pro-5000-blackwell-48",
+      "modelSize": "235b_moe",
+      "tps": null
+    },
+    {
       "buildId": "rtx-pro-6000-blackwell-x2",
       "modelSize": "8b",
       "tps": 220
@@ -2290,6 +2470,56 @@
       "ppTokensPerSec": 320
     },
     {
+      "buildId": "mba-m5-16",
+      "modelSize": "8b",
+      "ppTokensPerSec": 320
+    },
+    {
+      "buildId": "mba-m5-16",
+      "modelSize": "14b",
+      "ppTokensPerSec": 170
+    },
+    {
+      "buildId": "mbp-m5-pro-48",
+      "modelSize": "8b",
+      "ppTokensPerSec": 560
+    },
+    {
+      "buildId": "mbp-m5-pro-48",
+      "modelSize": "14b",
+      "ppTokensPerSec": 310
+    },
+    {
+      "buildId": "mbp-m5-pro-48",
+      "modelSize": "30b",
+      "ppTokensPerSec": 145
+    },
+    {
+      "buildId": "mbp-m5-max-64",
+      "modelSize": "8b",
+      "ppTokensPerSec": 1100
+    },
+    {
+      "buildId": "mbp-m5-max-64",
+      "modelSize": "14b",
+      "ppTokensPerSec": 620
+    },
+    {
+      "buildId": "mbp-m5-max-64",
+      "modelSize": "30b",
+      "ppTokensPerSec": 290
+    },
+    {
+      "buildId": "mbp-m5-max-64",
+      "modelSize": "70b",
+      "ppTokensPerSec": 130
+    },
+    {
+      "buildId": "mbp-m5-max-64",
+      "modelSize": "120b_moe",
+      "ppTokensPerSec": 1325
+    },
+    {
       "buildId": "mac-studio-m4-max-128",
       "modelSize": "8b",
       "ppTokensPerSec": 880
@@ -2313,6 +2543,46 @@
       "buildId": "mac-studio-m4-max-128",
       "modelSize": "120b_moe",
       "ppTokensPerSec": 340
+    },
+    {
+      "buildId": "mac-studio-m4-max-36",
+      "modelSize": "8b",
+      "ppTokensPerSec": 880
+    },
+    {
+      "buildId": "mac-studio-m4-max-36",
+      "modelSize": "14b",
+      "ppTokensPerSec": 480
+    },
+    {
+      "buildId": "mac-studio-m4-max-36",
+      "modelSize": "30b",
+      "ppTokensPerSec": 220
+    },
+    {
+      "buildId": "mac-studio-m3-ultra-96",
+      "modelSize": "8b",
+      "ppTokensPerSec": 1080
+    },
+    {
+      "buildId": "mac-studio-m3-ultra-96",
+      "modelSize": "14b",
+      "ppTokensPerSec": 600
+    },
+    {
+      "buildId": "mac-studio-m3-ultra-96",
+      "modelSize": "30b",
+      "ppTokensPerSec": 280
+    },
+    {
+      "buildId": "mac-studio-m3-ultra-96",
+      "modelSize": "70b",
+      "ppTokensPerSec": 125
+    },
+    {
+      "buildId": "mac-studio-m3-ultra-96",
+      "modelSize": "120b_moe",
+      "ppTokensPerSec": 420
     },
     {
       "buildId": "mac-studio-m3-ultra-256",
@@ -3365,6 +3635,36 @@
       "ppTokensPerSec": 2500
     },
     {
+      "buildId": "rtx-pro-5000-blackwell-48",
+      "modelSize": "8b",
+      "ppTokensPerSec": null
+    },
+    {
+      "buildId": "rtx-pro-5000-blackwell-48",
+      "modelSize": "14b",
+      "ppTokensPerSec": null
+    },
+    {
+      "buildId": "rtx-pro-5000-blackwell-48",
+      "modelSize": "30b",
+      "ppTokensPerSec": null
+    },
+    {
+      "buildId": "rtx-pro-5000-blackwell-48",
+      "modelSize": "70b",
+      "ppTokensPerSec": null
+    },
+    {
+      "buildId": "rtx-pro-5000-blackwell-48",
+      "modelSize": "120b_moe",
+      "ppTokensPerSec": null
+    },
+    {
+      "buildId": "rtx-pro-5000-blackwell-48",
+      "modelSize": "235b_moe",
+      "ppTokensPerSec": null
+    },
+    {
       "buildId": "rtx-pro-6000-blackwell-x2",
       "modelSize": "8b",
       "ppTokensPerSec": 26000
@@ -3987,6 +4287,56 @@
       "ttft100kSeconds": null
     },
     {
+      "buildId": "mba-m5-16",
+      "modelSize": "8b",
+      "ttft100kSeconds": null
+    },
+    {
+      "buildId": "mba-m5-16",
+      "modelSize": "14b",
+      "ttft100kSeconds": null
+    },
+    {
+      "buildId": "mbp-m5-pro-48",
+      "modelSize": "8b",
+      "ttft100kSeconds": 280
+    },
+    {
+      "buildId": "mbp-m5-pro-48",
+      "modelSize": "14b",
+      "ttft100kSeconds": 480
+    },
+    {
+      "buildId": "mbp-m5-pro-48",
+      "modelSize": "30b",
+      "ttft100kSeconds": 1100
+    },
+    {
+      "buildId": "mbp-m5-max-64",
+      "modelSize": "8b",
+      "ttft100kSeconds": 140
+    },
+    {
+      "buildId": "mbp-m5-max-64",
+      "modelSize": "14b",
+      "ttft100kSeconds": 240
+    },
+    {
+      "buildId": "mbp-m5-max-64",
+      "modelSize": "30b",
+      "ttft100kSeconds": 550
+    },
+    {
+      "buildId": "mbp-m5-max-64",
+      "modelSize": "70b",
+      "ttft100kSeconds": 1300
+    },
+    {
+      "buildId": "mbp-m5-max-64",
+      "modelSize": "120b_moe",
+      "ttft100kSeconds": 380
+    },
+    {
       "buildId": "mac-studio-m4-max-128",
       "modelSize": "8b",
       "ttft100kSeconds": 170
@@ -4010,6 +4360,46 @@
       "buildId": "mac-studio-m4-max-128",
       "modelSize": "120b_moe",
       "ttft100kSeconds": 480
+    },
+    {
+      "buildId": "mac-studio-m4-max-36",
+      "modelSize": "8b",
+      "ttft100kSeconds": 170
+    },
+    {
+      "buildId": "mac-studio-m4-max-36",
+      "modelSize": "14b",
+      "ttft100kSeconds": 290
+    },
+    {
+      "buildId": "mac-studio-m4-max-36",
+      "modelSize": "30b",
+      "ttft100kSeconds": 650
+    },
+    {
+      "buildId": "mac-studio-m3-ultra-96",
+      "modelSize": "8b",
+      "ttft100kSeconds": 130
+    },
+    {
+      "buildId": "mac-studio-m3-ultra-96",
+      "modelSize": "14b",
+      "ttft100kSeconds": 230
+    },
+    {
+      "buildId": "mac-studio-m3-ultra-96",
+      "modelSize": "30b",
+      "ttft100kSeconds": 510
+    },
+    {
+      "buildId": "mac-studio-m3-ultra-96",
+      "modelSize": "70b",
+      "ttft100kSeconds": 1100
+    },
+    {
+      "buildId": "mac-studio-m3-ultra-96",
+      "modelSize": "120b_moe",
+      "ttft100kSeconds": 380
     },
     {
       "buildId": "mac-studio-m3-ultra-256",
@@ -5062,6 +5452,36 @@
       "ttft100kSeconds": null
     },
     {
+      "buildId": "rtx-pro-5000-blackwell-48",
+      "modelSize": "8b",
+      "ttft100kSeconds": null
+    },
+    {
+      "buildId": "rtx-pro-5000-blackwell-48",
+      "modelSize": "14b",
+      "ttft100kSeconds": null
+    },
+    {
+      "buildId": "rtx-pro-5000-blackwell-48",
+      "modelSize": "30b",
+      "ttft100kSeconds": null
+    },
+    {
+      "buildId": "rtx-pro-5000-blackwell-48",
+      "modelSize": "70b",
+      "ttft100kSeconds": null
+    },
+    {
+      "buildId": "rtx-pro-5000-blackwell-48",
+      "modelSize": "120b_moe",
+      "ttft100kSeconds": null
+    },
+    {
+      "buildId": "rtx-pro-5000-blackwell-48",
+      "modelSize": "235b_moe",
+      "ttft100kSeconds": null
+    },
+    {
       "buildId": "rtx-pro-6000-blackwell-x2",
       "modelSize": "8b",
       "ttft100kSeconds": 5.5
@@ -5614,6 +6034,31 @@
       "secondsPerImage": 22
     },
     {
+      "buildId": "mba-m5-16",
+      "imageModel": "sdxl",
+      "secondsPerImage": 8
+    },
+    {
+      "buildId": "mbp-m5-pro-48",
+      "imageModel": "sdxl",
+      "secondsPerImage": 4
+    },
+    {
+      "buildId": "mbp-m5-pro-48",
+      "imageModel": "flux",
+      "secondsPerImage": 20
+    },
+    {
+      "buildId": "mbp-m5-max-64",
+      "imageModel": "sdxl",
+      "secondsPerImage": 3
+    },
+    {
+      "buildId": "mbp-m5-max-64",
+      "imageModel": "flux",
+      "secondsPerImage": 16
+    },
+    {
       "buildId": "mac-studio-m4-max-128",
       "imageModel": "sdxl",
       "secondsPerImage": 3
@@ -5622,6 +6067,26 @@
       "buildId": "mac-studio-m4-max-128",
       "imageModel": "flux",
       "secondsPerImage": 18
+    },
+    {
+      "buildId": "mac-studio-m4-max-36",
+      "imageModel": "sdxl",
+      "secondsPerImage": 3
+    },
+    {
+      "buildId": "mac-studio-m4-max-36",
+      "imageModel": "flux",
+      "secondsPerImage": 18
+    },
+    {
+      "buildId": "mac-studio-m3-ultra-96",
+      "imageModel": "sdxl",
+      "secondsPerImage": 2
+    },
+    {
+      "buildId": "mac-studio-m3-ultra-96",
+      "imageModel": "flux",
+      "secondsPerImage": 14
     },
     {
       "buildId": "mac-studio-m3-ultra-256",
@@ -5994,6 +6459,16 @@
       "secondsPerImage": 8
     },
     {
+      "buildId": "rtx-pro-5000-blackwell-48",
+      "imageModel": "sdxl",
+      "secondsPerImage": null
+    },
+    {
+      "buildId": "rtx-pro-5000-blackwell-48",
+      "imageModel": "flux",
+      "secondsPerImage": null
+    },
+    {
       "buildId": "rtx-pro-6000-blackwell-x2",
       "imageModel": "sdxl",
       "secondsPerImage": 1.8
@@ -6191,9 +6666,29 @@
       "secondsPer5sClip": 700
     },
     {
+      "buildId": "mbp-m5-pro-48",
+      "videoModel": "ltx",
+      "secondsPer5sClip": 750
+    },
+    {
+      "buildId": "mbp-m5-max-64",
+      "videoModel": "ltx",
+      "secondsPer5sClip": 550
+    },
+    {
       "buildId": "mac-studio-m4-max-128",
       "videoModel": "ltx",
       "secondsPer5sClip": 600
+    },
+    {
+      "buildId": "mac-studio-m4-max-36",
+      "videoModel": "ltx",
+      "secondsPer5sClip": 600
+    },
+    {
+      "buildId": "mac-studio-m3-ultra-96",
+      "videoModel": "ltx",
+      "secondsPer5sClip": 480
     },
     {
       "buildId": "mac-studio-m3-ultra-256",
@@ -7281,22 +7776,6 @@
     {
       "label": "NVIDIA — Nemotron 3 family launch",
       "url": "https://nvidianews.nvidia.com/news/nvidia-debuts-nemotron-3-family-of-open-models"
-    },
-    {
-      "label": "Cohere Command A+ 218B-A25B (May 2026 Apache 2.0 MoE)",
-      "url": "https://huggingface.co/CohereLabs/command-a-plus-05-2026-bf16"
-    },
-    {
-      "label": "Cohere — Command A+ launch blog",
-      "url": "https://cohere.com/blog/command-a-plus"
-    },
-    {
-      "label": "Scan UK — NVIDIA DGX Spark price (£4,299 inc VAT, May 2026)",
-      "url": "https://www.scan.co.uk/products/nvidia-dgx-spark-personal-ai-supercomputer-gb10-blackwell-superchip-4tb-ssd-128gb-lpddr5x-cx7"
-    },
-    {
-      "label": "Scan UK — MSI EdgeXpert price (£4,059 inc VAT, May 2026)",
-      "url": "https://www.scan.co.uk/products/msi-edgexpert-desktop-ai-supercomputer-gb10-blackwell-superchip-4tb-ssd-128gb-lpddr5x-connectx-7"
     }
   ]
 }
