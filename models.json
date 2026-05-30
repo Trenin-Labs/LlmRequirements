@@ -1,7 +1,7 @@
 {
   "$schema": "https://json-schema.org/draft-07/schema#",
   "_description": "LLM model catalog with ratings and VRAM requirements. See README.md for schema.",
-  "_lastUpdated": "2026-05-27",
+  "_lastUpdated": "2026-05-30",
   "_count": 54,
   "models": [
     {
@@ -976,8 +976,8 @@
         "aime": null
       },
       "vibes": {
-        "coding": "Adoption accelerating thanks to the OpenRouter free-tier promo (now #2 in token volume on https://openrouter.ai/collections/programming). r/LocalLLaMA still cautious because of the custom non-MIT 'Tencent Hy' license terms, but for cost-free experimentation in Cline / Roo Code it's a real option this week.",
-        "agentDriver": "TB2 54.4 puts it solidly in 'usable for short agent loops'. Search-agent benchmarks (BrowseComp 67.1, WideSearch 70.2) suggest it's better at research loops than long-horizon coding. The OpenRouter free promo is driving experimentation but no Open-Claude long-session benchmarks yet."
+        "coding": "Now #3 on OpenRouter coding by weekly token volume (693B) — moved from #2 as MiMo V2.5 entered at top. r/LocalLLaMA still cautious because of the custom non-MIT 'Tencent Hy' license terms, but for cost-free experimentation in Cline / Roo Code it's a real option. Free-tier promo on OpenRouter still driving experimentation.",
+        "agentDriver": "TB2 54.4 puts it solidly in 'usable for short agent loops'. Search-agent benchmarks (BrowseComp 67.1, WideSearch 70.2) suggest it's better at research loops than long-horizon coding. No Open-Claude long-session benchmarks yet."
       },
       "benchmarkNotes": "LiveCodeBench 34.9 from prior refresh appears to have been a misattributed search-agent score; cannot reconfirm against any canonical LCB leaderboard so setting to null. SWE-Ver 74.4 and TB2 54.4 both confirmed via https://huggingface.co/tencent/Hy3-preview and https://hy3ai.com/. Currently #2 on OpenRouter coding by token volume (3.13T tokens) — partially driven by free-tier promo through OpenRouter (https://openrouter.ai/collections/programming).",
       "sources": [
@@ -1183,7 +1183,7 @@
         "aime": 96.4
       },
       "vibes": {
-        "coding": "Top open-weights coder in May 2026 by benchmark consensus. #1 on OpenRouter coding by weekly tokens (965B). r/LocalLLaMA daily-driver via OpenRouter when you can't run 1T locally — best agentic-coding open-weight per benchmark consensus. (Note: Cursor Composer 2.5 retained its K2.5 backbone rather than upgrading to K2.6 — see the K2.5 entry.)",
+        "coding": "Now #7 on OpenRouter coding by weekly token volume (383B) after MiMo V2.5 entered at #1. Still top open-weights coder by benchmark consensus (TB2 66.7, SWE-Pro 58.6). r/LocalLLaMA daily-driver via OpenRouter when you can't run 1T locally — best agentic-coding open-weight per benchmark consensus. (Note: Cursor Composer 2.5 retained its K2.5 backbone rather than upgrading to K2.6.)",
         "agentDriver": "300-agent swarm, 4000 coordinated steps. Closest open-weights match to Claude Opus on long-horizon work. Reliable in 1-2 hour Open-Claude sessions; ceiling around 4-8 hours."
       },
       "benchmarkNotes": "All values confirmed via Moonshot's blog and benchlm.ai. SWE-Pro 58.6 (tied with GPT-5.5 — best open-weights on benchlm.ai). TB2 66.7 with Terminus-2 harness per https://www.kimi.com/blog/kimi-k2-6. Note Kimi reports HLE 54.0 *with tools* in their own blog vs benchmark-pure 35.9 — keeping 35.9 (no-tools, consistent with other roster entries).",
@@ -1289,10 +1289,10 @@
         "aime": 94.8
       },
       "vibes": {
-        "coding": "Cheap, fast, MIT-licensed. r/LocalLLaMA's pick to replace Claude Haiku in tool-calling pipelines. Now #3 on OpenRouter coding leaderboard by token volume (2.9T) — adoption real and growing. Native provider support in Cline, Roo Code, Kilo Code.",
-        "agentDriver": "TB2 of 56.9 makes it a credible short-loop driver. Native Cline / Roo Code / Kilo Code provider support. Reliable for 15-30 min loops; ceiling well below V4-Pro. Now competitive on OpenRouter usage with Claude Sonnet 4.6."
+        "coding": "Now #4 on OpenRouter coding by weekly token volume (637B) — MiMo V2.5 entered above it but adoption is real and growing. Native provider support in Cline, Roo Code, Kilo Code. r/LocalLLaMA's pick to replace Claude Haiku in tool-calling pipelines.",
+        "agentDriver": "TB2 56.9 makes it a credible short-loop driver. Reliable for 15-30 min loops; ceiling well below V4-Pro. Competitive on OpenRouter usage with Claude Sonnet 4.6."
       },
-      "benchmarkNotes": "SWE-Pro 52.6 is the (Max) configuration on benchlm.ai — base config is 49.1, high-effort 52.3. https://benchlm.ai/benchmarks/swePro. #3 on OpenRouter coding by weekly tokens (2.9T) per https://openrouter.ai/collections/programming. All other values unchanged from prior refresh.",
+      "benchmarkNotes": "SWE-Pro 52.6 is the (Max) configuration on benchlm.ai — base config is 49.1, high-effort 52.3. HLE 29.4 is base/stored; benchlm.ai Max config shows 34.8 (+5.4 pts delta flagged for operator review — methodology difference between Max/base configs). #4 on OpenRouter coding by weekly tokens (637B) per https://openrouter.ai/collections/programming.",
       "sources": [
         "https://benchlm.ai/benchmarks/swePro",
         "https://openrouter.ai/collections/programming",
@@ -1451,7 +1451,7 @@
         "coding": "From mid-Feb through April 2026 this was the local-coding king — daily-driver in Cline, Roo Code, Aider, Open-Claude, Continue via llama-server or vLLM. Now decisively dethroned by Qwen 3.6 27B (SWE-Ver 77.2 vs 76.4) and Qwen 3.6 35B-A3B on every coding eval per Qwen's own comparison table. Still a heavyweight generalist.",
         "agentDriver": "First 200B+ open MoE genuinely usable for autonomous loops — TAU2-Bench 86.7, TB2 52.5, MCP-Mark 46.1. Pair with 256 GB M3 Ultra (Q4 ~25 tok/s) or a multi-H100 box. Open-Claude users have largely moved to GLM-5.1 / Kimi K2.6 / DeepSeek V4 for new long-horizon work."
       },
-      "benchmarkNotes": "SWE-Pro 50.9 cross-referenced from Qwen 3.6 27B launch comparison table (https://qwen.ai/blog?id=qwen3.6-27b) — Qwen self-report. Other values from prior research refresh, all Qwen-self-reported at v3.5 launch. Not present on tbench.ai leaderboard.",
+      "benchmarkNotes": "SWE-Pro 50.9 cross-referenced from Qwen 3.6 27B launch comparison table (https://qwen.ai/blog?id=qwen3.6-27b) — Qwen self-report. HLE DRIFT FLAGGED: stored 37.6 vs benchlm.ai live 28.7 (delta -8.9 pts, URL: https://benchlm.ai/benchmarks/hle). This is a significant downward revision. Operator should verify which methodology applies before updating — if benchlm.ai is using a different no-tools / tools split than the stored value, the stored value may be from a more generous configuration. All other values from prior research refresh, Qwen-self-reported at v3.5 launch.",
       "sources": [
         "https://qwen.ai/blog?id=qwen3.6-27b",
         "https://benchlm.ai/benchmarks/swePro",
