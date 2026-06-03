@@ -1,8 +1,8 @@
 {
   "$schema": "https://json-schema.org/draft-07/schema#",
   "_description": "Hardware build catalog with throughput (tps), prompt-processing (pp), TTFT @ 100 K (ttft100k), image, and video benchmarks. Each build also carries editorial fields used by the /compare page: softwareStack (short label), softwareMaturity (0-5), softwareNote, extensibility (0-5), and extensibilityNote. Pricing is in priceUSD as a US MSRP fallback only — see prices/ for regional snapshots.",
-  "_lastUpdated": "2026-05-30",
-  "_count": 74,
+  "_lastUpdated": "2026-06-03",
+  "_count": 75,
   "builds": [
     {
       "id": "your-laptop-8gb",
@@ -214,7 +214,7 @@
       "extensibilityNote": "Sealed individually, but Thunderbolt-5 MLX clusters work — two Mac Minis act as a 32 GB pool over TB5. RAM/SSD are locked at order time.",
       "tflopsFP16": 4,
       "vllmSupport": "community",
-      "priceVerifiedOn": "2026-05-23",
+      "priceVerifiedOn": "2026-06-03",
       "tflopsFP8": null,
       "topsINT8": 38
     },
@@ -338,7 +338,7 @@
       "extensibilityNote": "Sealed individually, but TB5 MLX clusters scale to 48-96 GB on a stack of these. RAM / SSD locked at order time.",
       "tflopsFP16": 4,
       "vllmSupport": "community",
-      "priceVerifiedOn": "2026-05-23",
+      "priceVerifiedOn": "2026-06-03",
       "tflopsFP8": null,
       "topsINT8": 38
     },
@@ -612,7 +612,7 @@
       "tflopsFP16": 13,
       "vllmSupport": "community",
       "priceNote": "14\" M5 Pro 18-core CPU / 20-core GPU / 48 GB / 1 TB preset — launched 2026-03-11. Apple's configurator base 14\" M5 Pro at 24 GB is $2,799 with the 18C/20C chip upgrade; +$400 memory upgrade to 48 GB → $3,199 US. Regional regionPrices reflect the +memory upgrade over Apple's base 14\" preset.",
-      "priceVerifiedOn": "2026-05-27",
+      "priceVerifiedOn": "2026-06-03",
       "tflopsFP8": null,
       "topsINT8": 38
     },
@@ -693,6 +693,88 @@
       "vllmSupport": "community",
       "priceNote": "14\" M5 Max 18-core CPU / 40-core GPU / 64 GB / 2 TB preset — launched 2026-03-11 at $4,099 US. Regional prices reflect the +memory + 32→40 GPU upgrade over Apple's base 36 GB Max preset.",
       "priceVerifiedOn": "2026-05-27",
+      "tflopsFP8": null,
+      "topsINT8": 38
+    },
+    {
+      "id": "mbp-m5-max-128",
+      "name": "MacBook Pro M5 Max 128 GB",
+      "vendor": "Apple",
+      "category": "apple",
+      "formFactor": "laptop",
+      "memoryGB": 128,
+      "usableMemoryGB": 108,
+      "bandwidthGBs": 614,
+      "priceUSD": 5099,
+      "tps": {
+        "8b": 85,
+        "14b": 50,
+        "30b": 30,
+        "70b": 14,
+        "120b_moe": 65,
+        "235b_moe": 26
+      },
+      "imageSec": {
+        "sdxl": 3,
+        "flux": 16
+      },
+      "videoSec": {
+        "ltx": 550
+      },
+      "idleW": 6,
+      "activeW": 95,
+      "pros": [
+        "128 GB UMA on a laptop — Qwen 3-235B-A22B fits at Q4, gpt-oss-120B at Q8",
+        "614 GB/s bandwidth, same M5 Max die as the 64 GB SKU — Q8 120B MoE at ~65 t/s",
+        "LPDDR5x-9600 on-package; portable frontier-class inference",
+        "2 TB base SSD; xCreate cluster recipes pool 256 GB across two MBPs over TB5"
+      ],
+      "cons": [
+        "$5,099 list (14\") — pricier per usable GB than M3 Ultra 96 Mac Studio",
+        "14\" chassis throttles M5 Max under sustained load (Notebookcheck) — 16\" handles it better at +$300",
+        "Prefill still trails Blackwell CUDA by 5-10× (~1325 pp vs 8000+ on RTX PRO 6000)",
+        "128 GB tier is CTO-only across most regions; affiliate pages may not deep-link the exact preset"
+      ],
+      "reviews": [
+        {
+          "videoId": "XGe7ldwFLSE",
+          "title": "Apple's New M5 Max Changes the Local AI Story (AZisk)"
+        },
+        {
+          "videoId": "FD6i0htqLew",
+          "title": "I Linked 3 M5 MacBooks to Run \"Impossible\" AI (AZisk)"
+        },
+        {
+          "videoId": "EyJ_xZC3nqc",
+          "title": "I was WRONG about M5 MacBook Pro vs M4 Max & M3 Ultra for Local AI (xCreate)"
+        }
+      ],
+      "rigOverheadUSD": 0,
+      "pp": {
+        "8b": 1100,
+        "14b": 620,
+        "30b": 290,
+        "70b": 130,
+        "120b_moe": 1325,
+        "235b_moe": 880
+      },
+      "ttft100k": {
+        "8b": 140,
+        "14b": 240,
+        "30b": 550,
+        "70b": 1300,
+        "120b_moe": 380,
+        "235b_moe": 720
+      },
+      "softwareStack": "Metal / MLX",
+      "softwareMaturity": 4,
+      "softwareNote": "Metal + MLX excellent for tg; Ollama 0.19 MLX backend (Mar 2026) doubled decode + 1.5× prefill on M5 silicon. 128 GB pool unlocks Q4 235B-A22B and Q8 gpt-oss-120B. Prefill still trails CUDA Blackwell.",
+      "extensibility": 1,
+      "extensibilityNote": "Sealed laptop. TB5 MLX cluster (two M5 Max MBPs → 256 GB pool over Thunderbolt 5) is the documented scale-out path; Alex Ziskind's 3-MBP cluster recipe pushes it further.",
+      "tflopsFP16": 22,
+      "vllmSupport": "community",
+      "priceNote": "14\" M5 Max 18-core CPU / 40-core GPU / 128 GB / 2 TB CTO preset — launched 2026-03-11 at $5,099 US ($3,599 base + $1,500 memory upgrade vs the 36 GB shelf SKU). 16\" same config is $5,399 US. Anchored to Creative Bloq's 128 GB/4 TB review unit at $5,699 minus Apple's standard $600 SSD-tier delta. EU/JP/AU/CA derived from Apple's standard 36→128 GB memory-upgrade ratio; configurator spot-check recommended next refresh.",
+      "priceVerifiedOn": "2026-06-03",
       "tflopsFP8": null,
       "topsINT8": 38
     },
@@ -837,7 +919,7 @@
       "tflopsFP16": 17,
       "vllmSupport": "community",
       "priceNote": "Current Mac Studio entry point on apple.com configurator (M4 Max chip, 14-core CPU / 32-core GPU, 36 GB unified, 512 GB SSD). $1,999 US starting per Apple newsroom. Successor entry for the discontinued 128 GB tier — the chip is identical, the RAM tier is what changed.",
-      "priceVerifiedOn": "2026-05-27",
+      "priceVerifiedOn": "2026-06-03",
       "tflopsFP8": null,
       "topsINT8": 38
     },
@@ -918,7 +1000,7 @@
       "tflopsFP16": 36,
       "vllmSupport": "community",
       "priceNote": "Current Apple-direct M3 Ultra option — apple.com configurator shows 28-core CPU / 60-core GPU / 96 GB unified / 1 TB SSD at $3,999 US starting per Apple newsroom. Successor entry for the discontinued 256 / 512 GB tiers — same chip, less RAM. Apple has not signalled an M3 Ultra restock above 96 GB; M5 Ultra Mac Studio expected Oct 2026 (Macworld).",
-      "priceVerifiedOn": "2026-05-27",
+      "priceVerifiedOn": "2026-06-03",
       "tflopsFP8": null,
       "topsINT8": 36
     },
@@ -1500,7 +1582,7 @@
       "extensibilityNote": "Standard tower build — straightforward to dual-card if the case + PSU allow.",
       "tflopsFP16": 330,
       "vllmSupport": "production",
-      "priceVerifiedOn": "2026-05-23",
+      "priceVerifiedOn": "2026-06-03",
       "tflopsFP8": 661,
       "topsINT8": null
     },
@@ -1575,7 +1657,7 @@
       "extensibilityNote": "Big card but standard ATX — pair with second card or move to a workstation chassis later.",
       "tflopsFP16": 419,
       "vllmSupport": "production",
-      "priceVerifiedOn": "2026-05-27",
+      "priceVerifiedOn": "2026-06-03",
       "tflopsFP8": 838,
       "topsINT8": null
     },
@@ -1649,7 +1731,7 @@
       "extensibilityNote": "Two 600 W cards drives the build to ATX-EVO + 1600 W PSU territory; further expansion needs a workstation chassis.",
       "tflopsFP16": 838,
       "vllmSupport": "production",
-      "priceVerifiedOn": "2026-05-27",
+      "priceVerifiedOn": "2026-06-03",
       "tflopsFP8": 1676,
       "topsINT8": null
     },
@@ -1983,7 +2065,7 @@
       "tflopsFP16": 100,
       "vllmSupport": "experimental",
       "siliconFamily": "arc-pro-b70",
-      "priceVerifiedOn": "2026-05-27",
+      "priceVerifiedOn": "2026-06-03",
       "tflopsFP8": null,
       "topsINT8": 367
     },
@@ -2687,7 +2769,7 @@
       "extensibilityNote": "Sealed appliance, but officially clusterable over ConnectX-7 200 GbE — buy two to run 235B MoE end-to-end, four to host 671B. Cluster is the upgrade path.",
       "tflopsFP16": 250,
       "vllmSupport": "production",
-      "priceVerifiedOn": "2026-05-27",
+      "priceVerifiedOn": "2026-06-03",
       "tflopsFP8": 250,
       "topsINT8": null
     },
@@ -3007,7 +3089,7 @@
           "title": "I Thought DGX Spark Was Slower… Until I Changed ONE Thing (AZisk)"
         }
       ],
-      "priceVerifiedOn": "2026-05-27",
+      "priceVerifiedOn": "2026-06-03",
       "tflopsFP8": 250,
       "topsINT8": null
     },
@@ -3157,7 +3239,7 @@
       "extensibilityNote": "Same GB10 cluster story; Dell adds enterprise warranty to the same fabric.",
       "tflopsFP16": 250,
       "vllmSupport": "production",
-      "priceVerifiedOn": "2026-05-23",
+      "priceVerifiedOn": "2026-06-03",
       "tflopsFP8": 250,
       "topsINT8": null
     },
@@ -3852,9 +3934,9 @@
       "memoryGB": 96,
       "usableMemoryGB": 93,
       "bandwidthGBs": 1792,
-      "priceUSD": 10500,
+      "priceUSD": 12200,
       "pricedAsOf": "May 2026",
-      "priceNote": "May 2026 — card $8,900 at NVIDIA marketplace, $9,449 on Amazon, $9,999 at MicroCenter, $11,500 at B&H — GDDR7 contract pricing pushing the spread upward against the $8,565 launch MSRP. Card + ~$2 K Threadripper Pro / Xeon W workstation chassis. (thundercompute.com, newegg.com, 2026-05-20).",
+      "priceNote": "Jun 2026 — Newegg US lowest $11,099.99 (was $8,900-$9,999 May 2026). System whole-build estimate $12,200 = card + ~$1,100 host. Major Blackwell pro-line price reset across US/UK/JP this week.",
       "tps": {
         "8b": 200,
         "14b": 140,
@@ -3922,7 +4004,7 @@
       "extensibilityNote": "Standard workstation card — dual-card is the natural upgrade.",
       "tflopsFP16": 1457,
       "vllmSupport": "production",
-      "priceVerifiedOn": "2026-05-23",
+      "priceVerifiedOn": "2026-06-03",
       "tflopsFP8": 1000,
       "topsINT8": null
     },
@@ -4006,9 +4088,9 @@
       "memoryGB": 192,
       "usableMemoryGB": 188,
       "bandwidthGBs": 1792,
-      "priceUSD": 19500,
+      "priceUSD": 24400,
       "pricedAsOf": "May 2026",
-      "priceNote": "May 2026 — 2× $8,900-$9,500 cards (NVIDIA marketplace / Amazon spread) + ~$2 K dual-GPU workstation chassis with 1500 W PSU. (thundercompute.com, 2026-05-20).",
+      "priceNote": "Jun 2026 — 2× Newegg US $11,099.99 = $22,200 cards + ~$2,200 host = $24,400 whole-system. UK Scan £11,446×2 + host = ~£24,300. Mirrors single-card Blackwell pro-line reset.",
       "tps": {
         "8b": 220,
         "14b": 160,
@@ -4067,7 +4149,7 @@
       "extensibilityNote": "Two slots filled; a workstation chassis still leaves room for x4 if you have the lanes + PSU.",
       "tflopsFP16": 2914,
       "vllmSupport": "production",
-      "priceVerifiedOn": "2026-05-23",
+      "priceVerifiedOn": "2026-06-03",
       "tflopsFP8": 2000,
       "topsINT8": null
     },
@@ -4363,7 +4445,7 @@
       "extensibilityNote": "Standard workstation card; pair freely for 96 GB.",
       "tflopsFP16": 122,
       "vllmSupport": "community",
-      "priceVerifiedOn": "2026-05-23",
+      "priceVerifiedOn": "2026-06-03",
       "tflopsFP8": null,
       "topsINT8": 244
     },
@@ -4563,7 +4645,7 @@
       "extensibilityNote": "Standard PCIe workstation card.",
       "tflopsFP16": 96,
       "vllmSupport": "community",
-      "priceVerifiedOn": "2026-05-30",
+      "priceVerifiedOn": "2026-06-03",
       "tflopsFP8": 383,
       "topsINT8": null
     },

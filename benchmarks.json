@@ -1,14 +1,14 @@
 {
   "$schema": "https://json-schema.org/draft-07/schema#",
   "_description": "Long-format benchmark rows extracted from builds.json plus citations. tps = decode tokens-per-second at Q4_K_M, short context, single stream. pp = prompt-processing tokens-per-second (llama-bench pp512 prefill, Q4_K_M). ttft100k = seconds to first token with a 100 000-token input prompt at Q4_K_M. imageSec = seconds per image. videoSec = seconds per 5-second clip.",
-  "_lastUpdated": "2026-05-30",
+  "_lastUpdated": "2026-06-03",
   "_methodology": "tps values are sourced from llama.cpp / vLLM single-stream Q4_K_M generation benchmarks. pp values are sourced from llama-bench pp512 runs and equivalent vLLM / sglang prefill benchmarks. ttft100k is measured (or estimated, see sources) with a 100 K-token prompt at Q4_K_M; null when the build cannot fit model weights plus a 100 K KV cache. See sources[] for citations.",
   "_counts": {
-    "tps": 470,
-    "pp": 363,
-    "ttft100k": 363,
-    "image": 131,
-    "video": 120,
+    "tps": 476,
+    "pp": 369,
+    "ttft100k": 369,
+    "image": 133,
+    "video": 121,
     "sources": 132
   },
   "tps": [
@@ -341,6 +341,36 @@
       "buildId": "mbp-m5-max-64",
       "modelSize": "235b_moe",
       "tps": null
+    },
+    {
+      "buildId": "mbp-m5-max-128",
+      "modelSize": "8b",
+      "tps": 85
+    },
+    {
+      "buildId": "mbp-m5-max-128",
+      "modelSize": "14b",
+      "tps": 50
+    },
+    {
+      "buildId": "mbp-m5-max-128",
+      "modelSize": "30b",
+      "tps": 30
+    },
+    {
+      "buildId": "mbp-m5-max-128",
+      "modelSize": "70b",
+      "tps": 14
+    },
+    {
+      "buildId": "mbp-m5-max-128",
+      "modelSize": "120b_moe",
+      "tps": 65
+    },
+    {
+      "buildId": "mbp-m5-max-128",
+      "modelSize": "235b_moe",
+      "tps": 26
     },
     {
       "buildId": "mac-studio-m4-max-128",
@@ -2520,6 +2550,36 @@
       "ppTokensPerSec": 1325
     },
     {
+      "buildId": "mbp-m5-max-128",
+      "modelSize": "8b",
+      "ppTokensPerSec": 1100
+    },
+    {
+      "buildId": "mbp-m5-max-128",
+      "modelSize": "14b",
+      "ppTokensPerSec": 620
+    },
+    {
+      "buildId": "mbp-m5-max-128",
+      "modelSize": "30b",
+      "ppTokensPerSec": 290
+    },
+    {
+      "buildId": "mbp-m5-max-128",
+      "modelSize": "70b",
+      "ppTokensPerSec": 130
+    },
+    {
+      "buildId": "mbp-m5-max-128",
+      "modelSize": "120b_moe",
+      "ppTokensPerSec": 1325
+    },
+    {
+      "buildId": "mbp-m5-max-128",
+      "modelSize": "235b_moe",
+      "ppTokensPerSec": 880
+    },
+    {
       "buildId": "mac-studio-m4-max-128",
       "modelSize": "8b",
       "ppTokensPerSec": 880
@@ -4337,6 +4397,36 @@
       "ttft100kSeconds": 380
     },
     {
+      "buildId": "mbp-m5-max-128",
+      "modelSize": "8b",
+      "ttft100kSeconds": 140
+    },
+    {
+      "buildId": "mbp-m5-max-128",
+      "modelSize": "14b",
+      "ttft100kSeconds": 240
+    },
+    {
+      "buildId": "mbp-m5-max-128",
+      "modelSize": "30b",
+      "ttft100kSeconds": 550
+    },
+    {
+      "buildId": "mbp-m5-max-128",
+      "modelSize": "70b",
+      "ttft100kSeconds": 1300
+    },
+    {
+      "buildId": "mbp-m5-max-128",
+      "modelSize": "120b_moe",
+      "ttft100kSeconds": 380
+    },
+    {
+      "buildId": "mbp-m5-max-128",
+      "modelSize": "235b_moe",
+      "ttft100kSeconds": 720
+    },
+    {
       "buildId": "mac-studio-m4-max-128",
       "modelSize": "8b",
       "ttft100kSeconds": 170
@@ -6059,6 +6149,16 @@
       "secondsPerImage": 16
     },
     {
+      "buildId": "mbp-m5-max-128",
+      "imageModel": "sdxl",
+      "secondsPerImage": 3
+    },
+    {
+      "buildId": "mbp-m5-max-128",
+      "imageModel": "flux",
+      "secondsPerImage": 16
+    },
+    {
       "buildId": "mac-studio-m4-max-128",
       "imageModel": "sdxl",
       "secondsPerImage": 3
@@ -6672,6 +6772,11 @@
     },
     {
       "buildId": "mbp-m5-max-64",
+      "videoModel": "ltx",
+      "secondsPer5sClip": 550
+    },
+    {
+      "buildId": "mbp-m5-max-128",
       "videoModel": "ltx",
       "secondsPer5sClip": 550
     },

@@ -1,7 +1,7 @@
 {
   "$schema": "https://json-schema.org/draft-07/schema#",
   "_description": "LLM model catalog with ratings and VRAM requirements. See README.md for schema.",
-  "_lastUpdated": "2026-05-30",
+  "_lastUpdated": "2026-06-03",
   "_count": 54,
   "models": [
     {
@@ -343,13 +343,14 @@
         "agents": 3,
         "reasoning": 4,
         "longContext": 5,
-        "vision": 0
+        "vision": 4
       },
       "tags": [
         "moe",
         "coding",
         "long-context",
-        "agents"
+        "agents",
+        "vision"
       ],
       "blurb": "Apr 2026 release. 35B / 3B active MoE — beats Gemma 4-31B on agentic coding, matches Sonnet on most vision tasks. Native 262 K context (extensible to 1 M), ~18 GB at Q4. The new local-coding king under 200 B.",
       "license": "Apache 2.0",
