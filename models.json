@@ -1,8 +1,8 @@
 {
   "$schema": "https://json-schema.org/draft-07/schema#",
   "_description": "LLM model catalog with ratings and VRAM requirements. See README.md for schema.",
-  "_lastUpdated": "2026-06-03",
-  "_count": 54,
+  "_lastUpdated": "2026-06-06",
+  "_count": 58,
   "models": [
     {
       "id": "qwen3-8b",
@@ -1196,6 +1196,62 @@
       "contextK": 256
     },
     {
+      "id": "mimo-v2-5-pro-1t-moe",
+      "name": "Xiaomi MiMo V2.5-Pro 1T-A42B (MoE)",
+      "family": "MiMo",
+      "params": 1020,
+      "activeParams": 42,
+      "type": "moe",
+      "modality": "text",
+      "sizeQ4": 560,
+      "vramMinQ4": 620,
+      "vramComfortQ4": 720,
+      "sizeQ2": 260,
+      "vramMinQ2": 290,
+      "ratings": {
+        "chat": 5,
+        "coding": 4,
+        "agents": 3,
+        "reasoning": 5,
+        "longContext": 5,
+        "vision": 5
+      },
+      "tags": [
+        "moe",
+        "frontier",
+        "huge",
+        "agents",
+        "coding",
+        "vision",
+        "openrouter-top"
+      ],
+      "blurb": "May 2026 release. 1.02 T / 42 B active omnimodal MoE — #1 on OpenRouter weekly token volume in May (Xiaomi captured 21% of all OpenRouter traffic, ~3× OpenAI). 1 M context, 384 experts top-8. Reported agentic-task parity with Claude Opus 4.6 per vendor blog; pending leaderboard confirmation.",
+      "license": "MIT",
+      "huggingface": "https://huggingface.co/XiaomiMiMo/MiMo-V2.5-Pro",
+      "benchmarks": {
+        "hle": null,
+        "tb2": null,
+        "swebench_pro": null,
+        "swebench_ver": null,
+        "aider": null,
+        "livecodebench": null,
+        "gpqa": null,
+        "mmlu_pro": null,
+        "aime": null
+      },
+      "vibes": {
+        "coding": "#1 on OpenRouter coding weekly token volume May 2026 (~4.92 T tokens). MACGPU rankings list it ahead of every Anthropic and OpenAI model by raw usage. Open-weights frontier on agentic coding at a fraction of Opus pricing.",
+        "agentDriver": "Reported parity with Claude Opus 4.6 on agentic tasks at 80% lower cost per OpenRouter pricing. Real production usage rivals closed-frontier models — Xiaomi has 21.1% of all OpenRouter traffic."
+      },
+      "benchmarkNotes": "All benchmark cells null pending primary-leaderboard coverage (benchlm.ai / tbench.ai). MACGPU OpenRouter analysis cites 57.2 SWE-Pro from XiaomiMiMo blog but a primary leaderboard cite is required before landing the value.",
+      "sources": [
+        "https://huggingface.co/XiaomiMiMo/MiMo-V2.5-Pro",
+        "https://openrouter.ai/xiaomi/mimo-v2.5-pro",
+        "https://macgpu.com/en/blog/2026-0525-openrouter-rankings-may-mimo-qwen-claude-mac-deployment-matrix.html"
+      ],
+      "contextK": 1000
+    },
+    {
       "id": "deepseek-v3-671b-moe",
       "name": "DeepSeek V3 671B (MoE)",
       "family": "DeepSeek",
@@ -1461,6 +1517,56 @@
       "contextK": 262
     },
     {
+      "id": "mimo-v2-5-310b-a15b-moe",
+      "name": "Xiaomi MiMo V2.5 310B-A15B (MoE)",
+      "family": "MiMo",
+      "params": 310,
+      "activeParams": 15,
+      "type": "moe",
+      "modality": "text",
+      "sizeQ4": 170,
+      "vramMinQ4": 190,
+      "vramComfortQ4": 220,
+      "ratings": {
+        "chat": 4,
+        "coding": 4,
+        "agents": 4,
+        "reasoning": 4,
+        "longContext": 5,
+        "vision": 4
+      },
+      "tags": [
+        "moe",
+        "coding",
+        "agents",
+        "vision",
+        "long-context"
+      ],
+      "blurb": "May 2026 release. 310 B / 15 B active omnimodal MoE — mid-tier sibling of MiMo V2.5-Pro. 256 experts top-8, 1 M context, MIT. Same Xiaomi architecture family that captured 21% of OpenRouter traffic in May.",
+      "license": "MIT",
+      "huggingface": "https://huggingface.co/XiaomiMiMo/MiMo-V2.5",
+      "benchmarks": {
+        "hle": null,
+        "tb2": null,
+        "swebench_pro": null,
+        "swebench_ver": null,
+        "aider": null,
+        "livecodebench": null,
+        "gpqa": null,
+        "mmlu_pro": null,
+        "aime": null
+      },
+      "vibes": {
+        "coding": "Mid-tier sibling to MiMo V2.5-Pro. Fits 256 GB clusters at Q4; positioned as the open-weights alternative to GPT-OSS-120B for coding workflows.",
+        "agentDriver": "Same MiMo architecture as V2.5-Pro; slightly weaker on long-horizon agent benchmarks but runs in 2× Spark / Halo cluster memory."
+      },
+      "sources": [
+        "https://huggingface.co/XiaomiMiMo/MiMo-V2.5",
+        "https://openrouter.ai/xiaomi/mimo-v2.5"
+      ],
+      "contextK": 1000
+    },
+    {
       "id": "gemma-4-31b",
       "name": "Gemma 4 31B (dense)",
       "family": "Gemma",
@@ -1718,6 +1824,56 @@
       "contextK": 128
     },
     {
+      "id": "stepfun-step-3-5-flash-197b-a11b-moe",
+      "name": "StepFun Step 3.5 Flash 197B-A11B (MoE)",
+      "family": "StepFun",
+      "params": 197,
+      "activeParams": 11,
+      "type": "moe",
+      "modality": "text",
+      "sizeQ4": 108,
+      "vramMinQ4": 120,
+      "vramComfortQ4": 140,
+      "ratings": {
+        "chat": 4,
+        "coding": 4,
+        "agents": 4,
+        "reasoning": 4,
+        "longContext": 4,
+        "vision": 0
+      },
+      "tags": [
+        "moe",
+        "coding",
+        "agents",
+        "openrouter-top"
+      ],
+      "blurb": "May 2026 release. 197 B / 11 B active MoE — #5 on OpenRouter weekly tokens (~2.73 T) per MACGPU May 2026 analysis. Apache 2.0, 256 K context, MTP-3 speculative-decoding head, 288 experts top-8 + 1 shared. Free tier on OpenRouter driving wide adoption.",
+      "license": "Apache 2.0",
+      "huggingface": "https://huggingface.co/stepfun-ai/Step-3.5-Flash",
+      "benchmarks": {
+        "hle": null,
+        "tb2": null,
+        "swebench_pro": null,
+        "swebench_ver": null,
+        "aider": null,
+        "livecodebench": null,
+        "gpqa": null,
+        "mmlu_pro": null,
+        "aime": null
+      },
+      "vibes": {
+        "coding": "Currently free on OpenRouter driving wide adoption. SWE-Bench Pro 56.3 puts it in roughly the same coding tier as DeepSeek V4 Flash at half the active-param count.",
+        "agentDriver": "Apache-licensed alternative to MiMo V2.5 for org-licensing-sensitive teams. MTP-3 head means materially faster decode under llama.cpp/vLLM with MTP support."
+      },
+      "benchmarkNotes": "All benchmark cells null pending primary-leaderboard coverage. MACGPU OpenRouter analysis cites 56.3 SWE-Pro but primary leaderboard cite required before landing the value.",
+      "sources": [
+        "https://huggingface.co/stepfun-ai/Step-3.5-Flash",
+        "https://macgpu.com/en/blog/2026-0525-openrouter-rankings-may-mimo-qwen-claude-mac-deployment-matrix.html"
+      ],
+      "contextK": 256
+    },
+    {
       "id": "mistral-small-4-119b-moe",
       "name": "Mistral Small 4 119B-A6B (MoE)",
       "family": "Mistral",
@@ -1863,6 +2019,58 @@
       "sources": [
         "https://huggingface.co/nvidia/NVIDIA-Nemotron-3-Super-120B-A12B-BF16",
         "https://nvidianews.nvidia.com/news/nvidia-debuts-nemotron-3-family-of-open-models"
+      ],
+      "contextK": 1000
+    },
+    {
+      "id": "nemotron-3-ultra-550b-a55b-moe",
+      "name": "NVIDIA Nemotron 3 Ultra 550B-A55B (MoE)",
+      "family": "Nemotron",
+      "params": 550,
+      "activeParams": 55,
+      "type": "moe",
+      "modality": "text",
+      "sizeQ4": 300,
+      "vramMinQ4": 340,
+      "vramComfortQ4": 400,
+      "ratings": {
+        "chat": 4,
+        "coding": 4,
+        "agents": 4,
+        "reasoning": 5,
+        "longContext": 5,
+        "vision": 0
+      },
+      "tags": [
+        "moe",
+        "hybrid-mamba",
+        "long-context",
+        "reasoning",
+        "frontier"
+      ],
+      "blurb": "Jun 2026. NVIDIA's frontier hybrid Mamba-2 + LatentMoE + attention with MTP — 55 B active / 550 B total, native 1 M ctx (RULER@1M 94.7). SWE-V 71.9, LCB v6 89.0, GPQA 87.0, HLE 26.7. OpenMDW-1.1 (commercial OK).",
+      "license": "OpenMDW-1.1",
+      "huggingface": "https://huggingface.co/nvidia/NVIDIA-Nemotron-3-Ultra-550B-A55B-BF16",
+      "benchmarks": {
+        "hle": 26.7,
+        "tb2": null,
+        "swebench_pro": null,
+        "swebench_ver": 71.9,
+        "aider": null,
+        "livecodebench": 89.0,
+        "gpqa": 87.0,
+        "mmlu_pro": 86.8,
+        "aime": null
+      },
+      "vibes": {
+        "coding": "Day-0 vLLM + SGLang + TRT-LLM support with MTP-5 speculative decoding; LCB v6 89.0 sits alongside V4-Pro / Kimi K2.6. 8× H100/B200 minimum, so deployment is data-center class.",
+        "agentDriver": "SWE-V 71.9 is below the agents:5 cluster (V4-Pro / K2.6 at 80+) and TB2.0 isn't yet on the leaderboard; caps at agents:4 until tbench.ai picks it up."
+      },
+      "benchmarkNotes": "All numbers from the official NVIDIA HF model card (2026-06-04). LCB is v6 (NVIDIA's first family entry to publish v6 directly). AIME 2025 reported as IOI-style 570 — not a percentage — so the aime cell stays null to avoid mixing scales. TB2 / SWE-Pro / Aider not reported. RULER@1M 94.7, MMLU-ProX multilingual avg 83.0.",
+      "sources": [
+        "https://huggingface.co/nvidia/NVIDIA-Nemotron-3-Ultra-550B-A55B-BF16",
+        "https://artificialanalysis.ai/articles/nvidia-nemotron-3-ultra-launch-announced",
+        "https://openmdw.ai/license/1-1/"
       ],
       "contextK": 1000
     },
