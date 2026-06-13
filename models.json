@@ -1,8 +1,8 @@
 {
   "$schema": "https://json-schema.org/draft-07/schema#",
   "_description": "LLM model catalog with ratings and VRAM requirements. See README.md for schema.",
-  "_lastUpdated": "2026-06-06",
-  "_count": 58,
+  "_lastUpdated": "2026-06-13",
+  "_count": 60,
   "models": [
     {
       "id": "qwen3-8b",
@@ -282,10 +282,11 @@
     },
     {
       "id": "qwen3-coder-30b",
-      "name": "Qwen 3 Coder 30B",
+      "name": "Qwen 3 Coder 30B-A3B (MoE)",
       "family": "Qwen",
       "params": 30,
-      "type": "dense",
+      "activeParams": 3,
+      "type": "moe",
       "modality": "text",
       "sizeQ4": 18,
       "vramMinQ4": 22,
@@ -299,10 +300,11 @@
         "vision": 0
       },
       "tags": [
+        "moe",
         "coding",
         "legacy"
       ],
-      "blurb": "Solid local coder for autocomplete + small-PR work. Now bracketed by Qwen 3.6-27B dense (better quality) and Qwen 3.6-35B-A3B MoE (better speed) — kept for users still on it.",
+      "blurb": "Solid local coder for autocomplete + small-PR work. MoE design (30 B total / 3 B active) is what gave it the speed-of-3B-dense feel — corrected from legacy 'dense' classification. Now bracketed by Qwen 3.6-27B dense (better quality) and Qwen 3.6-35B-A3B MoE (better speed) — kept for users still on it.",
       "license": "Apache 2.0",
       "huggingface": "https://huggingface.co/Qwen/Qwen3-Coder-30B-A3B-Instruct",
       "benchmarks": {
@@ -458,23 +460,47 @@
       "license": "Gemma",
       "huggingface": "https://huggingface.co/models?search=gemma-4-26b",
       "benchmarks": {
-        "hle": 17.2,
-        "tb2": null,
-        "swebench_pro": null,
-        "swebench_ver": null,
+        "hle": 8.7,
+        "tb2": 34.2,
+        "swebench_pro": 13.8,
+        "swebench_ver": 17.4,
         "aider": null,
         "livecodebench": 77.1,
         "gpqa": 82.3,
         "mmlu_pro": 82.6,
         "aime": 88.3
       },
+      "benchmarkProvenance": {
+        "hle": {
+          "source": "vendor",
+          "url": "https://ai.google.dev/gemma/docs/core/model_card_4",
+          "fetchedOn": "2026-06-10"
+        },
+        "tb2": {
+          "source": "vendor",
+          "url": "https://huggingface.co/Qwen/Qwen3.6-35B-A3B",
+          "fetchedOn": "2026-06-10"
+        },
+        "swebench_pro": {
+          "source": "vendor",
+          "url": "https://huggingface.co/Qwen/Qwen3.6-35B-A3B",
+          "fetchedOn": "2026-06-10"
+        },
+        "swebench_ver": {
+          "source": "vendor",
+          "url": "https://huggingface.co/Qwen/Qwen3.6-35B-A3B",
+          "fetchedOn": "2026-06-10"
+        }
+      },
       "vibes": {
         "coding": "Fast, small, decent — but 4B active caps it. r/LocalLLaMA threads use it for autocomplete + lightweight chat, hand off to bigger models for real PRs.",
         "agentDriver": "Stalls past ~5 tool hops in Cline. Google's instruction tuning doesn't fully cover agent loops at this size."
       },
-      "benchmarkNotes": "Gemma 4 official (Apr 2 2026): 26B-A4B variant. AIME is AIME 2026 88.3, GPQA Diamond 82.3, MMLU-Pro 82.6. HLE 17.2 per benchlm. SWE/TB2 numbers not separately published for 26B-A4B (only for 31B-dense).",
+      "benchmarkNotes": "Gemma 4 official model card (Apr 2 2026): AIME is AIME 2026 no-tools 88.3, GPQA Diamond 82.3, MMLU-Pro 82.6, LCB v6 77.1. HLE no-tools 8.7 (17.2 is the with-search figure — previously listed here by mistake). Also published but outside our benchmark set: τ2-bench 68.2 (3-domain avg; 85.5 retail-only), MMMLU 86.3, MMMU Pro 73.8, MATH-Vision 82.4, BigBench Extra Hard 64.8, MRCR v2 44.1, OmniDocBench 0.149, Codeforces ELO 1718, Arena text Elo 1441. SWE-V 17.4 / SWE-Pro 13.8 / TB2 34.2 are NOT Google-published — Qwen-team measurements from the Qwen3.6-35B-A3B card comparison table (SWE via Qwen's internal agent scaffold, bash+file-edit tools, 200K ctx; TB2 via Harbor/Terminus-2, 3h timeout). Harness-sensitive: treat as one lab's apples-to-apples run, not an official figure. The collapse vs 31B (SWE-V 52.0) matches the 4B-active agent ceiling. Aider not published anywhere.",
       "sources": [
-        "https://huggingface.co/blog/gemma4"
+        "https://huggingface.co/blog/gemma4",
+        "https://ai.google.dev/gemma/docs/core/model_card_4",
+        "https://blog.google/innovation-and-ai/technology/developers-tools/gemma-4/"
       ],
       "contextK": 256
     },
@@ -1196,6 +1222,62 @@
       "contextK": 256
     },
     {
+      "id": "kimi-k2-7-code-1t-moe",
+      "name": "Kimi K2.7 Code 1T (MoE)",
+      "family": "Moonshot",
+      "params": 1000,
+      "activeParams": 32,
+      "type": "moe",
+      "modality": "text",
+      "sizeQ4": 540,
+      "vramMinQ4": 600,
+      "vramComfortQ4": 700,
+      "sizeQ2": 250,
+      "vramMinQ2": 280,
+      "ratings": {
+        "chat": 4,
+        "coding": 5,
+        "agents": 4,
+        "reasoning": 4,
+        "longContext": 5,
+        "vision": 0
+      },
+      "tags": [
+        "moe",
+        "frontier",
+        "huge",
+        "coding",
+        "agents"
+      ],
+      "aliases": [
+        "Kimi-K2.7-Code",
+        "Kimi K2.7"
+      ],
+      "blurb": "Jun 2026 release — code-specialized variant built on K2.6 with ~30% fewer thinking tokens for the same task. Same 1 T total / 32 B active MoE (384 experts top-8 + 1 shared), 256 K context, Modified MIT. Internal Moonshot benchmarks only (Kimi Code Bench v2 62.0, MCP Atlas 76.0, MCP Mark Verified 81.1) — standard SWE-Bench / TB2 cells stay null until third-party leaderboards land.",
+      "license": "Modified MIT",
+      "huggingface": "https://huggingface.co/moonshotai/Kimi-K2.7-Code",
+      "benchmarks": {
+        "hle": null,
+        "tb2": null,
+        "swebench_pro": null,
+        "swebench_ver": null,
+        "aider": null,
+        "livecodebench": null,
+        "gpqa": null,
+        "mmlu_pro": null,
+        "aime": null
+      },
+      "vibes": {
+        "coding": "Moonshot frames it as 'code-first K2.6 with shorter thinking chains' — claims ~30 % fewer thinking tokens for the same long-horizon coding task. Worth watching for r/LocalLLaMA Cline / Aider thread reactions once they land; vendor benchmarks only at launch.",
+        "agentDriver": "MCP Atlas 76.0 and MCP Mark Verified 81.1 are vendor-reported MCP-specific scores — agentic positioning, but no Terminal-Bench or SWE-Bench cross-check yet. Treat as 'promising, unverified outside Moonshot' until tbench.ai or benchlm.ai picks it up."
+      },
+      "benchmarkNotes": "Standard benchmark cells (HLE, TB2, SWE-Pro, SWE-Ver, LCB, GPQA, MMLU-Pro, AIME) all null — Moonshot's release page reports only internal Moonshot scores (Kimi Code Bench v2, Program Bench, MLS Bench Lite, Kimi Claw Bench, MCP Atlas, MCP Mark Verified). These do not have public leaderboard equivalents we cite. Cell-by-cell backfill expected once benchlm.ai / tbench.ai start tracking it.",
+      "sources": [
+        "https://huggingface.co/moonshotai/Kimi-K2.7-Code"
+      ],
+      "contextK": 256
+    },
+    {
       "id": "mimo-v2-5-pro-1t-moe",
       "name": "Xiaomi MiMo V2.5-Pro 1T-A42B (MoE)",
       "family": "MiMo",
@@ -1595,24 +1677,115 @@
       "huggingface": "https://huggingface.co/google/gemma-4-31B-it",
       "benchmarks": {
         "hle": 19.5,
-        "tb2": null,
-        "swebench_pro": null,
-        "swebench_ver": null,
+        "tb2": 42.9,
+        "swebench_pro": 35.7,
+        "swebench_ver": 52,
         "aider": null,
         "livecodebench": 80,
         "gpqa": 84.3,
         "mmlu_pro": 85.2,
         "aime": 89.2
       },
+      "benchmarkProvenance": {
+        "tb2": {
+          "source": "vendor",
+          "url": "https://huggingface.co/Qwen/Qwen3.6-35B-A3B",
+          "fetchedOn": "2026-06-10"
+        },
+        "swebench_pro": {
+          "source": "vendor",
+          "url": "https://huggingface.co/Qwen/Qwen3.6-35B-A3B",
+          "fetchedOn": "2026-06-10"
+        },
+        "swebench_ver": {
+          "source": "vendor",
+          "url": "https://huggingface.co/Qwen/Qwen3.6-35B-A3B",
+          "fetchedOn": "2026-06-10"
+        }
+      },
       "vibes": {
         "coding": "Strong sub-32B dense coder — handles refactors and algorithmic tasks in Continue, Cursor, Zed cleanly. Competitive with Qwen 3-32B but not a Devstral-class agent.",
         "agentDriver": "TAU2 76.9 (3-run avg) is decent for the size, but sub-200B caps it at agents:3 — usable in Cline / Roo Code for short loops, weak as an autonomous Open-Claude / Codex driver."
       },
-      "benchmarkNotes": "All numbers from the official Google HF model card: LCB v6 80.0, GPQA Diamond 84.3, MMLU-Pro 85.2, AIME 2026 no-tools 89.2, HLE no-tools 19.5 (HLE with search 26.5), TAU2 76.9, Codeforces ELO 2150, BigBench Extra Hard 74.4. SWE-Bench / Terminal-Bench / Aider not published by Google.",
+      "benchmarkNotes": "Core cells from the official Google model card: LCB v6 80.0, GPQA Diamond 84.3, MMLU-Pro 85.2, AIME 2026 no-tools 89.2, HLE no-tools 19.5 (HLE with search 26.5). Also published but outside our benchmark set: τ2-bench 76.9 (3-domain avg; 86.4 retail-only), MMMLU 88.4, MMMU Pro 76.9, MATH-Vision 85.6, MedXPertQA MM 61.3, MRCR v2 66.4, OmniDocBench 0.131, Codeforces ELO 2150, BigBench Extra Hard 74.4, Arena text Elo 1452. SWE-V 52.0 / SWE-Pro 35.7 / TB2 42.9 are NOT Google-published — Qwen-team measurements from the Qwen3.6-35B-A3B card comparison table (SWE via Qwen's internal agent scaffold, bash+file-edit tools, 200K ctx; TB2 via Harbor/Terminus-2, 3h timeout; same harness behind Qwen's own TB2 51.5, which runs ~2× above tbench.ai community numbers — apply the same skepticism here). Qwen's table also shows SWE-bench Multilingual 51.7 and Claw-Eval avg 48.5 for this model. Aider not published anywhere.",
       "sources": [
         "https://huggingface.co/google/gemma-4-31B-it",
         "https://huggingface.co/blog/gemma4",
+        "https://ai.google.dev/gemma/docs/core/model_card_4",
         "https://blog.google/innovation-and-ai/technology/developers-tools/gemma-4/"
+      ],
+      "contextK": 256
+    },
+    {
+      "id": "diffusiongemma-26b",
+      "name": "DiffusionGemma 26B-A4B",
+      "family": "Gemma",
+      "params": 26,
+      "activeParams": 4,
+      "type": "diffusion-moe",
+      "modality": "text",
+      "sizeQ4": 14,
+      "vramMinQ4": 18,
+      "vramComfortQ4": 22,
+      "ratings": {
+        "chat": 3,
+        "coding": 3,
+        "agents": 2,
+        "reasoning": 3,
+        "longContext": 3,
+        "vision": 3
+      },
+      "tags": [
+        "moe",
+        "diffusion",
+        "fast",
+        "vision"
+      ],
+      "blurb": "Jun 10 2026. Google's experimental text-diffusion Gemma — 25.2 B MoE (3.8 B active) that denoises 256-token blocks in parallel: 1,000+ tok/s on H100, 700+ on a 5090, and it runs on 18 GB cards quantized. Trades benchmark quality for ~4× generation speed vs Gemma 4 26B-A4B.",
+      "license": "Apache 2.0",
+      "huggingface": "https://huggingface.co/google/diffusiongemma-26B-A4B-it",
+      "benchmarks": {
+        "hle": null,
+        "tb2": null,
+        "swebench_pro": null,
+        "swebench_ver": null,
+        "aider": null,
+        "livecodebench": 69.1,
+        "gpqa": 73.2,
+        "mmlu_pro": 77.6,
+        "aime": 69.1
+      },
+      "benchmarkProvenance": {
+        "livecodebench": {
+          "source": "vendor",
+          "url": "https://huggingface.co/google/diffusiongemma-26B-A4B-it",
+          "fetchedOn": "2026-06-10"
+        },
+        "gpqa": {
+          "source": "vendor",
+          "url": "https://huggingface.co/google/diffusiongemma-26B-A4B-it",
+          "fetchedOn": "2026-06-10"
+        },
+        "mmlu_pro": {
+          "source": "vendor",
+          "url": "https://huggingface.co/google/diffusiongemma-26B-A4B-it",
+          "fetchedOn": "2026-06-10"
+        },
+        "aime": {
+          "source": "vendor",
+          "url": "https://huggingface.co/google/diffusiongemma-26B-A4B-it",
+          "fetchedOn": "2026-06-10"
+        }
+      },
+      "vibes": {
+        "coding": "Day-1 release (Jun 10 2026) — no community track record yet. vLLM ships native dLLM support at launch and Unsloth quants target llama.cpp; quality sits below Gemma 4 26B-A4B, so treat it as a fast-draft sidekick in Continue/Cline, not the primary coder.",
+        "agentDriver": "Untested as an agent driver. τ2-bench 56.2 (3-domain avg) trails Gemma 4 26B-A4B's 68.2 and diffusion tool-calling in agent harnesses is day-zero — not a Cline/Open-Claude driver yet."
+      },
+      "benchmarkNotes": "Google official (HF model card + launch blog, Jun 10 2026): MMLU-Pro 77.6, AIME 2026 no-tools 69.1, LCB v6 69.1, GPQA Diamond 73.2. Also published, outside our set: τ2-bench 56.2 (3-domain avg), MMMLU 81.5, MMMU Pro 54.3, MATH-Vision 70.5, MedXPertQA MM 49.0, BigBench Extra Hard 47.6, MRCR v2 32.0. Underperforms Gemma 4 26B-A4B on every quality benchmark by design — the trade is parallel block decoding (~4× faster on GPUs). HLE / SWE-Bench / Terminal-Bench / Aider not published.",
+      "sources": [
+        "https://huggingface.co/google/diffusiongemma-26B-A4B-it",
+        "https://blog.google/innovation-and-ai/technology/developers-tools/diffusion-gemma-faster-text-generation/",
+        "https://vllm-project.github.io/2026/06/10/diffusion-gemma"
       ],
       "contextK": 256
     },
@@ -2057,8 +2230,8 @@
         "swebench_pro": null,
         "swebench_ver": 71.9,
         "aider": null,
-        "livecodebench": 89.0,
-        "gpqa": 87.0,
+        "livecodebench": 89,
+        "gpqa": 87,
         "mmlu_pro": 86.8,
         "aime": null
       },
