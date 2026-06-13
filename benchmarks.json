@@ -1,14 +1,14 @@
 {
   "$schema": "https://json-schema.org/draft-07/schema#",
   "_description": "Long-format benchmark rows extracted from builds.json plus citations. tps = decode tokens-per-second at Q4_K_M, short context, single stream. pp = prompt-processing tokens-per-second (llama-bench pp512 prefill, Q4_K_M). ttft100k = seconds to first token with a 100 000-token input prompt at Q4_K_M. imageSec = seconds per image. videoSec = seconds per 5-second clip.",
-  "_lastUpdated": "2026-06-06",
+  "_lastUpdated": "2026-06-13",
   "_methodology": "tps values are sourced from llama.cpp / vLLM single-stream Q4_K_M generation benchmarks. pp values are sourced from llama-bench pp512 runs and equivalent vLLM / sglang prefill benchmarks. ttft100k is measured (or estimated, see sources) with a 100 K-token prompt at Q4_K_M; null when the build cannot fit model weights plus a 100 K KV cache. See sources[] for citations.",
   "_counts": {
-    "tps": 476,
-    "pp": 369,
-    "ttft100k": 369,
-    "image": 133,
-    "video": 121,
+    "tps": 482,
+    "pp": 374,
+    "ttft100k": 374,
+    "image": 135,
+    "video": 123,
     "sources": 132
   },
   "tps": [
@@ -525,12 +525,12 @@
     {
       "buildId": "mac-studio-m3-ultra-512",
       "modelSize": "1t_moe",
-      "tps": 8
+      "tps": 6
     },
     {
       "buildId": "mac-studio-m3-ultra-512",
       "modelSize": "671b_moe",
-      "tps": 6
+      "tps": 8
     },
     {
       "buildId": "mac-studio-m3-ultra-512-x2",
@@ -1448,6 +1448,36 @@
       "tps": null
     },
     {
+      "buildId": "rtx-spark-128",
+      "modelSize": "8b",
+      "tps": null
+    },
+    {
+      "buildId": "rtx-spark-128",
+      "modelSize": "14b",
+      "tps": null
+    },
+    {
+      "buildId": "rtx-spark-128",
+      "modelSize": "30b",
+      "tps": null
+    },
+    {
+      "buildId": "rtx-spark-128",
+      "modelSize": "70b",
+      "tps": null
+    },
+    {
+      "buildId": "rtx-spark-128",
+      "modelSize": "120b_moe",
+      "tps": null
+    },
+    {
+      "buildId": "rtx-spark-128",
+      "modelSize": "235b_moe",
+      "tps": null
+    },
+    {
       "buildId": "h100-80",
       "modelSize": "8b",
       "tps": 240
@@ -1805,7 +1835,7 @@
     {
       "buildId": "rtx-pro-6000-blackwell-x2",
       "modelSize": "120b_moe",
-      "tps": 280
+      "tps": null
     },
     {
       "buildId": "rtx-pro-6000-blackwell-x2",
@@ -1835,7 +1865,7 @@
     {
       "buildId": "rtx-pro-6000-blackwell-x4",
       "modelSize": "120b_moe",
-      "tps": 400
+      "tps": null
     },
     {
       "buildId": "rtx-pro-6000-blackwell-x4",
@@ -1870,7 +1900,7 @@
     {
       "buildId": "rtx-pro-6000-blackwell-x8",
       "modelSize": "120b_moe",
-      "tps": 540
+      "tps": null
     },
     {
       "buildId": "rtx-pro-6000-blackwell-x8",
@@ -1910,7 +1940,7 @@
     {
       "buildId": "rtx-pro-6000-blackwell-x12",
       "modelSize": "120b_moe",
-      "tps": 600
+      "tps": null
     },
     {
       "buildId": "rtx-pro-6000-blackwell-x12",
@@ -2030,7 +2060,7 @@
     {
       "buildId": "amd-r9700-32",
       "modelSize": "30b",
-      "tps": 75
+      "tps": null
     },
     {
       "buildId": "amd-r9700-32",
@@ -2125,7 +2155,7 @@
     {
       "buildId": "amd-mi300x-192",
       "modelSize": "70b",
-      "tps": 100
+      "tps": null
     },
     {
       "buildId": "amd-mi300x-192",
@@ -2155,7 +2185,7 @@
     {
       "buildId": "amd-mi325x-256",
       "modelSize": "70b",
-      "tps": 130
+      "tps": null
     },
     {
       "buildId": "amd-mi325x-256",
@@ -2190,7 +2220,7 @@
     {
       "buildId": "amd-mi355x-288",
       "modelSize": "70b",
-      "tps": 160
+      "tps": null
     },
     {
       "buildId": "amd-mi355x-288",
@@ -2225,7 +2255,7 @@
     {
       "buildId": "amd-mi50-32",
       "modelSize": "30b",
-      "tps": 66
+      "tps": null
     },
     {
       "buildId": "amd-mi50-32",
@@ -3413,6 +3443,31 @@
       "buildId": "lenovo-thinkstation-pgx",
       "modelSize": "120b_moe",
       "ppTokensPerSec": 1150
+    },
+    {
+      "buildId": "rtx-spark-128",
+      "modelSize": "8b",
+      "ppTokensPerSec": null
+    },
+    {
+      "buildId": "rtx-spark-128",
+      "modelSize": "14b",
+      "ppTokensPerSec": null
+    },
+    {
+      "buildId": "rtx-spark-128",
+      "modelSize": "30b",
+      "ppTokensPerSec": null
+    },
+    {
+      "buildId": "rtx-spark-128",
+      "modelSize": "70b",
+      "ppTokensPerSec": null
+    },
+    {
+      "buildId": "rtx-spark-128",
+      "modelSize": "120b_moe",
+      "ppTokensPerSec": null
     },
     {
       "buildId": "h100-80",
@@ -5262,6 +5317,31 @@
       "ttft100kSeconds": 87
     },
     {
+      "buildId": "rtx-spark-128",
+      "modelSize": "8b",
+      "ttft100kSeconds": null
+    },
+    {
+      "buildId": "rtx-spark-128",
+      "modelSize": "14b",
+      "ttft100kSeconds": null
+    },
+    {
+      "buildId": "rtx-spark-128",
+      "modelSize": "30b",
+      "ttft100kSeconds": null
+    },
+    {
+      "buildId": "rtx-spark-128",
+      "modelSize": "70b",
+      "ttft100kSeconds": null
+    },
+    {
+      "buildId": "rtx-spark-128",
+      "modelSize": "120b_moe",
+      "ttft100kSeconds": null
+    },
+    {
       "buildId": "h100-80",
       "modelSize": "8b",
       "ttft100kSeconds": 14
@@ -6469,6 +6549,16 @@
       "secondsPerImage": 25
     },
     {
+      "buildId": "rtx-spark-128",
+      "imageModel": "sdxl",
+      "secondsPerImage": null
+    },
+    {
+      "buildId": "rtx-spark-128",
+      "imageModel": "flux",
+      "secondsPerImage": null
+    },
+    {
       "buildId": "h100-80",
       "imageModel": "sdxl",
       "secondsPerImage": 1.5
@@ -7029,6 +7119,16 @@
       "buildId": "lenovo-thinkstation-pgx",
       "videoModel": "wan22",
       "secondsPer5sClip": 600
+    },
+    {
+      "buildId": "rtx-spark-128",
+      "videoModel": "ltx",
+      "secondsPer5sClip": null
+    },
+    {
+      "buildId": "rtx-spark-128",
+      "videoModel": "wan22",
+      "secondsPer5sClip": null
     },
     {
       "buildId": "h100-80",

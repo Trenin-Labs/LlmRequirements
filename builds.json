@@ -1,8 +1,8 @@
 {
   "$schema": "https://json-schema.org/draft-07/schema#",
   "_description": "Hardware build catalog with throughput (tps), prompt-processing (pp), TTFT @ 100 K (ttft100k), image, and video benchmarks. Each build also carries editorial fields used by the /compare page: softwareStack (short label), softwareMaturity (0-5), softwareNote, extensibility (0-5), and extensibilityNote. Pricing is in priceUSD as a US MSRP fallback only — see prices/ for regional snapshots.",
-  "_lastUpdated": "2026-06-06",
-  "_count": 75,
+  "_lastUpdated": "2026-06-13",
+  "_count": 76,
   "builds": [
     {
       "id": "your-laptop-8gb",
@@ -52,7 +52,7 @@
       "extensibilityNote": "It's your laptop — RAM upgrade is the easy lever. A used eGPU box can unlock real speed.",
       "tflopsFP16": 0.5,
       "vllmSupport": "experimental",
-      "priceVerifiedOn": "2026-05-23",
+      "priceVerifiedOn": "2026-06-12",
       "tflopsFP8": null,
       "topsINT8": null
     },
@@ -105,7 +105,7 @@
       "extensibilityNote": "RAM and SSD typically socketed; an eGPU enclosure or USB-4 GPU dock is the real upgrade path.",
       "tflopsFP16": 0.7,
       "vllmSupport": "experimental",
-      "priceVerifiedOn": "2026-05-23",
+      "priceVerifiedOn": "2026-06-12",
       "tflopsFP8": null,
       "topsINT8": null
     },
@@ -158,7 +158,7 @@
       "extensibilityNote": "Tower form factor — add a 3060 12 GB and you skip to a real GPU build overnight.",
       "tflopsFP16": 0.9,
       "vllmSupport": "experimental",
-      "priceVerifiedOn": "2026-05-23",
+      "priceVerifiedOn": "2026-06-12",
       "tflopsFP8": null,
       "topsINT8": null
     },
@@ -214,7 +214,7 @@
       "extensibilityNote": "Sealed individually, but Thunderbolt-5 MLX clusters work — two Mac Minis act as a 32 GB pool over TB5. RAM/SSD are locked at order time.",
       "tflopsFP16": 4,
       "vllmSupport": "community",
-      "priceVerifiedOn": "2026-06-03",
+      "priceVerifiedOn": "2026-06-12",
       "tflopsFP8": null,
       "topsINT8": 38
     },
@@ -276,7 +276,7 @@
       "tflopsFP16": 4,
       "vllmSupport": "community",
       "priceNote": "Discontinued by Apple May 2026 (MacBook Air M5 is the current SKU in every regional configurator). Still available new on Amazon in EU/UK/JP (2025 model-year stock) and refurbished via Apple Refurb. priceUSD held as the historical anchor.",
-      "priceVerifiedOn": "2026-05-27",
+      "priceVerifiedOn": "2026-06-12",
       "tflopsFP8": null,
       "topsINT8": 38
     },
@@ -338,7 +338,7 @@
       "extensibilityNote": "Sealed individually, but TB5 MLX clusters scale to 48-96 GB on a stack of these. RAM / SSD locked at order time.",
       "tflopsFP16": 4,
       "vllmSupport": "community",
-      "priceVerifiedOn": "2026-06-03",
+      "priceVerifiedOn": "2026-06-12",
       "tflopsFP8": null,
       "topsINT8": 38
     },
@@ -407,7 +407,7 @@
       "extensibilityNote": "Sealed laptop. TB5 cluster works in a pinch but battery + chassis make this a single-unit story for most users.",
       "tflopsFP16": 10,
       "vllmSupport": "community",
-      "priceVerifiedOn": "2026-05-23",
+      "priceVerifiedOn": "2026-06-12",
       "tflopsFP8": null,
       "topsINT8": 38
     },
@@ -481,7 +481,7 @@
       "extensibilityNote": "Sealed laptop. Same TB5 cluster caveat as the M4 Pro.",
       "tflopsFP16": 17,
       "vllmSupport": "community",
-      "priceVerifiedOn": "2026-05-23",
+      "priceVerifiedOn": "2026-06-12",
       "tflopsFP8": null,
       "topsINT8": 38
     },
@@ -544,7 +544,7 @@
       "tflopsFP16": 5,
       "vllmSupport": "community",
       "priceNote": "Launched 2026-03-11 at $1,099. Base config: 10-core CPU / 8-core GPU / 16 GB / 512 GB SSD on the 13.6\" model. The 10-core GPU upsell is +$100. Pricing per apple.com newsroom (US/UK/DE/FR/IT/ES/NL/JP/AU/CA confirmed).",
-      "priceVerifiedOn": "2026-05-27",
+      "priceVerifiedOn": "2026-06-12",
       "tflopsFP8": null,
       "topsINT8": 38
     },
@@ -612,7 +612,7 @@
       "tflopsFP16": 13,
       "vllmSupport": "community",
       "priceNote": "14\" M5 Pro 18-core CPU / 20-core GPU / 48 GB / 1 TB preset — launched 2026-03-11. Apple's configurator base 14\" M5 Pro at 24 GB is $2,799 with the 18C/20C chip upgrade; +$400 memory upgrade to 48 GB → $3,199 US. Regional regionPrices reflect the +memory upgrade over Apple's base 14\" preset.",
-      "priceVerifiedOn": "2026-06-03",
+      "priceVerifiedOn": "2026-06-12",
       "tflopsFP8": null,
       "topsINT8": 38
     },
@@ -692,7 +692,7 @@
       "tflopsFP16": 22,
       "vllmSupport": "community",
       "priceNote": "14\" M5 Max 18-core CPU / 40-core GPU / 64 GB / 2 TB preset — launched 2026-03-11 at $4,099 US. Regional prices reflect the +memory + 32→40 GPU upgrade over Apple's base 36 GB Max preset.",
-      "priceVerifiedOn": "2026-05-27",
+      "priceVerifiedOn": "2026-06-12",
       "tflopsFP8": null,
       "topsINT8": 38
     },
@@ -774,7 +774,7 @@
       "tflopsFP16": 22,
       "vllmSupport": "community",
       "priceNote": "14\" M5 Max 18-core CPU / 40-core GPU / 128 GB / 2 TB CTO preset — launched 2026-03-11. US $5,099 and UK £5,249 confirmed via apple.com product-listing snippets (\"14-inch MacBook Pro laptop in Space Black with the M5 Max chip, 128GB memory and 2TB storage. US$5,099 / £5,249\"). 16\" same config is $5,399 US. EU/JP/AU/CA derived from Apple's documented memory-upgrade ratios; EU-retailer markups bracket €5,949-6,304 (Amac, Bigshopper), with Mac voor minder refurbished at €5,949 — apple-direct EU likely within €100 of the stored €5,949.",
-      "priceVerifiedOn": "2026-06-03",
+      "priceVerifiedOn": "2026-06-12",
       "tflopsFP8": null,
       "topsINT8": 38
     },
@@ -850,7 +850,7 @@
       "extensibilityNote": "Sealed individually, but two Mac Studios over Thunderbolt 5 MLX hit a 224 GB pool with ~64 GB/s interconnect — a real cluster path, not just a hack.",
       "tflopsFP16": 17,
       "vllmSupport": "community",
-      "priceVerifiedOn": "2026-05-23",
+      "priceVerifiedOn": "2026-06-12",
       "tflopsFP8": null,
       "topsINT8": 38
     },
@@ -919,7 +919,7 @@
       "tflopsFP16": 17,
       "vllmSupport": "community",
       "priceNote": "Current Mac Studio entry point on apple.com configurator (M4 Max chip, 14-core CPU / 32-core GPU, 36 GB unified, 512 GB SSD). $1,999 US starting per Apple newsroom. Successor entry for the discontinued 128 GB tier — the chip is identical, the RAM tier is what changed.",
-      "priceVerifiedOn": "2026-06-03",
+      "priceVerifiedOn": "2026-06-12",
       "tflopsFP8": null,
       "topsINT8": 38
     },
@@ -1000,7 +1000,7 @@
       "tflopsFP16": 36,
       "vllmSupport": "community",
       "priceNote": "Current Apple-direct M3 Ultra option — apple.com configurator shows 28-core CPU / 60-core GPU / 96 GB unified / 1 TB SSD at $3,999 US starting per Apple newsroom. Successor entry for the discontinued 256 / 512 GB tiers — same chip, less RAM. Apple has not signalled an M3 Ultra restock above 96 GB; M5 Ultra Mac Studio expected Oct 2026 (Macworld).",
-      "priceVerifiedOn": "2026-06-03",
+      "priceVerifiedOn": "2026-06-12",
       "tflopsFP8": null,
       "topsINT8": 36
     },
@@ -1073,7 +1073,7 @@
       "extensibilityNote": "Sealed individually, but TB5 MLX cluster scales beautifully — two of these run DeepSeek 671B Q4 between them. The cluster, not the box, is the upgrade.",
       "tflopsFP16": 36,
       "vllmSupport": "community",
-      "priceVerifiedOn": "2026-05-23",
+      "priceVerifiedOn": "2026-06-12",
       "tflopsFP8": null,
       "topsINT8": 36
     },
@@ -1096,8 +1096,8 @@
         "70b": 18,
         "120b_moe": 55,
         "235b_moe": 22,
-        "1t_moe": 8,
-        "671b_moe": 6
+        "1t_moe": 6,
+        "671b_moe": 8
       },
       "imageSec": {
         "sdxl": 3,
@@ -1151,7 +1151,7 @@
       "extensibilityNote": "Sealed individually but TB5 cluster works. The 1 TB unified pool from a pair runs every open-weights model in flight. The 512 GB SKU itself is discontinued — used / refurbished only.",
       "tflopsFP16": 36,
       "vllmSupport": "community",
-      "priceVerifiedOn": "2026-05-23",
+      "priceVerifiedOn": "2026-06-12",
       "tflopsFP8": null,
       "topsINT8": 36
     },
@@ -1237,7 +1237,7 @@
           "title": "Mac Studio CLUSTER vs M3 Ultra"
         }
       ],
-      "priceVerifiedOn": "2026-05-23",
+      "priceVerifiedOn": "2026-06-12",
       "tflopsFP8": null,
       "topsINT8": 72
     },
@@ -1298,7 +1298,7 @@
       "extensibilityNote": "Standard PCIe slot — swap to 3090 / 4090 / 5090 whenever you outgrow it.",
       "tflopsFP16": 51,
       "vllmSupport": "production",
-      "priceVerifiedOn": "2026-05-23",
+      "priceVerifiedOn": "2026-06-12",
       "tflopsFP8": null,
       "topsINT8": 102
     },
@@ -1368,7 +1368,7 @@
       "extensibilityNote": "Standard PCIe — pair it with a second card for 48 GB. Used market is huge.",
       "tflopsFP16": 142,
       "vllmSupport": "production",
-      "priceVerifiedOn": "2026-05-23",
+      "priceVerifiedOn": "2026-06-12",
       "tflopsFP8": null,
       "topsINT8": 285
     },
@@ -1442,7 +1442,7 @@
       "extensibilityNote": "Two slots filled; a 1500 W PSU and good airflow leave headroom for storage + NIC upgrades.",
       "tflopsFP16": 284,
       "vllmSupport": "production",
-      "priceVerifiedOn": "2026-05-23",
+      "priceVerifiedOn": "2026-06-12",
       "tflopsFP8": null,
       "topsINT8": 570
     },
@@ -1513,7 +1513,7 @@
       "extensibilityNote": "All slots filled — further GPU adds need a riser / mining frame. PSU is the binding constraint.",
       "tflopsFP16": 568,
       "vllmSupport": "production",
-      "priceVerifiedOn": "2026-05-23",
+      "priceVerifiedOn": "2026-06-12",
       "tflopsFP8": null,
       "topsINT8": 1140
     },
@@ -1582,7 +1582,7 @@
       "extensibilityNote": "Standard tower build — straightforward to dual-card if the case + PSU allow.",
       "tflopsFP16": 330,
       "vllmSupport": "production",
-      "priceVerifiedOn": "2026-06-03",
+      "priceVerifiedOn": "2026-06-12",
       "tflopsFP8": 661,
       "topsINT8": null
     },
@@ -1657,7 +1657,7 @@
       "extensibilityNote": "Big card but standard ATX — pair with second card or move to a workstation chassis later.",
       "tflopsFP16": 419,
       "vllmSupport": "production",
-      "priceVerifiedOn": "2026-06-03",
+      "priceVerifiedOn": "2026-06-12",
       "tflopsFP8": 838,
       "topsINT8": null
     },
@@ -1731,7 +1731,7 @@
       "extensibilityNote": "Two 600 W cards drives the build to ATX-EVO + 1600 W PSU territory; further expansion needs a workstation chassis.",
       "tflopsFP16": 838,
       "vllmSupport": "production",
-      "priceVerifiedOn": "2026-06-03",
+      "priceVerifiedOn": "2026-06-12",
       "tflopsFP8": 1676,
       "topsINT8": null
     },
@@ -1790,7 +1790,7 @@
       "extensibilityNote": "Generic PCIe — needs blower fan adapter or shroud. Pair freely with more P40s.",
       "tflopsFP16": 11,
       "vllmSupport": "experimental",
-      "priceVerifiedOn": "2026-05-23",
+      "priceVerifiedOn": "2026-06-12",
       "tflopsFP8": null,
       "topsINT8": 47,
       "reviews": [
@@ -1864,7 +1864,7 @@
       "extensibilityNote": "Four cards stretch a single-PSU tower; a 4U server chassis or mining-frame is cleaner.",
       "tflopsFP16": 44,
       "vllmSupport": "experimental",
-      "priceVerifiedOn": "2026-05-23",
+      "priceVerifiedOn": "2026-06-12",
       "tflopsFP8": null,
       "topsINT8": 188
     },
@@ -1920,7 +1920,7 @@
       "extensibilityNote": "Datacenter card needing blower cooling — otherwise standard PCIe.",
       "tflopsFP16": 21,
       "vllmSupport": "experimental",
-      "priceVerifiedOn": "2026-05-23",
+      "priceVerifiedOn": "2026-06-12",
       "tflopsFP8": null,
       "topsINT8": null,
       "reviews": [
@@ -1997,7 +1997,7 @@
       "extensibilityNote": "SXM2-to-PCIe carrier limits to 1-2 cards practically; cooling is the real headache.",
       "tflopsFP16": 125,
       "vllmSupport": "community",
-      "priceVerifiedOn": "2026-05-23",
+      "priceVerifiedOn": "2026-06-12",
       "tflopsFP8": null,
       "topsINT8": null
     },
@@ -2065,7 +2065,7 @@
       "tflopsFP16": 100,
       "vllmSupport": "experimental",
       "siliconFamily": "arc-pro-b70",
-      "priceVerifiedOn": "2026-06-03",
+      "priceVerifiedOn": "2026-06-12",
       "tflopsFP8": null,
       "topsINT8": 367
     },
@@ -2143,7 +2143,7 @@
       "tflopsFP16": 200,
       "vllmSupport": "experimental",
       "siliconFamily": "arc-pro-b70",
-      "priceVerifiedOn": "2026-05-23",
+      "priceVerifiedOn": "2026-06-12",
       "tflopsFP8": null,
       "topsINT8": 734
     },
@@ -2221,7 +2221,7 @@
         }
       ],
       "siliconFamily": "arc-pro-b70",
-      "priceVerifiedOn": "2026-05-23",
+      "priceVerifiedOn": "2026-06-12",
       "tflopsFP8": null,
       "topsINT8": 1468
     },
@@ -2302,7 +2302,7 @@
         }
       ],
       "siliconFamily": "arc-pro-b70",
-      "priceVerifiedOn": "2026-05-23",
+      "priceVerifiedOn": "2026-06-12",
       "tflopsFP8": null,
       "topsINT8": 2936
     },
@@ -2365,7 +2365,7 @@
       "extensibilityNote": "Standard PCIe consumer card; replace easily when Arc Pro or Celestial lands.",
       "tflopsFP16": 100,
       "vllmSupport": "experimental",
-      "priceVerifiedOn": "2026-05-23",
+      "priceVerifiedOn": "2026-06-12",
       "tflopsFP8": null,
       "topsINT8": 233
     },
@@ -2444,7 +2444,7 @@
       "extensibilityNote": "RAM is soldered LPDDR5X, but storage + NIC + chassis are normal mini-PC fare. Two-box Strix Halo clusters over 10 GbE run 235 B MoE and are a real upgrade path.",
       "tflopsFP16": 64,
       "vllmSupport": "experimental",
-      "priceVerifiedOn": "2026-05-27",
+      "priceVerifiedOn": "2026-06-12",
       "tflopsFP8": null,
       "topsINT8": 128
     },
@@ -2521,7 +2521,7 @@
       "extensibilityNote": "Two boxes daisy-chained over 10 GbE — add a third for 384 GB. Each box has soldered RAM, but the fabric scales linearly per added unit.",
       "tflopsFP16": 128,
       "vllmSupport": "experimental",
-      "priceVerifiedOn": "2026-05-27",
+      "priceVerifiedOn": "2026-06-12",
       "tflopsFP8": null,
       "topsINT8": 256
     },
@@ -2604,7 +2604,7 @@
       "extensibilityNote": "Standard mini-PC fabric — add a fifth / sixth box behind the same 10 GbE switch. Per-box memory is soldered; scale is purely additive.",
       "tflopsFP16": 256,
       "vllmSupport": "experimental",
-      "priceVerifiedOn": "2026-05-23",
+      "priceVerifiedOn": "2026-06-12",
       "tflopsFP8": null,
       "topsINT8": 512
     },
@@ -2690,7 +2690,7 @@
       "extensibilityNote": "Pure additive scaling; the only ceiling is your switch and PSU budget. Per-box memory is soldered.",
       "tflopsFP16": 512,
       "vllmSupport": "experimental",
-      "priceVerifiedOn": "2026-05-23",
+      "priceVerifiedOn": "2026-06-12",
       "tflopsFP8": null,
       "topsINT8": 1024
     },
@@ -2769,7 +2769,7 @@
       "extensibilityNote": "Sealed appliance, but officially clusterable over ConnectX-7 200 GbE — buy two to run 235B MoE end-to-end, four to host 671B. Cluster is the upgrade path.",
       "tflopsFP16": 250,
       "vllmSupport": "production",
-      "priceVerifiedOn": "2026-06-03",
+      "priceVerifiedOn": "2026-06-12",
       "tflopsFP8": 250,
       "topsINT8": null
     },
@@ -2847,7 +2847,7 @@
       "extensibilityNote": "Two-Spark cluster with ConnectX-7 interconnect — keep adding Sparks up to four. Each unit is sealed; the fabric is the lever.",
       "tflopsFP16": 500,
       "vllmSupport": "production",
-      "priceVerifiedOn": "2026-05-23",
+      "priceVerifiedOn": "2026-06-12",
       "tflopsFP8": 500,
       "topsINT8": null
     },
@@ -2927,7 +2927,7 @@
       "extensibilityNote": "Four-Spark cluster — the documented ceiling. Add a fifth and you're in DGX-Cloud territory (different vendor docs).",
       "tflopsFP16": 1000,
       "vllmSupport": "production",
-      "priceVerifiedOn": "2026-05-23",
+      "priceVerifiedOn": "2026-06-12",
       "tflopsFP8": 1000,
       "topsINT8": null
     },
@@ -3011,7 +3011,7 @@
       "extensibilityNote": "Eight-Spark is the documented practical ceiling; beyond this you're in DGX BasePOD / DGX Cloud territory with different reference designs.",
       "tflopsFP16": 2000,
       "vllmSupport": "production",
-      "priceVerifiedOn": "2026-05-23",
+      "priceVerifiedOn": "2026-06-12",
       "tflopsFP8": 2000,
       "topsINT8": null
     },
@@ -3089,7 +3089,7 @@
           "title": "I Thought DGX Spark Was Slower… Until I Changed ONE Thing (AZisk)"
         }
       ],
-      "priceVerifiedOn": "2026-06-03",
+      "priceVerifiedOn": "2026-06-12",
       "tflopsFP8": 250,
       "topsINT8": null
     },
@@ -3162,7 +3162,7 @@
       "extensibilityNote": "Same GB10 cluster story. ASUS / DGX / MSI / Dell / Lenovo all interop on the fabric.",
       "tflopsFP16": 250,
       "vllmSupport": "production",
-      "priceVerifiedOn": "2026-05-27",
+      "priceVerifiedOn": "2026-06-12",
       "tflopsFP8": 250,
       "topsINT8": null
     },
@@ -3239,7 +3239,7 @@
       "extensibilityNote": "Same GB10 cluster story; Dell adds enterprise warranty to the same fabric.",
       "tflopsFP16": 250,
       "vllmSupport": "production",
-      "priceVerifiedOn": "2026-06-03",
+      "priceVerifiedOn": "2026-06-12",
       "tflopsFP8": 250,
       "topsINT8": null
     },
@@ -3253,9 +3253,9 @@
       "memoryGB": 128,
       "usableMemoryGB": 119,
       "bandwidthGBs": 273,
-      "priceUSD": 4100,
+      "priceUSD": 5079,
       "rigOverheadUSD": 0,
-      "priceNote": "May 2026 — ~$4,100 (1 TB) at Lenovo US direct. EU street ~€4,700 incl. VAT (LetzPC.de, currently sold out — Bechtle DE lists the SKU as no-longer-available, so consumer-channel supply in EU is thin). Only GB10 partner with published measured power (idle 38-40 W, sustained 104-160 W, peak ~200 W per ServeTheHome). 2× QSFP ConnectX-7 + 10 GbE + Wi-Fi 7.",
+      "priceNote": "June 2026 — $5,079 (1 TB, part 30KL0002US) at Lenovo US direct, with 2 TB at $5,949 and 4 TB at $6,729 (Jun 2026 re-verify). Was listed at ~$4,100 in May; Lenovo's published configurator price has been the higher figure since at least the audit cycle. EU street ~€4,700 incl. VAT (LetzPC.de, currently sold out — Bechtle DE lists the SKU as no-longer-available, so consumer-channel supply in EU is thin). Only GB10 partner with published measured power (idle 38-40 W, sustained 104-160 W, peak ~200 W per ServeTheHome). 2× QSFP ConnectX-7 + 10 GbE + Wi-Fi 7.",
       "tps": {
         "8b": 90,
         "14b": 55,
@@ -3316,8 +3316,74 @@
       "extensibilityNote": "Same GB10 cluster story under the ThinkStation brand.",
       "tflopsFP16": 250,
       "vllmSupport": "production",
-      "priceVerifiedOn": "2026-05-23",
+      "priceVerifiedOn": "2026-06-12",
       "tflopsFP8": 250,
+      "topsINT8": null
+    },
+    {
+      "id": "rtx-spark-128",
+      "name": "NVIDIA RTX Spark (128 GB)",
+      "vendor": "NVIDIA",
+      "category": "nvidia-consumer",
+      "formFactor": "OEM laptops + small desktops",
+      "memoryGB": 128,
+      "usableMemoryGB": 119,
+      "bandwidthGBs": 300,
+      "priceUSD": null,
+      "comingSoon": true,
+      "priceNote": "June 2026 — announced June 1 at Computex 2026, no MSRP yet; OEM systems (Microsoft, Dell, HP, ASUS, Lenovo, MSI) expected later in 2026, with 30+ laptops and 10+ desktops in the first wave. Same core platform as the DGX Spark (GB10) minus its ConnectX-7 networking: 20-core Arm CPU (10× Cortex-X925 + 10× Cortex-A725, up to 4.1 GHz), Blackwell GPU with 6,144 shader cores, up to 128 GB unified memory @ 300 GB/s, Windows-first with the full RTX stack. Fill in priceUSD / tps / pp and drop the comingSoon flag once OEM listings and review benchmarks land. (tomshardware.com, storagereview.com, nvidianews.nvidia.com, 2026-06).",
+      "tps": {
+        "8b": null,
+        "14b": null,
+        "30b": null,
+        "70b": null,
+        "120b_moe": null,
+        "235b_moe": null
+      },
+      "imageSec": {
+        "sdxl": null,
+        "flux": null
+      },
+      "videoSec": {
+        "ltx": null,
+        "wan22": null
+      },
+      "idleW": null,
+      "activeW": null,
+      "pros": [
+        "DGX Spark-class capacity (128 GB unified) in Windows PCs you can buy off the shelf",
+        "300 GB/s unified memory — slightly ahead of the GB10 desktops' 273 GB/s on paper",
+        "30+ laptops and 10+ desktops announced (Microsoft, Dell, HP, ASUS, Lenovo, MSI)"
+      ],
+      "cons": [
+        "Not shipping yet — no pricing and no measured local-LLM numbers",
+        "No ConnectX-7, so the DGX Spark multi-box cluster path doesn't carry over",
+        "Windows-on-Arm llama.cpp / vLLM support is unproven on this stack"
+      ],
+      "tagline": "Coming soon — DGX Spark silicon in Windows laptops and desktops, announced at Computex 2026.",
+      "pp": {
+        "8b": null,
+        "14b": null,
+        "30b": null,
+        "70b": null,
+        "120b_moe": null
+      },
+      "ttft100k": {
+        "8b": null,
+        "14b": null,
+        "30b": null,
+        "70b": null,
+        "120b_moe": null
+      },
+      "softwareStack": "Windows on Arm + CUDA",
+      "softwareMaturity": 2,
+      "softwareNote": "Pre-release. NVIDIA pitches it as turning Windows into an 'agentic AI OS', but Windows-on-Arm CUDA tooling for llama.cpp / vLLM is unproven — the Linux-based DGX Spark (same GB10-class silicon) is the best proxy for what it will run.",
+      "extensibility": 1,
+      "extensibilityNote": "Sealed OEM laptops and small-form desktops; unlike the DGX Spark family there's no ConnectX-7 fabric, so no official multi-box cluster path.",
+      "tflopsFP16": null,
+      "vllmSupport": null,
+      "priceVerifiedOn": "2026-06-10",
+      "tflopsFP8": null,
       "topsINT8": null
     },
     {
@@ -3390,7 +3456,7 @@
       "extensibilityNote": "PCIe (or SXM5 in DGX) — slot-in upgrade, but cooling demands a real server chassis.",
       "tflopsFP16": 989,
       "vllmSupport": "production",
-      "priceVerifiedOn": "2026-05-23",
+      "priceVerifiedOn": "2026-06-12",
       "tflopsFP8": 1979,
       "topsINT8": null
     },
@@ -3468,7 +3534,7 @@
           "title": "Inside the World's Largest AI Supercluster — xAI Colossus"
         }
       ],
-      "priceVerifiedOn": "2026-05-23",
+      "priceVerifiedOn": "2026-06-12",
       "tflopsFP8": 15832,
       "topsINT8": null
     },
@@ -3544,7 +3610,7 @@
       "extensibilityNote": "PCIe (NVL) or SXM5 in HGX — slot-in upgrade from H100 in matching chassis.",
       "tflopsFP16": 989,
       "vllmSupport": "production",
-      "priceVerifiedOn": "2026-05-23",
+      "priceVerifiedOn": "2026-06-12",
       "tflopsFP8": 1979,
       "topsINT8": null
     },
@@ -3627,7 +3693,7 @@
           "title": "Inside the SUPER NVIDIA H200 Server From Supermicro (8U HGX H200)"
         }
       ],
-      "priceVerifiedOn": "2026-05-23",
+      "priceVerifiedOn": "2026-06-12",
       "tflopsFP8": 15832,
       "topsINT8": null
     },
@@ -3700,7 +3766,7 @@
       "extensibilityNote": "SXM / HGX form — scale by joining an 8-way HGX board, not by stacking cards in a workstation.",
       "tflopsFP16": 2250,
       "vllmSupport": "production",
-      "priceVerifiedOn": "2026-05-23",
+      "priceVerifiedOn": "2026-06-12",
       "tflopsFP8": 4500,
       "topsINT8": null,
       "reviews": [
@@ -3789,7 +3855,7 @@
           "title": "Inside a 1.44 TB HBM3e NVIDIA HGX B200 AI Server from ASRock Rack"
         }
       ],
-      "priceVerifiedOn": "2026-05-23",
+      "priceVerifiedOn": "2026-06-12",
       "tflopsFP8": 36000,
       "topsINT8": null
     },
@@ -3860,7 +3926,7 @@
       "extensibilityNote": "Dual-slot workstation card — pair with a second easily for 96 GB.",
       "tflopsFP16": 155,
       "vllmSupport": "production",
-      "priceVerifiedOn": "2026-05-23",
+      "priceVerifiedOn": "2026-06-12",
       "tflopsFP8": null,
       "topsINT8": 310
     },
@@ -3921,7 +3987,7 @@
       "extensibilityNote": "Standard dual-slot — easy to dual-card.",
       "tflopsFP16": 364,
       "vllmSupport": "production",
-      "priceVerifiedOn": "2026-05-23",
+      "priceVerifiedOn": "2026-06-12",
       "tflopsFP8": 729,
       "topsINT8": null
     },
@@ -4004,7 +4070,7 @@
       "extensibilityNote": "Standard workstation card — dual-card is the natural upgrade.",
       "tflopsFP16": 1457,
       "vllmSupport": "production",
-      "priceVerifiedOn": "2026-06-03",
+      "priceVerifiedOn": "2026-06-12",
       "tflopsFP8": 1000,
       "topsINT8": null
     },
@@ -4075,7 +4141,7 @@
       "extensibilityNote": "Standard dual-slot workstation card with 4× DP 2.1 and a single 16-pin connector — pairs cleanly into dual-card workstations.",
       "tflopsFP16": 853,
       "vllmSupport": "production",
-      "priceVerifiedOn": "2026-05-23",
+      "priceVerifiedOn": "2026-06-12",
       "tflopsFP8": 516,
       "topsINT8": null
     },
@@ -4096,7 +4162,7 @@
         "14b": 160,
         "30b": 100,
         "70b": 60,
-        "120b_moe": 280,
+        "120b_moe": null,
         "235b_moe": 90
       },
       "imageSec": {
@@ -4149,7 +4215,7 @@
       "extensibilityNote": "Two slots filled; a workstation chassis still leaves room for x4 if you have the lanes + PSU.",
       "tflopsFP16": 2914,
       "vllmSupport": "production",
-      "priceVerifiedOn": "2026-06-03",
+      "priceVerifiedOn": "2026-06-12",
       "tflopsFP8": 2000,
       "topsINT8": null
     },
@@ -4171,7 +4237,7 @@
         "14b": 230,
         "30b": 150,
         "70b": 95,
-        "120b_moe": 400,
+        "120b_moe": null,
         "235b_moe": 145,
         "671b_moe": 40
       },
@@ -4223,7 +4289,7 @@
       "extensibilityNote": "Four cards fills most workstation chassis; jumping to x8 means moving into a real server (e.g. SuperMicro 4124GS / Gigabyte G493).",
       "tflopsFP16": 5828,
       "vllmSupport": "production",
-      "priceVerifiedOn": "2026-05-23",
+      "priceVerifiedOn": "2026-06-12",
       "tflopsFP8": 4000,
       "topsINT8": null
     },
@@ -4245,7 +4311,7 @@
         "14b": 310,
         "30b": 220,
         "70b": 140,
-        "120b_moe": 540,
+        "120b_moe": null,
         "235b_moe": 220,
         "671b_moe": 75,
         "1t_moe": 40
@@ -4300,7 +4366,7 @@
       "extensibilityNote": "8× is the standard 4U ceiling; beyond that means a second node + RDMA fabric (multi-node territory).",
       "tflopsFP16": 11656,
       "vllmSupport": "production",
-      "priceVerifiedOn": "2026-05-23",
+      "priceVerifiedOn": "2026-06-12",
       "tflopsFP8": 8000,
       "topsINT8": null
     },
@@ -4322,7 +4388,7 @@
         "14b": 340,
         "30b": 250,
         "70b": 170,
-        "120b_moe": 600,
+        "120b_moe": null,
         "235b_moe": 260,
         "671b_moe": 95,
         "1t_moe": 55
@@ -4377,7 +4443,7 @@
       "extensibilityNote": "Two-chassis builds work, but the next jump (x16 / x24) is firmly DGX SuperPOD territory and a different procurement story.",
       "tflopsFP16": 17484,
       "vllmSupport": "production",
-      "priceVerifiedOn": "2026-05-23",
+      "priceVerifiedOn": "2026-06-12",
       "tflopsFP8": 12000,
       "topsINT8": null
     },
@@ -4445,7 +4511,7 @@
       "extensibilityNote": "Standard workstation card; pair freely for 96 GB.",
       "tflopsFP16": 122,
       "vllmSupport": "community",
-      "priceVerifiedOn": "2026-06-03",
+      "priceVerifiedOn": "2026-06-12",
       "tflopsFP8": null,
       "topsINT8": 244
     },
@@ -4514,7 +4580,7 @@
       "extensibilityNote": "Two slots filled in a workstation; further W7900s past two is rare territory.",
       "tflopsFP16": 244,
       "vllmSupport": "community",
-      "priceVerifiedOn": "2026-05-23",
+      "priceVerifiedOn": "2026-06-12",
       "tflopsFP8": null,
       "topsINT8": 488
     },
@@ -4574,7 +4640,7 @@
       "extensibilityNote": "Standard workstation card; upgrade to W7900 / R9700 for more memory.",
       "tflopsFP16": 91,
       "vllmSupport": "community",
-      "priceVerifiedOn": "2026-05-30",
+      "priceVerifiedOn": "2026-06-12",
       "tflopsFP8": null,
       "topsINT8": 182
     },
@@ -4592,7 +4658,7 @@
       "tps": {
         "8b": 77,
         "14b": 45,
-        "30b": 75,
+        "30b": null,
         "70b": null,
         "120b_moe": null,
         "235b_moe": null
@@ -4645,7 +4711,7 @@
       "extensibilityNote": "Standard PCIe workstation card.",
       "tflopsFP16": 96,
       "vllmSupport": "community",
-      "priceVerifiedOn": "2026-06-03",
+      "priceVerifiedOn": "2026-06-12",
       "tflopsFP8": 383,
       "topsINT8": null
     },
@@ -4719,7 +4785,7 @@
       "extensibilityNote": "Two-slot workstation build with PCIe lanes + PSU headroom for a third card.",
       "tflopsFP16": 192,
       "vllmSupport": "community",
-      "priceVerifiedOn": "2026-05-23",
+      "priceVerifiedOn": "2026-06-12",
       "tflopsFP8": 766,
       "topsINT8": null
     },
@@ -4788,7 +4854,7 @@
           "title": "RX 9070 XT is cheaper AND better… mostly"
         }
       ],
-      "priceVerifiedOn": "2026-05-30",
+      "priceVerifiedOn": "2026-06-12",
       "tflopsFP8": 389,
       "topsINT8": null
     },
@@ -4801,12 +4867,13 @@
       "memoryGB": 192,
       "usableMemoryGB": 188,
       "bandwidthGBs": 5300,
-      "priceUSD": 22000,
+      "priceUSD": 30000,
+      "priceNote": "June 2026 — GPU.fm lists the MI300X 192 GB HBM3 OAM module from $29,999; we round to $30,000 as the single-card-plus-host figure. Up from a stored $22,000 (-27 %) — AMD's flagship Instinct still sells via OEM-quote channels (Supermicro / Dell PowerEdge / Hot Aisle) so price discovery is thin; GPU.fm is the most public marketplace anchor.",
       "tps": {
         "8b": 260,
         "14b": 170,
         "30b": 100,
-        "70b": 100,
+        "70b": null,
         "120b_moe": 200,
         "235b_moe": 80
       },
@@ -4854,7 +4921,7 @@
       "extensibilityNote": "OAM form factor — fits AMD reference servers; not slot-swap-into-a-tower friendly.",
       "tflopsFP16": 1307,
       "vllmSupport": "production",
-      "priceVerifiedOn": "2026-05-23",
+      "priceVerifiedOn": "2026-06-12",
       "tflopsFP8": 2615,
       "topsINT8": null,
       "reviews": [
@@ -4881,7 +4948,7 @@
         "8b": 335,
         "14b": 220,
         "30b": 130,
-        "70b": 130,
+        "70b": null,
         "120b_moe": 260,
         "235b_moe": 105,
         "671b_moe": 28
@@ -4939,7 +5006,7 @@
       "extensibilityNote": "OAM 8-way UBB platform — scale on AMD reference chassis (Supermicro AS-8125GS-TNMR2, Dell XE9680).",
       "tflopsFP16": 1307,
       "vllmSupport": "production",
-      "priceVerifiedOn": "2026-05-23",
+      "priceVerifiedOn": "2026-06-12",
       "tflopsFP8": 2615,
       "topsINT8": null
     },
@@ -4960,7 +5027,7 @@
         "8b": 420,
         "14b": 270,
         "30b": 160,
-        "70b": 160,
+        "70b": null,
         "120b_moe": 320,
         "235b_moe": 130,
         "671b_moe": 50,
@@ -5015,7 +5082,7 @@
       "extensibilityNote": "OAM 8-way UBB MI355X platforms ship from Dell / Supermicro / Lenovo — scale at the platform level, not slot level.",
       "tflopsFP16": 2300,
       "vllmSupport": "production",
-      "priceVerifiedOn": "2026-05-23",
+      "priceVerifiedOn": "2026-06-12",
       "tflopsFP8": 5000,
       "topsINT8": null
     },
@@ -5033,7 +5100,7 @@
       "tps": {
         "8b": 71,
         "14b": 38,
-        "30b": 66,
+        "30b": null,
         "70b": null,
         "120b_moe": null,
         "235b_moe": null
@@ -5084,7 +5151,7 @@
       "extensibilityNote": "Generic PCIe — easy to stack as homelab cards, but cooling is loud.",
       "tflopsFP16": 26,
       "vllmSupport": "experimental",
-      "priceVerifiedOn": "2026-05-23",
+      "priceVerifiedOn": "2026-06-12",
       "tflopsFP8": null,
       "topsINT8": 53
     },
@@ -5160,7 +5227,7 @@
       "extensibilityNote": "Mining-frame or 4U chassis territory; PSU + cooling, not lanes, are the limit.",
       "tflopsFP16": 104,
       "vllmSupport": "experimental",
-      "priceVerifiedOn": "2026-05-23",
+      "priceVerifiedOn": "2026-06-12",
       "tflopsFP8": null,
       "topsINT8": 212
     },
@@ -5198,6 +5265,7 @@
         "Cheapest 6-GPU pedestal at $15 K"
       ],
       "cons": [
+        "Discontinued at tinycorp — see priceNote for v2 successor",
         "ROCm / tinygrad less polished than CUDA",
         "1.5 kW peak draw"
       ],
@@ -5229,9 +5297,11 @@
       "extensibilityNote": "Proprietary chassis with 6× W7900s. GPU swap is technically possible but tinygrad's tuning is the value-add. Multi-box clusters are officially supported.",
       "tflopsFP16": 732,
       "vllmSupport": "community",
-      "priceVerifiedOn": "2026-05-23",
+      "priceVerifiedOn": "2026-06-12",
       "tflopsFP8": null,
-      "topsINT8": 1464
+      "topsINT8": 1464,
+      "discontinued": true,
+      "priceNote": "Jun 2026 — discontinued at tinycorp.myshopify.com. tinycorp store no longer ships the 6× 7900 XTX configuration; v2 is the current shipping SKU. Successor: $12,000 v2 (4× RX 9070 XT, 32-core EPYC, 128 GB RAM, 2 TB NVMe)."
     },
     {
       "id": "tinybox-green",
@@ -5268,6 +5338,7 @@
         "Pre-built turnkey"
       ],
       "cons": [
+        "Discontinued at tinycorp — see priceNote for v2 successor",
         "No NVLink — PCIe x8 splits",
         "$25 K and 2.2 kW peak"
       ],
@@ -5302,9 +5373,11 @@
       "extensibilityNote": "6× 4090 box; CUDA stack identical to any 4090 build. tinygrad publishes multi-box cluster recipes — real scale path, but not slot-swap-friendly.",
       "tflopsFP16": 1980,
       "vllmSupport": "production",
-      "priceVerifiedOn": "2026-05-23",
+      "priceVerifiedOn": "2026-06-12",
       "tflopsFP8": 3964,
-      "topsINT8": null
+      "topsINT8": null,
+      "discontinued": true,
+      "priceNote": "Jun 2026 — discontinued at tinycorp.myshopify.com. tinycorp store no longer ships the 6× 4090 configuration; v2 (RTX 5090 / RTX Pro 6000 Blackwell) is the current shipping SKU. Successor: $90,000 v2 (4× RTX 5090, 192 GB RAM, 4 TB RAID) or the Blackwell-Pro variant at $75,000."
     },
     {
       "id": "tinybox-green-v2",
@@ -5315,7 +5388,8 @@
       "memoryGB": 128,
       "usableMemoryGB": 124,
       "bandwidthGBs": 1792,
-      "priceUSD": 25000,
+      "priceUSD": 45000,
+      "priceNote": "June 2026 — $45,000 on tinycorp.myshopify.com (currently out of stock, bank-transfer / wire order). Was launched in the $25 K range; price has been moved up materially since (Pulse24 references a $65 K config with 4× RTX Pro 6000 Blackwell). Stored value bumped from $25,000 → $45,000 after Jun 2026 store audit.",
       "tps": {
         "8b": 260,
         "14b": 170,
@@ -5375,7 +5449,7 @@
       "extensibilityNote": "4× 5090 successor — same multi-tinybox cluster story; tinygrad's stack is what you're really buying.",
       "tflopsFP16": 1676,
       "vllmSupport": "production",
-      "priceVerifiedOn": "2026-05-23",
+      "priceVerifiedOn": "2026-06-12",
       "tflopsFP8": 3352,
       "topsINT8": null
     },
@@ -5414,6 +5488,7 @@
         "Pre-built / supported"
       ],
       "cons": [
+        "Discontinued at tinycorp — see priceNote for v2 successor",
         "$40 K + 3.2 kW; needs a dedicated circuit",
         "Non-NVLink PCIe topology"
       ],
@@ -5448,9 +5523,11 @@
       "extensibilityNote": "8× H100 SXM wheeled pedestal. Multi-tinybox clusters work; single-box upgrades aren't really a thing — you'd order another.",
       "tflopsFP16": 2640,
       "vllmSupport": "production",
-      "priceVerifiedOn": "2026-05-23",
+      "priceVerifiedOn": "2026-06-12",
       "tflopsFP8": 5285,
-      "topsINT8": null
+      "topsINT8": null,
+      "discontinued": true,
+      "priceNote": "Jun 2026 — discontinued at tinycorp.myshopify.com. tinycorp store no longer ships the 8× 4090 configuration; v2 is the current shipping SKU. Successor: $90,000 v2 (8× RTX 5090 / RTX Pro 6000 Blackwell, 2× 128-core EPYC GENOA, 384 GB RAM, 4× 2000 W PSUs)."
     }
   ]
 }
