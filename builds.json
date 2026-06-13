@@ -3178,7 +3178,7 @@
       "bandwidthGBs": 273,
       "priceUSD": 4061,
       "rigOverheadUSD": 0,
-      "priceNote": "May 2026 — $4,061 (1 TB), $3,699 (2 TB), $4,756 (4 TB) at dell.com US direct. EU pricing is much steeper: dell.de quotes €7,086 incl. VAT for the 4 TB SKU and the 1 TB tier isn't listed in EU consumer channels — figure ~€6,050 for the smallest available config. The 'enterprise default' GB10 box: ProSupport warranty, polished cooling, NVIDIA DGX OS 7.",
+      "priceNote": "June 2026 — $4,061 (1 TB), $3,699 (2 TB), $4,756 (4 TB) at dell.com US direct. CA configurator only offers the 4 TB tier at C$8,703 (no 1 TB SKU listed standalone); regionPrices.CA tracks the 4 TB figure as the only buyable Canadian config rather than fabricating a 1 TB CAD price. EU pricing is much steeper: dell.de quotes €7,086 incl. VAT for the 4 TB SKU and the 1 TB tier isn't listed in EU consumer channels — figure ~€6,050 for the smallest available config. The 'enterprise default' GB10 box: ProSupport warranty, polished cooling, NVIDIA DGX OS 7.",
       "tps": {
         "8b": 90,
         "14b": 55,
