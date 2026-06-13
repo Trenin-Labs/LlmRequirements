@@ -43,7 +43,8 @@
         "TW": 26900,
         "TH": 27900,
         "MY": 3349,
-        "NZ": 1499
+        "NZ": 1499,
+        "JP": 94800
       }
     },
     "mba-m4-16": {
@@ -486,13 +487,27 @@
       "name": "4× Strix Halo cluster (512 GB unified)",
       "vendor": "AMD",
       "priceUSD": 11500,
-      "rigOverheadUSD": 300
+      "rigOverheadUSD": 300,
+      "regionPrices": {
+        "EU": 11076,
+        "DE": 11076,
+        "FR": 11076,
+        "IT": 11076,
+        "UK": 12636
+      }
     },
     "strix-halo-x8": {
       "name": "8× Strix Halo cluster (1024 GB unified)",
       "vendor": "AMD",
       "priceUSD": 23200,
-      "rigOverheadUSD": 800
+      "rigOverheadUSD": 800,
+      "regionPrices": {
+        "EU": 22152,
+        "DE": 22152,
+        "FR": 22152,
+        "IT": 22152,
+        "UK": 25272
+      }
     },
     "dgx-spark-128": {
       "name": "NVIDIA DGX Spark (128 GB)",
@@ -717,13 +732,29 @@
       "name": "8× RTX Pro 6000 Blackwell server (768 GB)",
       "vendor": "NVIDIA",
       "priceUSD": 78000,
-      "rigOverheadUSD": 8000
+      "rigOverheadUSD": 8000,
+      "regionPrices": {
+        "EU": 71600,
+        "DE": 71600,
+        "FR": 71600,
+        "IT": 71600,
+        "UK": 71400,
+        "JP": 12416000
+      }
     },
     "rtx-pro-6000-blackwell-x12": {
       "name": "12× RTX Pro 6000 Blackwell rack (1152 GB)",
       "vendor": "NVIDIA",
       "priceUSD": 118000,
-      "rigOverheadUSD": 16000
+      "rigOverheadUSD": 16000,
+      "regionPrices": {
+        "EU": 107400,
+        "DE": 107400,
+        "FR": 107400,
+        "IT": 107400,
+        "UK": 107100,
+        "JP": 18624000
+      }
     },
     "amd-w7900-48": {
       "name": "Single AMD Radeon Pro W7900 48 GB build",
