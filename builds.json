@@ -1461,7 +1461,7 @@
       "extensibilityNote": "Two slots filled; a 1500 W PSU and good airflow leave headroom for storage + NIC upgrades.",
       "tflopsFP16": 284,
       "vllmSupport": "production",
-      "priceVerifiedOn": "2026-06-12",
+      "priceVerifiedOn": "2026-06-27",
       "tflopsFP8": null,
       "topsINT8": 570
     },
@@ -1532,7 +1532,7 @@
       "extensibilityNote": "All slots filled — further GPU adds need a riser / mining frame. PSU is the binding constraint.",
       "tflopsFP16": 568,
       "vllmSupport": "production",
-      "priceVerifiedOn": "2026-06-12",
+      "priceVerifiedOn": "2026-06-27",
       "tflopsFP8": null,
       "topsINT8": 1140
     },
@@ -1676,7 +1676,7 @@
       "extensibilityNote": "Big card but standard ATX — pair with second card or move to a workstation chassis later.",
       "tflopsFP16": 419,
       "vllmSupport": "production",
-      "priceVerifiedOn": "2026-06-12",
+      "priceVerifiedOn": "2026-06-27",
       "tflopsFP8": 838,
       "topsINT8": null
     },
@@ -1750,7 +1750,7 @@
       "extensibilityNote": "Two 600 W cards drives the build to ATX-EVO + 1600 W PSU territory; further expansion needs a workstation chassis.",
       "tflopsFP16": 838,
       "vllmSupport": "production",
-      "priceVerifiedOn": "2026-06-12",
+      "priceVerifiedOn": "2026-06-27",
       "tflopsFP8": 1676,
       "topsINT8": null
     },
@@ -1809,7 +1809,7 @@
       "extensibilityNote": "Generic PCIe — needs blower fan adapter or shroud. Pair freely with more P40s.",
       "tflopsFP16": 11,
       "vllmSupport": "experimental",
-      "priceVerifiedOn": "2026-06-12",
+      "priceVerifiedOn": "2026-06-27",
       "tflopsFP8": null,
       "topsINT8": 47,
       "reviews": [
@@ -1883,7 +1883,7 @@
       "extensibilityNote": "Four cards stretch a single-PSU tower; a 4U server chassis or mining-frame is cleaner.",
       "tflopsFP16": 44,
       "vllmSupport": "experimental",
-      "priceVerifiedOn": "2026-06-12",
+      "priceVerifiedOn": "2026-06-27",
       "tflopsFP8": null,
       "topsINT8": 188
     },
@@ -1939,7 +1939,7 @@
       "extensibilityNote": "Datacenter card needing blower cooling — otherwise standard PCIe.",
       "tflopsFP16": 21,
       "vllmSupport": "experimental",
-      "priceVerifiedOn": "2026-06-12",
+      "priceVerifiedOn": "2026-06-27",
       "tflopsFP8": null,
       "topsINT8": null,
       "reviews": [
@@ -2459,7 +2459,7 @@
       "extensibilityNote": "RAM is soldered LPDDR5X, but storage + NIC + chassis are normal mini-PC fare. Two-box Strix Halo clusters over 10 GbE run 235 B MoE and are a real upgrade path.",
       "tflopsFP16": 64,
       "vllmSupport": "experimental",
-      "priceVerifiedOn": "2026-06-12",
+      "priceVerifiedOn": "2026-06-27",
       "tflopsFP8": null,
       "topsINT8": 128
     },
@@ -2536,7 +2536,7 @@
       "extensibilityNote": "Two boxes daisy-chained over 10 GbE — add a third for 384 GB. Each box has soldered RAM, but the fabric scales linearly per added unit.",
       "tflopsFP16": 128,
       "vllmSupport": "experimental",
-      "priceVerifiedOn": "2026-06-12",
+      "priceVerifiedOn": "2026-06-27",
       "tflopsFP8": null,
       "topsINT8": 256
     },
@@ -3116,7 +3116,7 @@
           "title": "A tiny AI supercomputer for your desk"
         }
       ],
-      "priceVerifiedOn": "2026-06-12",
+      "priceVerifiedOn": "2026-06-27",
       "tflopsFP8": 250,
       "topsINT8": null
     },
@@ -4631,7 +4631,7 @@
       "extensibilityNote": "Two slots filled in a workstation; further W7900s past two is rare territory.",
       "tflopsFP16": 244,
       "vllmSupport": "community",
-      "priceVerifiedOn": "2026-06-12",
+      "priceVerifiedOn": "2026-06-27",
       "tflopsFP8": null,
       "topsINT8": 488
     },
@@ -4691,7 +4691,7 @@
       "extensibilityNote": "Standard workstation card; upgrade to W7900 / R9700 for more memory.",
       "tflopsFP16": 91,
       "vllmSupport": "community",
-      "priceVerifiedOn": "2026-06-12",
+      "priceVerifiedOn": "2026-06-27",
       "tflopsFP8": null,
       "topsINT8": 182
     },
@@ -5133,7 +5133,7 @@
       "extensibilityNote": "OAM 8-way UBB MI355X platforms ship from Dell / Supermicro / Lenovo — scale at the platform level, not slot level.",
       "tflopsFP16": 2300,
       "vllmSupport": "production",
-      "priceVerifiedOn": "2026-06-12",
+      "priceVerifiedOn": "2026-06-27",
       "tflopsFP8": 5000,
       "topsINT8": null,
       "reviews": [
@@ -5216,7 +5216,7 @@
       "extensibilityNote": "Generic PCIe — easy to stack as homelab cards, but cooling is loud.",
       "tflopsFP16": 26,
       "vllmSupport": "experimental",
-      "priceVerifiedOn": "2026-06-12",
+      "priceVerifiedOn": "2026-06-27",
       "tflopsFP8": null,
       "topsINT8": 53
     },
@@ -5293,7 +5293,7 @@
       "extensibilityNote": "Mining-frame or 4U chassis territory; PSU + cooling, not lanes, are the limit.",
       "tflopsFP16": 104,
       "vllmSupport": "experimental",
-      "priceVerifiedOn": "2026-06-12",
+      "priceVerifiedOn": "2026-06-27",
       "tflopsFP8": null,
       "topsINT8": 212
     },
