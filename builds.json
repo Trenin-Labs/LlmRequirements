@@ -1,7 +1,7 @@
 {
   "$schema": "https://json-schema.org/draft-07/schema#",
   "_description": "Hardware build catalog with throughput (tps), prompt-processing (pp), TTFT @ 100 K (ttft100k), image, and video benchmarks. Each build also carries editorial fields used by the /compare page: softwareStack (short label), softwareMaturity (0-5), softwareNote, extensibility (0-5), and extensibilityNote. Pricing is in priceUSD as a US MSRP fallback only — see prices/ for regional snapshots.",
-  "_lastUpdated": "2026-06-13",
+  "_lastUpdated": "2026-06-27",
   "_count": 76,
   "builds": [
     {
@@ -216,7 +216,21 @@
       "vllmSupport": "community",
       "priceVerifiedOn": "2026-06-12",
       "tflopsFP8": null,
-      "topsINT8": 38
+      "topsINT8": 38,
+      "reviews": [
+        {
+          "videoId": "ayI5FVuEdu8",
+          "title": "Mac Mini M4 vs M3 Pro, 6700XT, 3080Ti — LLM Ollama side by side"
+        },
+        {
+          "videoId": "3UMAALr6TG4",
+          "title": "Intel Macbook vs Apple Silicon (M1, M3 Pro, M4) running LLM Ollama"
+        },
+        {
+          "videoId": "EwcHUo3IrTo",
+          "title": "Ollama Mac MLX is here — 2× faster t/s for Apple Silicon"
+        }
+      ]
     },
     {
       "id": "mba-m4-16",
@@ -1121,6 +1135,10 @@
         {
           "videoId": "J4qwuCXyAcU",
           "title": "M3 Ultra Mac Studio Review"
+        },
+        {
+          "videoId": "nwIZ5VI3Eus",
+          "title": "M3 Ultra vs RTX 5090 — The Final Battle"
         }
       ],
       "rigOverheadUSD": 0,
@@ -1298,7 +1316,7 @@
       "extensibilityNote": "Standard PCIe slot — swap to 3090 / 4090 / 5090 whenever you outgrow it.",
       "tflopsFP16": 51,
       "vllmSupport": "production",
-      "priceVerifiedOn": "2026-06-12",
+      "priceVerifiedOn": "2026-06-27",
       "tflopsFP8": null,
       "topsINT8": 102
     },
@@ -1582,7 +1600,7 @@
       "extensibilityNote": "Standard tower build — straightforward to dual-card if the case + PSU allow.",
       "tflopsFP16": 330,
       "vllmSupport": "production",
-      "priceVerifiedOn": "2026-06-12",
+      "priceVerifiedOn": "2026-06-27",
       "tflopsFP8": 661,
       "topsINT8": null
     },
@@ -1944,7 +1962,7 @@
       "tps": {
         "8b": 85,
         "14b": 50,
-        "30b": 11,
+        "30b": 27,
         "70b": null,
         "120b_moe": null,
         "235b_moe": null
@@ -1997,7 +2015,7 @@
       "extensibilityNote": "SXM2-to-PCIe carrier limits to 1-2 cards practically; cooling is the real headache.",
       "tflopsFP16": 125,
       "vllmSupport": "community",
-      "priceVerifiedOn": "2026-06-12",
+      "priceVerifiedOn": "2026-06-27",
       "tflopsFP8": null,
       "topsINT8": null
     },
@@ -2038,10 +2056,6 @@
       "tagline": "Cheapest 32 GB discrete card on the market.",
       "reviews": [
         {
-          "videoId": "k9dWPbGUmEU",
-          "title": "Intel Arc Pro B70 Review: The 32 GB VRAM Beast"
-        },
-        {
           "videoId": "4J3L5MhlZjg",
           "title": "Should you buy Intel Arc Pro B70 for Local AI? Gemma 4 benchmark"
         }
@@ -2065,7 +2079,7 @@
       "tflopsFP16": 100,
       "vllmSupport": "experimental",
       "siliconFamily": "arc-pro-b70",
-      "priceVerifiedOn": "2026-06-12",
+      "priceVerifiedOn": "2026-06-27",
       "tflopsFP8": null,
       "topsINT8": 367
     },
@@ -2143,7 +2157,7 @@
       "tflopsFP16": 200,
       "vllmSupport": "experimental",
       "siliconFamily": "arc-pro-b70",
-      "priceVerifiedOn": "2026-06-12",
+      "priceVerifiedOn": "2026-06-27",
       "tflopsFP8": null,
       "topsINT8": 734
     },
@@ -2221,7 +2235,7 @@
         }
       ],
       "siliconFamily": "arc-pro-b70",
-      "priceVerifiedOn": "2026-06-12",
+      "priceVerifiedOn": "2026-06-27",
       "tflopsFP8": null,
       "topsINT8": 1468
     },
@@ -2302,7 +2316,7 @@
         }
       ],
       "siliconFamily": "arc-pro-b70",
-      "priceVerifiedOn": "2026-06-12",
+      "priceVerifiedOn": "2026-06-27",
       "tflopsFP8": null,
       "topsINT8": 2936
     },
@@ -2365,7 +2379,7 @@
       "extensibilityNote": "Standard PCIe consumer card; replace easily when Arc Pro or Celestial lands.",
       "tflopsFP16": 100,
       "vllmSupport": "experimental",
-      "priceVerifiedOn": "2026-06-12",
+      "priceVerifiedOn": "2026-06-27",
       "tflopsFP8": null,
       "topsINT8": 233
     },
@@ -2604,7 +2618,7 @@
       "extensibilityNote": "Standard mini-PC fabric — add a fifth / sixth box behind the same 10 GbE switch. Per-box memory is soldered; scale is purely additive.",
       "tflopsFP16": 256,
       "vllmSupport": "experimental",
-      "priceVerifiedOn": "2026-06-12",
+      "priceVerifiedOn": "2026-06-27",
       "tflopsFP8": null,
       "topsINT8": 512
     },
@@ -2690,7 +2704,7 @@
       "extensibilityNote": "Pure additive scaling; the only ceiling is your switch and PSU budget. Per-box memory is soldered.",
       "tflopsFP16": 512,
       "vllmSupport": "experimental",
-      "priceVerifiedOn": "2026-06-12",
+      "priceVerifiedOn": "2026-06-27",
       "tflopsFP8": null,
       "topsINT8": 1024
     },
@@ -2769,7 +2783,7 @@
       "extensibilityNote": "Sealed appliance, but officially clusterable over ConnectX-7 200 GbE — buy two to run 235B MoE end-to-end, four to host 671B. Cluster is the upgrade path.",
       "tflopsFP16": 250,
       "vllmSupport": "production",
-      "priceVerifiedOn": "2026-06-12",
+      "priceVerifiedOn": "2026-06-27",
       "tflopsFP8": 250,
       "topsINT8": null
     },
@@ -2847,7 +2861,7 @@
       "extensibilityNote": "Two-Spark cluster with ConnectX-7 interconnect — keep adding Sparks up to four. Each unit is sealed; the fabric is the lever.",
       "tflopsFP16": 500,
       "vllmSupport": "production",
-      "priceVerifiedOn": "2026-06-12",
+      "priceVerifiedOn": "2026-06-27",
       "tflopsFP8": 500,
       "topsINT8": null
     },
@@ -2896,6 +2910,10 @@
         {
           "videoId": "QJqKqxQR36Y",
           "title": "NVIDIA didn't want me to do this — 8× DGX Spark 1 TB VRAM cluster (AZisk)"
+        },
+        {
+          "videoId": "WpbZN7VnBnQ",
+          "title": "What Do You Want to Run on this 4 DGX Spark Cluster?"
         }
       ],
       "plugAndPlay": false,
@@ -3001,6 +3019,10 @@
         {
           "videoId": "QJqKqxQR36Y",
           "title": "NVIDIA didn't want me to do this — 8× DGX Spark 1 TB VRAM cluster (AZisk)"
+        },
+        {
+          "videoId": "uYepcMoqvKQ",
+          "title": "I built an 8x NVIDIA GB10 cluster for massive Local AI"
         }
       ],
       "plugAndPlay": false,
@@ -3011,7 +3033,7 @@
       "extensibilityNote": "Eight-Spark is the documented practical ceiling; beyond this you're in DGX BasePOD / DGX Cloud territory with different reference designs.",
       "tflopsFP16": 2000,
       "vllmSupport": "production",
-      "priceVerifiedOn": "2026-06-12",
+      "priceVerifiedOn": "2026-06-27",
       "tflopsFP8": 2000,
       "topsINT8": null
     },
@@ -3087,6 +3109,10 @@
         {
           "videoId": "Ze5XLooTt6g",
           "title": "I Thought DGX Spark Was Slower… Until I Changed ONE Thing (AZisk)"
+        },
+        {
+          "videoId": "FjRKvKC4ntw",
+          "title": "A tiny AI supercomputer for your desk"
         }
       ],
       "priceVerifiedOn": "2026-06-12",
@@ -3103,9 +3129,9 @@
       "memoryGB": 128,
       "usableMemoryGB": 119,
       "bandwidthGBs": 273,
-      "priceUSD": 4699,
+      "priceUSD": 3499,
       "rigOverheadUSD": 0,
-      "priceNote": "May 2026 — Amazon US $4,723.99 for the 1 TB SKU (B0G1MQYHRD), Newegg list around $4,705; ASUS eShop direct shows out-of-stock. GB10 family has compressed at the top end as LPDDR5X contract pricing flows through: Ascent now within ~$25 of the DGX Spark Founders Edition ($4,699). Stackable chassis, Wi-Fi 7; ServeTheHome notes occasional thermal slowdown under sustained load. (amazon.com, 2026-05-21).",
+      "priceNote": "Jun 2026 — ASUS Ascent GX10 storage-tier pricing: 1 TB (GX10-GG0015BN) ~$3,099 on Amazon US, $3,499 on NVIDIA marketplace (OOS); founder ~$3,599; 4 TB variant $4,699-$4,724. The 1 TB SKU is the CHEAPEST GB10 box — ~$1,200 below the DGX Spark FE ($4,699). Stackable chassis, Wi-Fi 7; ServeTheHome notes occasional thermal slowdown under sustained load. Sources: amazon.com (B0G1MQYHRD 1TB, 2026-06-27), marketplace.nvidia.com (OOS), Newegg ($4,705 for 4TB).",
       "tps": {
         "8b": 85,
         "14b": 52,
@@ -3125,7 +3151,7 @@
       "idleW": 35,
       "activeW": 240,
       "pros": [
-        "Same GB10 chip as DGX Spark at price parity",
+        "Cheapest GB10 box — 1 TB SKU ~$1,200 below DGX Spark FE",
         "Stackable chassis, Wi-Fi 7",
         "Amazon Prime + ASUS eShop availability"
       ],
@@ -3139,6 +3165,14 @@
         {
           "videoId": "abeUJ9KLZlk",
           "title": "Is NVIDIA's DGX Spark worth it?"
+        },
+        {
+          "videoId": "D2oZHzC_M28",
+          "title": "I Plugged a DGX Spark and Mac Together... and Didn't Expect This"
+        },
+        {
+          "videoId": "Lqd2EuJwOuw",
+          "title": "Deep Dive into Nvidia's DGX Spark GB10"
         }
       ],
       "pp": {
@@ -3162,7 +3196,7 @@
       "extensibilityNote": "Same GB10 cluster story. ASUS / DGX / MSI / Dell / Lenovo all interop on the fabric.",
       "tflopsFP16": 250,
       "vllmSupport": "production",
-      "priceVerifiedOn": "2026-06-12",
+      "priceVerifiedOn": "2026-06-27",
       "tflopsFP8": 250,
       "topsINT8": null
     },
@@ -3216,6 +3250,10 @@
         {
           "videoId": "ib913zfNh7I",
           "title": "Dell Pro Max GB10 already paying for itself (ServeTheHome)"
+        },
+        {
+          "videoId": "Pww8rIzr1pg",
+          "title": "NVIDIA DGX Spark — A Non-Sponsored Review"
         }
       ],
       "pp": {
@@ -3239,7 +3277,7 @@
       "extensibilityNote": "Same GB10 cluster story; Dell adds enterprise warranty to the same fabric.",
       "tflopsFP16": 250,
       "vllmSupport": "production",
-      "priceVerifiedOn": "2026-06-12",
+      "priceVerifiedOn": "2026-06-27",
       "tflopsFP8": 250,
       "topsINT8": null
     },
@@ -3293,6 +3331,10 @@
         {
           "videoId": "abeUJ9KLZlk",
           "title": "Is NVIDIA's DGX Spark worth it?"
+        },
+        {
+          "videoId": "FjRKvKC4ntw",
+          "title": "A tiny AI supercomputer for your desk"
         }
       ],
       "pp": {
@@ -3316,7 +3358,7 @@
       "extensibilityNote": "Same GB10 cluster story under the ThinkStation brand.",
       "tflopsFP16": 250,
       "vllmSupport": "production",
-      "priceVerifiedOn": "2026-06-12",
+      "priceVerifiedOn": "2026-06-27",
       "tflopsFP8": 250,
       "topsINT8": null
     },
@@ -3456,7 +3498,7 @@
       "extensibilityNote": "PCIe (or SXM5 in DGX) — slot-in upgrade, but cooling demands a real server chassis.",
       "tflopsFP16": 989,
       "vllmSupport": "production",
-      "priceVerifiedOn": "2026-06-12",
+      "priceVerifiedOn": "2026-06-27",
       "tflopsFP8": 1979,
       "topsINT8": null
     },
@@ -3534,7 +3576,7 @@
           "title": "Inside the World's Largest AI Supercluster — xAI Colossus"
         }
       ],
-      "priceVerifiedOn": "2026-06-12",
+      "priceVerifiedOn": "2026-06-27",
       "tflopsFP8": 15832,
       "topsINT8": null
     },
@@ -3601,6 +3643,10 @@
         {
           "videoId": "lNumJwHpXIA",
           "title": "Nvidia Wouldn't Send Me This $30,000 GPU — H200 Holy $H!T"
+        },
+        {
+          "videoId": "dmOCYFVLi2M",
+          "title": "Inside the SUPER NVIDIA H200 Server From Supermicro"
         }
       ],
       "softwareStack": "CUDA (Hopper)",
@@ -3610,7 +3656,7 @@
       "extensibilityNote": "PCIe (NVL) or SXM5 in HGX — slot-in upgrade from H100 in matching chassis.",
       "tflopsFP16": 989,
       "vllmSupport": "production",
-      "priceVerifiedOn": "2026-06-12",
+      "priceVerifiedOn": "2026-06-27",
       "tflopsFP8": 1979,
       "topsINT8": null
     },
@@ -3693,7 +3739,7 @@
           "title": "Inside the SUPER NVIDIA H200 Server From Supermicro (8U HGX H200)"
         }
       ],
-      "priceVerifiedOn": "2026-06-12",
+      "priceVerifiedOn": "2026-06-27",
       "tflopsFP8": 15832,
       "topsINT8": null
     },
@@ -3766,13 +3812,17 @@
       "extensibilityNote": "SXM / HGX form — scale by joining an 8-way HGX board, not by stacking cards in a workstation.",
       "tflopsFP16": 2250,
       "vllmSupport": "production",
-      "priceVerifiedOn": "2026-06-12",
+      "priceVerifiedOn": "2026-06-27",
       "tflopsFP8": 4500,
       "topsINT8": null,
       "reviews": [
         {
           "videoId": "UpW6iDyc0C8",
           "title": "AI Lab: NVIDIA B200 vs GB200 explained | GPU architecture for LLMs"
+        },
+        {
+          "videoId": "N5AJJ0tAoxc",
+          "title": "Inside a NEW AI Cluster — Tour with NVIDIA B200"
         }
       ]
     },
@@ -3855,7 +3905,7 @@
           "title": "Inside a 1.44 TB HBM3e NVIDIA HGX B200 AI Server from ASRock Rack"
         }
       ],
-      "priceVerifiedOn": "2026-06-12",
+      "priceVerifiedOn": "2026-06-27",
       "tflopsFP8": 36000,
       "topsINT8": null
     },
@@ -3926,7 +3976,7 @@
       "extensibilityNote": "Dual-slot workstation card — pair with a second easily for 96 GB.",
       "tflopsFP16": 155,
       "vllmSupport": "production",
-      "priceVerifiedOn": "2026-06-12",
+      "priceVerifiedOn": "2026-06-27",
       "tflopsFP8": null,
       "topsINT8": 310
     },
@@ -3987,7 +4037,7 @@
       "extensibilityNote": "Standard dual-slot — easy to dual-card.",
       "tflopsFP16": 364,
       "vllmSupport": "production",
-      "priceVerifiedOn": "2026-06-12",
+      "priceVerifiedOn": "2026-06-27",
       "tflopsFP8": 729,
       "topsINT8": null
     },
@@ -4070,7 +4120,7 @@
       "extensibilityNote": "Standard workstation card — dual-card is the natural upgrade.",
       "tflopsFP16": 1457,
       "vllmSupport": "production",
-      "priceVerifiedOn": "2026-06-12",
+      "priceVerifiedOn": "2026-06-27",
       "tflopsFP8": 1000,
       "topsINT8": null
     },
@@ -4141,7 +4191,7 @@
       "extensibilityNote": "Standard dual-slot workstation card with 4× DP 2.1 and a single 16-pin connector — pairs cleanly into dual-card workstations.",
       "tflopsFP16": 853,
       "vllmSupport": "production",
-      "priceVerifiedOn": "2026-06-12",
+      "priceVerifiedOn": "2026-06-27",
       "tflopsFP8": 516,
       "topsINT8": null
     },
@@ -4511,7 +4561,7 @@
       "extensibilityNote": "Standard workstation card; pair freely for 96 GB.",
       "tflopsFP16": 122,
       "vllmSupport": "community",
-      "priceVerifiedOn": "2026-06-12",
+      "priceVerifiedOn": "2026-06-27",
       "tflopsFP8": null,
       "topsINT8": 244
     },
@@ -4711,7 +4761,7 @@
       "extensibilityNote": "Standard PCIe workstation card.",
       "tflopsFP16": 96,
       "vllmSupport": "community",
-      "priceVerifiedOn": "2026-06-12",
+      "priceVerifiedOn": "2026-06-27",
       "tflopsFP8": 383,
       "topsINT8": null
     },
@@ -4785,7 +4835,7 @@
       "extensibilityNote": "Two-slot workstation build with PCIe lanes + PSU headroom for a third card.",
       "tflopsFP16": 192,
       "vllmSupport": "community",
-      "priceVerifiedOn": "2026-06-12",
+      "priceVerifiedOn": "2026-06-27",
       "tflopsFP8": 766,
       "topsINT8": null
     },
@@ -4854,7 +4904,7 @@
           "title": "RX 9070 XT is cheaper AND better… mostly"
         }
       ],
-      "priceVerifiedOn": "2026-06-12",
+      "priceVerifiedOn": "2026-06-27",
       "tflopsFP8": 389,
       "topsINT8": null
     },
@@ -4921,7 +4971,7 @@
       "extensibilityNote": "OAM form factor — fits AMD reference servers; not slot-swap-into-a-tower friendly.",
       "tflopsFP16": 1307,
       "vllmSupport": "production",
-      "priceVerifiedOn": "2026-06-12",
+      "priceVerifiedOn": "2026-06-27",
       "tflopsFP8": 2615,
       "topsINT8": null,
       "reviews": [
@@ -5006,7 +5056,7 @@
       "extensibilityNote": "OAM 8-way UBB platform — scale on AMD reference chassis (Supermicro AS-8125GS-TNMR2, Dell XE9680).",
       "tflopsFP16": 1307,
       "vllmSupport": "production",
-      "priceVerifiedOn": "2026-06-12",
+      "priceVerifiedOn": "2026-06-27",
       "tflopsFP8": 2615,
       "topsINT8": null
     },
@@ -5084,7 +5134,21 @@
       "vllmSupport": "production",
       "priceVerifiedOn": "2026-06-12",
       "tflopsFP8": 5000,
-      "topsINT8": null
+      "topsINT8": null,
+      "reviews": [
+        {
+          "videoId": "3cm6gAcoVRI",
+          "title": "AMD's MI350/355X Advancing AI Event Recap"
+        },
+        {
+          "videoId": "gk6xmBBj_oA",
+          "title": "AMD AI Event w/ Craft Computing — MI350/355X Launch, ROCm 7"
+        },
+        {
+          "videoId": "hRzarkXruDg",
+          "title": "AMD Visit and Tour! Featuring ROCm 7 and AMD Instinct"
+        }
+      ]
     },
     {
       "id": "amd-mi50-32",
@@ -5168,12 +5232,13 @@
       "priceNote": "May 2026 — 4× $200 cards + EPYC/Threadripper host with 4+ PCIe x16 + 1200 W PSU + blower kits. The headline 2025-26 LocalLLaMA budget build; community vLLM-gfx906 stack required (AMD dropped official MI50 support in ROCm 7).",
       "tps": {
         "8b": 72,
-        "14b": 50,
+        "14b": 38,
         "30b": 50,
         "70b": 35,
         "120b_moe": 45,
         "235b_moe": null
       },
+      "tpsNote": "14b=38 sourced from single MI50 (dense 14B fits one card; multi-GPU does not improve decode for small dense models). 30b=50 is MoE-anchored (35B-A3B ~3B active, ~50-60 t/s sourced from ahelpme.com llama-bench, r/LocalLLaMA). 70b=35 is dense split across 4 cards, left as-is.",
       "imageSec": {
         "sdxl": 18,
         "flux": 60
@@ -5297,7 +5362,7 @@
       "extensibilityNote": "Proprietary chassis with 6× W7900s. GPU swap is technically possible but tinygrad's tuning is the value-add. Multi-box clusters are officially supported.",
       "tflopsFP16": 732,
       "vllmSupport": "community",
-      "priceVerifiedOn": "2026-06-12",
+      "priceVerifiedOn": "2026-06-27",
       "tflopsFP8": null,
       "topsINT8": 1464,
       "discontinued": true,
@@ -5449,7 +5514,7 @@
       "extensibilityNote": "4× 5090 successor — same multi-tinybox cluster story; tinygrad's stack is what you're really buying.",
       "tflopsFP16": 1676,
       "vllmSupport": "production",
-      "priceVerifiedOn": "2026-06-12",
+      "priceVerifiedOn": "2026-06-27",
       "tflopsFP8": 3352,
       "topsINT8": null
     },
