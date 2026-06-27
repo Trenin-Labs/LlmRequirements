@@ -286,7 +286,7 @@
     "rtx-3090-24": {
       "name": "Single RTX 3090 (used) build",
       "vendor": "NVIDIA",
-      "priceUSD": 1750,
+      "priceUSD": 1500,
       "rigOverheadUSD": 700,
       "regionPrices": {
         "EU": 800,
@@ -300,7 +300,7 @@
     "rtx-3090-x2": {
       "name": "Dual RTX 3090 (used) build",
       "vendor": "NVIDIA",
-      "priceUSD": 3100,
+      "priceUSD": 2800,
       "rigOverheadUSD": 1000,
       "regionPrices": {
         "EU": 1950,
@@ -314,7 +314,7 @@
     "rtx-3090-x4": {
       "name": "Quad RTX 3090 (used) build",
       "vendor": "NVIDIA",
-      "priceUSD": 6900,
+      "priceUSD": 6000,
       "rigOverheadUSD": 2700,
       "regionPrices": {
         "EU": 4007,
@@ -391,7 +391,7 @@
     "tesla-p100-16": {
       "name": "Single Tesla P100 16 GB (used) build",
       "vendor": "NVIDIA",
-      "priceUSD": 600,
+      "priceUSD": 500,
       "rigOverheadUSD": 450
     },
     "tesla-v100-sxm2-mod": {
@@ -916,13 +916,13 @@
     "amd-mi50-32": {
       "name": "Single AMD Instinct MI50 32 GB (used) build",
       "vendor": "AMD",
-      "priceUSD": 700,
+      "priceUSD": 900,
       "rigOverheadUSD": 400
     },
     "amd-mi50-x4": {
       "name": "Quad AMD MI50 32 GB (128 GB) homelab build",
       "vendor": "AMD",
-      "priceUSD": 2300,
+      "priceUSD": 2500,
       "rigOverheadUSD": 1500
     },
     "tinybox-red": {

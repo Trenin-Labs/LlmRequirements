@@ -1330,7 +1330,7 @@
       "memoryGB": 24,
       "usableMemoryGB": 23,
       "bandwidthGBs": 936,
-      "priceUSD": 1750,
+      "priceUSD": 1500,
       "priceNote": "May 2026 — used cards $800-$1,130 on eBay (bestvaluegpu.com tracker: $1,050 avg, May 23), pushed up by the GDDR6 contract spike and 5090 prices doubling to ~$3,800 making the 3090 the only sub-$1,200 path to 24 GB CUDA. Card + ~$700 budget host build = ~$1,750. (bestvaluegpu.com, xda-developers.com, 2026-05).",
       "tps": {
         "8b": 90,
@@ -1400,7 +1400,7 @@
       "memoryGB": 48,
       "usableMemoryGB": 46,
       "bandwidthGBs": 936,
-      "priceUSD": 3100,
+      "priceUSD": 2800,
       "priceNote": "May 2026 — 2× used 3090s at ~$1,050 each (eBay avg per bestvaluegpu.com) + ~$1,000 dual-GPU host with 1500 W PSU. Still the cheapest 48 GB CUDA path: a single 4090 is now $2,470, dual-3090 build undercuts it at higher VRAM. (bestvaluegpu.com, 2026-05).",
       "tps": {
         "8b": 95,
@@ -1474,7 +1474,7 @@
       "memoryGB": 96,
       "usableMemoryGB": 92,
       "bandwidthGBs": 936,
-      "priceUSD": 6900,
+      "priceUSD": 6000,
       "priceNote": "May 2026 — 4× used 3090s at ~$1,050 each (eBay avg per bestvaluegpu.com) + ~$2,700 Threadripper / EPYC host with 4× PCIe x16, 1500-1600 W PSU, mining-frame chassis. Frontier-quality 120 B locally for under $7K. (bestvaluegpu.com, 2026-05).",
       "tps": {
         "8b": 100,
@@ -1896,7 +1896,7 @@
       "memoryGB": 16,
       "usableMemoryGB": 15,
       "bandwidthGBs": 732,
-      "priceUSD": 600,
+      "priceUSD": 500,
       "priceNote": "May 2026 — card $148–$170 used + blower-mod kit + ~$400 budget host. The HBM2 bandwidth is the draw vs. the P40's GDDR5X.",
       "tps": {
         "8b": 33,
@@ -5160,7 +5160,7 @@
       "memoryGB": 32,
       "usableMemoryGB": 31,
       "bandwidthGBs": 1024,
-      "priceUSD": 700,
+      "priceUSD": 900,
       "priceNote": "May 2026 — card $150–$250 used (Alibaba / eBay; verify the 32 GB VBIOS — some sellers reflash 16 GB cards) + ~$30 blower kit + ~$400 host. AMD dropped MI50 from ROCm 7.x, but community vLLM-gfx906 + ROCm 6.4.4 + llama.cpp Vulkan are actively maintained.",
       "tps": {
         "8b": 71,
@@ -5229,7 +5229,7 @@
       "memoryGB": 128,
       "usableMemoryGB": 122,
       "bandwidthGBs": 1024,
-      "priceUSD": 2300,
+      "priceUSD": 2500,
       "priceNote": "May 2026 — 4× $200 cards + EPYC/Threadripper host with 4+ PCIe x16 + 1200 W PSU + blower kits. The headline 2025-26 LocalLLaMA budget build; community vLLM-gfx906 stack required (AMD dropped official MI50 support in ROCm 7).",
       "tps": {
         "8b": 72,
