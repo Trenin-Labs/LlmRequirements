@@ -1,8 +1,8 @@
 {
   "$schema": "https://json-schema.org/draft-07/schema#",
   "_description": "LLM model catalog with ratings and VRAM requirements. See README.md for schema.",
-  "_lastUpdated": "2026-06-13",
-  "_count": 60,
+  "_lastUpdated": "2026-06-27",
+  "_count": 61,
   "models": [
     {
       "id": "qwen3-8b",
@@ -807,6 +807,51 @@
           "fetchedOn": "2026-05-27"
         }
       }
+    },
+    {
+      "id": "glm-5-2-753b-moe",
+      "name": "GLM-5.2 753B (MoE)",
+      "family": "GLM",
+      "params": 753,
+      "activeParams": 39,
+      "type": "moe",
+      "modality": "text",
+      "sizeQ4": 455,
+      "vramMinQ4": 470,
+      "vramComfortQ4": 512,
+      "ratings": {
+        "chat": 4,
+        "coding": 3,
+        "agents": 3,
+        "reasoning": 4,
+        "longContext": 5,
+        "vision": 0
+      },
+      "tags": [
+        "moe",
+        "frontier",
+        "huge",
+        "long-context"
+      ],
+      "blurb": "Z.ai's June 2026 flagship MoE successor to GLM-5.1: 753B total / 39B active, native 1M-token context via IndexShare sparse attention, two thinking-effort levels. MIT-licensed, no benchmarks at launch.",
+      "license": "MIT",
+      "huggingface": "https://huggingface.co/zai-org/GLM-5.2",
+      "benchmarks": {},
+      "vibes": {},
+      "benchmarkNotes": "Released 2026-06-14 with no first-party benchmarks; ratings conservative pending leaderboard runs. Q4_K_M weights ~455 GB (Abiray community quant); fits 8×H200-141G or 4×B200-180G comfortably for inference. Native FP8 variant (zai-org/GLM-5.2-FP8) is the vendor-recommended single-node-H200 deployment path.",
+      "sources": [
+        "https://huggingface.co/zai-org/GLM-5.2",
+        "https://huggingface.co/zai-org/GLM-5.2-FP8",
+        "https://recipes.vllm.ai/zai-org/GLM-5.2",
+        "https://huggingface.co/Abiray/GLM-5.2-Q4_K_M-GGUF/tree/main",
+        "https://www.marktechpost.com/2026/06/14/z-ai-launches-glm-5-2-with-a-usable-1m-token-context-two-thinking-effort-levels-and-no-benchmarks-at-launch/"
+      ],
+      "aliases": [
+        "GLM 5.2",
+        "zai-org/GLM-5.2",
+        "zai-org/GLM-5.2-FP8"
+      ],
+      "contextK": 1000
     },
     {
       "id": "gpt-oss-120b",
