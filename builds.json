@@ -214,7 +214,7 @@
       "extensibilityNote": "Sealed individually, but Thunderbolt-5 MLX clusters work — two Mac Minis act as a 32 GB pool over TB5. RAM/SSD are locked at order time.",
       "tflopsFP16": 4,
       "vllmSupport": "community",
-      "priceVerifiedOn": "2026-06-12",
+      "priceVerifiedOn": "2026-06-27",
       "tflopsFP8": null,
       "topsINT8": 38,
       "reviews": [
@@ -289,10 +289,11 @@
       "extensibilityNote": "Sealed laptop. Thunderbolt-4 clustering works for inference but the chassis is the limit — no real upgrade path.",
       "tflopsFP16": 4,
       "vllmSupport": "community",
-      "priceNote": "Discontinued by Apple May 2026 (MacBook Air M5 is the current SKU in every regional configurator). Still available new on Amazon in EU/UK/JP (2025 model-year stock) and refurbished via Apple Refurb. priceUSD held as the historical anchor.",
-      "priceVerifiedOn": "2026-06-12",
+      "priceNote": "Discontinued by Apple May 2026 (MacBook Air M5 is the current SKU in every regional configurator). Still available new on Amazon in EU/UK/JP (2025 model-year stock) and refurbished via Apple Refurb. priceUSD held as the historical anchor. Jun 2026 — Apple removed M4 from the Air buy-mac page globally; the M5 Air (16 GB) is the current SKU. Amazon still lists 2025 M4 13\" 16GB/512GB inventory (B0DZD9NV7L).",
+      "priceVerifiedOn": "2026-06-27",
       "tflopsFP8": null,
-      "topsINT8": 38
+      "topsINT8": 38,
+      "discontinued": true
     },
     {
       "id": "mac-mini-m4-24",
@@ -352,7 +353,7 @@
       "extensibilityNote": "Sealed individually, but TB5 MLX clusters scale to 48-96 GB on a stack of these. RAM / SSD locked at order time.",
       "tflopsFP16": 4,
       "vllmSupport": "community",
-      "priceVerifiedOn": "2026-06-12",
+      "priceVerifiedOn": "2026-06-27",
       "tflopsFP8": null,
       "topsINT8": 38
     },
@@ -421,7 +422,7 @@
       "extensibilityNote": "Sealed laptop. TB5 cluster works in a pinch but battery + chassis make this a single-unit story for most users.",
       "tflopsFP16": 10,
       "vllmSupport": "community",
-      "priceVerifiedOn": "2026-06-12",
+      "priceVerifiedOn": "2026-06-27",
       "tflopsFP8": null,
       "topsINT8": 38
     },
@@ -495,7 +496,7 @@
       "extensibilityNote": "Sealed laptop. Same TB5 cluster caveat as the M4 Pro.",
       "tflopsFP16": 17,
       "vllmSupport": "community",
-      "priceVerifiedOn": "2026-06-12",
+      "priceVerifiedOn": "2026-06-27",
       "tflopsFP8": null,
       "topsINT8": 38
     },
@@ -508,7 +509,7 @@
       "memoryGB": 16,
       "usableMemoryGB": 11,
       "bandwidthGBs": 153,
-      "priceUSD": 1099,
+      "priceUSD": 1299,
       "tps": {
         "8b": 22,
         "14b": 10,
@@ -558,7 +559,7 @@
       "tflopsFP16": 5,
       "vllmSupport": "community",
       "priceNote": "Launched 2026-03-11 at $1,099. Base config: 10-core CPU / 8-core GPU / 16 GB / 512 GB SSD on the 13.6\" model. The 10-core GPU upsell is +$100. Pricing per apple.com newsroom (US/UK/DE/FR/IT/ES/NL/JP/AU/CA confirmed).",
-      "priceVerifiedOn": "2026-06-12",
+      "priceVerifiedOn": "2026-06-27",
       "tflopsFP8": null,
       "topsINT8": 38
     },
@@ -626,7 +627,7 @@
       "tflopsFP16": 13,
       "vllmSupport": "community",
       "priceNote": "14\" M5 Pro 18-core CPU / 20-core GPU / 48 GB / 1 TB preset — launched 2026-03-11. Apple's configurator base 14\" M5 Pro at 24 GB is $2,799 with the 18C/20C chip upgrade; +$400 memory upgrade to 48 GB → $3,199 US. Regional regionPrices reflect the +memory upgrade over Apple's base 14\" preset.",
-      "priceVerifiedOn": "2026-06-12",
+      "priceVerifiedOn": "2026-06-27",
       "tflopsFP8": null,
       "topsINT8": 38
     },
@@ -706,7 +707,7 @@
       "tflopsFP16": 22,
       "vllmSupport": "community",
       "priceNote": "14\" M5 Max 18-core CPU / 40-core GPU / 64 GB / 2 TB preset — launched 2026-03-11 at $4,099 US. Regional prices reflect the +memory + 32→40 GPU upgrade over Apple's base 36 GB Max preset.",
-      "priceVerifiedOn": "2026-06-12",
+      "priceVerifiedOn": "2026-06-27",
       "tflopsFP8": null,
       "topsINT8": 38
     },
@@ -788,7 +789,7 @@
       "tflopsFP16": 22,
       "vllmSupport": "community",
       "priceNote": "14\" M5 Max 18-core CPU / 40-core GPU / 128 GB / 2 TB CTO preset — launched 2026-03-11. US $5,099 and UK £5,249 confirmed via apple.com product-listing snippets (\"14-inch MacBook Pro laptop in Space Black with the M5 Max chip, 128GB memory and 2TB storage. US$5,099 / £5,249\"). 16\" same config is $5,399 US. EU/JP/AU/CA derived from Apple's documented memory-upgrade ratios; EU-retailer markups bracket €5,949-6,304 (Amac, Bigshopper), with Mac voor minder refurbished at €5,949 — apple-direct EU likely within €100 of the stored €5,949.",
-      "priceVerifiedOn": "2026-06-12",
+      "priceVerifiedOn": "2026-06-27",
       "tflopsFP8": null,
       "topsINT8": 38
     },
@@ -864,7 +865,7 @@
       "extensibilityNote": "Sealed individually, but two Mac Studios over Thunderbolt 5 MLX hit a 224 GB pool with ~64 GB/s interconnect — a real cluster path, not just a hack.",
       "tflopsFP16": 17,
       "vllmSupport": "community",
-      "priceVerifiedOn": "2026-06-12",
+      "priceVerifiedOn": "2026-06-27",
       "tflopsFP8": null,
       "topsINT8": 38
     },
@@ -877,7 +878,7 @@
       "memoryGB": 36,
       "usableMemoryGB": 28,
       "bandwidthGBs": 546,
-      "priceUSD": 1999,
+      "priceUSD": 2499,
       "tps": {
         "8b": 95,
         "14b": 55,
@@ -933,7 +934,7 @@
       "tflopsFP16": 17,
       "vllmSupport": "community",
       "priceNote": "Current Mac Studio entry point on apple.com configurator (M4 Max chip, 14-core CPU / 32-core GPU, 36 GB unified, 512 GB SSD). $1,999 US starting per Apple newsroom. Successor entry for the discontinued 128 GB tier — the chip is identical, the RAM tier is what changed.",
-      "priceVerifiedOn": "2026-06-12",
+      "priceVerifiedOn": "2026-06-27",
       "tflopsFP8": null,
       "topsINT8": 38
     },
@@ -946,7 +947,7 @@
       "memoryGB": 96,
       "usableMemoryGB": 80,
       "bandwidthGBs": 819,
-      "priceUSD": 3999,
+      "priceUSD": 5299,
       "tps": {
         "8b": 110,
         "14b": 70,
@@ -1014,7 +1015,7 @@
       "tflopsFP16": 36,
       "vllmSupport": "community",
       "priceNote": "Current Apple-direct M3 Ultra option — apple.com configurator shows 28-core CPU / 60-core GPU / 96 GB unified / 1 TB SSD at $3,999 US starting per Apple newsroom. Successor entry for the discontinued 256 / 512 GB tiers — same chip, less RAM. Apple has not signalled an M3 Ultra restock above 96 GB; M5 Ultra Mac Studio expected Oct 2026 (Macworld).",
-      "priceVerifiedOn": "2026-06-12",
+      "priceVerifiedOn": "2026-06-27",
       "tflopsFP8": null,
       "topsINT8": 36
     },
@@ -1087,7 +1088,7 @@
       "extensibilityNote": "Sealed individually, but TB5 MLX cluster scales beautifully — two of these run DeepSeek 671B Q4 between them. The cluster, not the box, is the upgrade.",
       "tflopsFP16": 36,
       "vllmSupport": "community",
-      "priceVerifiedOn": "2026-06-12",
+      "priceVerifiedOn": "2026-06-27",
       "tflopsFP8": null,
       "topsINT8": 36
     },
@@ -1169,7 +1170,7 @@
       "extensibilityNote": "Sealed individually but TB5 cluster works. The 1 TB unified pool from a pair runs every open-weights model in flight. The 512 GB SKU itself is discontinued — used / refurbished only.",
       "tflopsFP16": 36,
       "vllmSupport": "community",
-      "priceVerifiedOn": "2026-06-12",
+      "priceVerifiedOn": "2026-06-27",
       "tflopsFP8": null,
       "topsINT8": 36
     },
@@ -1386,7 +1387,7 @@
       "extensibilityNote": "Standard PCIe — pair it with a second card for 48 GB. Used market is huge.",
       "tflopsFP16": 142,
       "vllmSupport": "production",
-      "priceVerifiedOn": "2026-06-12",
+      "priceVerifiedOn": "2026-06-27",
       "tflopsFP8": null,
       "topsINT8": 285
     },
@@ -2945,7 +2946,7 @@
       "extensibilityNote": "Four-Spark cluster — the documented ceiling. Add a fifth and you're in DGX-Cloud territory (different vendor docs).",
       "tflopsFP16": 1000,
       "vllmSupport": "production",
-      "priceVerifiedOn": "2026-06-12",
+      "priceVerifiedOn": "2026-06-27",
       "tflopsFP8": 1000,
       "topsINT8": null
     },
@@ -4265,7 +4266,7 @@
       "extensibilityNote": "Two slots filled; a workstation chassis still leaves room for x4 if you have the lanes + PSU.",
       "tflopsFP16": 2914,
       "vllmSupport": "production",
-      "priceVerifiedOn": "2026-06-12",
+      "priceVerifiedOn": "2026-06-27",
       "tflopsFP8": 2000,
       "topsINT8": null
     },
@@ -4339,7 +4340,7 @@
       "extensibilityNote": "Four cards fills most workstation chassis; jumping to x8 means moving into a real server (e.g. SuperMicro 4124GS / Gigabyte G493).",
       "tflopsFP16": 5828,
       "vllmSupport": "production",
-      "priceVerifiedOn": "2026-06-12",
+      "priceVerifiedOn": "2026-06-27",
       "tflopsFP8": 4000,
       "topsINT8": null
     },
@@ -4416,7 +4417,7 @@
       "extensibilityNote": "8× is the standard 4U ceiling; beyond that means a second node + RDMA fabric (multi-node territory).",
       "tflopsFP16": 11656,
       "vllmSupport": "production",
-      "priceVerifiedOn": "2026-06-12",
+      "priceVerifiedOn": "2026-06-27",
       "tflopsFP8": 8000,
       "topsINT8": null
     },
@@ -4493,7 +4494,7 @@
       "extensibilityNote": "Two-chassis builds work, but the next jump (x16 / x24) is firmly DGX SuperPOD territory and a different procurement story.",
       "tflopsFP16": 17484,
       "vllmSupport": "production",
-      "priceVerifiedOn": "2026-06-12",
+      "priceVerifiedOn": "2026-06-27",
       "tflopsFP8": 12000,
       "topsINT8": null
     },
