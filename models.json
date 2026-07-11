@@ -1,8 +1,8 @@
 {
   "$schema": "https://json-schema.org/draft-07/schema#",
   "_description": "LLM model catalog with ratings and VRAM requirements. See README.md for schema.",
-  "_lastUpdated": "2026-06-27",
-  "_count": 61,
+  "_lastUpdated": "2026-07-11",
+  "_count": 64,
   "models": [
     {
       "id": "qwen3-8b",
@@ -50,6 +50,75 @@
         "https://huggingface.co/Qwen/Qwen3-8B"
       ],
       "contextK": 32
+    },
+    {
+      "id": "qwen3-5-9b",
+      "name": "Qwen 3.5 9B",
+      "family": "Qwen",
+      "params": 9,
+      "type": "dense",
+      "modality": "text",
+      "sizeQ4": 6,
+      "vramMinQ4": 8,
+      "vramComfortQ4": 12,
+      "ratings": {
+        "chat": 4,
+        "coding": 3,
+        "agents": 2,
+        "reasoning": 4,
+        "longContext": 4,
+        "vision": 3
+      },
+      "tags": [
+        "small",
+        "fast",
+        "multimodal",
+        "vision",
+        "reasoning",
+        "laptop"
+      ],
+      "blurb": "Qwen 3.5 9B (Mar 2 2026). Gated DeltaNet hybrid-attention multimodal vision-language model. 262K native context (up to 1M via YaRN), 201 languages, Apache 2.0. MMLU-Pro 82.5, GPQA Diamond 81.7, MathVision 78.9. Fits a 16GB laptop at Q4 (~5.7 GB). Vision: MMBench-EN 90.1, Video-MME 84.5.",
+      "license": "Apache 2.0",
+      "huggingface": "https://huggingface.co/Qwen/Qwen3.5-9B",
+      "benchmarks": {
+        "hle": null,
+        "tb2": null,
+        "swebench_pro": null,
+        "swebench_ver": null,
+        "aider": null,
+        "livecodebench": 65.6,
+        "gpqa": 81.7,
+        "mmlu_pro": 82.5,
+        "aime": null
+      },
+      "benchmarkProvenance": {
+        "gpqa": {
+          "source": "vendor",
+          "url": "https://huggingface.co/Qwen/Qwen3.5-9B",
+          "fetchedOn": "2026-07-08"
+        },
+        "mmlu_pro": {
+          "source": "vendor",
+          "url": "https://huggingface.co/Qwen/Qwen3.5-9B",
+          "fetchedOn": "2026-07-08"
+        },
+        "livecodebench": {
+          "source": "vendor",
+          "url": "https://huggingface.co/Qwen/Qwen3.5-9B",
+          "fetchedOn": "2026-07-08"
+        }
+      },
+      "vibes": {
+        "coding": "Qwen3.5-9B scores LCB v6 65.6 — solid for a 9B dense model and handles simpler coding tasks well. r/LocalLLaMA notes strong multi-turn chat and instruction following for its size class.",
+        "agentDriver": "9B dense is small for reliable multi-step agents. Okay for short 2-3 tool loops; for serious agentic work reach for Qwen 3.6 27B or larger."
+      },
+      "benchmarkNotes": "Vendor-reported from Qwen3.5-9B HF model card (huggingface.co/Qwen/Qwen3.5-9B): MMLU-Pro 82.5, GPQA Diamond 81.7, LiveCodeBench v6 65.6, MathVision 78.9. Vision benchmarks: MMBench-EN 90.1, Video-MME 84.5, MMMU-Pro 70.1. Hybrid Gated DeltaNet + full attention architecture (75% linear / 25% full) — dense model, not MoE. Q4_K_M ~5.68 GB per unsloth GGUF card.",
+      "sources": [
+        "https://huggingface.co/Qwen/Qwen3.5-9B",
+        "https://huggingface.co/unsloth/Qwen3.5-9B-GGUF",
+        "https://computertech.co/qwen-3-5-small-review-2026/"
+      ],
+      "contextK": 262
     },
     {
       "id": "llama31-8b",
@@ -820,10 +889,10 @@
       "vramMinQ4": 470,
       "vramComfortQ4": 512,
       "ratings": {
-        "chat": 4,
-        "coding": 3,
-        "agents": 3,
-        "reasoning": 4,
+        "chat": 5,
+        "coding": 5,
+        "agents": 5,
+        "reasoning": 5,
         "longContext": 5,
         "vision": 0
       },
@@ -836,15 +905,28 @@
       "blurb": "Z.ai's June 2026 flagship MoE successor to GLM-5.1: 753B total / 39B active, native 1M-token context via IndexShare sparse attention, two thinking-effort levels. MIT-licensed, no benchmarks at launch.",
       "license": "MIT",
       "huggingface": "https://huggingface.co/zai-org/GLM-5.2",
-      "benchmarks": {},
+      "benchmarks": {
+        "hle": 54.7,
+        "tb2": null,
+        "swebench_pro": 62.1,
+        "swebench_ver": null,
+        "aider": null,
+        "livecodebench": null,
+        "gpqa": 91.2,
+        "mmlu_pro": null,
+        "aime": null
+      },
       "vibes": {},
-      "benchmarkNotes": "Released 2026-06-14 with no first-party benchmarks; ratings conservative pending leaderboard runs. Q4_K_M weights ~455 GB (Abiray community quant); fits 8×H200-141G or 4×B200-180G comfortably for inference. Native FP8 variant (zai-org/GLM-5.2-FP8) is the vendor-recommended single-node-H200 deployment path.",
+      "benchmarkNotes": "Backfilled 2026-07-11 from benchlm.ai leaderboards: SWE-Bench Pro 62.1 (highest open-weight in the roster), GPQA-Diamond 91.2, HLE 54.7 — cross-checked against GLM-5.1's board rows (HLE 52.3 / GPQA 86.2 match our stored 5.1 values, confirming the same measurement mode). Not on the Terminal-Bench 2.0 board (card cites Terminal-Bench 2.1 / Terminus-2 81.0, a different version, so tb2 kept null); absent from marc0.dev SWE-Verified and the benchlm LiveCodeBench board (both null). AIME kept null — the card's 99.2 is AIME-2026, roster tracks AIME-2025. Ratings raised to GLM-5.1 parity (was 3/3): GLM-5.2 exceeds its predecessor on every measured cell. Q4_K_M weights ~455 GB (Abiray community quant); fits 8×H200-141G or 4×B200-180G; native FP8 variant (zai-org/GLM-5.2-FP8) is the vendor-recommended single-node-H200 path.",
       "sources": [
         "https://huggingface.co/zai-org/GLM-5.2",
         "https://huggingface.co/zai-org/GLM-5.2-FP8",
         "https://recipes.vllm.ai/zai-org/GLM-5.2",
         "https://huggingface.co/Abiray/GLM-5.2-Q4_K_M-GGUF/tree/main",
-        "https://www.marktechpost.com/2026/06/14/z-ai-launches-glm-5-2-with-a-usable-1m-token-context-two-thinking-effort-levels-and-no-benchmarks-at-launch/"
+        "https://www.marktechpost.com/2026/06/14/z-ai-launches-glm-5-2-with-a-usable-1m-token-context-two-thinking-effort-levels-and-no-benchmarks-at-launch/",
+        "https://benchlm.ai/benchmarks/swePro",
+        "https://benchlm.ai/benchmarks/hle",
+        "https://benchlm.ai/benchmarks/gpqaDiamond"
       ],
       "aliases": [
         "GLM 5.2",
@@ -1007,8 +1089,64 @@
       "contextK": 204
     },
     {
+      "id": "minimax-m3-428b-moe",
+      "name": "MiniMax M3 428B-A23B (MoE)",
+      "family": "MiniMax",
+      "params": 428,
+      "activeParams": 23,
+      "type": "moe",
+      "modality": "text",
+      "sizeQ4": 245,
+      "vramMinQ4": 260,
+      "vramComfortQ4": 320,
+      "sizeQ2": 130,
+      "vramMinQ2": 145,
+      "ratings": {
+        "chat": 5,
+        "coding": 5,
+        "agents": 5,
+        "reasoning": 5,
+        "longContext": 5,
+        "vision": 4
+      },
+      "tags": [
+        "moe",
+        "frontier",
+        "multimodal",
+        "long-context",
+        "agents",
+        "vision"
+      ],
+      "blurb": "Jun 1 2026. MiniMax's flagship MoE successor to M2.7 — 428B total / 23B active, 1M context window via MSA sparse attention, native multimodal (image/video/computer-use), open weights. AA Intelligence Index 44 — #2 among open-weights reasoning models. SWE-Bench Pro 59.0 (reported), OSWorld-Verified 70.06.",
+      "license": "MINIMAX COMMUNITY LICENSE",
+      "huggingface": "https://huggingface.co/MiniMaxAI/MiniMax-M3",
+      "benchmarks": {
+        "hle": null,
+        "tb2": null,
+        "swebench_pro": 59,
+        "swebench_ver": null,
+        "aider": null,
+        "livecodebench": null,
+        "gpqa": null,
+        "mmlu_pro": null,
+        "aime": null
+      },
+      "vibes": {},
+      "benchmarkNotes": "SWE-Bench Pro 59.0 (reported via marktechpost, benchlm.ai). OSWorld-Verified 70.06 (reported). AA Intelligence Index 44: #2 among open-weights reasoning models, well above class average 25. 1M context via MSA sparse attention. Native multimodal: image, video, computer-use input. First-party tok/s not yet available; db.json synthetic floor tbd. Rating provisional pending leaderboard runs.",
+      "sources": [
+        "https://artificialanalysis.ai/models/minimax-m3",
+        "https://www.marktechpost.com/2026/06/01/minimax-releases-minimax-m3-open-source-ai-model-with-1m-context-window-and-native-computer-use/",
+        "https://huggingface.co/MiniMaxAI/MiniMax-M3"
+      ],
+      "aliases": [
+        "MiniMax-M3",
+        "MiniMaxAI/MiniMax-M3"
+      ],
+      "contextK": 1000
+    },
+    {
       "id": "tencent-hy3-preview-295b-moe",
-      "name": "Tencent Hy3-preview 295B-A21B (MoE)",
+      "name": "Tencent Hy3 295B-A21B (MoE)",
       "family": "Tencent",
       "params": 295,
       "activeParams": 21,
@@ -1033,17 +1171,17 @@
         "agents",
         "reasoning"
       ],
-      "blurb": "Apr 23 2026. Tencent's first major open-weight in months — 295 B / 21 B active MoE, 256 K context, 192 experts. ~74% SWE-Bench Verified. Custom non-MIT Tencent Hy license.",
-      "license": "Tencent Hy Community License",
-      "huggingface": "https://huggingface.co/tencent/Hy3-preview",
+      "blurb": "Full open-weights release 2026-07-06 (Apache-2.0, dropping the April preview's custom Tencent license): 295 B / 21 B-active MoE, 256 K context. Model card reports GPQA-Diamond 90.4, SWE-Bench Verified 78, SWE-Bench Pro 57.9.",
+      "license": "Apache-2.0",
+      "huggingface": "https://huggingface.co/tencent/Hy3",
       "benchmarks": {
         "hle": 25.5,
         "tb2": 54.4,
-        "swebench_pro": null,
-        "swebench_ver": 74.4,
+        "swebench_pro": 57.9,
+        "swebench_ver": 78,
         "aider": null,
         "livecodebench": null,
-        "gpqa": 87.2,
+        "gpqa": 90.4,
         "mmlu_pro": 87.4,
         "aime": null
       },
@@ -1051,14 +1189,22 @@
         "coding": "Now #3 on OpenRouter coding by weekly token volume (693B) — moved from #2 as MiMo V2.5 entered at top. r/LocalLLaMA still cautious because of the custom non-MIT 'Tencent Hy' license terms, but for cost-free experimentation in Cline / Roo Code it's a real option. Free-tier promo on OpenRouter still driving experimentation.",
         "agentDriver": "TB2 54.4 puts it solidly in 'usable for short agent loops'. Search-agent benchmarks (BrowseComp 67.1, WideSearch 70.2) suggest it's better at research loops than long-horizon coding. No Open-Claude long-session benchmarks yet."
       },
-      "benchmarkNotes": "LiveCodeBench 34.9 from prior refresh appears to have been a misattributed search-agent score; cannot reconfirm against any canonical LCB leaderboard so setting to null. SWE-Ver 74.4 and TB2 54.4 both confirmed via https://huggingface.co/tencent/Hy3-preview and https://hy3ai.com/. Currently #2 on OpenRouter coding by token volume (3.13T tokens) — partially driven by free-tier promo through OpenRouter (https://openrouter.ai/collections/programming).",
+      "benchmarkNotes": "GPQA-Diamond 90.4, SWE-Bench Verified 78, SWE-Bench Pro 57.9 from the full Hy3 model card (https://huggingface.co/tencent/Hy3), superseding the April Hy3-preview figures (87.2 / 74.4). TB2 54.4 and HLE 25.5 are carried from the preview pending full-release leaderboard coverage. LiveCodeBench null (no canonical LCB row).",
       "sources": [
         "https://huggingface.co/tencent/Hy3-preview",
         "https://hy3ai.com/",
         "https://openrouter.ai/collections/programming",
-        "https://www.tbench.ai/leaderboard/terminal-bench/2.0"
+        "https://www.tbench.ai/leaderboard/terminal-bench/2.0",
+        "https://huggingface.co/tencent/Hy3",
+        "https://www.marktechpost.com/2026/07/06/tencent-releases-hy3-open-295b-moe-model/"
       ],
-      "contextK": 256
+      "contextK": 256,
+      "aliases": [
+        "Hy3",
+        "Hunyuan Hy3",
+        "tencent/Hy3",
+        "Hunyuan 3.0"
+      ]
     },
     {
       "id": "qwen3-235b-moe",
@@ -1352,14 +1498,14 @@
         "vision",
         "openrouter-top"
       ],
-      "blurb": "May 2026 release. 1.02 T / 42 B active omnimodal MoE — #1 on OpenRouter weekly token volume in May (Xiaomi captured 21% of all OpenRouter traffic, ~3× OpenAI). 1 M context, 384 experts top-8. Reported agentic-task parity with Claude Opus 4.6 per vendor blog; pending leaderboard confirmation.",
+      "blurb": "May 2026 release. 1.02 T / 42 B active omnimodal MoE — #1 on OpenRouter by weekly token volume in May 2026 (~4.92 T tokens/week; the Xiaomi MiMo family reached ~13% of all OpenRouter token traffic, up from zero a year earlier, per OpenRouter May 2026 rankings). 1 M context, 384 experts top-8. Reported agentic-task parity with Claude Opus 4.6 per vendor blog; confirmed by first-party model card benchmarks (SWE-Pro 57.2, TB2 68.4, tau3-bench 72.9 — ~ties Opus 4.6 on SWE-Pro, ahead on TB2/tau3).",
       "license": "MIT",
       "huggingface": "https://huggingface.co/XiaomiMiMo/MiMo-V2.5-Pro",
       "benchmarks": {
-        "hle": null,
-        "tb2": null,
-        "swebench_pro": null,
-        "swebench_ver": null,
+        "hle": 34,
+        "tb2": 68.4,
+        "swebench_pro": 57.2,
+        "swebench_ver": 78.9,
         "aider": null,
         "livecodebench": null,
         "gpqa": null,
@@ -1368,9 +1514,9 @@
       },
       "vibes": {
         "coding": "#1 on OpenRouter coding weekly token volume May 2026 (~4.92 T tokens). MACGPU rankings list it ahead of every Anthropic and OpenAI model by raw usage. Open-weights frontier on agentic coding at a fraction of Opus pricing.",
-        "agentDriver": "Reported parity with Claude Opus 4.6 on agentic tasks at 80% lower cost per OpenRouter pricing. Real production usage rivals closed-frontier models — Xiaomi has 21.1% of all OpenRouter traffic."
+        "agentDriver": "Reported parity with Claude Opus 4.6 on agentic tasks at 80% lower cost per OpenRouter pricing. Real production usage rivals closed-frontier models — MiMo-V2-Pro is the single most-used model on OpenRouter by weekly token volume (~4.92 T tok/wk, May 2026)."
       },
-      "benchmarkNotes": "All benchmark cells null pending primary-leaderboard coverage (benchlm.ai / tbench.ai). MACGPU OpenRouter analysis cites 57.2 SWE-Pro from XiaomiMiMo blog but a primary leaderboard cite is required before landing the value.",
+      "benchmarkNotes": "Primary-source numbers from Xiaomi model card benchmark images (HF/XiaomiMiMo/MiMo-V2.5-Pro, benchmark.jpg), cross-validated against db.json Kimi K2.6 values which match the same chart protocol. HLE=34.0 uses w.o.-tools protocol (matching db.json column convention; with-tools HLE=48.0 also listed on card). Leave aime/livecodebench/gpqa/mmlu_pro null — card only reports few-shot/non-reasoning versions, not comparable to db.json's reasoning-mode columns.",
       "sources": [
         "https://huggingface.co/XiaomiMiMo/MiMo-V2.5-Pro",
         "https://openrouter.ai/xiaomi/mimo-v2.5-pro",
@@ -1563,7 +1709,7 @@
         "long-context",
         "dgx-spark"
       ],
-      "blurb": "Feb 24 2026. 122B / 10B-active hybrid Gated-DeltaNet MoE — first Qwen open-weights with native vision. Fits a 128 GB DGX Spark in NVFP4 (~51 tok/s with v2.1 patches). Strong long-context generalist; its 27B-dense sibling out-codes it on LCB.",
+      "blurb": "Feb 24 2026. 122B / 10B-active hybrid Gated-DeltaNet MoE — first Qwen open-weights with native vision. On a single 128 GB DGX Spark the best first-party recipe is DFlash block-speculative decode (INT4 AutoRound + FP8 experts, vLLM 0.23, 262K ctx): ~59 tok/s general single-stream decode / ~81 tok/s on real agentic tool-call traffic (NVIDIA DevForum #374328, Jun 2026). NVFP4 underdelivered on this model; the older MTP-2 / v2.1 stack floored at ~51. Strong long-context generalist; its 27B-dense sibling out-codes it on LCB.",
       "license": "Apache 2.0",
       "huggingface": "https://huggingface.co/Qwen/Qwen3.5-122B-A10B",
       "benchmarks": {
@@ -1585,6 +1731,7 @@
       "sources": [
         "https://huggingface.co/Qwen/Qwen3.5-122B-A10B",
         "https://forums.developer.nvidia.com/t/qwen3-5-122b-a10b-on-single-spark-up-to-51-tok-s-v2-1-patches-quick-start-benchmark/365639/11",
+        "https://forums.developer.nvidia.com/t/dflash-for-qwen3-5-122b-a10b-80-tok-s-on-1x-spark/374328",
         "https://simonwillison.net/2026/Feb/17/qwen35/"
       ],
       "contextK": 262
@@ -1635,7 +1782,7 @@
         "coding": "From mid-Feb through April 2026 this was the local-coding king — daily-driver in Cline, Roo Code, Aider, Open-Claude, Continue via llama-server or vLLM. Now decisively dethroned by Qwen 3.6 27B (SWE-Ver 77.2 vs 76.4) and Qwen 3.6 35B-A3B on every coding eval per Qwen's own comparison table. Still a heavyweight generalist.",
         "agentDriver": "First 200B+ open MoE genuinely usable for autonomous loops — TAU2-Bench 86.7, TB2 52.5, MCP-Mark 46.1. Pair with 256 GB M3 Ultra (Q4 ~25 tok/s) or a multi-H100 box. Open-Claude users have largely moved to GLM-5.1 / Kimi K2.6 / DeepSeek V4 for new long-horizon work."
       },
-      "benchmarkNotes": "SWE-Pro 50.9 cross-referenced from Qwen 3.6 27B launch comparison table (https://qwen.ai/blog?id=qwen3.6-27b) — Qwen self-report. HLE DRIFT FLAGGED: stored 37.6 vs benchlm.ai live 28.7 (delta -8.9 pts, URL: https://benchlm.ai/benchmarks/hle). This is a significant downward revision. Operator should verify which methodology applies before updating — if benchlm.ai is using a different no-tools / tools split than the stored value, the stored value may be from a more generous configuration. All other values from prior research refresh, Qwen-self-reported at v3.5 launch.",
+      "benchmarkNotes": "SWE-Pro 50.9 cross-referenced from Qwen 3.6 27B launch comparison table (https://qwen.ai/blog?id=qwen3.6-27b) — Qwen self-report. HLE DRIFT FLAGGED: stored 37.6 vs benchlm.ai live 28.7 (delta -8.9 pts, URL: https://benchlm.ai/benchmarks/hle). This is a significant downward revision (re-confirmed 2026-07-11: benchlm.ai still shows 28.7). Operator should verify which methodology applies before updating — if benchlm.ai is using a different no-tools / tools split than the stored value, the stored value may be from a more generous configuration. All other values from prior research refresh, Qwen-self-reported at v3.5 launch.",
       "sources": [
         "https://qwen.ai/blog?id=qwen3.6-27b",
         "https://benchlm.ai/benchmarks/swePro",
@@ -1669,13 +1816,13 @@
         "vision",
         "long-context"
       ],
-      "blurb": "May 2026 release. 310 B / 15 B active omnimodal MoE — mid-tier sibling of MiMo V2.5-Pro. 256 experts top-8, 1 M context, MIT. Same Xiaomi architecture family that captured 21% of OpenRouter traffic in May.",
+      "blurb": "May 2026 release. 310 B / 15 B active omnimodal MoE — mid-tier sibling of MiMo V2.5-Pro. 256 experts top-8, 1 M context, MIT. Same Xiaomi MiMo family that reached ~13% of all OpenRouter token traffic by May 2026 (up from zero a year earlier).",
       "license": "MIT",
       "huggingface": "https://huggingface.co/XiaomiMiMo/MiMo-V2.5",
       "benchmarks": {
         "hle": null,
-        "tb2": null,
-        "swebench_pro": null,
+        "tb2": 65.8,
+        "swebench_pro": 56.1,
         "swebench_ver": null,
         "aider": null,
         "livecodebench": null,
@@ -1683,13 +1830,15 @@
         "mmlu_pro": null,
         "aime": null
       },
+      "benchmarkNotes": "Primary-source numbers from Xiaomi model card coding-bench chart (HF/XiaomiMiMo/MiMo-V2.5, mimo-v2.5-coding-bench.png), cross-validated against db.json Kimi K2.6 values which match the same chart protocol. Leave hle/swebench_ver/aider/livecodebench/gpqa/mmlu_pro/aime null — not reported for the 310B in available charts.",
       "vibes": {
         "coding": "Mid-tier sibling to MiMo V2.5-Pro. Fits 256 GB clusters at Q4; positioned as the open-weights alternative to GPT-OSS-120B for coding workflows.",
         "agentDriver": "Same MiMo architecture as V2.5-Pro; slightly weaker on long-horizon agent benchmarks but runs in 2× Spark / Halo cluster memory."
       },
       "sources": [
         "https://huggingface.co/XiaomiMiMo/MiMo-V2.5",
-        "https://openrouter.ai/xiaomi/mimo-v2.5"
+        "https://openrouter.ai/xiaomi/mimo-v2.5",
+        "https://macgpu.com/en/blog/2026-0525-openrouter-rankings-may-mimo-qwen-claude-mac-deployment-matrix.html"
       ],
       "contextK": 1000
     },
@@ -1757,6 +1906,87 @@
         "https://huggingface.co/google/gemma-4-31B-it",
         "https://huggingface.co/blog/gemma4",
         "https://ai.google.dev/gemma/docs/core/model_card_4",
+        "https://blog.google/innovation-and-ai/technology/developers-tools/gemma-4/"
+      ],
+      "contextK": 256
+    },
+    {
+      "id": "gemma-4-12b",
+      "name": "Gemma 4 12B Unified (dense)",
+      "family": "Gemma",
+      "params": 12,
+      "type": "dense",
+      "modality": "text",
+      "sizeQ4": 7,
+      "vramMinQ4": 8,
+      "vramComfortQ4": 12,
+      "ratings": {
+        "chat": 4,
+        "coding": 4,
+        "agents": 3,
+        "reasoning": 4,
+        "longContext": 4,
+        "vision": 4
+      },
+      "tags": [
+        "dense",
+        "multimodal",
+        "vision",
+        "long-context",
+        "audio",
+        "reasoning",
+        "consumer-friendly",
+        "laptop"
+      ],
+      "blurb": "Jun 3 2026. Google's encoder-free 12B dense — unified decoder-only transformer with no separate vision/audio encoder; raw patches + audio waveforms project directly into embedding space. 256K context, 140+ langs, native multimodal (text/image/audio/video), Apache 2.0. Runs on a 16GB laptop (~8-9GB Q4). Strong for its size: AIME 77.5, GPQA 78.8, MMLU-Pro 77.2, LCB 72.0.",
+      "license": "Apache 2.0",
+      "huggingface": "https://huggingface.co/google/gemma-4-12B-it",
+      "benchmarks": {
+        "hle": 5.2,
+        "tb2": null,
+        "swebench_pro": null,
+        "swebench_ver": null,
+        "aider": null,
+        "livecodebench": 72,
+        "gpqa": 78.8,
+        "mmlu_pro": 77.2,
+        "aime": 77.5
+      },
+      "benchmarkProvenance": {
+        "hle": {
+          "source": "vendor",
+          "url": "https://ai.google.dev/gemma/docs/core/model_card_4",
+          "fetchedOn": "2026-06-27"
+        },
+        "gpqa": {
+          "source": "vendor",
+          "url": "https://ai.google.dev/gemma/docs/core/model_card_4",
+          "fetchedOn": "2026-06-27"
+        },
+        "mmlu_pro": {
+          "source": "vendor",
+          "url": "https://ai.google.dev/gemma/docs/core/model_card_4",
+          "fetchedOn": "2026-06-27"
+        },
+        "aime": {
+          "source": "vendor",
+          "url": "https://ai.google.dev/gemma/docs/core/model_card_4",
+          "fetchedOn": "2026-06-27"
+        },
+        "livecodebench": {
+          "source": "vendor",
+          "url": "https://ai.google.dev/gemma/docs/core/model_card_4",
+          "fetchedOn": "2026-06-27"
+        }
+      },
+      "vibes": {
+        "coding": "Gemma 4 12B scores LCB 72.0, AIME 77.5, Codeforces 1659 — strongest sub-16B open-weights coder. Encoder-free design means image+audio inputs add zero encoder latency. Runs on a 16GB laptop (8-9GB Q4) — the practical 'AI laptop' model of the month.",
+        "agentDriver": "TAU2 69.0 is strong for 12B — usable in Cline / Roo Code for short agent loops, but sub-60B caps it at single-session autonomous work. Not a multi-hour orchestrator."
+      },
+      "benchmarkNotes": "All values from the official Google Gemma 4 model card (ai.google.dev/gemma/docs/core/model_card_4, fetched 2026-06-27): MMLU-Pro 77.2, AIME-2026 no-tools 77.5, LCB v6 72.0, GPQA Diamond 78.8, HLE no-tools 5.2. Additional published: Codeforces ELO 1659, Tau2 69.0 (3-run avg), BigBench Extra Hard 53.0, MMMLU 83.4, MMMU Pro 69.1, MATH-Vision 79.7, MedXPertQA MM 48.7, OmniDocBench 0.164. Audio: CoVoST 38.5, FLEURS 0.069. MRCR v2 128K 8-needle 43.4. No SWE-Bench or TB2 published. No first-party tok/s; db.json synthetic floor tbd. Runs on a 16GB laptop (~8-9GB Q4).",
+      "sources": [
+        "https://ai.google.dev/gemma/docs/core/model_card_4",
+        "https://huggingface.co/google/gemma-4-12B-it",
         "https://blog.google/innovation-and-ai/technology/developers-tools/gemma-4/"
       ],
       "contextK": 256
