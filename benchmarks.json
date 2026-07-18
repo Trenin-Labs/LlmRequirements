@@ -1,7 +1,7 @@
 {
   "$schema": "https://json-schema.org/draft-07/schema#",
   "_description": "Long-format benchmark rows extracted from builds.json plus citations. tps = decode tokens-per-second at Q4_K_M, short context, single stream. pp = prompt-processing tokens-per-second (llama-bench pp512 prefill, Q4_K_M). ttft100k = seconds to first token with a 100 000-token input prompt at Q4_K_M. imageSec = seconds per image. videoSec = seconds per 5-second clip.",
-  "_lastUpdated": "2026-07-11",
+  "_lastUpdated": "2026-07-18",
   "_methodology": "tps values are sourced from llama.cpp / vLLM single-stream Q4_K_M generation benchmarks. pp values are sourced from llama-bench pp512 runs and equivalent vLLM / sglang prefill benchmarks. ttft100k is measured (or estimated, see sources) with a 100 K-token prompt at Q4_K_M; null when the build cannot fit model weights plus a 100 K KV cache. See sources[] for citations.",
   "_counts": {
     "tps": 482,
@@ -9,7 +9,7 @@
     "ttft100k": 374,
     "image": 135,
     "video": 123,
-    "sources": 133
+    "sources": 124
   },
   "tps": [
     {
@@ -7467,16 +7467,8 @@
       "url": "https://www.tbench.ai/leaderboard/terminal-bench/2.0"
     },
     {
-      "label": "SWE-Bench Pro leaderboard (benchlm.ai)",
-      "url": "https://benchlm.ai/benchmarks/swePro"
-    },
-    {
       "label": "SWE-Bench Verified snapshot (marc0.dev, May 2026)",
       "url": "https://www.marc0.dev/en/leaderboard"
-    },
-    {
-      "label": "Humanity's Last Exam — leaderboard (benchlm.ai)",
-      "url": "https://benchlm.ai/benchmarks/hle"
     },
     {
       "label": "Humanity's Last Exam — cross-check (pricepertoken)",
@@ -7485,14 +7477,6 @@
     {
       "label": "LiveCodeBench — leaderboard (pricepertoken)",
       "url": "https://pricepertoken.com/leaderboards/benchmark/livecodebench"
-    },
-    {
-      "label": "AIME 2025 — leaderboard (llm-stats.com)",
-      "url": "https://llm-stats.com/benchmarks/aime-2025"
-    },
-    {
-      "label": "Artificial Analysis intelligence index + HLE",
-      "url": "https://artificialanalysis.ai/leaderboards/models"
     },
     {
       "label": "RTX 5090 LLM benchmarks (Hardware Corner)",
@@ -7543,10 +7527,6 @@
       "url": "https://techsy.io/en/blog/best-open-source-llms-2026"
     },
     {
-      "label": "Best open source LLMs (BenchLM)",
-      "url": "https://benchlm.ai/blog/posts/best-open-source-llm"
-    },
-    {
       "label": "RTX Pro 6000 Blackwell review (StorageReview)",
       "url": "https://www.storagereview.com/review/nvidia-rtx-pro-6000-workstation-gpu-review-blackwell-architecture-and-96-gb-for-pro-workflows"
     },
@@ -7589,14 +7569,6 @@
     {
       "label": "SWE-rebench leaderboard (small-model agent reality check)",
       "url": "https://swe-rebench.com/"
-    },
-    {
-      "label": "SWE-Bench Pro leaderboard (open vs frontier gap)",
-      "url": "https://llm-stats.com/benchmarks/swe-bench-pro"
-    },
-    {
-      "label": "Terminal-Bench 2.0 results (BenchLM)",
-      "url": "https://benchlm.ai/benchmarks/terminalBench2"
     },
     {
       "label": "NVIDIA dual-Spark playbook (CUDA cluster benchmarks)",
@@ -7699,8 +7671,8 @@
       "url": "https://www.macrumors.com/2026/05/01/mac-mini-now-starts-at-799/"
     },
     {
-      "label": "ASUS Ascent GX10 — $3,499 at ASUS eShop direct (May 2026, OUT OF STOCK — superseded by Amazon 1 TB $3,099 / NVIDIA marketplace same $3,499 OOS)",
-      "url": "https://shop.asus.com/us/ascent-gx10.html"
+      "label": "ASUS Ascent GX10 — 1 TB $3,976.99 in stock at Newegg (N82E16859110044, Jul 2026); Amazon US ~$4,000-$4,100",
+      "url": "https://www.newegg.com/asus-ascent-gx10-mini-pc/p/N82E16859110044"
     },
     {
       "label": "MSI EdgeXpert MS-C931 launch price $2,999, limited availability (Notebookcheck)",
@@ -7769,10 +7741,6 @@
     {
       "label": "NVIDIA Developer Forum — Qwen3.5-122B-A10B on Spark, 51 tok/s with patches",
       "url": "https://forums.developer.nvidia.com/t/qwen3-5-122b-a10b-on-single-spark-up-to-51-tok-s-v2-1-patches-quick-start-benchmark/365639/11"
-    },
-    {
-      "label": "Quad RTX 3090 — Qwen3.5-122B-A10B 120B-MoE Q4 decode ~100 tok/s (DGX Spark vs Quad 3090 short; consistent with dual-5090 96 + aggregate-bandwidth physics)",
-      "url": "https://www.youtube.com/watch?v=gfwoTZTyDso"
     },
     {
       "label": "Human Value Exchange — Why prompt processing is the real MVP: DGX Spark vs M4 Pro vs Strix Halo on Qwen 30B",
@@ -7937,10 +7905,6 @@
     {
       "label": "Simon Willison — Qwen3.5: Towards Native Multimodal Agents",
       "url": "https://simonwillison.net/2026/Feb/17/qwen35/"
-    },
-    {
-      "label": "Artificial Analysis — Qwen3.5 397B-A17B",
-      "url": "https://artificialanalysis.ai/models/qwen3-5-397b-a17b"
     },
     {
       "label": "Google Gemma 4 31B (Apr 2026 dense flagship)",
