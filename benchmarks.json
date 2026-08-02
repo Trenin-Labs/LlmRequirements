@@ -4,11 +4,11 @@
   "_lastUpdated": "2026-08-02",
   "_methodology": "tps values are sourced from llama.cpp / vLLM single-stream Q4_K_M generation benchmarks. pp values are sourced from llama-bench pp512 runs and equivalent vLLM / sglang prefill benchmarks. ttft100k is measured (or estimated, see sources) with a 100 K-token prompt at Q4_K_M; null when the build cannot fit model weights plus a 100 K KV cache. See sources[] for citations.",
   "_counts": {
-    "tps": 482,
-    "pp": 374,
-    "ttft100k": 374,
-    "image": 135,
-    "video": 123,
+    "tps": 500,
+    "pp": 383,
+    "ttft100k": 383,
+    "image": 141,
+    "video": 129,
     "sources": 144
   },
   "tps": [
@@ -633,6 +633,36 @@
       "tps": null
     },
     {
+      "buildId": "rtx-3090-96gb-ddr5",
+      "modelSize": "8b",
+      "tps": 90
+    },
+    {
+      "buildId": "rtx-3090-96gb-ddr5",
+      "modelSize": "14b",
+      "tps": 50
+    },
+    {
+      "buildId": "rtx-3090-96gb-ddr5",
+      "modelSize": "30b",
+      "tps": 28
+    },
+    {
+      "buildId": "rtx-3090-96gb-ddr5",
+      "modelSize": "70b",
+      "tps": null
+    },
+    {
+      "buildId": "rtx-3090-96gb-ddr5",
+      "modelSize": "120b_moe",
+      "tps": null
+    },
+    {
+      "buildId": "rtx-3090-96gb-ddr5",
+      "modelSize": "235b_moe",
+      "tps": null
+    },
+    {
       "buildId": "rtx-3090-x2",
       "modelSize": "8b",
       "tps": 95
@@ -723,6 +753,36 @@
       "tps": null
     },
     {
+      "buildId": "rtx-4090-128gb-ddr5",
+      "modelSize": "8b",
+      "tps": 130
+    },
+    {
+      "buildId": "rtx-4090-128gb-ddr5",
+      "modelSize": "14b",
+      "tps": 75
+    },
+    {
+      "buildId": "rtx-4090-128gb-ddr5",
+      "modelSize": "30b",
+      "tps": 42
+    },
+    {
+      "buildId": "rtx-4090-128gb-ddr5",
+      "modelSize": "70b",
+      "tps": null
+    },
+    {
+      "buildId": "rtx-4090-128gb-ddr5",
+      "modelSize": "120b_moe",
+      "tps": null
+    },
+    {
+      "buildId": "rtx-4090-128gb-ddr5",
+      "modelSize": "235b_moe",
+      "tps": null
+    },
+    {
       "buildId": "rtx-5090-32",
       "modelSize": "8b",
       "tps": 186
@@ -749,6 +809,36 @@
     },
     {
       "buildId": "rtx-5090-32",
+      "modelSize": "235b_moe",
+      "tps": null
+    },
+    {
+      "buildId": "rtx-5090-192gb-ddr5",
+      "modelSize": "8b",
+      "tps": 186
+    },
+    {
+      "buildId": "rtx-5090-192gb-ddr5",
+      "modelSize": "14b",
+      "tps": 124
+    },
+    {
+      "buildId": "rtx-5090-192gb-ddr5",
+      "modelSize": "30b",
+      "tps": 70
+    },
+    {
+      "buildId": "rtx-5090-192gb-ddr5",
+      "modelSize": "70b",
+      "tps": null
+    },
+    {
+      "buildId": "rtx-5090-192gb-ddr5",
+      "modelSize": "120b_moe",
+      "tps": null
+    },
+    {
+      "buildId": "rtx-5090-192gb-ddr5",
       "modelSize": "235b_moe",
       "tps": null
     },
@@ -2810,6 +2900,21 @@
       "ppTokensPerSec": 1400
     },
     {
+      "buildId": "rtx-3090-96gb-ddr5",
+      "modelSize": "8b",
+      "ppTokensPerSec": 5100
+    },
+    {
+      "buildId": "rtx-3090-96gb-ddr5",
+      "modelSize": "14b",
+      "ppTokensPerSec": 2900
+    },
+    {
+      "buildId": "rtx-3090-96gb-ddr5",
+      "modelSize": "30b",
+      "ppTokensPerSec": 1400
+    },
+    {
       "buildId": "rtx-3090-x2",
       "modelSize": "8b",
       "ppTokensPerSec": 8800
@@ -2870,6 +2975,21 @@
       "ppTokensPerSec": 3200
     },
     {
+      "buildId": "rtx-4090-128gb-ddr5",
+      "modelSize": "8b",
+      "ppTokensPerSec": 11500
+    },
+    {
+      "buildId": "rtx-4090-128gb-ddr5",
+      "modelSize": "14b",
+      "ppTokensPerSec": 6600
+    },
+    {
+      "buildId": "rtx-4090-128gb-ddr5",
+      "modelSize": "30b",
+      "ppTokensPerSec": 3200
+    },
+    {
       "buildId": "rtx-5090-32",
       "modelSize": "8b",
       "ppTokensPerSec": 14000
@@ -2881,6 +3001,21 @@
     },
     {
       "buildId": "rtx-5090-32",
+      "modelSize": "30b",
+      "ppTokensPerSec": 3900
+    },
+    {
+      "buildId": "rtx-5090-192gb-ddr5",
+      "modelSize": "8b",
+      "ppTokensPerSec": 14000
+    },
+    {
+      "buildId": "rtx-5090-192gb-ddr5",
+      "modelSize": "14b",
+      "ppTokensPerSec": 8200
+    },
+    {
+      "buildId": "rtx-5090-192gb-ddr5",
       "modelSize": "30b",
       "ppTokensPerSec": 3900
     },
@@ -4682,6 +4817,21 @@
       "ttft100kSeconds": null
     },
     {
+      "buildId": "rtx-3090-96gb-ddr5",
+      "modelSize": "8b",
+      "ttft100kSeconds": 28
+    },
+    {
+      "buildId": "rtx-3090-96gb-ddr5",
+      "modelSize": "14b",
+      "ttft100kSeconds": 50
+    },
+    {
+      "buildId": "rtx-3090-96gb-ddr5",
+      "modelSize": "30b",
+      "ttft100kSeconds": null
+    },
+    {
       "buildId": "rtx-3090-x2",
       "modelSize": "8b",
       "ttft100kSeconds": 18
@@ -4742,6 +4892,21 @@
       "ttft100kSeconds": null
     },
     {
+      "buildId": "rtx-4090-128gb-ddr5",
+      "modelSize": "8b",
+      "ttft100kSeconds": 13
+    },
+    {
+      "buildId": "rtx-4090-128gb-ddr5",
+      "modelSize": "14b",
+      "ttft100kSeconds": 23
+    },
+    {
+      "buildId": "rtx-4090-128gb-ddr5",
+      "modelSize": "30b",
+      "ttft100kSeconds": null
+    },
+    {
       "buildId": "rtx-5090-32",
       "modelSize": "8b",
       "ttft100kSeconds": 11
@@ -4753,6 +4918,21 @@
     },
     {
       "buildId": "rtx-5090-32",
+      "modelSize": "30b",
+      "ttft100kSeconds": 38
+    },
+    {
+      "buildId": "rtx-5090-192gb-ddr5",
+      "modelSize": "8b",
+      "ttft100kSeconds": 11
+    },
+    {
+      "buildId": "rtx-5090-192gb-ddr5",
+      "modelSize": "14b",
+      "ttft100kSeconds": 18
+    },
+    {
+      "buildId": "rtx-5090-192gb-ddr5",
       "modelSize": "30b",
       "ttft100kSeconds": 38
     },
@@ -6314,6 +6494,16 @@
       "secondsPerImage": 30
     },
     {
+      "buildId": "rtx-3090-96gb-ddr5",
+      "imageModel": "sdxl",
+      "secondsPerImage": 5
+    },
+    {
+      "buildId": "rtx-3090-96gb-ddr5",
+      "imageModel": "flux",
+      "secondsPerImage": 30
+    },
+    {
       "buildId": "rtx-3090-x2",
       "imageModel": "sdxl",
       "secondsPerImage": 5
@@ -6344,12 +6534,32 @@
       "secondsPerImage": 18
     },
     {
+      "buildId": "rtx-4090-128gb-ddr5",
+      "imageModel": "sdxl",
+      "secondsPerImage": 3.2
+    },
+    {
+      "buildId": "rtx-4090-128gb-ddr5",
+      "imageModel": "flux",
+      "secondsPerImage": 18
+    },
+    {
       "buildId": "rtx-5090-32",
       "imageModel": "sdxl",
       "secondsPerImage": 2.2
     },
     {
       "buildId": "rtx-5090-32",
+      "imageModel": "flux",
+      "secondsPerImage": 9
+    },
+    {
+      "buildId": "rtx-5090-192gb-ddr5",
+      "imageModel": "sdxl",
+      "secondsPerImage": 2.2
+    },
+    {
+      "buildId": "rtx-5090-192gb-ddr5",
       "imageModel": "flux",
       "secondsPerImage": 9
     },
@@ -6916,6 +7126,16 @@
       "secondsPer5sClip": 600
     },
     {
+      "buildId": "rtx-3090-96gb-ddr5",
+      "videoModel": "ltx",
+      "secondsPer5sClip": 180
+    },
+    {
+      "buildId": "rtx-3090-96gb-ddr5",
+      "videoModel": "wan22",
+      "secondsPer5sClip": 600
+    },
+    {
       "buildId": "rtx-3090-x2",
       "videoModel": "ltx",
       "secondsPer5sClip": 180
@@ -6946,12 +7166,32 @@
       "secondsPer5sClip": 270
     },
     {
+      "buildId": "rtx-4090-128gb-ddr5",
+      "videoModel": "ltx",
+      "secondsPer5sClip": 90
+    },
+    {
+      "buildId": "rtx-4090-128gb-ddr5",
+      "videoModel": "wan22",
+      "secondsPer5sClip": 270
+    },
+    {
       "buildId": "rtx-5090-32",
       "videoModel": "ltx",
       "secondsPer5sClip": 60
     },
     {
       "buildId": "rtx-5090-32",
+      "videoModel": "wan22",
+      "secondsPer5sClip": 180
+    },
+    {
+      "buildId": "rtx-5090-192gb-ddr5",
+      "videoModel": "ltx",
+      "secondsPer5sClip": 60
+    },
+    {
+      "buildId": "rtx-5090-192gb-ddr5",
       "videoModel": "wan22",
       "secondsPer5sClip": 180
     },

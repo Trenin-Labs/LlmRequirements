@@ -2,7 +2,7 @@
   "$schema": "https://json-schema.org/draft-07/schema#",
   "_description": "Hardware build catalog with throughput (tps), prompt-processing (pp), TTFT @ 100 K (ttft100k), image, and video benchmarks. Each build also carries editorial fields used by the /compare page: softwareStack (short label), softwareMaturity (0-5), softwareNote, extensibility (0-5), and extensibilityNote. Pricing is in priceUSD as a US MSRP fallback only — see prices/ for regional snapshots.",
   "_lastUpdated": "2026-08-02",
-  "_count": 76,
+  "_count": 79,
   "builds": [
     {
       "id": "your-laptop-8gb",
@@ -1168,7 +1168,7 @@
       "idleW": 8,
       "activeW": 130,
       "pros": [
-        "Current Apple-direct Mac Studio entry point at $1,999 — the cheapest path into the M4 Max chip",
+        "Current Apple-direct Mac Studio entry point at $2,499 — the cheapest path into the M4 Max chip",
         "Silent + low-idle (8 W) compared to any GPU rig at this perf tier",
         "Same 546 GB/s bandwidth as the 128 GB SKU — decode rate identical for any model that fits",
         "Apple Refurb usually drops a tier in 8-10 weeks; budget watchers should bookmark"
@@ -1204,7 +1204,7 @@
       "extensibilityNote": "Sealed individually, but two Mac Studios over Thunderbolt 5 MLX hit a 72 GB pool with ~64 GB/s interconnect — a real cluster path, not just a hack.",
       "tflopsFP16": 17,
       "vllmSupport": "community",
-      "priceNote": "Current Mac Studio entry point on apple.com configurator (M4 Max chip, 14-core CPU / 32-core GPU, 36 GB unified, 512 GB SSD). $1,999 US starting per Apple newsroom. Successor entry for the discontinued 128 GB tier — the chip is identical, the RAM tier is what changed.",
+      "priceNote": "Current Mac Studio entry point on apple.com configurator (M4 Max chip, 14-core CPU / 32-core GPU, 36 GB unified, 512 GB SSD). $2,499 US starting on apple.com configurator (June 2026 DRAM-shortage hike). Successor entry for the discontinued 128 GB tier — the chip is identical, the RAM tier is what changed.",
       "priceVerifiedOn": "2026-07-31",
       "tflopsFP8": null,
       "topsINT8": 38,
@@ -1271,7 +1271,7 @@
       ],
       "cons": [
         "235 B MoE / DeepSeek V4-Pro class doesn't fit — those need the discontinued 256 / 512 GB tiers or wait for M5 Ultra (Macworld: Oct 2026)",
-        "$5,299 starting price is 2.6× the M4 Max 36 GB for the same chassis — the cost is the chip + memory",
+        "$5,299 starting price is 2.1× the M4 Max 36 GB for the same chassis — the cost is the chip + memory",
         "Slow prompt processing vs CUDA (Metal still trails on long-context prefill)",
         "Sealed chassis, no upgrade path"
       ],
@@ -1366,7 +1366,7 @@
       "bandwidthGBs": 819,
       "priceUSD": 7999,
       "discontinued": true,
-      "priceNote": "May 2026 — Apple pulled the 256 GB SKU in March 2026 amid the DRAM shortage; configurator now caps the M3 Ultra Mac Studio at 96 GB ($3,999 starting). The +$2,000 256 GB upgrade tier (up from $1,600) is the historical anchor; refurbished / third-party only. (tomshardware.com, macworld.com, 2026-05).",
+      "priceNote": "May 2026 — Apple pulled the 256 GB SKU in March 2026 amid the DRAM shortage; configurator now caps the M3 Ultra Mac Studio at 96 GB ($5,299 starting). The +$2,000 256 GB upgrade tier (up from $1,600) is the historical anchor; refurbished / third-party only. (tomshardware.com, macworld.com, 2026-05).",
       "tps": {
         "8b": 110,
         "14b": 70,
@@ -1390,7 +1390,7 @@
         "Power-efficient"
       ],
       "cons": [
-        "Pulled by Apple Mar 2026 — refurb / used only; current Apple-direct M3 Ultra ships at 96 GB ($3,999, see mac-studio-m3-ultra-96)",
+        "Pulled by Apple Mar 2026 — refurb / used only; current Apple-direct M3 Ultra ships at 96 GB ($5,299, see mac-studio-m3-ultra-96)",
         "Prompt-processing slower than CUDA",
         "Premium price"
       ],
@@ -1424,7 +1424,7 @@
       "extensibilityNote": "Sealed individually, but TB5 MLX cluster scales beautifully — two of these run DeepSeek 671B Q4 between them. The cluster, not the box, is the upgrade.",
       "tflopsFP16": 36,
       "vllmSupport": "community",
-      "priceVerifiedOn": "2026-07-28",
+      "priceVerifiedOn": "2026-07-29",
       "tflopsFP8": null,
       "topsINT8": 36,
       "benchmarks": [
@@ -1961,6 +1961,96 @@
       ]
     },
     {
+      "id": "rtx-3090-96gb-ddr5",
+      "name": "RTX 3090 + 96GB DDR5 (MoE offload)",
+      "vendor": "NVIDIA",
+      "category": "nvidia-consumer",
+      "formFactor": "desktop tower",
+      "memoryGB": 120,
+      "usableMemoryGB": 100,
+      "bandwidthGBs": 85,
+      "priceUSD": 2000,
+      "priceNote": "July 2026 — used RTX 3090 ~$1,050 (eBay sold listings) + ~$500 host (mobo/CPU/PSU/case/SSD) + 96GB DDR5-5600 ~$450. NOTE: DDR5 is in an AI-driven 2026 shortage — 32GB DDR5-6000 kits hit $420-480 (Newegg, 2026-07-03), so RAM cost and total swing week-to-week; re-verify before buying. Total ~$2,000. (eBay sold listings, Newegg, 2026-07).",
+      "tps": {
+        "8b": 90,
+        "14b": 50,
+        "30b": 28,
+        "70b": null,
+        "120b_moe": null,
+        "235b_moe": null
+      },
+      "tpsNote": "Hybrid GPU+system-RAM build (MoE expert offload). The RTX 3090 holds the attention/shared layers + KV cache + as many MoE expert tensors as fit in 24GB VRAM; the remaining experts live in 96GB of DDR5-5600. Small DENSE models (8-30B) run entirely in VRAM at full GPU speed — that is what the 8b/14b/30b buckets show. LARGE MoE decode is bounded by SYSTEM-RAM bandwidth (~85 GB/s), NOT the GPU's 936 GB/s — the capacity-for-speed tradeoff of expert offload. Headline current-gen recipe: Qwen 3.5 122B-A10B (10B active, Q4_K_M ~67GB) via llama.cpp expert offload — no clean single-GPU offload measurement sourced as of 2026-07-13, physics-estimated ~12-15 t/s (gap filed in TASK-0260). Contrast the F16-GGUF-on-DDR4 path at ~2 t/s (hardware-corner.net) — native MXFP4 + fast DDR5 is what makes 120B usable on one card. bandwidthGBs below reports the DDR5 bandwidth that governs offloaded-MoE decode, not the GPU's VRAM bandwidth.",
+      "imageSec": {
+        "sdxl": 5,
+        "flux": 30
+      },
+      "videoSec": {
+        "ltx": 180,
+        "wan22": 600
+      },
+      "idleW": 35,
+      "activeW": 370,
+      "pros": [
+        "Runs current-gen 122B-class MoE (Qwen 3.5 122B-A10B, Nemotron 3 Super) on a single 24GB card via expert offload",
+        "Cheapest path into 100B+ MoE — used 3090 + DDR5",
+        "Small dense models still run full-speed in VRAM"
+      ],
+      "cons": [
+        "Big-MoE decode is DDR5-bandwidth-bound (~12-15 t/s, not GPU speed)",
+        "Not plug-and-play — needs llama.cpp --n-cpu-moe tuning + DDR5 XMP",
+        "2026 DDR5 shortage inflates the RAM cost"
+      ],
+      "reviews": [
+        {
+          "videoId": "RMidGvCZc4g",
+          "title": "Local AI server benchmark — 3090 vs dual 3060s"
+        },
+        {
+          "videoId": "QYSmQx55e44",
+          "title": "RTX 3090 vs 4090 vs 5090 vs Mac M5 Max — Qwen3.6-27B benchmark"
+        }
+      ],
+      "plugAndPlay": false,
+      "rigOverheadUSD": 950,
+      "pp": {
+        "8b": 5100,
+        "14b": 2900,
+        "30b": 1400
+      },
+      "ttft100k": {
+        "8b": 28,
+        "14b": 50,
+        "30b": null
+      },
+      "softwareStack": "CUDA",
+      "softwareMaturity": 5,
+      "softwareNote": "Most-supported consumer GPU for local LLMs. vLLM, TRT-LLM, llama.cpp, ComfyUI — Day-1 on all of them.",
+      "extensibility": 5,
+      "extensibilityNote": "Standard PCIe — pair it with a second card for 48 GB. Used market is huge.",
+      "tflopsFP16": 142,
+      "vllmSupport": "production",
+      "priceVerifiedOn": "2026-07-13",
+      "tflopsFP8": null,
+      "topsINT8": 285,
+      "tagline": "Run Qwen 3.5 122B on one used 3090 via expert offload (current-gen MoE).",
+      "benchmarks": [
+        {
+          "modelId": "qwen3-5-122b-a10b-moe",
+          "modelName": "Qwen 3.5 122B-A10B (MoE)",
+          "quant": "Q4_K_M",
+          "engine": "llama.cpp (CUDA + CPU-MoE offload)",
+          "concurrency": 1,
+          "ctxTokens": 32768,
+          "decodeTps": null,
+          "prefillTps": null,
+          "status": "unverified",
+          "source": "CURRENT-GEN HEADLINE: Qwen 3.5 122B-A10B (10B active). At Q4_K_M (~67GB) it fits in 100GB usable memory. Decode is DDR5-bandwidth-bound — physics estimate ~12-15 t/s. No clean single-consumer-GPU offload measurement sourced as of 2026-07-13; gap filed in TASK-0260. First-party measurement recommended.",
+          "measuredOn": null,
+          "fits": true
+        }
+      ]
+    },
+    {
       "id": "rtx-3090-x2",
       "name": "Dual RTX 3090 (used) build",
       "vendor": "NVIDIA",
@@ -2257,6 +2347,95 @@
       ]
     },
     {
+      "id": "rtx-4090-128gb-ddr5",
+      "name": "RTX 4090 + 128GB DDR5 (MoE offload)",
+      "vendor": "NVIDIA",
+      "category": "nvidia-consumer",
+      "formFactor": "desktop tower",
+      "memoryGB": 152,
+      "usableMemoryGB": 130,
+      "bandwidthGBs": 90,
+      "priceUSD": 3450,
+      "priceNote": "July 2026 — used RTX 4090 ~$2,400 (eBay sold listings) + ~$500 host + 128GB DDR5-6000 ~$550. NOTE: 2026 AI-driven DDR5 shortage — 32GB DDR5-6000 kits $420-480 and 128GB kits swing $400-700 (Newegg, 2026-07); re-verify before buying. Total ~$3,450. (eBay sold listings, Newegg, 2026-07).",
+      "tps": {
+        "8b": 130,
+        "14b": 75,
+        "30b": 42,
+        "70b": null,
+        "120b_moe": null,
+        "235b_moe": null
+      },
+      "imageSec": {
+        "sdxl": 3.2,
+        "flux": 18
+      },
+      "videoSec": {
+        "ltx": 90,
+        "wan22": 270
+      },
+      "idleW": 28,
+      "activeW": 430,
+      "pros": [
+        "Runs current-gen 122B-class MoE (Qwen 3.5 122B-A10B) on a single 4090 via expert offload",
+        "Ada FP8 gives much faster prefill than the 3090 hybrid",
+        "128GB DDR5 holds the whole MoE in memory with headroom for Cohere Command A+ 218B"
+      ],
+      "cons": [
+        "Big-MoE decode still DDR5-bandwidth-bound (~12-15 t/s)",
+        "Needs llama.cpp --n-cpu-moe tuning; not plug-and-play",
+        "2026 DDR5 shortage inflates the RAM cost"
+      ],
+      "reviews": [
+        {
+          "videoId": "RInSq3ieYzU",
+          "title": "Should you buy nVidia RTX 4090 24GB GPU for local AI? Qwen 3.6 Agents"
+        },
+        {
+          "videoId": "uDUSs5f_JfU",
+          "title": "Benchmarking NVIDIA DGX Spark & RTX 4090 — running LLMs on the RTX 4090"
+        }
+      ],
+      "rigOverheadUSD": 1050,
+      "pp": {
+        "8b": 11500,
+        "14b": 6600,
+        "30b": 3200
+      },
+      "ttft100k": {
+        "8b": 13,
+        "14b": 23,
+        "30b": null
+      },
+      "softwareStack": "CUDA",
+      "softwareMaturity": 5,
+      "softwareNote": "Top-tier CUDA support. Ada-gen FP8 helps prefill; a 3090's RT cores aren't relevant for LLMs.",
+      "extensibility": 5,
+      "extensibilityNote": "Standard tower build — straightforward to dual-card if the case + PSU allow.",
+      "tflopsFP16": 330,
+      "vllmSupport": "production",
+      "priceVerifiedOn": "2026-07-13",
+      "tflopsFP8": 661,
+      "topsINT8": null,
+      "tagline": "24GB Ada + 128GB DDR5 — current-gen 122B MoE with faster prefill.",
+      "tpsNote": "Hybrid GPU+system-RAM build (MoE expert offload). The RTX 4090 holds the attention/shared layers + KV cache + as many MoE expert tensors as fit in 24GB VRAM; the remaining experts live in 128GB of DDR5-6000. Small DENSE models (8-30B) run entirely in VRAM at full GPU speed — that is what the 8b/14b/30b buckets show. LARGE MoE decode is bounded by SYSTEM-RAM bandwidth (~90 GB/s), NOT the GPU's 1008 GB/s — the capacity-for-speed tradeoff of expert offload. Headline current-gen recipe: Qwen 3.5 122B-A10B (10B active, Q4_K_M ~67GB) via llama.cpp expert offload — no clean single-GPU offload measurement sourced as of 2026-07-13, physics-estimated ~12-15 t/s (gap filed in TASK-0260). Contrast the F16-GGUF-on-DDR4 path at ~2 t/s (hardware-corner.net) — native MXFP4 + fast DDR5 is what makes 120B usable on one card. bandwidthGBs below reports the DDR5 bandwidth that governs offloaded-MoE decode, not the GPU's VRAM bandwidth.",
+      "benchmarks": [
+        {
+          "modelId": "qwen3-5-122b-a10b-moe",
+          "modelName": "Qwen 3.5 122B-A10B (MoE)",
+          "quant": "Q4_K_M",
+          "engine": "llama.cpp (CUDA + CPU-MoE offload)",
+          "concurrency": 1,
+          "ctxTokens": 32768,
+          "decodeTps": null,
+          "prefillTps": null,
+          "status": "unverified",
+          "source": "CURRENT-GEN HEADLINE: Qwen 3.5 122B-A10B (10B active). At Q4_K_M (~67GB) it fits with headroom. Decode is DDR5-bandwidth-bound — physics estimate ~12-15 t/s. No clean single-consumer-GPU offload measurement sourced as of 2026-07-13; gap filed in TASK-0260. First-party measurement recommended.",
+          "measuredOn": null,
+          "fits": true
+        }
+      ]
+    },
+    {
       "id": "rtx-5090-32",
       "name": "Single RTX 5090 build",
       "vendor": "NVIDIA",
@@ -2331,6 +2510,99 @@
       "priceVerifiedOn": "2026-07-31",
       "tflopsFP8": 838,
       "topsINT8": null
+    },
+    {
+      "id": "rtx-5090-192gb-ddr5",
+      "name": "RTX 5090 + 192GB DDR5 (MoE offload)",
+      "vendor": "NVIDIA",
+      "category": "nvidia-consumer",
+      "formFactor": "desktop tower",
+      "memoryGB": 224,
+      "usableMemoryGB": 190,
+      "bandwidthGBs": 96,
+      "priceUSD": 5850,
+      "priceNote": "July 2026 — RTX 5090 ~$4,250 (cheapest in-stock cards, Newegg) + ~$600 host + 192GB DDR5-6400 ~$1,000. NOTE: 2026 AI-driven DDR5 shortage — high-capacity kits are the most volatile (some 128GB+ Newegg listings spiked toward $4,000; Tom's Hardware/Newegg, 2026-07); re-verify before buying. Total ~$5,850. (newegg.com, 2026-07).",
+      "tps": {
+        "8b": 186,
+        "14b": 124,
+        "30b": 70,
+        "70b": null,
+        "120b_moe": null,
+        "235b_moe": null
+      },
+      "tpsNote": "Hybrid GPU+system-RAM build (MoE expert offload). The RTX 5090 holds the attention/shared layers + KV cache + as many MoE expert tensors as fit in 32GB VRAM; the remaining experts live in 192GB of DDR5-6400. Small DENSE models (8-30B) run entirely in VRAM at full GPU speed — that is what the 8b/14b/30b buckets show. LARGE MoE decode is bounded by SYSTEM-RAM bandwidth (~96 GB/s), NOT the GPU's 1792 GB/s — the capacity-for-speed tradeoff of expert offload. Headline current-gen recipe: Qwen 3.5 122B-A10B (10B active, Q4_K_M ~67GB) via llama.cpp expert offload -- no clean single-GPU offload measurement sourced as of 2026-07-13, physics-estimated ~12-15 t/s (gap filed in TASK-0260). Also fits 200GB-class MoE models at IQ3-like quants as a capacity play (expectedTps=null, no clean measurement). Contrast the F16-GGUF-on-DDR4 path at ~2 t/s (hardware-corner.net) -- native MXFP4 + fast DDR5 is what makes 120B usable on one card. bandwidthGBs below reports the DDR5 bandwidth that governs offloaded-MoE decode, not the GPU's VRAM bandwidth.",
+      "imageSec": {
+        "sdxl": 2.2,
+        "flux": 9
+      },
+      "videoSec": {
+        "ltx": 60,
+        "wan22": 180
+      },
+      "idleW": 45,
+      "activeW": 545,
+      "pros": [
+        "32GB Blackwell + 192GB DDR5 — runs current-gen 122B-class MoE with room for even larger models via expert offload",
+        "More resident experts + class-leading prefill of the three hybrids",
+        "Runs current-gen MoE (Qwen 3.5 122B-A10B) comfortably with VRAM to spare for Cohere Command A+"
+      ],
+      "cons": [
+        "Big-MoE decode is DDR5-bandwidth-bound; capacity play, not a speed play — current-gen 122B runs ~12-15 t/s (est, pending measurement)",
+        "Most expensive -- 5090 + 192GB in the DDR5 shortage",
+        "Expert-offload tuning required; not plug-and-play"
+      ],
+      "tagline": "Current-gen 122B MoE on a single Blackwell GPU with room for 200GB-class models via expert offload.",
+      "reviews": [
+        {
+          "videoId": "QYSmQx55e44",
+          "title": "RTX 3090 vs 4090 vs 5090 vs Mac M5 Max — Qwen3.6-27B benchmark"
+        },
+        {
+          "videoId": "3vdM73WV7BI",
+          "title": "RTX 3090 vs 4090 vs 5090 vs Mac M5 Max — Qwen3.6-35B-A3B benchmark"
+        },
+        {
+          "videoId": "AScA7qJUIDc",
+          "title": "Not even close — LLMs on RTX 5090 vs others (AZisk)"
+        }
+      ],
+      "rigOverheadUSD": 1600,
+      "pp": {
+        "8b": 14000,
+        "14b": 8200,
+        "30b": 3900
+      },
+      "ttft100k": {
+        "8b": 11,
+        "14b": 18,
+        "30b": 38
+      },
+      "softwareStack": "CUDA (Blackwell)",
+      "softwareMaturity": 5,
+      "softwareNote": "Blackwell FP4 / FP8 prefill is class-leading. CUDA 13 + drivers stable; vLLM + TRT-LLM both day-1.",
+      "extensibility": 5,
+      "extensibilityNote": "Big card but standard ATX — pair with second card or move to a workstation chassis later.",
+      "tflopsFP16": 419,
+      "vllmSupport": "production",
+      "priceVerifiedOn": "2026-07-13",
+      "tflopsFP8": 838,
+      "topsINT8": null,
+      "benchmarks": [
+        {
+          "modelId": "qwen3-5-122b-a10b-moe",
+          "modelName": "Qwen 3.5 122B-A10B (MoE)",
+          "quant": "Q4_K_M",
+          "engine": "llama.cpp (CUDA + CPU-MoE offload)",
+          "concurrency": 1,
+          "ctxTokens": 32768,
+          "decodeTps": null,
+          "prefillTps": null,
+          "status": "unverified",
+          "source": "CURRENT-GEN HEADLINE: Qwen 3.5 122B-A10B (10B active). At Q4_K_M (~67GB) it fits with headroom on this build. Decode is DDR5-bandwidth-bound — physics estimate ~12-15 t/s. No clean single-consumer-GPU offload measurement sourced as of 2026-07-13; gap filed in TASK-0260. First-party measurement recommended.",
+          "measuredOn": null,
+          "fits": true
+        }
+      ]
     },
     {
       "id": "rtx-5090-x2",
