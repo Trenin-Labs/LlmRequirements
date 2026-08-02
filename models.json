@@ -1,7 +1,7 @@
 {
   "$schema": "https://json-schema.org/draft-07/schema#",
   "_description": "LLM model catalog with ratings and VRAM requirements. See README.md for schema.",
-  "_lastUpdated": "2026-07-11",
+  "_lastUpdated": "2026-08-02",
   "_count": 64,
   "models": [
     {
@@ -441,7 +441,7 @@
         "coding": "r/LocalLLaMA's pick for fast local coding on a 24 GB card at Q4_K_M — 3B active so it's snappy. Vibes-codes 'perfectly fine' in OpenCode/Claude Code per multiple weekly-megathreads. Simon Willison's pelican test (April 2026): 'Qwen3.6-35B-A3B on my laptop drew me a better pelican than Claude Opus 4.7' — still resonating in the community.",
         "agentDriver": "Solid in 5-15 tool-hop loops in Cline. Long-horizon (60+ min) Open-Claude sessions still lose thread — 3B active is a ceiling on planning. Note: Qwen-self-reported TB2 51.5 vs community 23-24% — gap is harness-driven (Terminus-2 vs little-coder agent)."
       },
-      "benchmarkNotes": "TB2 51.5 is Qwen-self-reported via Terminus-2 harness. Community runs on tbench.ai (https://www.tbench.ai/leaderboard/terminal-bench/2.0, little-coder agent) show 23.0–24.6% — large harness-driven gap. SWE-Pro 49.5 and SWE-Ver 73.4 confirmed via Qwen launch and benchlm.ai/marc0.dev.",
+      "benchmarkNotes": "TB2 51.5 is Qwen-self-reported via Terminus-2 harness. Community runs on tbench.ai (https://www.tbench.ai/leaderboard/terminal-bench/2.0, little-coder agent) show 23.0–24.6% — large harness-driven gap. SWE-Pro 49.5 and SWE-Ver 73.4 confirmed via Qwen launch comparison table and marc0.dev.",
       "sources": [
         "https://qwen.ai/blog?id=qwen3.6-27b",
         "https://huggingface.co/Qwen/Qwen3.6-35B-A3B",
@@ -492,10 +492,9 @@
         "coding": "The new local-coding king under 200B on r/LocalLLaMA — matches Claude Opus 4.5 on TB2 per Qwen's launch claims, beats Qwen3.5-397B-A17B on every coding eval. Daily-driver pick for Cline at Q4_K_M on a single Pro 6000 or M3 Ultra. Confirmed running ~160 tok/s with MTP on RTX 6000 per dzombak.com vLLM recipe.",
         "agentDriver": "Genuinely useful in Open-Claude / Claude Code routing — community reports 30-min+ sessions completing without derail. Still trails closed frontier on the very longest loops. Caps at agents:3 per site rule (sub-200B, TB2 59.3 below 65% threshold)."
       },
-      "benchmarkNotes": "All values confirmed against benchlm.ai SWE-Pro (53.5), marc0.dev SWE-Ver (77.2), and Qwen's own launch comparison table at https://qwen.ai/blog?id=qwen3.6-27b. TB2 59.3 is Qwen-self-reported via Terminus-2 harness; tbench.ai does not have a community run of Qwen 3.6 27B yet — only the 35B-A3B (which shows community 23–24% vs Qwen self-report 51.5%). Discrepancy flag: Qwen's TB2 self-reports run high vs community harness configs.",
+      "benchmarkNotes": "SWE-Pro 53.5 and SWE-Ver 77.2 confirmed via Qwen's own launch comparison table at https://qwen.ai/blog?id=qwen3.6-27b and marc0.dev (https://www.marc0.dev/en/leaderboard). TB2 59.3 is Qwen-self-reported via Terminus-2 harness; tbench.ai does not have a community run of Qwen 3.6 27B yet — only the 35B-A3B (which shows community 23–24% vs Qwen self-report 51.5%). Discrepancy flag: Qwen's TB2 self-reports run high vs community harness configs.",
       "sources": [
         "https://qwen.ai/blog?id=qwen3.6-27b",
-        "https://benchlm.ai/benchmarks/swePro",
         "https://www.marc0.dev/en/leaderboard",
         "https://www.dzombak.com/blog/2026/04/a-vllm-docker-compose-recipe-for-running-qwen-3-6-27b-on-dual-rtx-3090s-opencode-configuration/"
       ],
@@ -861,19 +860,17 @@
         "coding": "First open-weights model to top SWE-Bench Pro (tied with Kimi K2.6 at 58.6 this week, GLM-5.1 at 58.4). r/LocalLLaMA / r/ZaiGLM use it via Z.ai Coding Plan as a Claude-Code replacement — quoted as '94% of Opus 4.6 at 1/10 the cost.' Not in the top OpenRouter coding by token volume — adoption flows through Z.ai's own coding plan.",
         "agentDriver": "Built for 8-hour autonomous execution — hundreds of rounds, thousands of tool calls. Closest open-weights model to closed-frontier on long-horizon agent work (only K2.6 / V4-Pro compete)."
       },
-      "benchmarkNotes": "All values confirmed: TB2 63.5 (Terminus-2 harness) / 66.5 (Claude Code harness) per https://www.marktechpost.com/2026/04/08/z-ai-introduces-glm-5-1-an-open-weight-754b-agentic-model-that-achieves-sota-on-swe-bench-pro-and-sustains-8-hour-autonomous-execution/. SWE-Pro 58.4 (#1 open-weights, tied with K2.6 on benchlm.ai). HLE 52.3 confirmed via https://benchlm.ai/benchmarks/hle (Z.ai-reported). SWE-Ver 77.8 reported for GLM-5 base — GLM-5.1 specific SWE-Ver not separately published; using 77.8 as best available. GPQA re-verified 2026-05-27 against llm-stats.com leaderboard: 86.2 (was 94.0, stored value was an inflated vendor self-report).",
+      "benchmarkNotes": "All values confirmed: TB2 63.5 (Terminus-2 harness) / 66.5 (Claude Code harness) per the Z.ai GLM-5.1 launch coverage (https://www.marktechpost.com/2026/04/08/z-ai-introduces-glm-5-1-an-open-weight-754b-agentic-model-that-achieves-sota-on-swe-bench-pro-and-sustains-8-hour-autonomous-execution/). SWE-Pro 58.4 (#1 open-weights, tied with K2.6), GPQA-Diamond 86.2, and HLE 52.3 (with-tools) per the GLM-5.1 model card (https://huggingface.co/zai-org/GLM-5.1); the card's no-tools HLE is 31.0, so 52.3 is the with-tools basis - cross-model HLE basis reconciliation tracked under TASK-0223. GPQA 86.2 is the model-card value (an earlier stored 94.0 was an inflated figure). SWE-Ver 77.8 reported for GLM-5 base - GLM-5.1 specific SWE-Ver not separately published; using 77.8 as best available.",
       "sources": [
         "https://www.marktechpost.com/2026/04/08/z-ai-introduces-glm-5-1-an-open-weight-754b-agentic-model-that-achieves-sota-on-swe-bench-pro-and-sustains-8-hour-autonomous-execution/",
-        "https://benchlm.ai/benchmarks/swePro",
-        "https://benchlm.ai/benchmarks/hle",
-        "https://llm-stats.com/benchmarks/gpqa"
+        "https://huggingface.co/zai-org/GLM-5.1"
       ],
       "contextK": 128,
       "benchmarkProvenance": {
         "gpqa": {
-          "source": "leaderboard",
-          "url": "https://llm-stats.com/benchmarks/gpqa",
-          "fetchedOn": "2026-05-27"
+          "source": "vendor model card",
+          "url": "https://huggingface.co/zai-org/GLM-5.1",
+          "fetchedOn": "2026-07-11"
         }
       }
     },
@@ -916,17 +913,19 @@
         "mmlu_pro": null,
         "aime": null
       },
-      "vibes": {},
-      "benchmarkNotes": "Backfilled 2026-07-11 from benchlm.ai leaderboards: SWE-Bench Pro 62.1 (highest open-weight in the roster), GPQA-Diamond 91.2, HLE 54.7 — cross-checked against GLM-5.1's board rows (HLE 52.3 / GPQA 86.2 match our stored 5.1 values, confirming the same measurement mode). Not on the Terminal-Bench 2.0 board (card cites Terminal-Bench 2.1 / Terminus-2 81.0, a different version, so tb2 kept null); absent from marc0.dev SWE-Verified and the benchlm LiveCodeBench board (both null). AIME kept null — the card's 99.2 is AIME-2026, roster tracks AIME-2025. Ratings raised to GLM-5.1 parity (was 3/3): GLM-5.2 exceeds its predecessor on every measured cell. Q4_K_M weights ~455 GB (Abiray community quant); fits 8×H200-141G or 4×B200-180G; native FP8 variant (zai-org/GLM-5.2-FP8) is the vendor-recommended single-node-H200 path.",
+      "vibes": {
+        "coding": "Community consensus (agyn.io aggregated r/LocalLLaMA, Jun 17 2026) crowns GLM-5.2 'the new king of open-source coding' — first open-weight past 80% on Terminal-Bench (81.0 on TB 2.1), 940-upvote launch thread with real conversion stories from paid Claude/ChatGPT to Z.ai. OpenRouter (Jun 27 2026) frames it as the open model that 'makes Opus-style agentic coding portable', strongest at planning and long-horizon coding. MIT, drop-in to escape Anthropic dependency. Caveat flagged by community: 744B/40B-active needs a Mac Ultra 512 / rented H100, not consumer rigs.",
+        "agentDriver": "r/LocalLLaMA pairs it with Kimi 2.7 as 'the goats' for agentic coding; the 58-upvote GPU-scalability caveat aside, it is the community pick for long-running repo-scale agent tasks and architecture planning. OpenRouter notes it is token-hungry ($3.31/M out, ~78 tok/s) — great agent quality, or a budget-burner at high thinking effort."
+      },
+      "benchmarkNotes": "Per the GLM-5.2 model card (https://huggingface.co/zai-org/GLM-5.2): SWE-Bench Pro 62.1 (highest open-weight in the roster), GPQA-Diamond 91.2, HLE 54.7 (with-tools; the card also lists 40.5 no-tools - with-tools/no-tools HLE basis reconciliation tracked under TASK-0223). TB2 kept null: the card reports Terminal-Bench 2.1 / Terminus-2 81.0, a different version from the roster's TB2 2.0. SWE-Verified and LiveCodeBench not on the card (both null). AIME kept null: the card's 99.2 is AIME-2026, roster tracks AIME-2025. GLM-5.2 exceeds GLM-5.1 on every reported cell. Q4_K_M weights ~455 GB (Abiray community quant); fits 8×H200-141G or 4×B200-180G; native FP8 variant (zai-org/GLM-5.2-FP8) is the vendor-recommended single-node-H200 path.",
       "sources": [
         "https://huggingface.co/zai-org/GLM-5.2",
         "https://huggingface.co/zai-org/GLM-5.2-FP8",
         "https://recipes.vllm.ai/zai-org/GLM-5.2",
         "https://huggingface.co/Abiray/GLM-5.2-Q4_K_M-GGUF/tree/main",
         "https://www.marktechpost.com/2026/06/14/z-ai-launches-glm-5-2-with-a-usable-1m-token-context-two-thinking-effort-levels-and-no-benchmarks-at-launch/",
-        "https://benchlm.ai/benchmarks/swePro",
-        "https://benchlm.ai/benchmarks/hle",
-        "https://benchlm.ai/benchmarks/gpqaDiamond"
+        "https://openrouter.ai/blog/insights/the-open-weight-models-that-matter-june-2026/",
+        "https://agyn.io/blog/top-open-weight-llms-2026"
       ],
       "aliases": [
         "GLM 5.2",
@@ -975,13 +974,12 @@
         "aime": 97.9
       },
       "vibes": {
-        "coding": "MXFP4-native 120B that runs on a single H100. r/LocalLLaMA uses it as a strong general open-weights chat/code model, but for agentic Cline/Open-Claude work it's not the pick — TB2 18.7 and SWE-Pro 16.2 (rank 18 on benchlm) say it all. Cursor Composer 2.5 ignored it entirely in favor of Kimi K2.6 backend.",
+        "coding": "MXFP4-native 120B that runs on a single H100. r/LocalLLaMA uses it as a strong general open-weights chat/code model, but for agentic Cline/Open-Claude work it's not the pick — TB2 18.7 and SWE-Pro 16.2 (rank 18 on the SWE-Bench Pro public leaderboard) say it all. Cursor Composer 2.5 ignored it entirely in favor of Kimi K2.6 backend.",
         "agentDriver": "Despite high LCB/AIME, agent-loop reliability is poor — bottom-quartile on TB2 and SWE-Pro. Use it for one-shot codegen, not autonomous loops. OpenAI never marketed it for tool calling."
       },
-      "benchmarkNotes": "SWE-Pro 16.2 ± 2.67 from benchlm.ai rank-18 entry (https://benchlm.ai/models/gpt-oss-120b) — leaderboard-verified, not vendor-self-reported. TB2 18.7 still bottom-quartile per tbench.ai (https://www.tbench.ai/leaderboard/terminal-bench/2.0, range 14.2–18.7). LCB 87.8 unchanged from pricepertoken.",
+      "benchmarkNotes": "SWE-Pro 16.2 ± 2.67 from the official SWE-Bench Pro public leaderboard (Scale SEAL, https://labs.scale.com/leaderboard/swe_bench_pro_public) — independently graded, not vendor-self-reported. TB2 18.7 still bottom-quartile per tbench.ai (https://www.tbench.ai/leaderboard/terminal-bench/2.0, range 14.2–18.7). LCB 87.8 unchanged from pricepertoken.",
       "sources": [
-        "https://benchlm.ai/models/gpt-oss-120b",
-        "https://benchlm.ai/benchmarks/swePro",
+        "https://labs.scale.com/leaderboard/swe_bench_pro_public",
         "https://www.tbench.ai/leaderboard/terminal-bench/2.0"
       ],
       "contextK": 131
@@ -1032,7 +1030,7 @@
       },
       "benchmarkNotes": "Mistral published SWE-Bench Verified 77.6% only at Apr 30 launch — notably omitted GPQA, MMLU-Pro, AIME, LCB, HLE, TB2. Community is still running independent evals.",
       "sources": [
-        "https://artificialanalysis.ai/models/mistral-medium-3-5"
+        "https://huggingface.co/mistralai/Mistral-Medium-3.5-128B"
       ],
       "contextK": 260
     },
@@ -1080,11 +1078,10 @@
         "coding": "Self-evolving 'Agent Teams' play — runs 100+ scaffold-optimization rounds. r/LocalLLaMA pricing-conscious folks like it via official MiniMax API; local at 230B with 10B active is fast on a Pro 6000. Not in the top 8 OpenRouter coding by volume — adoption still niche.",
         "agentDriver": "Strongest sub-300B open-weights agent-tuned model. Multi-agent native — designed for orchestrator loops. Reliable in 30-min Open-Claude sessions; ceiling around 1-2 hours. Notable harness gap: vendor's 57.0 TB2 vs tbench.ai's 45.1 — community runs do not match self-report."
       },
-      "benchmarkNotes": "SWE-Verified 78 added — MiniMax self-report and confirmed via https://www.marktechpost.com/2026/04/12/minimax-just-open-sourced-minimax-m2-7-a-self-evolving-agent-model-that-scores-56-22-on-swe-pro-and-57-0-on-terminal-bench-2/. Note MiniMax-reported TB2 is 57.0% (their self-eval), but tbench.ai community runs (https://www.tbench.ai/leaderboard/terminal-bench/2.0) show 43.8–45.1% — using leaderboard 45.1. SWE-Pro 56.2 confirmed via benchlm.ai.",
+      "benchmarkNotes": "SWE-Verified 78 added — MiniMax self-report and confirmed via https://www.marktechpost.com/2026/04/12/minimax-just-open-sourced-minimax-m2-7-a-self-evolving-agent-model-that-scores-56-22-on-swe-pro-and-57-0-on-terminal-bench-2/. Note MiniMax-reported TB2 is 57.0% (their self-eval), but tbench.ai community runs (https://www.tbench.ai/leaderboard/terminal-bench/2.0) show 43.8–45.1% — using leaderboard 45.1. SWE-Pro 56.2 confirmed via the MiniMax launch report cited above (marktechpost, '...scores-56-22-on-swe-pro...').",
       "sources": [
         "https://www.marktechpost.com/2026/04/12/minimax-just-open-sourced-minimax-m2-7-a-self-evolving-agent-model-that-scores-56-22-on-swe-pro-and-57-0-on-terminal-bench-2/",
-        "https://www.tbench.ai/leaderboard/terminal-bench/2.0",
-        "https://benchlm.ai/benchmarks/swePro"
+        "https://www.tbench.ai/leaderboard/terminal-bench/2.0"
       ],
       "contextK": 204
     },
@@ -1117,7 +1114,7 @@
         "agents",
         "vision"
       ],
-      "blurb": "Jun 1 2026. MiniMax's flagship MoE successor to M2.7 — 428B total / 23B active, 1M context window via MSA sparse attention, native multimodal (image/video/computer-use), open weights. AA Intelligence Index 44 — #2 among open-weights reasoning models. SWE-Bench Pro 59.0 (reported), OSWorld-Verified 70.06.",
+      "blurb": "Jun 1 2026. MiniMax's flagship MoE successor to M2.7 — 428B total / 23B active, 1M context window via MSA sparse attention, native multimodal (image/video/computer-use), open weights. Among the top open-weights reasoning models. SWE-Bench Pro 59.0 (reported), OSWorld-Verified 70.06.",
       "license": "MINIMAX COMMUNITY LICENSE",
       "huggingface": "https://huggingface.co/MiniMaxAI/MiniMax-M3",
       "benchmarks": {
@@ -1131,12 +1128,16 @@
         "mmlu_pro": null,
         "aime": null
       },
-      "vibes": {},
-      "benchmarkNotes": "SWE-Bench Pro 59.0 (reported via marktechpost, benchlm.ai). OSWorld-Verified 70.06 (reported). AA Intelligence Index 44: #2 among open-weights reasoning models, well above class average 25. 1M context via MSA sparse attention. Native multimodal: image, video, computer-use input. First-party tok/s not yet available; db.json synthetic floor tbd. Rating provisional pending leaderboard runs.",
+      "vibes": {
+        "coding": "OpenRouter (Jun 27 2026) slots MiniMax M3 as the multimodal long-context agent lane — the only open-weight in its group with native image/video input; not the best pure coder (GLM-5.2 wins text-only), but the one to test first for UI automation, screenshot-to-code, and video-grounded agents. Community (agyn.io) calls it a 'fresh contender' with novel blockwise sparse attention.",
+        "agentDriver": "Roughly level with Claude Sonnet 4.6 on the GDPval-AA real-world agentic benchmark, per OpenRouter, with 1M-token context via MiniMax Sparse Attention making whole-repo, screenshot-heavy agents practical. License caveat: MiniMax Community License (commercial use needs attribution/prior written auth for larger products), not MIT."
+      },
+      "benchmarkNotes": "SWE-Bench Pro 59.0 (reported via marktechpost). OSWorld-Verified 70.06 (reported). Among the top open-weights reasoning models. 1M context via MSA sparse attention. Native multimodal: image, video, computer-use input. First-party tok/s not yet available; db.json synthetic floor tbd. Rating provisional pending leaderboard runs.",
       "sources": [
-        "https://artificialanalysis.ai/models/minimax-m3",
         "https://www.marktechpost.com/2026/06/01/minimax-releases-minimax-m3-open-source-ai-model-with-1m-context-window-and-native-computer-use/",
-        "https://huggingface.co/MiniMaxAI/MiniMax-M3"
+        "https://huggingface.co/MiniMaxAI/MiniMax-M3",
+        "https://openrouter.ai/blog/insights/the-open-weight-models-that-matter-june-2026/",
+        "https://agyn.io/blog/top-open-weight-llms-2026"
       ],
       "aliases": [
         "MiniMax-M3",
@@ -1351,7 +1352,7 @@
         "coding": "Strong open-weights coder with native image input. Powers Cursor Composer 2.5 (released May 18 2026) at $0.50/M input — Cursor kept the K2.5 backbone from Composer 2 rather than swapping to K2.6, betting RL fine-tuning closes the gap. r/LocalLLaMA uses it in Cline via OpenRouter when self-hosting isn't feasible (1T weights). On general benchmarks mostly superseded by K2.6.",
         "agentDriver": "Long-horizon agent training paid off — Agent Swarm with up to 100 sub-agents. Reliable for 30-60 min Open-Claude tasks. The Cursor Composer 2.5 deal validates K2.5 as a production-grade agentic-coding base; K2.6 still has the higher ceiling on long-horizon work when available."
       },
-      "benchmarkNotes": "Kimi K2.5 published numbers: AIME 2025 96.1, GPQA Diamond 87.6, MMLU-Pro 87.1, LCB 85.0, SWE-Bench Verified 76.8. TB2 43.2 from tbench official. SWE-Pro 50.7 from benchlm. HLE 30.1 from benchlm.",
+      "benchmarkNotes": "Kimi K2.5 published numbers: AIME 2025 96.1, GPQA Diamond 87.6, MMLU-Pro 87.1, LCB 85.0, SWE-Bench Verified 76.8. TB2 43.2 from tbench official. SWE-Pro 50.7 and HLE 30.1 (no-tools) per Moonshot's Kimi K2.5 model card (https://huggingface.co/moonshotai/Kimi-K2.5).",
       "sources": [
         "https://huggingface.co/moonshotai/Kimi-K2.5",
         "https://cursor.com/blog/composer-2-5"
@@ -1404,10 +1405,9 @@
         "coding": "Now #7 on OpenRouter coding by weekly token volume (383B) after MiMo V2.5 entered at #1. Still top open-weights coder by benchmark consensus (TB2 66.7, SWE-Pro 58.6). r/LocalLLaMA daily-driver via OpenRouter when you can't run 1T locally — best agentic-coding open-weight per benchmark consensus. (Note: Cursor Composer 2.5 retained its K2.5 backbone rather than upgrading to K2.6.)",
         "agentDriver": "300-agent swarm, 4000 coordinated steps. Closest open-weights match to Claude Opus on long-horizon work. Reliable in 1-2 hour Open-Claude sessions; ceiling around 4-8 hours."
       },
-      "benchmarkNotes": "All values confirmed via Moonshot's blog and benchlm.ai. SWE-Pro 58.6 (tied with GPT-5.5 — best open-weights on benchlm.ai). TB2 66.7 with Terminus-2 harness per https://www.kimi.com/blog/kimi-k2-6. Note Kimi reports HLE 54.0 *with tools* in their own blog vs benchmark-pure 35.9 — keeping 35.9 (no-tools, consistent with other roster entries).",
+      "benchmarkNotes": "All values confirmed via Moonshot's blog. SWE-Pro 58.6 (tied with GPT-5.5 — best open-weights). TB2 66.7 with Terminus-2 harness per https://www.kimi.com/blog/kimi-k2-6. Note Kimi reports HLE 54.0 *with tools* in their own blog vs benchmark-pure 35.9 — keeping 35.9 (no-tools, consistent with other roster entries).",
       "sources": [
         "https://www.kimi.com/blog/kimi-k2-6",
-        "https://benchlm.ai/benchmarks/swePro",
         "https://openrouter.ai/collections/programming"
       ],
       "contextK": 256
@@ -1459,12 +1459,13 @@
         "aime": null
       },
       "vibes": {
-        "coding": "Moonshot frames it as 'code-first K2.6 with shorter thinking chains' — claims ~30 % fewer thinking tokens for the same long-horizon coding task. Worth watching for r/LocalLLaMA Cline / Aider thread reactions once they land; vendor benchmarks only at launch.",
-        "agentDriver": "MCP Atlas 76.0 and MCP Mark Verified 81.1 are vendor-reported MCP-specific scores — agentic positioning, but no Terminal-Bench or SWE-Bench cross-check yet. Treat as 'promising, unverified outside Moonshot' until tbench.ai or benchlm.ai picks it up."
+        "coding": "Community consensus matured: the K2.7-Code launch thread hit 711 upvotes on r/LocalLLaMA and pairs with GLM-5.2 as 'the goats' (35-upvote representative comment, agyn.io aggregation). Moonshot's code-specialized K2.7 uses ~30% fewer thinking tokens than K2.6, and it leads MCP tool-use (MCP Atlas 76.0, MCP Mark Verified 81.1).",
+        "agentDriver": "One tool-calling concern surfaced in the community (9-upvote comment): some users found K2.7 struggled with Cline-orchestrated tool calls without explicit directives, while DeepSeek V4 handled the same setup cleanly. Minor but worth knowing if you standardize on Cline. Still the strongest open-weight agent pick per MCP benchmarks."
       },
-      "benchmarkNotes": "Standard benchmark cells (HLE, TB2, SWE-Pro, SWE-Ver, LCB, GPQA, MMLU-Pro, AIME) all null — Moonshot's release page reports only internal Moonshot scores (Kimi Code Bench v2, Program Bench, MLS Bench Lite, Kimi Claw Bench, MCP Atlas, MCP Mark Verified). These do not have public leaderboard equivalents we cite. Cell-by-cell backfill expected once benchlm.ai / tbench.ai start tracking it.",
+      "benchmarkNotes": "Standard benchmark cells (HLE, TB2, SWE-Pro, SWE-Ver, LCB, GPQA, MMLU-Pro, AIME) all null — Moonshot's release page reports only internal Moonshot scores (Kimi Code Bench v2, Program Bench, MLS Bench Lite, Kimi Claw Bench, MCP Atlas, MCP Mark Verified). These do not have public leaderboard equivalents we cite. Cell-by-cell backfill expected once public leaderboards (e.g. tbench.ai) start tracking it.",
       "sources": [
-        "https://huggingface.co/moonshotai/Kimi-K2.7-Code"
+        "https://huggingface.co/moonshotai/Kimi-K2.7-Code",
+        "https://agyn.io/blog/top-open-weight-llms-2026"
       ],
       "contextK": 256
     },
@@ -1571,9 +1572,7 @@
       "benchmarkNotes": "DeepSeek V3.2 numbers from pricepertoken (HLE 22.2) and tbench official (V3.2 TB2 39.6%). Base V3 numbers older. V3 series mostly superseded by V4 in April 2026.",
       "sources": [
         "https://huggingface.co/deepseek-ai/DeepSeek-V3",
-        "https://aider.chat/docs/leaderboards/",
-        "https://llm-stats.com/benchmarks/aime-2025",
-        "https://llm-stats.com/benchmarks/mmlu-pro"
+        "https://aider.chat/docs/leaderboards/"
       ],
       "contextK": 128
     },
@@ -1619,14 +1618,16 @@
         "aime": 94.8
       },
       "vibes": {
-        "coding": "Now #4 on OpenRouter coding by weekly token volume (637B) — MiMo V2.5 entered above it but adoption is real and growing. Native provider support in Cline, Roo Code, Kilo Code. r/LocalLLaMA's pick to replace Claude Haiku in tool-calling pipelines.",
-        "agentDriver": "TB2 56.9 makes it a credible short-loop driver. Reliable for 15-30 min loops; ceiling well below V4-Pro. Competitive on OpenRouter usage with Claude Sonnet 4.6."
+        "coding": "OpenRouter (Jun 27 2026) calls V4 Flash 'the first to cross the agentic rubicon' — the first open-weight teams dropped straight into real agentic pipelines as a plausible Anthropic/OpenAI substitute, at $0.14/$0.28 per M (150x cheaper than GPT-5.5 output). Community (44-upvote DGX Spark post via agyn.io) calls it the best model for high-context retrieval + reasoning; a separate thread praised its 'performance per weight'. Confirms existing 'replace Claude Haiku in tool-calling' framing.",
+        "agentDriver": "SWE-V 79.0 vs V4-Pro's 80.6 — within ~1.6 pts at a fraction of the cost. OpenRouter notes a caveat: it performs better with very specific instructions than relying on its own judgement, and shies from writing/tone. Strong but instruction-sensitive agent driver."
       },
-      "benchmarkNotes": "SWE-Pro 52.6 is the (Max) configuration on benchlm.ai — base config is 49.1, high-effort 52.3. HLE 29.4 is base/stored; benchlm.ai Max config shows 34.8 (+5.4 pts delta flagged for operator review — methodology difference between Max/base configs). #4 on OpenRouter coding by weekly tokens (637B) per https://openrouter.ai/collections/programming.",
+      "benchmarkNotes": "SWE-Pro 52.6 (Max/high-effort configuration) per the official SWE-Bench Pro public leaderboard (Scale SEAL, https://labs.scale.com/leaderboard/swe_bench_pro_public); the base configuration is 49.1. HLE 29.4 is base/stored (HLE basis reconciliation tracked under TASK-0223). #4 on OpenRouter coding by weekly tokens (637B) per https://openrouter.ai/collections/programming.",
       "sources": [
-        "https://benchlm.ai/benchmarks/swePro",
+        "https://labs.scale.com/leaderboard/swe_bench_pro_public",
         "https://openrouter.ai/collections/programming",
-        "https://openrouter.ai/deepseek/deepseek-v4-flash"
+        "https://openrouter.ai/deepseek/deepseek-v4-flash",
+        "https://openrouter.ai/blog/insights/the-open-weight-models-that-matter-june-2026/",
+        "https://agyn.io/blog/top-open-weight-llms-2026"
       ],
       "contextK": 1000
     },
@@ -1675,9 +1676,9 @@
         "coding": "Top open-weights coder by raw benchmarks — LCB 93.5 beats every closed model. r/LocalLLaMA homelab tier ($30k+ hardware) treats it as 'Claude Opus at home, MIT-licensed'. On OpenRouter coding it's #8 by volume (1.06T tokens) — less adopted than V4-Flash because of compute cost.",
         "agentDriver": "TB2 67.9 matches Claude Opus 4.7-class. Native Codex/Cline/OpenCode support. Reliable in 2-4 hour Open-Claude sessions; only K2.6 and closed frontier compete on long-horizon work."
       },
-      "benchmarkNotes": "SWE-Pro 55.4 is the (Max) configuration on benchlm.ai — base 52.1, high-effort 54.4. https://benchlm.ai/benchmarks/swePro. SWE-Ver 80.6 confirmed via marc0.dev (https://www.marc0.dev/en/leaderboard) as DeepSeek-V4-Pro-Max — DeepSeek-self-reported. TB2 67.9 unchanged. All numbers cross-verified this run.",
+      "benchmarkNotes": "SWE-Pro 55.4 is the DeepSeek-reported (Max) configuration — base 52.1, high-effort 54.4 — per the DeepSeek-V4 technical report (https://arxiv.org/pdf/2606.19348); this is a vendor-scaffold number, not independently verified on the Scale SEAL SWE-Bench Pro leaderboard. SWE-Ver 80.6 confirmed via marc0.dev (https://www.marc0.dev/en/leaderboard) as DeepSeek-V4-Pro-Max — DeepSeek-self-reported. TB2 67.9 unchanged. All numbers cross-verified this run.",
       "sources": [
-        "https://benchlm.ai/benchmarks/swePro",
+        "https://arxiv.org/pdf/2606.19348",
         "https://www.marc0.dev/en/leaderboard",
         "https://openrouter.ai/collections/programming",
         "https://www.buildfastwithai.com/blogs/deepseek-v4-pro-review-2026"
@@ -1782,10 +1783,9 @@
         "coding": "From mid-Feb through April 2026 this was the local-coding king — daily-driver in Cline, Roo Code, Aider, Open-Claude, Continue via llama-server or vLLM. Now decisively dethroned by Qwen 3.6 27B (SWE-Ver 77.2 vs 76.4) and Qwen 3.6 35B-A3B on every coding eval per Qwen's own comparison table. Still a heavyweight generalist.",
         "agentDriver": "First 200B+ open MoE genuinely usable for autonomous loops — TAU2-Bench 86.7, TB2 52.5, MCP-Mark 46.1. Pair with 256 GB M3 Ultra (Q4 ~25 tok/s) or a multi-H100 box. Open-Claude users have largely moved to GLM-5.1 / Kimi K2.6 / DeepSeek V4 for new long-horizon work."
       },
-      "benchmarkNotes": "SWE-Pro 50.9 cross-referenced from Qwen 3.6 27B launch comparison table (https://qwen.ai/blog?id=qwen3.6-27b) — Qwen self-report. HLE DRIFT FLAGGED: stored 37.6 vs benchlm.ai live 28.7 (delta -8.9 pts, URL: https://benchlm.ai/benchmarks/hle). This is a significant downward revision (re-confirmed 2026-07-11: benchlm.ai still shows 28.7). Operator should verify which methodology applies before updating — if benchlm.ai is using a different no-tools / tools split than the stored value, the stored value may be from a more generous configuration. All other values from prior research refresh, Qwen-self-reported at v3.5 launch.",
+      "benchmarkNotes": "SWE-Pro 50.9 cross-referenced from Qwen 3.6 27B launch comparison table (https://qwen.ai/blog?id=qwen3.6-27b) — Qwen self-report. HLE 37.6 is the stored Qwen-self-reported v3.5-launch figure; a possible downward revision (no-tools vs tools basis) is flagged for reconciliation under TASK-0223 before any update. All other values from prior research refresh, Qwen-self-reported at v3.5 launch.",
       "sources": [
         "https://qwen.ai/blog?id=qwen3.6-27b",
-        "https://benchlm.ai/benchmarks/swePro",
         "https://designforonline.com/ai-models/qwen-qwen3-5-397b-a17b/"
       ],
       "contextK": 262
@@ -2213,7 +2213,7 @@
         "coding": "Strong open-MoE coder per Mistral's launch comparison — pitched at parity with GLM 5.1 in Cursor and Continue. Apache 2.0 is a major commercial-deployment win over Llama 4 Maverick.",
         "agentDriver": "Capable function-caller in Cline, Codex, Open-Claude with 256 K ctx — but no published TB2 / SWE bench, so caps at agents:3 despite 200B+ size."
       },
-      "benchmarkNotes": "Mistral's HF card embeds benchmarks as images only — no text-verifiable numbers extractable. Artificial Analysis reports an Intelligence Index composite of 23 but does not surface individual cells in machine-readable form. All 9 cells left null per the no-invent rule; revisit when Mistral publishes a text table or AA exposes per-cell scores.",
+      "benchmarkNotes": "Mistral's HF card embeds benchmarks as images only — no text-verifiable numbers extractable. All 9 cells left null per the no-invent rule; revisit when Mistral publishes a text table.",
       "sources": [
         "https://huggingface.co/mistralai/Mistral-Large-3-675B-Instruct-2512",
         "https://mistral.ai/news/mistral-3"
@@ -2262,9 +2262,9 @@
       },
       "vibes": {
         "coding": "Too fresh to assess — May 20 2026 release. Cohere's launch positions it as agentic + citation-native + multilingual rather than coding-first; no SWE-Bench / LiveCodeBench numbers published at launch. r/LocalLLaMA cautious until community Cline / Aider runs land.",
-        "agentDriver": "Cohere's headline claim is #1 on AA-Omniscience Non-Hallucination at 86 % and native citation generation tuned for retrieval workflows. Terminal-Bench Hard 25 % suggests usable in short agent loops; no TB Core / SWE-Verified yet so caps at agents:3."
+        "agentDriver": "Cohere's headline claim is #1 on the Omniscience Non-Hallucination benchmark at 86 % and native citation generation tuned for retrieval workflows. Terminal-Bench Hard 25 % suggests usable in short agent loops; no TB Core / SWE-Verified yet so caps at agents:3."
       },
-      "benchmarkNotes": "Cohere only published Terminal-Bench Hard (25 %), MMMU Pro (63 %), MMMU (75.1 %), MathVista (80.6 %), CharXiv (52.7 %) and an Artificial Analysis Intelligence Index of 37 at launch. The standard text-leaderboard cells (TB2 Core, SWE-Bench Pro/Verified, LiveCodeBench, HLE, Aider Polyglot, GPQA Diamond, MMLU-Pro, AIME 2025) are not yet published — all left null per the no-invent rule. Revisit when third-party runs or a Cohere benchmark table lands.",
+      "benchmarkNotes": "Cohere only published Terminal-Bench Hard (25 %), MMMU Pro (63 %), MMMU (75.1 %), MathVista (80.6 %) and CharXiv (52.7 %) at launch. The standard text-leaderboard cells (TB2 Core, SWE-Bench Pro/Verified, LiveCodeBench, HLE, Aider Polyglot, GPQA Diamond, MMLU-Pro, AIME 2025) are not yet published — all left null per the no-invent rule. Revisit when third-party runs or a Cohere benchmark table lands.",
       "sources": [
         "https://huggingface.co/CohereLabs/command-a-plus-05-2026-bf16",
         "https://cohere.com/blog/command-a-plus"
@@ -2364,7 +2364,7 @@
         "coding": "Strong sub-200B coder in Aider, Continue, Cursor with reasoning toggle — Mistral's launch claims it 'outperforms gpt-oss-120B at ~20% lower output cost' on LCB though no exact LCB number is published.",
         "agentDriver": "Native function-calls + reasoning toggle make it a competitive Cline / Codex driver, but TB2 unpublished. Devstral-2 is the better pure-agent pick at similar size."
       },
-      "benchmarkNotes": "Only GPQA Diamond 71.2 is given as an explicit number on the official Mistral HF card; MMLU-Pro / AIME / LCB / SWE / TB2 / HLE / Aider are referenced as comparison charts (vs GPT-OSS / Qwen) but never as standalone numbers, so all left null. Artificial Analysis Intelligence Index composite is 28.",
+      "benchmarkNotes": "Only GPQA Diamond 71.2 is given as an explicit number on the official Mistral HF card; MMLU-Pro / AIME / LCB / SWE / TB2 / HLE / Aider are referenced as comparison charts (vs GPT-OSS / Qwen) but never as standalone numbers, so all left null.",
       "sources": [
         "https://huggingface.co/mistralai/Mistral-Small-4-119B-2603",
         "https://mistral.ai/news/mistral-3"
@@ -2517,7 +2517,6 @@
       "benchmarkNotes": "All numbers from the official NVIDIA HF model card (2026-06-04). LCB is v6 (NVIDIA's first family entry to publish v6 directly). AIME 2025 reported as IOI-style 570 — not a percentage — so the aime cell stays null to avoid mixing scales. TB2 / SWE-Pro / Aider not reported. RULER@1M 94.7, MMLU-ProX multilingual avg 83.0.",
       "sources": [
         "https://huggingface.co/nvidia/NVIDIA-Nemotron-3-Ultra-550B-A55B-BF16",
-        "https://artificialanalysis.ai/articles/nvidia-nemotron-3-ultra-launch-announced",
         "https://openmdw.ai/license/1-1/"
       ],
       "contextK": 1000
@@ -2572,7 +2571,7 @@
       ],
       "blurb": "Apache-2.0 turbo model — very fast, decent quality, fits 8 GB cards. Smaller community vs SD/FLUX.",
       "license": "Apache 2.0",
-      "huggingface": "https://huggingface.co/models?search=z-image"
+      "huggingface": "https://huggingface.co/Tongyi-MAI/Z-Image-Turbo"
     },
     {
       "id": "flux1-schnell",
@@ -2648,15 +2647,15 @@
         "fast"
       ],
       "blurb": "FLUX.2 small variant — strong prompt-following at SD-class VRAM. Commercial license required.",
-      "license": "FLUX.2 Community",
-      "huggingface": "https://huggingface.co/models?search=flux.2"
+      "license": "Apache 2.0",
+      "huggingface": "https://huggingface.co/black-forest-labs/FLUX.2-klein-4B"
     },
     {
       "id": "flux2-dev",
       "name": "FLUX.2 [dev]",
       "family": "Black Forest Labs",
       "modality": "image",
-      "params": 14,
+      "params": 32,
       "type": "diffusion",
       "sizeQ4": 16,
       "vramMinQ4": 24,
@@ -2674,8 +2673,8 @@
         "photoreal"
       ],
       "blurb": "Black Forest Labs' 2026 flagship. Better prompt + style than FLUX.1 [dev], same VRAM footprint.",
-      "license": "FLUX.2 Community",
-      "huggingface": "https://huggingface.co/models?search=flux.2"
+      "license": "flux-non-commercial-license",
+      "huggingface": "https://huggingface.co/black-forest-labs/FLUX.2-dev"
     },
     {
       "id": "sd35-large",
@@ -2776,7 +2775,7 @@
         "permissive",
         "text-rendering"
       ],
-      "blurb": "May 8 2026. 8 B MIT-licensed pixel-space unified transformer (no VAE, no separate text encoder). GenEval 0.90 / DPG 89.83 — debuted at #8 on AA arena, highest-ranked open-weights image model. 2048×2048 native.",
+      "blurb": "May 8 2026. 8 B MIT-licensed pixel-space unified transformer (no VAE, no separate text encoder). GenEval 0.90 / DPG 89.83 — highest-ranked open-weights image model at debut. 2048×2048 native.",
       "license": "MIT",
       "huggingface": "https://huggingface.co/HiDream-ai/HiDream-O1-Image"
     },
