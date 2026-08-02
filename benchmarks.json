@@ -1,15 +1,15 @@
 {
   "$schema": "https://json-schema.org/draft-07/schema#",
   "_description": "Long-format benchmark rows extracted from builds.json plus citations. tps = decode tokens-per-second at Q4_K_M, short context, single stream. pp = prompt-processing tokens-per-second (llama-bench pp512 prefill, Q4_K_M). ttft100k = seconds to first token with a 100 000-token input prompt at Q4_K_M. imageSec = seconds per image. videoSec = seconds per 5-second clip.",
-  "_lastUpdated": "2026-07-11",
+  "_lastUpdated": "2026-08-02",
   "_methodology": "tps values are sourced from llama.cpp / vLLM single-stream Q4_K_M generation benchmarks. pp values are sourced from llama-bench pp512 runs and equivalent vLLM / sglang prefill benchmarks. ttft100k is measured (or estimated, see sources) with a 100 K-token prompt at Q4_K_M; null when the build cannot fit model weights plus a 100 K KV cache. See sources[] for citations.",
   "_counts": {
-    "tps": 482,
-    "pp": 374,
-    "ttft100k": 374,
-    "image": 135,
-    "video": 123,
-    "sources": 133
+    "tps": 500,
+    "pp": 383,
+    "ttft100k": 383,
+    "image": 141,
+    "video": 129,
+    "sources": 144
   },
   "tps": [
     {
@@ -110,7 +110,7 @@
     {
       "buildId": "mac-mini-m4-16",
       "modelSize": "14b",
-      "tps": 10
+      "tps": 11
     },
     {
       "buildId": "mac-mini-m4-16",
@@ -170,7 +170,7 @@
     {
       "buildId": "mac-mini-m4-24",
       "modelSize": "14b",
-      "tps": 12
+      "tps": 11
     },
     {
       "buildId": "mac-mini-m4-24",
@@ -375,7 +375,7 @@
     {
       "buildId": "mac-studio-m4-max-128",
       "modelSize": "8b",
-      "tps": 95
+      "tps": 84
     },
     {
       "buildId": "mac-studio-m4-max-128",
@@ -395,7 +395,7 @@
     {
       "buildId": "mac-studio-m4-max-128",
       "modelSize": "120b_moe",
-      "tps": 35
+      "tps": 55
     },
     {
       "buildId": "mac-studio-m4-max-128",
@@ -405,7 +405,7 @@
     {
       "buildId": "mac-studio-m4-max-36",
       "modelSize": "8b",
-      "tps": 95
+      "tps": 84
     },
     {
       "buildId": "mac-studio-m4-max-36",
@@ -415,7 +415,7 @@
     {
       "buildId": "mac-studio-m4-max-36",
       "modelSize": "30b",
-      "tps": 28
+      "tps": 30
     },
     {
       "buildId": "mac-studio-m4-max-36",
@@ -445,7 +445,7 @@
     {
       "buildId": "mac-studio-m3-ultra-96",
       "modelSize": "30b",
-      "tps": 38
+      "tps": 33
     },
     {
       "buildId": "mac-studio-m3-ultra-96",
@@ -475,7 +475,7 @@
     {
       "buildId": "mac-studio-m3-ultra-256",
       "modelSize": "30b",
-      "tps": 38
+      "tps": 33
     },
     {
       "buildId": "mac-studio-m3-ultra-256",
@@ -505,7 +505,7 @@
     {
       "buildId": "mac-studio-m3-ultra-512",
       "modelSize": "30b",
-      "tps": 38
+      "tps": 33
     },
     {
       "buildId": "mac-studio-m3-ultra-512",
@@ -575,7 +575,7 @@
     {
       "buildId": "rtx-3060-12",
       "modelSize": "8b",
-      "tps": 38
+      "tps": 42
     },
     {
       "buildId": "rtx-3060-12",
@@ -615,7 +615,7 @@
     {
       "buildId": "rtx-3090-24",
       "modelSize": "30b",
-      "tps": 28
+      "tps": 40
     },
     {
       "buildId": "rtx-3090-24",
@@ -629,6 +629,36 @@
     },
     {
       "buildId": "rtx-3090-24",
+      "modelSize": "235b_moe",
+      "tps": null
+    },
+    {
+      "buildId": "rtx-3090-96gb-ddr5",
+      "modelSize": "8b",
+      "tps": 90
+    },
+    {
+      "buildId": "rtx-3090-96gb-ddr5",
+      "modelSize": "14b",
+      "tps": 50
+    },
+    {
+      "buildId": "rtx-3090-96gb-ddr5",
+      "modelSize": "30b",
+      "tps": 28
+    },
+    {
+      "buildId": "rtx-3090-96gb-ddr5",
+      "modelSize": "70b",
+      "tps": null
+    },
+    {
+      "buildId": "rtx-3090-96gb-ddr5",
+      "modelSize": "120b_moe",
+      "tps": null
+    },
+    {
+      "buildId": "rtx-3090-96gb-ddr5",
       "modelSize": "235b_moe",
       "tps": null
     },
@@ -650,7 +680,7 @@
     {
       "buildId": "rtx-3090-x2",
       "modelSize": "70b",
-      "tps": 22
+      "tps": 16
     },
     {
       "buildId": "rtx-3090-x2",
@@ -680,7 +710,7 @@
     {
       "buildId": "rtx-3090-x4",
       "modelSize": "70b",
-      "tps": 28
+      "tps": 17
     },
     {
       "buildId": "rtx-3090-x4",
@@ -723,6 +753,36 @@
       "tps": null
     },
     {
+      "buildId": "rtx-4090-128gb-ddr5",
+      "modelSize": "8b",
+      "tps": 130
+    },
+    {
+      "buildId": "rtx-4090-128gb-ddr5",
+      "modelSize": "14b",
+      "tps": 75
+    },
+    {
+      "buildId": "rtx-4090-128gb-ddr5",
+      "modelSize": "30b",
+      "tps": 42
+    },
+    {
+      "buildId": "rtx-4090-128gb-ddr5",
+      "modelSize": "70b",
+      "tps": null
+    },
+    {
+      "buildId": "rtx-4090-128gb-ddr5",
+      "modelSize": "120b_moe",
+      "tps": null
+    },
+    {
+      "buildId": "rtx-4090-128gb-ddr5",
+      "modelSize": "235b_moe",
+      "tps": null
+    },
+    {
       "buildId": "rtx-5090-32",
       "modelSize": "8b",
       "tps": 186
@@ -749,6 +809,36 @@
     },
     {
       "buildId": "rtx-5090-32",
+      "modelSize": "235b_moe",
+      "tps": null
+    },
+    {
+      "buildId": "rtx-5090-192gb-ddr5",
+      "modelSize": "8b",
+      "tps": 186
+    },
+    {
+      "buildId": "rtx-5090-192gb-ddr5",
+      "modelSize": "14b",
+      "tps": 124
+    },
+    {
+      "buildId": "rtx-5090-192gb-ddr5",
+      "modelSize": "30b",
+      "tps": 70
+    },
+    {
+      "buildId": "rtx-5090-192gb-ddr5",
+      "modelSize": "70b",
+      "tps": null
+    },
+    {
+      "buildId": "rtx-5090-192gb-ddr5",
+      "modelSize": "120b_moe",
+      "tps": null
+    },
+    {
+      "buildId": "rtx-5090-192gb-ddr5",
       "modelSize": "235b_moe",
       "tps": null
     },
@@ -845,7 +935,7 @@
     {
       "buildId": "tesla-p100-16",
       "modelSize": "8b",
-      "tps": 33
+      "tps": 47
     },
     {
       "buildId": "tesla-p100-16",
@@ -915,7 +1005,7 @@
     {
       "buildId": "intel-arc-pro-b70-32",
       "modelSize": "30b",
-      "tps": 25
+      "tps": 20
     },
     {
       "buildId": "intel-arc-pro-b70-32",
@@ -945,7 +1035,7 @@
     {
       "buildId": "intel-arc-pro-b70-x2",
       "modelSize": "30b",
-      "tps": 35
+      "tps": 20
     },
     {
       "buildId": "intel-arc-pro-b70-x2",
@@ -975,12 +1065,12 @@
     {
       "buildId": "intel-arc-pro-b70-x4",
       "modelSize": "30b",
-      "tps": 38
+      "tps": 20
     },
     {
       "buildId": "intel-arc-pro-b70-x4",
       "modelSize": "70b",
-      "tps": 22
+      "tps": 14
     },
     {
       "buildId": "intel-arc-pro-b70-x4",
@@ -1005,12 +1095,12 @@
     {
       "buildId": "intel-arc-pro-b70-x8",
       "modelSize": "30b",
-      "tps": 42
+      "tps": 20
     },
     {
       "buildId": "intel-arc-pro-b70-x8",
       "modelSize": "70b",
-      "tps": 28
+      "tps": 14
     },
     {
       "buildId": "intel-arc-pro-b70-x8",
@@ -1075,7 +1165,7 @@
     {
       "buildId": "strix-halo-128",
       "modelSize": "120b_moe",
-      "tps": 47
+      "tps": 56
     },
     {
       "buildId": "strix-halo-128",
@@ -1835,7 +1925,7 @@
     {
       "buildId": "rtx-pro-6000-blackwell-x2",
       "modelSize": "120b_moe",
-      "tps": null
+      "tps": 131
     },
     {
       "buildId": "rtx-pro-6000-blackwell-x2",
@@ -2255,7 +2345,7 @@
     {
       "buildId": "amd-mi50-32",
       "modelSize": "30b",
-      "tps": null
+      "tps": 66
     },
     {
       "buildId": "amd-mi50-32",
@@ -2285,7 +2375,7 @@
     {
       "buildId": "amd-mi50-x4",
       "modelSize": "30b",
-      "tps": 50
+      "tps": 66
     },
     {
       "buildId": "amd-mi50-x4",
@@ -2810,6 +2900,21 @@
       "ppTokensPerSec": 1400
     },
     {
+      "buildId": "rtx-3090-96gb-ddr5",
+      "modelSize": "8b",
+      "ppTokensPerSec": 5100
+    },
+    {
+      "buildId": "rtx-3090-96gb-ddr5",
+      "modelSize": "14b",
+      "ppTokensPerSec": 2900
+    },
+    {
+      "buildId": "rtx-3090-96gb-ddr5",
+      "modelSize": "30b",
+      "ppTokensPerSec": 1400
+    },
+    {
       "buildId": "rtx-3090-x2",
       "modelSize": "8b",
       "ppTokensPerSec": 8800
@@ -2870,6 +2975,21 @@
       "ppTokensPerSec": 3200
     },
     {
+      "buildId": "rtx-4090-128gb-ddr5",
+      "modelSize": "8b",
+      "ppTokensPerSec": 11500
+    },
+    {
+      "buildId": "rtx-4090-128gb-ddr5",
+      "modelSize": "14b",
+      "ppTokensPerSec": 6600
+    },
+    {
+      "buildId": "rtx-4090-128gb-ddr5",
+      "modelSize": "30b",
+      "ppTokensPerSec": 3200
+    },
+    {
       "buildId": "rtx-5090-32",
       "modelSize": "8b",
       "ppTokensPerSec": 14000
@@ -2881,6 +3001,21 @@
     },
     {
       "buildId": "rtx-5090-32",
+      "modelSize": "30b",
+      "ppTokensPerSec": 3900
+    },
+    {
+      "buildId": "rtx-5090-192gb-ddr5",
+      "modelSize": "8b",
+      "ppTokensPerSec": 14000
+    },
+    {
+      "buildId": "rtx-5090-192gb-ddr5",
+      "modelSize": "14b",
+      "ppTokensPerSec": 8200
+    },
+    {
+      "buildId": "rtx-5090-192gb-ddr5",
       "modelSize": "30b",
       "ppTokensPerSec": 3900
     },
@@ -4682,6 +4817,21 @@
       "ttft100kSeconds": null
     },
     {
+      "buildId": "rtx-3090-96gb-ddr5",
+      "modelSize": "8b",
+      "ttft100kSeconds": 28
+    },
+    {
+      "buildId": "rtx-3090-96gb-ddr5",
+      "modelSize": "14b",
+      "ttft100kSeconds": 50
+    },
+    {
+      "buildId": "rtx-3090-96gb-ddr5",
+      "modelSize": "30b",
+      "ttft100kSeconds": null
+    },
+    {
       "buildId": "rtx-3090-x2",
       "modelSize": "8b",
       "ttft100kSeconds": 18
@@ -4742,6 +4892,21 @@
       "ttft100kSeconds": null
     },
     {
+      "buildId": "rtx-4090-128gb-ddr5",
+      "modelSize": "8b",
+      "ttft100kSeconds": 13
+    },
+    {
+      "buildId": "rtx-4090-128gb-ddr5",
+      "modelSize": "14b",
+      "ttft100kSeconds": 23
+    },
+    {
+      "buildId": "rtx-4090-128gb-ddr5",
+      "modelSize": "30b",
+      "ttft100kSeconds": null
+    },
+    {
       "buildId": "rtx-5090-32",
       "modelSize": "8b",
       "ttft100kSeconds": 11
@@ -4753,6 +4918,21 @@
     },
     {
       "buildId": "rtx-5090-32",
+      "modelSize": "30b",
+      "ttft100kSeconds": 38
+    },
+    {
+      "buildId": "rtx-5090-192gb-ddr5",
+      "modelSize": "8b",
+      "ttft100kSeconds": 11
+    },
+    {
+      "buildId": "rtx-5090-192gb-ddr5",
+      "modelSize": "14b",
+      "ttft100kSeconds": 18
+    },
+    {
+      "buildId": "rtx-5090-192gb-ddr5",
       "modelSize": "30b",
       "ttft100kSeconds": 38
     },
@@ -6314,6 +6494,16 @@
       "secondsPerImage": 30
     },
     {
+      "buildId": "rtx-3090-96gb-ddr5",
+      "imageModel": "sdxl",
+      "secondsPerImage": 5
+    },
+    {
+      "buildId": "rtx-3090-96gb-ddr5",
+      "imageModel": "flux",
+      "secondsPerImage": 30
+    },
+    {
       "buildId": "rtx-3090-x2",
       "imageModel": "sdxl",
       "secondsPerImage": 5
@@ -6344,12 +6534,32 @@
       "secondsPerImage": 18
     },
     {
+      "buildId": "rtx-4090-128gb-ddr5",
+      "imageModel": "sdxl",
+      "secondsPerImage": 3.2
+    },
+    {
+      "buildId": "rtx-4090-128gb-ddr5",
+      "imageModel": "flux",
+      "secondsPerImage": 18
+    },
+    {
       "buildId": "rtx-5090-32",
       "imageModel": "sdxl",
       "secondsPerImage": 2.2
     },
     {
       "buildId": "rtx-5090-32",
+      "imageModel": "flux",
+      "secondsPerImage": 9
+    },
+    {
+      "buildId": "rtx-5090-192gb-ddr5",
+      "imageModel": "sdxl",
+      "secondsPerImage": 2.2
+    },
+    {
+      "buildId": "rtx-5090-192gb-ddr5",
       "imageModel": "flux",
       "secondsPerImage": 9
     },
@@ -6916,6 +7126,16 @@
       "secondsPer5sClip": 600
     },
     {
+      "buildId": "rtx-3090-96gb-ddr5",
+      "videoModel": "ltx",
+      "secondsPer5sClip": 180
+    },
+    {
+      "buildId": "rtx-3090-96gb-ddr5",
+      "videoModel": "wan22",
+      "secondsPer5sClip": 600
+    },
+    {
       "buildId": "rtx-3090-x2",
       "videoModel": "ltx",
       "secondsPer5sClip": 180
@@ -6946,12 +7166,32 @@
       "secondsPer5sClip": 270
     },
     {
+      "buildId": "rtx-4090-128gb-ddr5",
+      "videoModel": "ltx",
+      "secondsPer5sClip": 90
+    },
+    {
+      "buildId": "rtx-4090-128gb-ddr5",
+      "videoModel": "wan22",
+      "secondsPer5sClip": 270
+    },
+    {
       "buildId": "rtx-5090-32",
       "videoModel": "ltx",
       "secondsPer5sClip": 60
     },
     {
       "buildId": "rtx-5090-32",
+      "videoModel": "wan22",
+      "secondsPer5sClip": 180
+    },
+    {
+      "buildId": "rtx-5090-192gb-ddr5",
+      "videoModel": "ltx",
+      "secondsPer5sClip": 60
+    },
+    {
+      "buildId": "rtx-5090-192gb-ddr5",
       "videoModel": "wan22",
       "secondsPer5sClip": 180
     },
@@ -7467,16 +7707,8 @@
       "url": "https://www.tbench.ai/leaderboard/terminal-bench/2.0"
     },
     {
-      "label": "SWE-Bench Pro leaderboard (benchlm.ai)",
-      "url": "https://benchlm.ai/benchmarks/swePro"
-    },
-    {
       "label": "SWE-Bench Verified snapshot (marc0.dev, May 2026)",
       "url": "https://www.marc0.dev/en/leaderboard"
-    },
-    {
-      "label": "Humanity's Last Exam — leaderboard (benchlm.ai)",
-      "url": "https://benchlm.ai/benchmarks/hle"
     },
     {
       "label": "Humanity's Last Exam — cross-check (pricepertoken)",
@@ -7485,14 +7717,6 @@
     {
       "label": "LiveCodeBench — leaderboard (pricepertoken)",
       "url": "https://pricepertoken.com/leaderboards/benchmark/livecodebench"
-    },
-    {
-      "label": "AIME 2025 — leaderboard (llm-stats.com)",
-      "url": "https://llm-stats.com/benchmarks/aime-2025"
-    },
-    {
-      "label": "Artificial Analysis intelligence index + HLE",
-      "url": "https://artificialanalysis.ai/leaderboards/models"
     },
     {
       "label": "RTX 5090 LLM benchmarks (Hardware Corner)",
@@ -7543,10 +7767,6 @@
       "url": "https://techsy.io/en/blog/best-open-source-llms-2026"
     },
     {
-      "label": "Best open source LLMs (BenchLM)",
-      "url": "https://benchlm.ai/blog/posts/best-open-source-llm"
-    },
-    {
       "label": "RTX Pro 6000 Blackwell review (StorageReview)",
       "url": "https://www.storagereview.com/review/nvidia-rtx-pro-6000-workstation-gpu-review-blackwell-architecture-and-96-gb-for-pro-workflows"
     },
@@ -7591,14 +7811,6 @@
       "url": "https://swe-rebench.com/"
     },
     {
-      "label": "SWE-Bench Pro leaderboard (open vs frontier gap)",
-      "url": "https://llm-stats.com/benchmarks/swe-bench-pro"
-    },
-    {
-      "label": "Terminal-Bench 2.0 results (BenchLM)",
-      "url": "https://benchlm.ai/benchmarks/terminalBench2"
-    },
-    {
       "label": "NVIDIA dual-Spark playbook (CUDA cluster benchmarks)",
       "url": "https://github.com/NVIDIA/dgx-spark-playbooks/blob/main/nvidia/connect-two-sparks/assets/performance_benchmarking_guide.md"
     },
@@ -7631,8 +7843,8 @@
       "url": "https://huggingface.co/Qwen/Qwen3.6-35B-A3B"
     },
     {
-      "label": "RTX 5090 price tracker May 2026",
-      "url": "https://bestvaluegpu.com/history/new-and-used-rtx-5090-price-history-and-specs/"
+      "label": "RTX 5090 street price tracker, May 2026 (Tom's Hardware)",
+      "url": "https://www.tomshardware.com/pc-components/gpus/lowest-gpu-prices-tracking"
     },
     {
       "label": "Strix Halo mini-PC price hike (Tom's Hardware, May 2026)",
@@ -7699,8 +7911,8 @@
       "url": "https://www.macrumors.com/2026/05/01/mac-mini-now-starts-at-799/"
     },
     {
-      "label": "ASUS Ascent GX10 — $3,499 at ASUS eShop direct (May 2026, OUT OF STOCK — superseded by Amazon 1 TB $3,099 / NVIDIA marketplace same $3,499 OOS)",
-      "url": "https://shop.asus.com/us/ascent-gx10.html"
+      "label": "ASUS Ascent GX10 — 1 TB $3,976.99 in stock at Newegg (N82E16859110044, Jul 2026); Amazon US ~$4,000-$4,100",
+      "url": "https://www.newegg.com/asus-ascent-gx10-mini-pc/p/N82E16859110044"
     },
     {
       "label": "MSI EdgeXpert MS-C931 launch price $2,999, limited availability (Notebookcheck)",
@@ -7769,10 +7981,6 @@
     {
       "label": "NVIDIA Developer Forum — Qwen3.5-122B-A10B on Spark, 51 tok/s with patches",
       "url": "https://forums.developer.nvidia.com/t/qwen3-5-122b-a10b-on-single-spark-up-to-51-tok-s-v2-1-patches-quick-start-benchmark/365639/11"
-    },
-    {
-      "label": "Quad RTX 3090 — Qwen3.5-122B-A10B 120B-MoE Q4 decode ~100 tok/s (DGX Spark vs Quad 3090 short; consistent with dual-5090 96 + aggregate-bandwidth physics)",
-      "url": "https://www.youtube.com/watch?v=gfwoTZTyDso"
     },
     {
       "label": "Human Value Exchange — Why prompt processing is the real MVP: DGX Spark vs M4 Pro vs Strix Halo on Qwen 30B",
@@ -7939,10 +8147,6 @@
       "url": "https://simonwillison.net/2026/Feb/17/qwen35/"
     },
     {
-      "label": "Artificial Analysis — Qwen3.5 397B-A17B",
-      "url": "https://artificialanalysis.ai/models/qwen3-5-397b-a17b"
-    },
-    {
       "label": "Google Gemma 4 31B (Apr 2026 dense flagship)",
       "url": "https://huggingface.co/google/gemma-4-31B-it"
     },
@@ -7993,6 +8197,95 @@
     {
       "label": "Cohere — Command A+ launch blog",
       "url": "https://cohere.com/blog/command-a-plus"
+    },
+    {
+      "url": "https://www.apple.com/fr/shop/buy-mac/macbook-air",
+      "label": "Apple FR — MacBook Air M5 configurator (base price €1,399)",
+      "fetched": "2026-07-28"
+    },
+    {
+      "url": "https://www.apple.com/fr/shop/buy-mac/macbook-pro/14-pouces-space-black-verre-d%C3%A9cran-standard-puce-apple-m5-pro-cpu-18-c%C5%93urs-gpu-20-c%C5%93urs-48-go-m%C3%A9moire-1to-stockage",
+      "label": "Apple FR — MacBook Pro 14\" M5 Pro 48GB 1TB (€3,809)",
+      "fetched": "2026-07-28"
+    },
+    {
+      "url": "https://www.apple.com/fr/shop/buy-mac/macbook-pro/14-pouces-space-black-verre-d%C3%A9cran-standard-puce-apple-m5-max-cpu-18-c%C5%93urs-gpu-40-c%C5%93urs-64-go-m%C3%A9moire-2to-stockage",
+      "label": "Apple FR — MacBook Pro 14\" M5 Max 64GB 2TB (€5,899)",
+      "fetched": "2026-07-28"
+    },
+    {
+      "url": "https://www.apple.com/fr/shop/buy-mac/macbook-pro/16-pouces-m5-max",
+      "label": "Apple FR — MacBook Pro 16\" M5 Max base €5,099 (128GB derived €7,899)",
+      "fetched": "2026-07-28"
+    },
+    {
+      "url": "https://www.apple.com/fr/shop/buy-mac/macbook-pro/16-pouces-space-black-verre-d%C3%A9cran-standard-puce-apple-m5-max-cpu-18-c%C5%93urs-gpu-40-c%C5%93urs-64-go-m%C3%A9moire-2to-stockage",
+      "label": "Apple FR — MacBook Pro 16\" M5 Max 64GB 2TB (€6,139 — reference for memory upgrade cost)",
+      "fetched": "2026-07-28"
+    },
+    {
+      "title": "Apple Hong Kong - Mac Mini pricing",
+      "url": "https://www.apple.com/hk/shop/buy-mac/mac-mini",
+      "note": "Apple HK official store pricing for Mac Mini M4 configurations"
+    },
+    {
+      "url": "https://omlx.ai/benchmarks/8sc0yed4",
+      "label": "oMLX: Qwen3.6-35B-A3B 4bit on M4 Max (40c) — TG 100.1 t/s"
+    },
+    {
+      "url": "https://omlx.ai/benchmarks/ctxwn8qj",
+      "label": "oMLX: Qwen3.5-9B 4bit on M4 Max (40c) — TG 84.1 t/s"
+    },
+    {
+      "url": "https://omlx.ai/benchmarks/k1adfxu0",
+      "label": "oMLX: Qwen3.5-9B-oQ4-mtp 4bit on M4 (10c) 24GB — TG 23.9 t/s"
+    },
+    {
+      "url": "https://omlx.ai/benchmarks/tv52ldtt",
+      "label": "oMLX: Qwen3.6-27B-OptiQ 4bit on M3 Ultra (60c) 96GB — TG 33.4 t/s"
+    },
+    {
+      "url": "https://omlx.ai/benchmarks/d0b2whir",
+      "label": "oMLX: Qwen3.6-27B 8bit on M4 Max (40c) 128GB — TG 5.5 t/s"
+    },
+    {
+      "label": "llama-bench Qwen3.6-27B on RTX 3090 (ahelpme, June 2026)",
+      "url": "https://ahelpme.com/ai/llamacpp-ai/llama-bench-the-qwen3-6-27b-and-nvidia-rtx-3090/"
+    },
+    {
+      "label": "LLM Tokens/Sec Benchmarks (mustafa.net, 2026)",
+      "url": "https://mustafa.net/llm-tokens-per-second-benchmarks/"
+    },
+    {
+      "label": "Local LLM Speed: RTX 3060 Qwen2 & Llama (Ajit Singh)",
+      "url": "https://singhajit.com/llm-inference-speed-comparison/"
+    },
+    {
+      "url": "https://jonathanmann.tech/blog/intel-arc-b70-llama-cpp-benchmarks/",
+      "label": "Jonathan Mann - B70 llama.cpp weekend test (Vulkan beats SYCL post-Mesa 26.1; Qwen3.6-35B-A3B 76 t/s; ubatch 2048 prefill)",
+      "fetched": "2026-08-01"
+    },
+    {
+      "url": "https://github.com/intel/ipex-llm/issues/12991",
+      "label": "IPEX-LLM #12991 - Arc B580: llama.cpp Vulkan tps > IPEX-LLM SYCL build",
+      "fetched": "2026-08-01"
+    },
+    {
+      "url": "https://github.com/ggml-org/llama.cpp/discussions/13530",
+      "label": "llama.cpp #13530 - Vulkan coopmat on Xe2 (B580/LNL) enabled numbers",
+      "fetched": "2026-08-01"
+    },
+    {
+      "label": "llama.cpp #19890 — RTX 5090 vs R9700 Qwen3.5-35B-A3B Q4_K_XL llama-bench (Vulkan beats ROCm on R9700 decode)",
+      "url": "https://github.com/ggml-org/llama.cpp/discussions/19890"
+    },
+    {
+      "label": "ahelpme — llama-bench Qwen3-Coder-30B-A3B Q4_K_M on single MI50 32GB (tg128=73.10, avg 66.1 t/s, Oct 2025)",
+      "url": "https://ahelpme.com/ai/llamacpp-ai/llama-bench-the-qwen3-coder-30b-a3b-and-amd-radeon-instinct-mi50-32gb/"
+    },
+    {
+      "label": "AMD ROCm Blog — Scaling AI Inference with vLLM on MI355X vs B200 (Dec 2025)",
+      "url": "https://rocm.blogs.amd.com/artificial-intelligence/scaling-ai-inference/README.html"
     }
   ]
 }
