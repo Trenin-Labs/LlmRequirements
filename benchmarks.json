@@ -1,7 +1,7 @@
 {
   "$schema": "https://json-schema.org/draft-07/schema#",
   "_description": "Long-format benchmark rows extracted from builds.json plus citations. tps = decode tokens-per-second at Q4_K_M, short context, single stream. pp = prompt-processing tokens-per-second (llama-bench pp512 prefill, Q4_K_M). ttft100k = seconds to first token with a 100 000-token input prompt at Q4_K_M. imageSec = seconds per image. videoSec = seconds per 5-second clip.",
-  "_lastUpdated": "2026-08-02",
+  "_lastUpdated": "2026-08-09",
   "_methodology": "tps values are sourced from llama.cpp / vLLM single-stream Q4_K_M generation benchmarks. pp values are sourced from llama-bench pp512 runs and equivalent vLLM / sglang prefill benchmarks. ttft100k is measured (or estimated, see sources) with a 100 K-token prompt at Q4_K_M; null when the build cannot fit model weights plus a 100 K KV cache. See sources[] for citations.",
   "_counts": {
     "tps": 500,
@@ -9,7 +9,7 @@
     "ttft100k": 383,
     "image": 141,
     "video": 129,
-    "sources": 144
+    "sources": 172
   },
   "tps": [
     {
@@ -105,7 +105,7 @@
     {
       "buildId": "mac-mini-m4-16",
       "modelSize": "8b",
-      "tps": 22
+      "tps": 24
     },
     {
       "buildId": "mac-mini-m4-16",
@@ -165,7 +165,7 @@
     {
       "buildId": "mac-mini-m4-24",
       "modelSize": "8b",
-      "tps": 22
+      "tps": 24
     },
     {
       "buildId": "mac-mini-m4-24",
@@ -235,7 +235,7 @@
     {
       "buildId": "mbp-m4-max-64",
       "modelSize": "30b",
-      "tps": 22
+      "tps": 27
     },
     {
       "buildId": "mbp-m4-max-64",
@@ -605,7 +605,7 @@
     {
       "buildId": "rtx-3090-24",
       "modelSize": "8b",
-      "tps": 90
+      "tps": 110
     },
     {
       "buildId": "rtx-3090-24",
@@ -1785,7 +1785,7 @@
     {
       "buildId": "rtx-a6000-48",
       "modelSize": "8b",
-      "tps": 75
+      "tps": 100
     },
     {
       "buildId": "rtx-a6000-48",
@@ -1815,7 +1815,7 @@
     {
       "buildId": "rtx-6000-ada-48",
       "modelSize": "8b",
-      "tps": 110
+      "tps": 125
     },
     {
       "buildId": "rtx-6000-ada-48",
@@ -8286,6 +8286,106 @@
     {
       "label": "AMD ROCm Blog — Scaling AI Inference with vLLM on MI355X vs B200 (Dec 2025)",
       "url": "https://rocm.blogs.amd.com/artificial-intelligence/scaling-ai-inference/README.html"
+    },
+    {
+      "label": "Harvey Norman NZ — MacBook Pro 16-in M4 Pro 48GB/512GB (MX2Y3X/A) NZ$5,599",
+      "url": "https://www.harveynorman.co.nz/apple-computers/macbook/apple-macbook-pro-16-m4-pro-chip-with-14-core-cpu-and-20-core-gpu-48gb-ram-512gb-ssd-space-black-2024.html"
+    },
+    {
+      "label": "MiniMax H3 model card (Hugging Face) — 33.1B open weights, community license, 2K/15s/native audio",
+      "url": "https://huggingface.co/MiniMaxAI/MiniMax-H3"
+    },
+    {
+      "label": "MiniMax H3 official ComfyUI day-0 support post by comfyanonymous (RRF 123.6GB→42.5GB pruned footprint, 12GB VRAM min for 480p)",
+      "url": "https://reddit.com/r/StableDiffusion/comments/1vd9o0r/minimax_h3_1080p_25_seconds_text_to_video_in/"
+    },
+    {
+      "label": "The Decoder — MiniMax H3, first open model to top an AI video ranking (33B)",
+      "url": "https://the-decoder.com/chinas-minimax-h3-is-the-first-open-model-to-top-an-ai-video-ranking/"
+    },
+    {
+      "label": "ASUS Ascent GX10 1TB — Amazon US buy-box price",
+      "url": "https://www.amazon.com/dp/B0G1MQYHRD"
+    },
+    {
+      "label": "NVIDIA DGX Spark — NVIDIA Marketplace price",
+      "url": "https://marketplace.nvidia.com/en-us/enterprise/personal-ai-supercomputers/dgx-spark/"
+    },
+    {
+      "label": "Lenovo ThinkStation PGX 30KL0002US — Lenovo US price",
+      "url": "https://www.lenovo.com/us/en/p/workstations/thinkstation-p-series/lenovo-thinkstation-pgx-sff/30kl0002us"
+    },
+    {
+      "label": "RTX PRO 6000 Blackwell OEM Workstation Edition (Newegg, sold by Newegg)",
+      "url": "https://www.newegg.com/p/N82E16888892012"
+    },
+    {
+      "label": "RTX PRO 6000 Blackwell Workstation Edition 96GB (Newegg)",
+      "url": "https://www.newegg.com/nvidia-blackwell-rtx-pro-6000-96gb-graphic-card/p/N82E16814132106"
+    },
+    {
+      "label": "RTX PRO 5000 Blackwell 48GB (Newegg, sold by Newegg)",
+      "url": "https://www.newegg.com/nvidia-blackwell-900-5g153-2250-000-rtx-pro-5000-48gb-graphics-card/p/N82E16814132111"
+    },
+    {
+      "label": "RTX PRO 6000 Blackwell Server Edition 96GB (SabrePC, in stock)",
+      "url": "https://www.sabrepc.com/900-2G153-0000-000-NVIDIA-S8845543"
+    },
+    {
+      "label": "Intel Arc Pro B70 32GB (Newegg)",
+      "url": "https://www.newegg.com/intel-arc-pro-b70-32gb-graphics-card/p/N82E16814883008"
+    },
+    {
+      "label": "Intel Arc Pro B70 $949.99 announcement (VideoCardz)",
+      "url": "https://videocardz.com/newz/intel-arc-pro-b70-is-now-neweggs-no-1-best-seller-in-workstation-graphics-cards"
+    },
+    {
+      "label": "RX 9070 XT price tracker US (Best Value GPU)",
+      "url": "https://bestvaluegpu.com/history/new-and-used-rx-9070-xt-price-history-and-specs/"
+    },
+    {
+      "label": "oMLX Qwen3.5-9B M4(10c) 16GB community benchmark",
+      "url": "https://omlx.ai/benchmarks/vu5ofmka"
+    },
+    {
+      "label": "oMLX: Qwen3.6-35B-A3B MLX-4bit on M4 Pro (20c) 48GB — TG 80.7 t/s, PP 934",
+      "url": "https://omlx.ai/benchmarks/58et3red"
+    },
+    {
+      "label": "oMLX: Qwen3.6-27B MLX-8bit on M4 Pro (20c) 48GB — TG 8.5 t/s, PP 126",
+      "url": "https://omlx.ai/benchmarks/18wyt5bd"
+    },
+    {
+      "label": "oMLX: Qwen3.6-27B MLX-4bit on M4 Max (40c) — TG 27.7 t/s, PP 259",
+      "url": "https://omlx.ai/benchmarks/ky35w3z4"
+    },
+    {
+      "label": "Spec-decode bench on Qwen3.6-27B NVFP4, RTX PRO 6000 (thavoc77, r/LocalLLaMA)",
+      "url": "https://www.reddit.com/r/LocalLLaMA/comments/1v22hu9/"
+    },
+    {
+      "label": "Laguna/qwen-122b single-stream tok/s on RTX PRO 6000 (klinec, r/LocalLLaMA)",
+      "url": "https://www.reddit.com/r/LocalLLaMA/comments/1v2ua8g/"
+    },
+    {
+      "label": "RTX 5090 FE: Qwen3.6-27B Q6 ~99 tok/s (awescool, r/nvidia)",
+      "url": "https://www.reddit.com/r/nvidia/comments/1vez1ic/"
+    },
+    {
+      "label": "NVIDIA H200 launch blog — single-H200 FP8 max-throughput (Llama2-70B 3,014 / 13B 11,819 out tok/s/GPU)",
+      "url": "https://nvidia.github.io/TensorRT-LLM/blogs/H200launch.html"
+    },
+    {
+      "label": "NVIDIA blog — Llama 3.1 405B 1.5x on H200 (HGX 8-GPU FP8 TP 506 / PP 764) + MLPerf Llama2-70B on HGX H100",
+      "url": "https://developer.nvidia.com/blog/boosting-llama-3-1-405b-throughput-by-another-1-5x-on-nvidia-h200-tensor-core-gpus-and-nvlink-switch/"
+    },
+    "https://sergiiob.dev/posts/intel-arc-b70-vllm-vs-llamacpp-moe-dense-showdown/",
+    "https://github.com/SergiioB/intel-arc-pro-b70-inference-cookbook",
+    "https://github.com/ggml-org/llama.cpp/pull/26689",
+    "https://www.reddit.com/r/LocalLLaMA/comments/1vi6hmw/",
+    {
+      "label": "digtvbg — llama-server (Vulkan) vs vLLM (ROCm 7.2) on RX 9070 XT RDNA4; Vulkan 62 t/s > vLLM 48 t/s",
+      "url": "https://digtvbg.com/blog/llama-server-vulkan-rdna4-vllm-rocm-benchmark/"
     }
   ]
 }
