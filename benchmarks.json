@@ -1570,7 +1570,7 @@
     {
       "buildId": "h100-80",
       "modelSize": "8b",
-      "tps": 268
+      "tps": 240
     },
     {
       "buildId": "h100-80",
