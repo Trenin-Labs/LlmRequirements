@@ -1628,7 +1628,7 @@
         "swebench_pro": null,
         "swebench_ver": null,
         "aider": 55.1,
-        "livecodebench": 40.5,
+        "livecodebench": null,
         "gpqa": null,
         "mmlu_pro": null,
         "aime": null
@@ -1637,18 +1637,13 @@
         "coding": "The original Chinese open-weights coding champion. r/LocalLLaMA homelabs still run it for budget reasons (well-understood quantization). Daily-drivers have moved to V4-Flash or K2.6.",
         "agentDriver": "V3.2-Exp Reasoner is decent (Aider Polyglot 74.2%) but V4 supersedes it entirely. Not the agent pick anymore."
       },
-      "benchmarkNotes": "SYSTEMIC MISATTRIBUTION CORRECTED. Row is original DeepSeek V3 (671B/37B). Its stored aider 74.2 and livecodebench 89.6 traced to DeepSeek V3.2-Exp-Reasoner / V3.2-Speciale (sibling-generation) rows, and gpqa 79.9 / mmlu_pro 85 / hle 22.2 / tb2 39.6 / aime 89.3 were likewise V3.2-family numbers, not original V3. Corrected the two citable this run to canonical boards for original DeepSeek V3: LiveCodeBench 40.5 (pricepertoken 'DeepSeek V3 0324') and Aider Polyglot 55.1 (aider 'DeepSeek V3 (0324)'). Remaining cells nulled because no original-V3 value is available from a citable (non-aggregator) leaderboard this run; null beats a wrong sibling-generation figure per the never-misattribute rule. Recommend a full re-baseline of this row.",
+      "benchmarkNotes": "SYSTEMIC MISATTRIBUTION CORRECTED. Row is original DeepSeek V3 (671B/37B). Its stored aider 74.2 and livecodebench 89.6 traced to DeepSeek V3.2-Exp-Reasoner / V3.2-Speciale (sibling-generation) rows, and gpqa 79.9 / mmlu_pro 85 / hle 22.2 / tb2 39.6 / aime 89.3 were likewise V3.2-family numbers, not original V3. The original-V3 Aider Polyglot score of 55.1 is retained from the Aider leaderboard. All remaining cells, including LiveCodeBench, are null because no permissible source for the exact original-V3 benchmark identity was available this run; null beats a wrong sibling-generation figure per the never-misattribute rule. Recommend a full re-baseline of this row.",
       "sources": [
-        "https://pricepertoken.com/leaderboards/benchmark/livecodebench",
+        "https://huggingface.co/deepseek-ai/DeepSeek-V3",
         "https://aider.chat/docs/leaderboards/"
       ],
       "contextK": 128,
       "benchmarkProvenance": {
-        "livecodebench": {
-          "source": "leaderboard",
-          "url": "https://pricepertoken.com/leaderboards/benchmark/livecodebench",
-          "fetchedOn": "2026-08-04"
-        },
         "aider": {
           "source": "leaderboard",
           "url": "https://aider.chat/docs/leaderboards/",

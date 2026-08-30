@@ -5837,22 +5837,7 @@
       "priceVerifiedOn": "2026-08-14",
       "tflopsFP8": 1979,
       "topsINT8": null,
-      "benchmarks": [
-        {
-          "modelId": "llama31-8b",
-          "quant": "Q4_0",
-          "engine": "llama.cpp",
-          "concurrency": 1,
-          "ctxTokens": 512,
-          "decodeTps": 267.81,
-          "prefillTps": 9918.34,
-          "status": "verified",
-          "source": "https://knightli.com/en/2026/04/23/llama-cpp-gpu-benchmark-cuda-rocm-vulkan-scoreboard/",
-          "measuredOn": "2026-04-23",
-          "note": "Single-stream llama-bench (commit 5143fa8, no FA): Llama 2 7B Q4_0 tg128 267.81 / pp512 9918.34 t/s on H100 80 GB. Closes the single-stream Q4 gap for the 8b class (recorded under closest tracked dense-8B model llama31-8b)."
-        }
-      ],
-      "tpsNote": "8b cell now VERIFIED against knightli.com llama-bench scoreboard (commit 5143fa8): Llama 2 7B Q4_0 single-stream tg128 = 267.81 t/s, pp512 = 9918.34 t/s (H100 80 GB, no FA) — corroborates the legacy Q4_K_M estimate (~240) and the stored pp 8b=9900. 14b/30b/70b/120b_moe remain Q4_K_M single-stream legacy estimates with no re-openable source this run — still UNVERIFIED for the advertised Q4 recipe. NVIDIA first-party H100 TRT-LLM blog (2023-12-14) reports DGX H100 8-GPU server-level figures rather than single-GPU single-stream tok/s. Single-stream Q4 ~268/150/90/50 t/s at 8b/14b/30b/70b are consistent with 3.35TB/s HBM3 memory-bandwidth decode ceiling."
+      "tpsNote": "Stored tps are Q4_K_M single-stream llama.cpp-style legacy estimates with no re-openable source found this run — UNVERIFIED for the advertised Q4 recipe. NVIDIA first-party H100 TRT-LLM blog (2023-12-14) reports DGX H100 8-GPU server-level figures (1.7s/request batch-1, >5 Llama2-70B inf/s @2.5s budget) rather than single-GPU single-stream tok/s, so no clean benchmark row was added. Single-stream Q4 ~240/150/90/50 t/s at 8b/14b/30b/70b are consistent with 3.35TB/s HBM3 memory-bandwidth decode ceiling."
     },
     {
       "id": "h100-x8",
