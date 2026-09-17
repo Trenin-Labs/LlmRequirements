@@ -1727,7 +1727,7 @@
         "tb2": null,
         "swebench_pro": null,
         "swebench_ver": null,
-        "aider": 55.1,
+        "aider": null,
         "livecodebench": null,
         "gpqa": null,
         "mmlu_pro": null,
@@ -1737,19 +1737,11 @@
         "coding": "The original Chinese open-weights coding champion. r/LocalLLaMA homelabs still run it for budget reasons (well-understood quantization). Daily-drivers have moved to V4-Flash or K2.6.",
         "agentDriver": "V3.2-Exp Reasoner is decent (Aider Polyglot 74.2%) but V4 supersedes it entirely. Not the agent pick anymore."
       },
-      "benchmarkNotes": "DeepSeek V3 (671B total, 37B active) scores 55.1 on Aider Polyglot. No exact-checkpoint result is cited here for the other benchmark suites.",
+      "benchmarkNotes": "No exact-checkpoint result is cited here for this original DeepSeek V3 model.",
       "sources": [
-        "https://huggingface.co/deepseek-ai/DeepSeek-V3",
-        "https://aider.chat/docs/leaderboards/"
+        "https://huggingface.co/deepseek-ai/DeepSeek-V3"
       ],
-      "contextK": 128,
-      "benchmarkProvenance": {
-        "aider": {
-          "source": "leaderboard",
-          "url": "https://aider.chat/docs/leaderboards/",
-          "fetchedOn": "2026-08-04"
-        }
-      }
+      "contextK": 128
     },
     {
       "id": "deepseek-v4-flash-284b-moe",
