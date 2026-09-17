@@ -1,8 +1,8 @@
 {
   "$schema": "https://json-schema.org/draft-07/schema#",
   "_description": "Weekly regional pricing snapshot. priceUSD is the whole-system US MSRP (used as fallback). regionPrices are vendor-direct overrides in local currency.",
-  "_lastUpdated": "2026-09-06",
-  "_snapshot": "2026-09-06",
+  "_lastUpdated": "2026-09-17",
+  "_snapshot": "2026-09-17",
   "_currencyNotes": "EU prices are in EUR and include VAT (typically ~19%). UK in GBP includes 20% VAT. JP in JPY includes 10% consumption tax. US prices are pre-tax.",
   "builds": {
     "your-laptop-8gb": {
