@@ -1,7 +1,7 @@
 {
   "$schema": "https://json-schema.org/draft-07/schema#",
   "_description": "Long-format benchmark rows extracted from builds.json plus citations. tps = decode tokens-per-second at Q4_K_M, short context, single stream. pp = prompt-processing tokens-per-second (llama-bench pp512 prefill, Q4_K_M). ttft100k = seconds to first token with a 100 000-token input prompt at Q4_K_M. imageSec = seconds per image. videoSec = seconds per 5-second clip.",
-  "_lastUpdated": "2026-08-30",
+  "_lastUpdated": "2026-09-06",
   "_methodology": "tps values are sourced from llama.cpp / vLLM single-stream Q4_K_M generation benchmarks. pp values are sourced from llama-bench pp512 runs and equivalent vLLM / sglang prefill benchmarks. ttft100k is measured (or estimated, see sources) with a 100 K-token prompt at Q4_K_M; null when the build cannot fit model weights plus a 100 K KV cache. See sources[] for citations.",
   "_counts": {
     "tps": 500,
@@ -9,7 +9,7 @@
     "ttft100k": 383,
     "image": 141,
     "video": 129,
-    "sources": 191
+    "sources": 189
   },
   "tps": [
     {
@@ -105,7 +105,7 @@
     {
       "buildId": "mac-mini-m4-16",
       "modelSize": "8b",
-      "tps": 24
+      "tps": 22
     },
     {
       "buildId": "mac-mini-m4-16",
@@ -165,7 +165,7 @@
     {
       "buildId": "mac-mini-m4-24",
       "modelSize": "8b",
-      "tps": 24
+      "tps": 22
     },
     {
       "buildId": "mac-mini-m4-24",
@@ -235,7 +235,7 @@
     {
       "buildId": "mbp-m4-max-64",
       "modelSize": "30b",
-      "tps": 27
+      "tps": 22
     },
     {
       "buildId": "mbp-m4-max-64",
@@ -605,7 +605,7 @@
     {
       "buildId": "rtx-3090-24",
       "modelSize": "8b",
-      "tps": 110
+      "tps": 90
     },
     {
       "buildId": "rtx-3090-24",
@@ -1005,7 +1005,7 @@
     {
       "buildId": "intel-arc-pro-b70-32",
       "modelSize": "30b",
-      "tps": 20
+      "tps": 52.2
     },
     {
       "buildId": "intel-arc-pro-b70-32",
@@ -1785,7 +1785,7 @@
     {
       "buildId": "rtx-a6000-48",
       "modelSize": "8b",
-      "tps": 100
+      "tps": 75
     },
     {
       "buildId": "rtx-a6000-48",
@@ -1815,7 +1815,7 @@
     {
       "buildId": "rtx-6000-ada-48",
       "modelSize": "8b",
-      "tps": 125
+      "tps": 110
     },
     {
       "buildId": "rtx-6000-ada-48",
@@ -3937,7 +3937,7 @@
     {
       "buildId": "rtx-pro-6000-blackwell-x2",
       "modelSize": "120b_moe",
-      "ppTokensPerSec": 10500
+      "ppTokensPerSec": null
     },
     {
       "buildId": "rtx-pro-6000-blackwell-x2",
@@ -4362,7 +4362,7 @@
     {
       "buildId": "tinybox-green",
       "modelSize": "120b_moe",
-      "ppTokensPerSec": 10500
+      "ppTokensPerSec": null
     },
     {
       "buildId": "tinybox-green",
@@ -5854,7 +5854,7 @@
     {
       "buildId": "rtx-pro-6000-blackwell-x2",
       "modelSize": "120b_moe",
-      "ttft100kSeconds": 13
+      "ttft100kSeconds": null
     },
     {
       "buildId": "rtx-pro-6000-blackwell-x2",
@@ -6279,7 +6279,7 @@
     {
       "buildId": "tinybox-green",
       "modelSize": "120b_moe",
-      "ttft100kSeconds": 13
+      "ttft100kSeconds": null
     },
     {
       "buildId": "tinybox-green",
@@ -7911,8 +7911,8 @@
       "url": "https://www.macrumors.com/2026/05/01/mac-mini-now-starts-at-799/"
     },
     {
-      "label": "ASUS Ascent GX10 — 1 TB $3,976.99 in stock at Newegg (N82E16859110044, Jul 2026); Amazon US ~$4,000-$4,100",
-      "url": "https://www.newegg.com/asus-ascent-gx10-mini-pc/p/N82E16859110044"
+      "label": "ASUS Ascent GX10 GX10-GG0010BN, 128 GB / 1 TB: $3,999.99 and one Houston unit observed 2026-09-11. All Micro Center stores out of stock 2026-09-14",
+      "url": "https://www.microcenter.com/product/703497/asus-ascent-gx10-ai-supercomputer"
     },
     {
       "label": "MSI EdgeXpert MS-C931 launch price $2,999, limited availability (Notebookcheck)",
@@ -8288,11 +8288,11 @@
       "url": "https://rocm.blogs.amd.com/artificial-intelligence/scaling-ai-inference/README.html"
     },
     {
-      "label": "Harvey Norman NZ — MacBook Pro 16-in M4 Pro 48GB/512GB (MX2Y3X/A) NZ$5,599",
+      "label": "Harvey Norman NZ - MacBook Pro 16-in M4 Pro 48GB/512GB (MX2Y3X/A) NZ$5,599",
       "url": "https://www.harveynorman.co.nz/apple-computers/macbook/apple-macbook-pro-16-m4-pro-chip-with-14-core-cpu-and-20-core-gpu-48gb-ram-512gb-ssd-space-black-2024.html"
     },
     {
-      "label": "MiniMax H3 model card (Hugging Face) — 33.1B open weights, community license, 2K/15s/native audio",
+      "label": "MiniMax H3 model card (Hugging Face) - 33.1B open weights, community license, 2K/15s/native audio",
       "url": "https://huggingface.co/MiniMaxAI/MiniMax-H3"
     },
     {
@@ -8300,19 +8300,19 @@
       "url": "https://reddit.com/r/StableDiffusion/comments/1vd9o0r/minimax_h3_1080p_25_seconds_text_to_video_in/"
     },
     {
-      "label": "The Decoder — MiniMax H3, first open model to top an AI video ranking (33B)",
+      "label": "The Decoder - MiniMax H3, first open model to top an AI video ranking (33B)",
       "url": "https://the-decoder.com/chinas-minimax-h3-is-the-first-open-model-to-top-an-ai-video-ranking/"
     },
     {
-      "label": "ASUS Ascent GX10 1TB — Amazon US buy-box price",
+      "label": "ASUS Ascent GX10 1TB - Amazon US buy-box price",
       "url": "https://www.amazon.com/dp/B0G1MQYHRD"
     },
     {
-      "label": "NVIDIA DGX Spark — NVIDIA Marketplace price",
+      "label": "NVIDIA DGX Spark - NVIDIA Marketplace price",
       "url": "https://marketplace.nvidia.com/en-us/enterprise/personal-ai-supercomputers/dgx-spark/"
     },
     {
-      "label": "Lenovo ThinkStation PGX 30KL0002US — Lenovo US price",
+      "label": "Lenovo ThinkStation PGX 30KL0002US - Lenovo US price",
       "url": "https://www.lenovo.com/us/en/p/workstations/thinkstation-p-series/lenovo-thinkstation-pgx-sff/30kl0002us"
     },
     {
@@ -8344,63 +8344,19 @@
       "url": "https://bestvaluegpu.com/history/new-and-used-rx-9070-xt-price-history-and-specs/"
     },
     {
-      "label": "oMLX Qwen3.5-9B M4(10c) 16GB community benchmark",
-      "url": "https://omlx.ai/benchmarks/vu5ofmka"
-    },
-    {
-      "label": "oMLX: Qwen3.6-35B-A3B MLX-4bit on M4 Pro (20c) 48GB — TG 80.7 t/s, PP 934",
-      "url": "https://omlx.ai/benchmarks/58et3red"
-    },
-    {
-      "label": "oMLX: Qwen3.6-27B MLX-8bit on M4 Pro (20c) 48GB — TG 8.5 t/s, PP 126",
-      "url": "https://omlx.ai/benchmarks/18wyt5bd"
-    },
-    {
-      "label": "oMLX: Qwen3.6-27B MLX-4bit on M4 Max (40c) — TG 27.7 t/s, PP 259",
-      "url": "https://omlx.ai/benchmarks/ky35w3z4"
-    },
-    {
-      "label": "Spec-decode bench on Qwen3.6-27B NVFP4, RTX PRO 6000 (thavoc77, r/LocalLLaMA)",
-      "url": "https://www.reddit.com/r/LocalLLaMA/comments/1v22hu9/"
-    },
-    {
-      "label": "Laguna/qwen-122b single-stream tok/s on RTX PRO 6000 (klinec, r/LocalLLaMA)",
-      "url": "https://www.reddit.com/r/LocalLLaMA/comments/1v2ua8g/"
-    },
-    {
-      "label": "RTX 5090 FE: Qwen3.6-27B Q6 ~99 tok/s (awescool, r/nvidia)",
-      "url": "https://www.reddit.com/r/nvidia/comments/1vez1ic/"
-    },
-    {
-      "label": "NVIDIA H200 launch blog — single-H200 FP8 max-throughput (Llama2-70B 3,014 / 13B 11,819 out tok/s/GPU)",
-      "url": "https://nvidia.github.io/TensorRT-LLM/blogs/H200launch.html"
-    },
-    {
-      "label": "NVIDIA blog — Llama 3.1 405B 1.5x on H200 (HGX 8-GPU FP8 TP 506 / PP 764) + MLPerf Llama2-70B on HGX H100",
-      "url": "https://developer.nvidia.com/blog/boosting-llama-3-1-405b-throughput-by-another-1-5x-on-nvidia-h200-tensor-core-gpus-and-nvlink-switch/"
-    },
-    "https://sergiiob.dev/posts/intel-arc-b70-vllm-vs-llamacpp-moe-dense-showdown/",
-    "https://github.com/SergiioB/intel-arc-pro-b70-inference-cookbook",
-    "https://github.com/ggml-org/llama.cpp/pull/26689",
-    "https://www.reddit.com/r/LocalLLaMA/comments/1vi6hmw/",
-    {
-      "label": "digtvbg — llama-server (Vulkan) vs vLLM (ROCm 7.2) on RX 9070 XT RDNA4; Vulkan 62 t/s > vLLM 48 t/s",
-      "url": "https://digtvbg.com/blog/llama-server-vulkan-rdna4-vllm-rocm-benchmark/"
-    },
-    {
-      "label": "Mac mini M4 (16GB/512GB) NZ $1,999 — JB Hi-Fi NZ product page (og:price NZD 1,999.00)",
+      "label": "Mac mini M4 (16GB/512GB) NZ $1,999 - JB Hi-Fi NZ product page (og:price NZD 1,999.00)",
       "url": "https://www.jbhifi.co.nz/products/apple-mac-mini-with-m4-chip-10-core-cpu-gpu-512gb-16gb"
     },
     {
-      "label": "Mac mini M4 (24GB/512GB) NZ $2,399 — JB Hi-Fi NZ product page (og:price NZD 2,399.00)",
+      "label": "Mac mini M4 (24GB/512GB) NZ $2,399 - JB Hi-Fi NZ product page (og:price NZD 2,399.00)",
       "url": "https://www.jbhifi.co.nz/products/apple-mac-mini-with-m4-chip-10-core-cpu-gpu-512gb-24gb"
     },
     {
-      "label": "RTX 3090 used market avg $1,258 (380 listings, Aug 2026)",
+      "label": "RTX 3090 used market avg $1,338, +11.3%/90d (302 listings, Sep 3 2026)",
       "url": "https://resaleprices.com/gpu/nvidia-rtx-3090"
     },
     {
-      "label": "RTX 4090 used market avg $2,500, flat (Aug 2026)",
+      "label": "RTX 4090 used market avg $2,500, flat (9 listings, Medium confidence, Sep 3 2026)",
       "url": "https://resaleprices.com/gpu/nvidia-rtx-4090"
     },
     {
@@ -8408,15 +8364,15 @@
       "url": "https://resaleprices.com/gpu/nvidia-rtx-5090"
     },
     {
-      "label": "GPUDojo RTX 3090 used-from $1,449 / new $1,450 (Aug 14 2026)",
+      "label": "GPUDojo RTX 3090 new offers $1,570-$2,095, recent used $1,000, no used retail offers (Sep 4 2026)",
       "url": "https://gpudojo.com/rtx-3090"
     },
     {
-      "label": "GPUDojo RTX 4090 used-from $2,560 / new $2,949 (Aug 14 2026)",
+      "label": "GPUDojo RTX 4090 new from $3,097 (Amazon), low offer $2,073 parts-grade (Sep 4 2026)",
       "url": "https://gpudojo.com/rtx-4090"
     },
     {
-      "label": "GPUDojo RTX 3060 12GB used-from $318 / new $365 (Aug 14 2026)",
+      "label": "GPUDojo RTX 3060 12GB new from $380, recent used $268 (Sep 4 2026)",
       "url": "https://gpudojo.com/rtx-3060-12gb"
     },
     {
@@ -8424,15 +8380,15 @@
       "url": "https://videocardprices.com/card/nvidia-rtx-5090/"
     },
     {
-      "label": "CDW — PNY RTX 6000 Ada 48GB (VCNRTX6000ADA-PB), in stock $8,662.99 (Aug 2026)",
+      "label": "CDW - PNY RTX 6000 Ada 48GB (VCNRTX6000ADA-PB), in stock $8,662.99 (Aug 2026)",
       "url": "https://www.cdw.com/product/pny-nvidia-rtx-6000-ada-graphic-card-48-gb-gddr6/7275196"
     },
     {
-      "label": "IPC Store — PNY RTX A6000 48GB, $4,739 retailer-own (Aug 2026)",
+      "label": "IPC Store - PNY RTX A6000 48GB, $4,739 retailer-own (Aug 2026)",
       "url": "https://www.ipcstore.com/pny-rtx-a6000-nvidia-48-gb-video-graphics-card"
     },
     {
-      "label": "tiny shop — tinybox green v2, $51,000 (Aug 2026)",
+      "label": "tiny shop - tinybox green v2, $51,000 (Aug 2026)",
       "url": "https://tinycorp.myshopify.com/products/tinybox-green-v2"
     },
     {
@@ -8440,7 +8396,7 @@
       "url": "https://jarvislabs.ai/blog/h200-price"
     },
     {
-      "label": "Mercatus — H200 8-GPU HGX server price",
+      "label": "Mercatus - H200 8-GPU HGX server price",
       "url": "https://www.mercatus-ai.com/blog/h200-server-price"
     },
     {
@@ -8462,6 +8418,54 @@
     {
       "label": "Rmacy Ornith-1.0-35B Q6_K SYCL dual-B70 kit (88 t/s)",
       "url": "https://github.com/rmacy/ornith-b70-llamacpp"
+    },
+    {
+      "label": "Tom's Hardware RAM price index, updated Sep 3 2026 (96GB DDR5-6000 $1,849, 128GB DDR5-6400 $2,339)",
+      "url": "https://www.tomshardware.com/pc-components/ram/ram-price-index-2026-lowest-price-on-ddr5-and-ddr4-memory-of-all-capacities"
+    },
+    {
+      "label": "WhereIsMyRam 96GB DDR5-5600 tracker: kits from $1,365, avg $1,422 (Sep 3 2026)",
+      "url": "https://whereismyram.com/us/price-chart"
+    },
+    {
+      "label": "DeepSeek-V4-Flash-0731 single Spark, Dwarfstar ds4 custom CUDA engine ~40 t/s decode (IQ2XXS + DSpark MTP k=2, 131K ctx)",
+      "url": "https://forums.developer.nvidia.com/t/deepseek-4-0731-single-spark-40t-s-decode-131k-ctx-dwarfstar-cuda-custom-engine/379192"
+    },
+    {
+      "label": "DeepSeek-V4-Flash-0731 2x Spark concurrency-optimized recipe: 1.76M KV pool @400K ctx, ~40 t/s single / ~70 t/s @4 concurrent (jordan.mymail)",
+      "url": "https://forums.developer.nvidia.com/t/dual-dgx-spark-deepseek-v4-flash-0731-dspark-1-76m-token-kv-pool-at-400k-context-40-tok-s-single-stream-70-at-4-concurrent/380985"
+    },
+    {
+      "label": "DeepSeek-V4-Flash-0731 4x Spark vLLM B12X TP4: ~56 t/s decode / ~2582 t/s prefill (llama-benchy)",
+      "url": "https://forums.developer.nvidia.com/t/deepseek-v4-flash-0731-on-a-4-node-dgx-spark-cluster-100k-token-prefill-at-2-7k-tok-s-decode-at-56-tok-s/381005"
+    },
+    {
+      "label": "Nemotron 3.5 Lightning 30B-A3B single Spark: BF16 29 / NVFP4 79 / NVFP4+DSpark 122 t/s @1M ctx (0xBakeer)",
+      "url": "https://x.com/0xBakeer/status/2087220904392565193"
+    },
+    {
+      "label": "Nemotron 3.5 Lightning on DGX Spark, SGLang NVFP4+DSpark 112 t/s single / 362 @8 sessions (MiaAI_lab)",
+      "url": "https://x.com/MiaAI_lab/status/2087248846388695427"
+    },
+    {
+      "label": "Strix Halo llama.cpp benchmark guide (hogeheer499)",
+      "url": "https://github.com/hogeheer499-commits/strix-halo-guide/blob/main/data/headline_claims.csv"
+    },
+    {
+      "label": "r/LocalLLaMA - ROCm 10 + llama.cpp Qwen3.8-27B Q8_K_XL + MTP3 on 2x R9700",
+      "url": "https://www.reddit.com/r/LocalLLaMA/comments/1w36uqn/"
+    },
+    {
+      "label": "r/LocalLLaMA - vLLM TP=2 Qwen3.8-27B-FP8 + MTP3 on 2x R9700",
+      "url": "https://www.reddit.com/r/LocalLLaMA/comments/1vwvhm9/"
+    },
+    {
+      "label": "r/LocalLLaMA - R9V RDNA4 kernels (Muse Glimmer 30B single-R9700 / Qwen3.8-Flash-Next 2x R9700)",
+      "url": "https://www.reddit.com/r/LocalLLaMA/comments/1w2z5qw/"
+    },
+    {
+      "label": "vLLM gfx1201 / RDNA4 FP8-upstream issue",
+      "url": "https://github.com/vllm-project/vllm/issues/28649"
     }
   ]
 }

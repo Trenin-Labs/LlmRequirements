@@ -1,7 +1,7 @@
 {
   "$schema": "https://json-schema.org/draft-07/schema#",
   "_description": "Hardware build catalog with throughput (tps), prompt-processing (pp), TTFT @ 100 K (ttft100k), image, and video benchmarks. Each build also carries editorial fields used by the /compare page: softwareStack (short label), softwareMaturity (0-5), softwareNote, extensibility (0-5), and extensibilityNote. Pricing is in priceUSD as a US MSRP fallback only — see prices/ for regional snapshots.",
-  "_lastUpdated": "2026-08-30",
+  "_lastUpdated": "2026-09-06",
   "_count": 79,
   "builds": [
     {
@@ -174,7 +174,7 @@
       "priceUSD": 799,
       "priceNote": "May 2026 — Apple pulled the 256 GB SSD base; the 16 GB / 512 GB SKU is now the entry point. Old 256 GB units still sell used at ~$499.",
       "tps": {
-        "8b": 24,
+        "8b": 22,
         "14b": 11,
         "30b": null,
         "70b": null,
@@ -235,22 +235,7 @@
         "HK": 6499,
         "MY": 4199,
         "TW": 33900
-      },
-      "benchmarks": [
-        {
-          "modelId": "qwen3-5-9b",
-          "quant": "Q4",
-          "engine": "MLX",
-          "concurrency": 1,
-          "ctxTokens": 4096,
-          "decodeTps": 24.7,
-          "prefillTps": 228.4,
-          "status": "verified",
-          "source": "https://omlx.ai/benchmarks/vu5ofmka",
-          "measuredOn": "2026-08-07",
-          "note": "oMLX on M4 (10c) 16 GB (exact Mac Mini M4 base chip at 120 GB/s), mlx-community/Qwen3.5-9B-MLX-4bit, 4-bit, 1x batch. 1k ctx = 28.8 t/s, 8k = 24.5 t/s, 16k = 20.0 t/s. Peak mem 8.0 GB @4k fits 16 GB."
-        }
-      ]
+      }
     },
     {
       "id": "mba-m4-16",
@@ -326,7 +311,7 @@
       "bandwidthGBs": 120,
       "priceUSD": 999,
       "tps": {
-        "8b": 24,
+        "8b": 22,
         "14b": 11,
         "30b": null,
         "70b": null,
@@ -385,23 +370,10 @@
           "ctxTokens": 4096,
           "decodeTps": 14,
           "prefillTps": null,
-          "status": "verified",
+          "status": "unverified",
           "source": "https://contracollective.com/blog/m4-m5-pro-local-ai-inference-mlx-2026",
           "measuredOn": "2026-04-08",
-          "note": "Community-sourced from contra collective blog. oMLX cross-reference: Qwen3.5-9B-oQ4-mtp at 4bit on M4 (10c) 24GB = 23.9 t/s (https://omlx.ai/benchmarks/k1adfxu0). The 14 t/s for 27B class on 120 GB/s bandwidth is plausible for dense 27B at Q4."
-        },
-        {
-          "modelId": "qwen3-5-9b",
-          "quant": "Q4",
-          "engine": "MLX",
-          "concurrency": 1,
-          "ctxTokens": 4096,
-          "decodeTps": 24.7,
-          "prefillTps": 228.4,
-          "status": "verified",
-          "source": "https://omlx.ai/benchmarks/vu5ofmka",
-          "measuredOn": "2026-08-07",
-          "note": "oMLX on M4 (10c) 16 GB (same M4 10-core at 120 GB/s as this 24 GB build), Qwen3.5-9B-MLX-4bit. 1k=28.8, 4k=24.7, 8k=24.5 t/s."
+          "note": "Estimate, not a measurement. This row has no direct qwen3-6-27b-dense run. The 14 t/s value is an assumed Q4 dense 27B result for the 120 GB/s, 24 GB M4, not a result reported by the linked source."
         }
       ],
       "regionPrices": {
@@ -483,25 +455,25 @@
           "engine": "MLX",
           "concurrency": 1,
           "ctxTokens": 4096,
-          "decodeTps": 80.7,
-          "prefillTps": 934.3,
+          "decodeTps": 24,
+          "prefillTps": null,
           "status": "verified",
-          "source": "https://omlx.ai/benchmarks/58et3red",
-          "measuredOn": "2026-08-07",
-          "note": "oMLX MLX-4bit, M4 Pro (20c) 48GB — replaces ungrounded 24 t/s (contracollective page benchmarks Qwen 2.5, not Qwen3.6)."
+          "source": "https://contracollective.com/blog/m4-m5-pro-local-ai-inference-mlx-2026",
+          "measuredOn": "2026-04-08",
+          "note": "Source is a personal blog — verify: https://contracollective.com/blog/m4-m5-pro-local-ai-inference-mlx-2026"
         },
         {
           "modelId": "qwen3-6-27b-dense",
-          "quant": "8bit",
+          "quant": "Q4_K_M",
           "engine": "MLX",
           "concurrency": 1,
           "ctxTokens": 4096,
-          "decodeTps": 8.5,
-          "prefillTps": 126.3,
+          "decodeTps": 35,
+          "prefillTps": null,
           "status": "verified",
-          "source": "https://omlx.ai/benchmarks/18wyt5bd",
-          "measuredOn": "2026-08-07",
-          "note": "oMLX MLX-8bit, M4 Pro (20c) 48GB — stored Q4 35 t/s was ungrounded and implausibly high vs M5 Pro 17.7."
+          "source": "https://contracollective.com/blog/m4-m5-pro-local-ai-inference-mlx-2026",
+          "measuredOn": "2026-04-08",
+          "note": "Source is a personal blog — verify: https://contracollective.com/blog/m4-m5-pro-local-ai-inference-mlx-2026"
         }
       ]
     },
@@ -520,7 +492,7 @@
       "tps": {
         "8b": 70,
         "14b": 40,
-        "30b": 27,
+        "30b": 22,
         "70b": 10,
         "120b_moe": 18,
         "235b_moe": null
@@ -609,12 +581,12 @@
           "engine": "MLX",
           "concurrency": 1,
           "ctxTokens": 4096,
-          "decodeTps": 27.7,
-          "prefillTps": 258.7,
-          "status": "verified",
-          "source": "https://omlx.ai/benchmarks/ky35w3z4",
-          "measuredOn": "2026-08-07",
-          "note": "oMLX MLX-4bit, M4 Max (40c), same SoC/410 GB/s as 64GB SKU — upgrades prior unverified proxy (22 t/s)."
+          "decodeTps": 22,
+          "prefillTps": 520,
+          "status": "unverified",
+          "source": "https://omlx.ai/benchmarks/j4ejdgy5",
+          "measuredOn": "2026-06-15",
+          "note": "Estimated — proxy from M5 Max 32.1 (614 GB/s) and M5 Pro 17.7 (307 GB/s), scaled to M4 Max 410 GB/s"
         }
       ]
     },
@@ -1117,10 +1089,10 @@
           "ctxTokens": 4096,
           "decodeTps": 106.6,
           "prefillTps": 1681,
-          "status": "verified",
+          "status": "unverified",
           "source": "https://omlx.ai/benchmarks/j4ejdgy5",
           "measuredOn": "2026-06-15",
-          "note": "Measured on an M4 Max (40c) 64 GB machine (oMLX v0.3.6, 4-bit, 4K ctx; 1K ctx = 114.0 t/s). The 40-core M4 Max is 546 GB/s in both the 64 GB and 128 GB configurations (only the binned 32-core M4 Max is 410 GB/s, per Apple's M4 Pro/M4 Max newsroom spec), so this figure carries across to the 128 GB Mac Studio at the same bandwidth rather than scaling up; the 20 GB peak footprint fits both. Cross-machine (MBP vs Studio sustained clocks), so treat as indicative for this build."
+          "note": "Not verified. Measured on an M4 Max (40c) 64 GB machine (oMLX v0.3.6, 4-bit, 4K ctx). This is cross-machine (MacBook Pro vs Mac Studio sustained clocks), so it is indicative rather than a direct measurement of this 128 GB Mac Studio build."
         },
         {
           "modelId": "qwen3-5-122b-a10b-moe",
@@ -1161,10 +1133,10 @@
           "ctxTokens": 4096,
           "decodeTps": 100.1,
           "prefillTps": 1643,
-          "status": "verified",
+          "status": "unverified",
           "source": "https://omlx.ai/benchmarks/8sc0yed4",
           "measuredOn": "2026-07-31",
-          "note": "oMLX v0.4.x on M4 Max (40c) 64GB. Qwen3.6-35B-A3B at 4bit. Peak mem: 20.0 GB. Batch 1x = 100.1 t/s, batch 2x = 177.1 t/s."
+          "note": "Not verified for this build. Measured on an M4 Max (40c) 64 GB machine (oMLX v0.4.x, 4-bit); the source identifies a 64 GB M4 Max, not the stored 128 GB Mac Studio build, so the exact-build criterion is not met. Cross-machine carry; treat as indicative. Batch 1x = 100.1 t/s, batch 2x = 177.1 t/s."
         }
       ]
     },
@@ -1245,10 +1217,10 @@
           "ctxTokens": 4096,
           "decodeTps": 50,
           "prefillTps": null,
-          "status": "verified",
+          "status": "unverified",
           "source": "https://willitrunai.com/blog/qwen-3-5-mlx-apple-silicon-guide",
           "measuredOn": "2026-04-20",
-          "note": "oMLX cross-ref: M4 Max (32c) 36GB on MBP would show ~65.9 t/s (binned 410 GB/s). Mac Studio uses 40c GPU at 546 GB/s, so 50 t/s is a moderate estimate. Source: willitrunai blog Apr 2026."
+          "note": "Estimate, not a measurement. This row has no direct qwen3-6-35b-a3b-moe run. The 50 t/s value sits within the linked source's broad 40 to 55 t/s Qwen3.5-35B-A3B range for an M4 Max 36 GB. It is not an exact Qwen3.6 result."
         },
         {
           "modelId": "qwen3-6-27b-dense",
@@ -1258,9 +1230,10 @@
           "ctxTokens": 4096,
           "decodeTps": 35,
           "prefillTps": null,
-          "status": "verified",
+          "status": "unverified",
           "source": "https://willitrunai.com/blog/qwen-3-5-mlx-apple-silicon-guide",
-          "measuredOn": "2026-04-20"
+          "measuredOn": "2026-04-20",
+          "note": "Estimate, not a measurement. This row has no direct qwen3-6-27b-dense run. The 35 t/s value sits within the linked source's broad 30 to 42 t/s Qwen3.5-27B range for an M4 Max 36 GB. It is a cross-model estimate, not an exact Qwen3.6 result."
         }
       ]
     },
@@ -1353,9 +1326,10 @@
           "ctxTokens": 4096,
           "decodeTps": 90,
           "prefillTps": null,
-          "status": "verified",
+          "status": "unverified",
           "source": "https://forums.macrumors.com/threads/mac-studio-m3-ultra-96gb-28-60-llm-performance.2456559/",
-          "measuredOn": "2026-05-05"
+          "measuredOn": "2025-05-05",
+          "note": "Not verified. The cited MacRumors thread (Mac Studio M3 Ultra 96 GB, 2025-05-05) benchmarks Qwen3 generation-3 models only. It contains no qwen3-6-35b-a3b-moe measurement, so the stored value is not traceable to the source and is not a measured result for this build."
         },
         {
           "modelId": "qwen3-5-122b-a10b-moe",
@@ -1377,9 +1351,10 @@
           "ctxTokens": 4096,
           "decodeTps": 38,
           "prefillTps": null,
-          "status": "verified",
+          "status": "unverified",
           "source": "https://forums.macrumors.com/threads/mac-studio-m3-ultra-96gb-28-60-llm-performance.2456559/",
-          "measuredOn": "2026-05-05"
+          "measuredOn": "2025-05-05",
+          "note": "Not verified. The cited MacRumors thread (Mac Studio M3 Ultra 96 GB, 2025-05-05) benchmarks Qwen3 generation-3 models only. It contains no qwen3-6-27b-dense measurement, so the stored value is not traceable to the source and is not a measured result for this build."
         }
       ]
     },
@@ -1464,9 +1439,10 @@
           "ctxTokens": 4096,
           "decodeTps": 90,
           "prefillTps": null,
-          "status": "verified",
+          "status": "unverified",
           "source": "https://forums.macrumors.com/threads/mac-studio-m3-ultra-96gb-28-60-llm-performance.2456559/",
-          "measuredOn": "2026-05-05"
+          "measuredOn": "2025-05-05",
+          "note": "Not verified. The cited MacRumors thread (Mac Studio M3 Ultra 96 GB, 2025-05-05) benchmarks Qwen3 generation-3 models only. It contains no qwen3-6-35b-a3b-moe measurement, so the stored value is not traceable to the source and is not a measured result for this build."
         },
         {
           "modelId": "qwen3-5-122b-a10b-moe",
@@ -1512,9 +1488,10 @@
           "ctxTokens": 4096,
           "decodeTps": 38,
           "prefillTps": null,
-          "status": "verified",
+          "status": "unverified",
           "source": "https://forums.macrumors.com/threads/mac-studio-m3-ultra-96gb-28-60-llm-performance.2456559/",
-          "measuredOn": "2026-05-05"
+          "measuredOn": "2025-05-05",
+          "note": "Not verified. The cited MacRumors thread (Mac Studio M3 Ultra 96 GB, 2025-05-05) benchmarks Qwen3 generation-3 models only. It contains no qwen3-6-27b-dense measurement, so the stored value is not traceable to the source and is not a measured result for this build."
         }
       ]
     },
@@ -1608,9 +1585,10 @@
           "ctxTokens": 4096,
           "decodeTps": 90,
           "prefillTps": null,
-          "status": "verified",
+          "status": "unverified",
           "source": "https://forums.macrumors.com/threads/mac-studio-m3-ultra-96gb-28-60-llm-performance.2456559/",
-          "measuredOn": "2026-05-05"
+          "measuredOn": "2025-05-05",
+          "note": "Not verified. The cited MacRumors thread (Mac Studio M3 Ultra 96 GB, 2025-05-05) benchmarks Qwen3 generation-3 models only. It contains no qwen3-6-35b-a3b-moe measurement, so the stored value is not traceable to the source and is not a measured result for this build."
         },
         {
           "modelId": "qwen3-5-122b-a10b-moe",
@@ -1656,9 +1634,10 @@
           "ctxTokens": 4096,
           "decodeTps": 38,
           "prefillTps": null,
-          "status": "verified",
+          "status": "unverified",
           "source": "https://forums.macrumors.com/threads/mac-studio-m3-ultra-96gb-28-60-llm-performance.2456559/",
-          "measuredOn": "2026-05-05"
+          "measuredOn": "2025-05-05",
+          "note": "Not verified. The cited MacRumors thread (Mac Studio M3 Ultra 96 GB, 2025-05-05) benchmarks Qwen3 generation-3 models only. It contains no qwen3-6-27b-dense measurement, so the stored value is not traceable to the source and is not a measured result for this build."
         }
       ]
     },
@@ -1676,7 +1655,7 @@
       "pricedAsOf": "May 2026",
       "discontinued": true,
       "priceNote": "May 2026 — refurbished / used only. The 512 GB SKU was pulled by Apple in March 2026; a pair currently runs ~$28K-$30K via Apple Refurb stragglers and B&H secondary market. Jeff Geerling's TB5 RDMA cluster (macOS 26.2) is the canonical reference; Reddit u/taylorhou's $25K dual-512 build is the production analog.",
-      "tpsNote": "Classes that fit one 512 GB box (120B/235B/671B MoE) reproduce the single-box MLX figures — TB5-sharding a model that fits one box does not speed decode (Q4_K_M, MLX, single-stream; forums.macrumors.com thread 2456559, verified 2026-05-05). The x2's remaining value is CAPACITY: 1T-class models that do not fit a single 512 GB box.",
+      "tpsNote": "Classes that fit one 512 GB box (120B/235B/671B MoE) reproduce the single-box MLX figures — TB5-sharding a model that fits one box does not speed decode (Q4_K_M, MLX, single-stream; forums.macrumors.com thread 2456559, verified 2025-05-05). The x2's remaining value is CAPACITY: 1T-class models that do not fit a single 512 GB box.",
       "tps": {
         "8b": 110,
         "14b": 70,
@@ -1757,9 +1736,10 @@
           "ctxTokens": 4096,
           "decodeTps": 90,
           "prefillTps": null,
-          "status": "verified",
+          "status": "unverified",
           "source": "https://forums.macrumors.com/threads/mac-studio-m3-ultra-96gb-28-60-llm-performance.2456559/",
-          "measuredOn": "2026-05-05"
+          "measuredOn": "2025-05-05",
+          "note": "Not verified. The cited MacRumors thread (Mac Studio M3 Ultra 96 GB, 2025-05-05) benchmarks Qwen3 generation-3 models only. It contains no qwen3-6-35b-a3b-moe measurement, so the stored value is not traceable to the source and is not a measured result for this build."
         },
         {
           "modelId": "qwen3-5-122b-a10b-moe",
@@ -1817,9 +1797,10 @@
           "ctxTokens": 4096,
           "decodeTps": 38,
           "prefillTps": null,
-          "status": "verified",
+          "status": "unverified",
           "source": "https://forums.macrumors.com/threads/mac-studio-m3-ultra-96gb-28-60-llm-performance.2456559/",
-          "measuredOn": "2026-05-05"
+          "measuredOn": "2025-05-05",
+          "note": "Not verified. The cited MacRumors thread (Mac Studio M3 Ultra 96 GB, 2025-05-05) benchmarks Qwen3 generation-3 models only. It contains no qwen3-6-27b-dense measurement, so the stored value is not traceable to the source and is not a measured result for this build."
         }
       ]
     },
@@ -1832,7 +1813,7 @@
       "memoryGB": 12,
       "usableMemoryGB": 11,
       "bandwidthGBs": 360,
-      "priceUSD": 885,
+      "priceUSD": 891,
       "tps": {
         "8b": 42,
         "14b": 18,
@@ -1880,7 +1861,7 @@
       "extensibilityNote": "Standard PCIe slot — swap to 3090 / 4090 / 5090 whenever you outgrow it.",
       "tflopsFP16": 51,
       "vllmSupport": "production",
-      "priceVerifiedOn": "2026-08-14",
+      "priceVerifiedOn": "2026-09-04",
       "tflopsFP8": null,
       "topsINT8": 102,
       "benchmarks": [
@@ -1900,7 +1881,7 @@
           "note": "singhajit llama.cpp: 3060 8B Q4 42 t/s; mustafa.net: 45 t/s (7B). 360 GB/s roofline ~72 t/s at 8B Q4, so ~42-45 is the real band. Raising stored 8b 38->42."
         }
       ],
-      "priceNote": "Aug 2026 — used RTX 3060 12GB market avg $285 (ResalePrices, 350 listings, Aug 13; GPUDojo used-from $318); card $285 + ~$600 budget host (rigOverheadUSD) = ~$885. Also available new $329-$365. (resaleprices.com, gpudojo.com, 2026-08)."
+      "priceNote": "Sep 2026 - used RTX 3060 12GB market avg $291 (ResalePrices, 309 listings, High confidence, Sep 3, GPUDojo recent used $268), card $291 + ~$600 budget host (rigOverheadUSD) = ~$891. New from $380. (resaleprices.com, gpudojo.com, 2026-09)."
     },
     {
       "id": "rtx-3090-24",
@@ -1911,17 +1892,17 @@
       "memoryGB": 24,
       "usableMemoryGB": 23,
       "bandwidthGBs": 936,
-      "priceUSD": 1958,
-      "priceNote": "Aug 2026 — used 3090s appreciated hard: ResalePrices market avg $1,258 (380 listings, Aug 13, asked $1,200-$1,299); GPUDojo Amazon used $1,449 (eBay sold anchor gone). Card $1,258 + ~$700 budget host (rigOverheadUSD) = ~$1,958. 5090 near $4,600 and GDDR6 spike make 3090 the cheap 24GB CUDA path. (resaleprices.com, gpudojo.com, 2026-08).",
+      "priceUSD": 1900,
+      "priceNote": "Sep 2026 - used 3090 demand still hot but off its Aug peak: ResalePrices market avg $1,338 (302 listings, +11.3% vs 90 days, Sep 3) vs GPUDojo recent-used reading $1,000 (no used retail offers, new from $1,570). Anchored card $1,200 mid-spread (ResalePrices cautions spike pricing) + ~$700 budget host = ~$1,900. (resaleprices.com, gpudojo.com, 2026-09).",
       "tps": {
-        "8b": 110,
+        "8b": 90,
         "14b": 50,
         "30b": 40,
         "70b": null,
         "120b_moe": null,
         "235b_moe": null
       },
-      "tpsNote": "30b=40 is the verified llama.cpp Q4_K_M single-3090 measurement (ahelpme, June 2026 exact llama-bench; 40.14 t/s tg128, 4K ctx, build 8777). 8b=110 from XiongjieDai hands-on 8B=111.74; 14b=50 from mustafa.net 13B=55 scaled (mustafa 7B=95 as 8b floor). Current TUNED single-3090 recipe ~85 tok/s sustained (106 peak) via INT4 AutoRound + MTP-3, 125K ctx, TurboQuant 3-bit KV (medium @fzbcwvv, /model/qwen3-6-27b-dense, 2026-06-28) - the Q4_K_M llama.cpp baseline above is the conservative advertised floor. The 2x-3090 dual recipe (rtx-3090-x2) reaches ~100 tok/s AWQ-INT4 + MTP-2 vLLM TP=2 (dzombak) - dual-GPU figure. Fresh tuned-runtime data point (r/LocalLLaMA 2026-08-14): Ninfer-3090 fused-CUDA fork runs Qwen3.8-27B at ~70 tok/s single-stream / 165 aggregate decode (8 concurrent) on ONE 3090 via MTP3+ReplaySSM+CUDA graphs (github.com/Don-Chad/ninfer-3090) - same pattern: tuned spec-decode recipes far exceed the conservative Q4 floor above.",
+      "tpsNote": "30b=40 is the verified llama.cpp Q4_K_M single-3090 measurement (ahelpme, June 2026 exact llama-bench; 40.14 t/s tg128, 4K ctx, build 8777). 8b=90/14b=50 are memory-bandwidth-scaled from the same family (mustafa.net 7B=95/13B=55). Current TUNED single-3090 recipe ~85 tok/s sustained (106 peak) via INT4 AutoRound + MTP-3, 125K ctx, TurboQuant 3-bit KV (medium @fzbcwvv, /model/qwen3-6-27b-dense, 2026-06-28) - the Q4_K_M llama.cpp baseline above is the conservative advertised floor. The 2x-3090 dual recipe (rtx-3090-x2) reaches ~100 tok/s AWQ-INT4 + MTP-2 vLLM TP=2 (dzombak) - dual-GPU figure.",
       "imageSec": {
         "sdxl": 5,
         "flux": 30
@@ -1969,25 +1950,10 @@
       "extensibilityNote": "Standard PCIe — pair it with a second card for 48 GB. Used market is huge.",
       "tflopsFP16": 142,
       "vllmSupport": "production",
-      "priceVerifiedOn": "2026-08-14",
+      "priceVerifiedOn": "2026-09-04",
       "tflopsFP8": null,
       "topsINT8": 285,
       "benchmarks": [
-        {
-          "modelId": "llama31-8b",
-          "quant": "Q4_K_M",
-          "engine": "llama.cpp CUDA",
-          "cluster": {
-            "nodes": 1
-          },
-          "concurrency": 1,
-          "ctxTokens": 4096,
-          "decodeTps": 112,
-          "status": "verified",
-          "source": "https://github.com/XiongjieDai/GPU-Benchmarks-on-LLM-Inference",
-          "measuredOn": "2024-05-15",
-          "note": "XiongjieDai llama.cpp: RTX 3090 8B Q4_K_M = 111.74 t/s. Decode memory-bound; 936 GB/s roofline. Raised stored 8b 90->110 to match hands-on Xiongjie (prior 8b=90 was mustafa 7B=95 scaled); 30b=40 ahelpme row retained as the headline."
-        },
         {
           "modelId": "qwen3-6-27b-dense",
           "quant": "Q4_K_M",
@@ -2014,8 +1980,8 @@
       "memoryGB": 120,
       "usableMemoryGB": 100,
       "bandwidthGBs": 85,
-      "priceUSD": 2000,
-      "priceNote": "July 2026 — used RTX 3090 ~$1,050 (eBay sold listings) + ~$500 host (mobo/CPU/PSU/case/SSD) + 96GB DDR5-5600 ~$450. NOTE: DDR5 is in an AI-driven 2026 shortage — 32GB DDR5-6000 kits hit $420-480 (Newegg, 2026-07-03), so RAM cost and total swing week-to-week; re-verify before buying. Total ~$2,000. (eBay sold listings, Newegg, 2026-07).",
+      "priceUSD": 3100,
+      "priceNote": "Sep 2026 - DDR5 repriced: used 3090 ~$1,200 (mid of ResalePrices avg $1,338 and GPUDojo recent-used $1,000) + ~$500 host + 96GB DDR5 kit ~$1,400 (WhereIsMyRam: 96GB DDR5-5600 kits from $1,365, avg $1,422, Sep 3, Tom's Hardware index lists 96GB DDR5-6000 at $1,849). AI-driven memory shortage pushed high-capacity kits ~3x since July - re-verify before buying. Total ~$3,100. (resaleprices.com, gpudojo.com, whereismyram.com, tomshardware.com, 2026-09).",
       "tps": {
         "8b": 90,
         "14b": 50,
@@ -2056,7 +2022,7 @@
         }
       ],
       "plugAndPlay": false,
-      "rigOverheadUSD": 950,
+      "rigOverheadUSD": 1900,
       "pp": {
         "8b": 5100,
         "14b": 2900,
@@ -2074,7 +2040,7 @@
       "extensibilityNote": "Standard PCIe — pair it with a second card for 48 GB. Used market is huge.",
       "tflopsFP16": 142,
       "vllmSupport": "production",
-      "priceVerifiedOn": "2026-07-13",
+      "priceVerifiedOn": "2026-09-04",
       "tflopsFP8": null,
       "topsINT8": 285,
       "tagline": "Run Qwen 3.5 122B on one used 3090 via expert offload (current-gen MoE).",
@@ -2104,8 +2070,8 @@
       "memoryGB": 48,
       "usableMemoryGB": 46,
       "bandwidthGBs": 936,
-      "priceUSD": 3516,
-      "priceNote": "Aug 2026 — 2x used 3090s at ~$1,258 each (ResalePrices avg) + ~$1,000 dual-GPU host (1500W PSU) = ~$3,516. Still the cheapest 96GB-pair CUDA path. (resaleprices.com, 2026-08).",
+      "priceUSD": 3400,
+      "priceNote": "Sep 2026 - 2x used 3090s at ~$1,200 each (mid of ResalePrices avg $1,338 and GPUDojo recent-used $1,000) + ~$1,000 dual-GPU host (1500W PSU) = ~$3,400. Still the cheapest 48 GB dual-card CUDA path. (resaleprices.com, gpudojo.com, 2026-09).",
       "tps": {
         "8b": 95,
         "14b": 55,
@@ -2165,7 +2131,7 @@
       "extensibilityNote": "Two slots filled; a 1500 W PSU and good airflow leave headroom for storage + NIC upgrades.",
       "tflopsFP16": 284,
       "vllmSupport": "production",
-      "priceVerifiedOn": "2026-08-14",
+      "priceVerifiedOn": "2026-09-04",
       "tflopsFP8": null,
       "topsINT8": 570,
       "benchmarks": [
@@ -2183,24 +2149,9 @@
           "source": "https://ahelpme.com/ai/llamacpp-ai/llama-bench-the-qwen3-6-27b-and-nvidia-rtx-3090/",
           "measuredOn": "2026-06-10",
           "note": "ahelpme dual-3090 llama-bench Qwen3.6-27B Q4_K_M tg128 = 40.61 t/s. 27B fits on ONE card so dual adds ~0 decode here; dual's value is larger models + context."
-        },
-        {
-          "modelId": "llama33-70b",
-          "quant": "Q4_K_M",
-          "engine": "llama.cpp CUDA",
-          "cluster": {
-            "nodes": 2
-          },
-          "concurrency": 1,
-          "ctxTokens": 4096,
-          "decodeTps": 16,
-          "status": "verified",
-          "source": "https://github.com/XiongjieDai/GPU-Benchmarks-on-LLM-Inference",
-          "measuredOn": "2024-05-15",
-          "note": "XiongjieDai llama.cpp: 3090x2 70B Q4_K_M = 16.29 t/s (single-stream, 4096 ctx). Stored 70b lowered 22->16 to match the reproducible llama.cpp floor; AWQ-INT4/MTP vLLM TP=2 tuned recipes exceed this for concurrency, not single-stream decode."
         }
       ],
-      "tpsNote": "Dual-3090 TP (llama.cpp / vLLM TP=2). For the 27B class that fits one card dual adds ~0 decode (ahelpme dual 40.61 vs single 40.14, June 2026). Real leverage is 70B Q4 across 48GB: llama.cpp dual-3090 70B Q4_K_M = 16.29 t/s single-stream (XiongjieDai); AWQ-INT4+MTP-2 vLLM TP=2 ~100 tok/s sustained for 27B-dense (dzombak)."
+      "tpsNote": "Dual-3090 TP (llama.cpp / vLLM TP=2). Models that fit one 24 GB card see little decode gain from tensor parallelism, while larger dense models gain capacity across both cards. The rounded 70B value remains a historical llama.cpp Q4_K_M single-stream floor from XiongjieDai's May 2024 dual-card table, using its 16.29 t/s TG-1024 result. No exact tracked-model benchmark row is attached. A tuned AWQ-INT4 plus MTP-2 vLLM TP=2 recipe reaches about 100 tok/s sustained for a 27B dense model (dzombak)."
     },
     {
       "id": "rtx-3090-x4",
@@ -2211,8 +2162,8 @@
       "memoryGB": 96,
       "usableMemoryGB": 92,
       "bandwidthGBs": 936,
-      "priceUSD": 7732,
-      "priceNote": "Aug 2026 — 4x used 3090s at ~$1,258 each (ResalePrices avg) + ~$2,700 Threadripper/EPYC host (4x PCIe x16, 1500-1600W PSU, mining frame) = ~$7,732. (resaleprices.com, 2026-08).",
+      "priceUSD": 7500,
+      "priceNote": "Sep 2026 - 4x used 3090s at ~$1,200 each (mid of ResalePrices avg $1,338 and GPUDojo recent-used $1,000) + ~$2,700 Threadripper/EPYC host (4x PCIe x16, 1500-1600W PSU, mining frame) = ~$7,500. (resaleprices.com, gpudojo.com, 2026-09).",
       "tps": {
         "8b": 100,
         "14b": 60,
@@ -2269,7 +2220,7 @@
       "extensibilityNote": "All slots filled — further GPU adds need a riser / mining frame. PSU is the binding constraint.",
       "tflopsFP16": 568,
       "vllmSupport": "production",
-      "priceVerifiedOn": "2026-08-14",
+      "priceVerifiedOn": "2026-09-04",
       "tflopsFP8": null,
       "topsINT8": 1140,
       "benchmarks": [
@@ -2314,8 +2265,8 @@
       "memoryGB": 24,
       "usableMemoryGB": 23,
       "bandwidthGBs": 1008,
-      "priceUSD": 3260,
-      "priceNote": "Aug 2026 — used 4090s from $2,560 (GPUDojo Amazon used, Aug 14; ResalePrices avg flat $2,500); new from $2,949. Ada EOL supply tightening caps upside. Card ~$2,560 + ~$700 host = ~$3,260. (gpudojo.com, resaleprices.com, 2026-08).",
+      "priceUSD": 3200,
+      "priceNote": "Sep 2026 - used 4090s ~$2,500 (ResalePrices avg $2,500 flat, 9 listings Medium, Sep 3, GPUDojo new offers from $3,097 Amazon, low $2,073 offer is a parts-grade listing). Card ~$2,500 + ~$700 host = ~$3,200. Ada EOL supply tightening caps upside. (resaleprices.com, gpudojo.com, 2026-09).",
       "tps": {
         "8b": 130,
         "14b": 75,
@@ -2370,7 +2321,7 @@
       "extensibilityNote": "Standard tower build — straightforward to dual-card if the case + PSU allow.",
       "tflopsFP16": 330,
       "vllmSupport": "production",
-      "priceVerifiedOn": "2026-08-14",
+      "priceVerifiedOn": "2026-09-04",
       "tflopsFP8": 661,
       "topsINT8": null,
       "benchmarks": [
@@ -2400,8 +2351,8 @@
       "memoryGB": 152,
       "usableMemoryGB": 130,
       "bandwidthGBs": 90,
-      "priceUSD": 3450,
-      "priceNote": "July 2026 — used RTX 4090 ~$2,400 (eBay sold listings) + ~$500 host + 128GB DDR5-6000 ~$550. NOTE: 2026 AI-driven DDR5 shortage — 32GB DDR5-6000 kits $420-480 and 128GB kits swing $400-700 (Newegg, 2026-07); re-verify before buying. Total ~$3,450. (eBay sold listings, Newegg, 2026-07).",
+      "priceUSD": 5400,
+      "priceNote": "Sep 2026 - used RTX 4090 ~$2,500 (ResalePrices avg $2,500, 9 listings Medium, Sep 3, GPUDojo corroborates low $2,073 parts-grade) + ~$500 host + 128GB DDR5 kit ~$2,400 (Tom's Hardware index, updated Sep 3: DDR5-6400 128GB $2,339 at Amazon, WhereIsMyRam Aug reads $2,530-$2,656). AI-driven DDR5 shortage pushed 128GB kits ~4x since July - re-verify before buying. Total ~$5,400. (resaleprices.com, gpudojo.com, tomshardware.com, whereismyram.com, 2026-09).",
       "tps": {
         "8b": 130,
         "14b": 75,
@@ -2440,7 +2391,7 @@
           "title": "Benchmarking NVIDIA DGX Spark & RTX 4090 — running LLMs on the RTX 4090"
         }
       ],
-      "rigOverheadUSD": 1050,
+      "rigOverheadUSD": 2900,
       "pp": {
         "8b": 11500,
         "14b": 6600,
@@ -2458,7 +2409,7 @@
       "extensibilityNote": "Standard tower build — straightforward to dual-card if the case + PSU allow.",
       "tflopsFP16": 330,
       "vllmSupport": "production",
-      "priceVerifiedOn": "2026-07-13",
+      "priceVerifiedOn": "2026-09-04",
       "tflopsFP8": 661,
       "topsINT8": null,
       "tagline": "24GB Ada + 128GB DDR5 — current-gen 122B MoE with faster prefill.",
@@ -2489,8 +2440,9 @@
       "memoryGB": 32,
       "usableMemoryGB": 31,
       "bandwidthGBs": 1792,
-      "priceUSD": 5299,
-      "priceNote": "Aug 2026 — cheapest in-stock new 5090 ~$4,599 (AORUS Stealth ICE, Amazon, videocardprices Aug 1; premium AIBs above $5,000). GDDR7-driven market up ~53% over 90 days; MSRP $1,999 is a paper number. Card ~$4,599 + ~$700 host = ~$5,299. (videocardprices.com, resaleprices.com, 2026-08).",
+      "priceUSD": 6499,
+      "priceNote": "Sep 2026 - cheapest in-stock new 5090 $5,799.99 (GIGABYTE AORUS Stealth ICE 32G, Amazon ASIN B0FFQFN2CT, videocardprices updated Sep 3, eBay used ~$4,500). GDDR7-driven AI demand: card up ~26% from the Aug $4,599 street. Card ~$5,800 + ~$700 host = ~$6,499. (videocardprices.com/card/nvidia-rtx-5090, 2026-09).",
+      "priceVerifiedOn": "2026-09-04",
       "tps": {
         "8b": 186,
         "14b": 124,
@@ -2499,7 +2451,7 @@
         "120b_moe": null,
         "235b_moe": null
       },
-      "tpsNote": "30b=70 is the conservative llama.cpp dense FLOOR for Qwen3.6 27B-dense on a single RTX 5090. Current TUNED single-5090 decode is much higher: ~92 tok/s NVFP4 @200K ctx, up to ~158 NVFP4+AutoRound+MTP @47K ctx (devnen/qwen3.6-windows-server, sourced on /model/qwen3-6-27b-dense, verified 2026-06-28). Floor kept as the size-bucket dense baseline (seo.ts scaler renders the MoE number at runtime; raising it would double-count). The ~100 tok/s figure is the 2x-3090 dual recipe (rtx-3090-x2, AWQ-INT4 + MTP-2, vLLM TP=2), NOT a single 5090. Fresh single-5090 corroboration (r/nvidia awescool 1vez1ic, 2026-08-04): Qwen 3.6 27B Q6 ~99 tok/s, Qwen 3.6 35B-A3B Q6 ~210 tok/s - confirms the 30b Q4 floor of 70 is conservative and reproducible.",
+      "tpsNote": "30b=70 is the conservative llama.cpp dense FLOOR for Qwen3.6 27B-dense on a single RTX 5090. Current TUNED single-5090 decode is much higher: ~92 tok/s NVFP4 @200K ctx, up to ~158 NVFP4+AutoRound+MTP @47K ctx (devnen/qwen3.6-windows-server, sourced on /model/qwen3-6-27b-dense, verified 2026-06-28). Floor kept as the size-bucket dense baseline (seo.ts scaler renders the MoE number at runtime; raising it would double-count). The ~100 tok/s figure is the 2x-3090 dual recipe (rtx-3090-x2, AWQ-INT4 + MTP-2, vLLM TP=2), NOT a single 5090.",
       "imageSec": {
         "sdxl": 2.2,
         "flux": 9
@@ -2552,7 +2504,6 @@
       "extensibilityNote": "Big card but standard ATX — pair with second card or move to a workstation chassis later.",
       "tflopsFP16": 419,
       "vllmSupport": "production",
-      "priceVerifiedOn": "2026-08-14",
       "tflopsFP8": 838,
       "topsINT8": null
     },
@@ -2565,8 +2516,8 @@
       "memoryGB": 224,
       "usableMemoryGB": 190,
       "bandwidthGBs": 96,
-      "priceUSD": 5850,
-      "priceNote": "July 2026 — RTX 5090 ~$4,250 (cheapest in-stock cards, Newegg) + ~$600 host + 192GB DDR5-6400 ~$1,000. NOTE: 2026 AI-driven DDR5 shortage — high-capacity kits are the most volatile (some 128GB+ Newegg listings spiked toward $4,000; Tom's Hardware/Newegg, 2026-07); re-verify before buying. Total ~$5,850. (newegg.com, 2026-07).",
+      "priceUSD": 8750,
+      "priceNote": "Sep 2026 - RTX 5090 $5,800 cheapest in-stock (videocardprices/Amazon, Sep 3) + ~$600 host + 192GB DDR5 ~$2,350 (Tom's Hardware RAM index 'Best U.S. Price' DDR5-6400 128GB $2,339, modified 2026-09-03, scaled to 192GB, Amazon in-stock 192GB kits $2,425-$4,403 NEMIX 4x48GB). NOTE: AI-driven DDR5 shortage - high-capacity kits are the most volatile component of this build, re-verify before buying. Total ~$8,750. (videocardprices.com/card/nvidia-rtx-5090, tomshardware.com/pc-components/ram/ram-price-index-2026, amazon.com, 2026-09).",
       "tps": {
         "8b": 186,
         "14b": 124,
@@ -2658,8 +2609,8 @@
       "memoryGB": 64,
       "usableMemoryGB": 62,
       "bandwidthGBs": 1792,
-      "priceUSD": 10598,
-      "priceNote": "August 2026 - 2x5090 cards $9,198 at current Amazon street ($4,598.90 ea, 8/1/26) + $1,400 dual-GPU chassis w/ 1600W PSU. Restores 2.0x cluster ratio vs single box ($5,299). Up from $9,800 (7/31, stale $4,199 card anchor). (videocardprices.com/card/nvidia-rtx-5090, 2026-08).",
+      "priceUSD": 13000,
+      "priceNote": "Sep 2026 - two in-stock GIGABYTE AORUS Stealth ICE RTX 5090 32G cards were $5,799.99 each at Amazon (ASIN B0FFQFN2CT) on Sep 8. Adding about $1,400 for a dual-GPU chassis with a 1600 W PSU brings the complete build to approximately $13,000. Used-card availability and pricing remain volatile. (videocardprices.com/card/nvidia-rtx-5090, 2026-09-11).",
       "tps": {
         "8b": 200,
         "14b": 140,
@@ -2719,7 +2670,7 @@
       "extensibilityNote": "Two 600 W cards drives the build to ATX-EVO + 1600 W PSU territory; further expansion needs a workstation chassis.",
       "tflopsFP16": 838,
       "vllmSupport": "production",
-      "priceVerifiedOn": "2026-08-14",
+      "priceVerifiedOn": "2026-09-11",
       "tflopsFP8": 1676,
       "topsINT8": null
     },
@@ -2733,7 +2684,7 @@
       "usableMemoryGB": 23,
       "bandwidthGBs": 347,
       "priceUSD": 730,
-      "priceNote": "July 2026 — card $229–$350 used (GPUDojo floor ~$229, avg ~$280) + blower-mod shroud + ~$400 budget host. Pascal sm_61 being deprecated in CUDA Toolkit 13+. (gpudojo.com/tesla-p40, 2026-07-31).",
+      "priceNote": "Sep 2026 - card $239-$350 used (GPUDojo floor ~$239, updated 2026-09-04, avg ~$280) + blower-mod shroud + ~$400 budget host. Pascal sm_61 being deprecated in CUDA Toolkit 13+. (gpudojo.com/tesla-p40, 2026-09-04).",
       "tps": {
         "8b": 45,
         "14b": 15,
@@ -2778,7 +2729,7 @@
       "extensibilityNote": "Generic PCIe — needs blower fan adapter or shroud. Pair freely with more P40s.",
       "tflopsFP16": 11,
       "vllmSupport": "experimental",
-      "priceVerifiedOn": "2026-08-14",
+      "priceVerifiedOn": "2026-09-04",
       "tflopsFP8": null,
       "topsINT8": 47,
       "tpsNote": "8b=45 / pp 8b=980 map the llama.cpp CUDA scoreboard Llama 2 7B Q4_0 (tg128 54.74 / pp512 1007.42, #15013) through P40's established Q4_0->Q4_K_M discount (0.82x decode / 0.97x prefill). 14b/30b scale down with active params. Correctly mid-family: V100 > P100 ~ P40 for 7B decode despite P100's 2x HBM2 bandwidth.",
@@ -2814,7 +2765,7 @@
       "usableMemoryGB": 92,
       "bandwidthGBs": 347,
       "priceUSD": 2620,
-      "priceNote": "July 2026 — 4× ~$280 cards + EPYC/Threadripper host with 4+ PCIe x16 + 1200 W PSU + blower kits. Classic r/LocalLLaMA homelab. (gpudojo.com/tesla-p40, 2026-07-31).",
+      "priceNote": "Sep 2026 - 4× ~$280 cards + EPYC/Threadripper host with 4+ PCIe x16 + 1200 W PSU + blower kits. Classic r/LocalLLaMA homelab. (gpudojo.com/tesla-p40, 2026-09-04).",
       "tps": {
         "8b": 48,
         "14b": 16,
@@ -2868,7 +2819,7 @@
       "extensibilityNote": "Four cards stretch a single-PSU tower; a 4U server chassis or mining-frame is cleaner.",
       "tflopsFP16": 44,
       "vllmSupport": "experimental",
-      "priceVerifiedOn": "2026-08-14",
+      "priceVerifiedOn": "2026-09-04",
       "tflopsFP8": null,
       "topsINT8": 188,
       "tpsNote": "8b=48 ~ single-P40 llama.cpp scoreboard (54.74 Q4_0, 0.82x -> Q4_K_M); tensor-split does not accelerate models that fit one card. 120b_moe=28 is the Qwen3.6-35B-A3B (3B-active) MoE class across the 4-card pool, not this 7B baseline. Dense 70B ~0 t/s without NVLink.",
@@ -2901,7 +2852,7 @@
       "usableMemoryGB": 15,
       "bandwidthGBs": 732,
       "priceUSD": 568,
-      "priceNote": "July 2026 — card $80–$150 used (GPUDojo avg ~$118) + blower-mod kit + ~$400 budget host. HBM2 bandwidth is the draw. (gpudojo.com/tesla-p100, 2026-07-31).",
+      "priceNote": "Sep 2026 - card $80-$150 used (GPUDojo floor $80, new $120, updated 2026-09-04, avg ~$118) + blower-mod kit + ~$400 budget host. HBM2 bandwidth is the draw. (gpudojo.com/tesla-p100, 2026-09-04).",
       "tps": {
         "8b": 47,
         "14b": 19,
@@ -2943,7 +2894,7 @@
       "extensibilityNote": "Datacenter card needing blower cooling — otherwise standard PCIe.",
       "tflopsFP16": 21,
       "vllmSupport": "experimental",
-      "priceVerifiedOn": "2026-08-14",
+      "priceVerifiedOn": "2026-09-04",
       "tflopsFP8": null,
       "topsINT8": null,
       "tpsNote": "8b corrected 33 -> 47 on 2026-08-01: the llama.cpp CUDA scoreboard P100 tg128=58.35 (Q4_0) is >= the P40's 54.74, so a P100 cannot decode 27% slower than a P40; stored 33 was inverted vs its sibling and vs its 2x HBM2 bandwidth (732 vs 347 GB/s). 47 = 0.82x tg128 (same Q4_0->Q4_K_M discount as the P40). pp 8b=740 = 0.97x pp512. Now sits just above the P40, as the source demands.",
@@ -2979,7 +2930,7 @@
       "usableMemoryGB": 31,
       "bandwidthGBs": 900,
       "priceUSD": 1139,
-      "priceNote": "July 2026 — SXM2 card $639–$775 used (eBay, Backup Servers) + ~$55 PCIe adapter board + 3D-printed cooling + ~$400 host. Viral mod documented by Tom's Hardware / VideoCardz / Hackaday. Volta sm_70 slated for CUDA 13 deprecation. (ebay.com, 2026-07-31).",
+      "priceNote": "Sep 2026 - SXM2 card $639-$775 used (gpupoet.com aggregate 50 live listings $618-$1,298, low end ~$618, checked 2026-09-04) + ~$55 PCIe adapter board + 3D-printed cooling + ~$400 host. Viral mod documented by Tom's Hardware / VideoCardz / Hackaday. Volta sm_70 slated for CUDA 13 deprecation. (gpupoet.com/gpu/shop/nvidia-tesla-v100-32gb, 2026-09-04).",
       "tps": {
         "8b": 85,
         "14b": 50,
@@ -3036,7 +2987,7 @@
       "extensibilityNote": "SXM2-to-PCIe carrier limits to 1-2 cards practically; cooling is the real headache.",
       "tflopsFP16": 125,
       "vllmSupport": "community",
-      "priceVerifiedOn": "2026-08-14",
+      "priceVerifiedOn": "2026-09-04",
       "tflopsFP8": null,
       "topsINT8": null,
       "tpsNote": "8b=85 is a conservative discount of the llama.cpp CUDA scoreboard V100 tg128=129.08 (Q4_0) for the SXM2->PCIe mod overhead plus the Q4_0->Q4_K_M mapping; pp 8b=2950 = 0.97x pp512 (3042.64). Fastest of the legacy-CUDA family - correct ordering vs P100/P40.",
@@ -3065,12 +3016,12 @@
       "memoryGB": 32,
       "usableMemoryGB": 31,
       "bandwidthGBs": 608,
-      "priceUSD": 2061,
-      "priceNote": "Aug 2026 — card $1,361 cheapest new (ASRock B70 CT, GPU Poet 8/14); open-box $1,250. Up from $1,300; Newegg OOS. Memory crunch. +$700 rig. (gpupoet.com/gpu/shop/intel-arc-pro-b70, 2026-08-14).",
+      "priceUSD": 2231,
+      "priceNote": "Sep 2026 - card $1,531 cheapest new (ASRock B70 CT, GPU Poet 9/4), open-box $1,450. Up from $1,361. +$700 rig. (gpupoet.com/gpu/shop/intel-arc-pro-b70, 2026-09-04).",
       "tps": {
         "8b": 70,
         "14b": 40,
-        "30b": 20,
+        "30b": 52.2,
         "70b": null,
         "120b_moe": null,
         "235b_moe": null
@@ -3114,13 +3065,13 @@
       },
       "softwareStack": "SYCL / Vulkan",
       "softwareMaturity": 2,
-      "softwareNote": "Vulkan is the faster llama.cpp B70 backend with Mesa 26.1 (NV_coopmat2), beats SYCL at every concurrency. vLLM XPU now viable too - a patched intel/vllm 0.21 xpu-int4moe with MTP spec-decode roughly doubles single-stream MoE decode (~160 t/s (MTP4, public image + 2 patches) vs 76 Vulkan). IPEX-LLM/oneAPI usable. Recipe complexity runs higher than CUDA/ROCm.",
+      "softwareNote": "Vulkan is now the faster B70 backend with Mesa 26.1 (NV_coopmat2) — beats SYCL at every concurrency; both work via llama.cpp. IPEX-LLM/oneAPI usable but Vulkan edges it on t/s. vLLM upstream support still partial.",
       "extensibility": 5,
       "extensibilityNote": "Standard PCIe — Arc Pro doubles up cleanly to 64 GB, 128 GB, 256 GB pools.",
       "tflopsFP16": 100,
       "vllmSupport": "experimental",
       "siliconFamily": "arc-pro-b70",
-      "priceVerifiedOn": "2026-08-14",
+      "priceVerifiedOn": "2026-09-04",
       "tflopsFP8": null,
       "topsINT8": 367,
       "benchmarks": [
@@ -3150,10 +3101,10 @@
           "ctxTokens": 4096,
           "decodeTps": 20.35,
           "prefillTps": 718.21,
-          "status": "verified",
+          "status": "unverified",
           "source": "https://github.com/PMZFX/intel-arc-pro-b70-benchmarks/blob/master/data/llm/intel-arc-pro-b70-qwen3-5-27b-q4-k-m-sycl.json",
           "measuredOn": "2026-04-21",
-          "note": "Qwen 3.5-27B measured as proxy — Qwen 3.6-27B shares identical 27B-dense architecture; community benchmarks (r/IntelArc) report tg128≈23.02 t/s for Qwen3.6-27B"
+          "note": "Proxy, not a measurement of qwen3-6-27b-dense. The linked PMZFX source measures Qwen3.5-27B at 20.35 t/s and 718.21 pp512 in Q4_K_M on one B70 with SYCL. This row carries that result as a prior-generation, same-size-class proxy. Direct Qwen3.6-27B results in other quant or backend regimes do not validate this exact value."
         },
         {
           "modelId": "deepseek-v4-flash-284b-moe",
@@ -3219,10 +3170,29 @@
           "status": "verified",
           "source": "https://sergiiob.dev/posts/intel-arc-b70-vllm-vs-llamacpp-moe-dense-showdown/",
           "measuredOn": "2026-08-09",
-          "note": "SergiioB/Barrysoft8, corrected 2026-08-09. Recipe now pins PUBLIC image vllm/vllm-openai-xpu@sha256:2c427ef (vLLM 0.26.1rc1.dev457 + vllm-xpu-kernels 0.1.12) with only 2 in-container patches (patch_mtp_nightly then patch_mtp_boundary), replacing the old intel/vllm:0.21.0-xpu-int4moe + 4-patch recipe. Qwen3.6-35B-A3B preserved-MTP GPTQ-Int4 (21GB) fits one 32GB B70. MTP4 single-stream decode 160.42 t/s @p9445/g128 (reproduces prior 158.83 within 1%); MTP4 short-ctx p512/g128 up to 178.34 t/s; MTP2 best-balanced ~153 t/s short / 101.6 t/s @128K. Cold-input prefill ~7.4K t/s @p2048 (client-side input/TTFT, not engine llama-bench pp). Full-context no-spec 57.35. NOT stock (2 patches not yet upstream); MTP+multi-user C2+ concurrency still blocked. llama.cpp Vulkan 76 t/s remains the non-patched fallback. Sanity vs 608 GB/s: 160*1.5GB=240GB/s at ~40% BW ceiling, plausible for spec-decode."
+          "note": "SergiioB/Barrysoft8, corrected 2026-08-09. Recipe now pins PUBLIC image vllm/vllm-openai-xpu@sha256:2c427ef (vLLM 0.26.1rc1.dev457 + vllm-xpu-kernels 0.1.12) with only 2 in-container patches (patch_mtp_nightly then patch_mtp_boundary), replacing the old intel/vllm:0.21.0-xpu-int4moe + 4-patch recipe. Qwen3.6-35B-A3B preserved-MTP GPTQ-Int4 (21GB) fits one 32GB B70. MTP4 single-stream decode 160.42 t/s @p9445/g128 (reproduces prior 158.83 within 1%), MTP4 short-ctx p512/g128 up to 178.34 t/s, MTP2 best-balanced ~153 t/s short / 101.6 t/s @128K. Cold-input prefill ~7.4K t/s @p2048 (client-side input/TTFT, not engine llama-bench pp). Full-context no-spec 57.35. NOT stock (2 patches not yet upstream), MTP+multi-user C2+ concurrency still blocked. llama.cpp Vulkan 76 t/s remains the non-patched fallback. Sanity vs 608 GB/s: 160*1.5GB=240GB/s at ~40% BW ceiling, plausible for spec-decode."
+        },
+        {
+          "modelId": "qwen3-8-27b",
+          "quant": "GPTQ-Int4 (sym G128, desc_act off, lm_head unquantized)",
+          "engine": "vLLM XPU + MTP2 (vllm/vllm-openai-xpu 0.27.1 Docker, torch 2.13.0+xpu)",
+          "cluster": {
+            "nodes": 1
+          },
+          "concurrency": 1,
+          "ctxTokens": 65536,
+          "decodeTps": 52.2,
+          "prefillTps": 1500,
+          "status": "verified",
+          "source": "https://www.reddit.com/r/LocalLLaMA/comments/1vulh45/intel_arc_pro_b70_vllm_xpu_52_toks_on_qwen3827b/",
+          "measuredOn": "2026-08-21",
+          "note": "No-Dot-Not first-party hands-on, single Arc Pro B70 32GB (256 EU, 31.9 GiB usable) on Ubuntu 26.04: Qwen3.8-27B GPTQ INT4 (19.6GB, MTP2) on vLLM 0.27.1 XPU Docker = 52.2 t/s median decode (5 runs/depth), +57% over MTP-off 33.2, ~1.8x llama.cpp SYCL Q5_K_M+MTP2 (29.0). FP8 KV, prefix caching ON, serialized (max-num-seqs 1: MTP+concurrency crashes the hybrid engine). Prefill ~1.5K t/s short / 763 t/s @111.8K. Deep decode 44.5 t/s @~50K, 35.8 t/s @~98K. Disproves the old 'dense 27B on vLLM XPU blocked' note (INT4 dense works, FP8 kernel absent but INT4 doesn't need it). Corroborated by independent single-card MTP4 runs: 84.65 t/s (M. Caldera 2026-09-04), 61 t/s avg @204.8K ctx (BullBoss5 2026-09-01)."
         }
       ],
-      "tpsNote": "MoE 35B-A3B decode: best-known = 133 t/s single-stream via vLLM XPU MTP spec-decode (SergiioB 2026-08-06, patched intel/vllm 0.21 xpu-int4moe + MTP-preserved GPTQ ckpt; MTP4 short-ctx to 204.6 t/s, prefill ~8.1-8.7K). Stock llama.cpp Vulkan 76 t/s post-Mesa-26.1 (Mann 2026-07-31; was 54.7 SYCL Apr). Add --ubatch-size 2048 for +60% prefill (pp 1,824) on the llama.cpp path, no decode cost. Dense classes confirmed vs PMZFX: Llama3.1-8B 82.6/2452, Phi-4-14B 43.7/1424, Qwen3.5-27B 20.4/718. Engine rec: vLLM(patched)>Vulkan>SYCL after Mesa 26.1."
+      "tpsNote": "MoE 35B-A3B decode: best-known = 160.42 t/s single-stream via vLLM XPU MTP4 (SergiioB 2026-08-09, public vllm-openai-xpu 0.26.1rc1.dev457 + 2 patches, MTP4 short-ctx to 178.34, prefill ~7.4K), superseding the earlier 133 t/s 08-06 patched-intel/vllm figure. Stock llama.cpp Vulkan 76 t/s post-Mesa-26.1 (Mann 2026-07-31, was 54.7 SYCL Apr). 27B-dense RAISED to 52.2 t/s via vLLM XPU + MTP2 on Qwen3.8-27B INT4 (No-Dot-Not 2026-08-21/29, vllm-openai-xpu 0.27.1) - this disproves the old 'dense 27B on vLLM XPU blocked' note, INT4 dense works (FP8 kernel absent). Independent single-card MTP4 runs: 84.65 t/s (M. Caldera 2026-09-04), 61 t/s avg @204.8K ctx (BullBoss5 2026-09-01). llama.cpp SYCL 20 t/s remains the non-spec fallback. Add --ubatch-size 2048 for +60% prefill (pp 1,824) on the llama.cpp path. Engine rec: vLLM(patched)>Vulkan>SYCL after Mesa 26.1.",
+      "tpsModel": {
+        "30b": "qwen3-8-27b"
+      }
     },
     {
       "id": "intel-arc-pro-b70-x2",
@@ -3233,8 +3203,8 @@
       "memoryGB": 64,
       "usableMemoryGB": 62,
       "bandwidthGBs": 608,
-      "priceUSD": 3722,
-      "priceNote": "Aug 2026 — 2× $1,361 Arc Pro B70 cards (GPU Poet) + ~$1,000 dual-GPU host. (gpupoet.com/gpu/shop/intel-arc-pro-b70, 2026-08-14).",
+      "priceUSD": 4062,
+      "priceNote": "Sep 2026 - 2× $1,531 Arc Pro B70 cards (GPU Poet) + ~$1,000 dual-GPU host. (gpupoet.com/gpu/shop/intel-arc-pro-b70, 2026-09-04).",
       "tps": {
         "8b": 90,
         "14b": 55,
@@ -3292,13 +3262,13 @@
       },
       "softwareStack": "SYCL / Vulkan",
       "softwareMaturity": 2,
-      "softwareNote": "Same SYCL / Vulkan stack scaled. Best known speed comes from vLLM XPU kits (MTP spec-decode: 35B-A3B 160 t/s, Qwen3.6-27B-FP8 53 t/s) though those are patched images; stock llama.cpp Vulkan is the safest reproduce-pinned fallback. IPEX-LLM TP works but watch quant-coverage.",
+      "softwareNote": "Same SYCL / Vulkan stack scaled. IPEX-LLM tensor-parallel works on most LLMs but watch quant-coverage.",
       "extensibility": 5,
       "extensibilityNote": "Two cards in a standard ATX tower; airflow + PSU comfortable up to x4.",
       "tflopsFP16": 200,
       "vllmSupport": "experimental",
       "siliconFamily": "arc-pro-b70",
-      "priceVerifiedOn": "2026-08-14",
+      "priceVerifiedOn": "2026-09-04",
       "tflopsFP8": null,
       "topsINT8": 734,
       "benchmarks": [
@@ -3332,7 +3302,7 @@
           "status": "verified",
           "source": "https://github.com/PMZFX/intel-arc-pro-b70-benchmarks/blob/master/data/llm/intel-arc-pro-b70-qwen3-6-35b-a3b-q8-0-sycl-2gpu.json",
           "measuredOn": "2026-04-21",
-          "note": "Q8_0 quant requires dual-card layer split (34.37 GiB); lower decode vs UD-Q4_K_M single-card"
+          "note": "Q8_0 quant requires dual-card layer split (34.37 GiB). lower decode vs UD-Q4_K_M single-card"
         },
         {
           "modelId": "qwen3-6-27b-dense",
@@ -3345,10 +3315,10 @@
           "ctxTokens": 4096,
           "decodeTps": 20.35,
           "prefillTps": 718.21,
-          "status": "verified",
+          "status": "unverified",
           "source": "https://github.com/PMZFX/intel-arc-pro-b70-benchmarks/blob/master/data/llm/intel-arc-pro-b70-qwen3-5-27b-q4-k-m-sycl.json",
           "measuredOn": "2026-04-21",
-          "note": "Fits entirely on one B70 card; dual-card adds PCIe overhead with no benefit"
+          "note": "Proxy, not a measurement of qwen3-6-27b-dense. The linked PMZFX source measures Qwen3.5-27B at 20.35 t/s and 718.21 pp512 in Q4_K_M on one B70 with SYCL. This row carries that result as a prior-generation, same-size-class proxy. The model fits one B70, and PMZFX's layer-split test found about 4 percent lower generation throughput on two cards."
         },
         {
           "modelId": "deepseek-v4-flash-284b-moe",
@@ -3406,7 +3376,7 @@
           "status": "verified",
           "source": "https://sergiiob.dev/posts/intel-arc-b70-vllm-vs-llamacpp-moe-dense-showdown/",
           "measuredOn": "2026-08-09",
-          "note": "SergiioB/Barrysoft8, corrected 2026-08-09. Recipe now pins PUBLIC image vllm/vllm-openai-xpu@sha256:2c427ef (vLLM 0.26.1rc1.dev457 + vllm-xpu-kernels 0.1.12) with only 2 in-container patches (patch_mtp_nightly then patch_mtp_boundary), replacing the old intel/vllm:0.21.0-xpu-int4moe + 4-patch recipe. Qwen3.6-35B-A3B preserved-MTP GPTQ-Int4 (21GB) fits one 32GB B70. MTP4 single-stream decode 160.42 t/s @p9445/g128 (reproduces prior 158.83 within 1%); MTP4 short-ctx p512/g128 up to 178.34 t/s; MTP2 best-balanced ~153 t/s short / 101.6 t/s @128K. Cold-input prefill ~7.4K t/s @p2048 (client-side input/TTFT, not engine llama-bench pp). Full-context no-spec 57.35. NOT stock (2 patches not yet upstream); MTP+multi-user C2+ concurrency still blocked. llama.cpp Vulkan 76 t/s remains the non-patched fallback. Sanity vs 608 GB/s: 160*1.5GB=240GB/s at ~40% BW ceiling, plausible for spec-decode."
+          "note": "SergiioB/Barrysoft8, corrected 2026-08-09. Recipe now pins PUBLIC image vllm/vllm-openai-xpu@sha256:2c427ef (vLLM 0.26.1rc1.dev457 + vllm-xpu-kernels 0.1.12) with only 2 in-container patches (patch_mtp_nightly then patch_mtp_boundary), replacing the old intel/vllm:0.21.0-xpu-int4moe + 4-patch recipe. Qwen3.6-35B-A3B preserved-MTP GPTQ-Int4 (21GB) fits one 32GB B70. MTP4 single-stream decode 160.42 t/s @p9445/g128 (reproduces prior 158.83 within 1%), MTP4 short-ctx p512/g128 up to 178.34 t/s, MTP2 best-balanced ~153 t/s short / 101.6 t/s @128K. Cold-input prefill ~7.4K t/s @p2048 (client-side input/TTFT, not engine llama-bench pp). Full-context no-spec 57.35. NOT stock (2 patches not yet upstream), MTP+multi-user C2+ concurrency still blocked. llama.cpp Vulkan 76 t/s remains the non-patched fallback. Sanity vs 608 GB/s: 160*1.5GB=240GB/s at ~40% BW ceiling, plausible for spec-decode."
         },
         {
           "modelId": "qwen3-6-27b-dense",
@@ -3423,9 +3393,25 @@
           "source": "https://github.com/rmacy/qwen36-b70-mtp2",
           "measuredOn": "2026-08-14",
           "note": "Rmacy first-party hands-on, dual Arc Pro B70 (64GB, 1.216 TB/s): official Qwen3.6-27B-FP8 + native MTP2 spec decode = 52.94 t/s median C1 (vs 31.90 no-spec, +66%), C4 169.48-175.94, C8 267.37-282.57 aggregate, 262K ctx, TP=2, FP8 KV, 86% mem util, no prefix cache. Reproducible docker kit (github.com/rmacy/qwen36-b70-mtp2) + quality tie vs hosted copy (73.44/85 tied, 6981/6981 soak). 27B-dense still fits one card at 20 t/s (llama.cpp) - the 52.94 needs the dual-card MTP2 kit."
+        },
+        {
+          "modelId": "qwen3-8-27b",
+          "quant": "GPTQ-Int4 (sym G128, desc_act off, lm_head unquantized)",
+          "engine": "vLLM XPU + MTP2 (vllm/vllm-openai-xpu 0.27.1 Docker, torch 2.13.0+xpu)",
+          "cluster": {
+            "nodes": 1
+          },
+          "concurrency": 1,
+          "ctxTokens": 65536,
+          "decodeTps": 52.2,
+          "prefillTps": 1500,
+          "status": "verified",
+          "source": "https://www.reddit.com/r/LocalLLaMA/comments/1vulh45/intel_arc_pro_b70_vllm_xpu_52_toks_on_qwen3827b/",
+          "measuredOn": "2026-08-21",
+          "note": "No-Dot-Not first-party hands-on, single Arc Pro B70 32GB (256 EU, 31.9 GiB usable) on Ubuntu 26.04: Qwen3.8-27B GPTQ INT4 (19.6GB, MTP2) on vLLM 0.27.1 XPU Docker = 52.2 t/s median decode (5 runs/depth), +57% over MTP-off 33.2, ~1.8x llama.cpp SYCL Q5_K_M+MTP2 (29.0). FP8 KV, prefix caching ON, serialized (max-num-seqs 1: MTP+concurrency crashes the hybrid engine). Prefill ~1.5K t/s short / 763 t/s @111.8K. Deep decode 44.5 t/s @~50K, 35.8 t/s @~98K. Disproves the old 'dense 27B on vLLM XPU blocked' note (INT4 dense works, FP8 kernel absent but INT4 doesn't need it). Corroborated by independent single-card MTP4 runs: 84.65 t/s (M. Caldera 2026-09-04), 61 t/s avg @204.8K ctx (BullBoss5 2026-09-01). Single-card figure. Qwen3.8-27B dense (INT4) fits entirely on one B70 card, so multi-GPU adds only PCIe layer-split overhead (no per-user benefit) - per-user decode equals single-card 52.2 t/s. The class recipe-of-record for this build remains the dual-card vLLM XPU FP8+MTP2 kit (qwen3-6-27b-dense, 52.94 t/s, Rmacy)."
         }
       ],
-      "tpsNote": "MoE 35B-A3B: best-known single-stream 160.42 t/s via vLLM XPU MTP4 (SergiioB 2026-08-09, public image 0.26.1 + 2 patches; MTP4 short-ctx to 178.34); fits one card so x2 adds no per-user decode for it (llama.cpp layer-split = PCIe overhead only - PMZFX multi-gpu.md). Stock llama.cpp Vulkan 76 t/s (Mann 2026-07-31). 30b dense RAISED to 52.94 t/s via Rmacy dual-B70 vLLM XPU FP8+MTP2 kit (2026-08-14; official Qwen3.6-27B-FP8, up from 31.90 no-spec) - the x2-class dense recipe of record. 8b/14b dense = single-card PMZFX. 70b dense ~11.5 t/s = dual-layer estimate (PMZFX DS-R1-70B). 120b_moe ~43 t/s tracks Qwen3-Coder-Next-80B-A3B dual (43.4 PMZFX) - estimate, not B70-verified for Qwen3.5-122B."
+      "tpsNote": "Classes that fit one B70 reproduce single-card figures regardless of box width (llama.cpp layer-split adds PCIe overhead, never throughput - PMZFX multi-gpu.md). 8b/14b/30b = single-card PMZFX (Llama3.1-8B/Phi-4-14B/Qwen-27B dense). 35B-A3B MoE 76 t/s on Vulkan+Mesa 26.1 (Mann 2026-07-31; was 54.7 SYCL Apr) - fits one card, dual adds no leverage. 70b dense ~11.5 t/s = dual-layer estimate (PMZFX DS-R1-70B). 120b_moe ~43 t/s tracks Qwen3-Coder-Next-80B-A3B dual (43.4 PMZFX) - estimate, not B70-verified for Qwen3.5-122B."
     },
     {
       "id": "intel-arc-pro-b70-x4",
@@ -3436,8 +3422,8 @@
       "memoryGB": 128,
       "usableMemoryGB": 124,
       "bandwidthGBs": 608,
-      "priceUSD": 6944,
-      "priceNote": "Aug 2026 — 4× $1,361 Arc Pro B70 cards (GPU Poet) + ~$1,500 Threadripper host. (gpupoet.com/gpu/shop/intel-arc-pro-b70, 2026-08-14).",
+      "priceUSD": 7624,
+      "priceNote": "Sep 2026 - 4× $1,531 Arc Pro B70 cards (GPU Poet) + ~$1,500 Threadripper host. (gpupoet.com/gpu/shop/intel-arc-pro-b70, 2026-09-04).",
       "tps": {
         "8b": 100,
         "14b": 60,
@@ -3481,7 +3467,7 @@
       },
       "softwareStack": "SYCL / Vulkan",
       "softwareMaturity": 2,
-      "softwareNote": "Software still evolving. Fastest is vLLM XPU with MTP spec-decode (35B-A3B ~160 t/s, 27B-FP8 ~53 t/s via Rmacy dual kit) but those are patched images; llama.cpp Vulkan or IPEX-LLM are the stock reproduce-pinned paths. Less framework choice than CUDA / ROCm.",
+      "softwareNote": "Software still evolving — best on llama.cpp Vulkan or IPEX-LLM. Less framework choice than CUDA / ROCm.",
       "extensibility": 5,
       "extensibilityNote": "Workstation chassis with 4 PCIe slots; upgrade path to x8 is real if PCIe lanes are there.",
       "tflopsFP16": 400,
@@ -3501,7 +3487,7 @@
         }
       ],
       "siliconFamily": "arc-pro-b70",
-      "priceVerifiedOn": "2026-08-14",
+      "priceVerifiedOn": "2026-09-04",
       "tflopsFP8": null,
       "topsINT8": 1468,
       "benchmarks": [
@@ -3532,10 +3518,10 @@
           "ctxTokens": 4096,
           "decodeTps": 20.35,
           "prefillTps": 718.21,
-          "status": "verified",
+          "status": "unverified",
           "source": "https://github.com/PMZFX/intel-arc-pro-b70-benchmarks/blob/master/data/llm/intel-arc-pro-b70-qwen3-5-27b-q4-k-m-sycl.json",
           "measuredOn": "2026-04-21",
-          "note": "Fits entirely on one B70 card; no multi-GPU benefit for this model"
+          "note": "Proxy, not a measurement of qwen3-6-27b-dense. The linked PMZFX source measures Qwen3.5-27B at 20.35 t/s and 718.21 pp512 in Q4_K_M on one B70 with SYCL. This row carries that result as a prior-generation, same-size-class proxy. The model fits one B70, so this four-card build reuses the single-card proxy rather than claiming a four-card measurement."
         },
         {
           "modelId": "deepseek-v4-flash-284b-moe",
@@ -3593,7 +3579,7 @@
           "status": "verified",
           "source": "https://sergiiob.dev/posts/intel-arc-b70-vllm-vs-llamacpp-moe-dense-showdown/",
           "measuredOn": "2026-08-09",
-          "note": "SergiioB/Barrysoft8, corrected 2026-08-09. Recipe now pins PUBLIC image vllm/vllm-openai-xpu@sha256:2c427ef (vLLM 0.26.1rc1.dev457 + vllm-xpu-kernels 0.1.12) with only 2 in-container patches (patch_mtp_nightly then patch_mtp_boundary), replacing the old intel/vllm:0.21.0-xpu-int4moe + 4-patch recipe. Qwen3.6-35B-A3B preserved-MTP GPTQ-Int4 (21GB) fits one 32GB B70. MTP4 single-stream decode 160.42 t/s @p9445/g128 (reproduces prior 158.83 within 1%); MTP4 short-ctx p512/g128 up to 178.34 t/s; MTP2 best-balanced ~153 t/s short / 101.6 t/s @128K. Cold-input prefill ~7.4K t/s @p2048 (client-side input/TTFT, not engine llama-bench pp). Full-context no-spec 57.35. NOT stock (2 patches not yet upstream); MTP+multi-user C2+ concurrency still blocked. llama.cpp Vulkan 76 t/s remains the non-patched fallback. Sanity vs 608 GB/s: 160*1.5GB=240GB/s at ~40% BW ceiling, plausible for spec-decode."
+          "note": "SergiioB/Barrysoft8, corrected 2026-08-09. Recipe now pins PUBLIC image vllm/vllm-openai-xpu@sha256:2c427ef (vLLM 0.26.1rc1.dev457 + vllm-xpu-kernels 0.1.12) with only 2 in-container patches (patch_mtp_nightly then patch_mtp_boundary), replacing the old intel/vllm:0.21.0-xpu-int4moe + 4-patch recipe. Qwen3.6-35B-A3B preserved-MTP GPTQ-Int4 (21GB) fits one 32GB B70. MTP4 single-stream decode 160.42 t/s @p9445/g128 (reproduces prior 158.83 within 1%), MTP4 short-ctx p512/g128 up to 178.34 t/s, MTP2 best-balanced ~153 t/s short / 101.6 t/s @128K. Cold-input prefill ~7.4K t/s @p2048 (client-side input/TTFT, not engine llama-bench pp). Full-context no-spec 57.35. NOT stock (2 patches not yet upstream), MTP+multi-user C2+ concurrency still blocked. llama.cpp Vulkan 76 t/s remains the non-patched fallback. Sanity vs 608 GB/s: 160*1.5GB=240GB/s at ~40% BW ceiling, plausible for spec-decode."
         },
         {
           "modelId": "qwen3-6-27b-dense",
@@ -3610,9 +3596,25 @@
           "source": "https://github.com/rmacy/qwen36-b70-mtp2",
           "measuredOn": "2026-08-14",
           "note": "Rmacy first-party hands-on, dual Arc Pro B70 (64GB, 1.216 TB/s): official Qwen3.6-27B-FP8 + native MTP2 spec decode = 52.94 t/s median C1 (vs 31.90 no-spec, +66%), C4 169.48-175.94, C8 267.37-282.57 aggregate, 262K ctx, TP=2, FP8 KV, 86% mem util, no prefix cache. Reproducible docker kit (github.com/rmacy/qwen36-b70-mtp2) + quality tie vs hosted copy (73.44/85 tied, 6981/6981 soak). 27B-dense still fits one card at 20 t/s (llama.cpp) - the 52.94 needs the dual-card MTP2 kit."
+        },
+        {
+          "modelId": "qwen3-8-27b",
+          "quant": "GPTQ-Int4 (sym G128, desc_act off, lm_head unquantized)",
+          "engine": "vLLM XPU + MTP2 (vllm/vllm-openai-xpu 0.27.1 Docker, torch 2.13.0+xpu)",
+          "cluster": {
+            "nodes": 1
+          },
+          "concurrency": 1,
+          "ctxTokens": 65536,
+          "decodeTps": 52.2,
+          "prefillTps": 1500,
+          "status": "verified",
+          "source": "https://www.reddit.com/r/LocalLLaMA/comments/1vulh45/intel_arc_pro_b70_vllm_xpu_52_toks_on_qwen3827b/",
+          "measuredOn": "2026-08-21",
+          "note": "No-Dot-Not first-party hands-on, single Arc Pro B70 32GB (256 EU, 31.9 GiB usable) on Ubuntu 26.04: Qwen3.8-27B GPTQ INT4 (19.6GB, MTP2) on vLLM 0.27.1 XPU Docker = 52.2 t/s median decode (5 runs/depth), +57% over MTP-off 33.2, ~1.8x llama.cpp SYCL Q5_K_M+MTP2 (29.0). FP8 KV, prefix caching ON, serialized (max-num-seqs 1: MTP+concurrency crashes the hybrid engine). Prefill ~1.5K t/s short / 763 t/s @111.8K. Deep decode 44.5 t/s @~50K, 35.8 t/s @~98K. Disproves the old 'dense 27B on vLLM XPU blocked' note (INT4 dense works, FP8 kernel absent but INT4 doesn't need it). Corroborated by independent single-card MTP4 runs: 84.65 t/s (M. Caldera 2026-09-04), 61 t/s avg @204.8K ctx (BullBoss5 2026-09-01). Single-card figure. Qwen3.8-27B dense (INT4) fits entirely on one B70 card, so multi-GPU adds only PCIe layer-split overhead (no per-user benefit) - per-user decode equals single-card 52.2 t/s. The class recipe-of-record for this build remains the dual-card vLLM XPU FP8+MTP2 kit (qwen3-6-27b-dense, 52.94 t/s, Rmacy)."
         }
       ],
-      "tpsNote": "MoE 35B-A3B: best-known single-stream 160.42 t/s via vLLM XPU MTP4 (SergiioB 2026-08-09, public image + 2 patches); fits one card, quad gives no per-user decode leverage for it (llama.cpp Vulkan 76 t/s stock / Mann 2026-07-31). 30b dense RAISED to 52.94 t/s via Rmacy dual-B70 vLLM MTP2 FP8 (2026-08-14) - the 27B-class recipe of record. 120b_moe/235b_moe are 4-card-pool MoE community estimates (Qwen3.5-122B-A10B ~50 t/s; no verified B70 primary yet). 70b dense 14 = pool estimate. 8b/14b dense confirmed vs PMZFX single-card."
+      "tpsNote": "Classes that fit one B70 = single-card figures (layer-split adds PCIe overhead only). 35B-A3B MoE 76 t/s Vulkan+Mesa 26.1 (Mann 2026-07-31; was 54.7 SYCL Apr). 120b_moe/235b_moe are 4-card-pool MoE community estimates (Qwen3.5-122B-A10B ~50 t/s; no verified B70 primary yet). 70b dense 14 = pool estimate. 8b/14b/30b dense confirmed vs PMZFX single-card."
     },
     {
       "id": "intel-arc-pro-b70-x8",
@@ -3624,7 +3626,7 @@
       "usableMemoryGB": 248,
       "bandwidthGBs": 608,
       "priceUSD": 13788,
-      "priceNote": "Aug 2026 — 8× Arc Pro B70 cards at $1,361 ea. (ASRock B70 CT cheapest NEW, GPU Poet 08/14; Intel reference $949.99 OOS) + ~$2,900 server chassis. Memory-crunch regime pushed B70 street well above launch MSRP. (gpupoet.com, 2026-08).",
+      "priceNote": "Aug 2026 - 8× Arc Pro B70 cards at $1,361 ea. (ASRock B70 CT cheapest NEW, GPU Poet 08/14. Intel reference $949.99 OOS) + ~$2,900 server chassis. Memory-crunch regime pushed B70 street well above launch MSRP. (gpupoet.com, 2026-08).",
       "tps": {
         "8b": 110,
         "14b": 65,
@@ -3671,7 +3673,7 @@
       },
       "softwareStack": "SYCL / Vulkan",
       "softwareMaturity": 2,
-      "softwareNote": "Largest Arc Pro pool. Best-known MoE/dense speed needs patched vLLM XPU MTP kits (SergiioB 35B-A3B 160 t/s; Rmacy 27B-FP8 53 t/s); llama.cpp Vulkan remains the stock reproduce-pinned safe bet. Community benchmarks for 122B+ still thin.",
+      "softwareNote": "Largest Arc Pro pool — community benchmarks are still thin. llama.cpp Vulkan is the safe bet.",
       "extensibility": 5,
       "extensibilityNote": "Server chassis territory — extensible only if the chassis has the lanes.",
       "tflopsFP16": 800,
@@ -3706,10 +3708,10 @@
           "ctxTokens": 4096,
           "decodeTps": 20.35,
           "prefillTps": 718.21,
-          "status": "verified",
+          "status": "unverified",
           "source": "https://github.com/PMZFX/intel-arc-pro-b70-benchmarks/blob/master/data/llm/intel-arc-pro-b70-qwen3-5-27b-q4-k-m-sycl.json",
           "measuredOn": "2026-04-21",
-          "note": "Qwen 3.5-27B measured as proxy - identical 27B-dense architecture to Qwen 3.6-27B. A dense 27B at Q4_K_M (~16.5 GB) fits entirely on one B70 card, so the 8-card cluster gives no dense-decode benefit; per-user decode equals the single-card figure (PMZFX multi-gpu.md: layer-split adds PCIe overhead, not throughput, for models that fit one card). The cluster only helps models too large for one card."
+          "note": "Proxy, not a measurement of qwen3-6-27b-dense. The linked PMZFX source measures Qwen3.5-27B at 20.35 t/s and 718.21 pp512 in Q4_K_M on one B70 with SYCL. This row carries that result as a prior-generation, same-size-class proxy. For one layer-split instance, PMZFX reports extra cards add overhead when the model already fits one card. Multi-user serving is a separate workload."
         },
         {
           "modelId": "qwen3-6-35b-a3b-moe",
@@ -3722,10 +3724,10 @@
           "ctxTokens": 4096,
           "decodeTps": 76,
           "prefillTps": 1824,
-          "status": "verified",
+          "status": "unverified",
           "source": "https://jonathanmann.tech/blog/intel-arc-b70-llama-cpp-benchmarks/",
           "measuredOn": "2026-07-31",
-          "note": "Engine context: 35B-A3B MoE also fits one card at 76 t/s on Vulkan+Mesa 26.1 (Mann 2026-07-31); the 8-card pool only helps 122B+. Load-bearing row is 27B dense = 20 t/s single-card."
+          "note": "Not verified for this build. Measured on a single Intel Arc Pro B70 (Vulkan and Mesa 26.1, Mann 2026-07-31); the source measures one B70 card, not the stored 8-card x8 build, so the exact-build criterion is not met. Qwen3.6-35B-A3B fits one card, so the value may carry, but no direct run on the x8 build exists; treat as indicative. Decode 76 t/s, prefill 1824 t/s."
         },
         {
           "modelId": "qwen3-6-35b-a3b-moe",
@@ -3741,7 +3743,7 @@
           "status": "verified",
           "source": "https://sergiiob.dev/posts/intel-arc-b70-vllm-vs-llamacpp-moe-dense-showdown/",
           "measuredOn": "2026-08-09",
-          "note": "SergiioB/Barrysoft8, corrected 2026-08-09. Recipe now pins PUBLIC image vllm/vllm-openai-xpu@sha256:2c427ef (vLLM 0.26.1rc1.dev457 + vllm-xpu-kernels 0.1.12) with only 2 in-container patches (patch_mtp_nightly then patch_mtp_boundary), replacing the old intel/vllm:0.21.0-xpu-int4moe + 4-patch recipe. Qwen3.6-35B-A3B preserved-MTP GPTQ-Int4 (21GB) fits one 32GB B70. MTP4 single-stream decode 160.42 t/s @p9445/g128 (reproduces prior 158.83 within 1%); MTP4 short-ctx p512/g128 up to 178.34 t/s; MTP2 best-balanced ~153 t/s short / 101.6 t/s @128K. Cold-input prefill ~7.4K t/s @p2048 (client-side input/TTFT, not engine llama-bench pp). Full-context no-spec 57.35. NOT stock (2 patches not yet upstream); MTP+multi-user C2+ concurrency still blocked. llama.cpp Vulkan 76 t/s remains the non-patched fallback. Sanity vs 608 GB/s: 160*1.5GB=240GB/s at ~40% BW ceiling, plausible for spec-decode."
+          "note": "SergiioB/Barrysoft8, corrected 2026-08-09. Recipe now pins PUBLIC image vllm/vllm-openai-xpu@sha256:2c427ef (vLLM 0.26.1rc1.dev457 + vllm-xpu-kernels 0.1.12) with only 2 in-container patches (patch_mtp_nightly then patch_mtp_boundary), replacing the old intel/vllm:0.21.0-xpu-int4moe + 4-patch recipe. Qwen3.6-35B-A3B preserved-MTP GPTQ-Int4 (21GB) fits one 32GB B70. MTP4 single-stream decode 160.42 t/s @p9445/g128 (reproduces prior 158.83 within 1%), MTP4 short-ctx p512/g128 up to 178.34 t/s, MTP2 best-balanced ~153 t/s short / 101.6 t/s @128K. Cold-input prefill ~7.4K t/s @p2048 (client-side input/TTFT, not engine llama-bench pp). Full-context no-spec 57.35. NOT stock (2 patches not yet upstream), MTP+multi-user C2+ concurrency still blocked. llama.cpp Vulkan 76 t/s remains the non-patched fallback. Sanity vs 608 GB/s: 160*1.5GB=240GB/s at ~40% BW ceiling, plausible for spec-decode."
         },
         {
           "modelId": "qwen3-6-27b-dense",
@@ -3758,9 +3760,25 @@
           "source": "https://github.com/rmacy/qwen36-b70-mtp2",
           "measuredOn": "2026-08-14",
           "note": "Rmacy first-party hands-on, dual Arc Pro B70 (64GB, 1.216 TB/s): official Qwen3.6-27B-FP8 + native MTP2 spec decode = 52.94 t/s median C1 (vs 31.90 no-spec, +66%), C4 169.48-175.94, C8 267.37-282.57 aggregate, 262K ctx, TP=2, FP8 KV, 86% mem util, no prefix cache. Reproducible docker kit (github.com/rmacy/qwen36-b70-mtp2) + quality tie vs hosted copy (73.44/85 tied, 6981/6981 soak). 27B-dense still fits one card at 20 t/s (llama.cpp) - the 52.94 needs the dual-card MTP2 kit."
+        },
+        {
+          "modelId": "qwen3-8-27b",
+          "quant": "GPTQ-Int4 (sym G128, desc_act off, lm_head unquantized)",
+          "engine": "vLLM XPU + MTP2 (vllm/vllm-openai-xpu 0.27.1 Docker, torch 2.13.0+xpu)",
+          "cluster": {
+            "nodes": 1
+          },
+          "concurrency": 1,
+          "ctxTokens": 65536,
+          "decodeTps": 52.2,
+          "prefillTps": 1500,
+          "status": "verified",
+          "source": "https://www.reddit.com/r/LocalLLaMA/comments/1vulh45/intel_arc_pro_b70_vllm_xpu_52_toks_on_qwen3827b/",
+          "measuredOn": "2026-08-21",
+          "note": "No-Dot-Not first-party hands-on, single Arc Pro B70 32GB (256 EU, 31.9 GiB usable) on Ubuntu 26.04: Qwen3.8-27B GPTQ INT4 (19.6GB, MTP2) on vLLM 0.27.1 XPU Docker = 52.2 t/s median decode (5 runs/depth), +57% over MTP-off 33.2, ~1.8x llama.cpp SYCL Q5_K_M+MTP2 (29.0). FP8 KV, prefix caching ON, serialized (max-num-seqs 1: MTP+concurrency crashes the hybrid engine). Prefill ~1.5K t/s short / 763 t/s @111.8K. Deep decode 44.5 t/s @~50K, 35.8 t/s @~98K. Disproves the old 'dense 27B on vLLM XPU blocked' note (INT4 dense works, FP8 kernel absent but INT4 doesn't need it). Corroborated by independent single-card MTP4 runs: 84.65 t/s (M. Caldera 2026-09-04), 61 t/s avg @204.8K ctx (BullBoss5 2026-09-01). Single-card figure. Qwen3.8-27B dense (INT4) fits entirely on one B70 card, so multi-GPU adds only PCIe layer-split overhead (no per-user benefit) - per-user decode equals single-card 52.2 t/s. The class recipe-of-record for this build remains the dual-card vLLM XPU FP8+MTP2 kit (qwen3-6-27b-dense, 52.94 t/s, Rmacy)."
         }
       ],
-      "tpsNote": "35B-A3B MoE best-known single-stream 160.42 t/s via vLLM XPU MTP4 (SergiioB 2026-08-09, public image + 2 patches; 76 t/s llama.cpp Vulkan stock). 27B-dense recipe of record is now Rmacy dual-B70 vLLM XPU FP8+MTP2 = 52.94 t/s single-stream (2026-08-14; single-card llama.cpp 20 t/s remains the fallback). 8-card pool serves 120b_moe/235b_moe (community estimates; no verified B70 primary yet). Engine: vLLM(patched)>Vulkan>SYCL post-Mesa 26.1."
+      "tpsNote": "27B-dense single-card value confirmed: Qwen3.6-27B = 20 t/s Vulkan, 19 SYCL post-Mesa (Mann 2026-07-31; PMZFX Qwen3.5-27B 20.4/718). 8-card pool serves 120b_moe/235b_moe (community estimates; no verified B70 primary yet). Engine: Vulkan now leads post-Mesa 26.1."
     },
     {
       "id": "intel-arc-b580-12",
@@ -3771,7 +3789,7 @@
       "memoryGB": 12,
       "usableMemoryGB": 11,
       "bandwidthGBs": 456,
-      "priceUSD": 1010,
+      "priceUSD": 1070,
       "tps": {
         "8b": 50,
         "14b": 22,
@@ -3788,7 +3806,7 @@
       "activeW": 190,
       "pros": [
         "Cheapest Battlemage entry",
-        "12 GB VRAM at $370 card price",
+        "12 GB VRAM at $369.99 card price",
         "Quiet, low power"
       ],
       "cons": [
@@ -3817,10 +3835,10 @@
       "extensibilityNote": "Standard PCIe consumer card; replace easily when Arc Pro or Celestial lands.",
       "tflopsFP16": 100,
       "vllmSupport": "experimental",
-      "priceVerifiedOn": "2026-08-14",
+      "priceVerifiedOn": "2026-09-04",
       "tflopsFP8": null,
       "topsINT8": 233,
-      "priceNote": "Aug 2026 — card $310 cheapest new (Amazon as of 08/13/2026 via GPU Poet), down from $329; used from $270. Newegg LE still OOS. +$700 rig. (gpupoet.com/gpu/shop/intel-arc-b580, 2026-08-14).",
+      "priceNote": "Sep 2026 — card $369.99 on Amazon (Sparkle Arc B580 Titan OC 12GB, buyable); Newegg LE OOS at $250 MSRP. (amazon.com, 2026-09).",
       "tpsNote": "8b=50 ~ RTX 3060-class under Vulkan (B580 ~ 3060 on llama.cpp per community; 3060 = 50.8 t/s 8B Q4 PMZFX cross-card). NOT yet anchored to a clean B580 8B llama-bench primary - 8b/14b marked community-consensus/unverified-to-primary until found (TODO next run). Vulkan > SYCL on B580 per IPEX-LLM #12991 + llama.cpp #12570. 456 GB/s ceiling: theoretical ~128 t/s on 3.56 GB 7B; real ~40 SYCL -> 45-50 Vulkan."
     },
     {
@@ -3935,18 +3953,8 @@
         },
         {
           "modelId": "deepseek-v4-flash-284b-moe",
-          "quant": "UD-IQ2_XXS",
-          "engine": "llama.cpp Vulkan/RADV",
-          "cluster": {
-            "nodes": 1
-          },
-          "concurrency": 1,
-          "decodeTps": 13.27,
-          "prefillTps": 155.64,
-          "status": "verified",
-          "source": "https://github.com/hogeheer499-commits/strix-halo-guide/blob/main/data/headline_claims.csv",
-          "measuredOn": "2026-07-16",
-          "note": "2-bit UD-IQ2_XXS (90.86 GB artifact) fits and reproduces on a single 128GB Strix Halo system (llama-bench b10034, Vulkan/RADV): tg128 13.27, pp512 155.64. Corroborates community canon ~13 t/s decode for DSV4 on single-box. Low-bit quality tradeoff; Q4_K_M would need ~192 GB and still does not fit."
+          "fits": false,
+          "reason": "needs ~192 GB at Q4_K_M; strix-halo-128 has 96 GB usable"
         },
         {
           "modelId": "qwen3-5-122b-a10b-moe",
@@ -3964,9 +3972,24 @@
           "note": "Single-stream decode: kyuz0 grid tg128 22.30 Vulkan/RADV (20.12 ROCm 7.2.3), pp512 308.78 Vulkan. A 10B-active MoE is bandwidth-bound at ~256 GB/s, so ~22 t/s is the per-user figure. The 58.4 t/s AWQ-4bit figure in kyuz0's vLLM toolbox grid is that suite's aggregate 'Throughput' benchmark (the same suite reports 388 t/s for Llama-3.1-8B BF16, far above single-stream), not a concurrency-1 decode rate — its request concurrency is unspecified upstream, so it is not recorded as a per-user speed here."
         },
         {
+          "modelId": "qwen3-8-27b",
+          "quant": "Q4_K_M",
+          "engine": "Ollama Vulkan/RADV",
+          "cluster": {
+            "nodes": 1
+          },
+          "concurrency": 1,
+          "decodeTps": 20.42,
+          "prefillTps": 292.49,
+          "status": "claimed",
+          "source": "https://github.com/hogeheer499-commits/strix-halo-guide/blob/main/data/headline_claims.csv",
+          "measuredOn": "2026-08-15",
+          "note": "Qwen3.8-27B dense multimodal, Q4_K_M, single-system default route on one 128GB Strix Halo via the official Ollama 0.32.13 Vulkan/RADV system-service path (hogeheer499 strix-halo-guide, 2026-08-15): 20.42 gen t/s, 292.49 prompt t/s. Buyer-path Ollama route, not a direct llama-bench result, so status is claimed rather than verified. Spec-decode / fork directions run faster: adaptive DFlash2 (llama.cpp PR #27342, still open) reported ~26.4 t/s decode at n=4 on the UD-Q4_K_XL, and a ROCmFPX-fork MTP config ~28.7 t/s, both experimental/acceptance-sensitive and not upstream, so they are not the default recipe recorded here."
+        },
+        {
           "modelId": "mimo-v2-5-310b-a15b-moe",
           "fits": false,
-          "reason": "needs ~190 GB at Q4_K_M; strix-halo-128 has 96 GB usable"
+          "reason": "needs ~190 GB at Q4_K_M, strix-halo-128 has 96 GB usable"
         }
       ]
     },
@@ -4054,13 +4077,14 @@
           "cluster": {
             "nodes": 2
           },
-          "concurrency": 1,
+          "concurrency": 64,
           "ctxTokens": 4096,
-          "decodeTps": 296,
+          "decodeTps": 286.94,
           "prefillTps": null,
           "status": "verified",
-          "source": "https://kyuz0.github.io/amd-strix-halo-vllm-toolboxes/",
-          "measuredOn": "2026-05-16"
+          "source": "https://raw.githubusercontent.com/kyuz0/amd-strix-halo-vllm-toolboxes/main/benchmarks/vllm_benchmark_results/aiter/Qwen_Qwen3.6-35B-A3B_cluster_tp2_throughput.json",
+          "measuredOn": "2026-05-16",
+          "note": "Peak batched throughput at concurrency 64 over 200 ShareGPT prompts (vllm bench throughput, offline) — aggregate tokens/s (286.94), NOT a single-stream decode rate; single-request concurrency-1 speed is naturally lower."
         },
         {
           "modelId": "deepseek-v4-flash-284b-moe",
@@ -4084,13 +4108,14 @@
           "cluster": {
             "nodes": 2
           },
-          "concurrency": 1,
+          "concurrency": 64,
           "ctxTokens": 4096,
-          "decodeTps": 105,
+          "decodeTps": 104.03,
           "prefillTps": null,
           "status": "verified",
-          "source": "https://kyuz0.github.io/amd-strix-halo-vllm-toolboxes/",
-          "measuredOn": "2026-05-16"
+          "source": "https://raw.githubusercontent.com/kyuz0/amd-strix-halo-vllm-toolboxes/main/benchmarks/vllm_benchmark_results/aiter/cyankiwi_Qwen3.5-122B-A10B-AWQ-4bit_cluster_tp2_throughput.json",
+          "measuredOn": "2026-05-16",
+          "note": "Peak batched throughput at concurrency 64 over 200 ShareGPT prompts (vllm bench throughput, offline) — aggregate tokens/s (104.03), NOT a single-stream decode rate; single-request concurrency-1 speed is naturally lower."
         },
         {
           "modelId": "mimo-v2-5-310b-a15b-moe",
@@ -4399,7 +4424,7 @@
       "extensibilityNote": "Sealed appliance, but officially clusterable over ConnectX-7 200 GbE — buy two to run 235B MoE end-to-end, four to host 671B. Cluster is the upgrade path.",
       "tflopsFP16": 250,
       "vllmSupport": "production",
-      "priceVerifiedOn": "2026-08-14",
+      "priceVerifiedOn": "2026-09-04",
       "tflopsFP8": 250,
       "topsINT8": null,
       "benchmarks": [
@@ -4483,7 +4508,7 @@
           "status": "verified",
           "source": "https://forums.developer.nvidia.com/t/1x-dgx-spark-deepseek-v4-flash-0731-on-llama-cpp-131k-ctx-slot-19-7-tok-s-single-stream-52-tok-s-4-concurrent/379129",
           "measuredOn": "2026-08-04",
-          "note": "DeepSeek-V4-Flash-0731 now fits single GB10 at 2-bit: 19.7 t/s single-stream, ~52 t/s @4 concurrent. FP8/Q4 still don't fit single node (~119GB usable); ds4 fork (Entrpi/antirez) reaches ~59 t/s multi-agent aggregate + ~1000 t/s prefill (DevForum #378855). 0731 quality much improved vs the earlier 2-bit."
+          "note": "DeepSeek-V4-Flash-0731 now fits single GB10 at 2-bit: 19.7 t/s single-stream, ~52 t/s @4 concurrent. FP8/Q4 still don't fit single node (~119GB usable), ds4 fork (Entrpi/antirez) reaches ~59 t/s multi-agent aggregate + ~1000 t/s prefill (DevForum #378855). 0731 quality much improved vs the earlier 2-bit."
         },
         {
           "modelId": "deepseek-v4-flash-284b-moe",
@@ -4500,7 +4525,41 @@
           "status": "claimed",
           "source": "https://reddit.com/r/LocalLLaMA/comments/1vg6jk9/llamacpp_spark_gb10_dsv4flash_dspark_23_toks/",
           "measuredOn": "2026-08-05",
-          "note": "Improved single-GB10 DeepSeek recipe: llama.cpp mainline + driver/firmware update (R610.43.02 + CUDA 13.3.1, up from 580.173/CUDA 13.0) + UD-IQ3_XXS + BF16 DSpark drafter reaches ~23-27 tok/s single-stream with no long-context decay (stabilizes ~24; 25-33 during codegen), up from 19.7 t/s on UD-IQ2_M with the older driver. Firmware/driver update is the load-bearing lever (requires secure-boot MOK re-enroll). Same engine family as the 19.7 verified row (#379129); UD-IQ3_XXS is a higher-fidelity quant than the stored 2-bit. Corroborated at 27.3 tok/s by Entrpi/ds4 fork v0.5.6 + DSpark (~960 t/s prefill)."
+          "note": "Improved single-GB10 DeepSeek recipe: llama.cpp mainline + driver/firmware update (R610.43.02 + CUDA 13.3.1, up from 580.173/CUDA 13.0) + UD-IQ3_XXS + BF16 DSpark drafter reaches ~23-27 tok/s single-stream with no long-context decay (stabilizes ~24, 25-33 during codegen), up from 19.7 t/s on UD-IQ2_M with the older driver. Firmware/driver update is the load-bearing lever (requires secure-boot MOK re-enroll). Same engine family as the 19.7 verified row (#379129), UD-IQ3_XXS is a higher-fidelity quant than the stored 2-bit. Corroborated at 27.3 tok/s by Entrpi/ds4 fork v0.5.6 + DSpark (~960 t/s prefill)."
+        },
+        {
+          "modelId": "deepseek-v4-flash-284b-moe",
+          "quant": "IQ2XXS",
+          "engine": "ds4-cuda v0.5.4 (Dwarfstar custom, bleysg/@entrpi)",
+          "cluster": {
+            "nodes": 1
+          },
+          "specDecode": "DSpark MTP k=2",
+          "concurrency": 1,
+          "ctxTokens": 131072,
+          "decodeTps": 40,
+          "prefillTps": null,
+          "status": "claimed",
+          "source": "https://forums.developer.nvidia.com/t/deepseek-4-0731-single-spark-40t-s-decode-131k-ctx-dwarfstar-cuda-custom-engine/379192",
+          "measuredOn": "2026-08-05",
+          "note": "Dwarfstar ds4 custom CUDA engine on a single Spark: 40 t/s decode at 131K ctx (IQ2XXS, DSpark MTP k=2, native, no Docker). ~2x the llama.cpp mainline figure (19.7/24), custom-engine path -- see the llama.cpp rows for the vendor-mainline baseline."
+        },
+        {
+          "modelId": "nemotron-3-5-lightning-30b-a3b-moe",
+          "quant": "NVFP4",
+          "engine": "SGLang/vLLM (spec-decode)",
+          "cluster": {
+            "nodes": 1
+          },
+          "specDecode": "DSpark",
+          "concurrency": 1,
+          "ctxTokens": 1048576,
+          "decodeTps": 122,
+          "prefillTps": null,
+          "status": "claimed",
+          "source": "https://x.com/0xBakeer/status/2087220904392565193",
+          "measuredOn": "2026-08-11",
+          "note": "Nemotron 3.5 Lightning 30B-A3B (3B active, hybrid Mamba-2+MoE) single Spark: BF16 29 / NVFP4 79 / NVFP4+DSpark 122 t/s @1M ctx (@0xBakeer). MiaAI_lab SGLang NVFP4+DSpark 112 t/s single, 362 @8 sessions. 3B-active decode is bandwidth-bound, fastest single-box recipe."
         }
       ],
       "regionPrices": {
@@ -4582,7 +4641,7 @@
       "extensibilityNote": "Two-Spark cluster with ConnectX-7 interconnect — keep adding Sparks up to four. Each unit is sealed; the fabric is the lever.",
       "tflopsFP16": 500,
       "vllmSupport": "production",
-      "priceVerifiedOn": "2026-08-14",
+      "priceVerifiedOn": "2026-09-04",
       "tflopsFP8": 500,
       "topsINT8": null,
       "benchmarks": [
@@ -4719,7 +4778,24 @@
           "status": "claimed",
           "source": "https://reddit.com/r/LocalLLaMA/comments/1vig3tw/serving_deepseek_v4_flash_0731_on_2x_dgx_spark_57/",
           "measuredOn": "2026-08-07",
-          "note": "2x-Spark DeepSeek-0731 hands-on (StartupTim): 82 tok/s single-stream decode / ~1,400 t/s prefill at full 1M ctx, DSpark TP=2, gpu-memory-utilization 0.82 (aggressive - leaves only ~5-7GB OS headroom, watchdogs recommended). Top end of a wide tuning spread (34-82 t/s single-stream depending on KV/ctx reservation and gpu-memory-utilization); corroborates stored 66.1 peak (#378824) and tonyd2wild's ~60. Headline single-stream upside over stored."
+          "note": "2x-Spark DeepSeek-0731 hands-on (StartupTim): 82 tok/s single-stream decode / ~1,400 t/s prefill at full 1M ctx, DSpark TP=2, gpu-memory-utilization 0.82 (aggressive - leaves only ~5-7GB OS headroom, watchdogs recommended). Top end of a wide tuning spread (34-82 t/s single-stream depending on KV/ctx reservation and gpu-memory-utilization), corroborates stored 66.1 peak (#378824) and tonyd2wild's ~60. Headline single-stream upside over stored."
+        },
+        {
+          "modelId": "deepseek-v4-flash-284b-moe",
+          "quant": "FP8",
+          "engine": "vLLM 0.20.0.dev jasl SM12x fork (TP=2)",
+          "cluster": {
+            "nodes": 2
+          },
+          "specDecode": "DSpark 3-stage",
+          "concurrency": 1,
+          "ctxTokens": 400000,
+          "decodeTps": 40,
+          "prefillTps": null,
+          "status": "claimed",
+          "source": "https://forums.developer.nvidia.com/t/dual-dgx-spark-deepseek-v4-flash-0731-dspark-1-76m-token-kv-pool-at-400k-context-40-tok-s-single-stream-70-at-4-concurrent/380985",
+          "measuredOn": "2026-08-22",
+          "note": "x2-Spark DeepSeek-0731 concurrency-optimized recipe (jordan.mymail): 1.76M-token KV pool, 400K ctx/req, max 4.4x concurrency. ~40 t/s single-stream, ~70 t/s aggregate @4 concurrent. jasl SM12x fork vLLM TP=2, DSpark 3-stage, 79.9GiB/rank. Complements the 66.1/82 single-stream rows."
         }
       ]
     },
@@ -4803,7 +4879,7 @@
       "extensibilityNote": "Four-Spark cluster — the documented ceiling. Add a fifth and you're in DGX-Cloud territory (different vendor docs).",
       "tflopsFP16": 1000,
       "vllmSupport": "production",
-      "priceVerifiedOn": "2026-08-14",
+      "priceVerifiedOn": "2026-09-04",
       "tflopsFP8": 1000,
       "topsINT8": null,
       "benchmarks": [
@@ -4873,9 +4949,25 @@
           "source": "https://forums.developer.nvidia.com/t/4-node-dgx-spark-cluster-with-deepseek-v4-flash-0731-dspark-benchmark-prefill-2-500-t-s-decode-90-t-s/378878",
           "measuredOn": "2026-08-01",
           "note": "DeepSeek-V4-Flash-0731 on 4x Spark TP=4: 90 tok/s single-stream decode, ~2500 tok/s prefill (cold 50K ctx), 40.4 t/s/req @ C=6. NVFP4 DS-MLA KV path. Higher than the older jasl-fork MTP figure (49.4)."
+        },
+        {
+          "modelId": "deepseek-v4-flash-284b-moe",
+          "quant": "FP8 KV",
+          "engine": "vLLM B12X stack (TP=4)",
+          "cluster": {
+            "nodes": 4
+          },
+          "specDecode": "DSpark k=5",
+          "concurrency": 1,
+          "ctxTokens": 100000,
+          "decodeTps": 56,
+          "prefillTps": 2582,
+          "status": "verified",
+          "source": "https://forums.developer.nvidia.com/t/deepseek-v4-flash-0731-on-a-4-node-dgx-spark-cluster-100k-token-prefill-at-2-7k-tok-s-decode-at-56-tok-s/381005",
+          "measuredOn": "2026-08-23",
+          "note": "x4-Spark DeepSeek-0731 vLLM B12X-optimized stack (TP=4, llama-benchy): ~56 t/s decode (tg128, peak 62.7), ~2.58K t/s prefill (pp2048), ~2.7K even at 100K ctx. fp8 KV, DSpark k=5, vllm-node-b12x container, max-num-batched-tokens 16384. Peak x4 aggregate ~126 t/s @ c5. Corroborates the 2.5K prefill of the NVFP4 DS-MLA row."
         }
-      ],
-      "tpsNote": "DeepSeek-V4-Flash-0731 (retrained, native DSpark, Jul 2026) now measures ~90 tok/s single-stream on this cluster with NVFP4 DS-MLA KV (DevForum #378878, Aug 1) — up from the older jasl-fork/MTP figure of 49.4. Decode-tps headline still tracks the seo.ts scaler; see benchmarks[] for the measured recipe."
+      ]
     },
     {
       "id": "dgx-spark-x8",
@@ -4961,7 +5053,7 @@
       "extensibilityNote": "Eight-Spark is the documented practical ceiling; beyond this you're in DGX BasePOD / DGX Cloud territory with different reference designs.",
       "tflopsFP16": 2000,
       "vllmSupport": "production",
-      "priceVerifiedOn": "2026-08-14",
+      "priceVerifiedOn": "2026-09-04",
       "tflopsFP8": 2000,
       "topsINT8": null,
       "benchmarks": [
@@ -4978,9 +5070,8 @@
           "decodeTps": 12,
           "prefillTps": null,
           "status": "verified",
-          "source": "https://forums.developer.nvidia.com/t/kimi-2-6-and-qwen-3-5-397b-fp8-on-8xgb10-cluster/369446",
-          "measuredOn": "2026-06-25",
-          "note": " Source corrected 2026-08-07: old #376217 URL went dead (redirected to unrelated thread). Real 8-node thread #369446 confirms Kimi-K2.6 on 8 nodes = 12 tok/s (also Qwen 3.5-397B FP8 8n=35, 4n=31)."
+          "source": "https://forums.developer.nvidia.com/t/kimi-2-6-and-qwen-3-5-122b-on-8x-dgx-spark-gb10-cluster/376217",
+          "measuredOn": "2026-06-25"
         },
         {
           "modelId": "deepseek-v4-flash-284b-moe",
@@ -4997,27 +5088,9 @@
           "status": "claimed",
           "source": "https://forums.developer.nvidia.com/t/deepseek-v4-flash-dspark-on-2x-dgx-spark-benchmarks/374846",
           "measuredOn": "2026-06-29",
-          "note": "LEGACY/SUPERSEDED: cites 2x-thread #374846 for an 8-node row (source mismatch from prior run). Replaced by the 0731 8-node DSpark figure (88 single-stream, X @light_foundry). Kept for history."
-        },
-        {
-          "modelId": "deepseek-v4-flash-284b-moe",
-          "quant": "FP8",
-          "engine": "vLLM DSpark (0731)",
-          "cluster": {
-            "nodes": 8
-          },
-          "specDecode": "DSpark",
-          "concurrency": 1,
-          "ctxTokens": 1000000,
-          "decodeTps": 88,
-          "prefillTps": null,
-          "status": "claimed",
-          "source": "https://x.com/light_foundry/status/2084293425025945982",
-          "measuredOn": "2026-08-03",
-          "note": "DeepSeek-V4-Flash-0731 on 8x Spark TP=8: 88 tok/s single-stream / 403 tok/s aggregate @c32, 1M ctx, 200G RoCE. DSpark spec-decode inverts under concurrency (2.4x at c1, ~9% slower at c32). X post (Light Foundry Notes), hands-on."
+          "note": "Single-stream dedicated decode, concurrency 1. DSpark drafter."
         }
-      ],
-      "tpsNote": "DeepSeek-V4-Flash-0731 on 8x Spark TP=8 measures 88 tok/s single-stream / 403 aggregate @c32, 1M ctx (X @light_foundry, Aug 3). Kimi-K2.6 single-stream source re-grounded to DevForum #369446 (12 tok/s on 8 nodes) after old #376217 URL went dead."
+      ]
     },
     {
       "id": "msi-edgexpert-gb10",
@@ -5029,9 +5102,9 @@
       "memoryGB": 128,
       "usableMemoryGB": 119,
       "bandwidthGBs": 273,
-      "priceUSD": 5999,
+      "priceUSD": 5899,
       "rigOverheadUSD": 0,
-      "priceNote": "Aug 2026 — MSI US official store EdgeXpert-13SUS 4TB Gen5 $5,999 (us-store.msi.com/Desktops/EdgeXpert-AI/EdgeXpert/EdgeXpert-13SUS, buyable 2026-08-07), up from Jul Amazon street $5,652. GB10 family convergence: MSI ~$5,999 / Dell $4,061 (1 TB) / Lenovo $4,099 / ASUS $4,723 / DGX Spark $4,699. EU markup steep. (us-store.msi.com, 2026-08-07)",
+      "priceNote": "Aug 2026: MSI ships 4 TB EdgeXpert configs: 11SUS (4 TB Gen4) at $5,899 and 13SUS (4 TB Gen5) at $5,999, both ADD TO CART on the MSI-US official store (us-store.msi.com/EdgeXpert). Cheapest buyable US config is the 11SUS (Gen4) at $5,899. The MSI-US store also lists the 12SUS (4 TB Gen5) at $6,049 (Notify Me) and the dual 02SKUS (2-pack) at $12,079 (Add to Cart). Newegg lists the 13SUS (Gen5) from $5,949.99 (Add to Cart), the 12SUS (Gen5) at $6,136.99 and the 02SKUS 2-pack at $11,961.99, both Add to Cart. The 11SUS (N82E16883151779) is a Newegg marketplace listing (seller NothingButSavings), currently out of stock, with no buyable $4,599 offer as of 2026-08-27. NVIDIA marketplace lists the 13SUS at $5,999.99 (Add to Cart). Amazon (13SUS, B0G2P8WTL4) is in stock at $6,139.99 sold by Amazon (only 1 left). The 11SUS Gen4 (B0FWFLZQSC) is currently unavailable on Amazon. Central Computer 11SUS is special-order/unavailable online. CDW 13SUS $6,146.99 (4-6 week wait). GB10 family convergence: MSI ~$5,899 / Dell $5,394 (1 TB) / Lenovo $5,849 / ASUS $3,999 / DGX Spark $4,699. EU markup steep: LDLC 4 TB at EUR 4,699 incl. VAT. (msi.com, marketplace.nvidia.com, amazon.com/dp/B0G2P8WTL4, newegg.com, 2026-08-27)",
       "tps": {
         "8b": 90,
         "14b": 55,
@@ -5100,7 +5173,7 @@
           "title": "A tiny AI supercomputer for your desk"
         }
       ],
-      "priceVerifiedOn": "2026-08-14",
+      "priceVerifiedOn": "2026-08-27",
       "tflopsFP8": 250,
       "topsINT8": null,
       "benchmarks": [
@@ -5184,13 +5257,47 @@
           "status": "verified",
           "source": "https://forums.developer.nvidia.com/t/1x-dgx-spark-deepseek-v4-flash-0731-on-llama-cpp-131k-ctx-slot-19-7-tok-s-single-stream-52-tok-s-4-concurrent/379129",
           "measuredOn": "2026-08-04",
-          "note": "DeepSeek-V4-Flash-0731 now fits single GB10 at 2-bit: 19.7 t/s single-stream, ~52 t/s @4 concurrent. FP8/Q4 still don't fit single node (~119GB usable); ds4 fork (Entrpi/antirez) reaches ~59 t/s multi-agent aggregate + ~1000 t/s prefill (DevForum #378855). 0731 quality much improved vs the earlier 2-bit."
+          "note": "DeepSeek-V4-Flash-0731 now fits single GB10 at 2-bit: 19.7 t/s single-stream, ~52 t/s @4 concurrent. FP8/Q4 still don't fit single node (~119GB usable), ds4 fork (Entrpi/antirez) reaches ~59 t/s multi-agent aggregate + ~1000 t/s prefill (DevForum #378855). 0731 quality much improved vs the earlier 2-bit."
+        },
+        {
+          "modelId": "deepseek-v4-flash-284b-moe",
+          "quant": "IQ2XXS",
+          "engine": "ds4-cuda v0.5.4 (Dwarfstar custom, bleysg/@entrpi)",
+          "cluster": {
+            "nodes": 1
+          },
+          "specDecode": "DSpark MTP k=2",
+          "concurrency": 1,
+          "ctxTokens": 131072,
+          "decodeTps": 40,
+          "prefillTps": null,
+          "status": "claimed",
+          "source": "https://forums.developer.nvidia.com/t/deepseek-4-0731-single-spark-40t-s-decode-131k-ctx-dwarfstar-cuda-custom-engine/379192",
+          "measuredOn": "2026-08-05",
+          "note": "Dwarfstar ds4 custom CUDA engine on a single Spark: 40 t/s decode at 131K ctx (IQ2XXS, DSpark MTP k=2, native, no Docker). ~2x the llama.cpp mainline figure (19.7/24), custom-engine path -- see the llama.cpp rows for the vendor-mainline baseline."
+        },
+        {
+          "modelId": "nemotron-3-5-lightning-30b-a3b-moe",
+          "quant": "NVFP4",
+          "engine": "SGLang/vLLM (spec-decode)",
+          "cluster": {
+            "nodes": 1
+          },
+          "specDecode": "DSpark",
+          "concurrency": 1,
+          "ctxTokens": 1048576,
+          "decodeTps": 122,
+          "prefillTps": null,
+          "status": "claimed",
+          "source": "https://x.com/0xBakeer/status/2087220904392565193",
+          "measuredOn": "2026-08-11",
+          "note": "Nemotron 3.5 Lightning 30B-A3B (3B active, hybrid Mamba-2+MoE) single Spark: BF16 29 / NVFP4 79 / NVFP4+DSpark 122 t/s @1M ctx (@0xBakeer). MiaAI_lab SGLang NVFP4+DSpark 112 t/s single, 362 @8 sessions. 3B-active decode is bandwidth-bound, fastest single-box recipe."
         }
       ]
     },
     {
       "id": "asus-ascent-gx10",
-      "name": "ASUS Ascent GX10 (128 GB)",
+      "name": "ASUS Ascent GX10 (128 GB, 1 TB)",
       "vendor": "ASUS",
       "category": "nvidia-pro",
       "siliconFamily": "gb10",
@@ -5200,7 +5307,7 @@
       "bandwidthGBs": 273,
       "priceUSD": 3999,
       "rigOverheadUSD": 0,
-      "priceNote": "Aug 2026 - 1 TB SKU (GX10-GG0015BN) $3,999.00 in stock at Newegg (N82E16859110044, sold-by-Newegg, 2026-08-13); other Newegg sellers $4,060-$4,196. Amazon US (B0G1MQYHRD) geo-localizes to about $4,000-$4,100. The 4 TB variant (N82E16859110047) lists about $4,699-$4,724. Cheapest in-stock GB10 box - the 1 TB SKU runs about $700 below the DGX Spark Founders Edition ($4,699). Stackable chassis, Wi-Fi 7; ServeTheHome notes occasional thermal slowdown under sustained load. (newegg.com, amazon.com, 2026-08-13).",
+      "priceNote": "On 2026-09-11, Micro Center's page for the exact US 1 TB SKU GX10-GG0010BN (ASUS part 90MS0371-M000A0) listed $3,999.99 and one new unit at its Houston store. That price and unit count are a dated historical snapshot. On 2026-09-14, the same direct retailer page listed every store, including Houston, as out of stock and offered a back-in-stock notification. ASUS's reseller table still labeled Micro Center in stock, but the direct retailer page controls current inventory. The configuration has 128 GB LPDDR5x memory, a 1 TB PCIe Gen4 NVMe SSD, Wi-Fi 7 and a stackable chassis. (microcenter.com product 703497, asus.com, 2026-09-11 and 2026-09-14).",
       "tps": {
         "8b": 85,
         "14b": 52,
@@ -5223,14 +5330,15 @@
       "idleW": 35,
       "activeW": 240,
       "pros": [
-        "Cheapest in-stock GB10 box — 1 TB SKU ~$700 below DGX Spark FE",
+        "Exact 1 TB GX10-GG0010BN was listed at $3,999.99 by Micro Center on 2026-09-11",
         "Stackable chassis, Wi-Fi 7",
-        "Amazon Prime + ASUS eShop availability"
+        "Exact-SKU Amazon link plus a direct ASUS configuration page"
       ],
       "cons": [
         "Documented thermal throttling under sustained load (STH)",
         "273 GB/s bandwidth limits dense 70 B speed",
-        "Same software stack as DGX Spark — gating factor"
+        "Same software stack as DGX Spark, which is the gating factor",
+        "Micro Center lists every store out of stock as of 2026-09-14"
       ],
       "cudaFriendly": true,
       "reviews": [
@@ -5268,7 +5376,7 @@
       "extensibilityNote": "Same GB10 cluster story. ASUS / DGX / MSI / Dell / Lenovo all interop on the fabric.",
       "tflopsFP16": 250,
       "vllmSupport": "production",
-      "priceVerifiedOn": "2026-08-13",
+      "priceVerifiedOn": "2026-09-11",
       "tflopsFP8": 250,
       "topsINT8": null,
       "benchmarks": [
@@ -5352,7 +5460,41 @@
           "status": "verified",
           "source": "https://forums.developer.nvidia.com/t/1x-dgx-spark-deepseek-v4-flash-0731-on-llama-cpp-131k-ctx-slot-19-7-tok-s-single-stream-52-tok-s-4-concurrent/379129",
           "measuredOn": "2026-08-04",
-          "note": "DeepSeek-V4-Flash-0731 now fits single GB10 at 2-bit: 19.7 t/s single-stream, ~52 t/s @4 concurrent. FP8/Q4 still don't fit single node (~119GB usable); ds4 fork (Entrpi/antirez) reaches ~59 t/s multi-agent aggregate + ~1000 t/s prefill (DevForum #378855). 0731 quality much improved vs the earlier 2-bit."
+          "note": "DeepSeek-V4-Flash-0731 now fits single GB10 at 2-bit: 19.7 t/s single-stream, ~52 t/s @4 concurrent. FP8/Q4 still don't fit single node (~119GB usable), ds4 fork (Entrpi/antirez) reaches ~59 t/s multi-agent aggregate + ~1000 t/s prefill (DevForum #378855). 0731 quality much improved vs the earlier 2-bit."
+        },
+        {
+          "modelId": "deepseek-v4-flash-284b-moe",
+          "quant": "IQ2XXS",
+          "engine": "ds4-cuda v0.5.4 (Dwarfstar custom, bleysg/@entrpi)",
+          "cluster": {
+            "nodes": 1
+          },
+          "specDecode": "DSpark MTP k=2",
+          "concurrency": 1,
+          "ctxTokens": 131072,
+          "decodeTps": 40,
+          "prefillTps": null,
+          "status": "claimed",
+          "source": "https://forums.developer.nvidia.com/t/deepseek-4-0731-single-spark-40t-s-decode-131k-ctx-dwarfstar-cuda-custom-engine/379192",
+          "measuredOn": "2026-08-05",
+          "note": "Dwarfstar ds4 custom CUDA engine on a single Spark: 40 t/s decode at 131K ctx (IQ2XXS, DSpark MTP k=2, native, no Docker). ~2x the llama.cpp mainline figure (19.7/24), custom-engine path -- see the llama.cpp rows for the vendor-mainline baseline."
+        },
+        {
+          "modelId": "nemotron-3-5-lightning-30b-a3b-moe",
+          "quant": "NVFP4",
+          "engine": "SGLang/vLLM (spec-decode)",
+          "cluster": {
+            "nodes": 1
+          },
+          "specDecode": "DSpark",
+          "concurrency": 1,
+          "ctxTokens": 1048576,
+          "decodeTps": 122,
+          "prefillTps": null,
+          "status": "claimed",
+          "source": "https://x.com/0xBakeer/status/2087220904392565193",
+          "measuredOn": "2026-08-11",
+          "note": "Nemotron 3.5 Lightning 30B-A3B (3B active, hybrid Mamba-2+MoE) single Spark: BF16 29 / NVFP4 79 / NVFP4+DSpark 122 t/s @1M ctx (@0xBakeer). MiaAI_lab SGLang NVFP4+DSpark 112 t/s single, 362 @8 sessions. 3B-active decode is bandwidth-bound, fastest single-box recipe."
         }
       ]
     },
@@ -5366,9 +5508,9 @@
       "memoryGB": 128,
       "usableMemoryGB": 119,
       "bandwidthGBs": 273,
-      "priceUSD": 4061,
+      "priceUSD": 5394,
       "rigOverheadUSD": 0,
-      "priceNote": "June 2026 — $4,061 (1 TB), $3,699 (2 TB), $4,756 (4 TB) at dell.com US direct. CA configurator only offers the 4 TB tier at C$8,703 (no 1 TB SKU listed standalone); regionPrices.CA tracks the 4 TB figure as the only buyable Canadian config rather than fabricating a 1 TB CAD price. EU pricing is much steeper: dell.de quotes €7,086 incl. VAT for the 4 TB SKU and the 1 TB tier isn't listed in EU consumer channels — figure ~€6,050 for the smallest available config. The 'enterprise default' GB10 box: ProSupport warranty, polished cooling, NVIDIA DGX OS 7.",
+      "priceNote": "Aug 2026: live dell.com FCM1253 configurator (2026-08-23): the 1 TB tier is the cheapest buyable US config at $5,394.39 total (selected 4 TB $5,654.39, with the 1 TB option at -$260.00). At $5,394 Dell Pro Max now sits below Lenovo PGX ($5,849) and MSI EdgeXpert ($5,899) in the GB10 family, behind the NVIDIA DGX Spark ($4,699), which is second only to the ASUS Ascent ($3,999). CA configurator only offers the 4 TB tier at C$8,703 (no 1 TB SKU listed standalone). regionPrices.CA tracks the 4 TB figure as the only buyable Canadian config rather than fabricating a 1 TB CAD price. EU pricing is much steeper: dell.de quotes EUR 7,086 incl. VAT for the 4 TB SKU and the 1 TB tier isn't listed in EU consumer channels. Figure ~EUR 6,050 for the smallest available config. The 'enterprise default' GB10 box: ProSupport warranty, polished cooling, NVIDIA DGX OS 7. (dell.com/en-us FCM1253 configurator, live 2026-08-23)",
       "tps": {
         "8b": 90,
         "14b": 55,
@@ -5436,7 +5578,7 @@
       "extensibilityNote": "Same GB10 cluster story; Dell adds enterprise warranty to the same fabric.",
       "tflopsFP16": 250,
       "vllmSupport": "production",
-      "priceVerifiedOn": "2026-07-31",
+      "priceVerifiedOn": "2026-08-23",
       "tflopsFP8": 250,
       "topsINT8": null,
       "benchmarks": [
@@ -5520,7 +5662,41 @@
           "status": "verified",
           "source": "https://forums.developer.nvidia.com/t/1x-dgx-spark-deepseek-v4-flash-0731-on-llama-cpp-131k-ctx-slot-19-7-tok-s-single-stream-52-tok-s-4-concurrent/379129",
           "measuredOn": "2026-08-04",
-          "note": "DeepSeek-V4-Flash-0731 now fits single GB10 at 2-bit: 19.7 t/s single-stream, ~52 t/s @4 concurrent. FP8/Q4 still don't fit single node (~119GB usable); ds4 fork (Entrpi/antirez) reaches ~59 t/s multi-agent aggregate + ~1000 t/s prefill (DevForum #378855). 0731 quality much improved vs the earlier 2-bit."
+          "note": "DeepSeek-V4-Flash-0731 now fits single GB10 at 2-bit: 19.7 t/s single-stream, ~52 t/s @4 concurrent. FP8/Q4 still don't fit single node (~119GB usable), ds4 fork (Entrpi/antirez) reaches ~59 t/s multi-agent aggregate + ~1000 t/s prefill (DevForum #378855). 0731 quality much improved vs the earlier 2-bit."
+        },
+        {
+          "modelId": "deepseek-v4-flash-284b-moe",
+          "quant": "IQ2XXS",
+          "engine": "ds4-cuda v0.5.4 (Dwarfstar custom, bleysg/@entrpi)",
+          "cluster": {
+            "nodes": 1
+          },
+          "specDecode": "DSpark MTP k=2",
+          "concurrency": 1,
+          "ctxTokens": 131072,
+          "decodeTps": 40,
+          "prefillTps": null,
+          "status": "claimed",
+          "source": "https://forums.developer.nvidia.com/t/deepseek-4-0731-single-spark-40t-s-decode-131k-ctx-dwarfstar-cuda-custom-engine/379192",
+          "measuredOn": "2026-08-05",
+          "note": "Dwarfstar ds4 custom CUDA engine on a single Spark: 40 t/s decode at 131K ctx (IQ2XXS, DSpark MTP k=2, native, no Docker). ~2x the llama.cpp mainline figure (19.7/24), custom-engine path -- see the llama.cpp rows for the vendor-mainline baseline."
+        },
+        {
+          "modelId": "nemotron-3-5-lightning-30b-a3b-moe",
+          "quant": "NVFP4",
+          "engine": "SGLang/vLLM (spec-decode)",
+          "cluster": {
+            "nodes": 1
+          },
+          "specDecode": "DSpark",
+          "concurrency": 1,
+          "ctxTokens": 1048576,
+          "decodeTps": 122,
+          "prefillTps": null,
+          "status": "claimed",
+          "source": "https://x.com/0xBakeer/status/2087220904392565193",
+          "measuredOn": "2026-08-11",
+          "note": "Nemotron 3.5 Lightning 30B-A3B (3B active, hybrid Mamba-2+MoE) single Spark: BF16 29 / NVFP4 79 / NVFP4+DSpark 122 t/s @1M ctx (@0xBakeer). MiaAI_lab SGLang NVFP4+DSpark 112 t/s single, 362 @8 sessions. 3B-active decode is bandwidth-bound, fastest single-box recipe."
         }
       ]
     },
@@ -5604,7 +5780,7 @@
       "extensibilityNote": "Same GB10 cluster story under the ThinkStation brand.",
       "tflopsFP16": 250,
       "vllmSupport": "production",
-      "priceVerifiedOn": "2026-08-14",
+      "priceVerifiedOn": "2026-09-04",
       "tflopsFP8": 250,
       "topsINT8": null,
       "benchmarks": [
@@ -5688,7 +5864,41 @@
           "status": "verified",
           "source": "https://forums.developer.nvidia.com/t/1x-dgx-spark-deepseek-v4-flash-0731-on-llama-cpp-131k-ctx-slot-19-7-tok-s-single-stream-52-tok-s-4-concurrent/379129",
           "measuredOn": "2026-08-04",
-          "note": "DeepSeek-V4-Flash-0731 now fits single GB10 at 2-bit: 19.7 t/s single-stream, ~52 t/s @4 concurrent. FP8/Q4 still don't fit single node (~119GB usable); ds4 fork (Entrpi/antirez) reaches ~59 t/s multi-agent aggregate + ~1000 t/s prefill (DevForum #378855). 0731 quality much improved vs the earlier 2-bit."
+          "note": "DeepSeek-V4-Flash-0731 now fits single GB10 at 2-bit: 19.7 t/s single-stream, ~52 t/s @4 concurrent. FP8/Q4 still don't fit single node (~119GB usable), ds4 fork (Entrpi/antirez) reaches ~59 t/s multi-agent aggregate + ~1000 t/s prefill (DevForum #378855). 0731 quality much improved vs the earlier 2-bit."
+        },
+        {
+          "modelId": "deepseek-v4-flash-284b-moe",
+          "quant": "IQ2XXS",
+          "engine": "ds4-cuda v0.5.4 (Dwarfstar custom, bleysg/@entrpi)",
+          "cluster": {
+            "nodes": 1
+          },
+          "specDecode": "DSpark MTP k=2",
+          "concurrency": 1,
+          "ctxTokens": 131072,
+          "decodeTps": 40,
+          "prefillTps": null,
+          "status": "claimed",
+          "source": "https://forums.developer.nvidia.com/t/deepseek-4-0731-single-spark-40t-s-decode-131k-ctx-dwarfstar-cuda-custom-engine/379192",
+          "measuredOn": "2026-08-05",
+          "note": "Dwarfstar ds4 custom CUDA engine on a single Spark: 40 t/s decode at 131K ctx (IQ2XXS, DSpark MTP k=2, native, no Docker). ~2x the llama.cpp mainline figure (19.7/24), custom-engine path -- see the llama.cpp rows for the vendor-mainline baseline."
+        },
+        {
+          "modelId": "nemotron-3-5-lightning-30b-a3b-moe",
+          "quant": "NVFP4",
+          "engine": "SGLang/vLLM (spec-decode)",
+          "cluster": {
+            "nodes": 1
+          },
+          "specDecode": "DSpark",
+          "concurrency": 1,
+          "ctxTokens": 1048576,
+          "decodeTps": 122,
+          "prefillTps": null,
+          "status": "claimed",
+          "source": "https://x.com/0xBakeer/status/2087220904392565193",
+          "measuredOn": "2026-08-11",
+          "note": "Nemotron 3.5 Lightning 30B-A3B (3B active, hybrid Mamba-2+MoE) single Spark: BF16 29 / NVFP4 79 / NVFP4+DSpark 122 t/s @1M ctx (@0xBakeer). MiaAI_lab SGLang NVFP4+DSpark 112 t/s single, 362 @8 sessions. 3B-active decode is bandwidth-bound, fastest single-box recipe."
         }
       ]
     },
@@ -5781,6 +5991,9 @@
         "70b": 50,
         "120b_moe": 80,
         "235b_moe": null
+      },
+      "tpsModel": {
+        "8b": "llama31-8b"
       },
       "imageSec": {
         "sdxl": 1.5,
@@ -6305,7 +6518,7 @@
       "bandwidthGBs": 768,
       "priceUSD": 4739,
       "tps": {
-        "8b": 100,
+        "8b": 75,
         "14b": 42,
         "30b": 24,
         "70b": 12,
@@ -6366,21 +6579,6 @@
       "topsINT8": 310,
       "benchmarks": [
         {
-          "modelId": "llama31-8b",
-          "quant": "Q4_K_M",
-          "engine": "llama.cpp CUDA",
-          "cluster": {
-            "nodes": 1
-          },
-          "concurrency": 1,
-          "ctxTokens": 4096,
-          "decodeTps": 102,
-          "status": "verified",
-          "source": "https://github.com/XiongjieDai/GPU-Benchmarks-on-LLM-Inference",
-          "measuredOn": "2024-05-15",
-          "note": "XiongjieDai llama.cpp: A6000 8B Q4_K_M = 102.22 t/s. Decode memory-bound; 768 GB/s roofline ~163 t/s at 8B Q4, so 102 is the ~60-65% efficiency band. Raised stored 8b 75->100 to match hands-on; Xiongjie is the same re-verified source as the 70B row."
-        },
-        {
           "modelId": "llama33-70b",
           "quant": "Q4_K_M",
           "engine": "llama.cpp CUDA",
@@ -6408,7 +6606,7 @@
       "bandwidthGBs": 960,
       "priceUSD": 8662.99,
       "tps": {
-        "8b": 125,
+        "8b": 110,
         "14b": 65,
         "30b": 40,
         "70b": 18,
@@ -6459,21 +6657,6 @@
       "topsINT8": null,
       "benchmarks": [
         {
-          "modelId": "llama31-8b",
-          "quant": "Q4_K_M",
-          "engine": "llama.cpp CUDA",
-          "cluster": {
-            "nodes": 1
-          },
-          "concurrency": 1,
-          "ctxTokens": 4096,
-          "decodeTps": 131,
-          "status": "verified",
-          "source": "https://github.com/XiongjieDai/GPU-Benchmarks-on-LLM-Inference",
-          "measuredOn": "2024-05-15",
-          "note": "XiongjieDai llama.cpp: RTX 6000 Ada 8B Q4_K_M = 130.99 t/s. Decode memory-bound; 960 GB/s roofline. Raised stored 8b 110->125 to match hands-on; same source as the 70B row."
-        },
-        {
           "modelId": "llama33-70b",
           "quant": "Q4_K_M",
           "engine": "llama.cpp CUDA",
@@ -6499,9 +6682,9 @@
       "memoryGB": 96,
       "usableMemoryGB": 93,
       "bandwidthGBs": 1792,
-      "priceUSD": 15250,
-      "pricedAsOf": "May 2026",
-      "priceNote": "Aug 2026 — $13,250 card (NVIDIA official marketplace; Newegg OEM sold-by-Newegg $12,499.99 now OOS) + ~$2,000 host = $15,250 whole-system. NVIDIA raised RTX PRO 6000 pricing ~55% over launch MSRP. (thundercompute.com, reddit.com, 2026-08).",
+      "priceUSD": 18000,
+      "pricedAsOf": "Sep 2026",
+      "priceNote": "Sep 2026 - NVIDIA lists the RTX PRO 6000 Blackwell Workstation Edition, exact MPN 900-5G144-2500-000, at $16,000 and Out Of Stock. Adding the unchanged ~$2,000 host allowance gives an $18,000 whole-system reference. (marketplace.nvidia.com/en-us/enterprise/laptops-workstations/nvidia-rtx-pro-6000-blackwell-workstation-edition/, verified 2026-09-12).",
       "tps": {
         "8b": 200,
         "14b": 140,
@@ -6528,7 +6711,7 @@
       ],
       "cons": [
         "No NVLink to scale",
-        "$6 K+ build is still serious"
+        "$18K reference build, with the exact card currently out of stock at NVIDIA"
       ],
       "tagline": "The 70 B + 120 B sweet spot on one card.",
       "reviews": [
@@ -6569,10 +6752,9 @@
       "extensibilityNote": "Standard workstation card — dual-card is the natural upgrade.",
       "tflopsFP16": 1457,
       "vllmSupport": "production",
-      "priceVerifiedOn": "2026-08-14",
+      "priceVerifiedOn": "2026-09-12",
       "tflopsFP8": 1000,
-      "topsINT8": null,
-      "tpsNote": "Freshest llama-bench on this exact card (vaditaslim.com, llama.cpp build b8352, driver 580.126.09 / CUDA 13.2, -fa on, BS=1, Q4_K_M): 12B=158 / 14B=117 / 32B=56 / 70B~27 tok/s decode; pp512 12B=8325 / 14B=5918 / 32B=2601. Stored tps reflect the TUNED NVFP4 recipe (vLLM / sglang, day-1 Blackwell), not the Q4 llama.cpp floor - spec-decode on Qwen3.6-27B NVFP4 gives ~2.2-2.8x (thavoc77 spec-bench, r/LocalLLaMA 1v22hu9). WATCH: 120b_moe=190 sits ~1.8x above hands-on single-stream 100-122B MoE on this card (Laguna-S2.1 118B=109, qwen3.5-122b=103, Nemotron-3-Super=94.5; klinec r/LocalLLaMA 1v2ua8g) - likely an aggressive recipe; verify quant+concurrency before treating 190 as reproducible. Re-verified 2026-W33 (both prior sources re-opened this week, still live): single-stream 100-122B MoE on this card, vLLM NVFP4, is unchanged at ~94.5-109 tok/s (klinec 1v2ua8g); spec-decode upper bound confirmed by thavoc77 (1v22hu9). >96GB MoE does NOT fit cleanly in 96GB VRAM at Q4 and runs offloaded/hybrid at far lower decode - fresh same-card runs: DeepSeek-V4-Flash 284B (Q4_K_XL, llama.cpp + DSpark, 19/40 expert layers in RAM) ~31 tok/s gen (FantasticNature7590 1vmt1y3); Ornith-1.0-397B (Q4, Krasis expert-streaming) ~20-24 tok/s sustained (mrstoatey 1v818gf). So tags premised on a >96GB model fitting VRAM are aggressive - 235b_moe=50 sits above every measured offloaded big-MoE decode on this card; treat it (like 120b_moe=190) as an aggressive upper bound pending a clean controlled benchmark."
+      "topsINT8": null
     },
     {
       "id": "rtx-pro-5000-blackwell-48",
@@ -6585,7 +6767,7 @@
       "bandwidthGBs": 1344,
       "priceUSD": 8100,
       "pricedAsOf": "May 2026",
-      "priceNote": "Aug 2026 — $6,299.99 card (Newegg NVIDIA OEM, sold by Newegg; up from $5,999.99 as line repriced) + ~$1,800 workstation chassis. NVIDIA MSRP $4,199 rarely seen. (newegg.com, 2026-08).",
+      "priceNote": "Aug 2026 - $6,299.99 card (Newegg NVIDIA OEM, sold by Newegg. up from $5,999.99 as line repriced) + ~$1,800 workstation chassis. NVIDIA MSRP $4,199 rarely seen. (newegg.com, 2026-08).",
       "tps": {
         "8b": null,
         "14b": null,
@@ -6657,9 +6839,9 @@
       "memoryGB": 192,
       "usableMemoryGB": 188,
       "bandwidthGBs": 1792,
-      "priceUSD": 29000,
-      "pricedAsOf": "May 2026",
-      "priceNote": "Aug 2026 — 2× $13,250 cards (NVIDIA official marketplace) + ~$2,500 host = $29,000 whole-system. Mirrors single-card RTX PRO 6000 Blackwell price increase. (thundercompute.com, 2026-08).",
+      "priceUSD": 34500,
+      "pricedAsOf": "Sep 2026",
+      "priceNote": "Sep 2026 - 2 x $16,000 RTX PRO 6000 Blackwell Workstation Edition cards, exact MPN 900-5G144-2500-000, plus the unchanged ~$2,500 host allowance = $34,500 whole-system. NVIDIA lists the exact card Out Of Stock. (marketplace.nvidia.com/en-us/enterprise/laptops-workstations/nvidia-rtx-pro-6000-blackwell-workstation-edition/, verified 2026-09-12).",
       "tps": {
         "8b": 220,
         "14b": 160,
@@ -6686,7 +6868,7 @@
       ],
       "cons": [
         "No NVLink — PCIe-only",
-        "$11 K+ price tag"
+        "$34.5K reference price and the exact cards are currently out of stock at NVIDIA"
       ],
       "reviews": [
         {
@@ -6708,7 +6890,7 @@
         "14b": 15000,
         "30b": 7300,
         "70b": 3200,
-        "120b_moe": 10500,
+        "120b_moe": null,
         "235b_moe": 5000
       },
       "ttft100k": {
@@ -6716,7 +6898,7 @@
         "14b": 9,
         "30b": 17,
         "70b": 42,
-        "120b_moe": 13,
+        "120b_moe": null,
         "235b_moe": 28
       },
       "softwareStack": "CUDA (Blackwell)",
@@ -6726,7 +6908,7 @@
       "extensibilityNote": "Two slots filled; a workstation chassis still leaves room for x4 if you have the lanes + PSU.",
       "tflopsFP16": 2914,
       "vllmSupport": "production",
-      "priceVerifiedOn": "2026-08-14",
+      "priceVerifiedOn": "2026-09-12",
       "tflopsFP8": 2000,
       "topsINT8": null,
       "benchmarks": [
@@ -6762,7 +6944,7 @@
           "status": "verified",
           "source": "https://www.reddit.com/r/LocalLLaMA/comments/1sh7yxa/qwen35122b_at_198_toks_on_2x_rtx_pro_6000/",
           "measuredOn": "2026-04-10",
-          "note": "vLLM MTP=1 baseline (non-spec-decode path); SGLang+NEXTN reaches ~198 t/s"
+          "note": "vLLM MTP=1 baseline (non-spec-decode path). SGLang+NEXTN reaches ~198 t/s"
         },
         {
           "modelId": "qwen3-5-397b-a17b-moe",
@@ -6791,10 +6973,10 @@
       "memoryGB": 384,
       "usableMemoryGB": 372,
       "bandwidthGBs": 1792,
-      "priceUSD": 57000,
+      "priceUSD": 68000,
       "rigOverheadUSD": 4000,
-      "pricedAsOf": "May 2026",
-      "priceNote": "Aug 2026 — 4× $13,250 cards (NVIDIA official marketplace) + ~$4K Threadripper Pro / Xeon W chassis = $57,000. RTX PRO 6000 line repriced by NVIDIA ~55% over MSRP. (thundercompute.com, 2026-08).",
+      "pricedAsOf": "Sep 2026",
+      "priceNote": "Sep 2026 - 4 x $16,000 RTX PRO 6000 Blackwell Workstation Edition cards, exact MPN 900-5G144-2500-000, plus the unchanged ~$4,000 workstation chassis allowance = $68,000 whole-system. NVIDIA lists the exact card Out Of Stock. (marketplace.nvidia.com/en-us/enterprise/laptops-workstations/nvidia-rtx-pro-6000-blackwell-workstation-edition/, verified 2026-09-12).",
       "tps": {
         "8b": 320,
         "14b": 230,
@@ -6840,7 +7022,7 @@
       ],
       "cons": [
         "PCIe 5.0 x16 only, no NVLink — TP scaling is bw-bound",
-        "$38K+ build, 2.2 kW active",
+        "$68K reference build, 2.2 kW active, with the exact cards currently out of stock at NVIDIA",
         "Needs Threadripper Pro / Xeon W for the lane count"
       ],
       "tagline": "Workstation-form datacenter, four cards deep.",
@@ -6852,7 +7034,7 @@
       "extensibilityNote": "Four cards fills most workstation chassis; jumping to x8 means moving into a real server (e.g. SuperMicro 4124GS / Gigabyte G493).",
       "tflopsFP16": 5828,
       "vllmSupport": "production",
-      "priceVerifiedOn": "2026-08-14",
+      "priceVerifiedOn": "2026-09-12",
       "tflopsFP8": 4000,
       "topsINT8": null,
       "benchmarks": [
@@ -6905,23 +7087,6 @@
           "status": "verified",
           "source": "https://github.com/voipmonitor/rtx6kpro/blob/master/benchmarks/results.md",
           "measuredOn": "2026-03-14"
-        },
-        {
-          "modelId": "deepseek-v4-flash-284b-moe",
-          "quant": "FP8 (fp8_ds_mla KV)",
-          "engine": "vLLM SparkInfer (voipmonitor b12x)",
-          "cluster": {
-            "nodes": 4
-          },
-          "specDecode": "DSpark-5",
-          "concurrency": 1,
-          "ctxTokens": 4096,
-          "decodeTps": 407,
-          "prefillTps": null,
-          "status": "verified",
-          "source": "https://x.com/0xSero/status/2087524293462704617",
-          "measuredOn": "2026-08-12",
-          "note": "DeepSeek-V4-Flash-0731 (official checkpoint) on 4x RTX PRO 6000: 407 t/s single-stream decode, 1387 t/s @8 sessions, 1M ctx config. Locked reproducible deployment (0xSero/4x-6000-pro-ds4-flash-0731): voipmonitor/vllm SparkInfer, b12x MoE, DSpark-5 probabilistic spec-decode, fp8_ds_mla KV. Best single-stream decode on this box; outranks stored Qwen3.5-397B rows for this model class."
         }
       ]
     },
@@ -6937,7 +7102,7 @@
       "priceUSD": 135556,
       "rigOverheadUSD": 8000,
       "pricedAsOf": "May 2026",
-      "priceNote": "Aug 2026 — 8× $15,944.54 Server Edition cards (SabrePC in stock; down from $17,895.22) + ~$8K dual-EPYC 4U GPU server = $135,556. (sabrepc.com, 2026-08).",
+      "priceNote": "Aug 2026 - 8× $15,944.54 Server Edition cards (SabrePC in stock. down from $17,895.22) + ~$8K dual-EPYC 4U GPU server = $135,556. (sabrepc.com, 2026-08).",
       "tps": {
         "8b": 420,
         "14b": 310,
@@ -7049,7 +7214,7 @@
       "priceUSD": 207334,
       "rigOverheadUSD": 16000,
       "pricedAsOf": "May 2026",
-      "priceNote": "Aug 2026 — 12× $15,944.54 Server Edition cards (SabrePC in stock) + dual-chassis 4U + GPU server + 200 GbE RoCE fabric ~$16K = $207,334. (sabrepc.com, 2026-08).",
+      "priceNote": "Aug 2026 - 12× $15,944.54 Server Edition cards (SabrePC in stock) + dual-chassis 4U + GPU server + 200 GbE RoCE fabric ~$16K = $207,334. (sabrepc.com, 2026-08).",
       "tps": {
         "8b": 460,
         "14b": 340,
@@ -7123,8 +7288,8 @@
       "memoryGB": 48,
       "usableMemoryGB": 46,
       "bandwidthGBs": 864,
-      "priceUSD": 4900,
-      "priceNote": "Aug 2026 — card $3,700 cheapest new (eBay NEW; GPUDojo 'new from $3,700'); Amazon NEW $3,899, used $3,495. Re-anchored from $3,899 to cheapest buyable new. +$1,200 rig. (gpudojo.com/radeon-pro-w7900, 2026-08-14).",
+      "priceUSD": 5099,
+      "priceNote": "Sep 2026 - card $3,899 cheapest new (Amazon, valid to 09/19, GPUDojo JSON-LD), W7800-style $3,700 eBay NEW listing gone, used from $2,999.99. Back to $3,899 anchor. +$1,200 rig. (gpudojo.com/radeon-pro-w7900, 2026-09-04).",
       "tps": {
         "8b": 70,
         "14b": 40,
@@ -7178,7 +7343,7 @@
       "extensibilityNote": "Standard workstation card; pair freely for 96 GB.",
       "tflopsFP16": 122,
       "vllmSupport": "community",
-      "priceVerifiedOn": "2026-08-14",
+      "priceVerifiedOn": "2026-09-04",
       "tflopsFP8": null,
       "topsINT8": 244
     },
@@ -7191,8 +7356,8 @@
       "memoryGB": 96,
       "usableMemoryGB": 92,
       "bandwidthGBs": 864,
-      "priceUSD": 9000,
-      "priceNote": "Aug 2026 — 2× $3,700 W7900 cards (GPUDojo eBay NEW) + ~$1,600 dual-GPU workstation chassis. (gpudojo.com/radeon-pro-w7900, 2026-08-14).",
+      "priceUSD": 9398,
+      "priceNote": "Sep 2026 - 2× $3,899 W7900 cards (Amazon, GPUDojo JSON-LD) + ~$1,600 dual-GPU workstation chassis. (gpudojo.com/radeon-pro-w7900, 2026-09-04).",
       "tps": {
         "8b": 90,
         "14b": 55,
@@ -7247,7 +7412,7 @@
       "extensibilityNote": "Two slots filled in a workstation; further W7900s past two is rare territory.",
       "tflopsFP16": 244,
       "vllmSupport": "community",
-      "priceVerifiedOn": "2026-08-14",
+      "priceVerifiedOn": "2026-09-04",
       "tflopsFP8": null,
       "topsINT8": 488
     },
@@ -7261,7 +7426,7 @@
       "usableMemoryGB": 31,
       "bandwidthGBs": 576,
       "priceUSD": 2399,
-      "priceNote": "Aug 2026 — card $1,699 cheapest new (eBay); Amazon NEW $2,356, Newegg $2,723 (GPUDojo 8/14). $1,360 clearance long expired. +$700 rig. (gpudojo.com/radeon-pro-w7800).",
+      "priceNote": "Aug 2026 - card $1,699 cheapest new (eBay). Amazon NEW $2,356, Newegg $2,723 (GPUDojo 8/14). $1,360 clearance long expired. +$700 rig. (gpudojo.com/radeon-pro-w7800).",
       "tps": {
         "8b": 58,
         "14b": 32,
@@ -7307,7 +7472,7 @@
       "extensibilityNote": "Standard workstation card; upgrade to W7900 / R9700 for more memory.",
       "tflopsFP16": 91,
       "vllmSupport": "community",
-      "priceVerifiedOn": "2026-08-14",
+      "priceVerifiedOn": "2026-09-04",
       "tflopsFP8": null,
       "topsINT8": 182,
       "reviews": [
@@ -7326,8 +7491,8 @@
       "memoryGB": 32,
       "usableMemoryGB": 31,
       "bandwidthGBs": 640,
-      "priceUSD": 2717,
-      "priceNote": "Aug 2026 — card $2,017 cheapest new (GPU Poet 8/14, 4 active listings; cheap $1,470 Turbo gone). +$700 single-GPU rig. Memory crunch pushed R9700 street up sharply. (gpupoet.com/gpu/shop/amd-radeon-ai-pro-r9700, 2026-08-14).",
+      "priceUSD": 2400,
+      "priceNote": "Sep 2026 - card $1,700 cheapest new (AMD Creator, Amazon as-of 09/03/2026 via GPU Poet, 13 listings). Cheap stock returning - down from $2,017 (8/14). +$700 single-GPU rig. (gpupoet.com/gpu/shop/amd-radeon-ai-pro-r9700, 2026-09-04).",
       "tps": {
         "8b": 77,
         "14b": 45,
@@ -7336,6 +7501,7 @@
         "120b_moe": null,
         "235b_moe": null
       },
+      "tpsNote": "RDNA4 decode recipe is llama.cpp Vulkan, which beats ROCm HIP on gfx1201 for single-stream decode (see benchmarks[1]). 30b stays null: no clean Q4_K_M single-stream 30B run on a single card, though the community tunes higher - Dyluhn R9V shows single-R9700 Muse Glimmer 30B llama.cpp Vulkan TG256=40.55 t/s (DFlash2 spec-decode, r/LocalLLaMA 1w2z5qw 2026-08-31). Multi-GPU tuned recipes (2x R9700) reach ~50-85 t/s on a dense 27B, see amd-r9700-x2.",
       "imageSec": {
         "sdxl": 6,
         "flux": 28
@@ -7384,7 +7550,7 @@
       "extensibilityNote": "Standard PCIe workstation card.",
       "tflopsFP16": 96,
       "vllmSupport": "community",
-      "priceVerifiedOn": "2026-08-14",
+      "priceVerifiedOn": "2026-09-04",
       "tflopsFP8": 383,
       "topsINT8": null,
       "regionPrices": {
@@ -7419,10 +7585,10 @@
           "ctxTokens": 512,
           "decodeTps": 127.4,
           "prefillTps": 2713,
-          "status": "verified",
+          "status": "unverified",
           "source": "https://github.com/ggml-org/llama.cpp/discussions/19890",
           "measuredOn": "2026-02-25",
-          "note": "llama.cpp #19890 (Feb 2026, commit 244641955): R9700 Vulkan Qwen3.5-35B-A3B MoE UD-Q4_K_XL (~19GB) - TG avg 127.4 t/s, pp512=2713, -ngl 99 -fa 1. MoE with 3.5B active params; Vulkan beats ROCm HIP on R9700 decode (183 vs ~150 t/s). Source tests Qwen3.5-35B-A3B; tracked qwen3-6-35b is the same 35B-A3B active-param class."
+          "note": "Proxy, not a measurement of qwen3-6-35b-a3b-moe. The linked llama.cpp discussion measures Qwen3.5-35B-A3B MoE UD-Q4_K_XL at 127.4 t/s and 2713 pp512 on one R9700 with Vulkan. This row carries that result as a prior-generation, same-active-parameter-class proxy. Direct Qwen3.6 measurements use different quant or runtime regimes and do not validate this exact value."
         }
       ]
     },
@@ -7435,8 +7601,8 @@
       "memoryGB": 64,
       "usableMemoryGB": 62,
       "bandwidthGBs": 640,
-      "priceUSD": 5034,
-      "priceNote": "Aug 2026 — 2× $2,017 R9700 cards (GPU Poet) + ~$1,000 dual-GPU host. (gpupoet.com/gpu/shop/amd-radeon-ai-pro-r9700, 2026-08-14).",
+      "priceUSD": 4400,
+      "priceNote": "Sep 2026 - 2× $1,700 R9700 cards (Amazon as-of 09/03/2026 via GPU Poet) + ~$1,000 dual-GPU host. (gpupoet.com/gpu/shop/amd-radeon-ai-pro-r9700, 2026-09-04).",
       "tps": {
         "8b": 90,
         "14b": 55,
@@ -7445,6 +7611,10 @@
         "120b_moe": 40,
         "235b_moe": null
       },
+      "tpsModel": {
+        "30b": "qwen3-8-27b"
+      },
+      "tpsNote": "Advertised tps are the conservative Q4_K_M single-stream floor. Hands-on tuned recipes on this pair run well above it: llama.cpp ROCm 10 (-sm tensor, Qwen3.8-27B Q8_K_XL + MTP3, 255K ctx) sustained 51.56 t/s and vLLM TP=2 Qwen3.8-27B-FP8 + MTP3 measured 50.1 t/s single-request / 84.7 t/s with 2 in flight (r/LocalLLaMA 1w36uqn 2026-08-31 and 1vwvhm9 2026-08-24). For the x2 dense ~27-30B class the tensor-parallel MTP recipe is what clears the floor, a model that fits one card should run one worker per GPU, since Ollama serialises the pair.",
       "imageSec": {
         "sdxl": 6,
         "flux": 28
@@ -7496,13 +7666,48 @@
       "extensibilityNote": "Two-slot workstation build with PCIe lanes + PSU headroom for a third card.",
       "tflopsFP16": 192,
       "vllmSupport": "community",
-      "priceVerifiedOn": "2026-08-14",
+      "priceVerifiedOn": "2026-09-04",
       "tflopsFP8": 766,
       "topsINT8": null,
       "regionPrices": {
         "JP": 547300,
         "NL": 4378
-      }
+      },
+      "benchmarks": [
+        {
+          "modelId": "qwen3-8-27b",
+          "modelName": "Qwen3.8-27B",
+          "quant": "Q8_K_XL",
+          "engine": "llama.cpp ROCm (HIP)",
+          "cluster": {
+            "nodes": 2
+          },
+          "concurrency": 1,
+          "ctxTokens": 255000,
+          "decodeTps": 51.56,
+          "prefillTps": null,
+          "status": "verified",
+          "source": "https://www.reddit.com/r/LocalLLaMA/comments/1w36uqn/",
+          "measuredOn": "2026-08-31",
+          "note": "r/LocalLLaMA 1w36uqn (ROCm 10 + llama.cpp docker, 2x R9700): Qwen3.8-27B Q8_K_XL, -sm tensor, -c 255000, -fa 1, --spec-type draft-mtp --spec-draft-n-max 3. Sustained 51.56 t/s over 5,369 gen tokens (19.40 ms/tok), 5-10% over the stock llama.cpp ROCm docker. Draft accept 0.72, mean len 3.16, amd-smi ~27 GB/card. Q8_K_XL ~28.7 GB weights -> ~470 GB/s effective across the pair, under the 640 GB/s R9700 ceiling, so not bandwidth-saturated."
+        },
+        {
+          "modelId": "qwen3-8-27b",
+          "modelName": "Qwen3.8-27B",
+          "quant": "FP8",
+          "engine": "vLLM (ROCm 7.14)",
+          "cluster": {
+            "nodes": 2
+          },
+          "concurrency": 1,
+          "decodeTps": 50.1,
+          "prefillTps": null,
+          "status": "verified",
+          "source": "https://www.reddit.com/r/LocalLLaMA/comments/1vwvhm9/",
+          "measuredOn": "2026-08-24",
+          "note": "r/LocalLLaMA 1vwvhm9 (vLLM TP=2, official Qwen3.8-27B-FP8 + MTP3): avg generation 50.1 t/s single-request (also 51.2, 84.7 t/s with 2 reqs in flight), drafted ~55 t/s, accepted ~31 t/s, prefix-cache hit 89.7%. AITER unified-attention, ROCm 7.14, gfx1201. Corroborates the llama.cpp ROCm-10 MTP figure on this pair, the tuned MTP path is the x2 dense recipe."
+        }
+      ]
     },
     {
       "id": "rx-9070-xt-16",
@@ -7513,8 +7718,8 @@
       "memoryGB": 16,
       "usableMemoryGB": 15,
       "bandwidthGBs": 645,
-      "priceUSD": 1386,
-      "priceNote": "Aug 2026 — RX 9070 XT card ~$686 street (GPU Drip current market; bestvaluegpu ~$719 new Amazon) + ~$700 ATX host. MSRP $599. (gpudrip.com; bestvaluegpu.com, 2026-08).",
+      "priceUSD": 1500,
+      "priceNote": "Sep 2026 — RX 9070 XT card $798.65 on Amazon (PowerColor Reaper 16G, buyable) + ~$700 ATX host. MSRP $599. (amazon.com, 2026-09).",
       "tps": {
         "8b": 78,
         "14b": 44,
@@ -7523,6 +7728,7 @@
         "120b_moe": null,
         "235b_moe": null
       },
+      "tpsNote": "RDNA4 gfx1201 decode recipe: llama.cpp Vulkan > ROCm HIP (llama.cpp #15021: RX 9070 XT Llama-2-7B Q4_0 Vulkan tg128=142.88 vs ROCm 128.38, FA=1, #19890 for the R9700). vLLM sits behind both until mainline gfx1201 FP8 kernels land. vllm-project/vllm#28649 is still OPEN (re-checked 2026-09-05), its author later found a W8A8 FP8 fall-through already exists and re-attributed the headline speedup to 2025-11-08 CUDA-graph gains, so mainline vLLM gfx1201 FP8 is not a clean native-kernel win - the practical digtvbg FP32-dequant result (48 t/s) still stands on a stock build.",
       "imageSec": {
         "sdxl": 6,
         "flux": 30
@@ -7569,46 +7775,12 @@
           "title": "RX 9070 XT is cheaper AND better… mostly"
         }
       ],
-      "priceVerifiedOn": "2026-08-14",
+      "priceVerifiedOn": "2026-09-04",
       "tflopsFP8": 389,
       "topsINT8": null,
       "regionPrices": {
         "NL": 1359
-      },
-      "benchmarks": [
-        {
-          "modelId": "qwen3-5-9b",
-          "quant": "Q6_K_XL",
-          "engine": "llama.cpp Vulkan",
-          "cluster": {
-            "nodes": 1
-          },
-          "concurrency": 1,
-          "ctxTokens": 512,
-          "decodeTps": 62,
-          "prefillTps": null,
-          "status": "verified",
-          "source": "https://digtvbg.com/blog/llama-server-vulkan-rdna4-vllm-rocm-benchmark/",
-          "measuredOn": "2026-03-22",
-          "note": "digtvbg hands-on (Mar 22 2026): Qwen3.5-9B UD-Q6_K_XL on RX 9070 XT 16GB via llama-server Vulkan = 62 t/s (-ngl 999 -c 65536 --parallel 1). Vulkan compute shaders use RDNA4 (gfx1201) properly where vLLM lacks native kernels; correct recipe until gfx1201 FP8 support lands in vLLM."
-        },
-        {
-          "modelId": "qwen3-5-9b",
-          "quant": "FP8",
-          "engine": "vLLM (ROCm 7.2)",
-          "cluster": {
-            "nodes": 1
-          },
-          "concurrency": 1,
-          "ctxTokens": 512,
-          "decodeTps": 48,
-          "prefillTps": null,
-          "status": "verified",
-          "source": "https://digtvbg.com/blog/llama-server-vulkan-rdna4-vllm-rocm-benchmark/",
-          "measuredOn": "2026-03-22",
-          "note": "digtvbg hands-on (Mar 22 2026): Qwen3.5-9B FP8 on RX 9070 XT via vLLM ROCm 7.2 = 48 t/s. vLLM has no native RDNA4 (gfx1201) kernel (vllm-project/vllm#28649) so FP8 silently falls back to FP32 dequant, ~29% slower than Vulkan on the same GPU."
-        }
-      ]
+      }
     },
     {
       "id": "amd-mi300x-192",
@@ -7880,7 +8052,7 @@
       "usableMemoryGB": 31,
       "bandwidthGBs": 1024,
       "priceUSD": 1000,
-      "priceNote": "Aug 2026 - used MI50 32GB card street $549-$660 on eBay (cloud_storage_corp 79 sold @$659, jiawen2018 @$589, coretechmart @$620); +~$400 host. Well above the $150-250 card range in the old note - MI50 became the community vLLM-gfx906 budget build, demand pushed used cards up. rigOverhead $400 => card ~$600. Source: ebay.com/sch/i.html?_nkw=AMD+Instinct+MI50+32GB",
+      "priceNote": "Aug 2026 - used MI50 32GB card street $549-$660 on eBay (cloud_storage_corp 79 sold @$659, jiawen2018 @$589, coretechmart @$620). +~$400 host. Well above the $150-250 card range in the old note - MI50 became the community vLLM-gfx906 budget build, demand pushed used cards up. rigOverhead $400 => card ~$600. Source: ebay.com/sch/i.html?_nkw=AMD+Instinct+MI50+32GB",
       "tps": {
         "8b": 71,
         "14b": 38,
@@ -7965,7 +8137,7 @@
       "usableMemoryGB": 122,
       "bandwidthGBs": 1024,
       "priceUSD": 3900,
-      "priceNote": "Aug 2026 - 4x used MI50 32GB cards @ ~$600 street each (eBay: $549-660, see mi50-32) = $2400 + $1500 host. Cluster was drifted at $2500 (implied $250/card); realigned to 4x card + EPYC/TR host. Source: ebay.com/sch/i.html?_nkw=AMD+Instinct+MI50+32GB",
+      "priceNote": "Aug 2026. Four used MI50 32 GB cards at about $600 each add $2,400 to an approximately $1,500 EPYC or Threadripper host. The cited eBay listings ranged from $549 to $660 per card. Source: ebay.com/sch/i.html?_nkw=AMD+Instinct+MI50+32GB",
       "tps": {
         "8b": 72,
         "14b": 38,
@@ -8171,7 +8343,7 @@
         "14b": 18500,
         "30b": 8800,
         "70b": 3300,
-        "120b_moe": 10500,
+        "120b_moe": null,
         "235b_moe": 4800
       },
       "ttft100k": {
@@ -8179,7 +8351,7 @@
         "14b": 8,
         "30b": 16,
         "70b": 38,
-        "120b_moe": 13,
+        "120b_moe": null,
         "235b_moe": 30
       },
       "softwareStack": "CUDA (Ada)",
@@ -8206,7 +8378,7 @@
       "usableMemoryGB": 124,
       "bandwidthGBs": 1792,
       "priceUSD": 51000,
-      "priceNote": "August 2026 — $51,000 on tinycorp.myshopify.com (vendor-direct, add-to-cart live). Bumped from $45,000 → $51,000 after the Aug 2026 store audit; green v2 (4× RTX 5090) continues to move up from its $25K launch range.",
+      "priceNote": "Aug 2026. Vendor-direct price is $51,000 on tinycorp.myshopify.com, with add-to-cart availability verified during the store audit. The green v2 contains four RTX 5090 GPUs.",
       "tps": {
         "8b": 260,
         "14b": 170,
