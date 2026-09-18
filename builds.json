@@ -4808,7 +4808,8 @@
       "memoryGB": 512,
       "usableMemoryGB": 488,
       "bandwidthGBs": 273,
-      "priceUSD": 19500,
+      "priceUSD": 20367,
+      "priceNote": "2026-09-18 component-based US reference, not an in-stock cluster offer: four DGX Spark Founders Edition units at NVIDIA's $4,699 listed price ($18,796, currently out of stock), one MikroTik CRS804-4DDQ-hRM 4x400G switch at its $1,295 suggested price, and two NADDOD Q2Q56-400G-CU1 MikroTik-compatible 400G-to-2x200G breakout cables at the US $138 listing each. Each breakout cable connects two Sparks at 200GbE. Total $20,367 before tax and shipping. Availability and checkout totals vary. NVIDIA's four-node playbook requires a QSFP switch and one 200G connection per Spark. Sources: https://marketplace.nvidia.com/en-us/enterprise/personal-ai-supercomputers/dgx-spark/, https://mikrotik.com/product/crs804_ddq, https://www.naddod.com/products/103562.html, and https://build.nvidia.com/spark/multi-sparks-through-switch (checked 2026-09-18).",
       "tps": {
         "8b": 150,
         "14b": 100,
@@ -4837,7 +4838,7 @@
       ],
       "cons": [
         "NCCL bandwidth is the ceiling for dense 70 B+",
-        "$19 K+ cluster + 200 G switching"
+        "$20 K+ including a 200 G switched fabric. NVIDIA units currently out of stock"
       ],
       "cudaFriendly": true,
       "reviews": [
@@ -4879,7 +4880,7 @@
       "extensibilityNote": "Four-Spark cluster — the documented ceiling. Add a fifth and you're in DGX-Cloud territory (different vendor docs).",
       "tflopsFP16": 1000,
       "vllmSupport": "production",
-      "priceVerifiedOn": "2026-09-04",
+      "priceVerifiedOn": "2026-09-18",
       "tflopsFP8": 1000,
       "topsINT8": null,
       "benchmarks": [
@@ -4980,8 +4981,8 @@
       "bandwidthGBs": 273,
       "priceUSD": 43500,
       "rigOverheadUSD": 0,
-      "pricedAsOf": "May 2026",
-      "priceNote": "May 2026 — 8× $4,699 DGX Spark units (NVIDIA marketplace post-Feb 2026 memory-shortage hike) + ConnectX-7 switching. NVIDIA SN5400 retail >$25K, but most builders use a MikroTik CRS812-DDQ or similar ~$3-8K 200 GbE switch as documented by ServeTheHome. Direct-attach mesh is only viable up to two nodes; eight requires a switch. AZisk's eight-Spark 1 TB cluster was the canonical 2025-26 demo. (nvidia.com, 2026-05).",
+      "pricedAsOf": "September 2026 component check",
+      "priceNote": "2026-09-18 conservative planning reference, not a current vendor offer: eight NVIDIA DGX Spark Founders Edition units at $4,699 listed each ($37,592, currently out of stock), one MikroTik CRS804-4DDQ-hRM 4x400G switch at its $1,295 suggested price, and four NADDOD Q2Q56-400G-CU1 compatible 400G-to-2x200G breakout cables at US $138 each ($552) give a $39,439 component subtotal before tax and shipping. Four breakout cables provide eight 200GbE links. The tracked $43,500 includes a $4,061 planning reserve above that subtotal, not a quoted eight-unit bundle or guaranteed landed price. NVIDIA's multi-Spark playbook requires a switch and one link per Spark. MikroTik documents dual-200G breakout. Sources: https://marketplace.nvidia.com/en-us/enterprise/personal-ai-supercomputers/dgx-spark/, https://mikrotik.com/product/crs804_ddq, https://www.naddod.com/products/103562.html, and https://build.nvidia.com/spark/multi-sparks-through-switch (checked 2026-09-18).",
       "tps": {
         "8b": 195,
         "14b": 130,
@@ -5053,7 +5054,7 @@
       "extensibilityNote": "Eight-Spark is the documented practical ceiling; beyond this you're in DGX BasePOD / DGX Cloud territory with different reference designs.",
       "tflopsFP16": 2000,
       "vllmSupport": "production",
-      "priceVerifiedOn": "2026-09-04",
+      "priceVerifiedOn": "2026-09-18",
       "tflopsFP8": 2000,
       "topsINT8": null,
       "benchmarks": [
