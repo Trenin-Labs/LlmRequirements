@@ -493,7 +493,7 @@
     "dgx-spark-x2": {
       "name": "2× DGX Spark cluster (256 GB unified, CUDA)",
       "vendor": "NVIDIA",
-      "priceUSD": 9449,
+      "priceUSD": 13599,
       "rigOverheadUSD": 0,
       "regionPrices": {
         "EU": 9700,

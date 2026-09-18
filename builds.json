@@ -4356,7 +4356,7 @@
       "usableMemoryGB": 119,
       "bandwidthGBs": 273,
       "priceUSD": 4699,
-      "priceNote": "May 2026 — $4,699 Founders Edition at NVIDIA marketplace, ~$4,679 third-party on Amazon (camelcamelcamel.com). NVIDIA raised MSRP from $3,999 to $4,699 on 2026-02-23 citing memory supply constraints (forums.developer.nvidia.com); the new figure is the live retail anchor for the entire GB10 family. (nvidia.com, tomshardware.com, 2026-05).",
+      "priceNote": "2026-09-18 NVIDIA marketplace lists the single DGX Spark Founders Edition at $4,699 and out of stock. This is a dated single-unit reference, not an in-stock offer or a cable-included two-pack price. Four-node and eight-node clusters also require a compatible switch and per-node 200G links. Source: https://marketplace.nvidia.com/en-us/enterprise/personal-ai-supercomputers/dgx-spark/ (checked 2026-09-18).",
       "tpsNote": "The 120b_moe baseline (51) is itself a Qwen3.5-122B-A10B measurement (INT4+FP8, vLLM, MTP-2, 262K ctx; NVIDIA DevForum #365639, Apr 2026), but the runtime scaler (seo.ts tpsFor) treats the 120b_moe class as a 5B-active reference, so it rescales that number DOWN to ~26 t/s for the 10B-active Qwen3.5-122B-A10B — double-penalising a figure already measured on that exact model. Qwen3.5-122B-A10B on a single Spark actually measures ~59 tok/s general single-stream decode / ~81 tok/s on real agentic tool-call traffic via DFlash block-speculative decode (INT4 AutoRound + FP8 experts, vLLM 0.23, 262K ctx; NVIDIA DevForum #374328, Jun 2026) -- a spec-decode result the bandwidth-bound size-bucket scaler cannot represent (render fix = a per-model decode override / benchmarks[] reorg). An earlier 88-92 tok/s NVFP4+MTP figure that circulated is unverified (no primary benchmark artifact); NVFP4 underdelivered on this model. Same render gap applies across the GB10 single-box family (asus-ascent-gx10 etc.).",
       "tps": {
         "8b": 90,
@@ -4424,7 +4424,7 @@
       "extensibilityNote": "Sealed appliance, but officially clusterable over ConnectX-7 200 GbE — buy two to run 235B MoE end-to-end, four to host 671B. Cluster is the upgrade path.",
       "tflopsFP16": 250,
       "vllmSupport": "production",
-      "priceVerifiedOn": "2026-09-04",
+      "priceVerifiedOn": "2026-09-18",
       "tflopsFP8": 250,
       "topsINT8": null,
       "benchmarks": [
@@ -4575,8 +4575,8 @@
       "memoryGB": 256,
       "usableMemoryGB": 240,
       "bandwidthGBs": 273,
-      "priceUSD": 9449,
-      "priceNote": "August 2026 - NVIDIA 2-Pack DGX Spark bundle (2x GB10 + connecting cable, 256 GB unified) $9,449 at Newegg (item 940-54242-0000-100, out of stock as of 2026-08-06); single Founders Edition units are $4,699 each on the NVIDIA marketplace (MSRP raised from $3,999 on 2026-02-23 citing memory supply constraints). In-stock PNY 2-pack runs higher at $10,129.99 (Newegg N82E16856987002). (newegg.com, marketplace.nvidia.com, 2026-08).",
+      "priceUSD": 13599,
+      "priceNote": "2026-09-18 Newegg listing for exact NVIDIA DGX Spark two-pack 940-54242-0000-100 includes two GB10 units and one connecting cable. Newegg shows $13,599 and out of stock, so this is a dated whole-bundle price reference rather than a buyable offer. The $9,449 Newegg reference verified on 2026-09-04 is historical and no longer the listed price. NVIDIA's separate $4,699 marketplace page is for a single unit and is also out of stock. Sources: https://www.newegg.com/p/2SW-00BW-00001 and https://marketplace.nvidia.com/en-us/enterprise/personal-ai-supercomputers/dgx-spark/ (checked 2026-09-18).",
       "tps": {
         "8b": 140,
         "14b": 90,
@@ -4596,15 +4596,15 @@
       "idleW": 55,
       "activeW": 460,
       "pros": [
-        "Cheapest CUDA box that runs Llama-405B Q2",
+        "Two-node CUDA memory pool for large models",
         "Full TRT-LLM / NIM / vLLM / NCCL stack",
         "Officially-supported by NVIDIA's dual-Spark playbook"
       ],
       "cons": [
         "273 GB/s bandwidth limits dense 70 B speed",
-        "$9 K+ for modest single-stream throughput"
+        "$13 K+ listed bundle is out of stock, with modest single-stream throughput"
       ],
-      "tagline": "Cheapest officially-supported CUDA cluster.",
+      "tagline": "Officially supported two-node CUDA cluster.",
       "cudaFriendly": true,
       "reviews": [
         {
@@ -4641,7 +4641,7 @@
       "extensibilityNote": "Two-Spark cluster with ConnectX-7 interconnect — keep adding Sparks up to four. Each unit is sealed; the fabric is the lever.",
       "tflopsFP16": 500,
       "vllmSupport": "production",
-      "priceVerifiedOn": "2026-09-04",
+      "priceVerifiedOn": "2026-09-18",
       "tflopsFP8": 500,
       "topsINT8": null,
       "benchmarks": [
