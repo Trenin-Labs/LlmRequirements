@@ -461,10 +461,6 @@
       "priceUSD": 12296,
       "rigOverheadUSD": 300,
       "regionPrices": {
-        "EU": 13740,
-        "DE": 15099.96,
-        "FR": 15556,
-        "IT": 14156,
         "UK": 14100
       }
     },
@@ -474,10 +470,6 @@
       "priceUSD": 24792,
       "rigOverheadUSD": 800,
       "regionPrices": {
-        "EU": 27680,
-        "DE": 30399.92,
-        "FR": 31112,
-        "IT": 28312,
         "UK": 28390
       }
     },
