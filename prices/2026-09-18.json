@@ -1,8 +1,8 @@
 {
   "$schema": "https://json-schema.org/draft-07/schema#",
   "_description": "Weekly regional pricing snapshot. priceUSD is the whole-system US MSRP (used as fallback). regionPrices are vendor-direct overrides in local currency.",
-  "_lastUpdated": "2026-09-17",
-  "_snapshot": "2026-09-17",
+  "_lastUpdated": "2026-09-18",
+  "_snapshot": "2026-09-18",
   "_currencyNotes": "EU prices are in EUR and include VAT (typically ~19%). UK in GBP includes 20% VAT. JP in JPY includes 10% consumption tax. US prices are pre-tax.",
   "builds": {
     "your-laptop-8gb": {
@@ -289,10 +289,6 @@
       "priceUSD": 1900,
       "rigOverheadUSD": 700,
       "regionPrices": {
-        "EU": 1500,
-        "DE": 1590,
-        "FR": 1500,
-        "IT": 900,
         "NL": 1560
       }
     },
@@ -308,10 +304,6 @@
       "priceUSD": 3400,
       "rigOverheadUSD": 1000,
       "regionPrices": {
-        "EU": 3000,
-        "DE": 3180,
-        "FR": 3000,
-        "IT": 1800,
         "NL": 2772
       }
     },
@@ -321,10 +313,6 @@
       "priceUSD": 7500,
       "rigOverheadUSD": 2700,
       "regionPrices": {
-        "EU": 6000,
-        "DE": 6360,
-        "FR": 6000,
-        "IT": 3600,
         "NL": 6154
       }
     },
@@ -332,13 +320,7 @@
       "name": "Single RTX 4090 build",
       "vendor": "NVIDIA",
       "priceUSD": 3200,
-      "rigOverheadUSD": 700,
-      "regionPrices": {
-        "EU": 2310,
-        "DE": 2700,
-        "JP": 831000,
-        "AU": 4909
-      }
+      "rigOverheadUSD": 700
     },
     "rtx-4090-128gb-ddr5": {
       "name": "RTX 4090 + 128GB DDR5 (MoE offload)",
@@ -418,49 +400,19 @@
       "name": "Single Intel Arc Pro B70 build",
       "vendor": "Intel",
       "priceUSD": 2231,
-      "rigOverheadUSD": 700,
-      "regionPrices": {
-        "EU": 2119,
-        "DE": 1509,
-        "FR": 2241,
-        "IT": 1427.52,
-        "UK": 2055,
-        "ES": 2030.3,
-        "AU": 1859,
-        "US": 1900
-      }
+      "rigOverheadUSD": 700
     },
     "intel-arc-pro-b70-x2": {
       "name": "Dual Intel Arc Pro B70 build",
       "vendor": "Intel",
       "priceUSD": 4062,
-      "rigOverheadUSD": 1000,
-      "regionPrices": {
-        "EU": 3890,
-        "DE": 3018,
-        "FR": 4133,
-        "IT": 2855.04,
-        "UK": 3736,
-        "ES": 4061,
-        "AU": 3718,
-        "US": 3400
-      }
+      "rigOverheadUSD": 1000
     },
     "intel-arc-pro-b70-x4": {
       "name": "Quad Intel Arc Pro B70 build",
       "vendor": "Intel",
       "priceUSD": 7624,
-      "rigOverheadUSD": 1500,
-      "regionPrices": {
-        "EU": 7344,
-        "DE": 6036,
-        "FR": 7830,
-        "IT": 5710.08,
-        "UK": 7004,
-        "ES": 8121,
-        "AU": 7436,
-        "US": 6300
-      }
+      "rigOverheadUSD": 1500
     },
     "intel-arc-pro-b70-x8": {
       "name": "Octuple Intel Arc Pro B70 cluster",
@@ -468,14 +420,7 @@
       "priceUSD": 13788,
       "rigOverheadUSD": 2900,
       "regionPrices": {
-        "EU": 14601,
-        "DE": 12072,
-        "FR": 17728,
-        "IT": 11420.16,
-        "UK": 9300,
-        "ES": 16242,
-        "AU": 17592,
-        "US": 12500
+        "UK": 9300
       }
     },
     "intel-arc-b580-12": {
@@ -722,29 +667,14 @@
       "priceUSD": 18000,
       "rigOverheadUSD": 2000,
       "regionPrices": {
-        "EU": 14544,
-        "DE": 12999.9,
-        "FR": 19454,
-        "IT": 13249,
-        "UK": 12959.99,
-        "JP": 2546000,
-        "AU": 24499,
-        "CA": 21419
+        "IT": 13249
       }
     },
     "rtx-pro-5000-blackwell-48": {
       "name": "Single RTX Pro 5000 Blackwell 48 GB build",
       "vendor": "NVIDIA",
       "priceUSD": 8100,
-      "rigOverheadUSD": 1800,
-      "regionPrices": {
-        "EU": 7270,
-        "DE": 5699.9,
-        "UK": 5999.99,
-        "JP": 1405000,
-        "AU": 11999,
-        "CA": 11507
-      }
+      "rigOverheadUSD": 1800
     },
     "rtx-pro-6000-blackwell-x2": {
       "name": "Dual RTX Pro 6000 Blackwell build",
@@ -752,14 +682,8 @@
       "priceUSD": 34500,
       "rigOverheadUSD": 2500,
       "regionPrices": {
-        "EU": 27780,
         "DE": 22000,
-        "FR": 37600,
-        "IT": 26498,
-        "UK": 25919.98,
-        "JP": 4136000,
-        "AU": 48998,
-        "CA": 40798
+        "JP": 4136000
       }
     },
     "rtx-pro-6000-blackwell-x4": {
@@ -768,14 +692,8 @@
       "priceUSD": 68000,
       "rigOverheadUSD": 4000,
       "regionPrices": {
-        "EU": 54688,
         "DE": 35800,
-        "FR": 74328,
-        "IT": 52996,
-        "UK": 51839.96,
-        "JP": 6208000,
-        "AU": 97996,
-        "CA": 80236
+        "JP": 6208000
       }
     },
     "rtx-pro-6000-blackwell-x8": {
@@ -784,14 +702,8 @@
       "priceUSD": 135556,
       "rigOverheadUSD": 8000,
       "regionPrices": {
-        "EU": 109375,
         "DE": 71600,
-        "FR": 148656,
-        "IT": 115821,
-        "UK": 103679.92,
-        "JP": 12416000,
-        "AU": 183992,
-        "CA": 160472
+        "JP": 12416000
       }
     },
     "rtx-pro-6000-blackwell-x12": {
@@ -800,14 +712,8 @@
       "priceUSD": 207334,
       "rigOverheadUSD": 16000,
       "regionPrices": {
-        "EU": 167551,
         "DE": 107400,
-        "FR": 226472,
-        "IT": 173731,
-        "UK": 155519.88,
-        "JP": 18624000,
-        "AU": 275988,
-        "CA": 246148
+        "JP": 18624000
       }
     },
     "amd-w7900-48": {
@@ -816,13 +722,8 @@
       "priceUSD": 5099,
       "rigOverheadUSD": 1200,
       "regionPrices": {
-        "EU": 4828,
-        "DE": 3371,
-        "FR": 4396,
         "UK": 4884,
-        "JP": 848000,
-        "AU": 6999,
-        "CA": 7632
+        "AU": 6999
       }
     },
     "amd-w7900-x2": {
@@ -831,13 +732,8 @@
       "priceUSD": 9398,
       "rigOverheadUSD": 1600,
       "regionPrices": {
-        "EU": 8958,
-        "DE": 6742,
-        "FR": 8095,
         "UK": 9019,
-        "JP": 1568000,
-        "AU": 13800,
-        "CA": 14176
+        "AU": 13800
       }
     },
     "amd-w7800-32": {
@@ -846,55 +742,20 @@
       "priceUSD": 2399,
       "rigOverheadUSD": 700,
       "regionPrices": {
-        "EU": 2779,
-        "DE": 2179,
-        "FR": 3210,
-        "IT": 2437.08,
-        "ES": 2513.05,
-        "NL": 2449,
-        "UK": 2755,
-        "JP": 521000,
-        "AU": 4384,
-        "CA": 4679
+        "UK": 2755
       }
     },
     "amd-r9700-32": {
       "name": "Single AMD Radeon AI Pro R9700 32 GB build",
       "vendor": "AMD",
       "priceUSD": 2400,
-      "rigOverheadUSD": 700,
-      "regionPrices": {
-        "EU": 2159,
-        "DE": 1568,
-        "FR": 2260,
-        "IT": 1549.03,
-        "ES": 1935.75,
-        "NL": 1799,
-        "PL": 9614,
-        "UK": 2005,
-        "JP": 371000,
-        "AU": 2099,
-        "CA": 3012
-      }
+      "rigOverheadUSD": 700
     },
     "amd-r9700-x2": {
       "name": "Dual AMD Radeon AI Pro R9700 build (64 GB)",
       "vendor": "AMD",
       "priceUSD": 4400,
-      "rigOverheadUSD": 1000,
-      "regionPrices": {
-        "EU": 3970,
-        "DE": 3136,
-        "FR": 4172,
-        "IT": 3098.06,
-        "ES": 3872,
-        "NL": 3803,
-        "PL": 19228,
-        "UK": 3636,
-        "JP": 679000,
-        "AU": 4198,
-        "CA": 5480
-      }
+      "rigOverheadUSD": 1000
     },
     "rx-9070-xt-16": {
       "name": "Single AMD Radeon RX 9070 XT 16 GB build",
