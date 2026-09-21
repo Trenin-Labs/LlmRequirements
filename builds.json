@@ -6517,7 +6517,8 @@
       "memoryGB": 48,
       "usableMemoryGB": 46,
       "bandwidthGBs": 768,
-      "priceUSD": 4739,
+      "priceUSD": null,
+      "priceNote": "Complete USD workstation price unverified. IPC Store's $4,739 quote on 2026-08-14 was for one PNY RTX A6000 graphics card, not a host system; the separate $900 rig allowance has no verified compatible BOM or vendor system offer. Do not treat the card quote as a whole-build total. Request a complete-system quote before buying.",
       "tps": {
         "8b": 75,
         "14b": 42,
@@ -6555,7 +6556,6 @@
           "title": "Run LLMs on Nvidia Quadro RTX A6000 GPU Server with Ollama"
         }
       ],
-      "rigOverheadUSD": 900,
       "pp": {
         "8b": 4900,
         "14b": 2800,
@@ -6575,7 +6575,6 @@
       "extensibilityNote": "Dual-slot workstation card — pair with a second easily for 96 GB.",
       "tflopsFP16": 155,
       "vllmSupport": "production",
-      "priceVerifiedOn": "2026-08-14",
       "tflopsFP8": null,
       "topsINT8": 310,
       "benchmarks": [
@@ -6605,7 +6604,8 @@
       "memoryGB": 48,
       "usableMemoryGB": 46,
       "bandwidthGBs": 960,
-      "priceUSD": 8662.99,
+      "priceUSD": null,
+      "priceNote": "Complete USD workstation price unverified. CDW's $8,662.99 quote on 2026-08-14 was for one PNY RTX 6000 Ada graphics card (VCNRTX6000ADA-PB), not a host system. The separate $1,000 rig allowance has no verified compatible BOM or vendor system offer. Request a complete-system quote before buying.",
       "tps": {
         "8b": 110,
         "14b": 65,
@@ -6633,7 +6633,6 @@
         "Pricey vs 2× 3090",
         "No FP4 (that's Blackwell)"
       ],
-      "rigOverheadUSD": 1000,
       "pp": {
         "8b": 9200,
         "14b": 5300,
@@ -6653,7 +6652,6 @@
       "extensibilityNote": "Standard dual-slot — easy to dual-card.",
       "tflopsFP16": 364,
       "vllmSupport": "production",
-      "priceVerifiedOn": "2026-08-14",
       "tflopsFP8": 729,
       "topsINT8": null,
       "benchmarks": [

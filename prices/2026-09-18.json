@@ -632,18 +632,6 @@
       "priceUSD": 475000,
       "rigOverheadUSD": 0
     },
-    "rtx-a6000-48": {
-      "name": "Single RTX A6000 48 GB (Ampere) build",
-      "vendor": "NVIDIA",
-      "priceUSD": 4739,
-      "rigOverheadUSD": 900
-    },
-    "rtx-6000-ada-48": {
-      "name": "Single RTX 6000 Ada 48 GB build",
-      "vendor": "NVIDIA",
-      "priceUSD": 8662.99,
-      "rigOverheadUSD": 1000
-    },
     "rtx-pro-6000-blackwell-96": {
       "name": "Single RTX Pro 6000 Blackwell 96 GB build",
       "vendor": "NVIDIA",
