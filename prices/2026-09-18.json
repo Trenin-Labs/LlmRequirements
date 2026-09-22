@@ -496,41 +496,20 @@
       "priceUSD": 13599,
       "rigOverheadUSD": 0,
       "regionPrices": {
-        "EU": 9700,
-        "DE": 9700,
-        "FR": 9700,
-        "IT": 9700,
-        "UK": 9849,
-        "AU": 15998
+        "UK": 9849
       }
     },
     "dgx-spark-x4": {
       "name": "4× DGX Spark cluster (512 GB unified, CUDA)",
       "vendor": "NVIDIA",
       "priceUSD": 20367,
-      "rigOverheadUSD": 0,
-      "regionPrices": {
-        "EU": 19400,
-        "DE": 19400,
-        "FR": 19400,
-        "IT": 19400,
-        "UK": 19839.92,
-        "AU": 31996
-      }
+      "rigOverheadUSD": 0
     },
     "dgx-spark-x8": {
       "name": "8× DGX Spark cluster (1024 GB unified, CUDA)",
       "vendor": "NVIDIA",
       "priceUSD": 43500,
-      "rigOverheadUSD": 0,
-      "regionPrices": {
-        "EU": 44400,
-        "DE": 44400,
-        "FR": 44400,
-        "IT": 44400,
-        "UK": 39679.84,
-        "AU": 63992
-      }
+      "rigOverheadUSD": 0
     },
     "msi-edgexpert-gb10": {
       "name": "MSI EdgeXpert MS-C931 (128 GB)",
