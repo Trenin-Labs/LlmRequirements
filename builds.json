@@ -5105,7 +5105,7 @@
       "bandwidthGBs": 273,
       "priceUSD": 5899,
       "rigOverheadUSD": 0,
-      "priceNote": "Aug 2026: MSI ships 4 TB EdgeXpert configs: 11SUS (4 TB Gen4) at $5,899 and 13SUS (4 TB Gen5) at $5,999, both ADD TO CART on the MSI-US official store (us-store.msi.com/EdgeXpert). Cheapest buyable US config is the 11SUS (Gen4) at $5,899. The MSI-US store also lists the 12SUS (4 TB Gen5) at $6,049 (Notify Me) and the dual 02SKUS (2-pack) at $12,079 (Add to Cart). Newegg lists the 13SUS (Gen5) from $5,949.99 (Add to Cart), the 12SUS (Gen5) at $6,136.99 and the 02SKUS 2-pack at $11,961.99, both Add to Cart. The 11SUS (N82E16883151779) is a Newegg marketplace listing (seller NothingButSavings), currently out of stock, with no buyable $4,599 offer as of 2026-08-27. NVIDIA marketplace lists the 13SUS at $5,999.99 (Add to Cart). Amazon (13SUS, B0G2P8WTL4) is in stock at $6,139.99 sold by Amazon (only 1 left). The 11SUS Gen4 (B0FWFLZQSC) is currently unavailable on Amazon. Central Computer 11SUS is special-order/unavailable online. CDW 13SUS $6,146.99 (4-6 week wait). GB10 family convergence: MSI ~$5,899 / Dell $5,394 (1 TB) / Lenovo $5,849 / ASUS $3,999 / DGX Spark $4,699. EU markup steep: LDLC 4 TB at EUR 4,699 incl. VAT. (msi.com, marketplace.nvidia.com, amazon.com/dp/B0G2P8WTL4, newegg.com, 2026-08-27)",
+      "priceNote": "Aug 2026: MSI ships 4 TB EdgeXpert configs: 11SUS (4 TB Gen4) at $5,899 and 13SUS (4 TB Gen5) at $5,999, both ADD TO CART on the MSI-US official store (us-store.msi.com/EdgeXpert). Cheapest buyable US config is the 11SUS (Gen4) at $5,899. The MSI-US store also lists the 12SUS (4 TB Gen5) at $6,049 (Notify Me) and the dual 02SKUS (2-pack) at $12,079 (Add to Cart). Newegg lists the 13SUS (Gen5) from $5,949.99 (Add to Cart), the 12SUS (Gen5) at $6,136.99 and the 02SKUS 2-pack at $11,961.99, both Add to Cart. The 11SUS (N82E16883151779) is a Newegg marketplace listing (seller NothingButSavings), currently out of stock, with no buyable $4,599 offer as of 2026-08-27. NVIDIA marketplace lists the 13SUS at $5,999.99 (Add to Cart). Amazon (13SUS, B0G2P8WTL4) is in stock at $6,139.99 sold by Amazon (only 1 left). The 11SUS Gen4 (B0FWFLZQSC) is currently unavailable on Amazon. Central Computer 11SUS is special-order/unavailable online. CDW 13SUS $6,146.99 (4-6 week wait). Dated GB10 US references are DGX Spark $4,699, Dell $5,394, Lenovo $5,849, MSI $5,899 and ASUS $5,999; the DGX and ASUS references were out of stock on their later checks. EU markup steep: LDLC 4 TB at EUR 4,699 incl. VAT. (msi.com, marketplace.nvidia.com, amazon.com/dp/B0G2P8WTL4, newegg.com, 2026-08-27)",
       "tps": {
         "8b": 90,
         "14b": 55,
@@ -5306,9 +5306,9 @@
       "memoryGB": 128,
       "usableMemoryGB": 119,
       "bandwidthGBs": 273,
-      "priceUSD": 3999,
+      "priceUSD": 5999,
       "rigOverheadUSD": 0,
-      "priceNote": "On 2026-09-11, Micro Center's page for the exact US 1 TB SKU GX10-GG0010BN (ASUS part 90MS0371-M000A0) listed $3,999.99 and one new unit at its Houston store. That price and unit count are a dated historical snapshot. On 2026-09-14, the same direct retailer page listed every store, including Houston, as out of stock and offered a back-in-stock notification. ASUS's reseller table still labeled Micro Center in stock, but the direct retailer page controls current inventory. The configuration has 128 GB LPDDR5x memory, a 1 TB PCIe Gen4 NVMe SSD, Wi-Fi 7 and a stackable chassis. (microcenter.com product 703497, asus.com, 2026-09-11 and 2026-09-14).",
+      "priceNote": "On 2026-09-24, Newegg's exact US 1 TB / 128 GB listing for GX10-GG0015BN (N82E16859110044) showed $5,999.00, selected 1 TB storage and 128 GB memory, sold and shipped by Newegg, but Out of Stock with Auto Notify rather than Add to Cart. This is a dated unavailable reference, not a current buy-now offer or proof of the cheapest available GB10. Amazon US (B0G1MQYHRD) showed $5,999.99 on the same date. The earlier Micro Center GX10-GG0010BN (ASUS part 90MS0371-M000A0) listed $3,999.99 and one Houston unit on 2026-09-11, then every store out of stock on 2026-09-14; it is retained only as history for a different exact US SKU. The configuration has 128 GB LPDDR5x memory, a 1 TB PCIe Gen4 NVMe SSD, Wi-Fi 7 and a stackable chassis. (newegg.com N82E16859110044, amazon.com B0G1MQYHRD, microcenter.com product 703497, 2026-09-24).",
       "tps": {
         "8b": 85,
         "14b": 52,
@@ -5331,15 +5331,15 @@
       "idleW": 35,
       "activeW": 240,
       "pros": [
-        "Exact 1 TB GX10-GG0010BN was listed at $3,999.99 by Micro Center on 2026-09-11",
+        "Same GB10 processor and 128 GB unified memory as the DGX Spark family",
         "Stackable chassis, Wi-Fi 7",
-        "Exact-SKU Amazon link plus a direct ASUS configuration page"
+        "Exact Newegg and Amazon 1 TB references plus a direct ASUS configuration page"
       ],
       "cons": [
         "Documented thermal throttling under sustained load (STH)",
         "273 GB/s bandwidth limits dense 70 B speed",
         "Same software stack as DGX Spark, which is the gating factor",
-        "Micro Center lists every store out of stock as of 2026-09-14"
+        "Exact Newegg 1 TB / 128 GB listing was out of stock on 2026-09-24"
       ],
       "cudaFriendly": true,
       "reviews": [
@@ -5377,7 +5377,7 @@
       "extensibilityNote": "Same GB10 cluster story. ASUS / DGX / MSI / Dell / Lenovo all interop on the fabric.",
       "tflopsFP16": 250,
       "vllmSupport": "production",
-      "priceVerifiedOn": "2026-09-11",
+      "priceVerifiedOn": "2026-09-24",
       "tflopsFP8": 250,
       "topsINT8": null,
       "benchmarks": [
@@ -5511,7 +5511,7 @@
       "bandwidthGBs": 273,
       "priceUSD": 5394,
       "rigOverheadUSD": 0,
-      "priceNote": "Aug 2026: live dell.com FCM1253 configurator (2026-08-23): the 1 TB tier is the cheapest buyable US config at $5,394.39 total (selected 4 TB $5,654.39, with the 1 TB option at -$260.00). At $5,394 Dell Pro Max now sits below Lenovo PGX ($5,849) and MSI EdgeXpert ($5,899) in the GB10 family, behind the NVIDIA DGX Spark ($4,699), which is second only to the ASUS Ascent ($3,999). CA configurator only offers the 4 TB tier at C$8,703 (no 1 TB SKU listed standalone). regionPrices.CA tracks the 4 TB figure as the only buyable Canadian config rather than fabricating a 1 TB CAD price. EU pricing is much steeper: dell.de quotes EUR 7,086 incl. VAT for the 4 TB SKU and the 1 TB tier isn't listed in EU consumer channels. Figure ~EUR 6,050 for the smallest available config. The 'enterprise default' GB10 box: ProSupport warranty, polished cooling, NVIDIA DGX OS 7. (dell.com/en-us FCM1253 configurator, live 2026-08-23)",
+      "priceNote": "Aug 2026: live dell.com FCM1253 configurator (2026-08-23): the 1 TB tier is the cheapest buyable US config at $5,394.39 total (selected 4 TB $5,654.39, with the 1 TB option at -$260.00). At $5,394 Dell Pro Max sits below Lenovo PGX ($5,849), MSI EdgeXpert ($5,899) and the later ASUS GX10 dated reference ($5,999), while the DGX Spark dated reference is $4,699. This is a price-reference order, not a claim about current cross-retailer availability. CA configurator only offers the 4 TB tier at C$8,703 (no 1 TB SKU listed standalone). regionPrices.CA tracks the 4 TB figure as the only buyable Canadian config rather than fabricating a 1 TB CAD price. EU pricing is much steeper: dell.de quotes EUR 7,086 incl. VAT for the 4 TB SKU and the 1 TB tier isn't listed in EU consumer channels. Figure ~EUR 6,050 for the smallest available config. The 'enterprise default' GB10 box: ProSupport warranty, polished cooling, NVIDIA DGX OS 7. (dell.com/en-us FCM1253 configurator, live 2026-08-23)",
       "tps": {
         "8b": 90,
         "14b": 55,

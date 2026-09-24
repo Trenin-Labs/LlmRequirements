@@ -9,7 +9,7 @@
     "ttft100k": 383,
     "image": 141,
     "video": 129,
-    "sources": 189
+    "sources": 190
   },
   "tps": [
     {
@@ -7915,6 +7915,10 @@
       "url": "https://www.microcenter.com/product/703497/asus-ascent-gx10-ai-supercomputer"
     },
     {
+      "label": "ASUS Ascent GX10 GX10-GG0015BN, 128 GB / 1 TB: $5,999.00 sold and shipped by Newegg, out of stock with Auto Notify on 2026-09-24",
+      "url": "https://www.newegg.com/asus-ascent-gx10-mini-pc/p/N82E16859110044"
+    },
+    {
       "label": "MSI EdgeXpert MS-C931 launch price $2,999, limited availability (Notebookcheck)",
       "url": "https://www.notebookcheck.net/MSI-EdgeXpert-AI-mini-PC-based-on-Nvidia-s-DGX-Spark-platform-starts-at-2-999-with-limited-availability.1146044.0.html"
     },
@@ -8304,7 +8308,7 @@
       "url": "https://the-decoder.com/chinas-minimax-h3-is-the-first-open-model-to-top-an-ai-video-ranking/"
     },
     {
-      "label": "ASUS Ascent GX10 1TB - Amazon US buy-box price",
+      "label": "ASUS Ascent GX10 1 TB: Amazon US $5,999.99 observed 2026-09-24",
       "url": "https://www.amazon.com/dp/B0G1MQYHRD"
     },
     {
