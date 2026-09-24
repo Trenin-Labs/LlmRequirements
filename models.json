@@ -1185,7 +1185,7 @@
         "coding": "OpenRouter (Jun 27 2026) slots MiniMax M3 as the multimodal long-context agent lane — the only open-weight in its group with native image/video input; not the best pure coder (GLM-5.2 wins text-only), but the one to test first for UI automation, screenshot-to-code, and video-grounded agents. Community (agyn.io) calls it a 'fresh contender' with novel blockwise sparse attention.",
         "agentDriver": "Roughly level with Claude Sonnet 4.6 on the GDPval-AA real-world agentic benchmark, per OpenRouter, with 1M-token context via MiniMax Sparse Attention making whole-repo, screenshot-heavy agents practical. License caveat: MiniMax Community License (commercial use needs attribution/prior written auth for larger products), not MIT."
       },
-      "benchmarkNotes": "SWE-Bench Pro 59.0 (reported via marktechpost). OSWorld-Verified 70.06 (reported). Among the top open-weights reasoning models. 1M context via MSA sparse attention. Native multimodal: image, video, computer-use input. First-party tok/s not yet available; db.json synthetic floor tbd. Rating provisional pending leaderboard runs.",
+      "benchmarkNotes": "SWE-Bench Pro 59.0 (reported via marktechpost). OSWorld-Verified 70.06 (reported). Among the top open-weights reasoning models. 1M context via MSA sparse attention. Native multimodal: image, video, computer-use input. First-party tok/s is not yet available, so any displayed throughput remains an estimate. Rating provisional pending leaderboard runs.",
       "sources": [
         "https://www.marktechpost.com/2026/06/01/minimax-releases-minimax-m3-open-source-ai-model-with-1m-context-window-and-native-computer-use/",
         "https://huggingface.co/MiniMaxAI/MiniMax-M3",
@@ -1685,7 +1685,7 @@
         "coding": "#1 on OpenRouter coding weekly token volume May 2026 (~4.92 T tokens). MACGPU rankings list it ahead of every Anthropic and OpenAI model by raw usage. Open-weights frontier on agentic coding at a fraction of Opus pricing.",
         "agentDriver": "Reported parity with Claude Opus 4.6 on agentic tasks at 80% lower cost per OpenRouter pricing. Real production usage rivals closed-frontier models — MiMo-V2-Pro is the single most-used model on OpenRouter by weekly token volume (~4.92 T tok/wk, May 2026)."
       },
-      "benchmarkNotes": "Primary-source numbers from Xiaomi model card benchmark images (HF/XiaomiMiMo/MiMo-V2.5-Pro, benchmark.jpg), cross-validated against db.json Kimi K2.6 values which match the same chart protocol. HLE=34.0 uses w.o.-tools protocol (matching db.json column convention; with-tools HLE=48.0 also listed on card). Leave aime/livecodebench/gpqa/mmlu_pro null — card only reports few-shot/non-reasoning versions, not comparable to db.json's reasoning-mode columns.",
+      "benchmarkNotes": "Primary-source numbers come from Xiaomi's model-card benchmark images and were cross-checked against Kimi K2.6 values published under the same chart protocol. HLE 34.0 uses the no-tools protocol. The model card also lists HLE 48.0 with tools. AIME, LiveCodeBench, GPQA, and MMLU-Pro remain unreported because the card only provides few-shot or non-reasoning variants that are not comparable with the reasoning-mode columns used here.",
       "sources": [
         "https://huggingface.co/XiaomiMiMo/MiMo-V2.5-Pro",
         "https://openrouter.ai/xiaomi/mimo-v2.5-pro",
@@ -2136,7 +2136,7 @@
         "mmlu_pro": null,
         "aime": null
       },
-      "benchmarkNotes": "Primary-source numbers from Xiaomi model card coding-bench chart (HF/XiaomiMiMo/MiMo-V2.5, mimo-v2.5-coding-bench.png), cross-validated against db.json Kimi K2.6 values which match the same chart protocol. Leave hle/swebench_ver/aider/livecodebench/gpqa/mmlu_pro/aime null — not reported for the 310B in available charts.",
+      "benchmarkNotes": "Primary-source numbers come from Xiaomi's model-card coding chart and were cross-checked against Kimi K2.6 values published under the same chart protocol. HLE, SWE-Bench Verified, Aider, LiveCodeBench, GPQA, MMLU-Pro, and AIME remain unreported for the 310B model in the available charts.",
       "vibes": {
         "coding": "Mid-tier sibling to MiMo V2.5-Pro. Fits 256 GB clusters at Q4; positioned as the open-weights alternative to GPT-OSS-120B for coding workflows.",
         "agentDriver": "Same MiMo architecture as V2.5-Pro; slightly weaker on long-horizon agent benchmarks but runs in 2× Spark / Halo cluster memory."
@@ -2289,7 +2289,7 @@
         "coding": "Gemma 4 12B scores LCB 72.0, AIME 77.5, Codeforces 1659 — strongest sub-16B open-weights coder. Encoder-free design means image+audio inputs add zero encoder latency. Runs on a 16GB laptop (8-9GB Q4) — the practical 'AI laptop' model of the month.",
         "agentDriver": "TAU2 69.0 is strong for 12B — usable in Cline / Roo Code for short agent loops, but sub-60B caps it at single-session autonomous work. Not a multi-hour orchestrator."
       },
-      "benchmarkNotes": "All values from the official Google Gemma 4 model card (ai.google.dev/gemma/docs/core/model_card_4, fetched 2026-06-27): MMLU-Pro 77.2, AIME-2026 no-tools 77.5, LCB v6 72.0, GPQA Diamond 78.8, HLE no-tools 5.2. Additional published: Codeforces ELO 1659, Tau2 69.0 (3-run avg), BigBench Extra Hard 53.0, MMMLU 83.4, MMMU Pro 69.1, MATH-Vision 79.7, MedXPertQA MM 48.7, OmniDocBench 0.164. Audio: CoVoST 38.5, FLEURS 0.069. MRCR v2 128K 8-needle 43.4. No SWE-Bench or TB2 published. No first-party tok/s; db.json synthetic floor tbd. Runs on a 16GB laptop (~8-9GB Q4).",
+      "benchmarkNotes": "All values from the official Google Gemma 4 model card (ai.google.dev/gemma/docs/core/model_card_4, fetched 2026-06-27): MMLU-Pro 77.2, AIME-2026 no-tools 77.5, LCB v6 72.0, GPQA Diamond 78.8, HLE no-tools 5.2. Additional published: Codeforces ELO 1659, Tau2 69.0 (3-run avg), BigBench Extra Hard 53.0, MMMLU 83.4, MMMU Pro 69.1, MATH-Vision 79.7, MedXPertQA MM 48.7, OmniDocBench 0.164. Audio: CoVoST 38.5, FLEURS 0.069. MRCR v2 128K 8-needle 43.4. No SWE-Bench or TB2 published. No first-party tok/s is published, so any displayed throughput remains an estimate. Runs on a 16GB laptop (~8-9GB Q4).",
       "sources": [
         "https://ai.google.dev/gemma/docs/core/model_card_4",
         "https://huggingface.co/google/gemma-4-12B-it",
