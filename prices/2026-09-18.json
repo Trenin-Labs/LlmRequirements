@@ -1,0 +1,784 @@
+{
+  "$schema": "https://json-schema.org/draft-07/schema#",
+  "_description": "Weekly regional pricing snapshot. priceUSD is the whole-system US MSRP (used as fallback). regionPrices are vendor-direct overrides in local currency.",
+  "_lastUpdated": "2026-09-18",
+  "_snapshot": "2026-09-18",
+  "_currencyNotes": "EU prices are in EUR and include VAT (typically ~19%). UK in GBP includes 20% VAT. JP in JPY includes 10% consumption tax. US prices are pre-tax.",
+  "builds": {
+    "your-laptop-8gb": {
+      "name": "Your own laptop (8 GB RAM)",
+      "vendor": "—",
+      "priceUSD": 0,
+      "rigOverheadUSD": 0
+    },
+    "your-laptop-12gb": {
+      "name": "Your own laptop (12 GB RAM)",
+      "vendor": "—",
+      "priceUSD": 0,
+      "rigOverheadUSD": 0
+    },
+    "your-pc-16gb": {
+      "name": "Your own PC (16 GB RAM)",
+      "vendor": "—",
+      "priceUSD": 0,
+      "rigOverheadUSD": 0
+    },
+    "mac-mini-m4-16": {
+      "name": "Mac Mini M4 (16 GB)",
+      "vendor": "Apple",
+      "priceUSD": 799,
+      "rigOverheadUSD": 0,
+      "regionPrices": {
+        "EU": 949,
+        "DE": 949,
+        "FR": 949,
+        "IT": 1199,
+        "ES": 969,
+        "NL": 1189,
+        "UK": 799,
+        "AU": 1299,
+        "CA": 1399,
+        "SG": 1229,
+        "HK": 7999,
+        "TW": 33900,
+        "TH": 35900,
+        "MY": 3299,
+        "NZ": 1999,
+        "JP": 170800
+      }
+    },
+    "mba-m4-16": {
+      "name": "MacBook Air M4 (16 GB)",
+      "vendor": "Apple",
+      "priceUSD": 1099,
+      "rigOverheadUSD": 0,
+      "regionPrices": {
+        "EU": 1099,
+        "DE": 1308,
+        "FR": 1099,
+        "IT": 1199,
+        "ES": 1199,
+        "NL": 1199,
+        "UK": 999,
+        "JP": 164800,
+        "AU": 1799,
+        "CA": 1499,
+        "SG": 1399,
+        "HK": 8999,
+        "NZ": 2199
+      }
+    },
+    "mac-mini-m4-24": {
+      "name": "Mac Mini M4 (24 GB)",
+      "vendor": "Apple",
+      "priceUSD": 999,
+      "rigOverheadUSD": 0,
+      "regionPrices": {
+        "EU": 1169,
+        "DE": 1169,
+        "FR": 1389,
+        "IT": 1419,
+        "ES": 1189,
+        "NL": 1409,
+        "UK": 999,
+        "SG": 1489,
+        "HK": 9499,
+        "NZ": 2288,
+        "JP": 206800,
+        "AU": 1899,
+        "CA": 1699
+      }
+    },
+    "mbp-m4-pro-48": {
+      "name": "MacBook Pro M4 Pro 48 GB",
+      "vendor": "Apple",
+      "priceUSD": 2899,
+      "rigOverheadUSD": 0,
+      "regionPrices": {
+        "EU": 3299,
+        "DE": 3299,
+        "FR": 3299,
+        "IT": 3299,
+        "UK": 2799,
+        "SG": 3639,
+        "HK": 18999,
+        "TW": 89900,
+        "NZ": 5439
+      }
+    },
+    "mbp-m4-max-64": {
+      "name": "MacBook Pro M4 Max 64 GB",
+      "vendor": "Apple",
+      "priceUSD": 3999,
+      "rigOverheadUSD": 0,
+      "regionPrices": {
+        "EU": 4499,
+        "DE": 4499,
+        "FR": 4499,
+        "IT": 4499,
+        "UK": 3899,
+        "SG": 6109,
+        "HK": 33249,
+        "TW": 144400,
+        "NZ": 8499
+      }
+    },
+    "mba-m5-16": {
+      "name": "MacBook Air M5 (16 GB)",
+      "vendor": "Apple",
+      "priceUSD": 1299,
+      "rigOverheadUSD": 0,
+      "regionPrices": {
+        "EU": 1399,
+        "DE": 1230,
+        "FR": 1399,
+        "IT": 1449,
+        "ES": 1429,
+        "NL": 1429,
+        "UK": 1299,
+        "JP": 224800,
+        "AU": 2099,
+        "CA": 1799
+      }
+    },
+    "mbp-m5-pro-48": {
+      "name": "MacBook Pro M5 Pro 48 GB",
+      "vendor": "Apple",
+      "priceUSD": 3299,
+      "rigOverheadUSD": 0,
+      "regionPrices": {
+        "EU": 3809,
+        "DE": 3567,
+        "FR": 3809,
+        "IT": 3909,
+        "ES": 3859,
+        "NL": 3859,
+        "UK": 3299,
+        "JP": 567800,
+        "AU": 5199,
+        "CA": 4649
+      }
+    },
+    "mbp-m5-max-64": {
+      "name": "MacBook Pro M5 Max 64 GB",
+      "vendor": "Apple",
+      "priceUSD": 5099,
+      "rigOverheadUSD": 0,
+      "regionPrices": {
+        "EU": 5899,
+        "DE": 5530,
+        "FR": 5899,
+        "IT": 5999,
+        "ES": 5949,
+        "NL": 5749,
+        "UK": 5099,
+        "JP": 879800,
+        "AU": 7899,
+        "CA": 7299
+      }
+    },
+    "mbp-m5-max-128": {
+      "name": "MacBook Pro M5 Max 128 GB",
+      "vendor": "Apple",
+      "priceUSD": 6999,
+      "rigOverheadUSD": 0,
+      "regionPrices": {
+        "EU": 7899,
+        "DE": 7404,
+        "FR": 7899,
+        "IT": 7999,
+        "ES": 7949,
+        "NL": 7399,
+        "UK": 6999,
+        "JP": 1209800,
+        "AU": 10999,
+        "CA": 9999
+      }
+    },
+    "mac-studio-m4-max-128": {
+      "name": "Mac Studio M4 Max 128 GB",
+      "vendor": "Apple",
+      "priceUSD": 4699,
+      "rigOverheadUSD": 0,
+      "regionPrices": {
+        "EU": 5499,
+        "DE": 5499,
+        "FR": 5499,
+        "IT": 5499,
+        "UK": 4699,
+        "JP": 750000
+      }
+    },
+    "mac-studio-m4-max-36": {
+      "name": "Mac Studio M4 Max 36 GB",
+      "vendor": "Apple",
+      "priceUSD": 2499,
+      "rigOverheadUSD": 0,
+      "regionPrices": {
+        "EU": 2999,
+        "DE": 2999,
+        "FR": 2999,
+        "IT": 3049,
+        "ES": 3029,
+        "NL": 3029,
+        "UK": 2499,
+        "JP": 419800,
+        "AU": 4299,
+        "CA": 3499
+      }
+    },
+    "mac-studio-m3-ultra-96": {
+      "name": "Mac Studio M3 Ultra 96 GB",
+      "vendor": "Apple",
+      "priceUSD": 5299,
+      "rigOverheadUSD": 0,
+      "regionPrices": {
+        "EU": 6299,
+        "DE": 6299,
+        "FR": 6299,
+        "IT": 6399,
+        "ES": 6349,
+        "NL": 6349,
+        "UK": 5299,
+        "JP": 899800,
+        "AU": 9099,
+        "CA": 7499
+      }
+    },
+    "mac-studio-m3-ultra-256": {
+      "name": "Mac Studio M3 Ultra 256 GB",
+      "vendor": "Apple",
+      "priceUSD": 7999,
+      "rigOverheadUSD": 0,
+      "regionPrices": {
+        "EU": 8899,
+        "DE": 8899,
+        "FR": 8899,
+        "IT": 8899,
+        "UK": 7679
+      }
+    },
+    "mac-studio-m3-ultra-512": {
+      "name": "Mac Studio M3 Ultra 512 GB",
+      "vendor": "Apple",
+      "priceUSD": 14199,
+      "rigOverheadUSD": 0,
+      "regionPrices": {
+        "EU": 15499,
+        "DE": 15499,
+        "FR": 15499,
+        "IT": 15499,
+        "UK": 13499
+      }
+    },
+    "mac-studio-m3-ultra-512-x2": {
+      "name": "2× Mac Studio M3 Ultra 512 GB cluster (TB5 / MLX)",
+      "vendor": "Apple",
+      "priceUSD": 28400,
+      "rigOverheadUSD": 0
+    },
+    "rtx-3060-12": {
+      "name": "RTX 3060 12 GB build",
+      "vendor": "NVIDIA",
+      "priceUSD": 891,
+      "rigOverheadUSD": 600
+    },
+    "rtx-3090-24": {
+      "name": "Single RTX 3090 (used) build",
+      "vendor": "NVIDIA",
+      "priceUSD": 1900,
+      "rigOverheadUSD": 700,
+      "regionPrices": {
+        "NL": 1560
+      }
+    },
+    "rtx-3090-96gb-ddr5": {
+      "name": "RTX 3090 + 96GB DDR5 (MoE offload)",
+      "vendor": "NVIDIA",
+      "priceUSD": 3100,
+      "rigOverheadUSD": 1900
+    },
+    "rtx-3090-x2": {
+      "name": "Dual RTX 3090 (used) build",
+      "vendor": "NVIDIA",
+      "priceUSD": 3400,
+      "rigOverheadUSD": 1000,
+      "regionPrices": {
+        "NL": 2772
+      }
+    },
+    "rtx-3090-x4": {
+      "name": "Quad RTX 3090 (used) build",
+      "vendor": "NVIDIA",
+      "priceUSD": 7500,
+      "rigOverheadUSD": 2700,
+      "regionPrices": {
+        "NL": 6154
+      }
+    },
+    "rtx-4090-24": {
+      "name": "Single RTX 4090 build",
+      "vendor": "NVIDIA",
+      "priceUSD": 3200,
+      "rigOverheadUSD": 700
+    },
+    "rtx-4090-128gb-ddr5": {
+      "name": "RTX 4090 + 128GB DDR5 (MoE offload)",
+      "vendor": "NVIDIA",
+      "priceUSD": 5400,
+      "rigOverheadUSD": 2900
+    },
+    "rtx-5090-32": {
+      "name": "Single RTX 5090 build",
+      "vendor": "NVIDIA",
+      "priceUSD": 6499,
+      "rigOverheadUSD": 700,
+      "regionPrices": {
+        "EU": 4742,
+        "DE": 4742,
+        "FR": 4742,
+        "IT": 4742,
+        "NL": 4742,
+        "ES": 4742,
+        "PL": 24061,
+        "UK": 4016,
+        "JP": 841000,
+        "AU": 7563,
+        "CA": 8191
+      }
+    },
+    "rtx-5090-192gb-ddr5": {
+      "name": "RTX 5090 + 192GB DDR5 (MoE offload)",
+      "vendor": "NVIDIA",
+      "priceUSD": 8750,
+      "rigOverheadUSD": 1600
+    },
+    "rtx-5090-x2": {
+      "name": "Dual RTX 5090 build",
+      "vendor": "NVIDIA",
+      "priceUSD": 13000,
+      "rigOverheadUSD": 1400,
+      "regionPrices": {
+        "EU": 9483,
+        "DE": 9483,
+        "FR": 9483,
+        "IT": 9483,
+        "NL": 9483,
+        "ES": 9483,
+        "PL": 48123,
+        "UK": 8032,
+        "JP": 1683000,
+        "AU": 15126,
+        "CA": 16382
+      }
+    },
+    "tesla-p40-24": {
+      "name": "Single Tesla P40 24 GB (used) build",
+      "vendor": "NVIDIA",
+      "priceUSD": 730,
+      "rigOverheadUSD": 450
+    },
+    "tesla-p40-x4": {
+      "name": "Quad Tesla P40 (96 GB) homelab build",
+      "vendor": "NVIDIA",
+      "priceUSD": 2620,
+      "rigOverheadUSD": 1500
+    },
+    "tesla-p100-16": {
+      "name": "Single Tesla P100 16 GB (used) build",
+      "vendor": "NVIDIA",
+      "priceUSD": 568,
+      "rigOverheadUSD": 450
+    },
+    "tesla-v100-sxm2-mod": {
+      "name": "Tesla V100 32 GB SXM2 mod build",
+      "vendor": "NVIDIA",
+      "priceUSD": 1139,
+      "rigOverheadUSD": 500
+    },
+    "intel-arc-pro-b70-32": {
+      "name": "Single Intel Arc Pro B70 build",
+      "vendor": "Intel",
+      "priceUSD": 2231,
+      "rigOverheadUSD": 700
+    },
+    "intel-arc-pro-b70-x2": {
+      "name": "Dual Intel Arc Pro B70 build",
+      "vendor": "Intel",
+      "priceUSD": 4062,
+      "rigOverheadUSD": 1000
+    },
+    "intel-arc-pro-b70-x4": {
+      "name": "Quad Intel Arc Pro B70 build",
+      "vendor": "Intel",
+      "priceUSD": 7624,
+      "rigOverheadUSD": 1500
+    },
+    "intel-arc-pro-b70-x8": {
+      "name": "Octuple Intel Arc Pro B70 cluster",
+      "vendor": "Intel",
+      "priceUSD": 13788,
+      "rigOverheadUSD": 2900,
+      "regionPrices": {
+        "UK": 9300
+      }
+    },
+    "intel-arc-b580-12": {
+      "name": "Single Intel Arc B580 12 GB build",
+      "vendor": "Intel",
+      "priceUSD": 1070,
+      "rigOverheadUSD": 700
+    },
+    "strix-halo-128": {
+      "name": "AMD Ryzen AI Max+ 395 (128 GB)",
+      "vendor": "AMD",
+      "priceUSD": 2999,
+      "rigOverheadUSD": 0,
+      "regionPrices": {
+        "EU": 3360,
+        "DE": 3699.99,
+        "FR": 3889,
+        "IT": 3539,
+        "UK": 3449
+      }
+    },
+    "strix-halo-x2": {
+      "name": "2× Strix Halo cluster (256 GB unified)",
+      "vendor": "AMD",
+      "priceUSD": 5998,
+      "rigOverheadUSD": 0,
+      "regionPrices": {
+        "EU": 6720,
+        "DE": 7399.98,
+        "FR": 7778,
+        "IT": 7078,
+        "UK": 6898
+      }
+    },
+    "strix-halo-x4": {
+      "name": "4× Strix Halo cluster (512 GB unified)",
+      "vendor": "AMD",
+      "priceUSD": 12296,
+      "rigOverheadUSD": 300,
+      "regionPrices": {
+        "UK": 14100
+      }
+    },
+    "strix-halo-x8": {
+      "name": "8× Strix Halo cluster (1024 GB unified)",
+      "vendor": "AMD",
+      "priceUSD": 24792,
+      "rigOverheadUSD": 800,
+      "regionPrices": {
+        "UK": 28390
+      }
+    },
+    "dgx-spark-128": {
+      "name": "NVIDIA DGX Spark (128 GB)",
+      "vendor": "NVIDIA",
+      "priceUSD": 4699,
+      "rigOverheadUSD": 0,
+      "regionPrices": {
+        "EU": 4800,
+        "DE": 4800,
+        "FR": 5745,
+        "IT": 6710.11,
+        "UK": 4959.98,
+        "JP": 1078000,
+        "TW": 199900,
+        "CA": 8449.99,
+        "AU": 7999
+      }
+    },
+    "dgx-spark-x2": {
+      "name": "2× DGX Spark cluster (256 GB unified, CUDA)",
+      "vendor": "NVIDIA",
+      "priceUSD": 13599,
+      "rigOverheadUSD": 0,
+      "regionPrices": {
+        "UK": 9849
+      }
+    },
+    "dgx-spark-x4": {
+      "name": "4× DGX Spark cluster (512 GB unified, CUDA)",
+      "vendor": "NVIDIA",
+      "priceUSD": 20367,
+      "rigOverheadUSD": 0
+    },
+    "dgx-spark-x8": {
+      "name": "8× DGX Spark cluster (1024 GB unified, CUDA)",
+      "vendor": "NVIDIA",
+      "priceUSD": 43500,
+      "rigOverheadUSD": 0
+    },
+    "msi-edgexpert-gb10": {
+      "name": "MSI EdgeXpert MS-C931 (128 GB)",
+      "vendor": "MSI",
+      "priceUSD": 5899,
+      "rigOverheadUSD": 0,
+      "regionPrices": {
+        "EU": 5499,
+        "DE": 6299,
+        "FR": 6300,
+        "IT": 6390,
+        "UK": 4723,
+        "JP": 663500,
+        "CA": 5999,
+        "AU": 8999
+      }
+    },
+    "asus-ascent-gx10": {
+      "name": "ASUS Ascent GX10 (128 GB, 1 TB)",
+      "vendor": "ASUS",
+      "priceUSD": 3999,
+      "rigOverheadUSD": 0,
+      "regionPrices": {
+        "EU": 4500,
+        "DE": 4009,
+        "FR": 4500,
+        "IT": 5490,
+        "UK": 4198.99,
+        "JP": 1091981,
+        "CA": 5499.99,
+        "AU": 9499
+      }
+    },
+    "dell-pro-max-gb10": {
+      "name": "Dell Pro Max with GB10 (128 GB)",
+      "vendor": "Dell",
+      "priceUSD": 5394,
+      "rigOverheadUSD": 0,
+      "regionPrices": {
+        "EU": 5789,
+        "DE": 5009,
+        "FR": 6983,
+        "IT": 6793.95,
+        "UK": 5502.76,
+        "JP": 2871842,
+        "AU": 7999,
+        "CA": 8704
+      }
+    },
+    "lenovo-thinkstation-pgx": {
+      "name": "Lenovo ThinkStation PGX (128 GB)",
+      "vendor": "Lenovo",
+      "priceUSD": 5849,
+      "rigOverheadUSD": 0,
+      "regionPrices": {
+        "EU": 4782,
+        "DE": 5123.12,
+        "FR": 4700,
+        "IT": 8539,
+        "UK": 3211,
+        "JP": 1097839,
+        "AU": 10991,
+        "CA": 8129
+      }
+    },
+    "h100-80": {
+      "name": "Single H100 80 GB workstation",
+      "vendor": "NVIDIA",
+      "priceUSD": 30000,
+      "rigOverheadUSD": 3500
+    },
+    "h100-x8": {
+      "name": "8× H100 80 GB server",
+      "vendor": "NVIDIA",
+      "priceUSD": 280000,
+      "rigOverheadUSD": 0
+    },
+    "h200-141": {
+      "name": "Single H200 141 GB workstation",
+      "vendor": "NVIDIA",
+      "priceUSD": 40000,
+      "rigOverheadUSD": 3500
+    },
+    "h200-x8": {
+      "name": "DGX H200 — 8× H200 server (1.13 TB HBM3e)",
+      "vendor": "NVIDIA",
+      "priceUSD": 380000,
+      "rigOverheadUSD": 0
+    },
+    "b200-180": {
+      "name": "Single B200 180 GB workstation",
+      "vendor": "NVIDIA",
+      "priceUSD": 47000,
+      "rigOverheadUSD": 5000
+    },
+    "b200-x8": {
+      "name": "DGX B200 — 8× B200 server (1.44 TB HBM3e)",
+      "vendor": "NVIDIA",
+      "priceUSD": 475000,
+      "rigOverheadUSD": 0
+    },
+    "rtx-pro-6000-blackwell-96": {
+      "name": "Single RTX Pro 6000 Blackwell 96 GB build",
+      "vendor": "NVIDIA",
+      "priceUSD": 18000,
+      "rigOverheadUSD": 2000,
+      "regionPrices": {
+        "IT": 13249
+      }
+    },
+    "rtx-pro-5000-blackwell-48": {
+      "name": "Single RTX Pro 5000 Blackwell 48 GB build",
+      "vendor": "NVIDIA",
+      "priceUSD": 8100,
+      "rigOverheadUSD": 1800
+    },
+    "rtx-pro-6000-blackwell-x2": {
+      "name": "Dual RTX Pro 6000 Blackwell build",
+      "vendor": "NVIDIA",
+      "priceUSD": 34500,
+      "rigOverheadUSD": 2500,
+      "regionPrices": {
+        "DE": 22000,
+        "JP": 4136000
+      }
+    },
+    "rtx-pro-6000-blackwell-x4": {
+      "name": "Quad RTX Pro 6000 Blackwell build (384 GB)",
+      "vendor": "NVIDIA",
+      "priceUSD": 68000,
+      "rigOverheadUSD": 4000,
+      "regionPrices": {
+        "DE": 35800,
+        "JP": 6208000
+      }
+    },
+    "rtx-pro-6000-blackwell-x8": {
+      "name": "8× RTX Pro 6000 Blackwell server (768 GB)",
+      "vendor": "NVIDIA",
+      "priceUSD": 135556,
+      "rigOverheadUSD": 8000,
+      "regionPrices": {
+        "DE": 71600,
+        "JP": 12416000
+      }
+    },
+    "rtx-pro-6000-blackwell-x12": {
+      "name": "12× RTX Pro 6000 Blackwell rack (1152 GB)",
+      "vendor": "NVIDIA",
+      "priceUSD": 207334,
+      "rigOverheadUSD": 16000,
+      "regionPrices": {
+        "DE": 107400,
+        "JP": 18624000
+      }
+    },
+    "amd-w7900-48": {
+      "name": "Single AMD Radeon Pro W7900 48 GB build",
+      "vendor": "AMD",
+      "priceUSD": 5099,
+      "rigOverheadUSD": 1200,
+      "regionPrices": {
+        "UK": 4884,
+        "AU": 6999
+      }
+    },
+    "amd-w7900-x2": {
+      "name": "Dual AMD Radeon Pro W7900 build",
+      "vendor": "AMD",
+      "priceUSD": 9398,
+      "rigOverheadUSD": 1600,
+      "regionPrices": {
+        "UK": 9019,
+        "AU": 13800
+      }
+    },
+    "amd-w7800-32": {
+      "name": "Single AMD Radeon Pro W7800 32 GB build",
+      "vendor": "AMD",
+      "priceUSD": 2399,
+      "rigOverheadUSD": 700,
+      "regionPrices": {
+        "UK": 2755
+      }
+    },
+    "amd-r9700-32": {
+      "name": "Single AMD Radeon AI Pro R9700 32 GB build",
+      "vendor": "AMD",
+      "priceUSD": 2400,
+      "rigOverheadUSD": 700
+    },
+    "amd-r9700-x2": {
+      "name": "Dual AMD Radeon AI Pro R9700 build (64 GB)",
+      "vendor": "AMD",
+      "priceUSD": 4400,
+      "rigOverheadUSD": 1000
+    },
+    "rx-9070-xt-16": {
+      "name": "Single AMD Radeon RX 9070 XT 16 GB build",
+      "vendor": "AMD",
+      "priceUSD": 1500,
+      "rigOverheadUSD": 700,
+      "regionPrices": {
+        "EU": 1359,
+        "DE": 1359,
+        "FR": 1359,
+        "IT": 1359,
+        "ES": 1359,
+        "NL": 1359,
+        "PL": 5964,
+        "UK": 1246,
+        "JP": 206000,
+        "AU": 2063,
+        "CA": 2089
+      }
+    },
+    "amd-mi300x-192": {
+      "name": "Single AMD Instinct MI300X 192 GB workstation",
+      "vendor": "AMD",
+      "priceUSD": 30000,
+      "rigOverheadUSD": 0
+    },
+    "amd-mi325x-256": {
+      "name": "Single AMD Instinct MI325X 256 GB workstation",
+      "vendor": "AMD",
+      "priceUSD": 25000,
+      "rigOverheadUSD": 0
+    },
+    "amd-mi355x-288": {
+      "name": "Single AMD Instinct MI355X 288 GB workstation",
+      "vendor": "AMD",
+      "priceUSD": 28000,
+      "rigOverheadUSD": 0
+    },
+    "amd-mi50-32": {
+      "name": "Single AMD Instinct MI50 32 GB (used) build",
+      "vendor": "AMD",
+      "priceUSD": 1000,
+      "rigOverheadUSD": 400
+    },
+    "amd-mi50-x4": {
+      "name": "Quad AMD MI50 32 GB (128 GB) homelab build",
+      "vendor": "AMD",
+      "priceUSD": 3900,
+      "rigOverheadUSD": 1500
+    },
+    "tinybox-red": {
+      "name": "Tinybox Red (6× 7900 XTX, 144 GB)",
+      "vendor": "tinycorp",
+      "priceUSD": 15000,
+      "rigOverheadUSD": 0
+    },
+    "tinybox-green": {
+      "name": "Tinybox Green (6× RTX 4090, 144 GB)",
+      "vendor": "tinycorp",
+      "priceUSD": 25000,
+      "rigOverheadUSD": 0
+    },
+    "tinybox-green-v2": {
+      "name": "Tinybox Green v2 (4× RTX 5090, 128 GB)",
+      "vendor": "tinycorp",
+      "priceUSD": 51000,
+      "rigOverheadUSD": 0
+    },
+    "tinybox-pro": {
+      "name": "Tinybox Pro (8× RTX 4090, 192 GB)",
+      "vendor": "tinycorp",
+      "priceUSD": 40000,
+      "rigOverheadUSD": 0
+    }
+  }
+}
