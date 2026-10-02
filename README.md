@@ -16,7 +16,7 @@ Open dataset of consumer and prosumer hardware benchmarks for running large lang
 
 | File | Contents |
 |---|---|
-| [`models.json`](models.json) | Open-weights LLMs (Qwen, Llama, Mistral, DeepSeek, GLM, …) with parameter counts, Q4/Q2 disk sizes, VRAM floors and comfort thresholds, and 0–5 ratings on chat / coding / agents / reasoning / long-context / vision. |
+| [`models.json`](models.json) | Open-weights LLMs (Qwen, Llama, Mistral, DeepSeek, GLM, …) with parameter counts, Q4/Q2 disk sizes, VRAM floors and comfort thresholds, and 0 to 5 ratings on chat / coding / agents / reasoning / long-context / vision. |
 | [`builds.json`](builds.json) | Hardware builds including Apple Silicon Macs, NVIDIA RTX 3090/4090/5090/Pro 6000, AMD Strix Halo, Intel B60, DGX Spark, tinybox and server systems. Memory, bandwidth, USD reference price, rig-overhead split and embedded throughput tables. |
 | [`benchmarks.json`](benchmarks.json) | Long-format benchmark rows extracted from `builds.json` so they're easy to grep, diff or load into a dataframe, with source citations behind the numbers. |
 | [`useCases.json`](useCases.json) | Curated use cases (`coding-agent`, `daily-driver`, `image-gen`, …) with their recommended models and builds. Editorial, but every id resolves into `models.json` or `builds.json`. |
