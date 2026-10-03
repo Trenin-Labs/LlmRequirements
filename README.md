@@ -81,7 +81,7 @@ Typical overheads: single consumer GPU $600–700, dual $1000–1400, quad homel
 ### Pricing snapshots
 
 - Filename is the date the snapshot was taken (ISO-8601, UTC).
-- `priceUSD` is a US whole-system reference price or estimate; tax treatment depends on the underlying offer.
+- `priceUSD` is a US whole-system reference price or estimate. Tax treatment depends on the underlying offer.
 - Regional prices use each region's local currency. Tax and shipping scope depends on the seller and source. The October 2 Italian used-desktop amount is a private seller's asking price with no separately verified tax or shipping guarantee.
 - Snapshots are append-only — old ones are never edited. If a vendor retroactively changed a price, we add a new snapshot, not rewrite history.
 

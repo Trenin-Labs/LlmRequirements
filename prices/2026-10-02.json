@@ -1,9 +1,9 @@
 {
   "$schema": "https://json-schema.org/draft-07/schema#",
-  "_description": "Regional price snapshot captured from the upstream catalog. priceUSD values are whole-system US reference prices or estimates; regionPrices are region-specific offers or estimates in local currency. The snapshot date does not independently verify every value.",
+  "_description": "Regional price snapshot captured from the upstream catalog. priceUSD values are whole-system US reference prices or estimates. regionPrices are region-specific offers or estimates in local currency. The snapshot date does not independently verify every value.",
   "_lastUpdated": "2026-10-02",
   "_snapshot": "2026-10-02",
-  "_currencyNotes": "Amounts use the currency of each region key. Tax and shipping treatment depends on the seller and location; the Italian used RTX 3090 private-seller asking price has no separately verified tax or shipping guarantee.",
+  "_currencyNotes": "Amounts use the currency of each region key. Tax and shipping treatment depends on the seller and location. The Italian used RTX 3090 private-seller asking price has no separately verified tax or shipping guarantee.",
   "builds": {
     "your-laptop-8gb": {
       "name": "Your own laptop (8 GB RAM)",
@@ -790,7 +790,7 @@
         "priceEUR": 1870,
         "observedOn": "2026-10-02",
         "condition": "used",
-        "scope": "Advertised complete desktop with one RTX 3090; seller asking price, not a transaction or delivery promise",
+        "scope": "Advertised complete desktop with one RTX 3090. Seller asking price, not a transaction or delivery promise",
         "sourceUrl": "https://www.subito.it/informatica/pc-gaming-workstation-rtx-3090-ryzen-7-5800x-mantova-657210676.htm"
       }
     ],
@@ -820,6 +820,6 @@
         "region": "EU"
       }
     ],
-    "note": "Every other build/region value is carried from the catalog; this capture does not recertify it. The retained RTX 5090 IT/EU amounts lack a confirmed complete-desktop source. The RTX 3090 dual and quad IT quotes are absent; any displayed currency conversion is an estimate, not a sourced Italian offer."
+    "note": "Every other build/region value is carried from the catalog. This capture does not recertify it. The retained RTX 5090 IT/EU amounts lack a confirmed complete-desktop source. The RTX 3090 dual and quad IT quotes are absent. Any displayed currency conversion is an estimate, not a sourced Italian offer."
   }
 }
