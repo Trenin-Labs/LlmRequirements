@@ -16,11 +16,11 @@ Open dataset of consumer and prosumer hardware benchmarks for running large lang
 
 | File | Contents |
 |---|---|
-| [`models.json`](models.json) | 44 open-weights LLMs (Qwen, Llama, Mistral, DeepSeek, GLM, …) with parameter counts, Q4/Q2 disk sizes, VRAM floors and comfort thresholds, and 0–5 ratings on chat / coding / agents / reasoning / long-context / vision. |
-| [`builds.json`](builds.json) | 54 hardware builds — Apple Silicon Macs, NVIDIA RTX 3090/4090/5090/Pro 6000, AMD Strix Halo, Intel B60, DGX Spark, tinybox, H100/MI300X servers, etc. Memory, bandwidth, USD MSRP, rig-overhead split, embedded `tps` / `imageSec` / `videoSec` tables. |
-| [`benchmarks.json`](benchmarks.json) | Long-format benchmark rows extracted from `builds.json` so they're easy to grep, diff, or load into a dataframe — 330 tps rows, 92 image rows, 80 video rows — plus the 50 source citations behind the numbers. |
-| [`useCases.json`](useCases.json) | 8 curated use cases (`coding-agent`, `daily-driver`, `image-gen`, …) with their recommended models and builds. Editorial, but every id resolves into `models.json` / `builds.json`. |
-| [`prices/YYYY-MM-DD.json`](prices/) | Weekly snapshots of regional pricing (US/EU/DE/FR/IT/UK/JP …). USD fallbacks plus vendor-direct overrides in local currency, with VAT/consumption-tax baked in where applicable. Diff two snapshots to see how the market moved. |
+| [`models.json`](models.json) | Open-weights LLMs (Qwen, Llama, Mistral, DeepSeek, GLM, …) with parameter counts, Q4/Q2 disk sizes, VRAM floors and comfort thresholds, and 0 to 5 ratings on chat / coding / agents / reasoning / long-context / vision. |
+| [`builds.json`](builds.json) | Hardware builds including Apple Silicon Macs, NVIDIA RTX 3090/4090/5090/Pro 6000, AMD Strix Halo, Intel B60, DGX Spark, tinybox and server systems. Memory, bandwidth, USD reference price, rig-overhead split and embedded throughput tables. |
+| [`benchmarks.json`](benchmarks.json) | Long-format benchmark rows extracted from `builds.json` so they're easy to grep, diff or load into a dataframe, with source citations behind the numbers. |
+| [`useCases.json`](useCases.json) | Curated use cases (`coding-agent`, `daily-driver`, `image-gen`, …) with their recommended models and builds. Editorial, but every id resolves into `models.json` or `builds.json`. |
+| [`prices/YYYY-MM-DD.json`](prices/) | Append-only snapshots of whole-system USD reference prices and regional offers or estimates in local currency. Newer snapshots can identify newly sourced rows; their date does not reverify every carried value. Compare snapshots alongside their coverage notes. |
 
 Everything is plain UTF-8 JSON, pretty-printed, with stable key ordering — so `git diff` is readable and weekly snapshots show a real changelog.
 
@@ -74,15 +74,15 @@ We are deliberately conservative on `agents`. Sub-200B local models score 30–4
 
 ### `priceUSD` vs `rigOverheadUSD`
 
-`priceUSD` is the whole-system US MSRP. `rigOverheadUSD` is the host-PC slice (PSU, case, mobo, CPU, RAM, storage) that *isn't* the accelerator — so card-only price is `priceUSD − rigOverheadUSD`. Turnkey systems (Macs, DGX Spark, Strix Halo prebuilts, tinybox, OEM workstations) have `rigOverheadUSD: 0`.
+`priceUSD` is a whole-system US reference price or estimate, not always an MSRP. `rigOverheadUSD` is the retained host-PC budget component (PSU, case, motherboard, CPU, RAM, storage). For DIY builds, `priceUSD − rigOverheadUSD` is an implied accelerator allowance, not necessarily a current standalone retail quote. Turnkey systems (Macs, DGX Spark, Strix Halo prebuilts, tinybox, OEM workstations) have `rigOverheadUSD: 0`.
 
 Typical overheads: single consumer GPU $600–700, dual $1000–1400, quad homelab $1500–2700, octuple server $2900–3500.
 
 ### Pricing snapshots
 
 - Filename is the date the snapshot was taken (ISO-8601, UTC).
-- `priceUSD` is *pre-tax* US MSRP.
-- EU prices are in EUR with VAT included (≈19%). UK in GBP with 20% VAT. JP in JPY with 10% consumption tax.
+- `priceUSD` is a US whole-system reference price or estimate. Tax treatment depends on the underlying offer.
+- Regional prices use each region's local currency. Tax and shipping scope depends on the seller and source. The October 2 Italian used-desktop amount is a private seller's asking price with no separately verified tax or shipping guarantee.
 - Snapshots are append-only — old ones are never edited. If a vendor retroactively changed a price, we add a new snapshot, not rewrite history.
 
 ---
