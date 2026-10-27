@@ -12,6 +12,14 @@ Open dataset of consumer and prosumer hardware benchmarks for running large lang
 
 ---
 
+## Partial price snapshot: 27 October 2026
+
+[The 27 October price snapshot](prices/2026-10-27.json) changes one sourced build/region pair: `rx-9070-xt-16` / `EU`, from EUR 1,359 to EUR 2,363.40 including VAT for the Captiva R99-886 complete desktop. Article 99886 / EAN 4046373998861 includes a Radeon RX 9070 XT 16GB, Ryzen 7 7800X3D, 32GB DDR5, 1TB SSD and Windows 11 Home. The GPU board partner is not specified. This is a replacement complete-desktop quote, not a same-configuration inflation comparison or a new check of the USD reference.
+
+[The Nexoc product page](https://www.nexoc-store.de/pc-systeme/pcs/gaming-pcs/captiva-pc-highend-gaming-r99-886-ryzen-7-7800x3d-rx9070-xt-16gb-gddr6-ssd-1tb-32gb-wlan-windows-11-home-64-bit), accessed 27 October, states VAT included, free shipping and delivery in 2-3 working days after payment. Cross-border fulfillment and destination checkout tax are unverified. The shared EUR fallback changes for IE/AT/BE/PT/FI; SE/DK/CZ/CH/NO receive currency conversions, not newly sourced national offers. DE/FR/IT/ES/NL/PL retain their existing country overrides.
+
+The snapshot carries 76 price rows: one changed row and 75 retained rows that were not reverified. Other prices, model/benchmark data and their evidence dates are unchanged by this snapshot. Its `_coverage` names the one updated pair and seven absent/unverified EU whole-system quotes: `intel-arc-pro-b70-x8`, `rtx-pro-5000-blackwell-48`, `rtx-pro-6000-blackwell-96`, `rtx-pro-6000-blackwell-x2`, `rtx-pro-6000-blackwell-x4`, `rtx-pro-6000-blackwell-x8` and `rtx-pro-6000-blackwell-x12`. Their complete host, quantity, variant and fabric requirements are not supplied by single-card prices or an eight-card quote scaled to twelve.
+
 ## What's in here
 
 | File | Contents |
