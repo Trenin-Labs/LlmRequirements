@@ -786,7 +786,7 @@
     "scope": "partial-price-release",
     "releaseDate": "2026-11-01",
     "sourceObservationDate": "2026-10-31",
-    "snapshotDateBasis": "Snapshot dated November 1; the US offer was observed on October 31. Other prices retain their cited observation dates.",
+    "snapshotDateBasis": "Snapshot dated November 1. The US offer was observed on October 31. Other prices retain their cited observation dates.",
     "catalogEvidenceThrough": "2026-09-24",
     "updated": [],
     "confirmed": [
@@ -810,7 +810,7 @@
         },
         "powerAdapterIncluded": true,
         "powerAdapter": "40W Dynamic Power Adapter with 60W Max, option 065-CLJ7",
-        "availability": "Published complete base offer; physical stock, destination checkout and fulfilment not independently verified."
+        "availability": "Published complete base offer. Physical stock, destination checkout and fulfilment not independently verified."
       }
     ],
     "retainedPriceRows": 75,
