@@ -859,6 +859,128 @@
       "destinationCheckoutTaxVerified": false,
       "crossBorderDeliveryVerified": false
     },
-    "note": "One unchanged US MacBook Air factory-base price was confirmed against the October 31 offer. November 1 is the package snapshot date, not a new source observation. Other countries, configurations, prices, models and recipes retain their prior evidence. Advertised shipping is not verified destination tax, stock, checkout or delivery."
+    "note": "One unchanged US MacBook Air factory-base price was confirmed against the October 31 offer. November 1 is the package snapshot date, not a new source observation. Other countries, configurations, prices, models and recipes retain their prior evidence. Advertised shipping is not verified destination tax, stock, checkout or delivery.",
+    "retainedCoverage": [
+      {
+        "scope": "partial-price-release",
+        "releaseDate": "2026-10-31",
+        "catalogEvidenceThrough": "2026-09-24",
+        "updated": [],
+        "confirmed": [
+          {
+            "buildId": "mba-m5-16",
+            "region": "EU",
+            "price": 1399,
+            "currency": "EUR",
+            "sourceUrl": "https://www.apple.com/de/shop/buy-mac/macbook-air/13-zoll-mitternacht-m5-chip-10%E2%80%91core-cpu-8%E2%80%91core-gpu-16-gb-arbeitsspeicher-512gb-speicher",
+            "accessedAt": "2026-10-31T14:30:51.977574Z",
+            "sourceSKU": "MDHE4D/A",
+            "sourceCountry": "DE",
+            "configuration": "13-inch M5, 10-core CPU / 8-core GPU, 16 GB RAM, 512 GB SSD, Midnight, German keyboard",
+            "condition": "New Apple device",
+            "taxIncluded": true,
+            "taxRatePercent": 19,
+            "shipping": {
+              "country": "DE",
+              "currency": "EUR",
+              "price": 0,
+              "checkoutVerified": false
+            },
+            "powerAdapterIncluded": false,
+            "availability": "Published selectable vendor offer; physical stock and local delivery not independently verified.",
+            "purchaseTerms": "Published device-only offer."
+          },
+          {
+            "buildId": "mbp-m5-pro-48",
+            "region": "EU",
+            "price": 3809,
+            "currency": "EUR",
+            "sourceUrl": "https://www.macconsultshop.de/apple/macbook-pro-14-m5-pro/standardglas/1tb/macbook-pro-14-m5-pro-1820-core-48gb1tb-ssdkein-netzteil-space-schwarz.html",
+            "accessedAt": "2026-10-31T14:30:51.977574Z",
+            "sourceSKU": "Z1ML_13867_DE_CTO",
+            "sourceCountry": "DE",
+            "configuration": "14-inch M5 Pro, 18-core CPU / 20-core GPU, 48 GB RAM, 1 TB SSD, standard glass, Space Black, German keyboard",
+            "condition": "NewCondition advertised by merchant",
+            "taxIncluded": true,
+            "taxRatePercent": 19,
+            "shipping": {
+              "country": "DE",
+              "currency": "EUR",
+              "price": 0,
+              "checkoutVerified": false
+            },
+            "powerAdapterIncluded": false,
+            "availability": "Merchant advertises InStock, more than five units and 1-3 working days within Germany; warehouse count and checkout not independently verified.",
+            "purchaseTerms": "Merchant describes this CTO order as non-cancellable and non-returnable; not legal advice."
+          }
+        ],
+        "retainedPriceRows": 74,
+        "retainedPricesReverified": false,
+        "modelsReverified": false,
+        "recipesReverified": false,
+        "unverified": [
+          {
+            "buildId": "mba-m4-16",
+            "region": "EU",
+            "status": "UNVERIFIED"
+          },
+          {
+            "buildId": "mbp-m4-max-64",
+            "region": "EU",
+            "status": "UNVERIFIED"
+          },
+          {
+            "buildId": "mbp-m4-pro-48",
+            "region": "EU",
+            "status": "UNVERIFIED"
+          },
+          {
+            "buildId": "mbp-m5-max-128",
+            "region": "EU",
+            "status": "UNVERIFIED"
+          },
+          {
+            "buildId": "mbp-m5-max-64",
+            "region": "EU",
+            "status": "UNVERIFIED"
+          }
+        ],
+        "readerScope": {
+          "directEURCountries": [
+            "IE",
+            "AT",
+            "BE",
+            "PT",
+            "FI"
+          ],
+          "convertedEURCountries": [
+            "SE",
+            "DK",
+            "CZ",
+            "CH",
+            "NO",
+            "PL"
+          ],
+          "unchangedCountryOverrides": [
+            "DE",
+            "FR",
+            "IT",
+            "ES",
+            "NL",
+            "UK",
+            "JP",
+            "AU",
+            "CA"
+          ],
+          "crossBorderDeliveryVerified": false,
+          "destinationCheckoutTaxVerified": false,
+          "confirmedRegionKeys": [
+            "EU"
+          ],
+          "germanNationalOverrideReverified": false
+        },
+        "note": "Two unchanged EUR references were confirmed against German-market offers observed on 2026-10-31. This package does not reverify country-specific overrides, USD prices, other builds, models or recipes. German tax, shipping and advertised availability are not promises for other destinations. Devices exclude a power adapter. Existing catalog and price-observation dates retain their previous evidence."
+      }
+    ]
   }
 }
