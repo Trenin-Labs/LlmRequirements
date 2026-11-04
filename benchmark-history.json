@@ -1,0 +1,29 @@
+{
+  "_description": "Retained historical benchmark records, excluded from active build throughput, fit estimates and rankings. These are not new measurements or current recipe validation.",
+  "records": [
+    {
+      "buildId": "rtx-5090-x2",
+      "benchmark": {
+        "modelId": "qwen3-5-122b-a10b-moe",
+        "quant": "IQ4_XS",
+        "engine": "llama.cpp RPC",
+        "cluster": {
+          "nodes": 2,
+          "interconnect": "2.5GbE"
+        },
+        "concurrency": 1,
+        "ctxTokens": 2048,
+        "decodeTps": 96.29,
+        "prefillTps": null,
+        "status": "verified",
+        "source": "https://www.reddit.com/r/LocalLLaMA/comments/1sfs0wt/benchmark_dual_rtx_5090_distributed_inference_via/",
+        "measuredOn": "2026-04-08",
+        "note": "llama-bench build 8709/85d482e6b, -ngl 99 -fa 1 -b 512 -p 2048 -n 256; two RTX 5090 rigs linked over 2.5GbE (llama.cpp RPC)"
+      },
+      "originalTpsModel": {
+        "120b_moe": "qwen3-5-122b-a10b-moe"
+      },
+      "originalTpsNote": "The 120b_moe=96 is a Qwen3.5-122B-A10B IQ4_XS measurement via llama.cpp RPC across two RTX 5090 rigs linked over 2.5GbE (r/LocalLLaMA 1sfs0wt, llama-bench build 8709/85d482e6b, -ngl 99 -fa 1 -b 512 -p 2048 -n 256, measured 2026-04-08). It is a two-host distributed deployment, not a single-host vLLM tensor-parallel run; no single-host vLLM TP number for this build is measured yet. The typed benchmarks[] row carries the exact engine, topology, quant, context and source."
+    }
+  ]
+}
