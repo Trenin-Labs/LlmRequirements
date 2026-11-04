@@ -6436,7 +6436,7 @@
       "bandwidthGBs": 8000,
       "priceUSD": 562154.09,
       "rigOverheadUSD": 0,
-      "pricedAsOf": "May 2026",
+      "pricedAsOf": "2026-11-02",
       "priceNote": "Broadberry US configured RFQ reference observed 2026-11-02: $562,154.09 excluding sales tax for one complete DGX B200 appliance with 8 Blackwell GPUs and 1,440 GB GPU memory, two Xeon 8570 CPUs, 4 TB host DDR5, 2 x 1.92 TB M.2 and 8 x 3.84 TB NVMe storage, selected 3-year Business Standard support and US kit. Installation depends on quantity criteria. Shipping, handling and destination taxes are excluded. Physical stock, a separate condition statement, accepted quote/order, delivery and final destination total remain unverified. This replaces a prior estimate with this configured reference, not a uniform MSRP, like-for-like inflation claim or buy-now price. https://www.broadberry.com/xeon-scalable-processor-gen4-rackmount-servers/nvidia-dgx-b200",
       "tps": {
         "8b": 600,
