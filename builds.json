@@ -2616,7 +2616,7 @@
         "14b": 140,
         "30b": 90,
         "70b": 35,
-        "120b_moe": 96,
+        "120b_moe": null,
         "235b_moe": null
       },
       "imageSec": {
@@ -2632,7 +2632,7 @@
       "activeW": 1050,
       "pros": [
         "Frontier single-user speed for 70 B",
-        "Tensor-parallel 120 B at high tg/s"
+        "64 GB total VRAM across two GPUs"
       ],
       "cons": [
         "Massive idle power vs Mac",
@@ -2665,7 +2665,7 @@
       },
       "softwareStack": "CUDA (Blackwell)",
       "softwareMaturity": 5,
-      "softwareNote": "Pair of Blackwell 5090s — vLLM tensor-parallel is the obvious deployment.",
+      "softwareNote": "CUDA Blackwell with two RTX 5090s. vLLM tensor parallelism is a deployment option, not a measurement. No matching single-host 120B-class throughput is recorded.",
       "extensibility": 5,
       "extensibilityNote": "Two 600 W cards drives the build to ATX-EVO + 1600 W PSU territory; further expansion needs a workstation chassis.",
       "tflopsFP16": 838,
