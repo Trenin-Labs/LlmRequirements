@@ -1,7 +1,7 @@
 {
   "$schema": "https://json-schema.org/draft-07/schema#",
-  "_description": "Hardware build catalog with throughput (tps), prompt-processing (pp), TTFT @ 100 K (ttft100k), image, and video benchmarks. Each build also carries editorial fields used by the /compare page: softwareStack (short label), softwareMaturity (0-5), softwareNote, extensibility (0-5), and extensibilityNote. Pricing is in priceUSD as a US MSRP fallback only — see prices/ for regional snapshots.",
-  "_lastUpdated": "2026-09-24",
+  "_description": "Hardware build catalog with throughput (tps), prompt-processing (pp), TTFT @ 100 K (ttft100k), image, and video benchmarks. Each build also carries editorial fields used by the /compare page: softwareStack (short label), softwareMaturity (0-5), softwareNote, extensibility (0-5), and extensibilityNote. Pricing is in priceUSD as a US reference fallback only — see prices/ for regional snapshots. This is a partial source-reference package. Selected US offers and RFQ terms are qualified in _coverage, not a uniform MSRP, destination total or stock guarantee.",
+  "_lastUpdated": "2026-11-03",
   "_count": 79,
   "builds": [
     {
@@ -648,8 +648,8 @@
       "extensibilityNote": "Sealed laptop. Thunderbolt-4 (NOT TB5) clustering is technically possible but the chassis + fanless thermals make this a single-unit story.",
       "tflopsFP16": 5,
       "vllmSupport": "community",
-      "priceNote": "Launched 2026-03-11 at $1,099. Base config: 10-core CPU / 8-core GPU / 16 GB / 512 GB SSD on the 13.6\" model. The 10-core GPU upsell is +$100. Pricing per apple.com newsroom (US/UK/DE/FR/IT/ES/NL/JP/AU/CA confirmed).",
-      "priceVerifiedOn": "2026-08-07",
+      "priceNote": "Apple US offer observed 2026-11-02: $1,299 for the 13-inch Silver M5 with 10-core CPU, 8-core GPU, 16 GB RAM and 512 GB SSD (MDH74LL/A), including the default 40W Dynamic Power Adapter with 60W Max. Standard shipping is advertised free. Destination tax, ZIP eligibility, physical stock, checkout and delivery remain unverified. https://www.apple.com/shop/buy-mac/macbook-air/13-inch-silver-m5-chip-10-core-cpu-8-core-gpu-16gb-memory-512gb-storage",
+      "priceVerifiedOn": "2026-11-02",
       "tflopsFP8": null,
       "topsINT8": 38
     },
@@ -956,8 +956,8 @@
       "extensibilityNote": "Sealed laptop. TB5 MLX cluster (two M5 Max MBPs → 256 GB pool over Thunderbolt 5) is the documented scale-out path; Alex Ziskind's 3-MBP cluster recipe pushes it further.",
       "tflopsFP16": 22,
       "vllmSupport": "community",
-      "priceNote": "16\" M5 Max 18-core CPU / 40-core GPU / 128 GB / 2 TB CTO preset — launched 2026-03-11. US $5,099 (14\") / $5,399 (16\") pre-hike. Apple raised prices on Jun 25, 2026 (RAM crisis); current Apple list 16\" is $6,999 (B&H $6,699). Confirmed via AppleInsider price guide (Jul 30, 2026).",
-      "priceVerifiedOn": "2026-08-07",
+      "priceNote": "Apple US configured offer observed 2026-11-02: $6,999 for the 16-inch Space Black M5 Max with 18-core CPU, 40-core GPU, 128 GB RAM, 2 TB SSD and standard display, including the default 140W adapter. This is the selected configuration, not a family starting price or the older B&H reference. Standard shipping is advertised free. Destination tax, ZIP eligibility, physical stock, checkout and delivery remain unverified. https://www.apple.com/shop/buy-mac/macbook-pro/16-inch-space-black-standard-display-apple-m5-max-chip-18-core-cpu-40-core-gpu-128gb-memory-2tb-storage",
+      "priceVerifiedOn": "2026-11-02",
       "tflopsFP8": null,
       "topsINT8": 38,
       "benchmarks": [
@@ -1990,7 +1990,7 @@
         "120b_moe": null,
         "235b_moe": null
       },
-      "tpsNote": "Hybrid GPU+system-RAM build (MoE expert offload). The RTX 3090 holds the attention/shared layers + KV cache + as many MoE expert tensors as fit in 24GB VRAM; the remaining experts live in 96GB of DDR5-5600. Small DENSE models (8-30B) run entirely in VRAM at full GPU speed — that is what the 8b/14b/30b buckets show. LARGE MoE decode is bounded by SYSTEM-RAM bandwidth (~85 GB/s), NOT the GPU's 936 GB/s — the capacity-for-speed tradeoff of expert offload. Headline current-gen recipe: Qwen 3.5 122B-A10B (10B active, Q4_K_M ~67GB) via llama.cpp expert offload — no clean single-GPU offload measurement sourced as of 2026-07-13, physics-estimated ~12-15 t/s (gap filed in TASK-0260). Contrast the F16-GGUF-on-DDR4 path at ~2 t/s (hardware-corner.net) — native MXFP4 + fast DDR5 is what makes 120B usable on one card. bandwidthGBs below reports the DDR5 bandwidth that governs offloaded-MoE decode, not the GPU's VRAM bandwidth.",
+      "tpsNote": "Hybrid GPU+system-RAM build (MoE expert offload). The RTX 3090 holds the attention/shared layers + KV cache + as many MoE expert tensors as fit in 24GB VRAM; the remaining experts live in 96GB of DDR5-5600. Small DENSE models (8-30B) run entirely in VRAM at full GPU speed — that is what the 8b/14b/30b buckets show. LARGE MoE decode is bounded by SYSTEM-RAM bandwidth (~85 GB/s), NOT the GPU's 936 GB/s — the capacity-for-speed tradeoff of expert offload. Headline current-gen recipe: Qwen 3.5 122B-A10B (10B active, Q4_K_M ~67GB) via llama.cpp expert offload — no clean single-GPU offload measurement sourced as of 2026-07-13, physics-estimated ~12-15 t/s (measurement gap). Contrast the F16-GGUF-on-DDR4 path at ~2 t/s (hardware-corner.net) — native MXFP4 + fast DDR5 is what makes 120B usable on one card. bandwidthGBs below reports the DDR5 bandwidth that governs offloaded-MoE decode, not the GPU's VRAM bandwidth.",
       "imageSec": {
         "sdxl": 5,
         "flux": 30
@@ -2055,7 +2055,7 @@
           "decodeTps": null,
           "prefillTps": null,
           "status": "unverified",
-          "source": "CURRENT-GEN HEADLINE: Qwen 3.5 122B-A10B (10B active). At Q4_K_M (~67GB) it fits in 100GB usable memory. Decode is DDR5-bandwidth-bound — physics estimate ~12-15 t/s. No clean single-consumer-GPU offload measurement sourced as of 2026-07-13; gap filed in TASK-0260. First-party measurement recommended.",
+          "source": "CURRENT-GEN HEADLINE: Qwen 3.5 122B-A10B (10B active). At Q4_K_M (~67GB) it fits in 100GB usable memory. Decode is DDR5-bandwidth-bound — physics estimate ~12-15 t/s. No clean single-consumer-GPU offload measurement sourced as of 2026-07-13; measurement gap remains. First-party measurement recommended.",
           "measuredOn": null,
           "fits": true
         }
@@ -2413,7 +2413,7 @@
       "tflopsFP8": 661,
       "topsINT8": null,
       "tagline": "24GB Ada + 128GB DDR5 — current-gen 122B MoE with faster prefill.",
-      "tpsNote": "Hybrid GPU+system-RAM build (MoE expert offload). The RTX 4090 holds the attention/shared layers + KV cache + as many MoE expert tensors as fit in 24GB VRAM; the remaining experts live in 128GB of DDR5-6000. Small DENSE models (8-30B) run entirely in VRAM at full GPU speed — that is what the 8b/14b/30b buckets show. LARGE MoE decode is bounded by SYSTEM-RAM bandwidth (~90 GB/s), NOT the GPU's 1008 GB/s — the capacity-for-speed tradeoff of expert offload. Headline current-gen recipe: Qwen 3.5 122B-A10B (10B active, Q4_K_M ~67GB) via llama.cpp expert offload — no clean single-GPU offload measurement sourced as of 2026-07-13, physics-estimated ~12-15 t/s (gap filed in TASK-0260). Contrast the F16-GGUF-on-DDR4 path at ~2 t/s (hardware-corner.net) — native MXFP4 + fast DDR5 is what makes 120B usable on one card. bandwidthGBs below reports the DDR5 bandwidth that governs offloaded-MoE decode, not the GPU's VRAM bandwidth.",
+      "tpsNote": "Hybrid GPU+system-RAM build (MoE expert offload). The RTX 4090 holds the attention/shared layers + KV cache + as many MoE expert tensors as fit in 24GB VRAM; the remaining experts live in 128GB of DDR5-6000. Small DENSE models (8-30B) run entirely in VRAM at full GPU speed — that is what the 8b/14b/30b buckets show. LARGE MoE decode is bounded by SYSTEM-RAM bandwidth (~90 GB/s), NOT the GPU's 1008 GB/s — the capacity-for-speed tradeoff of expert offload. Headline current-gen recipe: Qwen 3.5 122B-A10B (10B active, Q4_K_M ~67GB) via llama.cpp expert offload — no clean single-GPU offload measurement sourced as of 2026-07-13, physics-estimated ~12-15 t/s (measurement gap). Contrast the F16-GGUF-on-DDR4 path at ~2 t/s (hardware-corner.net) — native MXFP4 + fast DDR5 is what makes 120B usable on one card. bandwidthGBs below reports the DDR5 bandwidth that governs offloaded-MoE decode, not the GPU's VRAM bandwidth.",
       "benchmarks": [
         {
           "modelId": "qwen3-5-122b-a10b-moe",
@@ -2425,7 +2425,7 @@
           "decodeTps": null,
           "prefillTps": null,
           "status": "unverified",
-          "source": "CURRENT-GEN HEADLINE: Qwen 3.5 122B-A10B (10B active). At Q4_K_M (~67GB) it fits with headroom. Decode is DDR5-bandwidth-bound — physics estimate ~12-15 t/s. No clean single-consumer-GPU offload measurement sourced as of 2026-07-13; gap filed in TASK-0260. First-party measurement recommended.",
+          "source": "CURRENT-GEN HEADLINE: Qwen 3.5 122B-A10B (10B active). At Q4_K_M (~67GB) it fits with headroom. Decode is DDR5-bandwidth-bound — physics estimate ~12-15 t/s. No clean single-consumer-GPU offload measurement sourced as of 2026-07-13; measurement gap remains. First-party measurement recommended.",
           "measuredOn": null,
           "fits": true
         }
@@ -2526,7 +2526,7 @@
         "120b_moe": null,
         "235b_moe": null
       },
-      "tpsNote": "Hybrid GPU+system-RAM build (MoE expert offload). The RTX 5090 holds the attention/shared layers + KV cache + as many MoE expert tensors as fit in 32GB VRAM; the remaining experts live in 192GB of DDR5-6400. Small DENSE models (8-30B) run entirely in VRAM at full GPU speed — that is what the 8b/14b/30b buckets show. LARGE MoE decode is bounded by SYSTEM-RAM bandwidth (~96 GB/s), NOT the GPU's 1792 GB/s — the capacity-for-speed tradeoff of expert offload. Headline current-gen recipe: Qwen 3.5 122B-A10B (10B active, Q4_K_M ~67GB) via llama.cpp expert offload -- no clean single-GPU offload measurement sourced as of 2026-07-13, physics-estimated ~12-15 t/s (gap filed in TASK-0260). Also fits 200GB-class MoE models at IQ3-like quants as a capacity play (expectedTps=null, no clean measurement). Contrast the F16-GGUF-on-DDR4 path at ~2 t/s (hardware-corner.net) -- native MXFP4 + fast DDR5 is what makes 120B usable on one card. bandwidthGBs below reports the DDR5 bandwidth that governs offloaded-MoE decode, not the GPU's VRAM bandwidth.",
+      "tpsNote": "Hybrid GPU+system-RAM build (MoE expert offload). The RTX 5090 holds the attention/shared layers + KV cache + as many MoE expert tensors as fit in 32GB VRAM; the remaining experts live in 192GB of DDR5-6400. Small DENSE models (8-30B) run entirely in VRAM at full GPU speed — that is what the 8b/14b/30b buckets show. LARGE MoE decode is bounded by SYSTEM-RAM bandwidth (~96 GB/s), NOT the GPU's 1792 GB/s — the capacity-for-speed tradeoff of expert offload. Headline current-gen recipe: Qwen 3.5 122B-A10B (10B active, Q4_K_M ~67GB) via llama.cpp expert offload -- no clean single-GPU offload measurement sourced as of 2026-07-13, physics-estimated ~12-15 t/s (measurement gap). Also fits 200GB-class MoE models at IQ3-like quants as a capacity play (expectedTps=null, no clean measurement). Contrast the F16-GGUF-on-DDR4 path at ~2 t/s (hardware-corner.net) -- native MXFP4 + fast DDR5 is what makes 120B usable on one card. bandwidthGBs below reports the DDR5 bandwidth that governs offloaded-MoE decode, not the GPU's VRAM bandwidth.",
       "imageSec": {
         "sdxl": 2.2,
         "flux": 9
@@ -2594,7 +2594,7 @@
           "decodeTps": null,
           "prefillTps": null,
           "status": "unverified",
-          "source": "CURRENT-GEN HEADLINE: Qwen 3.5 122B-A10B (10B active). At Q4_K_M (~67GB) it fits with headroom on this build. Decode is DDR5-bandwidth-bound — physics estimate ~12-15 t/s. No clean single-consumer-GPU offload measurement sourced as of 2026-07-13; gap filed in TASK-0260. First-party measurement recommended.",
+          "source": "CURRENT-GEN HEADLINE: Qwen 3.5 122B-A10B (10B active). At Q4_K_M (~67GB) it fits with headroom on this build. Decode is DDR5-bandwidth-bound — physics estimate ~12-15 t/s. No clean single-consumer-GPU offload measurement sourced as of 2026-07-13; measurement gap remains. First-party measurement recommended.",
           "measuredOn": null,
           "fits": true
         }
@@ -5711,9 +5711,9 @@
       "memoryGB": 128,
       "usableMemoryGB": 119,
       "bandwidthGBs": 273,
-      "priceUSD": 5849,
+      "priceUSD": 5859,
       "rigOverheadUSD": 0,
-      "priceNote": "Aug 2026 — 1 TB SKU (part 30KL0002US) is $5,849 direct from Lenovo US. Thin consumer-channel supply; 2× QSFP ConnectX-7 + 10 GbE + Wi-Fi 7. (lenovo.com, 2026-08-02).",
+      "priceNote": "Lenovo US offer observed 2026-11-02: $5,859 for one ThinkStation PGX 30KL0002US with GB10, 128 GB LPDDR5X, 1 TB TLC Opal SSD, 240W adapter and One Year Premier support. InStock/Add To Cart and free delivery are advertised, not physical allocation or accepted checkout. The archived \"Tue. Apr 06 - Thu. Apr 08\" and later \"Wed. Apr 07 - Fri. Apr 09\" delivery displays omit the year. Neither is a November delivery promise. Destination tax, ZIP eligibility, quantity and fulfilment remain unverified. Optional peripherals, a second unit and ConnectX-7 cable are excluded. https://www.lenovo.com/us/en/p/workstations/thinkstation-p-series/lenovo-thinkstation-pgx-sff/30kl0002us",
       "tps": {
         "8b": 90,
         "14b": 55,
@@ -5781,7 +5781,7 @@
       "extensibilityNote": "Same GB10 cluster story under the ThinkStation brand.",
       "tflopsFP16": 250,
       "vllmSupport": "production",
-      "priceVerifiedOn": "2026-09-04",
+      "priceVerifiedOn": "2026-11-02",
       "tflopsFP8": 250,
       "topsINT8": null,
       "benchmarks": [
@@ -6434,10 +6434,10 @@
       "memoryGB": 1440,
       "usableMemoryGB": 1404,
       "bandwidthGBs": 8000,
-      "priceUSD": 475000,
+      "priceUSD": 562154.09,
       "rigOverheadUSD": 0,
-      "pricedAsOf": "May 2026",
-      "priceNote": "May 2026 — DGX B200 list $300K-$500K per Runpod / aiserver.eu / itctshop. Northflank confirms 8× B200 systems exceed $500K typical. DeployBase pegs on-prem systems at $275K-$300K (NVIDIA direct, large customer). Tech-insider.org's May 2026 verified range: $300K-$350K for DGX B300 Ultra; DGX B200 trails at $400K-$500K depending on cooling config. 1.4 TB GPU memory, 64 TB/s aggregate bw, 144 PFLOPS FP4.",
+      "pricedAsOf": "2026-11-02",
+      "priceNote": "Broadberry US configured RFQ reference observed 2026-11-02: $562,154.09 excluding sales tax for one complete DGX B200 appliance with 8 Blackwell GPUs and 1,440 GB GPU memory, two Xeon 8570 CPUs, 4 TB host DDR5, 2 x 1.92 TB M.2 and 8 x 3.84 TB NVMe storage, selected 3-year Business Standard support and US kit. Installation depends on quantity criteria. Shipping, handling and destination taxes are excluded. Physical stock, a separate condition statement, accepted quote/order, delivery and final destination total remain unverified. This replaces a prior estimate with this configured reference, not a uniform MSRP, like-for-like inflation claim or buy-now price. https://www.broadberry.com/xeon-scalable-processor-gen4-rackmount-servers/nvidia-dgx-b200",
       "tps": {
         "8b": 600,
         "14b": 420,
@@ -6485,7 +6485,7 @@
         "Reference 2026 frontier-inference platform"
       ],
       "cons": [
-        "$475K and 10 kW — datacenter only",
+        "$562,154.09 configured US RFQ reference, excluding sales tax, shipping and handling. Datacenter power and installation requirements remain.",
         "Liquid cooling effectively required",
         "Supply is the bottleneck, not silicon"
       ],
@@ -6504,7 +6504,7 @@
           "title": "Inside a 1.44 TB HBM3e NVIDIA HGX B200 AI Server from ASRock Rack"
         }
       ],
-      "priceVerifiedOn": "2026-08-14",
+      "priceVerifiedOn": "2026-11-02",
       "tflopsFP8": 36000,
       "topsINT8": null
     },
@@ -8546,5 +8546,443 @@
       "priceNote": "Jun 2026 — discontinued at tinycorp.myshopify.com. tinycorp store no longer ships the 8× 4090 configuration; v2 is the current shipping SKU. Successor: $90,000 v2 (8× RTX 5090 / RTX Pro 6000 Blackwell, 2× 128-core EPYC GENOA, 384 GB RAM, 4× 2000 W PSUs).",
       "tpsNote": "CAUTION: hardware is 8x RTX 4090 (Ada), NOT Hopper — softwareStack 'CUDA (Hopper)' is a MISLABEL (reported CROSS-SLICE). No Hopper recipe applies. tps left unverified (legacy Q4 single-stream estimates, no re-openable source this run)."
     }
-  ]
+  ],
+  "_coverage": {
+    "scope": "partial-price-release",
+    "catalogEvidenceThrough": "2026-09-24",
+    "sourceObservationDate": "2026-11-02",
+    "updated": [
+      {
+        "buildId": "lenovo-thinkstation-pgx",
+        "region": "USD",
+        "price": 5859,
+        "currency": "USD",
+        "sourceUrl": "https://www.lenovo.com/us/en/p/workstations/thinkstation-p-series/lenovo-thinkstation-pgx-sff/30kl0002us",
+        "accessedAt": "2026-11-02T05:14:56Z",
+        "sourceCountry": "US",
+        "configuration": "30KL0002US;GB10/128GB LPDDR5X/1TB TLC Opal/240W/OneYearPremier",
+        "taxIncluded": null,
+        "physicalStockVerified": false,
+        "checkoutVerified": false,
+        "availability": "Advertised InStock/AddToCart with yearless Apr6–8 and Apr7–9 delivery windows; year/fulfilment unresolved",
+        "sourceSKU": "30KL0002US",
+        "condition": "NewCondition advertised, not independently inspected",
+        "deliveryWindowQualification": "Archived Tue. Apr 06 - Thu. Apr 08 and later Wed. Apr 07 - Fri. Apr 09 omit the year. Neither establishes November fulfilment."
+      },
+      {
+        "buildId": "b200-x8",
+        "region": "USD",
+        "price": 562154.09,
+        "currency": "USD",
+        "sourceUrl": "https://www.broadberry.com/xeon-scalable-processor-gen4-rackmount-servers/nvidia-dgx-b200",
+        "accessedAt": "2026-11-02T05:13:44.344897+00:00",
+        "sourceCountry": "US",
+        "configuration": "DGX B200;8Blackwell/1440GB,2xXeon8570,4TBDDR5,2x1.92TBM2+8x3.84TBNVMe;3yrBusinessStandardSupport;installationQuantityCriteriaApply;USkit/powercable",
+        "availability": "RequestQuote;physicalstock/finalfulfilmentnotverified",
+        "taxIncluded": false,
+        "physicalStockVerified": false,
+        "checkoutVerified": false,
+        "referenceBasis": "One complete configured RFQ appliance, not a uniform MSRP or same-BOM movement",
+        "independentSourceObservedAt": "2026-11-02T08:30:44Z",
+        "condition": "Separate condition statement unverified",
+        "shippingHandlingIncluded": false
+      }
+    ],
+    "confirmed": [
+      {
+        "buildId": "mba-m5-16",
+        "region": "USD",
+        "price": 1299,
+        "currency": "USD",
+        "sourceUrl": "https://www.apple.com/shop/buy-mac/macbook-air/13-inch-silver-m5-chip-10-core-cpu-8-core-gpu-16gb-memory-512gb-storage",
+        "accessedAt": "2026-11-02T05:14:20Z",
+        "sourceCountry": "US",
+        "configuration": "MDH74LL/A;13-inch Silver M5/10CPU8GPU/16GB512GB/default40W Dynamic60WMax",
+        "physicalStockVerified": false,
+        "checkoutVerified": false,
+        "taxIncluded": null,
+        "powerAdapterIncluded": true,
+        "powerAdapter": "40W Dynamic Power Adapter with 60W Max",
+        "shipping": {
+          "country": "US",
+          "currency": "USD",
+          "price": 0,
+          "checkoutVerified": false
+        },
+        "condition": "New Apple factory configuration",
+        "availability": "Published selected configuration. Physical inventory, ZIP eligibility, checkout and fulfilment unverified.",
+        "sourceSKU": "MDH74LL/A"
+      },
+      {
+        "buildId": "mbp-m5-max-128",
+        "region": "USD",
+        "price": 6999,
+        "currency": "USD",
+        "sourceUrl": "https://www.apple.com/shop/buy-mac/macbook-pro/16-inch-space-black-standard-display-apple-m5-max-chip-18-core-cpu-40-core-gpu-128gb-memory-2tb-storage",
+        "accessedAt": "2026-11-02T05:14:34Z",
+        "sourceCountry": "US",
+        "configuration": "16-inch Space Black standard display/M5Max18CPU40GPU/128GB2TB/default140W",
+        "physicalStockVerified": false,
+        "checkoutVerified": false,
+        "taxIncluded": null,
+        "powerAdapterIncluded": true,
+        "powerAdapter": "140W USB-C Power Adapter",
+        "shipping": {
+          "country": "US",
+          "currency": "USD",
+          "price": 0,
+          "checkoutVerified": false
+        },
+        "condition": "New Apple factory configuration",
+        "availability": "Published selected configuration. Physical inventory, ZIP eligibility, checkout and fulfilment unverified.",
+        "sourceSKU": "Z1N1+CL4P+CL50+CL53+CL68+CL6D+CL6G+CL6P+CL7C+CL7D"
+      }
+    ],
+    "releaseDate": "2026-11-03",
+    "snapshotDateBasis": "Package snapshot dated November 3. The selected offers were observed on November 2. Source observation dates are not publication, destination checkout or delivery dates.",
+    "retainedPriceRows": 75,
+    "retainedPricesReverified": false,
+    "modelsReverified": false,
+    "recipesReverified": false,
+    "unverified": [
+      {
+        "buildId": "mba-m4-16",
+        "region": "USD",
+        "status": "UNVERIFIED",
+        "note": "Retained reference, not reverified by this partial release."
+      },
+      {
+        "buildId": "mbp-m4-max-64",
+        "region": "USD",
+        "status": "UNVERIFIED",
+        "note": "Retained reference, not reverified by this partial release."
+      },
+      {
+        "buildId": "mbp-m4-pro-48",
+        "region": "USD",
+        "status": "UNVERIFIED",
+        "note": "Retained reference, not reverified by this partial release."
+      },
+      {
+        "buildId": "mbp-m5-max-64",
+        "region": "USD",
+        "status": "UNVERIFIED",
+        "note": "Retained reference, not reverified by this partial release."
+      },
+      {
+        "buildId": "mbp-m5-pro-48",
+        "region": "USD",
+        "status": "UNVERIFIED",
+        "note": "Retained reference, not reverified by this partial release."
+      },
+      {
+        "buildId": "asus-ascent-gx10",
+        "region": "USD",
+        "status": "UNVERIFIED",
+        "note": "Retained reference, not reverified by this partial release."
+      },
+      {
+        "buildId": "dell-pro-max-gb10",
+        "region": "USD",
+        "status": "UNVERIFIED",
+        "note": "Retained reference, not reverified by this partial release."
+      },
+      {
+        "buildId": "dgx-spark-128",
+        "region": "USD",
+        "status": "UNVERIFIED",
+        "note": "Retained reference, not reverified by this partial release."
+      },
+      {
+        "buildId": "dgx-spark-x2",
+        "region": "USD",
+        "status": "UNVERIFIED",
+        "note": "Retained reference, not reverified by this partial release."
+      },
+      {
+        "buildId": "dgx-spark-x4",
+        "region": "USD",
+        "status": "UNVERIFIED",
+        "note": "Retained reference, not reverified by this partial release."
+      },
+      {
+        "buildId": "dgx-spark-x8",
+        "region": "USD",
+        "status": "UNVERIFIED",
+        "note": "Retained reference, not reverified by this partial release."
+      },
+      {
+        "buildId": "amd-mi300x-192",
+        "region": "USD",
+        "status": "UNVERIFIED",
+        "note": "Retained reference, not reverified by this partial release."
+      },
+      {
+        "buildId": "amd-mi325x-256",
+        "region": "USD",
+        "status": "UNVERIFIED",
+        "note": "Retained reference, not reverified by this partial release."
+      },
+      {
+        "buildId": "amd-mi355x-288",
+        "region": "USD",
+        "status": "UNVERIFIED",
+        "note": "Retained reference, not reverified by this partial release."
+      },
+      {
+        "buildId": "amd-mi50-32",
+        "region": "USD",
+        "status": "UNVERIFIED",
+        "note": "Retained reference, not reverified by this partial release."
+      },
+      {
+        "buildId": "amd-mi50-x4",
+        "region": "USD",
+        "status": "UNVERIFIED",
+        "note": "Retained reference, not reverified by this partial release."
+      },
+      {
+        "buildId": "b200-180",
+        "region": "USD",
+        "status": "UNVERIFIED",
+        "note": "Retained reference, not reverified by this partial release."
+      },
+      {
+        "buildId": "h100-80",
+        "region": "USD",
+        "status": "UNVERIFIED",
+        "note": "Retained reference, not reverified by this partial release."
+      },
+      {
+        "buildId": "h100-x8",
+        "region": "USD",
+        "status": "UNVERIFIED",
+        "note": "Retained reference, not reverified by this partial release."
+      }
+    ],
+    "deferred": [
+      {
+        "buildId": "h200-x8",
+        "region": "USD",
+        "status": "DEFERRED",
+        "note": "Separate configured RFQ reference remains unreviewed and is not adopted in this partial."
+      }
+    ],
+    "readerScope": {
+      "confirmedRegionKeys": [
+        "USD"
+      ],
+      "confirmedCountry": "US",
+      "otherNationalOverridesReverified": false,
+      "convertedFallbacksReverified": false,
+      "destinationCheckoutTaxVerified": false,
+      "crossBorderDeliveryVerified": false,
+      "note": "Four US references only. Retained country overrides and FX-derived fallbacks are not new domestic quotes."
+    },
+    "note": "Two unchanged selected Apple US references were confirmed. The Lenovo US reference is corrected from $5,849 to $5,859 with unresolved yearless delivery estimates. The DGX B200 estimate is replaced by one configured $562,154.09 US RFQ reference excluding sales tax, shipping and handling. No physical stock, destination checkout, fulfilled order, other national offer, model, measurement or recipe is newly verified.",
+    "retainedCoverage": [
+      {
+        "scope": "partial-price-release",
+        "releaseDate": "2026-11-01",
+        "sourceObservationDate": "2026-10-31",
+        "snapshotDateBasis": "Snapshot dated November 1. The US offer was observed on October 31. Other prices retain their cited observation dates.",
+        "catalogEvidenceThrough": "2026-09-24",
+        "updated": [],
+        "confirmed": [
+          {
+            "buildId": "mba-m5-16",
+            "region": "USD",
+            "price": 1299,
+            "currency": "USD",
+            "sourceUrl": "https://www.apple.com/shop/buy-mac/macbook-air/13-inch-silver-m5-chip-10-core-cpu-8-core-gpu-16gb-memory-512gb-storage",
+            "accessedAt": "2026-10-31T19:53:40.703603+00:00",
+            "sourceSKU": "MDH74LL/A",
+            "sourceCountry": "US",
+            "configuration": "13-inch Silver M5, 10-core CPU / 8-core GPU, 16 GB RAM, 512 GB SSD, factory base",
+            "condition": "New Apple factory configuration",
+            "taxIncluded": null,
+            "shipping": {
+              "country": "US",
+              "currency": "USD",
+              "price": 0,
+              "checkoutVerified": false
+            },
+            "powerAdapterIncluded": true,
+            "powerAdapter": "40W Dynamic Power Adapter with 60W Max, option 065-CLJ7",
+            "availability": "Published complete base offer. Physical stock, destination checkout and fulfilment not independently verified."
+          }
+        ],
+        "retainedPriceRows": 75,
+        "retainedPricesReverified": false,
+        "modelsReverified": false,
+        "recipesReverified": false,
+        "unverified": [
+          {
+            "buildId": "mba-m4-16",
+            "region": "USD",
+            "status": "UNVERIFIED"
+          },
+          {
+            "buildId": "mbp-m4-max-64",
+            "region": "USD",
+            "status": "UNVERIFIED"
+          },
+          {
+            "buildId": "mbp-m4-pro-48",
+            "region": "USD",
+            "status": "UNVERIFIED"
+          },
+          {
+            "buildId": "mbp-m5-max-128",
+            "region": "USD",
+            "status": "UNVERIFIED"
+          },
+          {
+            "buildId": "mbp-m5-max-64",
+            "region": "USD",
+            "status": "UNVERIFIED"
+          },
+          {
+            "buildId": "mbp-m5-pro-48",
+            "region": "USD",
+            "status": "UNVERIFIED"
+          }
+        ],
+        "readerScope": {
+          "confirmedRegionKeys": [
+            "USD"
+          ],
+          "confirmedCountry": "US",
+          "otherNationalOverridesReverified": false,
+          "convertedFallbacksReverified": false,
+          "destinationCheckoutTaxVerified": false,
+          "crossBorderDeliveryVerified": false
+        },
+        "note": "One unchanged US MacBook Air factory-base price was confirmed against the October 31 offer. November 1 is the package snapshot date, not a new source observation. Other countries, configurations, prices, models and recipes retain their prior evidence. Advertised shipping is not verified destination tax, stock, checkout or delivery.",
+        "retainedCoverage": [
+          {
+            "scope": "partial-price-release",
+            "releaseDate": "2026-10-31",
+            "catalogEvidenceThrough": "2026-09-24",
+            "updated": [],
+            "confirmed": [
+              {
+                "buildId": "mba-m5-16",
+                "region": "EU",
+                "price": 1399,
+                "currency": "EUR",
+                "sourceUrl": "https://www.apple.com/de/shop/buy-mac/macbook-air/13-zoll-mitternacht-m5-chip-10%E2%80%91core-cpu-8%E2%80%91core-gpu-16-gb-arbeitsspeicher-512gb-speicher",
+                "accessedAt": "2026-10-31T14:30:51.977574Z",
+                "sourceSKU": "MDHE4D/A",
+                "sourceCountry": "DE",
+                "configuration": "13-inch M5, 10-core CPU / 8-core GPU, 16 GB RAM, 512 GB SSD, Midnight, German keyboard",
+                "condition": "New Apple device",
+                "taxIncluded": true,
+                "taxRatePercent": 19,
+                "shipping": {
+                  "country": "DE",
+                  "currency": "EUR",
+                  "price": 0,
+                  "checkoutVerified": false
+                },
+                "powerAdapterIncluded": false,
+                "availability": "Published selectable vendor offer; physical stock and local delivery not independently verified.",
+                "purchaseTerms": "Published device-only offer."
+              },
+              {
+                "buildId": "mbp-m5-pro-48",
+                "region": "EU",
+                "price": 3809,
+                "currency": "EUR",
+                "sourceUrl": "https://www.macconsultshop.de/apple/macbook-pro-14-m5-pro/standardglas/1tb/macbook-pro-14-m5-pro-1820-core-48gb1tb-ssdkein-netzteil-space-schwarz.html",
+                "accessedAt": "2026-10-31T14:30:51.977574Z",
+                "sourceSKU": "Z1ML_13867_DE_CTO",
+                "sourceCountry": "DE",
+                "configuration": "14-inch M5 Pro, 18-core CPU / 20-core GPU, 48 GB RAM, 1 TB SSD, standard glass, Space Black, German keyboard",
+                "condition": "NewCondition advertised by merchant",
+                "taxIncluded": true,
+                "taxRatePercent": 19,
+                "shipping": {
+                  "country": "DE",
+                  "currency": "EUR",
+                  "price": 0,
+                  "checkoutVerified": false
+                },
+                "powerAdapterIncluded": false,
+                "availability": "Merchant advertises InStock, more than five units and 1-3 working days within Germany; warehouse count and checkout not independently verified.",
+                "purchaseTerms": "Merchant describes this CTO order as non-cancellable and non-returnable; not legal advice."
+              }
+            ],
+            "retainedPriceRows": 74,
+            "retainedPricesReverified": false,
+            "modelsReverified": false,
+            "recipesReverified": false,
+            "unverified": [
+              {
+                "buildId": "mba-m4-16",
+                "region": "EU",
+                "status": "UNVERIFIED"
+              },
+              {
+                "buildId": "mbp-m4-max-64",
+                "region": "EU",
+                "status": "UNVERIFIED"
+              },
+              {
+                "buildId": "mbp-m4-pro-48",
+                "region": "EU",
+                "status": "UNVERIFIED"
+              },
+              {
+                "buildId": "mbp-m5-max-128",
+                "region": "EU",
+                "status": "UNVERIFIED"
+              },
+              {
+                "buildId": "mbp-m5-max-64",
+                "region": "EU",
+                "status": "UNVERIFIED"
+              }
+            ],
+            "readerScope": {
+              "directEURCountries": [
+                "IE",
+                "AT",
+                "BE",
+                "PT",
+                "FI"
+              ],
+              "convertedEURCountries": [
+                "SE",
+                "DK",
+                "CZ",
+                "CH",
+                "NO",
+                "PL"
+              ],
+              "unchangedCountryOverrides": [
+                "DE",
+                "FR",
+                "IT",
+                "ES",
+                "NL",
+                "UK",
+                "JP",
+                "AU",
+                "CA"
+              ],
+              "crossBorderDeliveryVerified": false,
+              "destinationCheckoutTaxVerified": false,
+              "confirmedRegionKeys": [
+                "EU"
+              ],
+              "germanNationalOverrideReverified": false
+            },
+            "note": "Two unchanged EUR references were confirmed against German-market offers observed on 2026-10-31. This package does not reverify country-specific overrides, USD prices, other builds, models or recipes. German tax, shipping and advertised availability are not promises for other destinations. Devices exclude a power adapter. Existing catalog and price-observation dates retain their previous evidence."
+          }
+        ]
+      }
+    ]
+  },
+  "_catalogEvidenceThrough": "2026-09-24"
 }
