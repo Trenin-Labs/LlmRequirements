@@ -1,8 +1,8 @@
 {
   "$schema": "https://json-schema.org/draft-07/schema#",
   "_description": "Hardware build catalog with throughput (tps), prompt-processing (pp), TTFT @ 100 K (ttft100k), image, and video benchmarks. Each build also carries editorial fields used by the /compare page: softwareStack (short label), softwareMaturity (0-5), softwareNote, extensibility (0-5), and extensibilityNote. Pricing is in priceUSD as a US reference fallback only — see prices/ for regional snapshots. This is a partial source-reference package. Selected US offers and RFQ terms are qualified in _coverage, not a uniform MSRP, destination total or stock guarantee.",
-  "_lastUpdated": "2026-11-03",
-  "_count": 79,
+  "_lastUpdated": "2026-11-08",
+  "_count": 82,
   "builds": [
     {
       "id": "your-laptop-8gb",
@@ -8545,6 +8545,171 @@
       "discontinued": true,
       "priceNote": "Jun 2026 — discontinued at tinycorp.myshopify.com. tinycorp store no longer ships the 8× 4090 configuration; v2 is the current shipping SKU. Successor: $90,000 v2 (8× RTX 5090 / RTX Pro 6000 Blackwell, 2× 128-core EPYC GENOA, 384 GB RAM, 4× 2000 W PSUs).",
       "tpsNote": "CAUTION: hardware is 8x RTX 4090 (Ada), NOT Hopper — softwareStack 'CUDA (Hopper)' is a MISLABEL (reported CROSS-SLICE). No Hopper recipe applies. tps left unverified (legacy Q4 single-stream estimates, no re-openable source this run)."
+    },
+    {
+      "id": "mac-mini-m5-pro-64",
+      "name": "Mac Mini M5 Pro (64 GB)",
+      "vendor": "Apple",
+      "category": "apple",
+      "formFactor": "mini desktop",
+      "memoryGB": 64,
+      "bandwidthGBs": 307,
+      "rigOverheadUSD": 0,
+      "priceUSD": 3199,
+      "priceNote": "M5 Pro 18-core CPU / 20-core GPU / 64 GB unified / 1 TB SSD. Retained Apple US configured price $3,199, source date 2026-09-21, SKU MHQU4LL/A. Current orderability and delivery estimate are unverified.",
+      "priceVerifiedOn": "2026-09-21",
+      "tps": {
+        "8b": null,
+        "14b": null,
+        "30b": null,
+        "70b": null,
+        "120b_moe": null,
+        "235b_moe": null
+      },
+      "pp": {
+        "8b": null,
+        "14b": null,
+        "30b": null,
+        "70b": null,
+        "120b_moe": null,
+        "235b_moe": null
+      },
+      "ttft100k": {
+        "8b": null,
+        "14b": null,
+        "30b": null,
+        "70b": null,
+        "120b_moe": null,
+        "235b_moe": null
+      },
+      "imageSec": {},
+      "videoSec": {},
+      "idleW": null,
+      "activeW": null,
+      "benchmarks": [],
+      "tflopsFP16": null,
+      "tflopsFP8": null,
+      "topsINT8": null,
+      "softwareStack": "Metal / MLX",
+      "softwareNote": "MLX-LM documents text generation on Apple silicon. The cited sources do not establish a configuration-specific model recipe, fixed context or measured throughput for this desktop.",
+      "usableMemoryGB": null,
+      "capacityStatus": "unverified",
+      "configuration": {
+        "cpuCores": 18,
+        "gpuCores": 20,
+        "storageGB": 1000
+      },
+      "specCheckedOn": "2026-11-07"
+    },
+    {
+      "id": "mac-mini-m6-32",
+      "name": "Mac Mini M6 (32 GB)",
+      "vendor": "Apple",
+      "category": "apple",
+      "formFactor": "mini desktop",
+      "memoryGB": 32,
+      "bandwidthGBs": 170,
+      "rigOverheadUSD": 0,
+      "priceUSD": 1799,
+      "priceNote": "M6 12-core CPU / 12-core GPU / 32 GB unified / 1 TB SSD. Retained Apple US configured price $1,799, source date 2026-09-21, SKU MHQV4LL/A. Current orderability and delivery estimate are unverified.",
+      "priceVerifiedOn": "2026-09-21",
+      "tps": {
+        "8b": null,
+        "14b": null,
+        "30b": null,
+        "70b": null,
+        "120b_moe": null,
+        "235b_moe": null
+      },
+      "pp": {
+        "8b": null,
+        "14b": null,
+        "30b": null,
+        "70b": null,
+        "120b_moe": null,
+        "235b_moe": null
+      },
+      "ttft100k": {
+        "8b": null,
+        "14b": null,
+        "30b": null,
+        "70b": null,
+        "120b_moe": null,
+        "235b_moe": null
+      },
+      "imageSec": {},
+      "videoSec": {},
+      "idleW": null,
+      "activeW": null,
+      "benchmarks": [],
+      "tflopsFP16": null,
+      "tflopsFP8": null,
+      "topsINT8": null,
+      "softwareStack": "Metal / MLX",
+      "softwareNote": "MLX-LM documents text generation on Apple silicon. The cited sources do not establish a configuration-specific model recipe, fixed context or measured throughput for this desktop.",
+      "usableMemoryGB": null,
+      "capacityStatus": "unverified",
+      "configuration": {
+        "cpuCores": 12,
+        "gpuCores": 12,
+        "storageGB": 1000
+      },
+      "specCheckedOn": "2026-11-07"
+    },
+    {
+      "id": "mac-studio-m5-max-128",
+      "name": "Mac Studio M5 Max 128 GB",
+      "vendor": "Apple",
+      "category": "apple",
+      "formFactor": "small desktop",
+      "memoryGB": 128,
+      "bandwidthGBs": 614,
+      "rigOverheadUSD": 0,
+      "priceUSD": 5399,
+      "priceNote": "M5 Max 18-core CPU / 40-core GPU / 128 GB unified / 1 TB SSD. Retained Apple US configured price $5,399, source date 2026-09-21. Current orderability and delivery estimate are unverified.",
+      "priceVerifiedOn": "2026-09-21",
+      "tps": {
+        "8b": null,
+        "14b": null,
+        "30b": null,
+        "70b": null,
+        "120b_moe": null,
+        "235b_moe": null
+      },
+      "pp": {
+        "8b": null,
+        "14b": null,
+        "30b": null,
+        "70b": null,
+        "120b_moe": null,
+        "235b_moe": null
+      },
+      "ttft100k": {
+        "8b": null,
+        "14b": null,
+        "30b": null,
+        "70b": null,
+        "120b_moe": null,
+        "235b_moe": null
+      },
+      "imageSec": {},
+      "videoSec": {},
+      "idleW": null,
+      "activeW": null,
+      "benchmarks": [],
+      "tflopsFP16": null,
+      "tflopsFP8": null,
+      "topsINT8": null,
+      "softwareStack": "Metal / MLX",
+      "softwareNote": "MLX-LM documents text generation on Apple silicon. The cited sources do not establish a configuration-specific model recipe, fixed context or measured throughput for this desktop.",
+      "usableMemoryGB": null,
+      "capacityStatus": "unverified",
+      "configuration": {
+        "cpuCores": 18,
+        "gpuCores": 40,
+        "storageGB": 1000
+      },
+      "specCheckedOn": "2026-11-07"
     }
   ],
   "_coverage": {
