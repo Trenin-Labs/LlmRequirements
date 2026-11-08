@@ -8,6 +8,7 @@ Uses only the Python standard library so the workflow needs no install step.
 from __future__ import annotations
 
 import json
+import math
 import re
 import sys
 from pathlib import Path
@@ -109,6 +110,45 @@ for row in benchmarks_doc.get("video", []):
     if row["buildId"] not in build_ids:
         fail(f"benchmarks.video: unknown buildId {row['buildId']!r}")
 
+# Model-specific runs are a separate regime, not generic Q4 throughput rows.
+model_runs = benchmarks_doc.get("modelRuns", [])
+if not isinstance(model_runs, list):
+    fail("benchmarks.modelRuns: expected a list")
+    model_runs = []
+if "modelRuns" in benchmarks_doc:
+    count = benchmarks_doc.get("_counts", {}).get("modelRunRows")
+    if type(count) is not int or count != len(model_runs):
+        fail("benchmarks._counts.modelRunRows: must match modelRuns length")
+
+RUN_REQUIRED = {"buildId", "modelId", "quant", "engine", "concurrency",
+                "decodeTps", "source", "status", "note"}
+for i, row in enumerate(model_runs):
+    label = f"benchmarks.modelRuns[{i}]"
+    if not isinstance(row, dict):
+        fail(f"{label}: expected an object")
+        continue
+    missing = RUN_REQUIRED - row.keys()
+    if missing:
+        fail(f"{label}: missing keys {sorted(missing)}")
+        continue
+    if row["buildId"] not in build_ids:
+        fail(f"{label}: unknown buildId {row['buildId']!r}")
+    if row["modelId"] not in model_ids:
+        fail(f"{label}: unknown modelId {row['modelId']!r}")
+    for key in ("quant", "engine", "status", "note"):
+        if not isinstance(row[key], str) or not row[key].strip():
+            fail(f"{label}: {key} must be a nonempty string")
+    for key in ("decodeTps", "prefillTps"):
+        if key in row and (type(row[key]) not in (int, float)
+                           or not math.isfinite(row[key]) or row[key] <= 0):
+            fail(f"{label}: {key} must be a finite positive number")
+    for key in ("concurrency", "ctxTokens"):
+        if key in row and (type(row[key]) is not int or row[key] <= 0):
+            fail(f"{label}: {key} must be a positive integer")
+    source = row["source"]
+    if not isinstance(source, str) or not source.startswith("https://"):
+        fail(f"{label}: source must be an HTTPS URL")
+
 # ---- useCases ------------------------------------------------------------
 
 for uc in use_cases:
@@ -185,6 +225,7 @@ print(
     f"{len(benchmarks_doc.get('tps', []))} tps + "
     f"{len(benchmarks_doc.get('image', []))} image + "
     f"{len(benchmarks_doc.get('video', []))} video rows, "
+    f"{len(model_runs)} model-specific runs, "
     f"{len(use_cases)} use cases, "
     f"{len(price_files)} price snapshot(s)."
 )
