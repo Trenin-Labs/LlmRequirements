@@ -1,9 +1,57 @@
 {
   "$schema": "https://json-schema.org/draft-07/schema#",
   "_description": "LLM model catalog with ratings and VRAM requirements. See README.md for schema.",
-  "_lastUpdated": "2026-09-24",
-  "_count": 73,
+  "_lastUpdated": "2026-11-07",
+  "_count": 75,
   "models": [
+    {
+      "id": "lfm3-1-7b",
+      "name": "Liquid LFM3-1.7B",
+      "family": "LiquidAI",
+      "params": 1.73,
+      "type": "dense",
+      "modality": "text",
+      "contextK": 262.144,
+      "sizeQ4": 1.099627808,
+      "sizeQ2": null,
+      "vramMinQ2": null,
+      "vramMinQ4": null,
+      "vramComfortQ4": null,
+      "tags": [
+        "edge",
+        "on-device",
+        "text",
+        "hybrid"
+      ],
+      "aliases": [
+        "LFM3-1.7B",
+        "LiquidAI/LFM3-1.7B"
+      ],
+      "blurb": "Liquid AI’s October 27, 2026 text-only model for constrained agents and structured output. It uses a tri-hybrid architecture. Its publisher does not recommend it for agentic coding or complex multi-step reasoning.",
+      "license": "LFM Open License v1.0",
+      "huggingface": "https://huggingface.co/LiquidAI/LFM3-1.7B",
+      "sources": [
+        "https://www.liquid.ai/blog/lfm3",
+        "https://huggingface.co/LiquidAI/LFM3-1.7B/blob/0dc4268b561499c648c7ba7c9466bf3d8d01517a/README.md",
+        "https://huggingface.co/LiquidAI/LFM3-1.7B/blob/0dc4268b561499c648c7ba7c9466bf3d8d01517a/LICENSE",
+        "https://huggingface.co/LiquidAI/LFM3-1.7B-GGUF/blob/cd0c74c575b5c416f3011b5b4c298077f26ca8c2/README.md#use-with-llamacpp"
+      ],
+      "benchmarks": {
+        "hle": null,
+        "tb2": null,
+        "swebench_pro": null,
+        "swebench_ver": null,
+        "aider": null,
+        "livecodebench": null,
+        "gpqa": null,
+        "mmlu_pro": null,
+        "aime": null
+      },
+      "benchmarkNotes": "The publisher evaluates BF16 with named agent harnesses, including OpenCode for SWE-bench and Terminal-Bench 2.1. These results do not establish Q4_K_M quality or measured speed on an 8 GB laptop or base M4 Mac mini. The cited sources provide no matched peak-memory or throughput measurement for either target.",
+      "sizeQ5": 1.2586632,
+      "sizeQ8": 1.846238496,
+      "ratings": {}
+    },
     {
       "id": "qwen3-8b",
       "name": "Qwen 3 8B",
@@ -1806,6 +1854,67 @@
         "DeepSeek-V4-Flash",
         "DeepSeek-V4-Flash-0731"
       ]
+    },
+    {
+      "id": "inkling-small-276b-a12b-moe",
+      "name": "Inkling-Small 276B-A12B (MoE)",
+      "family": "Thinking Machines",
+      "params": 276,
+      "activeParams": 12,
+      "type": "moe",
+      "modality": "multimodal",
+      "sizeQ4": 166,
+      "vramMinQ4": 180,
+      "vramComfortQ4": 210,
+      "sizeQ2": null,
+      "vramMinQ2": null,
+      "ratings": {
+        "chat": 5,
+        "coding": 5,
+        "agents": 5,
+        "reasoning": 5,
+        "longContext": 5,
+        "vision": 5
+      },
+      "tags": [
+        "moe",
+        "frontier",
+        "agents",
+        "long-context",
+        "vision",
+        "multimodal"
+      ],
+      "aliases": [
+        "Inkling-Small",
+        "Thinking Machines Inkling-Small"
+      ],
+      "blurb": "Jul 2026 release. 276 B total / 12 B active MoE (6 of 256 routed experts plus 2 shared), open-weights Apache 2.0, 1 M-token context, native text, image and audio input with text output. Ships as two vendor checkpoints: a Blackwell NVFP4 4-bit checkpoint (166.27 GB of weights across 9 shards, plus a 4.46 GB MTP module) whose model card floor is at least 180 GB aggregated VRAM, and a BF16 checkpoint (527.45 GB across 32 shards, plus the same 4.46 GB MTP module). The NVFP4 checkpoint fits a 2x DGX Spark (256 GB) with headroom but does not fit a single 128 GB Spark or Strix Halo box - the one-box/two-box boundary is the story.",
+      "license": "Apache 2.0",
+      "huggingface": "https://huggingface.co/thinkingmachines/Inkling-Small",
+      "benchmarks": {
+        "hle": 31.6,
+        "tb2": null,
+        "tb2_1": 64.7,
+        "swebench_pro": 55.9,
+        "swebench_ver": 80.2,
+        "aider": null,
+        "livecodebench": null,
+        "gpqa": 89.5,
+        "mmlu_pro": null,
+        "aime": 95.5
+      },
+      "vibes": {
+        "coding": "Vendor model card (2026-07) ranks Inkling-Small 80.2% on SWE-bench Verified and 55.9% on SWE-bench Pro (public), scoring above the larger 975B Inkling on SWE-bench Verified, Terminal-Bench 2.1 (64.7% best harness) and ARC-AGI-2, while activating only 12 B of its 276 B parameters - the flagship 'efficient frontier' pitch behind the release.",
+        "agentDriver": "Terminal-Bench 2.1 64.7% (best harness) and Toolathlon Verified 54.4% put it among the stronger open-weights agent drivers. It is a real homelab goal but only on a 2x Spark-class 256 GB+ rig - a single 128 GB box cannot hold the NVFP4 checkpoint."
+      },
+      "benchmarkNotes": "All figures vendor-reported on the Thinking Machines Inkling-Small model card (2026-07/08). tb2_1 = Terminal-Bench 2.1, not site tb2 (Terminal-Bench 2.0, left null - no 2.0 figure published). HLE 31.6 is text-only; HLE with tools 47.8. GPQA Diamond 89.5, AIME 2026 95.5. Footprints from the actual HF checkpoint listings (verified 2026-09-21): NVFP4 = 9 safetensors shards totalling 166.27 GB + 4.46 GB mtp; BF16 = 32 shards totalling 527.45 GB. Vendor floor for NVFP4 = at least 180 GB aggregated VRAM. No first-party Inkling tok/s on our Spark hardware yet - do not vendor-repeat a speed claim.",
+      "sources": [
+        "https://thinkingmachines.ai/model-card/inkling-small/",
+        "https://huggingface.co/thinkingmachines/Inkling-Small",
+        "https://huggingface.co/thinkingmachines/Inkling-Small-NVFP4",
+        "https://huggingface.co/blog/thinkingmachines-inkling"
+      ],
+      "contextK": 1000
     },
     {
       "id": "deepseek-v4-pro-1t6-moe",

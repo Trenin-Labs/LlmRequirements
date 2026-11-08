@@ -38,7 +38,7 @@ jq '.builds | map(select(.vendor == "Apple")) | sort_by(-(.tps."70b" // 0))
 **Find every model that fits in 24 GB VRAM with comfort headroom:**
 
 ```bash
-jq '.models | map(select(.vramComfortQ4 <= 24))
+jq '.models | map(select(.vramComfortQ4 != null and .vramComfortQ4 <= 24))
    | .[] | {id, params, vramComfortQ4, ratings: .ratings.coding}' models.json
 ```
 
