@@ -8473,7 +8473,7 @@
       "url": "https://github.com/vllm-project/vllm/issues/28649"
     }
   ],
-  "_modelRunsMethodology": "modelRuns keeps source-reported, model-specific runs separate from the legacy generic throughput arrays. Read checkpoint, quantization, engine, concurrency, context and note together. Claimed runs are not independently reproduced; aggregate decode is not single-stream. Configured context is not measured prompt depth. Historical measuredOn catalog metadata is not an independently certified run date.",
+  "_modelRunsMethodology": "modelRuns keeps source-reported, model-specific runs separate from the legacy generic throughput arrays. Read checkpoint, quantization, engine, concurrency, context and note together. Claimed runs are not independently reproduced. Aggregate decode is not single-stream. Configured context is not measured prompt depth. Historical measuredOn catalog metadata is not an independently certified run date.",
   "modelRuns": [
     {
       "buildId": "dgx-spark-x4",

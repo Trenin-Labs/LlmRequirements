@@ -74,7 +74,7 @@ diff <(jq -S . prices/2026-05-14.json) <(jq -S . prices/2026-05-07.json)
 
 ### Model-specific `modelRuns`
 
-`benchmarks.json.modelRuns` is separate from the generic `tps` arrays above. Each run retains its model and build IDs, quantization, engine, concurrency, decode throughput, source, status and note, plus context, prefill, cluster and speculative-decoding fields where available. Read the whole record; do not turn it into a generic Q4 fit or hardware ranking.
+`benchmarks.json.modelRuns` is separate from the generic `tps` arrays above. Each run retains its model and build IDs, quantization, engine, concurrency, decode throughput, source, status and note, plus context, prefill, cluster and speculative-decoding fields where available. Read the whole record. Do not turn it into a generic Q4 fit or hardware ranking.
 
 The six MiniMax records are source-reported (`claimed`), not independent reproductions. Four use the official checkpoint on four DGX Sparks with TP4, DSpark and FP8 KV. Its 300K configured window is not a measured 300K prompt: the reported prompt depths are 238, 27,452 and 97,259 tokens. The C6 result is aggregate, not single-stream.
 
