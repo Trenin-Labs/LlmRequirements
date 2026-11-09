@@ -2018,7 +2018,7 @@
     },
     {
       "id": "qwen3-8-27b",
-      "name": "Qwen3.8-27B",
+      "name": "Qwen 3.8 27B (dense)",
       "family": "Qwen",
       "params": 27,
       "activeParams": null,
@@ -2029,29 +2029,45 @@
       "vramComfortQ4": 24,
       "tags": [
         "dense",
-        "vlm-ready"
+        "coding",
+        "vision",
+        "long-context",
+        "reasoning"
       ],
-      "blurb": "Released in Aug 2026, Qwen3.8-27B is a compact dense vision-language model and the deployment-friendly text model of the generation. Apache-2.0.",
+      "blurb": "Qwen3.8-27B fits a single 24 GB card at Q4 for short-context text work. The model also supports images, video and a 262K-token native window, with memory use varying by runtime and context. Qwen reports 61.7% on SWE-bench Pro in its same-version table, 8.2 points above the preceding 27B checkpoint. Released August 14, 2026.",
       "license": "Apache 2.0",
       "huggingface": "https://huggingface.co/Qwen/Qwen3.8-27B",
       "aliases": [
         "Qwen3.8-27B",
         "Qwen 3.8 27B"
       ],
+      "benchmarks": {
+        "hle": 30.8,
+        "tb2": null,
+        "swebench_pro": 61.7,
+        "swebench_ver": null,
+        "aider": null,
+        "livecodebench": 90.3,
+        "gpqa": 89.2,
+        "mmlu_pro": null,
+        "aime": null
+      },
       "ratings": {
-        "chat": 0,
+        "chat": 4,
         "coding": 5,
-        "agents": 3,
-        "reasoning": 0,
-        "longContext": 0,
-        "vision": 0
+        "agents": 4,
+        "reasoning": 5,
+        "longContext": 5,
+        "vision": 4
       },
       "vibes": {
-        "coding": "Community reports show long autonomous OpenCode runs, including a 1M-token session and an 80-tool-call prompt. Some users report overthinking that improves with reasoning-effort tuning.",
-        "agentDriver": "Community reports include an 80-tool-call prompt and a roughly two-hour OpenCode build. Its 27B footprint keeps it practical on high-end local hardware."
+        "coding": "Qwen reports SWE-bench Pro 61.7 and LiveCodeBench v6 90.3. The UD-Q4_K_M download is 16.46 GB before cache and runtime memory. In a separate setup using NInfer-format weights, an RTX 3090 owner reports 71.0 tok/s decode at C1 with MTP3 and an 8K server maximum.",
+        "agentDriver": "Qwen reports 73.0 on Terminal Bench 2.1 with the Terminus harness. That score measures terminal-task completion under the published harness and settings."
       },
+      "benchmarkNotes": "All benchmarks from Qwen's official Qwen3.8-27B model card comparison table (opens 2026-08-14), same-version columns for the two generations: SWE-bench Pro 61.7 (Claude Code harness, 256K ctx), LiveCodeBench v6 90.3, Terminal-Bench 2.1 / Terminus 73.0, HLE 30.8 (GPT-4o judged), plus 89.2 on the vendor's reasoning benchmark. NO SWE-bench Verified, MMLU-Pro, or AIME value is published in the vendor card for 3.8: those are stored null rather than reused from the prior-gen row (Verified would be a fabrication). Speed is community-sourced and labelled: 71.0 tok/s decode (70.19 end-to-end), single-stream C1, MTP3+ReplaySSM, INT8 KV, 8,192-token max context, 29-34-token prompts, one RTX 3090 (NInfer-3090 v0.6.0, r/LocalLLaMA 2026-08-14, owner u/mrmontanasagrada), 16.96 GiB NInfer artifact. NVFP4 + DFlash2 ~203 tok/s/user at C1, ISL 8192 / OSL 1024 on one RTX 5090 (SGLang cookbook). GGUF (unsloth tree, checked 2026-09-03): no plain Q4_K_M is published. UD-Q4_K_M is 16.46 GB, plain Q4_0 is 16.06 GB.",
       "sources": [
         "https://huggingface.co/Qwen/Qwen3.8-27B",
+        "https://huggingface.co/unsloth/Qwen3.8-27B-GGUF",
         "https://www.reddit.com/r/LocalLLaMA/comments/1voblcs/qwen3827b_is_identical_to_qwen3627b/",
         "https://www.reddit.com/r/LocalLLaMA/comments/1vqyq8r/artificial_analysis_qwen3827b_benchmarks_put_it/",
         "https://www.reddit.com/r/LocalLLaMA/comments/1vqrt86/after_pushing_1m_tokens_through_qwen_38_27b_here/",
@@ -2059,7 +2075,8 @@
         "https://www.reddit.com/r/LocalLLaMA/comments/1vvyacg/qwen_38_27b_is_a_game_changer/",
         "https://news.ycombinator.com/item?id=49324985",
         "https://news.ycombinator.com/item?id=49407507"
-      ]
+      ],
+      "contextK": 262
     },
     {
       "id": "nemotron-3-5-lightning-30b-a3b-moe",
