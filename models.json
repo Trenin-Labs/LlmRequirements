@@ -1,8 +1,8 @@
 {
   "$schema": "https://json-schema.org/draft-07/schema#",
   "_description": "LLM model catalog with ratings and VRAM requirements. See README.md for schema.",
-  "_lastUpdated": "2026-11-07",
-  "_count": 75,
+  "_lastUpdated": "2026-11-08",
+  "_count": 76,
   "models": [
     {
       "id": "lfm3-1-7b",
@@ -3486,6 +3486,56 @@
       "blurb": "Open-weights 33.1B multimodal video model released in Aug 2026. It creates 4 to 15 second clips with native 32 kHz stereo audio at up to 2K resolution. ComfyUI can reduce the 123.6 GB footprint to 42.5 GB with offload, allowing short clips on 12 to 16 GB consumer GPUs in roughly two to three minutes. Its community license bars local deployment in the US, EU, UK and Korea.",
       "license": "MiniMax H3 Community License",
       "huggingface": "https://huggingface.co/MiniMaxAI/MiniMax-H3"
+    },
+    {
+      "id": "minimax-m3-1-flash-428b-moe",
+      "name": "MiniMax M3.1-Flash 428B-A23B (MoE)",
+      "family": "MiniMax",
+      "params": 428,
+      "activeParams": 23,
+      "type": "moe",
+      "modality": "text",
+      "sizeQ4": null,
+      "vramMinQ4": null,
+      "vramComfortQ4": null,
+      "ratings": {},
+      "tags": [
+        "moe",
+        "frontier",
+        "multimodal",
+        "long-context",
+        "agents",
+        "vision"
+      ],
+      "blurb": "Oct 23 2026. Built on MiniMax M3: 428 B total / 23 B active MoE with sparse attention in every layer and a 1 M-token context window, taking text, image and video input. Quantization-aware trained and released only as MXFP8 attention and dense layers plus NVFP4 routed experts: 250 GB of weights in 48 shards plus the DSpark draft head in dspark/, so there is no BF16 or GGUF release of this model.",
+      "license": "MINIMAX COMMUNITY LICENSE: commercial use must display \"Built with MiniMax M3.1-Flash\" and send a one-time notice to MiniMax. Above 20 million USD of yearly revenue, prior written authorization is required.",
+      "huggingface": "https://huggingface.co/MiniMaxAI/MiniMax-M3.1-Flash",
+      "benchmarks": {
+        "hle": 43.4,
+        "tb2": null,
+        "swebench_pro": null,
+        "swebench_ver": null,
+        "aider": null,
+        "livecodebench": null,
+        "gpqa": null,
+        "mmlu_pro": null,
+        "aime": null
+      },
+      "vibes": {
+        "coding": "Ships the DSpark speculative-decoding draft head (k=3, 2.1 to 3.2 tokens per step, acceptance 0.36 on free-form prose up to 0.74 on code in the 4x DGX Spark vLLM recipe). On GB10 the experts run weight-only W4A16 (Marlin) because per-token NVFP4 activation scales need SM100 MoE kernels.",
+        "agentDriver": "1 M-token window with sparse attention in every layer. Model card reports Terminal Bench 4.0 38.1, DeepSWE v1.1 73.7, NL2Repo-Bench 61.2, CyberGym 82.2, OSWorld 2.0 61.7 and HLE 43.4 without tools."
+      },
+      "benchmarkNotes": "Model card (2026-10-23) reports Automation-Bench v1.0.6 62.8, BankerToolBench 76.2, Terminal Bench 4.0 38.1, LOCA-Bench 256K 60.3, OSWorld 2.0 61.7, DeepSWE v1.1 73.7, NL2Repo-Bench 61.2, SWE Refactor Bench 23.0, CyberGym 82.2, HLE 43.4 without tools, CharXiv RQ 82.5. HLE is the text-only subset without tools. No SWE-Bench Pro or SWE-Bench Verified figure is published for M3.1-Flash, so those stay empty. tb2 stays empty because the card's terminal-agent number is Terminal Bench 4.0, not 2.0. No generic Q4 size, loaded-memory minimum or editorial rating is assigned. Native artifact accounting: pinned revision 54e4e69dfc452b1e94a426c24a4fdeeaa8e3ad5e has model.safetensors.index.json total_size 250,103,411,200 bytes, 48 shard files totalling 250,116,419,880 bytes, drafter weights 2,301,867,426 bytes, drafter folder 2,301,888,831 bytes and repository 252,446,157,295 bytes. These are file scopes, not loaded-memory measurements. FP8 cache before tensor sharding is 67.5 KiB/token (60 KiB K/V + 7.5 KiB index). TP4 keeps a full index copy per rank: 22.5 KiB/token/rank, 90 KiB aggregate, before allocation overhead. Published owner runs, not ours: official checkpoint on 4x DGX Spark GB10, vLLM arm64 cu134 TP4, DSpark k=3, FP8 KV, 300K configured window. Decode is 22.2 tok/s at median 238 prompt tokens, 33.2 at 27,452 and 31.0 at 97,259, with 256 output tokens. 84.2 tok/s is aggregate C6 on short prompts, not single stream or measured 300K depth. Historical 272B 80-of-128 expert-pruned NVFP4 build at 05e8c0b807a1e364c7ba813e342c9c458e2a2285: 162.90 GB, 2x RTX PRO 6000 Blackwell TP2, FP8 KV, 8K input/512 output, 32,768-token window, images off, 73.1 tok/s C1 and 289.8 aggregate C32. Its exact run date is not independently certified. The old alias now serves a different 285B derivative following reported non-English language failures. Historical numbers do not describe that successor or a matched hardware ranking.",
+      "sources": [
+        "https://huggingface.co/MiniMaxAI/MiniMax-M3.1-Flash",
+        "https://github.com/tonyd2wild/MiniMax-M3.1-Flash-TP4-DGX-Sparks",
+        "https://huggingface.co/primitive-ai/MiniMax-M3.1-Flash-pruned-285B-NVFP4/tree/05e8c0b807a1e364c7ba813e342c9c458e2a2285"
+      ],
+      "aliases": [
+        "MiniMax-M3.1-Flash",
+        "MiniMaxAI/MiniMax-M3.1-Flash"
+      ],
+      "contextK": 1000
     }
   ]
 }

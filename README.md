@@ -49,6 +49,12 @@ jq '.builds | map(select(.tps."235b_moe" != null))
    | sort_by(.priceUSD) | .[0] | {id, name, priceUSD, tps_235b: .tps."235b_moe"}' builds.json
 ```
 
+**Read the MiniMax runs with all their qualification fields:**
+
+```bash
+jq '.modelRuns[] | select(.modelId == "minimax-m3-1-flash-428b-moe")' benchmarks.json
+```
+
 **Audit pricing changes between two snapshots:**
 
 ```bash
@@ -65,6 +71,14 @@ diff <(jq -S . prices/2026-05-14.json) <(jq -S . prices/2026-05-07.json)
 - Sourced from `llama.cpp` / `vLLM` benchmarks — see `benchmarks.json` → `sources` for the trail.
 - `null` means *won't fit* or *no reliable measurement* — distinct from `0`.
 - Sizes: `8b`, `14b`, `30b`, `70b`, `120b_moe`, `235b_moe`. MoE entries are active-parameter speed, not dense-equivalent.
+
+### Model-specific `modelRuns`
+
+`benchmarks.json.modelRuns` is separate from the generic `tps` arrays above. Each run retains its model and build IDs, quantization, engine, concurrency, decode throughput, source, status and note, plus context, prefill, cluster and speculative-decoding fields where available. Read the whole record. Do not turn it into a generic Q4 fit or hardware ranking.
+
+The six MiniMax records are source-reported (`claimed`), not independent reproductions. Four use the official checkpoint on four DGX Sparks with TP4, DSpark and FP8 KV. Its 300K configured window is not a measured 300K prompt: the reported prompt depths are 238, 27,452 and 97,259 tokens. The C6 result is aggregate, not single-stream.
+
+Two records belong only to the historical 272B expert-pruned checkpoint pinned in their source URLs, on two RTX PRO 6000 Blackwell GPUs. C32 is aggregate. Those numbers do not describe the current 285B successor, and the retained historical `measuredOn` catalog field is not an independently certified run date. Neither regime establishes a matched hardware comparison. Generic Q4 memory fields and editorial ratings remain unassigned for this model.
 
 ### Ratings (0–5)
 
