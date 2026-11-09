@@ -82,7 +82,7 @@ Typical overheads: single consumer GPU $600–700, dual $1000–1400, quad homel
 
 The Mac mini M5 Pro 64 GB, Mac mini M6 32 GB and Mac Studio M5 Max 128 GB entries describe physical RAM, not verified model capacity. Their usable memory, throughput, prefill and TTFT remain null. The zero used by the sorting example above is only a sort key, not a measurement. No model/quant/runtime recipe or hardware winner is inferred.
 
-Their configured Apple US prices retain September 21, 2026 observations. November 7 specification checks and the November 8 package date do not refresh those offers. Read each `priceNote` and `priceVerifiedOn` with the exact configuration and source URL. Current orderability, delivery, tax and shipping remain unverified; no new regional offers are asserted. The new snapshot carries earlier price rows and coverage unchanged, without rechecking them. The Ultra configuration is not included.
+Their configured Apple US prices retain September 21, 2026 observations. November 7 specification checks and the November 8 package date do not refresh those offers. Read each `priceNote` and `priceVerifiedOn` with the exact configuration and source URL. Current orderability, delivery, tax and shipping remain unverified. No new regional offers are asserted. The new snapshot carries earlier price rows and coverage unchanged, without rechecking them. The Ultra configuration is not included.
 
 ```bash
 jq '.builds | to_entries[] | select(.value.priceVerifiedOn == "2026-09-21")

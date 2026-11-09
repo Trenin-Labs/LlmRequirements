@@ -1,9 +1,9 @@
 {
   "$schema": "https://json-schema.org/draft-07/schema#",
-  "_description": "Partial historical configuration snapshot. priceUSD values are whole-system US references or estimates; individual observation dates and coverage govern their scope, not this package date.",
+  "_description": "Partial historical configuration snapshot. priceUSD values are whole-system US references or estimates. Individual observation dates and coverage govern their scope, not this package date.",
   "_lastUpdated": "2026-11-08",
   "_snapshot": "2026-11-08",
-  "_currencyNotes": "Regional prices retain their original currencies and source qualifications. The three added Apple configurations are historical US-dollar references; tax, shipping, current inventory and delivery are unverified. No new regional offers or conversions are added.",
+  "_currencyNotes": "Regional prices retain their original currencies and source qualifications. The three added Apple configurations are historical US-dollar references. Tax, shipping, current inventory and delivery are unverified. No new regional offers or conversions are added.",
   "builds": {
     "your-laptop-8gb": {
       "name": "Your own laptop (8 GB RAM)",
@@ -888,7 +888,7 @@
     "retainedPricesReverified": false,
     "currentPriceVerification": false,
     "readerScope": "Three retained Apple US configured USD offers only. No current inventory, tax, shipping, regional offer or recipe qualification.",
-    "note": "Package date is not a fresh observation. Prices retain September 21 evidence; November 7 specification checks do not refresh offers.",
+    "note": "Package date is not a fresh observation. Prices retain September 21 evidence. November 7 specification checks do not refresh offers.",
     "retainedCoverage": [
       {
         "scope": "partial-price-release",
