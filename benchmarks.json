@@ -9,7 +9,7 @@
     "ttft100k": 383,
     "image": 141,
     "video": 129,
-    "sources": 190,
+    "sources": 192,
     "modelRunRows": 6
   },
   "tps": [
@@ -8471,6 +8471,14 @@
     {
       "label": "vLLM gfx1201 / RDNA4 FP8-upstream issue",
       "url": "https://github.com/vllm-project/vllm/issues/28649"
+    },
+    {
+      "label": "DataVision Computer Video on Amazon US: NEW Mac mini M4 24 GB / 512 GB MCYT4LL/A, $1,399 cash reference observed 2026-11-07",
+      "url": "https://www.amazon.com/dp/B0DLBV145M"
+    },
+    {
+      "label": "Custom Lux PCs CL324325: mixed-condition complete dual RTX 3090 US purchase reference, observed 2026-11-07",
+      "url": "https://customluxpcs.com/product/dual-rtx-3090/"
     }
   ],
   "_modelRunsMethodology": "modelRuns keeps source-reported, model-specific runs separate from the legacy generic throughput arrays. Read checkpoint, quantization, engine, concurrency, context and note together. Claimed runs are not independently reproduced. Aggregate decode is not single-stream. Configured context is not measured prompt depth. Historical measuredOn catalog metadata is not an independently certified run date.",

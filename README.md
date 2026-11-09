@@ -92,6 +92,15 @@ We are deliberately conservative on `agents`. Sub-200B local models score 30–4
 
 Typical overheads: single consumer GPU $600–700, dual $1000–1400, quad homelab $1500–2700, octuple server $2900–3500.
 
+
+### Named US desktop references in the November 8 snapshot
+
+The Mac mini M4 24 GB reference is one new MCYT4LL/A desktop with 512 GB SSD at $1,399 cash, sold and shipped by DataVision Computer Video on [Amazon US](https://www.amazon.com/dp/B0DLBV145M), observed November 7, without AppleCare+. Stock and free delivery were advertised for Herndon 20170, US. Physical stock, other destinations, final tax, checkout and fulfilment remain unverified. It replaces an unconfirmed $999 reference, not a market minimum.
+
+The dual RTX 3090 profile uses the [Custom Lux PCs CL324325](https://customluxpcs.com/product/dual-rtx-3090/) complete system at $7,999 before destination sales tax, observed November 7. Two certified-refurbished 24 GB GPUs share one new-component Core Ultra 9 285K / 128 GB DDR5-5600 / MSI Z890 MPG Carbon WiFi host with advertised x8/x8, 4 TB NVMe alternatives and a 1600 W PSU. NVLink costs extra and is excluded. SSD brand and OS are unselected. Advertised stock and free US shipping do not verify quantity, allocation, destination eligibility, an accepted order or fulfilment.
+
+This replaces an unconfirmed $3,400 DIY estimate as a named purchase-price reference, not like-for-like inflation, a market minimum or a new benchmark. The bundled cards and host have no separately evidenced split: `rigOverheadUSD: 0` does not mean a free host or establish a card-only price. Existing performance and recipes retain their original source systems and regimes, not measurements or compatibility certification of CL324325. Other prices, national overrides and observations retain their existing evidence dates.
+
 ### Pricing snapshots
 
 - Filename is the date the snapshot was taken (ISO-8601, UTC).
