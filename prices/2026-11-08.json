@@ -1,9 +1,9 @@
 {
   "$schema": "https://json-schema.org/draft-07/schema#",
-  "_description": "Partial historical configuration snapshot. priceUSD values are whole-system US references or estimates. Individual observation dates and coverage govern their scope, not this package date.",
+  "_description": "Partial whole-system price snapshot. Only the two selected named US references in _coverage are newly represented here. All other values retain their earlier evidence and are not fresh confirmations.",
   "_lastUpdated": "2026-11-08",
   "_snapshot": "2026-11-08",
-  "_currencyNotes": "Regional prices retain their original currencies and source qualifications. The three added Apple configurations are historical US-dollar references. Tax, shipping, current inventory and delivery are unverified. No new regional offers or conversions are added.",
+  "_currencyNotes": "The selected US offers are before destination sales tax; shipping and availability statements are advertised, not verified orders or fulfilment. Retained regional references and converted estimates keep their own tax and source limitations.",
   "builds": {
     "your-laptop-8gb": {
       "name": "Your own laptop (8 GB RAM)",
@@ -71,7 +71,7 @@
     "mac-mini-m4-24": {
       "name": "Mac Mini M4 (24 GB)",
       "vendor": "Apple",
-      "priceUSD": 999,
+      "priceUSD": 1399,
       "rigOverheadUSD": 0,
       "regionPrices": {
         "EU": 1169,
@@ -302,8 +302,8 @@
     "rtx-3090-x2": {
       "name": "Dual RTX 3090 (used) build",
       "vendor": "NVIDIA",
-      "priceUSD": 3400,
-      "rigOverheadUSD": 1000,
+      "priceUSD": 7999,
+      "rigOverheadUSD": 0,
       "regionPrices": {
         "NL": 2772
       }
@@ -780,115 +780,80 @@
       "vendor": "tinycorp",
       "priceUSD": 40000,
       "rigOverheadUSD": 0
-    },
-    "mac-mini-m5-pro-64": {
-      "name": "Mac Mini M5 Pro (64 GB)",
-      "vendor": "Apple",
-      "priceUSD": 3199,
-      "rigOverheadUSD": 0,
-      "priceVerifiedOn": "2026-09-21",
-      "priceNote": "M5 Pro 18-core CPU / 20-core GPU / 64 GB unified / 1 TB SSD. Retained Apple US configured price $3,199, source date 2026-09-21, SKU MHQU4LL/A. Current orderability and delivery estimate are unverified.",
-      "sourceUrl": "https://www.apple.com/shop/buy-mac/mac-mini/m5-pro-chip-18-core-cpu-20-core-gpu-64gb-memory-1tb-storage",
-      "seller": "Apple US",
-      "sourceCountry": "US",
-      "currency": "USD"
-    },
-    "mac-mini-m6-32": {
-      "name": "Mac Mini M6 (32 GB)",
-      "vendor": "Apple",
-      "priceUSD": 1799,
-      "rigOverheadUSD": 0,
-      "priceVerifiedOn": "2026-09-21",
-      "priceNote": "M6 12-core CPU / 12-core GPU / 32 GB unified / 1 TB SSD. Retained Apple US configured price $1,799, source date 2026-09-21, SKU MHQV4LL/A. Current orderability and delivery estimate are unverified.",
-      "sourceUrl": "https://www.apple.com/shop/buy-mac/mac-mini/m6-chip-12-core-cpu-12-core-gpu-32gb-memory-1tb-storage",
-      "seller": "Apple US",
-      "sourceCountry": "US",
-      "currency": "USD"
-    },
-    "mac-studio-m5-max-128": {
-      "name": "Mac Studio M5 Max 128 GB",
-      "vendor": "Apple",
-      "priceUSD": 5399,
-      "rigOverheadUSD": 0,
-      "priceVerifiedOn": "2026-09-21",
-      "priceNote": "M5 Max 18-core CPU / 40-core GPU / 128 GB unified / 1 TB SSD. Retained Apple US configured price $5,399, source date 2026-09-21. Current orderability and delivery estimate are unverified.",
-      "sourceUrl": "https://www.apple.com/shop/buy-mac/mac-studio/m5-max-chip-18-core-cpu-40-core-gpu-128gb-memory-1tb-storage",
-      "seller": "Apple US",
-      "sourceCountry": "US",
-      "currency": "USD"
     }
   },
   "_coverage": {
-    "scope": "historical-configuration-addition",
-    "snapshotCreatedOn": "2026-11-08",
-    "sourceObservationDate": "2026-09-21",
-    "specificationCheckedOn": "2026-11-07",
-    "historicalAdded": [
+    "scope": "partial-price-release",
+    "catalogEvidenceThrough": "2026-09-24",
+    "sourceObservationDate": "2026-11-07",
+    "updated": [
       {
-        "buildId": "mac-mini-m5-pro-64",
-        "priceUSD": 3199,
+        "buildId": "mac-mini-m4-24",
+        "region": "USD",
+        "price": 1399,
         "currency": "USD",
+        "sourceUrl": "https://www.amazon.com/dp/B0DLBV145M",
+        "accessedAt": "2026-11-07",
         "sourceCountry": "US",
-        "seller": "Apple US",
-        "sourceUrl": "https://www.apple.com/shop/buy-mac/mac-mini/m5-pro-chip-18-core-cpu-20-core-gpu-64gb-memory-1tb-storage",
-        "priceVerifiedOn": "2026-09-21",
-        "configuration": {
-          "cpuCores": 18,
-          "gpuCores": 20,
-          "storageGB": 1000,
-          "memoryGB": 64
+        "sourceSKU": "MCYT4LL/A",
+        "asin": "B0DLBV145M",
+        "configuration": "MCYT4LL/A; M4 10CPU/10GPU; 24GB RAM; 512GB SSD; one NEW complete desktop; without AppleCare+; one-time cash",
+        "seller": "DataVision Computer Video",
+        "shipper": "DataVision Computer Video",
+        "condition": "NEW selected buying option",
+        "quantity": 1,
+        "destination": "Herndon 20170, US",
+        "availability": "In Stock advertised for the captured destination; physical allocation and other destinations unverified",
+        "taxIncluded": false,
+        "physicalStockVerified": false,
+        "checkoutVerified": false,
+        "shipping": {
+          "country": "US",
+          "currency": "USD",
+          "price": 0,
+          "advertised": true,
+          "checkoutVerified": false
         },
-        "currentOrderabilityVerified": false,
-        "taxIncluded": null,
-        "shippingVerified": false,
-        "physicalStockVerified": false
+        "deliveryWindowQualification": "FREE delivery Monday, November 16 was advertised, not an accepted-order or fulfilment guarantee.",
+        "referenceBasis": "Selected named US seller offer, not market minimum or a universal manufacturer MSRP. The retained USD999 was not qualified as an available like-for-like offer."
       },
       {
-        "buildId": "mac-mini-m6-32",
-        "priceUSD": 1799,
+        "buildId": "rtx-3090-x2",
+        "region": "USD",
+        "price": 7999,
         "currency": "USD",
         "sourceCountry": "US",
-        "seller": "Apple US",
-        "sourceUrl": "https://www.apple.com/shop/buy-mac/mac-mini/m6-chip-12-core-cpu-12-core-gpu-32gb-memory-1tb-storage",
-        "priceVerifiedOn": "2026-09-21",
-        "configuration": {
-          "cpuCores": 12,
-          "gpuCores": 12,
-          "storageGB": 1000,
-          "memoryGB": 32
+        "sourceSKU": "CL324325",
+        "seller": "Custom Lux PCs",
+        "accessedAt": "2026-11-07T19:06:38.334323+00:00",
+        "configuration": "CL324325; one complete computer; 2 x RTX 3090 24GB; one Core Ultra 9 285K / 128GB DDR5-5600 / MSI Z890 MPG Carbon WiFi (advertised x8/x8) / 4TB NVMe alternatives / 1600W / Antec C8 / 360mm AIO host",
+        "quantity": 1,
+        "gpuQuantity": 2,
+        "sharedHost": true,
+        "condition": "Mixed: certified-refurbished GPUs, all other components new",
+        "scope": "complete-system",
+        "taxIncluded": false,
+        "sourceUrl": "https://customluxpcs.com/product/dual-rtx-3090/",
+        "availability": "Advertised InStock; physical allocation, quantity, destination order and fulfilment unverified",
+        "physicalStockVerified": false,
+        "checkoutVerified": false,
+        "shipping": {
+          "country": "US",
+          "currency": "USD",
+          "price": 0,
+          "advertised": true,
+          "checkoutVerified": false
         },
-        "currentOrderabilityVerified": false,
-        "taxIncluded": null,
-        "shippingVerified": false,
-        "physicalStockVerified": false
-      },
-      {
-        "buildId": "mac-studio-m5-max-128",
-        "priceUSD": 5399,
-        "currency": "USD",
-        "sourceCountry": "US",
-        "seller": "Apple US",
-        "sourceUrl": "https://www.apple.com/shop/buy-mac/mac-studio/m5-max-chip-18-core-cpu-40-core-gpu-128gb-memory-1tb-storage",
-        "priceVerifiedOn": "2026-09-21",
-        "configuration": {
-          "cpuCores": 18,
-          "gpuCores": 40,
-          "storageGB": 1000,
-          "memoryGB": 128
-        },
-        "currentOrderabilityVerified": false,
-        "taxIncluded": null,
-        "shippingVerified": false,
-        "physicalStockVerified": false
+        "nvlinkIncluded": false,
+        "nvlinkQualification": "Additional-cost customization; no surcharge selected",
+        "storageQualification": "4TB Samsung/WD/Crucial alternatives; no brand selected",
+        "osQualification": "Ubuntu24.04LTS or Windows11Pro advertised; no choice submitted",
+        "hostPricing": "Host and cards are bundled, not separately priced. No separate component or host price is established.",
+        "referenceBasis": "Selected named supplier purchase reference for the generic dual-3090 GPU profile, replacing an unconfirmed DIY estimate; not same-BOM inflation, market minimum, recipe compatibility or supplier benchmark certification.",
+        "performanceQualification": "Existing measurements and launch recipes retain their separate published source hosts, software, quant, context and concurrency. No CL324325 measurement is supplied."
       }
     ],
-    "updated": [],
     "confirmed": [],
-    "retainedPriceRows": 76,
-    "retainedPricesReverified": false,
-    "currentPriceVerification": false,
-    "readerScope": "Three retained Apple US configured USD offers only. No current inventory, tax, shipping, regional offer or recipe qualification.",
-    "note": "Package date is not a fresh observation. Prices retain September 21 evidence. November 7 specification checks do not refresh offers.",
     "retainedCoverage": [
       {
         "scope": "partial-price-release",
@@ -1327,7 +1292,104 @@
           }
         ]
       }
-    ]
-  },
-  "_catalogEvidenceThrough": "2026-09-24"
+    ],
+    "retainedPriceRows": 74,
+    "retainedPricesReverified": false,
+    "modelsReverified": false,
+    "recipesReverified": false,
+    "unverified": [
+      {
+        "buildId": "mac-mini-m4-16",
+        "region": "USD",
+        "status": "UNVERIFIED",
+        "note": "The retained $799 reference is unconfirmed. A different $1,058.99 CDW offer was backordered; no matching available $799 offer was established."
+      },
+      {
+        "buildId": "mac-studio-m3-ultra-256",
+        "region": "USD",
+        "status": "UNVERIFIED",
+        "note": "The retained $7,999 reference has an unresolved CPU/storage purchase basis. The $10,095.99 CDW 28CPU/256GB/2TB offer is a distinct seller reference, not a like-for-like confirmation or global restock."
+      },
+      {
+        "buildId": "mac-studio-m3-ultra-512",
+        "region": "USD",
+        "status": "UNVERIFIED",
+        "note": "The retained $14,199 reference remains dated 2026-07-28 and unconfirmed. B&H marked its exact 512GB/1TB item discontinued; other sellers and manufacturer-wide lifecycle remain unverified."
+      },
+      {
+        "buildId": "mac-studio-m3-ultra-512-x2",
+        "region": "USD",
+        "status": "UNVERIFIED",
+        "note": "The retained $28,400 reference remains dated 2026-06-12 and unconfirmed. Matching current two-node availability and the required TB5 fabric total are missing; multiplying an old single-node price does not qualify a cluster."
+      },
+      {
+        "buildId": "mac-studio-m3-ultra-96",
+        "region": "USD",
+        "status": "UNVERIFIED",
+        "note": "The retained $5,299 reference is unconfirmed. The CDW M3 Ultra 28CPU/96GB/1TB quote of $5,714.99 retains unresolved condition, destination and tax; a different current Apple generation is not a replacement quote."
+      },
+      {
+        "buildId": "mac-studio-m4-max-128",
+        "region": "USD",
+        "status": "UNVERIFIED",
+        "note": "The retained $4,699 reference remains dated 2026-07-28 and unconfirmed. B&H marked its exact M4 Max 128GB/512GB item discontinued; other sellers and global lifecycle remain unverified."
+      },
+      {
+        "buildId": "mac-studio-m4-max-36",
+        "region": "USD",
+        "status": "UNVERIFIED",
+        "note": "The retained $2,499 M4 Max reference is unconfirmed. CDW advertised a different $2,655.99 36GB/512GB reference on backorder; the $2,499 M5 recommendation is a different generation."
+      },
+      {
+        "buildId": "rtx-3060-12",
+        "region": "USD",
+        "status": "UNVERIFIED",
+        "note": "Exact complete-system offer qualifications remain unresolved. Retained cell/date is not confirmed by the dual-3090 supplier reference."
+      },
+      {
+        "buildId": "rtx-3090-24",
+        "region": "USD",
+        "status": "UNVERIFIED",
+        "note": "Single-PC 5699.99 representations agree; GPU condition, RAM-speed and premium-versus-budget basis remain unresolved. Retained cell/date is not confirmed by the dual-3090 supplier reference."
+      },
+      {
+        "buildId": "rtx-3090-96gb-ddr5",
+        "region": "USD",
+        "status": "UNVERIFIED",
+        "note": "Exact 96GB host/offer basis remains unresolved. Retained cell/date is not confirmed by the dual-3090 supplier reference."
+      },
+      {
+        "buildId": "rtx-3090-x4",
+        "region": "USD",
+        "status": "UNVERIFIED",
+        "note": "Shared-host EPYC/Threadripper/topology and stale offer basis remain unresolved. Retained cell/date is not confirmed by the dual-3090 supplier reference."
+      },
+      {
+        "buildId": "rtx-4090-128gb-ddr5",
+        "region": "USD",
+        "status": "UNVERIFIED",
+        "note": "Sold offer and exact 128GB host remain unqualified for current reuse. Retained cell/date is not confirmed by the dual-3090 supplier reference."
+      },
+      {
+        "buildId": "rtx-4090-24",
+        "region": "USD",
+        "status": "UNVERIFIED",
+        "note": "Current complete-system cash and host qualifications remain unresolved. Retained cell/date is not confirmed by the dual-3090 supplier reference."
+      }
+    ],
+    "deferred": [],
+    "readerScope": {
+      "confirmedRegionKeys": [
+        "USD"
+      ],
+      "confirmedCountry": "US",
+      "otherNationalOverridesReverified": false,
+      "convertedFallbacksReverified": false,
+      "destinationCheckoutTaxVerified": false,
+      "crossBorderDeliveryVerified": false,
+      "note": "Two selected US purchase references were observed on November 7. Existing national overrides and converted fallbacks are not freshly sourced domestic offers. Destination tax, physical stock and fulfilment remain unverified."
+    },
+    "retainedUnpricedBuildRows": 3,
+    "snapshotDateBasis": "Snapshot captured November 8. The selected offers were observed November 7. Snapshot date is not a new source observation, publication or checkout date."
+  }
 }

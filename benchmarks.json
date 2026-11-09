@@ -9,7 +9,8 @@
     "ttft100k": 401,
     "image": 141,
     "video": 129,
-    "sources": 190
+    "sources": 192,
+    "modelRunRows": 6
   },
   "tps": [
     {
@@ -8740,6 +8741,119 @@
     {
       "label": "vLLM gfx1201 / RDNA4 FP8-upstream issue",
       "url": "https://github.com/vllm-project/vllm/issues/28649"
+    },
+    {
+      "label": "DataVision Computer Video on Amazon US: NEW Mac mini M4 24 GB / 512 GB MCYT4LL/A, $1,399 cash reference observed 2026-11-07",
+      "url": "https://www.amazon.com/dp/B0DLBV145M"
+    },
+    {
+      "label": "Custom Lux PCs CL324325: mixed-condition complete dual RTX 3090 US purchase reference, observed 2026-11-07",
+      "url": "https://customluxpcs.com/product/dual-rtx-3090/"
+    }
+  ],
+  "_modelRunsMethodology": "modelRuns keeps source-reported, model-specific runs separate from the legacy generic throughput arrays. Read checkpoint, quantization, engine, concurrency, context and note together. Claimed runs are not independently reproduced. Aggregate decode is not single-stream. Configured context is not measured prompt depth. Historical measuredOn catalog metadata is not an independently certified run date.",
+  "modelRuns": [
+    {
+      "buildId": "dgx-spark-x4",
+      "modelId": "minimax-m3-1-flash-428b-moe",
+      "quant": "MXFP8 attention/dense + NVFP4 routed experts (release checkpoint), FP8 KV",
+      "engine": "vLLM arm64 cu134 (TP=4)",
+      "cluster": {
+        "nodes": 4
+      },
+      "specDecode": "DSpark k=3",
+      "concurrency": 1,
+      "decodeTps": 22.2,
+      "prefillTps": 460,
+      "status": "claimed",
+      "source": "https://github.com/tonyd2wild/MiniMax-M3.1-Flash-TP4-DGX-Sparks",
+      "measuredOn": "2026-10-23",
+      "note": "Official checkpoint at revision 54e4e69, 4x DGX Spark GB10, 300K context. Short chat prompt (median 238 tokens), 256 output tokens, TTFT 0.52 s. Single published measurement, not independently reproduced."
+    },
+    {
+      "buildId": "dgx-spark-x4",
+      "modelId": "minimax-m3-1-flash-428b-moe",
+      "quant": "MXFP8 attention/dense + NVFP4 routed experts (release checkpoint), FP8 KV",
+      "engine": "vLLM arm64 cu134 (TP=4)",
+      "cluster": {
+        "nodes": 4
+      },
+      "specDecode": "DSpark k=3",
+      "concurrency": 1,
+      "ctxTokens": 32768,
+      "decodeTps": 33.2,
+      "prefillTps": 1514,
+      "status": "claimed",
+      "source": "https://github.com/tonyd2wild/MiniMax-M3.1-Flash-TP4-DGX-Sparks",
+      "measuredOn": "2026-10-23",
+      "note": "32K prompt (median 27,452 tokens), single stream, DSpark k=3; prefill 1,514 tok/s."
+    },
+    {
+      "buildId": "dgx-spark-x4",
+      "modelId": "minimax-m3-1-flash-428b-moe",
+      "quant": "MXFP8 attention/dense + NVFP4 routed experts (release checkpoint), FP8 KV",
+      "engine": "vLLM arm64 cu134 (TP=4)",
+      "cluster": {
+        "nodes": 4
+      },
+      "specDecode": "DSpark k=3",
+      "concurrency": 1,
+      "ctxTokens": 98304,
+      "decodeTps": 31,
+      "prefillTps": 1474,
+      "status": "claimed",
+      "source": "https://github.com/tonyd2wild/MiniMax-M3.1-Flash-TP4-DGX-Sparks",
+      "measuredOn": "2026-10-23",
+      "note": "97K prompt (median 97,259 tokens), single stream; first token after 66 s, prefill 1,474 tok/s."
+    },
+    {
+      "buildId": "dgx-spark-x4",
+      "modelId": "minimax-m3-1-flash-428b-moe",
+      "quant": "MXFP8 attention/dense + NVFP4 routed experts (release checkpoint), FP8 KV",
+      "engine": "vLLM arm64 cu134 (TP=4)",
+      "cluster": {
+        "nodes": 4
+      },
+      "specDecode": "DSpark k=3",
+      "concurrency": 6,
+      "decodeTps": 84.2,
+      "prefillTps": 1169,
+      "status": "claimed",
+      "source": "https://github.com/tonyd2wild/MiniMax-M3.1-Flash-TP4-DGX-Sparks",
+      "measuredOn": "2026-10-23",
+      "note": "Aggregate decode with six concurrent users on short prompts (median 238 tokens), not single-stream; 16.0 tok/s per user."
+    },
+    {
+      "buildId": "rtx-pro-6000-blackwell-x2",
+      "modelId": "minimax-m3-1-flash-428b-moe",
+      "quant": "NVFP4 (272B 80-of-128 expert-pruned build), FP8 KV",
+      "engine": "vLLM (TP=2)",
+      "cluster": {
+        "nodes": 2
+      },
+      "concurrency": 1,
+      "ctxTokens": 8192,
+      "decodeTps": 73.1,
+      "status": "claimed",
+      "source": "https://huggingface.co/primitive-ai/MiniMax-M3.1-Flash-pruned-285B-NVFP4/tree/05e8c0b807a1e364c7ba813e342c9c458e2a2285",
+      "measuredOn": "2026-10-23",
+      "note": "Historical 272B derivative at pinned 05e8c0b, 162.90 GB of weights, not the official checkpoint or the current 285B successor. 8K in / 512 out, two seeds, 32,768-token window, images off. Knowledge 84.4 vs 85.0, drift 0.0822 nats/token, top-1 agreement 91.3%. The owner later reported non-English language failures. Single publisher, not independently reproduced. Retained measuredOn is historical catalog metadata, not an independently certified run date."
+    },
+    {
+      "buildId": "rtx-pro-6000-blackwell-x2",
+      "modelId": "minimax-m3-1-flash-428b-moe",
+      "quant": "NVFP4 (272B 80-of-128 expert-pruned build), FP8 KV",
+      "engine": "vLLM (TP=2)",
+      "cluster": {
+        "nodes": 2
+      },
+      "concurrency": 32,
+      "ctxTokens": 8192,
+      "decodeTps": 289.8,
+      "status": "claimed",
+      "source": "https://huggingface.co/primitive-ai/MiniMax-M3.1-Flash-pruned-285B-NVFP4/tree/05e8c0b807a1e364c7ba813e342c9c458e2a2285",
+      "measuredOn": "2026-10-23",
+      "note": "Historical 272B derivative at pinned 05e8c0b. Aggregate concurrency 32, 8K in / 512 out, 32,768-token window, images off, not single-stream or the current 285B successor. The release reference on 4 cards is 306.7 tok/s. Retained measuredOn is historical catalog metadata, not an independently certified run date."
     }
   ]
 }

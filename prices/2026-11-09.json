@@ -1,0 +1,1506 @@
+{
+  "$schema": "https://json-schema.org/draft-07/schema#",
+  "_description": "Partial historical configuration snapshot. priceUSD values are whole-system US references or estimates. Individual observation dates and coverage govern their scope, not this package date.",
+  "_lastUpdated": "2026-11-09",
+  "_snapshot": "2026-11-09",
+  "_currencyNotes": "Regional prices retain their original currencies and source qualifications. The three added Apple configurations are historical US-dollar references. Tax, shipping, current inventory and delivery are unverified. No new regional offers or conversions are added.",
+  "builds": {
+    "your-laptop-8gb": {
+      "name": "Your own laptop (8 GB RAM)",
+      "vendor": "—",
+      "priceUSD": 0,
+      "rigOverheadUSD": 0
+    },
+    "your-laptop-12gb": {
+      "name": "Your own laptop (12 GB RAM)",
+      "vendor": "—",
+      "priceUSD": 0,
+      "rigOverheadUSD": 0
+    },
+    "your-pc-16gb": {
+      "name": "Your own PC (16 GB RAM)",
+      "vendor": "—",
+      "priceUSD": 0,
+      "rigOverheadUSD": 0
+    },
+    "mac-mini-m4-16": {
+      "name": "Mac Mini M4 (16 GB)",
+      "vendor": "Apple",
+      "priceUSD": 799,
+      "rigOverheadUSD": 0,
+      "regionPrices": {
+        "EU": 949,
+        "DE": 949,
+        "FR": 949,
+        "IT": 1199,
+        "ES": 969,
+        "NL": 1189,
+        "UK": 799,
+        "AU": 1299,
+        "CA": 1399,
+        "SG": 1229,
+        "HK": 7999,
+        "TW": 33900,
+        "TH": 35900,
+        "MY": 3299,
+        "NZ": 1999,
+        "JP": 170800
+      }
+    },
+    "mba-m4-16": {
+      "name": "MacBook Air M4 (16 GB)",
+      "vendor": "Apple",
+      "priceUSD": 1099,
+      "rigOverheadUSD": 0,
+      "regionPrices": {
+        "EU": 1099,
+        "DE": 1308,
+        "FR": 1099,
+        "IT": 1199,
+        "ES": 1199,
+        "NL": 1199,
+        "UK": 999,
+        "JP": 164800,
+        "AU": 1799,
+        "CA": 1499,
+        "SG": 1399,
+        "HK": 8999,
+        "NZ": 2199
+      }
+    },
+    "mac-mini-m4-24": {
+      "name": "Mac Mini M4 (24 GB)",
+      "vendor": "Apple",
+      "priceUSD": 1399,
+      "rigOverheadUSD": 0,
+      "regionPrices": {
+        "EU": 1169,
+        "DE": 1169,
+        "FR": 1389,
+        "IT": 1419,
+        "ES": 1189,
+        "NL": 1409,
+        "UK": 999,
+        "SG": 1489,
+        "HK": 9499,
+        "NZ": 2288,
+        "JP": 206800,
+        "AU": 1899,
+        "CA": 1699
+      }
+    },
+    "mbp-m4-pro-48": {
+      "name": "MacBook Pro M4 Pro 48 GB",
+      "vendor": "Apple",
+      "priceUSD": 2899,
+      "rigOverheadUSD": 0,
+      "regionPrices": {
+        "EU": 3299,
+        "DE": 3299,
+        "FR": 3299,
+        "IT": 3299,
+        "UK": 2799,
+        "SG": 3639,
+        "HK": 18999,
+        "TW": 89900,
+        "NZ": 5439
+      }
+    },
+    "mbp-m4-max-64": {
+      "name": "MacBook Pro M4 Max 64 GB",
+      "vendor": "Apple",
+      "priceUSD": 3999,
+      "rigOverheadUSD": 0,
+      "regionPrices": {
+        "EU": 4499,
+        "DE": 4499,
+        "FR": 4499,
+        "IT": 4499,
+        "UK": 3899,
+        "SG": 6109,
+        "HK": 33249,
+        "TW": 144400,
+        "NZ": 8499
+      }
+    },
+    "mba-m5-16": {
+      "name": "MacBook Air M5 (16 GB)",
+      "vendor": "Apple",
+      "priceUSD": 1299,
+      "rigOverheadUSD": 0,
+      "regionPrices": {
+        "EU": 1399,
+        "DE": 1230,
+        "FR": 1399,
+        "IT": 1449,
+        "ES": 1429,
+        "NL": 1429,
+        "UK": 1299,
+        "JP": 224800,
+        "AU": 2099,
+        "CA": 1799
+      }
+    },
+    "mbp-m5-pro-48": {
+      "name": "MacBook Pro M5 Pro 48 GB",
+      "vendor": "Apple",
+      "priceUSD": 3299,
+      "rigOverheadUSD": 0,
+      "regionPrices": {
+        "EU": 3809,
+        "DE": 3567,
+        "FR": 3809,
+        "IT": 3909,
+        "ES": 3859,
+        "NL": 3859,
+        "UK": 3299,
+        "JP": 567800,
+        "AU": 5199,
+        "CA": 4649
+      }
+    },
+    "mbp-m5-max-64": {
+      "name": "MacBook Pro M5 Max 64 GB",
+      "vendor": "Apple",
+      "priceUSD": 5099,
+      "rigOverheadUSD": 0,
+      "regionPrices": {
+        "EU": 5899,
+        "DE": 5530,
+        "FR": 5899,
+        "IT": 5999,
+        "ES": 5949,
+        "NL": 5749,
+        "UK": 5099,
+        "JP": 879800,
+        "AU": 7899,
+        "CA": 7299
+      }
+    },
+    "mbp-m5-max-128": {
+      "name": "MacBook Pro M5 Max 128 GB",
+      "vendor": "Apple",
+      "priceUSD": 6999,
+      "rigOverheadUSD": 0,
+      "regionPrices": {
+        "EU": 7899,
+        "DE": 7404,
+        "FR": 7899,
+        "IT": 7999,
+        "ES": 7949,
+        "NL": 7399,
+        "UK": 6999,
+        "JP": 1209800,
+        "AU": 10999,
+        "CA": 9999
+      }
+    },
+    "mac-studio-m4-max-128": {
+      "name": "Mac Studio M4 Max 128 GB",
+      "vendor": "Apple",
+      "priceUSD": 4699,
+      "rigOverheadUSD": 0,
+      "regionPrices": {
+        "EU": 5499,
+        "DE": 5499,
+        "FR": 5499,
+        "IT": 5499,
+        "UK": 4699,
+        "JP": 750000
+      }
+    },
+    "mac-studio-m4-max-36": {
+      "name": "Mac Studio M4 Max 36 GB",
+      "vendor": "Apple",
+      "priceUSD": 2499,
+      "rigOverheadUSD": 0,
+      "regionPrices": {
+        "EU": 2999,
+        "DE": 2999,
+        "FR": 2999,
+        "IT": 3049,
+        "ES": 3029,
+        "NL": 3029,
+        "UK": 2499,
+        "JP": 419800,
+        "AU": 4299,
+        "CA": 3499
+      }
+    },
+    "mac-studio-m3-ultra-96": {
+      "name": "Mac Studio M3 Ultra 96 GB",
+      "vendor": "Apple",
+      "priceUSD": 5299,
+      "rigOverheadUSD": 0,
+      "regionPrices": {
+        "EU": 6299,
+        "DE": 6299,
+        "FR": 6299,
+        "IT": 6399,
+        "ES": 6349,
+        "NL": 6349,
+        "UK": 5299,
+        "JP": 899800,
+        "AU": 9099,
+        "CA": 7499
+      }
+    },
+    "mac-studio-m3-ultra-256": {
+      "name": "Mac Studio M3 Ultra 256 GB",
+      "vendor": "Apple",
+      "priceUSD": 7999,
+      "rigOverheadUSD": 0,
+      "regionPrices": {
+        "EU": 8899,
+        "DE": 8899,
+        "FR": 8899,
+        "IT": 8899,
+        "UK": 7679
+      }
+    },
+    "mac-studio-m3-ultra-512": {
+      "name": "Mac Studio M3 Ultra 512 GB",
+      "vendor": "Apple",
+      "priceUSD": 14199,
+      "rigOverheadUSD": 0,
+      "regionPrices": {
+        "EU": 15499,
+        "DE": 15499,
+        "FR": 15499,
+        "IT": 15499,
+        "UK": 13499
+      }
+    },
+    "mac-studio-m3-ultra-512-x2": {
+      "name": "2× Mac Studio M3 Ultra 512 GB cluster (TB5 / MLX)",
+      "vendor": "Apple",
+      "priceUSD": 28400,
+      "rigOverheadUSD": 0
+    },
+    "rtx-3060-12": {
+      "name": "RTX 3060 12 GB build",
+      "vendor": "NVIDIA",
+      "priceUSD": 891,
+      "rigOverheadUSD": 600
+    },
+    "rtx-3090-24": {
+      "name": "Single RTX 3090 (used) build",
+      "vendor": "NVIDIA",
+      "priceUSD": 1900,
+      "rigOverheadUSD": 700,
+      "regionPrices": {
+        "NL": 1560,
+        "IT": 1870
+      }
+    },
+    "rtx-3090-96gb-ddr5": {
+      "name": "RTX 3090 + 96GB DDR5 (MoE offload)",
+      "vendor": "NVIDIA",
+      "priceUSD": 3100,
+      "rigOverheadUSD": 1900
+    },
+    "rtx-3090-x2": {
+      "name": "Dual RTX 3090 (used) build",
+      "vendor": "NVIDIA",
+      "priceUSD": 7999,
+      "rigOverheadUSD": 0,
+      "regionPrices": {
+        "NL": 2772
+      }
+    },
+    "rtx-3090-x4": {
+      "name": "Quad RTX 3090 (used) build",
+      "vendor": "NVIDIA",
+      "priceUSD": 7500,
+      "rigOverheadUSD": 2700,
+      "regionPrices": {
+        "NL": 6154
+      }
+    },
+    "rtx-4090-24": {
+      "name": "Single RTX 4090 build",
+      "vendor": "NVIDIA",
+      "priceUSD": 3200,
+      "rigOverheadUSD": 700
+    },
+    "rtx-4090-128gb-ddr5": {
+      "name": "RTX 4090 + 128GB DDR5 (MoE offload)",
+      "vendor": "NVIDIA",
+      "priceUSD": 5400,
+      "rigOverheadUSD": 2900
+    },
+    "rtx-5090-32": {
+      "name": "Single RTX 5090 build",
+      "vendor": "NVIDIA",
+      "priceUSD": 6499,
+      "rigOverheadUSD": 700,
+      "regionPrices": {
+        "EU": 4742,
+        "DE": 4742,
+        "FR": 4742,
+        "IT": 4742,
+        "NL": 4742,
+        "ES": 4742,
+        "PL": 24061,
+        "UK": 4016,
+        "JP": 841000,
+        "AU": 7563,
+        "CA": 8191
+      }
+    },
+    "rtx-5090-192gb-ddr5": {
+      "name": "RTX 5090 + 192GB DDR5 (MoE offload)",
+      "vendor": "NVIDIA",
+      "priceUSD": 8750,
+      "rigOverheadUSD": 1600
+    },
+    "rtx-5090-x2": {
+      "name": "Dual RTX 5090 build",
+      "vendor": "NVIDIA",
+      "priceUSD": 13000,
+      "rigOverheadUSD": 1400,
+      "regionPrices": {
+        "EU": 9483,
+        "DE": 9483,
+        "FR": 9483,
+        "IT": 9483,
+        "NL": 9483,
+        "ES": 9483,
+        "PL": 48123,
+        "UK": 8032,
+        "JP": 1683000,
+        "AU": 15126,
+        "CA": 16382
+      }
+    },
+    "tesla-p40-24": {
+      "name": "Single Tesla P40 24 GB (used) build",
+      "vendor": "NVIDIA",
+      "priceUSD": 730,
+      "rigOverheadUSD": 450
+    },
+    "tesla-p40-x4": {
+      "name": "Quad Tesla P40 (96 GB) homelab build",
+      "vendor": "NVIDIA",
+      "priceUSD": 2620,
+      "rigOverheadUSD": 1500
+    },
+    "tesla-p100-16": {
+      "name": "Single Tesla P100 16 GB (used) build",
+      "vendor": "NVIDIA",
+      "priceUSD": 568,
+      "rigOverheadUSD": 450
+    },
+    "tesla-v100-sxm2-mod": {
+      "name": "Tesla V100 32 GB SXM2 mod build",
+      "vendor": "NVIDIA",
+      "priceUSD": 1139,
+      "rigOverheadUSD": 500
+    },
+    "intel-arc-pro-b70-32": {
+      "name": "Single Intel Arc Pro B70 build",
+      "vendor": "Intel",
+      "priceUSD": 2231,
+      "rigOverheadUSD": 700
+    },
+    "intel-arc-pro-b70-x2": {
+      "name": "Dual Intel Arc Pro B70 build",
+      "vendor": "Intel",
+      "priceUSD": 4062,
+      "rigOverheadUSD": 1000
+    },
+    "intel-arc-pro-b70-x4": {
+      "name": "Quad Intel Arc Pro B70 build",
+      "vendor": "Intel",
+      "priceUSD": 7624,
+      "rigOverheadUSD": 1500
+    },
+    "intel-arc-pro-b70-x8": {
+      "name": "Octuple Intel Arc Pro B70 cluster",
+      "vendor": "Intel",
+      "priceUSD": 13788,
+      "rigOverheadUSD": 2900,
+      "regionPrices": {
+        "UK": 9300
+      }
+    },
+    "intel-arc-b580-12": {
+      "name": "Single Intel Arc B580 12 GB build",
+      "vendor": "Intel",
+      "priceUSD": 1070,
+      "rigOverheadUSD": 700
+    },
+    "strix-halo-128": {
+      "name": "AMD Ryzen AI Max+ 395 (128 GB)",
+      "vendor": "AMD",
+      "priceUSD": 3099,
+      "rigOverheadUSD": 0,
+      "regionPrices": {
+        "EU": 3360,
+        "DE": 3699.99,
+        "FR": 3889,
+        "IT": 3539,
+        "UK": 3449
+      }
+    },
+    "strix-halo-x2": {
+      "name": "2× Strix Halo cluster (256 GB unified)",
+      "vendor": "AMD",
+      "priceUSD": 5998,
+      "rigOverheadUSD": 0,
+      "regionPrices": {
+        "EU": 6720,
+        "DE": 7399.98,
+        "FR": 7778,
+        "IT": 7078,
+        "UK": 6898
+      }
+    },
+    "strix-halo-x4": {
+      "name": "4× Strix Halo cluster (512 GB unified)",
+      "vendor": "AMD",
+      "priceUSD": 12296,
+      "rigOverheadUSD": 300,
+      "regionPrices": {
+        "UK": 14100
+      }
+    },
+    "strix-halo-x8": {
+      "name": "8× Strix Halo cluster (1024 GB unified)",
+      "vendor": "AMD",
+      "priceUSD": 24792,
+      "rigOverheadUSD": 800,
+      "regionPrices": {
+        "UK": 28390
+      }
+    },
+    "dgx-spark-128": {
+      "name": "NVIDIA DGX Spark (128 GB)",
+      "vendor": "NVIDIA",
+      "priceUSD": 4699,
+      "rigOverheadUSD": 0,
+      "regionPrices": {
+        "EU": 4800,
+        "DE": 4800,
+        "FR": 5745,
+        "IT": 6710.11,
+        "UK": 4959.98,
+        "JP": 1078000,
+        "TW": 199900,
+        "CA": 8449.99,
+        "AU": 7999
+      }
+    },
+    "dgx-spark-x2": {
+      "name": "2× DGX Spark cluster (256 GB unified, CUDA)",
+      "vendor": "NVIDIA",
+      "priceUSD": 13599,
+      "rigOverheadUSD": 0,
+      "regionPrices": {
+        "UK": 9849
+      }
+    },
+    "dgx-spark-x4": {
+      "name": "4× DGX Spark cluster (512 GB unified, CUDA)",
+      "vendor": "NVIDIA",
+      "priceUSD": 20367,
+      "rigOverheadUSD": 0
+    },
+    "dgx-spark-x8": {
+      "name": "8× DGX Spark cluster (1024 GB unified, CUDA)",
+      "vendor": "NVIDIA",
+      "priceUSD": 43500,
+      "rigOverheadUSD": 0
+    },
+    "msi-edgexpert-gb10": {
+      "name": "MSI EdgeXpert MS-C931 (128 GB)",
+      "vendor": "MSI",
+      "priceUSD": 5899,
+      "rigOverheadUSD": 0,
+      "regionPrices": {
+        "EU": 5499,
+        "DE": 6299,
+        "FR": 6300,
+        "IT": 6390,
+        "UK": 4723,
+        "JP": 663500,
+        "CA": 5999,
+        "AU": 8999
+      }
+    },
+    "asus-ascent-gx10": {
+      "name": "ASUS Ascent GX10 (128 GB, 1 TB)",
+      "vendor": "ASUS",
+      "priceUSD": 5999,
+      "rigOverheadUSD": 0,
+      "regionPrices": {
+        "EU": 4500,
+        "DE": 4009,
+        "FR": 4500,
+        "IT": 5490,
+        "UK": 4198.99,
+        "JP": 1091981,
+        "CA": 5499.99,
+        "AU": 9499
+      }
+    },
+    "dell-pro-max-gb10": {
+      "name": "Dell Pro Max with GB10 (128 GB)",
+      "vendor": "Dell",
+      "priceUSD": 5394,
+      "rigOverheadUSD": 0,
+      "regionPrices": {
+        "EU": 5789,
+        "DE": 5009,
+        "FR": 6983,
+        "IT": 6793.95,
+        "UK": 5502.76,
+        "JP": 2871842,
+        "AU": 7999,
+        "CA": 8704
+      }
+    },
+    "lenovo-thinkstation-pgx": {
+      "name": "Lenovo ThinkStation PGX (128 GB)",
+      "vendor": "Lenovo",
+      "priceUSD": 5859,
+      "rigOverheadUSD": 0,
+      "regionPrices": {
+        "EU": 4782,
+        "DE": 5123.12,
+        "FR": 4700,
+        "IT": 8539,
+        "UK": 3211,
+        "JP": 1097839,
+        "AU": 10991,
+        "CA": 8129
+      }
+    },
+    "h100-80": {
+      "name": "Single H100 80 GB workstation",
+      "vendor": "NVIDIA",
+      "priceUSD": 30000,
+      "rigOverheadUSD": 3500
+    },
+    "h100-x8": {
+      "name": "8× H100 80 GB server",
+      "vendor": "NVIDIA",
+      "priceUSD": 280000,
+      "rigOverheadUSD": 0
+    },
+    "h200-141": {
+      "name": "Single H200 141 GB workstation",
+      "vendor": "NVIDIA",
+      "priceUSD": 40000,
+      "rigOverheadUSD": 3500
+    },
+    "h200-x8": {
+      "name": "DGX H200 — 8× H200 server (1.13 TB HBM3e)",
+      "vendor": "NVIDIA",
+      "priceUSD": 380000,
+      "rigOverheadUSD": 0
+    },
+    "b200-180": {
+      "name": "Single B200 180 GB workstation",
+      "vendor": "NVIDIA",
+      "priceUSD": 47000,
+      "rigOverheadUSD": 5000
+    },
+    "b200-x8": {
+      "name": "DGX B200 — 8× B200 server (1.44 TB HBM3e)",
+      "vendor": "NVIDIA",
+      "priceUSD": 562154.09,
+      "rigOverheadUSD": 0
+    },
+    "rtx-pro-6000-blackwell-96": {
+      "name": "Single RTX Pro 6000 Blackwell 96 GB build",
+      "vendor": "NVIDIA",
+      "priceUSD": 18000,
+      "rigOverheadUSD": 2000,
+      "regionPrices": {
+        "IT": 13249
+      }
+    },
+    "rtx-pro-5000-blackwell-48": {
+      "name": "Single RTX Pro 5000 Blackwell 48 GB build",
+      "vendor": "NVIDIA",
+      "priceUSD": 8100,
+      "rigOverheadUSD": 1800
+    },
+    "rtx-pro-6000-blackwell-x2": {
+      "name": "Dual RTX Pro 6000 Blackwell build",
+      "vendor": "NVIDIA",
+      "priceUSD": 34500,
+      "rigOverheadUSD": 2500,
+      "regionPrices": {
+        "DE": 22000,
+        "JP": 4136000
+      }
+    },
+    "rtx-pro-6000-blackwell-x4": {
+      "name": "Quad RTX Pro 6000 Blackwell build (384 GB)",
+      "vendor": "NVIDIA",
+      "priceUSD": 68000,
+      "rigOverheadUSD": 4000,
+      "regionPrices": {
+        "DE": 35800,
+        "JP": 6208000
+      }
+    },
+    "rtx-pro-6000-blackwell-x8": {
+      "name": "8× RTX Pro 6000 Blackwell server (768 GB)",
+      "vendor": "NVIDIA",
+      "priceUSD": 135556,
+      "rigOverheadUSD": 8000,
+      "regionPrices": {
+        "DE": 71600,
+        "JP": 12416000
+      }
+    },
+    "rtx-pro-6000-blackwell-x12": {
+      "name": "12× RTX Pro 6000 Blackwell rack (1152 GB)",
+      "vendor": "NVIDIA",
+      "priceUSD": 207334,
+      "rigOverheadUSD": 16000,
+      "regionPrices": {
+        "DE": 107400,
+        "JP": 18624000
+      }
+    },
+    "amd-w7900-48": {
+      "name": "Single AMD Radeon Pro W7900 48 GB build",
+      "vendor": "AMD",
+      "priceUSD": 5099,
+      "rigOverheadUSD": 1200,
+      "regionPrices": {
+        "UK": 4884,
+        "AU": 6999
+      }
+    },
+    "amd-w7900-x2": {
+      "name": "Dual AMD Radeon Pro W7900 build",
+      "vendor": "AMD",
+      "priceUSD": 9398,
+      "rigOverheadUSD": 1600,
+      "regionPrices": {
+        "UK": 9019,
+        "AU": 13800
+      }
+    },
+    "amd-w7800-32": {
+      "name": "Single AMD Radeon Pro W7800 32 GB build",
+      "vendor": "AMD",
+      "priceUSD": 2399,
+      "rigOverheadUSD": 700,
+      "regionPrices": {
+        "UK": 2755
+      }
+    },
+    "amd-r9700-32": {
+      "name": "Single AMD Radeon AI Pro R9700 32 GB build",
+      "vendor": "AMD",
+      "priceUSD": 2400,
+      "rigOverheadUSD": 700
+    },
+    "amd-r9700-x2": {
+      "name": "Dual AMD Radeon AI Pro R9700 build (64 GB)",
+      "vendor": "AMD",
+      "priceUSD": 4400,
+      "rigOverheadUSD": 1000
+    },
+    "rx-9070-xt-16": {
+      "name": "Single AMD Radeon RX 9070 XT 16 GB build",
+      "vendor": "AMD",
+      "priceUSD": 1500,
+      "rigOverheadUSD": 700,
+      "regionPrices": {
+        "EU": 1359,
+        "DE": 1359,
+        "FR": 1359,
+        "IT": 1359,
+        "ES": 1359,
+        "NL": 1359,
+        "PL": 5964,
+        "UK": 1246,
+        "JP": 206000,
+        "AU": 2063,
+        "CA": 2089
+      }
+    },
+    "amd-mi300x-192": {
+      "name": "Single AMD Instinct MI300X 192 GB workstation",
+      "vendor": "AMD",
+      "priceUSD": 30000,
+      "rigOverheadUSD": 0
+    },
+    "amd-mi325x-256": {
+      "name": "Single AMD Instinct MI325X 256 GB workstation",
+      "vendor": "AMD",
+      "priceUSD": 25000,
+      "rigOverheadUSD": 0
+    },
+    "amd-mi355x-288": {
+      "name": "Single AMD Instinct MI355X 288 GB workstation",
+      "vendor": "AMD",
+      "priceUSD": 28000,
+      "rigOverheadUSD": 0
+    },
+    "amd-mi50-32": {
+      "name": "Single AMD Instinct MI50 32 GB (used) build",
+      "vendor": "AMD",
+      "priceUSD": 1000,
+      "rigOverheadUSD": 400
+    },
+    "amd-mi50-x4": {
+      "name": "Quad AMD MI50 32 GB (128 GB) homelab build",
+      "vendor": "AMD",
+      "priceUSD": 3900,
+      "rigOverheadUSD": 1500
+    },
+    "tinybox-red": {
+      "name": "Tinybox Red (6× 7900 XTX, 144 GB)",
+      "vendor": "tinycorp",
+      "priceUSD": 15000,
+      "rigOverheadUSD": 0
+    },
+    "tinybox-green": {
+      "name": "Tinybox Green (6× RTX 4090, 144 GB)",
+      "vendor": "tinycorp",
+      "priceUSD": 25000,
+      "rigOverheadUSD": 0
+    },
+    "tinybox-green-v2": {
+      "name": "Tinybox Green v2 (4× RTX 5090, 128 GB)",
+      "vendor": "tinycorp",
+      "priceUSD": 51000,
+      "rigOverheadUSD": 0
+    },
+    "tinybox-pro": {
+      "name": "Tinybox Pro (8× RTX 4090, 192 GB)",
+      "vendor": "tinycorp",
+      "priceUSD": 40000,
+      "rigOverheadUSD": 0
+    },
+    "mac-mini-m5-pro-64": {
+      "name": "Mac Mini M5 Pro (64 GB)",
+      "vendor": "Apple",
+      "priceUSD": 3199,
+      "rigOverheadUSD": 0,
+      "priceVerifiedOn": "2026-09-21",
+      "priceNote": "M5 Pro 18-core CPU / 20-core GPU / 64 GB unified / 1 TB SSD. Retained Apple US configured price $3,199, source date 2026-09-21, SKU MHQU4LL/A. Current orderability and delivery estimate are unverified.",
+      "sourceUrl": "https://www.apple.com/shop/buy-mac/mac-mini/m5-pro-chip-18-core-cpu-20-core-gpu-64gb-memory-1tb-storage",
+      "seller": "Apple US",
+      "sourceCountry": "US",
+      "currency": "USD"
+    },
+    "mac-mini-m6-32": {
+      "name": "Mac Mini M6 (32 GB)",
+      "vendor": "Apple",
+      "priceUSD": 1799,
+      "rigOverheadUSD": 0,
+      "priceVerifiedOn": "2026-09-21",
+      "priceNote": "M6 12-core CPU / 12-core GPU / 32 GB unified / 1 TB SSD. Retained Apple US configured price $1,799, source date 2026-09-21, SKU MHQV4LL/A. Current orderability and delivery estimate are unverified.",
+      "sourceUrl": "https://www.apple.com/shop/buy-mac/mac-mini/m6-chip-12-core-cpu-12-core-gpu-32gb-memory-1tb-storage",
+      "seller": "Apple US",
+      "sourceCountry": "US",
+      "currency": "USD"
+    },
+    "mac-studio-m5-max-128": {
+      "name": "Mac Studio M5 Max 128 GB",
+      "vendor": "Apple",
+      "priceUSD": 5399,
+      "rigOverheadUSD": 0,
+      "priceVerifiedOn": "2026-09-21",
+      "priceNote": "M5 Max 18-core CPU / 40-core GPU / 128 GB unified / 1 TB SSD. Retained Apple US configured price $5,399, source date 2026-09-21. Current orderability and delivery estimate are unverified.",
+      "sourceUrl": "https://www.apple.com/shop/buy-mac/mac-studio/m5-max-chip-18-core-cpu-40-core-gpu-128gb-memory-1tb-storage",
+      "seller": "Apple US",
+      "sourceCountry": "US",
+      "currency": "USD"
+    }
+  },
+  "_coverage": {
+    "scope": "historical-configuration-addition",
+    "snapshotCreatedOn": "2026-11-09",
+    "sourceObservationDate": "2026-09-21",
+    "specificationCheckedOn": "2026-11-07",
+    "historicalAdded": [
+      {
+        "buildId": "mac-mini-m5-pro-64",
+        "priceUSD": 3199,
+        "currency": "USD",
+        "sourceCountry": "US",
+        "seller": "Apple US",
+        "sourceUrl": "https://www.apple.com/shop/buy-mac/mac-mini/m5-pro-chip-18-core-cpu-20-core-gpu-64gb-memory-1tb-storage",
+        "priceVerifiedOn": "2026-09-21",
+        "configuration": {
+          "cpuCores": 18,
+          "gpuCores": 20,
+          "storageGB": 1000,
+          "memoryGB": 64
+        },
+        "currentOrderabilityVerified": false,
+        "taxIncluded": null,
+        "shippingVerified": false,
+        "physicalStockVerified": false
+      },
+      {
+        "buildId": "mac-mini-m6-32",
+        "priceUSD": 1799,
+        "currency": "USD",
+        "sourceCountry": "US",
+        "seller": "Apple US",
+        "sourceUrl": "https://www.apple.com/shop/buy-mac/mac-mini/m6-chip-12-core-cpu-12-core-gpu-32gb-memory-1tb-storage",
+        "priceVerifiedOn": "2026-09-21",
+        "configuration": {
+          "cpuCores": 12,
+          "gpuCores": 12,
+          "storageGB": 1000,
+          "memoryGB": 32
+        },
+        "currentOrderabilityVerified": false,
+        "taxIncluded": null,
+        "shippingVerified": false,
+        "physicalStockVerified": false
+      },
+      {
+        "buildId": "mac-studio-m5-max-128",
+        "priceUSD": 5399,
+        "currency": "USD",
+        "sourceCountry": "US",
+        "seller": "Apple US",
+        "sourceUrl": "https://www.apple.com/shop/buy-mac/mac-studio/m5-max-chip-18-core-cpu-40-core-gpu-128gb-memory-1tb-storage",
+        "priceVerifiedOn": "2026-09-21",
+        "configuration": {
+          "cpuCores": 18,
+          "gpuCores": 40,
+          "storageGB": 1000,
+          "memoryGB": 128
+        },
+        "currentOrderabilityVerified": false,
+        "taxIncluded": null,
+        "shippingVerified": false,
+        "physicalStockVerified": false
+      }
+    ],
+    "updated": [],
+    "confirmed": [],
+    "retainedPriceRows": 76,
+    "retainedPricesReverified": false,
+    "currentPriceVerification": false,
+    "readerScope": "Three retained Apple US configured USD offers only. No current inventory, tax, shipping, regional offer or recipe qualification.",
+    "note": "Package date is not a fresh observation. Prices retain September 21 evidence. November 7 specification checks do not refresh offers.",
+    "retainedCoverage": [
+      {
+        "scope": "partial-price-release",
+        "catalogEvidenceThrough": "2026-09-24",
+        "sourceObservationDate": "2026-11-07",
+        "updated": [
+          {
+            "buildId": "mac-mini-m4-24",
+            "region": "USD",
+            "price": 1399,
+            "currency": "USD",
+            "sourceUrl": "https://www.amazon.com/dp/B0DLBV145M",
+            "accessedAt": "2026-11-07",
+            "sourceCountry": "US",
+            "sourceSKU": "MCYT4LL/A",
+            "asin": "B0DLBV145M",
+            "configuration": "MCYT4LL/A; M4 10CPU/10GPU; 24GB RAM; 512GB SSD; one NEW complete desktop; without AppleCare+; one-time cash",
+            "seller": "DataVision Computer Video",
+            "shipper": "DataVision Computer Video",
+            "condition": "NEW selected buying option",
+            "quantity": 1,
+            "destination": "Herndon 20170, US",
+            "availability": "In Stock advertised for the captured destination; physical allocation and other destinations unverified",
+            "taxIncluded": false,
+            "physicalStockVerified": false,
+            "checkoutVerified": false,
+            "shipping": {
+              "country": "US",
+              "currency": "USD",
+              "price": 0,
+              "advertised": true,
+              "checkoutVerified": false
+            },
+            "deliveryWindowQualification": "FREE delivery Monday, November 16 was advertised, not an accepted-order or fulfilment guarantee.",
+            "referenceBasis": "Selected named US seller offer, not market minimum or a universal manufacturer MSRP. The retained USD999 was not qualified as an available like-for-like offer."
+          },
+          {
+            "buildId": "rtx-3090-x2",
+            "region": "USD",
+            "price": 7999,
+            "currency": "USD",
+            "sourceCountry": "US",
+            "sourceSKU": "CL324325",
+            "seller": "Custom Lux PCs",
+            "accessedAt": "2026-11-07T19:06:38.334323+00:00",
+            "configuration": "CL324325; one complete computer; 2 x RTX 3090 24GB; one Core Ultra 9 285K / 128GB DDR5-5600 / MSI Z890 MPG Carbon WiFi (advertised x8/x8) / 4TB NVMe alternatives / 1600W / Antec C8 / 360mm AIO host",
+            "quantity": 1,
+            "gpuQuantity": 2,
+            "sharedHost": true,
+            "condition": "Mixed: certified-refurbished GPUs, all other components new",
+            "scope": "complete-system",
+            "taxIncluded": false,
+            "sourceUrl": "https://customluxpcs.com/product/dual-rtx-3090/",
+            "availability": "Advertised InStock; physical allocation, quantity, destination order and fulfilment unverified",
+            "physicalStockVerified": false,
+            "checkoutVerified": false,
+            "shipping": {
+              "country": "US",
+              "currency": "USD",
+              "price": 0,
+              "advertised": true,
+              "checkoutVerified": false
+            },
+            "nvlinkIncluded": false,
+            "nvlinkQualification": "Additional-cost customization; no surcharge selected",
+            "storageQualification": "4TB Samsung/WD/Crucial alternatives; no brand selected",
+            "osQualification": "Ubuntu24.04LTS or Windows11Pro advertised; no choice submitted",
+            "hostPricing": "Host and cards are bundled, not separately priced. No separate component or host price is established.",
+            "referenceBasis": "Selected named supplier purchase reference for the generic dual-3090 GPU profile, replacing an unconfirmed DIY estimate; not same-BOM inflation, market minimum, recipe compatibility or supplier benchmark certification.",
+            "performanceQualification": "Existing measurements and launch recipes retain their separate published source hosts, software, quant, context and concurrency. No CL324325 measurement is supplied."
+          }
+        ],
+        "confirmed": [],
+        "retainedCoverage": [
+          {
+            "scope": "partial-price-release",
+            "catalogEvidenceThrough": "2026-09-24",
+            "sourceObservationDate": "2026-11-02",
+            "updated": [
+              {
+                "buildId": "lenovo-thinkstation-pgx",
+                "region": "USD",
+                "price": 5859,
+                "currency": "USD",
+                "sourceUrl": "https://www.lenovo.com/us/en/p/workstations/thinkstation-p-series/lenovo-thinkstation-pgx-sff/30kl0002us",
+                "accessedAt": "2026-11-02T05:14:56Z",
+                "sourceCountry": "US",
+                "configuration": "30KL0002US;GB10/128GB LPDDR5X/1TB TLC Opal/240W/OneYearPremier",
+                "taxIncluded": null,
+                "physicalStockVerified": false,
+                "checkoutVerified": false,
+                "availability": "Advertised InStock/AddToCart with yearless Apr6–8 and Apr7–9 delivery windows; year/fulfilment unresolved",
+                "sourceSKU": "30KL0002US",
+                "condition": "NewCondition advertised, not independently inspected",
+                "deliveryWindowQualification": "Archived Tue. Apr 06 - Thu. Apr 08 and later Wed. Apr 07 - Fri. Apr 09 omit the year. Neither establishes November fulfilment."
+              },
+              {
+                "buildId": "b200-x8",
+                "region": "USD",
+                "price": 562154.09,
+                "currency": "USD",
+                "sourceUrl": "https://www.broadberry.com/xeon-scalable-processor-gen4-rackmount-servers/nvidia-dgx-b200",
+                "accessedAt": "2026-11-02T05:13:44.344897+00:00",
+                "sourceCountry": "US",
+                "configuration": "DGX B200;8Blackwell/1440GB,2xXeon8570,4TBDDR5,2x1.92TBM2+8x3.84TBNVMe;3yrBusinessStandardSupport;installationQuantityCriteriaApply;USkit/powercable",
+                "availability": "RequestQuote;physicalstock/finalfulfilmentnotverified",
+                "taxIncluded": false,
+                "physicalStockVerified": false,
+                "checkoutVerified": false,
+                "referenceBasis": "One complete configured RFQ appliance, not a uniform MSRP or same-BOM movement",
+                "independentSourceObservedAt": "2026-11-02T08:30:44Z",
+                "condition": "Separate condition statement unverified",
+                "shippingHandlingIncluded": false
+              }
+            ],
+            "confirmed": [
+              {
+                "buildId": "mba-m5-16",
+                "region": "USD",
+                "price": 1299,
+                "currency": "USD",
+                "sourceUrl": "https://www.apple.com/shop/buy-mac/macbook-air/13-inch-silver-m5-chip-10-core-cpu-8-core-gpu-16gb-memory-512gb-storage",
+                "accessedAt": "2026-11-02T05:14:20Z",
+                "sourceCountry": "US",
+                "configuration": "MDH74LL/A;13-inch Silver M5/10CPU8GPU/16GB512GB/default40W Dynamic60WMax",
+                "physicalStockVerified": false,
+                "checkoutVerified": false,
+                "taxIncluded": null,
+                "powerAdapterIncluded": true,
+                "powerAdapter": "40W Dynamic Power Adapter with 60W Max",
+                "shipping": {
+                  "country": "US",
+                  "currency": "USD",
+                  "price": 0,
+                  "checkoutVerified": false
+                },
+                "condition": "New Apple factory configuration",
+                "availability": "Published selected configuration. Physical inventory, ZIP eligibility, checkout and fulfilment unverified.",
+                "sourceSKU": "MDH74LL/A"
+              },
+              {
+                "buildId": "mbp-m5-max-128",
+                "region": "USD",
+                "price": 6999,
+                "currency": "USD",
+                "sourceUrl": "https://www.apple.com/shop/buy-mac/macbook-pro/16-inch-space-black-standard-display-apple-m5-max-chip-18-core-cpu-40-core-gpu-128gb-memory-2tb-storage",
+                "accessedAt": "2026-11-02T05:14:34Z",
+                "sourceCountry": "US",
+                "configuration": "16-inch Space Black standard display/M5Max18CPU40GPU/128GB2TB/default140W",
+                "physicalStockVerified": false,
+                "checkoutVerified": false,
+                "taxIncluded": null,
+                "powerAdapterIncluded": true,
+                "powerAdapter": "140W USB-C Power Adapter",
+                "shipping": {
+                  "country": "US",
+                  "currency": "USD",
+                  "price": 0,
+                  "checkoutVerified": false
+                },
+                "condition": "New Apple factory configuration",
+                "availability": "Published selected configuration. Physical inventory, ZIP eligibility, checkout and fulfilment unverified.",
+                "sourceSKU": "Z1N1+CL4P+CL50+CL53+CL68+CL6D+CL6G+CL6P+CL7C+CL7D"
+              }
+            ],
+            "releaseDate": "2026-11-03",
+            "snapshotDateBasis": "Package snapshot dated November 3. The selected offers were observed on November 2. Source observation dates are not publication, destination checkout or delivery dates.",
+            "retainedPriceRows": 75,
+            "retainedPricesReverified": false,
+            "modelsReverified": false,
+            "recipesReverified": false,
+            "unverified": [
+              {
+                "buildId": "mba-m4-16",
+                "region": "USD",
+                "status": "UNVERIFIED",
+                "note": "Retained reference, not reverified by this partial release."
+              },
+              {
+                "buildId": "mbp-m4-max-64",
+                "region": "USD",
+                "status": "UNVERIFIED",
+                "note": "Retained reference, not reverified by this partial release."
+              },
+              {
+                "buildId": "mbp-m4-pro-48",
+                "region": "USD",
+                "status": "UNVERIFIED",
+                "note": "Retained reference, not reverified by this partial release."
+              },
+              {
+                "buildId": "mbp-m5-max-64",
+                "region": "USD",
+                "status": "UNVERIFIED",
+                "note": "Retained reference, not reverified by this partial release."
+              },
+              {
+                "buildId": "mbp-m5-pro-48",
+                "region": "USD",
+                "status": "UNVERIFIED",
+                "note": "Retained reference, not reverified by this partial release."
+              },
+              {
+                "buildId": "asus-ascent-gx10",
+                "region": "USD",
+                "status": "UNVERIFIED",
+                "note": "Retained reference, not reverified by this partial release."
+              },
+              {
+                "buildId": "dell-pro-max-gb10",
+                "region": "USD",
+                "status": "UNVERIFIED",
+                "note": "Retained reference, not reverified by this partial release."
+              },
+              {
+                "buildId": "dgx-spark-128",
+                "region": "USD",
+                "status": "UNVERIFIED",
+                "note": "Retained reference, not reverified by this partial release."
+              },
+              {
+                "buildId": "dgx-spark-x2",
+                "region": "USD",
+                "status": "UNVERIFIED",
+                "note": "Retained reference, not reverified by this partial release."
+              },
+              {
+                "buildId": "dgx-spark-x4",
+                "region": "USD",
+                "status": "UNVERIFIED",
+                "note": "Retained reference, not reverified by this partial release."
+              },
+              {
+                "buildId": "dgx-spark-x8",
+                "region": "USD",
+                "status": "UNVERIFIED",
+                "note": "Retained reference, not reverified by this partial release."
+              },
+              {
+                "buildId": "amd-mi300x-192",
+                "region": "USD",
+                "status": "UNVERIFIED",
+                "note": "Retained reference, not reverified by this partial release."
+              },
+              {
+                "buildId": "amd-mi325x-256",
+                "region": "USD",
+                "status": "UNVERIFIED",
+                "note": "Retained reference, not reverified by this partial release."
+              },
+              {
+                "buildId": "amd-mi355x-288",
+                "region": "USD",
+                "status": "UNVERIFIED",
+                "note": "Retained reference, not reverified by this partial release."
+              },
+              {
+                "buildId": "amd-mi50-32",
+                "region": "USD",
+                "status": "UNVERIFIED",
+                "note": "Retained reference, not reverified by this partial release."
+              },
+              {
+                "buildId": "amd-mi50-x4",
+                "region": "USD",
+                "status": "UNVERIFIED",
+                "note": "Retained reference, not reverified by this partial release."
+              },
+              {
+                "buildId": "b200-180",
+                "region": "USD",
+                "status": "UNVERIFIED",
+                "note": "Retained reference, not reverified by this partial release."
+              },
+              {
+                "buildId": "h100-80",
+                "region": "USD",
+                "status": "UNVERIFIED",
+                "note": "Retained reference, not reverified by this partial release."
+              },
+              {
+                "buildId": "h100-x8",
+                "region": "USD",
+                "status": "UNVERIFIED",
+                "note": "Retained reference, not reverified by this partial release."
+              }
+            ],
+            "deferred": [
+              {
+                "buildId": "h200-x8",
+                "region": "USD",
+                "status": "DEFERRED",
+                "note": "Separate configured RFQ reference remains unreviewed and is not adopted in this partial."
+              }
+            ],
+            "readerScope": {
+              "confirmedRegionKeys": [
+                "USD"
+              ],
+              "confirmedCountry": "US",
+              "otherNationalOverridesReverified": false,
+              "convertedFallbacksReverified": false,
+              "destinationCheckoutTaxVerified": false,
+              "crossBorderDeliveryVerified": false,
+              "note": "Four US references only. Retained country overrides and FX-derived fallbacks are not new domestic quotes."
+            },
+            "note": "Two unchanged selected Apple US references were confirmed. The Lenovo US reference is corrected from $5,849 to $5,859 with unresolved yearless delivery estimates. The DGX B200 estimate is replaced by one configured $562,154.09 US RFQ reference excluding sales tax, shipping and handling. No physical stock, destination checkout, fulfilled order, other national offer, model, measurement or recipe is newly verified.",
+            "retainedCoverage": [
+              {
+                "scope": "partial-price-release",
+                "releaseDate": "2026-11-01",
+                "sourceObservationDate": "2026-10-31",
+                "snapshotDateBasis": "Snapshot dated November 1. The US offer was observed on October 31. Other prices retain their cited observation dates.",
+                "catalogEvidenceThrough": "2026-09-24",
+                "updated": [],
+                "confirmed": [
+                  {
+                    "buildId": "mba-m5-16",
+                    "region": "USD",
+                    "price": 1299,
+                    "currency": "USD",
+                    "sourceUrl": "https://www.apple.com/shop/buy-mac/macbook-air/13-inch-silver-m5-chip-10-core-cpu-8-core-gpu-16gb-memory-512gb-storage",
+                    "accessedAt": "2026-10-31T19:53:40.703603+00:00",
+                    "sourceSKU": "MDH74LL/A",
+                    "sourceCountry": "US",
+                    "configuration": "13-inch Silver M5, 10-core CPU / 8-core GPU, 16 GB RAM, 512 GB SSD, factory base",
+                    "condition": "New Apple factory configuration",
+                    "taxIncluded": null,
+                    "shipping": {
+                      "country": "US",
+                      "currency": "USD",
+                      "price": 0,
+                      "checkoutVerified": false
+                    },
+                    "powerAdapterIncluded": true,
+                    "powerAdapter": "40W Dynamic Power Adapter with 60W Max, option 065-CLJ7",
+                    "availability": "Published complete base offer. Physical stock, destination checkout and fulfilment not independently verified."
+                  }
+                ],
+                "retainedPriceRows": 75,
+                "retainedPricesReverified": false,
+                "modelsReverified": false,
+                "recipesReverified": false,
+                "unverified": [
+                  {
+                    "buildId": "mba-m4-16",
+                    "region": "USD",
+                    "status": "UNVERIFIED"
+                  },
+                  {
+                    "buildId": "mbp-m4-max-64",
+                    "region": "USD",
+                    "status": "UNVERIFIED"
+                  },
+                  {
+                    "buildId": "mbp-m4-pro-48",
+                    "region": "USD",
+                    "status": "UNVERIFIED"
+                  },
+                  {
+                    "buildId": "mbp-m5-max-128",
+                    "region": "USD",
+                    "status": "UNVERIFIED"
+                  },
+                  {
+                    "buildId": "mbp-m5-max-64",
+                    "region": "USD",
+                    "status": "UNVERIFIED"
+                  },
+                  {
+                    "buildId": "mbp-m5-pro-48",
+                    "region": "USD",
+                    "status": "UNVERIFIED"
+                  }
+                ],
+                "readerScope": {
+                  "confirmedRegionKeys": [
+                    "USD"
+                  ],
+                  "confirmedCountry": "US",
+                  "otherNationalOverridesReverified": false,
+                  "convertedFallbacksReverified": false,
+                  "destinationCheckoutTaxVerified": false,
+                  "crossBorderDeliveryVerified": false
+                },
+                "note": "One unchanged US MacBook Air factory-base price was confirmed against the October 31 offer. November 1 is the package snapshot date, not a new source observation. Other countries, configurations, prices, models and recipes retain their prior evidence. Advertised shipping is not verified destination tax, stock, checkout or delivery.",
+                "retainedCoverage": [
+                  {
+                    "scope": "partial-price-release",
+                    "releaseDate": "2026-10-31",
+                    "catalogEvidenceThrough": "2026-09-24",
+                    "updated": [],
+                    "confirmed": [
+                      {
+                        "buildId": "mba-m5-16",
+                        "region": "EU",
+                        "price": 1399,
+                        "currency": "EUR",
+                        "sourceUrl": "https://www.apple.com/de/shop/buy-mac/macbook-air/13-zoll-mitternacht-m5-chip-10%E2%80%91core-cpu-8%E2%80%91core-gpu-16-gb-arbeitsspeicher-512gb-speicher",
+                        "accessedAt": "2026-10-31T14:30:51.977574Z",
+                        "sourceSKU": "MDHE4D/A",
+                        "sourceCountry": "DE",
+                        "configuration": "13-inch M5, 10-core CPU / 8-core GPU, 16 GB RAM, 512 GB SSD, Midnight, German keyboard",
+                        "condition": "New Apple device",
+                        "taxIncluded": true,
+                        "taxRatePercent": 19,
+                        "shipping": {
+                          "country": "DE",
+                          "currency": "EUR",
+                          "price": 0,
+                          "checkoutVerified": false
+                        },
+                        "powerAdapterIncluded": false,
+                        "availability": "Published selectable vendor offer; physical stock and local delivery not independently verified.",
+                        "purchaseTerms": "Published device-only offer."
+                      },
+                      {
+                        "buildId": "mbp-m5-pro-48",
+                        "region": "EU",
+                        "price": 3809,
+                        "currency": "EUR",
+                        "sourceUrl": "https://www.macconsultshop.de/apple/macbook-pro-14-m5-pro/standardglas/1tb/macbook-pro-14-m5-pro-1820-core-48gb1tb-ssdkein-netzteil-space-schwarz.html",
+                        "accessedAt": "2026-10-31T14:30:51.977574Z",
+                        "sourceSKU": "Z1ML_13867_DE_CTO",
+                        "sourceCountry": "DE",
+                        "configuration": "14-inch M5 Pro, 18-core CPU / 20-core GPU, 48 GB RAM, 1 TB SSD, standard glass, Space Black, German keyboard",
+                        "condition": "NewCondition advertised by merchant",
+                        "taxIncluded": true,
+                        "taxRatePercent": 19,
+                        "shipping": {
+                          "country": "DE",
+                          "currency": "EUR",
+                          "price": 0,
+                          "checkoutVerified": false
+                        },
+                        "powerAdapterIncluded": false,
+                        "availability": "Merchant advertises InStock, more than five units and 1-3 working days within Germany; warehouse count and checkout not independently verified.",
+                        "purchaseTerms": "Merchant describes this CTO order as non-cancellable and non-returnable; not legal advice."
+                      }
+                    ],
+                    "retainedPriceRows": 74,
+                    "retainedPricesReverified": false,
+                    "modelsReverified": false,
+                    "recipesReverified": false,
+                    "unverified": [
+                      {
+                        "buildId": "mba-m4-16",
+                        "region": "EU",
+                        "status": "UNVERIFIED"
+                      },
+                      {
+                        "buildId": "mbp-m4-max-64",
+                        "region": "EU",
+                        "status": "UNVERIFIED"
+                      },
+                      {
+                        "buildId": "mbp-m4-pro-48",
+                        "region": "EU",
+                        "status": "UNVERIFIED"
+                      },
+                      {
+                        "buildId": "mbp-m5-max-128",
+                        "region": "EU",
+                        "status": "UNVERIFIED"
+                      },
+                      {
+                        "buildId": "mbp-m5-max-64",
+                        "region": "EU",
+                        "status": "UNVERIFIED"
+                      }
+                    ],
+                    "readerScope": {
+                      "directEURCountries": [
+                        "IE",
+                        "AT",
+                        "BE",
+                        "PT",
+                        "FI"
+                      ],
+                      "convertedEURCountries": [
+                        "SE",
+                        "DK",
+                        "CZ",
+                        "CH",
+                        "NO",
+                        "PL"
+                      ],
+                      "unchangedCountryOverrides": [
+                        "DE",
+                        "FR",
+                        "IT",
+                        "ES",
+                        "NL",
+                        "UK",
+                        "JP",
+                        "AU",
+                        "CA"
+                      ],
+                      "crossBorderDeliveryVerified": false,
+                      "destinationCheckoutTaxVerified": false,
+                      "confirmedRegionKeys": [
+                        "EU"
+                      ],
+                      "germanNationalOverrideReverified": false
+                    },
+                    "note": "Two unchanged EUR references were confirmed against German-market offers observed on 2026-10-31. This package does not reverify country-specific overrides, USD prices, other builds, models or recipes. German tax, shipping and advertised availability are not promises for other destinations. Devices exclude a power adapter. Existing catalog and price-observation dates retain their previous evidence."
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "retainedPriceRows": 74,
+        "retainedPricesReverified": false,
+        "modelsReverified": false,
+        "recipesReverified": false,
+        "unverified": [
+          {
+            "buildId": "mac-mini-m4-16",
+            "region": "USD",
+            "status": "UNVERIFIED",
+            "note": "The retained $799 reference is unconfirmed. A different $1,058.99 CDW offer was backordered; no matching available $799 offer was established."
+          },
+          {
+            "buildId": "mac-studio-m3-ultra-256",
+            "region": "USD",
+            "status": "UNVERIFIED",
+            "note": "The retained $7,999 reference has an unresolved CPU/storage purchase basis. The $10,095.99 CDW 28CPU/256GB/2TB offer is a distinct seller reference, not a like-for-like confirmation or global restock."
+          },
+          {
+            "buildId": "mac-studio-m3-ultra-512",
+            "region": "USD",
+            "status": "UNVERIFIED",
+            "note": "The retained $14,199 reference remains dated 2026-07-28 and unconfirmed. B&H marked its exact 512GB/1TB item discontinued; other sellers and manufacturer-wide lifecycle remain unverified."
+          },
+          {
+            "buildId": "mac-studio-m3-ultra-512-x2",
+            "region": "USD",
+            "status": "UNVERIFIED",
+            "note": "The retained $28,400 reference remains dated 2026-06-12 and unconfirmed. Matching current two-node availability and the required TB5 fabric total are missing; multiplying an old single-node price does not qualify a cluster."
+          },
+          {
+            "buildId": "mac-studio-m3-ultra-96",
+            "region": "USD",
+            "status": "UNVERIFIED",
+            "note": "The retained $5,299 reference is unconfirmed. The CDW M3 Ultra 28CPU/96GB/1TB quote of $5,714.99 retains unresolved condition, destination and tax; a different current Apple generation is not a replacement quote."
+          },
+          {
+            "buildId": "mac-studio-m4-max-128",
+            "region": "USD",
+            "status": "UNVERIFIED",
+            "note": "The retained $4,699 reference remains dated 2026-07-28 and unconfirmed. B&H marked its exact M4 Max 128GB/512GB item discontinued; other sellers and global lifecycle remain unverified."
+          },
+          {
+            "buildId": "mac-studio-m4-max-36",
+            "region": "USD",
+            "status": "UNVERIFIED",
+            "note": "The retained $2,499 M4 Max reference is unconfirmed. CDW advertised a different $2,655.99 36GB/512GB reference on backorder; the $2,499 M5 recommendation is a different generation."
+          },
+          {
+            "buildId": "rtx-3060-12",
+            "region": "USD",
+            "status": "UNVERIFIED",
+            "note": "Exact complete-system offer qualifications remain unresolved. Retained cell/date is not confirmed by the dual-3090 supplier reference."
+          },
+          {
+            "buildId": "rtx-3090-24",
+            "region": "USD",
+            "status": "UNVERIFIED",
+            "note": "Single-PC 5699.99 representations agree; GPU condition, RAM-speed and premium-versus-budget basis remain unresolved. Retained cell/date is not confirmed by the dual-3090 supplier reference."
+          },
+          {
+            "buildId": "rtx-3090-96gb-ddr5",
+            "region": "USD",
+            "status": "UNVERIFIED",
+            "note": "Exact 96GB host/offer basis remains unresolved. Retained cell/date is not confirmed by the dual-3090 supplier reference."
+          },
+          {
+            "buildId": "rtx-3090-x4",
+            "region": "USD",
+            "status": "UNVERIFIED",
+            "note": "Shared-host EPYC/Threadripper/topology and stale offer basis remain unresolved. Retained cell/date is not confirmed by the dual-3090 supplier reference."
+          },
+          {
+            "buildId": "rtx-4090-128gb-ddr5",
+            "region": "USD",
+            "status": "UNVERIFIED",
+            "note": "Sold offer and exact 128GB host remain unqualified for current reuse. Retained cell/date is not confirmed by the dual-3090 supplier reference."
+          },
+          {
+            "buildId": "rtx-4090-24",
+            "region": "USD",
+            "status": "UNVERIFIED",
+            "note": "Current complete-system cash and host qualifications remain unresolved. Retained cell/date is not confirmed by the dual-3090 supplier reference."
+          }
+        ],
+        "deferred": [],
+        "readerScope": {
+          "confirmedRegionKeys": [
+            "USD"
+          ],
+          "confirmedCountry": "US",
+          "otherNationalOverridesReverified": false,
+          "convertedFallbacksReverified": false,
+          "destinationCheckoutTaxVerified": false,
+          "crossBorderDeliveryVerified": false,
+          "note": "Two selected US purchase references were observed on November 7. Existing national overrides and converted fallbacks are not freshly sourced domestic offers. Destination tax, physical stock and fulfilment remain unverified."
+        },
+        "retainedUnpricedBuildRows": 3,
+        "snapshotDateBasis": "Snapshot captured November 8. The selected offers were observed November 7. Snapshot date is not a new source observation, publication or checkout date."
+      }
+    ]
+  },
+  "_catalogEvidenceThrough": "2026-09-24"
+}
