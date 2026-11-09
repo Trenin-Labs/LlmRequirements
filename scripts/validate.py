@@ -88,7 +88,8 @@ for b in builds:
     if missing:
         fail(f"build {b.get('id', '?')}: missing keys {sorted(missing)}")
         continue
-    if b.get("usableMemoryGB", b["memoryGB"]) > b["memoryGB"]:
+    usable_memory = b.get("usableMemoryGB")
+    if usable_memory is not None and usable_memory > b["memoryGB"]:
         fail(f"build {b['id']}: usableMemoryGB > memoryGB")
     if "rigOverheadUSD" in b and b["rigOverheadUSD"] > b["priceUSD"]:
         fail(f"build {b['id']}: rigOverheadUSD > priceUSD")

@@ -4,9 +4,9 @@
   "_lastUpdated": "2026-11-08",
   "_methodology": "tps values are sourced from llama.cpp / vLLM single-stream Q4_K_M generation benchmarks. pp values are sourced from llama-bench pp512 runs and equivalent vLLM / sglang prefill benchmarks. ttft100k is measured (or estimated, see sources) with a 100 K-token prompt at Q4_K_M; null when the build cannot fit model weights plus a 100 K KV cache. See sources[] for citations.",
   "_counts": {
-    "tps": 500,
-    "pp": 383,
-    "ttft100k": 383,
+    "tps": 518,
+    "pp": 401,
+    "ttft100k": 401,
     "image": 141,
     "video": 129,
     "sources": 192,
@@ -2512,6 +2512,96 @@
       "buildId": "tinybox-pro",
       "modelSize": "235b_moe",
       "tps": 80
+    },
+    {
+      "buildId": "mac-mini-m5-pro-64",
+      "modelSize": "8b",
+      "tps": null
+    },
+    {
+      "buildId": "mac-mini-m5-pro-64",
+      "modelSize": "14b",
+      "tps": null
+    },
+    {
+      "buildId": "mac-mini-m5-pro-64",
+      "modelSize": "30b",
+      "tps": null
+    },
+    {
+      "buildId": "mac-mini-m5-pro-64",
+      "modelSize": "70b",
+      "tps": null
+    },
+    {
+      "buildId": "mac-mini-m5-pro-64",
+      "modelSize": "120b_moe",
+      "tps": null
+    },
+    {
+      "buildId": "mac-mini-m5-pro-64",
+      "modelSize": "235b_moe",
+      "tps": null
+    },
+    {
+      "buildId": "mac-mini-m6-32",
+      "modelSize": "8b",
+      "tps": null
+    },
+    {
+      "buildId": "mac-mini-m6-32",
+      "modelSize": "14b",
+      "tps": null
+    },
+    {
+      "buildId": "mac-mini-m6-32",
+      "modelSize": "30b",
+      "tps": null
+    },
+    {
+      "buildId": "mac-mini-m6-32",
+      "modelSize": "70b",
+      "tps": null
+    },
+    {
+      "buildId": "mac-mini-m6-32",
+      "modelSize": "120b_moe",
+      "tps": null
+    },
+    {
+      "buildId": "mac-mini-m6-32",
+      "modelSize": "235b_moe",
+      "tps": null
+    },
+    {
+      "buildId": "mac-studio-m5-max-128",
+      "modelSize": "8b",
+      "tps": null
+    },
+    {
+      "buildId": "mac-studio-m5-max-128",
+      "modelSize": "14b",
+      "tps": null
+    },
+    {
+      "buildId": "mac-studio-m5-max-128",
+      "modelSize": "30b",
+      "tps": null
+    },
+    {
+      "buildId": "mac-studio-m5-max-128",
+      "modelSize": "70b",
+      "tps": null
+    },
+    {
+      "buildId": "mac-studio-m5-max-128",
+      "modelSize": "120b_moe",
+      "tps": null
+    },
+    {
+      "buildId": "mac-studio-m5-max-128",
+      "modelSize": "235b_moe",
+      "tps": null
     }
   ],
   "pp": [
@@ -4429,6 +4519,96 @@
       "buildId": "tinybox-pro",
       "modelSize": "235b_moe",
       "ppTokensPerSec": 8500
+    },
+    {
+      "buildId": "mac-mini-m5-pro-64",
+      "modelSize": "8b",
+      "ppTokensPerSec": null
+    },
+    {
+      "buildId": "mac-mini-m5-pro-64",
+      "modelSize": "14b",
+      "ppTokensPerSec": null
+    },
+    {
+      "buildId": "mac-mini-m5-pro-64",
+      "modelSize": "30b",
+      "ppTokensPerSec": null
+    },
+    {
+      "buildId": "mac-mini-m5-pro-64",
+      "modelSize": "70b",
+      "ppTokensPerSec": null
+    },
+    {
+      "buildId": "mac-mini-m5-pro-64",
+      "modelSize": "120b_moe",
+      "ppTokensPerSec": null
+    },
+    {
+      "buildId": "mac-mini-m5-pro-64",
+      "modelSize": "235b_moe",
+      "ppTokensPerSec": null
+    },
+    {
+      "buildId": "mac-mini-m6-32",
+      "modelSize": "8b",
+      "ppTokensPerSec": null
+    },
+    {
+      "buildId": "mac-mini-m6-32",
+      "modelSize": "14b",
+      "ppTokensPerSec": null
+    },
+    {
+      "buildId": "mac-mini-m6-32",
+      "modelSize": "30b",
+      "ppTokensPerSec": null
+    },
+    {
+      "buildId": "mac-mini-m6-32",
+      "modelSize": "70b",
+      "ppTokensPerSec": null
+    },
+    {
+      "buildId": "mac-mini-m6-32",
+      "modelSize": "120b_moe",
+      "ppTokensPerSec": null
+    },
+    {
+      "buildId": "mac-mini-m6-32",
+      "modelSize": "235b_moe",
+      "ppTokensPerSec": null
+    },
+    {
+      "buildId": "mac-studio-m5-max-128",
+      "modelSize": "8b",
+      "ppTokensPerSec": null
+    },
+    {
+      "buildId": "mac-studio-m5-max-128",
+      "modelSize": "14b",
+      "ppTokensPerSec": null
+    },
+    {
+      "buildId": "mac-studio-m5-max-128",
+      "modelSize": "30b",
+      "ppTokensPerSec": null
+    },
+    {
+      "buildId": "mac-studio-m5-max-128",
+      "modelSize": "70b",
+      "ppTokensPerSec": null
+    },
+    {
+      "buildId": "mac-studio-m5-max-128",
+      "modelSize": "120b_moe",
+      "ppTokensPerSec": null
+    },
+    {
+      "buildId": "mac-studio-m5-max-128",
+      "modelSize": "235b_moe",
+      "ppTokensPerSec": null
     }
   ],
   "ttft100k": [
@@ -6346,6 +6526,96 @@
       "buildId": "tinybox-pro",
       "modelSize": "235b_moe",
       "ttft100kSeconds": 18
+    },
+    {
+      "buildId": "mac-mini-m5-pro-64",
+      "modelSize": "8b",
+      "ttft100kSeconds": null
+    },
+    {
+      "buildId": "mac-mini-m5-pro-64",
+      "modelSize": "14b",
+      "ttft100kSeconds": null
+    },
+    {
+      "buildId": "mac-mini-m5-pro-64",
+      "modelSize": "30b",
+      "ttft100kSeconds": null
+    },
+    {
+      "buildId": "mac-mini-m5-pro-64",
+      "modelSize": "70b",
+      "ttft100kSeconds": null
+    },
+    {
+      "buildId": "mac-mini-m5-pro-64",
+      "modelSize": "120b_moe",
+      "ttft100kSeconds": null
+    },
+    {
+      "buildId": "mac-mini-m5-pro-64",
+      "modelSize": "235b_moe",
+      "ttft100kSeconds": null
+    },
+    {
+      "buildId": "mac-mini-m6-32",
+      "modelSize": "8b",
+      "ttft100kSeconds": null
+    },
+    {
+      "buildId": "mac-mini-m6-32",
+      "modelSize": "14b",
+      "ttft100kSeconds": null
+    },
+    {
+      "buildId": "mac-mini-m6-32",
+      "modelSize": "30b",
+      "ttft100kSeconds": null
+    },
+    {
+      "buildId": "mac-mini-m6-32",
+      "modelSize": "70b",
+      "ttft100kSeconds": null
+    },
+    {
+      "buildId": "mac-mini-m6-32",
+      "modelSize": "120b_moe",
+      "ttft100kSeconds": null
+    },
+    {
+      "buildId": "mac-mini-m6-32",
+      "modelSize": "235b_moe",
+      "ttft100kSeconds": null
+    },
+    {
+      "buildId": "mac-studio-m5-max-128",
+      "modelSize": "8b",
+      "ttft100kSeconds": null
+    },
+    {
+      "buildId": "mac-studio-m5-max-128",
+      "modelSize": "14b",
+      "ttft100kSeconds": null
+    },
+    {
+      "buildId": "mac-studio-m5-max-128",
+      "modelSize": "30b",
+      "ttft100kSeconds": null
+    },
+    {
+      "buildId": "mac-studio-m5-max-128",
+      "modelSize": "70b",
+      "ttft100kSeconds": null
+    },
+    {
+      "buildId": "mac-studio-m5-max-128",
+      "modelSize": "120b_moe",
+      "ttft100kSeconds": null
+    },
+    {
+      "buildId": "mac-studio-m5-max-128",
+      "modelSize": "235b_moe",
+      "ttft100kSeconds": null
     }
   ],
   "image": [
