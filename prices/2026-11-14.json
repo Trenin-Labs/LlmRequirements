@@ -3,7 +3,7 @@
   "_description": "Partial regional-price snapshot: two dated German manufacturer notebook references updated. The UK item-price confirmation and all other prices, models and recipes retain earlier source dates.",
   "_lastUpdated": "2026-11-14",
   "_snapshot": "2026-11-14",
-  "_currencyNotes": "German notebook references are in EUR, with advertised 19% VAT and free shipping; each excludes a power adapter. Destination charges, stock, delivery, checkout and order acceptance are unverified. The retained UK GBP2,499 item-price observation includes VAT where applicable, not a verified delivered total or market minimum. Other amounts retain their cited currencies, offer bases and source dates.",
+  "_currencyNotes": "German notebook references are in EUR, with advertised 19% VAT and free shipping. Each excludes a power adapter. Destination charges, stock, delivery, checkout and order acceptance are unverified. The retained UK GBP2,499 item-price observation includes VAT where applicable, not a verified delivered total or market minimum. Other amounts retain their cited currencies, offer bases and source dates.",
   "builds": {
     "your-laptop-8gb": {
       "name": "Your own laptop (8 GB RAM)",
