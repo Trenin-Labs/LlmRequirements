@@ -2,7 +2,7 @@
   "$schema": "https://json-schema.org/draft-07/schema#",
   "_description": "LLM model catalog with ratings and VRAM requirements. See README.md for schema.",
   "_lastUpdated": "2026-11-08",
-  "_count": 76,
+  "_count": 77,
   "models": [
     {
       "id": "lfm3-1-7b",
@@ -3548,6 +3548,58 @@
         "MiniMaxAI/MiniMax-M3.1-Flash"
       ],
       "contextK": 1000
+    },
+    {
+      "id": "deepseek-v4-1-flash-1017-552b-moe",
+      "name": "DeepSeek V4.1-Flash-1017 (552B backbone MoE)",
+      "family": "DeepSeek",
+      "params": 552,
+      "activeParams": 16,
+      "type": "moe",
+      "modality": "text",
+      "contextK": 1048.576,
+      "sizeQ2": null,
+      "sizeQ4": null,
+      "sizeQ5": null,
+      "sizeQ8": null,
+      "vramMinQ2": null,
+      "vramMinQ4": null,
+      "vramComfortQ4": null,
+      "ratings": {},
+      "tags": [
+        "moe",
+        "vision",
+        "agents",
+        "native-mxfp4-mxfp8"
+      ],
+      "aliases": [
+        "DeepSeek-V4.1-Flash-1017",
+        "DeepSeek V4.1 Flash 1017",
+        "deepseek-ai/DeepSeek-V4.1-Flash-1017"
+      ],
+      "blurb": "DeepSeek's October 17, 2026 checkpoint has a 552B-parameter backbone, with 8B active per input token and 16B per output token. It accepts text and images and has a configured 1,048,576-token context. The 48 native mixed MXFP4/MXFP8 weight files total 510,296,708,312 bytes, including Engram and DSpark components. Loaded memory and generic quant-tier fit remain unknown; published datacenter instructions and community conversions have distinct runtime regimes.",
+      "license": "MIT",
+      "huggingface": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash-1017",
+      "sources": [
+        "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash-1017/blob/08c8657f02291e11b6f6b63e0e16014f8e748518/README.md",
+        "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash-1017/blob/08c8657f02291e11b6f6b63e0e16014f8e748518/config.json",
+        "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash-1017/blob/08c8657f02291e11b6f6b63e0e16014f8e748518/LICENSE",
+        "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash-1017/blob/08c8657f02291e11b6f6b63e0e16014f8e748518/model.safetensors.index.json",
+        "https://api-docs.deepseek.com/updates/",
+        "https://github.com/vllm-project/recipes/blob/bf7ff7863a546aaea6b132d39cd2cd37956debf1/models/deepseek-ai/DeepSeek-V4.1-Flash.yaml"
+      ],
+      "benchmarks": {
+        "hle": null,
+        "tb2": null,
+        "swebench_pro": null,
+        "swebench_ver": null,
+        "aider": null,
+        "livecodebench": null,
+        "gpqa": null,
+        "mmlu_pro": null,
+        "aime": null
+      },
+      "benchmarkNotes": "DeepSeek reports HLE without tools 42.6, with 44.0 for its text-only subset; the 1017 card does not fully specify that evaluation's harness and metric. Terminal-Bench 4.0 is 42.3 with Claude Code, and DeepSWE v1.1 is 77.0 with Mini-SWE-V2. These publisher results remain separate from older benchmark columns, editorial ratings and local throughput. September GPQA and Terminal-Bench 2.1 scores are not assigned to 1017."
     }
   ]
 }
