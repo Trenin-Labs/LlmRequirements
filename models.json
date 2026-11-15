@@ -2,7 +2,7 @@
   "$schema": "https://json-schema.org/draft-07/schema#",
   "_description": "LLM model catalog with ratings and VRAM requirements. See README.md for schema.",
   "_lastUpdated": "2026-11-08",
-  "_count": 76,
+  "_count": 77,
   "models": [
     {
       "id": "lfm3-1-7b",
@@ -3548,6 +3548,48 @@
         "MiniMaxAI/MiniMax-M3.1-Flash"
       ],
       "contextK": 1000
+    },
+    {
+      "id": "kimi-k3-1-pro-2t8-moe",
+      "name": "Kimi K3.1 Pro 2.8T (MoE)",
+      "family": "Moonshot",
+      "params": 2800,
+      "activeParams": 104,
+      "type": "moe",
+      "modality": "text",
+      "contextK": 1048.576,
+      "sizeQ2": null,
+      "sizeQ4": null,
+      "sizeQ5": null,
+      "sizeQ8": null,
+      "vramMinQ2": null,
+      "vramMinQ4": null,
+      "vramComfortQ4": null,
+      "ratings": {},
+      "tags": ["moe", "frontier", "agents", "coding", "vision", "native-mxfp4"],
+      "aliases": ["Kimi-K3.1-Pro", "Kimi K3.1 Pro", "moonshotai/Kimi-K3.1-Pro"],
+      "blurb": "Moonshot's Kimi K3.1 Pro is a text-and-image MoE with 2.8T total and 104B active parameters, a 1,048,576-token configured context, and KDA plus Gated DSA attention. Its native mixed MXFP4/BF16 checkpoint contains 1,561.293 GB of weight files. This is not a GGUF Q4_K_M artifact or a measured memory requirement. The cited Pro sources do not establish a runnable setup or throughput on a catalog build.",
+      "license": "Kimi K3.1-Pro License (conditional)",
+      "huggingface": "https://huggingface.co/moonshotai/Kimi-K3.1-Pro",
+      "sources": [
+        "https://huggingface.co/moonshotai/Kimi-K3.1-Pro/blob/d9e99b0792a5e93b78ea9bea62a68167e36ddd9e/README.md",
+        "https://huggingface.co/moonshotai/Kimi-K3.1-Pro/blob/d9e99b0792a5e93b78ea9bea62a68167e36ddd9e/config.json",
+        "https://huggingface.co/moonshotai/Kimi-K3.1-Pro/blob/d9e99b0792a5e93b78ea9bea62a68167e36ddd9e/LICENSE",
+        "https://recipes.vllm.ai/moonshotai/Kimi-K3.1-Pro",
+        "https://docs.sglang.io/cookbook/autoregressive/Moonshotai/Kimi-K3.1-Pro"
+      ],
+      "benchmarks": {
+        "hle": null,
+        "tb2": null,
+        "swebench_pro": null,
+        "swebench_ver": null,
+        "aider": null,
+        "livecodebench": null,
+        "gpqa": 94.2,
+        "mmlu_pro": null,
+        "aime": null
+      },
+      "benchmarkNotes": "Moonshot reports GPQA-Diamond 94.2 for Kimi K3.1 Pro at reasoning effort max, temperature 1.0 and top-p 0.95. This is publisher evaluation evidence, not an independent local run or a hardware throughput measurement. Terminal-Bench 4.0, SWE-Marathon v1.1, DeepSWE v1.1 and HLE-Full are retained under their published protocols rather than relabelled into older benchmark columns. Editorial ratings and a comparable overall ranking remain unqualified."
     }
   ]
 }
